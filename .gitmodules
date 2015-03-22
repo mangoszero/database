@@ -1,0 +1,3 @@
+[submodule "Realm"]
+	path = Realm
+	url = https://github.com/mangos/Realm_DB

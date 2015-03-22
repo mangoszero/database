@@ -1,0 +1,1 @@
+ALTER TABLE db_version CHANGE COLUMN required_20004_01_Fix_UnitClass_Errors_Introduced_In_Rel19 required_20007_01_Rel20_Release_Prep BIT;
