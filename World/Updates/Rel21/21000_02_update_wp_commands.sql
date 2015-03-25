@@ -13,7 +13,7 @@ BEGIN
   SET @cOldRev = 'required_21000_01_Release21_initial'; 
 
   -- Set the new revision string
-  SET @cNewRev = 'required_21000_01_Release21_initial';
+  SET @cNewRev = 'required_21000_02_update_wp_commands';
 
   -- Set thisRevision to the column name of db_version in the currently selected database
   SET @cThisRev := ((SELECT column_name FROM information_schema.`COLUMNS` WHERE table_name='db_version' AND table_schema=(SELECT DATABASE() AS thisDB FROM DUAL) AND column_name LIKE 'required%'));
@@ -33,13 +33,13 @@ BEGIN
     -- EXECUTE stmt1;
     -- DEALLOCATE PREPARE stmt1;
     -- The Above block is required for making table changes
-
-    -- -- -- -- Normal Update / Insert / Delete statements will go here  -- -- -- -- --
     -- version
     INSERT IGNORE INTO `db_version` SET `Version` = @cThisVersion;
 
     -- If this is purely an incremental update, include this line
     SET @cNewRev = @cThisVersion;
+
+    -- -- -- -- Normal Update / Insert / Delete statements will go here  -- -- -- -- --
           
     -- Update WP Commands    
     DELETE FROM command WHERE NAME='wp add' OR NAME='wp modify' OR NAME='wp show';
