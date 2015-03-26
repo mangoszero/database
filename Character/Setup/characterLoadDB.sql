@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `character_db_version`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `character_db_version` (
-  `required_20000_Release_020_Initial` bit(1) DEFAULT NULL
+  `required_20005_01_characters_pvpstats` bit(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Last applied sql update to DB';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -794,10 +794,27 @@ LOCK TABLES `creature_respawn` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `dbdocsfields`
+-- Table structure for table `dbdocsfields` 
 --
-DROP TABLE IF EXISTS `dbdocsfields`;
 
+DROP TABLE IF EXISTS `dbdocsfields`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dbdocsfields` (
+  `tableName` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Name of the table to link to',
+  `fieldName` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Name of the field to link the note to',
+  `fieldNotes` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'Additional Field Notes',
+  PRIMARY KEY (`tableName`,`fieldName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `dbdocsfields` 
+--
+
+DROP TABLE IF EXISTS `dbdocsfields`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dbdocsfields` (
   `fieldId` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique Id for this field',
   `languageId` int(11) NOT NULL DEFAULT '0' COMMENT 'dbdocsLanguageId to link to. (Normallu 0 = English)',
@@ -808,9 +825,14 @@ CREATE TABLE `dbdocsfields` (
   PRIMARY KEY (`fieldId`,`languageId`),
   KEY `fieldId` (`fieldId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=435 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Data for the table `dbdocsfields` */
+--
+-- Data for the table `dbdocsfields`
+--
 
+LOCK TABLES `dbdocsfields` WRITE;
+/*!40000 ALTER TABLE `dbdocsfields` DISABLE KEYS */;
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (1,0,'account','expansion','Which expansion\'s content a user has access to.','The field controls to which expansion\'s content a user has access. By default this is set to 0, allowing access to vanilla WoW content. In mangos-zero, other values can be ignored, since there is no expansion.<br />\r\n¬subtable:2¬\r\n<br />\r\n* Base Game Version of World of Warcraft, otherwise known as Vanilla.\r\n<br />\r\nThe world server will block access to accounts with 0 in this field from accessing the TBC and WotLK areas in-game.\r\n<br />\r\nThe world server will block access to accounts with 1 in this field from accessing the WotLK areas in-game and so on.');
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (2,0,'auction','auctioneerguid','The GUID of the creature where the auction item was added. (See creature.guid)','The GUID of the creature where the auction item was added. (See creature.guid)');
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (3,0,'auction','buyguid','The GUID of the highest bidder. See (character.guid)','The GUID of the highest bidder. See (character.guid)');
@@ -1189,10 +1211,12 @@ insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fiel
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (376,0,'world','data','Specific data belonging to the world.','Specific data belonging to the world.');
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (377,0,'world','map','The map ID (See Map.dbc)','The map ID (See Map.dbc)');
 
---
--- Table structure for table `dbdocsfields_localised` */
---
+/*!40000 ALTER TABLE `dbdocsfields` ENABLE KEYS */;
+UNLOCK TABLES;
 
+--
+-- Table structure for table `dbdocsfields_localised`
+--
 DROP TABLE IF EXISTS `dbdocsfields_localised`;
 
 CREATE TABLE `dbdocsfields_localised` (
@@ -1203,6 +1227,13 @@ CREATE TABLE `dbdocsfields_localised` (
   PRIMARY KEY (`fieldId`,`languageId`),
   KEY `fieldId` (`fieldId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `dbdocsfields_localised` */
+LOCK TABLES `dbdocsfields_localised` WRITE;
+/*!40000 ALTER TABLE `dbdocsfields_localised` DISABLE KEYS */;
+
+/*!40000 ALTER TABLE `dbdocsfields_localised` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `dbdocslanguage`
@@ -1216,7 +1247,8 @@ CREATE TABLE `dbdocslanguage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `dbdocslanguage` */
-
+LOCK TABLES `dbdocslanguage` WRITE;
+/*!40000 ALTER TABLE `dbdocslanguage` DISABLE KEYS */;
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (0,'English');
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (1,'Korean');
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (2,'French');
@@ -1226,6 +1258,8 @@ insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (5,'Taiwanese'
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (6,'Spanish (Spain)');
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (7,'Spanish (Latin America)');
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (8,'Russian');
+/*!40000 ALTER TABLE `dbdocslanguage` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `dbdocssubtables`
@@ -1242,7 +1276,8 @@ CREATE TABLE `dbdocssubtables` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `dbdocssubtables` */
-
+LOCK TABLES `dbdocssubtables` WRITE;
+/*!40000 ALTER TABLE `dbdocssubtables` DISABLE KEYS */;
 insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (10,0,'Gender','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Value</b></th>\r\n<th align=\'left\'><b>Gender</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>0</td><td align=\'left\' valign=\'middle\'>Male</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n1</td><td align=\'left\' valign=\'middle\'>Female</td></tr>\r\n</table>','Value|<Gender\r\n0|Male\r\n1|Female');
 insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (11,0,'At Login','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Value</b></th>\r\n<th align=\'left\'><b>Meaning</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>1</td><td align=\'left\' valign=\'middle\'>Force character to change name</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>2</td><td align=\'left\' valign=\'middle\'>Reset spells (professions as well)</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>4</td><td align=\'left\' valign=\'middle\'>Reset talents</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>8</td><td align=\'left\' valign=\'middle\'>Character Customization enabled</td></tr>\r\n</table>\r\n','Value|<Meaning\r\n1|Force character to change name\r\n2|Reset spells (professions as well)\r\n4|Reset talents\r\n8|Character Customization enabled');
 insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (12,0,'Races','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Index</b></th>\r\n<th><b>Value</b></th>\r\n<th align=\'left\'><b>Race Name</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>1</td><td align=\'center\' valign=\'middle\'>1</td><td align=\'left\' valign=\'middle\'>Human</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>2</td><td align=\'center\' valign=\'middle\'>2</td><td align=\'left\' valign=\'middle\'>Orc</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>3</td><td align=\'center\' valign=\'middle\'>4</td><td align=\'left\' valign=\'middle\'>Dwarf</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>4</td><td align=\'center\' valign=\'middle\'>8</td><td align=\'left\' valign=\'middle\'>Night Elf</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>5</td><td align=\'center\' valign=\'middle\'>16</td><td align=\'left\' valign=\'middle\'>Undead</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>6</td><td align=\'center\' valign=\'middle\'>32</td><td align=\'left\' valign=\'middle\'>Tauren</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>7</td><td align=\'center\' valign=\'middle\'>64</td><td align=\'left\' valign=\'middle\'>Gnome</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>8</td><td align=\'center\' valign=\'middle\'>128</td><td align=\'left\' valign=\'middle\'>Troll</td></tr>\r\n</table>\r\n','Index|Value|<Race Name\r\n1|1|Human\r\n2|2|Orc\r\n3|4|Dwarf\r\n4|8|Night Elf\r\n5|16|Undead\r\n6|32|Tauren\r\n7|64|Gnome\r\n8|128|Troll');
@@ -1258,9 +1293,12 @@ insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTabl
 insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (22,0,'Item Instance Data','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Index</b></th>\r\n<th><b>Flag Name</b></th>\r\n<th align=\'left\'><b>Meaning</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>0</td><td align=\'center\' valign=\'middle\'>OBJECT&#95;FIELD&#95;GUID</td><td align=\'left\' valign=\'middle\'>Item GUID</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>2</td><td align=\'center\' valign=\'middle\'>OBJECT&#95;FIELD&#95;TYPE</td><td align=\'left\' valign=\'middle\'>Should be 3 (TYPE&#95;OBJECT + TYPE&#95;ITEM)</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>3</td><td align=\'center\' valign=\'middle\'>OBJECT&#95;FIELD&#95;ENTRY</td><td align=\'left\' valign=\'middle\'>Entry</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>4</td><td align=\'center\' valign=\'middle\'>OBJECT&#95;FIELD&#95;SCALE&#95;X</td><td align=\'left\' valign=\'middle\'>1.0</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>5</td><td align=\'center\' valign=\'middle\'>OBJECT&#95;FIELD&#95;PADDING</td><td align=\'left\' valign=\'middle\'>Some padding, need more info here.</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>6</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;OWNER</td><td align=\'left\' valign=\'middle\'>owner&#95;guid</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>8</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;CONTAINED</td><td align=\'left\' valign=\'middle\'>If the item is in a bag, the GUID of the bag item; otherwise owner GUID.</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>10</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;CREATOR</td><td align=\'left\' valign=\'middle\'>GUID of character who created the item.</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>12</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;GIFTCREATOR</td><td align=\'left\' valign=\'middle\'>GUID of character who created the \"item\". (See character_gifts.item_guid).</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>14</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;STACK&#95;COUNT</td><td align=\'left\' valign=\'middle\'>Current number of item copies in the stack.</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>15</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;DURATION</td><td align=\'left\' valign=\'middle\'>Current duration (in milliseconds)</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>16</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;SPELL&#95;CHARGES</td><td align=\'left\' valign=\'middle\'>Current Number of charges left in the item</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>21</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;FLAGS</td><td align=\'left\' valign=\'middle\'>Flags from \"item&#95;template\" (See Item_template.flags).</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>22</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;ENCHANTMENT</td><td align=\'left\' valign=\'middle\'>Unknown</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>55</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;PROPERTY&#95;SEED</td><td align=\'left\' valign=\'middle\'>Also called ITEM&#95;FIELD&#95;SUFFIX&#95;FACTOR</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>56</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;RANDOM&#95;PROPERTIES&#95;ID</td><td align=\'left\' valign=\'middle\'>Unknown</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>57</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;ITEM&#95;TEXT&#95;ID</td><td align=\'left\' valign=\'middle\'>Text id used and shown by the item.</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>58</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;DURABILITY</td><td align=\'left\' valign=\'middle\'>Current item durability.</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>59</td><td align=\'center\' valign=\'middle\'>ITEM&#95;FIELD&#95;MAXDURABILITY</td><td align=\'left\' valign=\'middle\'>Maximum item durability.</td></tr>\r\n</table>\r\n','Index|Flag Name|<Meaning\r\n0|OBJECT&#95;FIELD&#95;GUID|Item GUID\r\n2|OBJECT&#95;FIELD&#95;TYPE|Should be 3 (TYPE&#95;OBJECT + TYPE&#95;ITEM)\r\n3|OBJECT&#95;FIELD&#95;ENTRY|Entry\r\n4|OBJECT&#95;FIELD&#95;SCALE&#95;X|1.0\r\n5|OBJECT&#95;FIELD&#95;PADDING|Some padding, need more info here.\r\n6|ITEM&#95;FIELD&#95;OWNER|owner&#95;guid\r\n8|ITEM&#95;FIELD&#95;CONTAINED|If the item is in a bag, the GUID of the bag item; otherwise owner GUID.\r\n10|ITEM&#95;FIELD&#95;CREATOR|GUID of character who created the item.\r\n12|ITEM&#95;FIELD&#95;GIFTCREATOR|GUID of character who created the \"item\". (See character_gifts.item_guid).\r\n14|ITEM&#95;FIELD&#95;STACK&#95;COUNT|Current number of item copies in the stack.\r\n15|ITEM&#95;FIELD&#95;DURATION|Current duration (in milliseconds)\r\n16|ITEM&#95;FIELD&#95;SPELL&#95;CHARGES|Current Number of charges left in the item\r\n21|ITEM&#95;FIELD&#95;FLAGS|Flags from \"item&#95;template\" (See Item_template.flags).\r\n22|ITEM&#95;FIELD&#95;ENCHANTMENT|Unknown\r\n55|ITEM&#95;FIELD&#95;PROPERTY&#95;SEED|Also called ITEM&#95;FIELD&#95;SUFFIX&#95;FACTOR\r\n56|ITEM&#95;FIELD&#95;RANDOM&#95;PROPERTIES&#95;ID|Unknown\r\n57|ITEM&#95;FIELD&#95;ITEM&#95;TEXT&#95;ID|Text id used and shown by the item.\r\n58|ITEM&#95;FIELD&#95;DURABILITY|Current item durability.\r\n59|ITEM&#95;FIELD&#95;MAXDURABILITY|Maximum item durability.');
 insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (23,0,'Mail Message Type','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Value</b></th>\r\n<th align=\'left\'><b>Type</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>0</td><td align=\'left\' valign=\'middle\'>NORMAL</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n1</td><td align=\'left\' valign=\'middle\'>COD</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>\r\n2</td><td align=\'left\' valign=\'middle\'>AUCTION</td></tr>\r\n</table>\r\n','Value|<Type\r\n0|NORMAL\r\n1|COD\r\n2|AUCTION');
 insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (24,0,'Mail Stationary Type','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Value</b></th>\r\n<th align=\'left\'><b>Type</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>1</td><td align=\'left\' valign=\'middle\'>plain &amp; purple scroll icon</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n41</td><td align=\'left\' valign=\'middle\'>Normal Mail</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>\r\n61</td><td align=\'left\' valign=\'middle\'>GM Mail</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n62</td><td align=\'left\' valign=\'middle\'>Auction House</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>\r\n64</td><td align=\'left\' valign=\'middle\'>Valentine\'s Day</td></tr>\r\n</table>\r\n','Value|<Type\r\n1|plain &amp; purple scroll icon\r\n41|Normal Mail\r\n61|GM Mail\r\n62|Auction House\r\n64|Valentine\'s Day');
-insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (25,0,'Mail Checked Flags','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Hex Value</b></th>\r\n<th><b>Value</b></th>\r\n<th><b>Binary</b></th>\r\n<th align=\'left\'><b>ENUM Name</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>0x00</td><td align=\'center\' valign=\'middle\'>0</td><td align=\'center\' valign=\'middle\'>0000 0000</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_NONE	</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n0x01</td><td align=\'center\' valign=\'middle\'>1</td><td align=\'center\' valign=\'middle\'>0000 0001</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_READ</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>\r\n0x02</td><td align=\'center\' valign=\'middle\'>2</td><td align=\'center\' valign=\'middle\'>0000 0010</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_RETURNED</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n0x04</td><td align=\'center\' valign=\'middle\'>4</td><td align=\'center\' valign=\'middle\'>0000 0100</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_COPIED</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>\r\n0x08</td><td align=\'center\' valign=\'middle\'>8</td><td align=\'center\' valign=\'middle\'>0000 1000</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_COD_PAYMENT</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n0x10</td><td align=\'center\' valign=\'middle\'>16</td><td align=\'center\' valign=\'middle\'>0001 0000</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_HAS_BODY</td></tr>\r\n</table>','Hex Value|Value|Binary|<ENUM Name\r\n0x00|0|0000 0000|MAIL_CHECK_MASK_NONE	\r\n0x01|1|0000 0001|MAIL_CHECK_MASK_READ\r\n0x02|2|0000 0010|MAIL_CHECK_MASK_RETURNED\r\n0x04|4|0000 0100|MAIL_CHECK_MASK_COPIED\r\n0x08|8|0000 1000|MAIL_CHECK_MASK_COD_PAYMENT\r\n0x10|16|0001 0000|MAIL_CHECK_MASK_HAS_BODY');
+insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (25,0,'Mail Checked Flags','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Hex Value</b></th>\r\n<th><b>Value</b></th>\r\n<th><b>Binary</b></th>\r\n<th align=\'left\'><b>ENUM Name</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>0x00</td><td align=\'center\' valign=\'middle\'>0</td><td align=\'center\' valign=\'middle\'>0000 0000</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_NONE  </td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n0x01</td><td align=\'center\' valign=\'middle\'>1</td><td align=\'center\' valign=\'middle\'>0000 0001</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_READ</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>\r\n0x02</td><td align=\'center\' valign=\'middle\'>2</td><td align=\'center\' valign=\'middle\'>0000 0010</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_RETURNED</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n0x04</td><td align=\'center\' valign=\'middle\'>4</td><td align=\'center\' valign=\'middle\'>0000 0100</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_COPIED</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>\r\n0x08</td><td align=\'center\' valign=\'middle\'>8</td><td align=\'center\' valign=\'middle\'>0000 1000</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_COD_PAYMENT</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n0x10</td><td align=\'center\' valign=\'middle\'>16</td><td align=\'center\' valign=\'middle\'>0001 0000</td><td align=\'left\' valign=\'middle\'>MAIL_CHECK_MASK_HAS_BODY</td></tr>\r\n</table>','Hex Value|Value|Binary|<ENUM Name\r\n0x00|0|0000 0000|MAIL_CHECK_MASK_NONE  \r\n0x01|1|0000 0001|MAIL_CHECK_MASK_READ\r\n0x02|2|0000 0010|MAIL_CHECK_MASK_RETURNED\r\n0x04|4|0000 0100|MAIL_CHECK_MASK_COPIED\r\n0x08|8|0000 1000|MAIL_CHECK_MASK_COD_PAYMENT\r\n0x10|16|0001 0000|MAIL_CHECK_MASK_HAS_BODY');
 insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (26,0,'Mail Checked Flags - Common','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Value</b></th>\r\n<th align=\'left\'><b>ENUM Name</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>4</td><td align=\'left\' valign=\'middle\'>Mail has no body (subject only) [TODO: check this behaviour]</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>\r\n16</td><td align=\'left\' valign=\'middle\'>Mail was not read</td></tr>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>\r\n17</td><td align=\'left\' valign=\'middle\'>Mail was read</td></tr>\r\n</table>','Value|<ENUM Name\r\n4|Mail has no body (subject only) [TODO: check this behaviour]\r\n16|Mail was not read\r\n17|Mail was read');
 insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTableContent`,`subTableTemplate`) values (27,0,'Cleaning Flags','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>\r\n<tr bgcolor=\'#f0f0ff\'>\r\n<th><b>Value</b></th>\r\n<th><b>Enum Name</b></th>\r\n<th align=\'left\'><b>Meaning</b></th>\r\n<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>0x2</td><td align=\'center\' valign=\'middle\'>CLEANING_FLAG_SKILLS</td><td align=\'left\' valign=\'middle\'>Clean out obsolete Skills (See character_skills).</td></tr>\r\n<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>0x4</td><td align=\'center\' valign=\'middle\'>CLEANING_FLAG_SPELLS</td><td align=\'left\' valign=\'middle\'>Clean out obsolete Spells (See character_spells).</td></tr>\r\n</table>\r\n','Value|Enum Name|<Meaning\r\n0x2|CLEANING_FLAG_SKILLS|Clean out obsolete Skills (See character_skills).\r\n0x4|CLEANING_FLAG_SPELLS|Clean out obsolete Spells (See character_spells).');
+
+/*!40000 ALTER TABLE `dbdocssubtables` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `dbdocssubtables_localised`
@@ -1276,12 +1314,17 @@ CREATE TABLE `dbdocssubtables_localised` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `dbdocssubtables_localised` */
+LOCK TABLES `dbdocssubtables_localised` WRITE;
+/*!40000 ALTER TABLE `dbdocssubtables_localised` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dbdocssubtables_localised` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `dbdocstable`
 --
 DROP TABLE IF EXISTS `dbdocstable`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dbdocstable` (
   `tableId` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique ID of this entry',
   `languageId` int(11) NOT NULL DEFAULT '0' COMMENT 'The Language Id for the Notes (Normally 0 for English)',
@@ -1290,9 +1333,14 @@ CREATE TABLE `dbdocstable` (
   PRIMARY KEY (`tableId`,`languageId`,`tableName`),
   KEY `tableId` (`tableId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Data for the table `dbdocstable` */
+--
+-- Data for the table `dbdocstable`
+--
 
+LOCK TABLES `dbdocstable` WRITE;
+/*!40000 ALTER TABLE `dbdocstable` DISABLE KEYS */;
 insert  into `dbdocstable`(`tableId`,`languageId`,`tableName`,`tableNotes`) values (1,0,'auction','Contains all information about the currently ongoing auctions in the auction houses. It controls what items are put up for auction and who put it up, who is the highest bidder, etc.');
 insert  into `dbdocstable`(`tableId`,`languageId`,`tableName`,`tableNotes`) values (2,0,'bugreport ','This table stores all the Bugs/Suggestions submitted in-game by Players.');
 insert  into `dbdocstable`(`tableId`,`languageId`,`tableName`,`tableNotes`) values (3,0,'character_action ','This table contains all the individual button data for each character. A button is any of the places in the GUI where you can place for example a spell, item, or macro as a shortcut.');
@@ -1344,6 +1392,8 @@ insert  into `dbdocstable`(`tableId`,`languageId`,`tableName`,`tableNotes`) valu
 insert  into `dbdocstable`(`tableId`,`languageId`,`tableName`,`tableNotes`) values (49,0,'petition_sign','This table holds information on all the signatures of a petition for either a guild or an arena team.');
 insert  into `dbdocstable`(`tableId`,`languageId`,`tableName`,`tableNotes`) values (50,0,'saved_variables','Stores server required values.<br />\r\ni.e. Character Database cleanup flags and Honor Point / Rank reset date\r\n');
 insert  into `dbdocstable`(`tableId`,`languageId`,`tableName`,`tableNotes`) values (51,0,'world','Stores World Status information');
+/*!40000 ALTER TABLE `dbdocstable` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `dbdocstable_localised`
@@ -1356,6 +1406,12 @@ CREATE TABLE `dbdocstable_localised` (
   `tableNotes` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'The additional note to be added to the table',
   PRIMARY KEY (`tableId`,`languageId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `dbdocstable_localised` */
+LOCK TABLES `dbdocstable_localised` WRITE;
+/*!40000 ALTER TABLE `dbdocstable_localised` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dbdocstable_localised` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `game_event_status`
@@ -1933,10 +1989,6 @@ LOCK TABLES `petition_sign` WRITE;
 /*!40000 ALTER TABLE `petition_sign` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `pvpstats_battlegrounds`
---
-
 DROP TABLE IF EXISTS `pvpstats_battlegrounds`;
 CREATE TABLE `pvpstats_battlegrounds` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -1946,19 +1998,6 @@ CREATE TABLE `pvpstats_battlegrounds` (
   `date` DATETIME NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
-
---
--- Dumping data for table `pvpstats_battlegrounds`
---
-
-LOCK TABLES `pvpstats_battlegrounds` WRITE;
-/*!40000 ALTER TABLE `pvpstats_battlegrounds` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pvpstats_battlegrounds` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pvpstats_players`
---
 
 DROP TABLE IF EXISTS `pvpstats_players`;
 CREATE TABLE `pvpstats_players` (
@@ -1977,15 +2016,6 @@ CREATE TABLE `pvpstats_players` (
   `attr_5` MEDIUMINT UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`battleground_id`, `player_guid`)
 ) ENGINE=InnoDB;
-
---
--- Dumping data for table `pvpstats_players`
---
-
-LOCK TABLES `pvpstats_players` WRITE;
-/*!40000 ALTER TABLE `pvpstats_players` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pvpstats_players` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `saved_variables`
