@@ -10,16 +10,16 @@ BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
 
-  SET @cOldRev = 'required_21000_02_update_wp_commands'; 
+  SET @cOldRev = 'required_21000_02_Waypoint_update'; 
 
   -- Set the new revision string
-  SET @cNewRev = 'required_21000_03_Start_Up_Error_fixes';
+  SET @cNewRev = 'required_21000_02_Waypoint_update';
 
   -- Set thisRevision to the column name of db_version in the currently selected database
   SET @cThisRev := ((SELECT column_name FROM information_schema.`COLUMNS` WHERE table_name='db_version' AND table_schema=(SELECT DATABASE() AS thisDB FROM DUAL) AND column_name LIKE 'required%'));
 
   -- Set friendly Version Text
-  SET @cThisVersion = 'MaNGOSZero Database Rev 21000_02';
+  SET @cThisVersion = 'MaNGOSZero Database Rev 21000_03';
 
  
   -- Only Proceed if the old values match

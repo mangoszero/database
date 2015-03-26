@@ -13,7 +13,7 @@ BEGIN
   SET @cOldRev = 'required_21000_01_Release21_initial'; 
 
   -- Set the new revision string
-  SET @cNewRev = 'required_21000_02_update_wp_commands';
+  SET @cNewRev = 'required_21000_02_Waypoint_update';
 
   -- Set thisRevision to the column name of db_version in the currently selected database
   SET @cThisRev := ((SELECT column_name FROM information_schema.`COLUMNS` WHERE table_name='db_version' AND table_schema=(SELECT DATABASE() AS thisDB FROM DUAL) AND column_name LIKE 'required%'));
@@ -28,13 +28,28 @@ BEGIN
     START TRANSACTION;
 
     -- Apply the Version Change from Old Version to New Version
-    -- SET @query = CONCAT('ALTER TABLE db_version CHANGE COLUMN ',@cOldRev, ' ' ,@cNewRev,' bit;');
-    -- PREPARE stmt1 FROM @query;
-    -- EXECUTE stmt1;
-    -- DEALLOCATE PREPARE stmt1;
+    SET @query = CONCAT('ALTER TABLE db_version CHANGE COLUMN ',@cOldRev, ' ' ,@cNewRev,' bit;');
+    PREPARE stmt1 FROM @query;
+    EXECUTE stmt1;
+    DEALLOCATE PREPARE stmt1;
     -- The Above block is required for making table changes
-    -- version
+
+    SET @query = 'ALTER TABLE creature_movement DROP COLUMN wpguid;';
+    PREPARE stmt2 FROM @query;
+    EXECUTE stmt2;
+    DEALLOCATE PREPARE stmt2;
+
+   SET @query = 'ALTER TABLE creature_movement_template DROP COLUMN wpguid;';
+    PREPARE stmt3 FROM @query;
+    EXECUTE stmt3;
+    DEALLOCATE PREPARE stmt3;
+
+
+
+    -- Add the version update
     INSERT IGNORE INTO `db_version` SET `Version` = @cThisVersion;
+
+    -- -- -- -- Normal Update / Insert / Delete statements will go here  -- -- -- -- --
 
     -- If this is purely an incremental update, include this line
     SET @cNewRev = @cThisVersion;
@@ -48,6 +63,9 @@ BEGIN
     ('wp modify',2,'Syntax: .wp modify command [dbGuid, id] [value]\r\nwhere command must be one of: waittime  | scriptid | orientation | del | move\r\nIf no waypoint was selected, one can be chosen with dbGuid and id.\r\nThe commands have the following meaning:\r\n waittime (Set the time the npc will wait at a point (in ms))\r\n scriptid (Set the DB-Script that will be executed when the wp is reached)\r\n orientation (Set the orientation of this point) \r\n del (Remove the waypoint from the path)\r\n move (Move the wayoint to the current position of the player)'),
     ('wp show',2,'Syntax: .wp show command [dbGuid] [pathId [wpOrigin] ]\r\nwhere command can have one of the following values\r\non (to show all related wp)\r\nfirst (to see only first one)\r\nlast (to see only last one)\r\noff (to hide all related wp)\r\ninfo (to get more info about theses wp)\r\n\r\nFor using info you have to do first show on and than select a Visual-Waypoint and do the show info!\r\nwith pathId and wpOrigin you can specify which path to show (optional)');
      
+    DELETE FROM command WHERE name='npc addmove';
+    DELETE FROM command WHERE name='wp import';
+
 
     -- Update Mangos Strings
     DELETE FROM mangos_string WHERE entry BETWEEN 220 AND 252;
@@ -86,6 +104,11 @@ BEGIN
     (251,'UNUSED',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
     (252,'AIScriptName: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
     
+
+    -- Remove waypoints spawned with the old system
+    DELETE FROM creature WHERE id=1;
+
+
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     
     -- If we get here ok, commit the changes
