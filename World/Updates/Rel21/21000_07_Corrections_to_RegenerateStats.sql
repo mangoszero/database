@@ -10,7 +10,7 @@ BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
 
-  SET @cOldRev = 'required_21000_06_New_ore_nodes'; 
+  SET @cOldRev = 'required_21000_05_Script_refactoring'; 
 
   -- Set the new revision string
   SET @cNewRev = 'required_21000_07_Corrections_to_RegenerateStats';
@@ -19,7 +19,7 @@ BEGIN
   SET @cThisRev := ((SELECT column_name FROM information_schema.`COLUMNS` WHERE table_name='db_version' AND table_schema=(SELECT DATABASE() AS thisDB FROM DUAL) AND column_name LIKE 'required%'));
 
   -- Set friendly Version Text
-  SET @cThisVersion = 'MaNGOSZero Database Rev 21000_02';
+  SET @cThisVersion = 'MaNGOSZero Database Rev 21000_07';
 
  
   -- Only Proceed if the old values match
