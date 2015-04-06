@@ -15,6 +15,9 @@ BEGIN
   -- Set the new revision string
   SET @cNewRev = 'required_21000_05_Script_refactoring';
 
+  -- Set friendly Version Text
+  SET @cThisVersion = 'MaNGOSZero Database Rev 21000_05';
+
   -- Set thisRevision to the column name of db_version in the currently selected database
   SET @cThisRev := ((SELECT column_name FROM information_schema.`COLUMNS` WHERE table_name='db_version' AND table_schema=(SELECT DATABASE() AS thisDB FROM DUAL) AND column_name LIKE 'required%'));
 
@@ -30,6 +33,9 @@ BEGIN
     EXECUTE stmt1;
     DEALLOCATE PREPARE stmt1;
     -- The Above block is required for making table changes
+
+    -- version
+    INSERT IGNORE INTO `db_version` SET `Version` = @cThisVersion;
 
     -- -- -- -- Normal Update / Insert / Delete statements will go here  -- -- -- -- --
           
