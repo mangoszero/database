@@ -1,4 +1,4 @@
-ALTER TABLE db_version CHANGE COLUMN 'required_21000_05_Script_refactoring' 'required_21000_08_warden_checks' bit;
+ALTER TABLE db_version CHANGE COLUMN `required_21000_05_Script_refactoring` `required_21000_08_warden_checks` BIT;
 
 -- version
 INSERT IGNORE INTO `db_version` SET `Version` = 'MaNGOSZero Database Rev 21000_08';
@@ -11,16 +11,16 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `warden_checks`;
 CREATE TABLE `warden_checks` (
-  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `type` tinyint(3) unsigned DEFAULT NULL,
-  `data` varchar(48) DEFAULT '',
-  `str` varchar(20) DEFAULT '',
-  `address` int(10) unsigned DEFAULT NULL,
-  `length` tinyint(3) unsigned DEFAULT NULL,
-  `result` varchar(24) DEFAULT '',
-  `comment` varchar(50) DEFAULT '',
+  `id` SMALLINT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` TINYINT(3) UNSIGNED DEFAULT NULL,
+  `data` VARCHAR(48) DEFAULT '',
+  `str` VARCHAR(20) DEFAULT '',
+  `address` INT(10) UNSIGNED DEFAULT NULL,
+  `length` TINYINT(3) UNSIGNED DEFAULT NULL,
+  `result` VARCHAR(24) DEFAULT '',
+  `comment` VARCHAR(50) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=790 DEFAULT CHARSET=utf8;
+) ENGINE=MYISAM AUTO_INCREMENT=790 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of warden_checks
