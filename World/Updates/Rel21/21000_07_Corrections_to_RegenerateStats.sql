@@ -57,9 +57,6 @@ BEGIN
 	-- Creatures that should have RegerateStats set to 0 (no regen)
 	UPDATE creature_template SET RegenerateStats=0 WHERE entry IN (12423, 12427, 12428, 12429, 12430, 13020, 13148, 14484, 14485);
 
-	-- the following query has exactly the same effect:
-	-- UPDATE `creature_template` SET `RegenerateStats`=`RegenerateStats`|1 WHERE `entry` NOT IN (12423, 12427, 12428, 12429, 12430, 13020, 13148, 14484, 14485);
-
    
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     
