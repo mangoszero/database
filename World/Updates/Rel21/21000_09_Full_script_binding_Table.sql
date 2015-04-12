@@ -1,3 +1,6 @@
+-- version
+INSERT IGNORE INTO `db_version` SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 21000_09';
+
 -- the full script_binding table dump (no core startup errors due to lost scripts)
 
 DROP TABLE IF EXISTS `script_binding`;
