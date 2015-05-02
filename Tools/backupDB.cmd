@@ -1,6 +1,6 @@
 SET Username=root
 SET Password=mangos
-SET DB=mangosd
+SET DB=mangos0
 SET SERVER=localhost
 md _full_db
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% areatrigger_involvedrelation >  _full_db\areatrigger_involvedrelation.sql
@@ -25,6 +25,7 @@ mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_linkin
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_linking_template >  _full_db\creature_linking_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_loot_template >  _full_db\creature_loot_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_model_info >  _full_db\creature_model_info.sql
+REM mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_model_race >  _full_db\creature_model_race.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_movement >  _full_db\creature_movement.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_movement_template >  _full_db\creature_movement_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_onkill_reputation >  _full_db\creature_onkill_reputation.sql
@@ -86,6 +87,7 @@ mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% locales_npc_tex
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% locales_page_text >  _full_db\locales_page_text.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% locales_points_of_interest >  _full_db\locales_points_of_interest.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% locales_quest >  _full_db\locales_quest.sql
+REM mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% mail_level_reward >  _full_db\mail_level_reward.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% mail_loot_template >  _full_db\mail_loot_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% mangos_string >  _full_db\mangos_string.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% npc_gossip >  _full_db\npc_gossip.sql
@@ -113,6 +115,7 @@ mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% pool_gameobject
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% pool_gameobject_template >  _full_db\pool_gameobject_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% pool_pool >  _full_db\pool_pool.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% pool_template >  _full_db\pool_template.sql
+REM mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% prospecting_loot_template >  _full_db\prospecting_loot_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% pvpstats_battlegrounds >  _full_db\pvpstats_battlegrounds.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% pvpstats_players >  _full_db\pvpstats_players.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% quest_template >  _full_db\quest_template.sql
@@ -125,6 +128,8 @@ mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% script_waypoint
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% scripted_areatrigger >  _full_db\scripted_areatrigger.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% scripted_event >  _full_db\scripted_event.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% sd2_db_version >  _full_db\sd2_db_version.sql
+REM mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% skill_discovery_template >  _full_db\skill_discovery_template.sql
+REM mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% skill_extra_item_template >  _full_db\skill_extra_item_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% skill_fishing_base_level >  _full_db\skill_fishing_base_level.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% skinning_loot_template >  _full_db\skinning_loot_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% spell_affect >  _full_db\spell_affect.sql
@@ -140,7 +145,9 @@ mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% spell_proc_even
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% spell_proc_item_enchant >  _full_db\spell_proc_item_enchant.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% spell_script_target >  _full_db\spell_script_target.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% spell_target_position >  _full_db\spell_target_position.sql
+REM mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% skill_extra_item_template >  _full_db\skill_extra_item_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% spell_threat >  _full_db\spell_threat.sql
+REM mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% spell_template >  _full_db\spell_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% transports >  _full_db\transports.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% world_template >  _full_db\world_template.sql
 pause
