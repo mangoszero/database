@@ -10,7 +10,7 @@ BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
 
-  SET @cOldRev = 'required_21000_06_New_ore_nodes'; 
+  SET @cOldRev = 'required_21000_05_Script_refactoring'; 
 
   -- Set the new revision string
   SET @cNewRev = 'required_21000_07_Corrections_to_RegenerateStats';
