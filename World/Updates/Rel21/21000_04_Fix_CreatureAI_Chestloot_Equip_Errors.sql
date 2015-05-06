@@ -10,7 +10,7 @@ BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
 
-  SET @cOldRev = 'required_21000_03_Start_Up_Error_fixes'; 
+  SET @cOldRev = 'required_21000_02_Waypoint_update'; 
 
   -- Set the new revision string
   SET @cNewRev = 'required_21000_04_Fix_CreatureAI_Chestloot_Equip_Errors';
