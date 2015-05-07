@@ -22,8 +22,11 @@ set user=mangos
 set pass=
 set port=3306
 set wdb=mangos0
+set wdborig=mangos0
 set cdb=character0
+set cdborig=character0
 set rdb=realmd
+set rdborig=realmd
 
 rem -- Don't change past this point --
 
@@ -34,7 +37,7 @@ echo.
 echo     __  __      _  _  ___  ___  ___      
 echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/   World Loader v0.03
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/   World Loader v0.04
 echo.
 echo _____________________________________________________________
 echo.
@@ -47,7 +50,7 @@ echo                         C - Toggle Create Structure (%loadcharDB%)
 echo.
 echo        World Database : E - Toggle Create DB (%createworldDB%)    
 echo                         W - Toggle Create Structure (%loadworldDB%)     
-echo                         D - Toggle World Type (%DBType%)
+if %loadworldDB% == YES echo                         D - Toggle World Type (%DBType%)
 echo.
 echo        Realm Database : T - Toggle Create DB (%createrealmDB%)     
 echo                         R - Toggle Create Structure (%loadrealmDB%)
@@ -200,12 +203,26 @@ set /p pass=What is your MySQL password?                   [ ] :
 if %pass%. == . set pass=
 set /p port=What is your MySQL port?                    [%port%] : 
 if %port%. == . set port=3306
-set /p cdb=What is your Character database name?  [%cdb%] : 
-if %cdb%. == . set cdb=character0
-set /p wdb=What is your World database name?         [%wdb%] : 
-if %wdb%. == . set wdb=mangos0
-set /p rdb=What is your Realm database name?          [%rdb%] : 
-if %rdb%. == . set rdb=realmd
+
+set showChar=0
+if %createcharDB% == YES set showChar=1
+if %loadcharDB% == YES set showChar=1
+
+if %showChar% == 1 set /p cdb=What is your Character database name?  [%cdb%] : 
+if %cdb%. == . set cdb=%cdborig%
+
+set showWorld=0
+if %createworldDB% == YES set showWorld=1
+if %loadworldDB% == YES set showWorld=1
+if %showWorld% == 1 set /p wdb=What is your World database name?         [%wdb%] : 
+if %wdb%. == . set wdb=%wdborig%
+
+set showRealm=0
+if %createrealmDB% == YES set showRealm=1
+if %loadrealmDB% == YES set showRealm=1
+
+if %showRealm% == 1 set /p rdb=What is your Realm database name?          [%rdb%] : 
+if %rdb%. == . set rdb=%rdborig%
 
 color 02
 
@@ -269,6 +286,7 @@ goto RealmDB2:
 :RealmDB3
 echo  Loading Realm Database %rdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Realm\Setup\realmdLoadDB.sql
+%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Tools\updateRealm.sql
 goto done:
 
 

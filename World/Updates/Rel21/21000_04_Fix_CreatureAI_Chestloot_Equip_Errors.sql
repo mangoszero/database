@@ -13,7 +13,7 @@ BEGIN
   SET @cOldRev = 'required_21000_02_Waypoint_update'; 
 
   -- Set the new revision string
-  SET @cNewRev = 'required_21000_02_Waypoint_update';
+  SET @cNewRev = 'required_21000_04_Fix_CreatureAI_Chestloot_Equip_Errors';
 
   -- Set thisRevision to the column name of db_version in the currently selected database
   SET @cThisRev := ((SELECT column_name FROM information_schema.`COLUMNS` WHERE table_name='db_version' AND table_schema=(SELECT DATABASE() AS thisDB FROM DUAL) AND column_name LIKE 'required%'));
