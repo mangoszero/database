@@ -19,7 +19,7 @@ BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
 
-  SET @cOldRev = 'required_21000_13_Backports'; 
+  SET @cOldRev = 'required_21000_11_STV_Sleeping_Creatures'; 
 
   -- Set the new revision string
   SET @cNewRev = 'required_21000_14_Fix_quest_end_scripts';
