@@ -19,7 +19,7 @@ BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
 
-  SET @cOldRev = 'required_21000_11_STV_Sleeping_Creatures'; 
+  SET @cOldRev = 'required_21000_13_Backports'; 
 
   -- Set the new revision string
   SET @cNewRev = 'required_21000_14_Fix_quest_end_scripts';
@@ -28,7 +28,7 @@ BEGIN
   SET @cThisRev := ((SELECT column_name FROM information_schema.`COLUMNS` WHERE table_name='db_version' AND table_schema=(SELECT DATABASE() AS thisDB FROM DUAL) AND column_name LIKE 'required%'));
 
   -- Set friendly Version Text
-  SET @cThisVersion = 'required_21000_14_Fix_quest_end_scripts';
+  SET @cThisVersion = 'MaNGOSZero Database Rev 21000_14';
  
   -- Only Proceed if the old values match
   IF @cThisRev = @cOldRev THEN
