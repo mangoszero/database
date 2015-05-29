@@ -67,7 +67,6 @@ CREATE TABLE `dbdocslanguage` (
 -- Dumping Data for table `dbdocslanguage`
 --
 
-LOCK TABLES `dbdocslanguage` WRITE;
 /*!40000 ALTER TABLE `dbdocslanguage` DISABLE KEYS */;
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (0,'English');
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (1,'Korean');
@@ -79,7 +78,6 @@ insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (6,'Spanish (S
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (7,'Spanish (Latin America)');
 insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (8,'Russian');
 /*!40000 ALTER TABLE `dbdocslanguage` ENABLE KEYS */;
-UNLOCK TABLES;
 
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     
