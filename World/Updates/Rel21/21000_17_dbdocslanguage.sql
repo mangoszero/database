@@ -19,16 +19,16 @@ BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
 
-  SET @cOldRev = 'required_21000_15_Missing_PVPStats';
+  SET @cOldRev = 'required_21000_16_Terl_Arakor_Wetlands_gossip_text';
 
   -- Set the new revision string
-  SET @cNewRev = 'required_21000_16_Terl_Arakor_Wetlands_gossip_text';
+  SET @cNewRev = 'required_21000_17_dbdocslanguage';
 
   -- Set thisRevision to the column name of db_version in the currently selected database
   SET @cThisRev := ((SELECT column_name FROM information_schema.`COLUMNS` WHERE table_name='db_version' AND table_schema=(SELECT DATABASE() AS thisDB FROM DUAL) AND column_name LIKE 'required%'));
 
   -- Set friendly Version Text
-  SET @cThisVersion = 'MaNGOSZero Database Rev 21000_16';
+  SET @cThisVersion = 'MaNGOSZero Database Rev 21000_17';
  
   -- Only Proceed if the old values match
   IF @cThisRev = @cOldRev THEN
@@ -49,9 +49,37 @@ BEGIN
 
     -- -- -- -- Normal Update / Insert / Delete statements will go here  -- -- -- -- --
 
-    -- ============ Terl Arakor missing gossip text added ============ --
+--
+-- Table structure for table `dbdocslanguage`
+--
 
-    UPDATE npc_text SET `prob0`='1', `text1_1`='On my way down here from Dun Algaz I saw a gnoll hunting Threshadons in the middle of a lake. If you\'ve never seen a dog try to use a spear, you\'re in for a treat!', `prob1`='1', `text2_1`='I was up at Whelgar\'s a few days ago attempting to...er...liberate...some titan relics from the bones of the dead raptors, and I saw him! Sarltooth lives! Well, he\'s undead, so I guess he doesn\'t live, but he exists. Sarltooth exists!', `prob2`='1', `text3_0`='They say that the raptor matriarch lives deep within Raptor Ridge, protecting her clutch of eggs.', `prob3`='1', `text4_0`='The Dragonmaw are attempting to push out of the Angerfang Encampment and are already raiding the caravan to the east. They\'ve called in two powerful warriors who are leading the charge. If you\'re up for a challenge, you might find them at the Encampment, planning and strategizing and doing other evil Orcish things.', `prob4`='1' WHERE `ID`='16528';
+DROP TABLE IF EXISTS `dbdocslanguage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dbdocslanguage` (
+  `LanguageId` int(11) NOT NULL COMMENT 'LanguageId for this Language',
+  `LanguageName` varchar(30) NOT NULL COMMENT 'The Language Name',
+  PRIMARY KEY (`LanguageId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping Data for table `dbdocslanguage`
+--
+
+LOCK TABLES `dbdocslanguage` WRITE;
+/*!40000 ALTER TABLE `dbdocslanguage` DISABLE KEYS */;
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (0,'English');
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (1,'Korean');
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (2,'French');
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (3,'German');
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (4,'Chinese');
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (5,'Taiwanese');
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (6,'Spanish (Spain)');
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (7,'Spanish (Latin America)');
+insert  into `dbdocslanguage`(`LanguageId`,`LanguageName`) values (8,'Russian');
+/*!40000 ALTER TABLE `dbdocslanguage` ENABLE KEYS */;
+UNLOCK TABLES;
 
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     
