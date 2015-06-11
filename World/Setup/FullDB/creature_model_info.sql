@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `creature_model_info`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,24 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `creature_model_info`
---
-
-DROP TABLE IF EXISTS `creature_model_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `creature_model_info` (
-  `modelid` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `bounding_radius` float NOT NULL DEFAULT '0',
-  `combat_reach` float NOT NULL DEFAULT '0',
-  `gender` tinyint(3) unsigned NOT NULL DEFAULT '2',
-  `modelid_other_gender` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `modelid_other_team` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`modelid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Creature System (Model related info)';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `creature_model_info`
@@ -1395,7 +1370,7 @@ INSERT INTO `creature_model_info` (`modelid`, `bounding_radius`, `combat_reach`,
 (1809,0.347,1.5,0,0,0),
 (1810,0.347,1.5,0,0,0),
 (1811,0.347,1.5,1,0,0),
-(1812,0.347,1.5,1,4887,0),
+(1812,0.347,1.5,1,0,0),
 (1813,0.347,1.5,0,0,0),
 (1814,0.383,1.5,1,0,0),
 (1815,0.208,1.5,1,0,0),
@@ -2627,8 +2602,8 @@ INSERT INTO `creature_model_info` (`modelid`, `bounding_radius`, `combat_reach`,
 (3254,0.306,1.5,0,0,0),
 (3255,0,0,2,0,0),
 (3256,0,0,0,0,0),
-(3257,0.208,1.5,1,3258,0),
-(3258,0.306,1.5,0,3257,0),
+(3257,0.208,1.5,1,0,0),
+(3258,0.306,1.5,0,0,0),
 (3259,0.306,1.5,0,0,0),
 (3260,0.208,1.5,1,0,0),
 (3261,0,0,0,0,0),
@@ -4158,7 +4133,7 @@ INSERT INTO `creature_model_info` (`modelid`, `bounding_radius`, `combat_reach`,
 (4878,1,1.5,2,0,0),
 (4885,0.306,1.5,0,0,0),
 (4886,0.347,1.5,0,0,0),
-(4887,0.347,1.5,0,1812,0),
+(4887,0.347,1.5,0,0,0),
 (4888,0.208,1.5,1,0,0),
 (4889,0.306,1.5,0,1823,0),
 (4890,2,2.56,0,0,0),
@@ -4457,7 +4432,7 @@ INSERT INTO `creature_model_info` (`modelid`, `bounding_radius`, `combat_reach`,
 (5443,0.369495,1.81125,0,0,0),
 (5444,0.208,1.5,1,0,0),
 (5445,0.347,1.5,0,0,0),
-(5446,0.208,1.5,2,0,0),
+(5446,0.208,1.5,2,3167,0),
 (5447,2,2.56,0,0,0),
 (5448,0.25,0.5,2,0,0),
 (5449,0.383,1.5,0,0,0),
@@ -9944,7 +9919,7 @@ INSERT INTO `creature_model_info` (`modelid`, `bounding_radius`, `combat_reach`,
 (15549,0,0,1,0,0),
 (15550,0.389,1.5,0,0,0),
 (15551,0.2496,1.8,1,0,0),
-(15552,0.306,1.5,0,15551,0),
+(15552,0.306,1.5,0,0,0),
 (15553,0,0,0,0,0),
 (15554,3.5,4.5,2,0,0),
 (15555,2,0,2,0,0),
@@ -10597,4 +10572,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-07-10  0:28:45
+-- Dump completed on 2015-05-31 23:46:31

@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `conditions`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,23 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `conditions`
---
-
-DROP TABLE IF EXISTS `conditions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `conditions` (
-  `condition_entry` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identifier',
-  `type` tinyint(3) NOT NULL DEFAULT '0' COMMENT 'Type of the condition',
-  `value1` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'data field one for the condition',
-  `value2` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'data field two for the condition',
-  PRIMARY KEY (`condition_entry`),
-  UNIQUE KEY `unique_conditions` (`type`,`value1`,`value2`)
-) ENGINE=MyISAM AUTO_INCREMENT=1791 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Condition System';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `conditions`
@@ -175,7 +151,7 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES 
 (208,2,13370,1),
 (209,7,171,1),
 (210,8,4242,0),
-(211,8,5128,0),
+(211,9,5121,0),
 (212,8,5251,0),
 (213,8,5384,0),
 (214,8,6383,0),
@@ -615,7 +591,56 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES 
 (943,-1,942,941),
 (942,8,4921,0),
 (941,8,899,0),
-(1733,38,181054,13);
+(1733,38,181054,13),
+(218,5,69,7),
+(219,14,69,0),
+(220,-1,218,219),
+(221,14,8,0),
+(222,-2,220,221),
+(327,5,54,7),
+(328,14,13,0),
+(329,-1,327,328),
+(330,14,64,0),
+(331,-2,329,330),
+(48,9,7482,0),
+(49,9,7481,0),
+(408,9,2768,0),
+(409,-1,408,384),
+(204,37,412,100000),
+(1142,17,3959,1),
+(1143,-1,1142,1104),
+(1144,-1,1143,1105),
+(67,8,6805,0),
+(68,8,6824,0),
+(69,30,749,5),
+(70,-1,68,69),
+(71,5,749,6),
+(72,24,17333,1),
+(73,-1,70,72),
+(74,-1,68,71),
+(75,24,22754,1),
+(76,-1,74,75),
+(152,8,5513,0),
+(153,8,5507,0),
+(154,8,5504,0),
+(155,-2,152,153),
+(156,-2,154,155),
+(157,8,5524,0),
+(158,8,5521,0),
+(159,8,5517,0),
+(160,-2,157,158),
+(161,-2,159,160),
+(966,9,3382,0),
+(976,1,22799,0),
+(977,-3,976,0),
+(978,33,7,0),
+(979,-1,976,978),
+(114,2,18250,1),
+(324,8,5052,0),
+(317,36,0,60),
+(318,36,3,0),
+(340,8,5202,0),
+(341,8,5203,0);
 /*!40000 ALTER TABLE `conditions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -628,4 +653,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:29

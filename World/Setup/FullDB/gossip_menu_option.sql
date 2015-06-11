@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `gossip_menu_option`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,31 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `gossip_menu_option`
---
-
-DROP TABLE IF EXISTS `gossip_menu_option`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gossip_menu_option` (
-  `menu_id` smallint(6) unsigned NOT NULL DEFAULT '0',
-  `id` smallint(6) unsigned NOT NULL DEFAULT '0',
-  `option_icon` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `option_text` text,
-  `option_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `npc_option_npcflag` int(10) unsigned NOT NULL DEFAULT '0',
-  `action_menu_id` mediumint(8) NOT NULL DEFAULT '0',
-  `action_poi_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `action_script_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `box_coded` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `box_money` int(11) unsigned NOT NULL DEFAULT '0',
-  `box_text` text,
-  `condition_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`menu_id`,`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `gossip_menu_option`
@@ -152,7 +120,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (751,9,0,'Skinning',1,1,791,302,0,0,0,'',0),
 (922,1,0,'Seen any strange things in the desert lately?',1,1,1423,0,0,0,0,'',0),
 (922,0,1,'Yes! I want more of that fabulous Noggenfogger Elixir!',3,4,0,0,0,0,0,'',43),
-(941,0,0,'Hey Bly! Bilgewizzle wants his divino-matic rod back!',1,1,0,0,0,0,0,NULL,384),
+(941,0,0,'Hey Bly! Bilgewizzle wants his divino-matic rod back!',1,1,0,0,94101,0,0,NULL,409),
 (941,1,0,'That\'s it! I\'m tired of helping you out. It\'s time we settled things on the battlefield!',1,1,0,0,94101,0,0,NULL,384),
 (1282,0,0,'Touch the Suntara stone and call forth Lathoric the Black and his guardian, Obsidion.',1,1,-1,0,1282,0,0,'',52),
 (1286,0,0,'Let me think about it, Zamael.',1,1,-1,0,1286,0,0,'',0),
@@ -343,8 +311,8 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (3064,0,0,'Continue please...',1,1,3065,0,0,0,0,'',0),
 (3063,0,0,'You will be ok, Awbee. Your assailants have been terminated.',1,1,3064,0,0,0,0,'',0),
 (3181,0,1,'I wish to make a purchase.',3,4,0,0,0,0,0,NULL,0),
-(3185,1,1,'I would like to buy from you.',3,4,0,0,0,0,0,NULL,0),
-(3185,2,0,'GOSSIP_OPTION_QUESTGIVER',2,2,0,0,0,0,0,NULL,0),
+(3185,0,1,'I would like to buy from you.',3,128,0,0,0,0,0,NULL,222),
+(3186,0,1,'I would like to buy from you.',3,128,0,0,0,0,0,NULL,331),
 (3228,4,1,'What\'s needed for the cauldron at the Writhing Haunt?',1,1,3226,0,0,0,0,NULL,278),
 (3228,3,1,'What\'s needed for the cauldron at Dalson\'s Tears?',1,1,3225,0,0,0,0,NULL,278),
 (3228,2,1,'What\'s needed for the cauldron at Felstone Field?',1,1,3224,0,0,0,0,NULL,278),
@@ -420,7 +388,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (3356,5,0,'Profession Trainer',1,1,3355,0,0,0,0,'',0),
 (3421,0,0,'I need another Argent Dawn Commission.',1,1,-1,0,3421,0,0,'',143),
 (3421,1,1,'I would like to buy from you.',3,4,0,0,0,0,0,'',0),
-(3461,2,0,'Miranda, could you please tell me the insignia cost of items that you are offering for adventurers with other reputations?',1,1,269,0,0,0,0,'',0),
+(3461,2,0,'Miranda, could you please tell me the insignia cost of items that you are offering for adventurers with other reputations?',1,1,100,0,0,0,0,'',0),
 (3461,0,0,'I need another Argent Dawn Commission.',1,1,-1,0,3421,0,0,'',143),
 (3461,1,1,'I would like to buy from you.',3,4,0,0,0,0,0,'',0),
 (3683,0,0,'Thank you, Tirion. What of your identity?',1,1,3682,0,0,0,0,NULL,0),
@@ -836,7 +804,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (1541,0,0,'I wish to face the Defiler.',1,1,-1,0,1541,0,0,NULL,265),
 (1582,2,5,'Make this inn your home.',8,128,0,0,0,0,0,'',0),
 (1582,3,1,'I want to browse your goods.',3,4,0,0,0,0,0,'',0),
-(1662,0,0,'What are you doing out here?',1,1,0,0,0,0,0,'',0),
+(1662,0,0,'What are you doing out here?',1,1,1661,0,0,0,0,'',0),
 (1663,0,0,'Amazing! I\'ve never spoken to a ghost. I wish to learn!',1,1,1664,0,0,0,0,'',0),
 (1664,0,0,'Continue please.',1,1,1665,0,0,0,0,'',0),
 (1665,0,0,'Fascinating. Please, tell me more.',1,1,1666,0,0,0,0,'',0),
@@ -1220,7 +1188,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (5461,1,7,'How do I form a guild?',10,512,0,0,0,0,0,'',0),
 (5541,0,1,'I want to browse your goods.',3,4,0,0,0,0,0,'',0),
 (5602,0,0,'Thank you, Ironbark. We are ready for you to open the door.',1,1,-1,0,5602,0,0,'',0),
-(5667,1,0,'Why should I bother fixing the trap?  Why not just eliminate the guard the old fashioned way?',1,1,0,0,0,0,0,'',0),
+(5667,1,0,'Why should I bother fixing the trap?  Why not just eliminate the guard the old fashioned way?',1,1,5716,0,0,0,0,'',0),
 (5675,0,0,'What do you know of it?',1,1,5689,0,0,0,0,NULL,313),
 (5687,0,0,'A battle?',1,1,5702,0,0,0,0,NULL,0),
 (5688,0,0,'Continue, please.',1,1,5687,0,0,0,0,NULL,0),
@@ -1228,8 +1196,8 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (5701,0,0,'Caught unaware? How?',1,1,5704,0,0,0,0,NULL,0),
 (5702,0,0,'<Nod>',1,1,5701,0,0,0,0,NULL,0),
 (5704,0,0,'So what did Ragnaros do next?',1,1,5703,0,5704,0,0,NULL,0),
-(5708,0,0,'I\'m the new king?  What are you talking about?',1,1,5715,0,0,0,0,'',0),
-(5708,1,0,'Henchmen?  Tribute?',1,1,5740,0,0,0,0,'',0),
+(5708,0,0,'I\'m the new king?  What are you talking about?',1,1,5715,0,570801,0,0,'',977),
+(5708,1,0,'Henchmen?  Tribute?',1,1,5740,0,0,0,0,'',979),
 (5710,0,0,'Why you little...',1,1,-1,0,0,0,0,'',0),
 (5711,0,0,'Mark my words, I will catch you, imp. And when I do!',1,1,-1,0,0,0,0,'',0),
 (5712,0,0,'DIE!',1,1,-1,0,0,0,0,'',0),
@@ -1244,7 +1212,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (5728,0,0,'I know very little of the Highborne and nothing of the Shen\'dralar.',1,1,5727,0,0,0,0,'',0),
 (5729,0,0,'What happened here, spirit?',1,1,5728,0,0,0,0,'',0),
 (5739,1,0,'So, now that I\'m the king... what have you got for me?!',1,1,5744,0,0,0,0,'',0),
-(5740,0,0,'Well then... show me the tribute!',1,1,5742,0,5740,0,0,'',0),
+(5740,0,0,'Well then... show me the tribute!',1,1,5742,0,574001,0,0,'',0),
 (5744,0,0,'This sounds like a task worthy of the new king!',1,1,5746,0,0,0,0,'',0),
 (5749,0,0,'<Copy the schematic into your engineering notebook.>',1,1,-1,0,5749,0,0,NULL,248),
 (5750,0,0,'Teleport me to the Molten Core, Lothos.',1,1,-1,0,5750,0,0,'',44),
@@ -2170,7 +2138,14 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (91,0,0,'What?',1,1,92,0,0,0,0,'',0),
 (92,0,0,'This is disturbing. Please continue.',1,1,93,0,0,0,0,'',0),
 (93,0,0,'Please, tell me more.',1,1,94,0,0,0,0,'',0),
-(94,0,0,'Is there anything else?',1,1,95,0,0,0,0,'',0);
+(94,0,0,'Is there anything else?',1,1,95,0,0,0,0,'',0),
+(5743,0,0,'Mourn the great loss.',1,1,-1,0,574301,0,0,NULL,48),
+(5743,1,0,'Mourn the great loss.',1,1,-1,0,574302,0,0,NULL,49),
+(1050,1,0,'Use engineering to access hidden schematics!',1,1,-1,0,105002,0,0,NULL,1144),
+(5065,0,0,'[PH] I desire an aqual quintessence, Duke Hydraxis.',1,1,-1,0,506501,0,0,'',73),
+(5065,1,0,'I desire this eternal quintessence, Duke Hydraxis.',1,1,-1,0,506502,0,0,'',76),
+(5667,0,0,'So, I found this shackle key...',1,1,5668,0,0,0,0,'',114),
+(5668,0,0,'I guess so!',1,1,-1,0,0,0,0,'',0);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2183,4 +2158,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:35

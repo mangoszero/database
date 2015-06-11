@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `dbscripts_on_creature_movement`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,34 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `dbscripts_on_creature_movement`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_creature_movement`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_creature_movement` (
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `delay` int(10) unsigned NOT NULL DEFAULT '0',
-  `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
-  `buddy_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `search_radius` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `data_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `dataint` int(11) NOT NULL DEFAULT '0',
-  `dataint2` int(11) NOT NULL DEFAULT '0',
-  `dataint3` int(11) NOT NULL DEFAULT '0',
-  `dataint4` int(11) NOT NULL DEFAULT '0',
-  `x` float NOT NULL DEFAULT '0',
-  `y` float NOT NULL DEFAULT '0',
-  `z` float NOT NULL DEFAULT '0',
-  `o` float NOT NULL DEFAULT '0',
-  `comments` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbscripts_on_creature_movement`
@@ -275,11 +240,10 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (1490807,4,0,0,0,0,0,0,2000005770,0,0,0,0,0,0,0,''),
 (1490808,5,0,0,0,0,0,0,2000005771,0,0,0,0,0,0,0,''),
 (1490809,4,0,0,0,0,0,0,2000005775,0,0,0,0,0,0,0,''),
-(1061001,0,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Angus - active'),
-(1061001,0,21,1,0,10805,272,16,0,0,0,0,0,0,0,0,'Klemmy - active'),
+(1061001,1,29,3,2,1243,265,23,0,0,0,0,0,0,0,0,'1243 - NPCFlags removed'),
 (1061001,0,21,1,0,10611,267,16,0,0,0,0,0,0,0,0,'Shorty - active'),
-(1061001,1,21,1,0,10803,266,16,0,0,0,0,0,0,0,0,'Wheeler - active'),
-(1061001,1,21,1,0,10804,268,16,0,0,0,0,0,0,0,0,'Middlecamp - active'),
+(1061001,0,21,1,0,10805,272,16,0,0,0,0,0,0,0,0,'Klemmy - active'),
+(1061001,0,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Angus - active'),
 (1061002,0,25,1,0,10805,272,16,0,0,0,0,0,0,0,0,'RUN ON'),
 (1061002,1,16,6598,2,0,0,0,0,0,0,0,0,0,0,0,'sound'),
 (1061002,2,3,0,0,10611,267,16,0,0,0,0,-6031.59,-228.182,414.404,2,'Shorty'),
@@ -510,13 +474,13 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (137301,0,0,0,0,0,0,0,2000000013,0,0,0,0,0,0,0,''),
 (137302,0,0,0,0,0,0,0,2000000014,0,0,0,0,0,0,0,''),
 (137302,1,29,2,1,0,0,0,0,0,0,0,0,0,0,0,'1373 - npc_flag added'),
-(137302,2,20,1,0,0,0,0,0,0,0,0,0,0,0,0,'1373 - movement chenged to 0:idle'),
+(137302,2,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'1373 - movement chenged to 0:idle'),
 (141601,3,1,69,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (141601,9,1,0,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (141602,3,1,233,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (141602,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (141602,9,0,0,0,0,0,0,2000000064,0,0,0,0,0,0,0,''),
-(141603,2,20,1,0,0,0,0,0,0,0,0,0,0,0,0,'1416 - movement chenged to 0:idle'),
+(141603,2,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'1416 - movement chenged to 0:idle'),
 (141601,5,0,0,0,0,0,0,2000000034,2000000035,2000000036,0,0,0,0,0,''),
 (1485701,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
 (1485702,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,'RUN OFF'),
@@ -605,8 +569,7 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (137009,0,0,0,0,0,0,0,2000005131,0,0,0,0,0,0,0,''),
 (578201,3,28,1,0,0,0,0,0,0,0,0,0,0,0,0,'STATE_SIT'),
 (578201,58,28,0,0,0,0,0,0,0,0,0,0,0,0,0,'STATE_STAND'),
-(825601,3,1,11,0,0,0,0,0,0,0,0,0,0,0,0,''),
-(825602,1,0,0,0,0,0,0,2000005000,0,0,0,0,0,0,0,''),
+(369401,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sentinel Selarin active'),
 (351301,2,0,0,0,0,0,0,2000005134,0,0,0,0,0,0,0,''),
 (351301,11,1,1,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (351301,30,0,0,0,0,0,0,2000005135,0,0,0,0,0,0,0,''),
@@ -655,7 +618,54 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (141307,1,0,0,0,1415,30,7,2000005148,2000005149,2000005150,2000005151,0,0,0,0,'force buddy to: say text'),
 (141307,4,0,0,0,0,0,0,2000005156,2000005157,2000005158,2000005159,0,0,0,0,''),
 (141307,8,0,0,0,1414,30,7,2000005170,2000005171,2000005172,2000005173,0,0,0,0,'force buddy to: say text'),
-(4184401,0,15,9008,0,0,0,0,0,0,0,0,0,0,0,0,'Helena Atwood - Shoot');
+(4184401,0,15,9008,0,0,0,0,0,0,0,0,0,0,0,0,'Helena Atwood - Shoot'),
+(188701,2,0,0,0,0,0,0,2000005348,0,0,0,0,0,0,0,'Curator Thorius - Say 1'),
+(188702,2,1,69,0,0,0,0,0,0,0,0,0,0,0,0,'Curator Thorius - Emote 1'),
+(188702,2,0,0,0,0,0,0,2000005349,0,0,0,0,0,0,0,'Curator Thorius - Say 2'),
+(188702,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,'Curator Thorius - Emote 1 (Stop)'),
+(188703,2,0,0,0,0,0,0,2000005350,0,0,0,0,0,0,0,'Curator Thorius - Say 3'),
+(10801,0,0,0,0,0,0,0,2000000349,2000000350,2000000351,2000000352,0,0,0,0,'John Turner - Say 1, 2, 3 or 4'),
+(369401,1,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
+(369402,3,0,0,0,0,0,0,2000000260,0,0,0,0,0,0,0,''),
+(369402,7,31,3693,30,0,0,0,0,0,0,0,0,0,0,0,''),
+(369402,8,0,0,0,3693,30,7,2000000395,0,0,0,0,0,0,0,''),
+(369402,13,0,0,0,0,0,0,2000000396,0,0,0,0,0,0,0,''),
+(369402,18,0,0,0,0,0,0,2000000397,0,0,0,0,0,0,0,''),
+(369403,1,21,1,0,0,0,0,0,0,0,0,0,0,0,0,'Sentinel Selarin unactive'),
+(369403,2,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'desp'),
+(1061001,1,21,1,0,10803,266,16,0,0,0,0,0,0,0,0,'Wheeler - active'),
+(1061001,1,21,1,0,10804,268,16,0,0,0,0,0,0,0,0,'Middlecamp - active'),
+(1061003,229,29,3,1,1243,265,23,0,0,0,0,0,0,0,0,'1243 - NPCFlags added'),
+(41204,0,22,93,1,0,0,0,0,0,0,0,0,0,0,0,'stitches faction hostile'),
+(41205,0,0,6,0,468,4185,16,2000000186,0,0,0,0,0,0,0,'stitches - town crier 1st yell'),
+(41206,0,26,0,0,888,50,1,0,0,0,0,0,0,0,0,'stitches attacks night watch'),
+(41206,1,26,0,0,499,50,0,0,0,0,0,0,0,0,0,'2nd night watch attacks stitches'),
+(41202,4,0,6,0,468,4185,16,2000000187,0,0,0,0,0,0,0,'stitches - town crier 2nd yell'),
+(1554101,2,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON - Twilight Marauder Morna'),
+(1554101,1,25,1,0,15542,43202,16,0,0,0,0,0,0,0,0,'RUN ON - Twilight Marauder 1'),
+(1554101,0,25,1,0,15542,43203,16,0,0,0,0,0,0,0,0,'RUN ON - Twilight Marauder 2'),
+(1371601,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,'set walk'),
+(1371601,1,20,2,0,0,0,0,0,0,0,0,0,0,0,0,'movement changed to 2:waypoint'),
+(1371602,3,0,0,0,0,0,0,2000005649,0,0,0,0,0,0,0,'Celebras Scepter Event'),
+(1371602,5,15,21916,0,0,0,0,0,0,0,0,0,0,0,0,'cast Celebras Waiting'),
+(1371602,6,0,2,0,0,0,0,2000005650,0,0,0,0,0,0,0,'Celebras Scepter Event'),
+(1371602,7,0,0,0,0,0,0,2000005651,0,0,0,0,0,0,0,'Celebras Scepter Event'),
+(1371603,0,0,0,0,0,0,0,2000005652,0,0,0,0,0,0,0,'Celebras Scepter Event'),
+(1371603,4,0,0,0,0,0,0,2000005653,0,0,0,0,0,0,0,'Celebras Scepter Event'),
+(1371603,5,15,21950,0,0,0,0,0,0,0,0,0,0,0,0,'cast Recite Words of Celebras'),
+(1371604,0,29,3,1,0,0,0,0,0,0,0,0,0,0,0,'Add flags'),
+(1371604,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Stop WP movement'),
+(1050601,1,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'movement chenged to 0:idle'),
+(1050601,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0.1,''),
+(1050601,3,22,233,49,0,0,0,0,0,0,0,0,0,0,0,'temp faction'),
+(1220501,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
+(1220401,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'RUN ON'),
+(1435301,1,0,0,0,0,0,0,2000000166,0,0,0,0,0,0,0,'Mizzle - say new king 1'),
+(1435307,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - pause WP Movement'),
+(1435307,0,0,0,0,0,0,0,2000000167,0,0,0,0,0,0,0,'Mizzle - say new king 2'),
+(1435308,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - pause WP Movement'),
+(1435308,0,9,35834,3600,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - spawn tribute chest'),
+(1435308,10,29,1,2,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - npc_flag removed');
 /*!40000 ALTER TABLE `dbscripts_on_creature_movement` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -668,4 +678,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:33

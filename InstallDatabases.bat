@@ -37,7 +37,7 @@ echo.
 echo     __  __      _  _  ___  ___  ___      
 echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/   World Loader v0.04
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.05
 echo.
 echo _____________________________________________________________
 echo.
@@ -259,12 +259,14 @@ goto WorldDB2:
 
 :WorldDB3
 if %DBType% == POPULATED goto WorldDB4:
-echo  Loading world Database %wdb%
+echo  Preparing world Database Structure %wdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < World\Setup\mangosdLoadDB.sql
 goto CharDB:
 
 :WorldDB4
-echo  Importing World database %wdb%
+echo  Preparing world Database Structure %wdb%
+%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < World\Setup\mangosdLoadDB.sql
+echo  Importing World database information %wdb%
 for %%i in (World\Setup\FullDB\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
 goto CharDB:
 

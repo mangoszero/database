@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `item_loot_template`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,25 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `item_loot_template`
---
-
-DROP TABLE IF EXISTS `item_loot_template`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `item_loot_template` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `ChanceOrQuestChance` float NOT NULL DEFAULT '100',
-  `groupid` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `mincountOrRef` mediumint(9) NOT NULL DEFAULT '1',
-  `maxcount` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `condition_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`entry`,`item`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `item_loot_template`
@@ -1134,14 +1108,14 @@ INSERT INTO `item_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `group
 (4638,15323,0,1,1,1,0),
 (4638,15937,0,1,1,1,0),
 (5335,4957,99.6,0,1,1,0),
-(20469,20547,1.1,0,1,1,0),
-(20469,20553,1.4,0,1,1,0),
+(20469,20554,5,0,1,1,0),
+(20469,20548,5,0,1,1,0),
 (5523,5498,5,1,1,1,0),
 (5523,5503,100,0,1,1,0),
-(20469,20555,4,0,1,1,0),
 (20469,20546,5,0,1,1,0),
-(20469,20554,6,0,1,1,0),
-(20469,20548,6,0,1,1,0),
+(20469,20555,5,0,1,1,0),
+(20469,20547,5,0,1,1,0),
+(20469,20553,5,0,1,1,0),
 (5524,5498,5,1,1,1,0),
 (5524,5500,3,1,1,1,0),
 (5524,5504,100,0,1,1,0),
@@ -4142,7 +4116,14 @@ INSERT INTO `item_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `group
 (22746,22742,100,0,1,1,0),
 (22746,22743,100,0,1,1,0),
 (22746,22744,100,0,1,1,0),
-(22746,22745,100,0,1,1,0);
+(22746,22745,100,0,1,1,0),
+(21740,21724,0,1,1,1,0),
+(21740,21725,0,1,1,1,0),
+(21740,21726,0,1,1,1,0),
+(21743,21733,0,1,1,1,0),
+(21743,21734,0,1,1,1,0),
+(21743,21735,0,1,1,1,0),
+(21271,21241,100,0,5,5,0);
 /*!40000 ALTER TABLE `item_loot_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -4155,4 +4136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-07-10  0:28:49
+-- Dump completed on 2015-05-31 23:46:35

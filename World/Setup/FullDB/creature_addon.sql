@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `creature_addon`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,26 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `creature_addon`
---
-
-DROP TABLE IF EXISTS `creature_addon`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `creature_addon` (
-  `guid` int(10) unsigned NOT NULL DEFAULT '0',
-  `mount` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `bytes1` int(10) unsigned NOT NULL DEFAULT '0',
-  `b2_0_sheath` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `b2_1_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `emote` int(10) unsigned NOT NULL DEFAULT '0',
-  `moveflags` int(10) unsigned NOT NULL DEFAULT '0',
-  `auras` text,
-  PRIMARY KEY (`guid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `creature_addon`
@@ -63,7 +36,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (8,0,0,1,16,0,0,NULL),
 (9,0,0,1,16,0,0,NULL),
 (10,0,0,1,16,0,0,NULL),
-(51,0,0,0,0,0,0,NULL),
 (64,0,0,1,16,0,0,NULL),
 (65,0,0,1,16,0,0,NULL),
 (66,0,0,1,16,0,0,NULL),
@@ -80,7 +52,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (77,0,0,1,16,0,0,'18950'),
 (108,0,0,0,0,0,0,NULL),
 (117,0,0,1,16,0,0,NULL),
-(122,0,0,0,0,0,0,NULL),
 (123,0,0,1,16,0,0,NULL),
 (124,0,0,1,16,0,0,NULL),
 (125,0,0,1,16,0,0,NULL),
@@ -3419,7 +3390,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (5053,0,0,1,16,0,0,NULL),
 (5054,0,0,1,16,0,0,NULL),
 (5055,0,0,1,16,0,0,NULL),
-(5056,0,0,1,16,0,0,'8909'),
 (5057,0,0,1,16,0,0,NULL),
 (5058,0,0,1,16,0,0,NULL),
 (5059,0,0,1,16,0,0,NULL),
@@ -36644,17 +36614,11 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (42598,0,0,1,16,0,0,NULL),
 (42600,0,8,1,16,0,0,'8734'),
 (42601,0,0,1,16,69,0,NULL),
-(42602,0,0,1,16,0,0,'20798'),
 (42604,0,8,1,16,0,0,'8734'),
-(42605,0,0,1,16,0,0,'20798'),
 (42606,0,8,1,16,0,0,'8734'),
-(42607,0,0,1,16,0,0,'20798'),
 (42608,0,0,1,16,0,0,NULL),
 (42617,0,0,1,16,0,0,NULL),
 (42619,0,0,1,16,0,0,NULL),
-(42622,0,0,1,16,0,0,'20798'),
-(42624,0,0,1,16,0,0,'20798'),
-(42626,0,0,1,16,0,0,'20798'),
 (42627,0,8,1,16,0,0,'8734'),
 (42631,0,0,1,16,0,0,NULL),
 (42635,0,0,1,16,0,0,NULL),
@@ -37456,7 +37420,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (43692,0,0,1,16,0,0,NULL),
 (43693,0,0,1,16,0,0,NULL),
 (43694,0,0,1,16,0,0,NULL),
-(43695,0,0,1,16,0,0,'20798'),
 (43698,0,0,1,16,0,0,NULL),
 (43699,0,0,1,16,0,0,NULL),
 (43700,0,0,1,16,0,0,NULL),
@@ -38816,8 +38779,8 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (45251,0,0,1,16,0,0,NULL),
 (45252,0,0,1,16,0,0,NULL),
 (45253,0,0,1,16,0,0,NULL),
-(45254,0,0,1,16,0,0,NULL);
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES (45255,0,0,1,16,0,0,NULL),
+(45254,0,0,1,16,0,0,NULL),
+(45255,0,0,1,16,0,0,NULL),
 (45256,0,0,1,16,0,0,NULL),
 (45257,0,0,1,16,0,0,NULL),
 (45258,0,0,1,16,0,0,NULL),
@@ -38826,8 +38789,8 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (45261,0,0,1,16,0,0,NULL),
 (45262,0,0,1,16,0,0,NULL),
 (45263,0,0,1,16,0,0,NULL),
-(45264,0,0,1,16,0,0,NULL),
-(45265,0,0,1,16,0,0,NULL),
+(45264,0,0,1,16,0,0,NULL);
+INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES (45265,0,0,1,16,0,0,NULL),
 (45266,0,0,1,16,0,0,NULL),
 (45267,0,0,1,16,0,0,NULL),
 (45268,0,0,1,16,0,0,NULL),
@@ -44854,7 +44817,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (52146,0,0,1,16,0,0,NULL),
 (52148,0,0,1,16,0,0,NULL),
 (52149,0,0,1,16,0,0,NULL),
-(52150,0,0,1,16,0,0,NULL),
 (52151,0,0,1,16,0,0,NULL),
 (52152,0,0,1,16,0,0,'18950'),
 (52153,0,0,1,16,0,0,'18950'),
@@ -46245,7 +46207,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (81173,0,0,1,16,0,0,'12544'),
 (81174,0,0,1,16,0,0,NULL),
 (81176,0,0,1,16,0,0,'12544'),
-(81181,0,0,0,0,0,0,NULL),
 (81249,0,0,1,16,0,0,NULL),
 (81250,0,0,1,16,0,0,NULL),
 (81294,0,0,1,16,0,0,NULL),
@@ -46258,10 +46219,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (81415,0,0,1,16,0,0,NULL),
 (81423,0,0,1,16,0,0,NULL),
 (81427,0,0,1,16,0,0,NULL),
-(81440,0,0,1,16,0,0,'20798'),
-(81444,0,0,1,16,0,0,'20798'),
-(81446,0,0,1,16,0,0,'20798'),
-(81447,0,0,1,16,0,0,'20798'),
 (81448,0,0,1,16,0,0,NULL),
 (81450,0,0,1,16,0,0,NULL),
 (81452,0,0,1,16,0,0,NULL),
@@ -48415,9 +48372,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (91402,0,0,1,16,0,0,NULL),
 (91403,0,0,1,16,0,0,NULL),
 (91404,0,0,1,16,0,0,NULL),
-(91405,0,0,1,16,0,0,NULL),
-(91406,0,0,1,16,0,0,NULL),
-(91407,0,0,1,16,0,0,NULL),
 (91408,0,0,1,16,0,0,NULL),
 (91409,0,0,1,16,0,0,NULL),
 (91410,0,0,1,16,0,0,NULL),
@@ -48431,13 +48385,11 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (91418,0,0,1,16,0,0,NULL),
 (91419,0,0,1,16,0,0,NULL),
 (91420,0,0,1,16,0,0,NULL),
-(91421,0,0,1,16,0,0,NULL),
-(91422,0,7,1,16,0,0,NULL),
 (91423,0,0,1,16,0,0,NULL),
 (91424,0,0,1,16,0,0,NULL),
 (91425,0,0,1,16,0,0,NULL),
 (91426,0,0,1,16,0,0,NULL),
-(91427,0,0,1,16,0,0,NULL),
+(105971,0,0,1,16,0,0,'6523'),
 (91428,0,0,1,16,0,0,NULL),
 (91429,0,0,1,16,0,0,NULL),
 (91430,0,0,1,16,0,0,NULL),
@@ -50983,4 +50935,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-07-10  0:28:43
+-- Dump completed on 2015-05-31 23:46:30

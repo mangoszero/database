@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `gossip_menu`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,22 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `gossip_menu`
---
-
-DROP TABLE IF EXISTS `gossip_menu`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gossip_menu` (
-  `entry` smallint(6) unsigned NOT NULL DEFAULT '0',
-  `text_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `script_id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'script in `gossip_scripts` - will be executed on GossipHello',
-  `condition_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`entry`,`text_id`,`script_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `gossip_menu`
@@ -384,7 +361,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (3184,3940,0,0),
 (3184,4039,0,0),
 (3185,5844,0,0),
-(3186,3945,0,0),
+(3186,3945,0,331),
 (3201,3959,0,0),
 (3203,3961,0,0),
 (3228,3985,0,278),
@@ -1134,11 +1111,11 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (3074,3807,0,0),
 (3128,3864,0,0),
 (3129,3865,0,0),
-(3129,4113,0,0),
+(3129,4113,0,340),
 (3142,3874,0,0),
 (3161,5841,0,0),
 (3182,3938,0,0),
-(3185,3942,0,0),
+(3185,3942,0,222),
 (3186,5857,0,0),
 (3187,3954,0,0),
 (3202,3960,0,0),
@@ -1407,8 +1384,8 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (5702,6867,0,0),
 (5703,6870,0,0),
 (5704,6869,0,0),
-(5708,6876,0,0),
-(5708,6895,0,0),
+(5708,6876,0,977),
+(5708,6895,0,979),
 (5710,6878,0,0),
 (5711,6879,0,0),
 (5712,6880,0,0),
@@ -2792,7 +2769,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (2851,3545,0,0),
 (2861,3553,0,0),
 (2942,3654,0,0),
-(2944,3670,0,0),
+(2944,3670,0,324),
 (2951,3659,0,0),
 (3041,3753,0,0),
 (3067,3801,0,0),
@@ -2930,8 +2907,8 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (5303,6335,0,0),
 (5349,6354,0,0),
 (5462,6514,0,0),
-(5502,6555,0,0),
-(5502,6553,0,1009),
+(5502,6553,0,0),
+(5502,6555,0,1009),
 (5521,6574,0,0),
 (5542,6595,0,0),
 (5630,6741,0,0),
@@ -3271,7 +3248,16 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (92,8394,0,0),
 (93,8395,0,0),
 (94,8396,0,0),
-(95,8397,0,0);
+(95,8397,0,0),
+(1661,2314,0,0),
+(5065,6109,0,67),
+(5065,6158,0,68),
+(5065,8541,0,76),
+(5065,8542,0,74),
+(1641,3073,0,966),
+(5668,6875,0,0),
+(2944,3656,0,0),
+(3129,4114,0,341);
 /*!40000 ALTER TABLE `gossip_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -3284,4 +3270,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:35

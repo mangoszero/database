@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `gameobject_loot_template`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,25 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `gameobject_loot_template`
---
-
-DROP TABLE IF EXISTS `gameobject_loot_template`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gameobject_loot_template` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `ChanceOrQuestChance` float NOT NULL DEFAULT '100',
-  `groupid` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `mincountOrRef` mediumint(9) NOT NULL DEFAULT '1',
-  `maxcount` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `condition_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`entry`,`item`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `gameobject_loot_template`
@@ -6678,8 +6652,8 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (2767,5498,0.0481093,0,1,1,0),
 (2767,5503,0.538824,0,1,1,0),
 (2768,5329,100,0,1,1,0),
-(2772,5339,-80,0,1,1,0),
-(2772,5503,0.02,0,1,1,0),
+(2772,5339,100,0,1,1,0),
+(16564,18401,0.5,1,1,1,0),
 (2774,5359,-100,0,1,1,0),
 (2882,5397,100,0,1,1,0),
 (2922,5424,-100,0,1,1,0),
@@ -10586,10 +10560,10 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (9677,4602,17.7,0,1,1,0),
 (9677,4608,15.8,0,1,1,0),
 (9677,6149,1.2,0,1,1,0),
-(9677,10715,-100,0,1,1,0),
-(9677,10717,-100,0,1,1,0),
-(9677,10718,-100,0,1,1,0),
-(9677,10722,-100,0,1,1,0),
+(9677,10715,-10,0,1,1,0),
+(9677,10717,-10,0,1,1,0),
+(9677,10718,-10,0,1,1,0),
+(9677,10722,-10,0,1,1,0),
 (9799,10819,-100,0,1,1,0),
 (9819,10714,-100,0,1,1,0),
 (9819,10839,5.5,0,1,1,0),
@@ -14920,28 +14894,28 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (16523,18266,100,0,1,1,0),
 (16548,18255,51,0,5,10,0),
 (16548,18297,99,0,1,1,0),
-(16563,18401,0.8403,0,1,1,0),
-(16563,18364,1.4,0,1,1,0),
-(16563,18362,1.4,0,1,1,0),
-(16563,18361,4.3,0,1,1,0),
-(16563,18360,0.7,0,1,1,0),
-(16563,18358,4.3,0,1,1,0),
-(16563,18357,0.7,0,1,1,0),
-(16563,18356,0.7,0,1,1,0),
-(16563,5263,86.5,0,1,1,0),
-(16563,18365,83,0,1,1,0),
-(16564,18401,0.8403,0,1,1,0),
-(16564,18364,0.9,0,1,1,0),
-(16564,18363,1.8,0,1,1,0),
-(16564,18362,2,0,1,1,0),
-(16564,18361,2,0,1,1,0),
-(16564,18360,1.5,0,1,1,0),
-(16564,18359,0.6,0,1,1,0),
-(16564,18358,3,0,1,1,0),
-(16564,18357,0.9,0,1,1,0),
-(16564,18356,0.6,0,1,1,0),
-(16564,5263,87,0,1,1,0),
-(16564,18365,84,0,1,1,0),
+(16564,18365,79,1,1,1,0),
+(16564,18364,0,1,1,1,0),
+(16564,18363,0,1,1,1,0),
+(16564,18362,0,1,1,1,0),
+(16564,18361,0,1,1,1,0),
+(16564,18360,0,1,1,1,0),
+(16564,18359,0,1,1,1,0),
+(16564,18358,0,1,1,1,0),
+(16564,18357,0,1,1,1,0),
+(16564,18356,0,1,1,1,0),
+(16563,5263,100,0,1,1,0),
+(16563,18401,0.5,1,1,1,0),
+(16563,18365,79,1,1,1,0),
+(16563,18364,0,1,1,1,0),
+(16563,18363,0,1,1,1,0),
+(16563,18362,0,1,1,1,0),
+(16563,18361,0,1,1,1,0),
+(16563,18360,0,1,1,1,0),
+(16563,18359,0,1,1,1,0),
+(16563,18358,0,1,1,1,0),
+(16563,18357,0,1,1,1,0),
+(16563,18356,0,1,1,1,0),
 (16569,18336,-100,0,1,1,0),
 (16570,18412,-100,0,1,1,0),
 (2560,3830,0.02,0,1,1,0),
@@ -15596,7 +15570,8 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (180691,20871,12.5,0,1,1,0),
 (180691,20867,12.5,0,1,1,0),
 (180691,20872,12.5,0,1,1,0),
-(164884,11950,100,0,1,3,0);
+(164884,11950,100,0,1,3,0),
+(16564,5263,100,0,1,1,0);
 /*!40000 ALTER TABLE `gameobject_loot_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -15609,4 +15584,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-07-10  0:28:49
+-- Dump completed on 2015-05-31 23:46:35

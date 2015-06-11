@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `creature_involvedrelation`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,20 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `creature_involvedrelation`
---
-
-DROP TABLE IF EXISTS `creature_involvedrelation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `creature_involvedrelation` (
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
-  `quest` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
-  PRIMARY KEY (`id`,`quest`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `creature_involvedrelation`
@@ -2918,7 +2897,6 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (196,33),
 (14305,1687),
 (14305,4822),
 (14322,5528),
-(14325,1318),
 (14325,7703),
 (14338,5518),
 (14338,5519),
@@ -3036,6 +3014,8 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (196,33),
 (14724,7809),
 (14724,7811),
 (14724,7812),
+(14725,7792),
+(14725,7798),
 (14725,7799),
 (14725,7800),
 (14725,7801),
@@ -3064,16 +3044,8 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (196,33),
 (14733,7871),
 (14733,7872),
 (14733,7873),
-(14733,7886),
-(14733,7887),
-(14733,7888),
-(14733,7921),
-(14733,8268),
-(14733,8269),
-(14733,8289),
 (14733,8290),
 (14733,8291),
-(14733,8292),
 (14736,7847),
 (14736,7850),
 (14736,7861),
@@ -3105,8 +3077,6 @@ INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (196,33),
 (14781,7923),
 (14781,7924),
 (14781,7925),
-(14781,8266),
-(14781,8267),
 (14781,8293),
 (14781,8294),
 (14781,8295),
@@ -4048,4 +4018,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:30
