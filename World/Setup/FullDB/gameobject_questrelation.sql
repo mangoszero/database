@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `gameobject_questrelation`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,20 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `gameobject_questrelation`
---
-
-DROP TABLE IF EXISTS `gameobject_questrelation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gameobject_questrelation` (
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `quest` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
-  PRIMARY KEY (`id`,`quest`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `gameobject_questrelation`
@@ -219,10 +198,10 @@ INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (31,248),
 (175085,4602),
 (175085,4604),
 (175085,4606),
-(175226,4723),
-(175227,4725),
-(175230,4730),
-(175233,4731),
+(175226,4728),
+(175227,4730),
+(175230,4733),
+(175233,4723),
 (175265,4561),
 (175320,4740),
 (175524,4813),
@@ -241,12 +220,12 @@ INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (31,248),
 (176091,5085),
 (176115,5147),
 (176190,4722),
-(176191,4728),
+(176191,4732),
 (176192,5166),
 (176192,5167),
-(176196,4733),
-(176197,4732),
-(176198,4727),
+(176196,4727),
+(176197,4725),
+(176198,4731),
 (176361,5217),
 (176361,5218),
 (176361,5230),
@@ -287,6 +266,7 @@ INSERT INTO `gameobject_questrelation` (`id`, `quest`) VALUES (31,248),
 (180747,8768),
 (180748,8769),
 (180793,8803),
+(181073,9029),
 (186420,510),
 (186420,511),
 (187273,1268),
@@ -303,4 +283,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:35

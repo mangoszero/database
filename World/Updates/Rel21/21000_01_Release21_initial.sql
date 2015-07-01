@@ -10,7 +10,7 @@ BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
 
-  SET @cOldRev = 'required_20007_01_Rel20_Release_Prep'; 
+  SET @cOldRev = 'required_20007_18_Deadmines_Mr_Smite_Corrections'; 
 
   -- Set the new revision string
   SET @cNewRev = 'required_21000_01_Release21_initial';

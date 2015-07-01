@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `dbscripts_on_gossip`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,34 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `dbscripts_on_gossip`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_gossip`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_gossip` (
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `delay` int(10) unsigned NOT NULL DEFAULT '0',
-  `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
-  `buddy_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `search_radius` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `data_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `dataint` int(11) NOT NULL DEFAULT '0',
-  `dataint2` int(11) NOT NULL DEFAULT '0',
-  `dataint3` int(11) NOT NULL DEFAULT '0',
-  `dataint4` int(11) NOT NULL DEFAULT '0',
-  `x` float NOT NULL DEFAULT '0',
-  `y` float NOT NULL DEFAULT '0',
-  `z` float NOT NULL DEFAULT '0',
-  `o` float NOT NULL DEFAULT '0',
-  `comments` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbscripts_on_gossip`
@@ -211,7 +176,6 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (5602,7,20,2,0,0,0,0,0,0,0,0,0,0,0,0,'ironbark the redeemed - Start movement'),
 (5602,3,0,0,0,0,0,0,2000000195,0,0,0,0,0,0,0,'ironbark the redeemed - Say'),
 (5602,1,29,1,0,0,0,0,0,0,0,0,0,0,0,0,'ironbark the redeemed - Drop gossip flag'),
-(5740,1,9,35834,7200,0,0,0,0,0,0,0,0,0,0,0,'Mizzle the Crafty - spawn tribute'),
 (104702,0,17,14639,1,0,0,0,0,0,0,0,0,0,0,0,'Hidden schematic'),
 (6540,1,13,0,0,180502,10,1,0,0,0,0,0,0,0,0,'use Wind Stone trap'),
 (654001,0,15,24745,0,0,0,4,0,0,0,0,0,0,0,0,'lesser wind stone - random'),
@@ -280,7 +244,24 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (6918,0,15,26375,0,0,0,0,0,0,0,0,0,0,0,0,'Create Lunar Festival Invitation'),
 (6561,0,17,20456,1,0,0,0,0,0,0,0,0,0,0,0,''),
 (6559,0,17,20454,1,0,0,0,0,0,0,0,0,0,0,0,''),
-(6560,0,17,20455,1,0,0,0,0,0,0,0,0,0,0,0,'');
+(6560,0,17,20455,1,0,0,0,0,0,0,0,0,0,0,0,''),
+(574301,0,7,7482,5,0,0,0,0,0,0,0,0,0,0,0,''),
+(574301,2,3,0,0,14368,20,0,0,0,0,0,0,0,0,0.7,''),
+(574301,4,0,0,0,14368,20,0,2000000196,0,0,0,0,0,0,0,''),
+(574301,7,0,0,0,14368,20,0,2000000197,0,0,0,0,0,0,0,''),
+(574301,13,0,0,0,14368,20,0,2000000198,0,0,0,0,0,0,0,''),
+(574301,20,3,0,0,14368,20,0,0,0,0,0,0,0,0,3.07178,''),
+(574302,0,7,7481,5,0,0,0,0,0,0,0,0,0,0,0,''),
+(574302,2,3,0,0,14368,20,0,0,0,0,0,0,0,0,0.7,''),
+(574302,4,0,0,0,14368,20,0,2000000196,0,0,0,0,0,0,0,''),
+(574302,7,0,0,0,14368,20,0,2000000197,0,0,0,0,0,0,0,''),
+(574302,13,0,0,0,14368,20,0,2000000198,0,0,0,0,0,0,0,''),
+(574302,20,3,0,0,14368,20,0,0,0,0,0,0,0,0,3.07178,''),
+(105002,0,15,11595,0,0,0,4,0,0,0,0,0,0,0,0,'Cast spell Learn - Schematic: Discombobulator Ray'),
+(506501,0,15,21357,1,0,0,0,0,0,0,0,0,0,0,0,'create aqual quintessence'),
+(506502,0,15,28439,1,0,0,0,0,0,0,0,0,0,0,0,'create eternal quintessence'),
+(570801,0,15,22799,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - cast King of the Gordok'),
+(574001,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - resume WP Movement');
 /*!40000 ALTER TABLE `dbscripts_on_gossip` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -293,4 +274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:33

@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `npc_vendor`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,23 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `npc_vendor`
---
-
-DROP TABLE IF EXISTS `npc_vendor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `npc_vendor` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `maxcount` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `incrtime` int(10) unsigned NOT NULL DEFAULT '0',
-  `condition_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`entry`,`item`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Npc System';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `npc_vendor`
@@ -2346,7 +2322,7 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id
 (2480,3385,0,0,0),
 (2480,3827,2,9000,0),
 (2480,8925,0,0,0),
-(2480,14634,0,0,0),
+(2480,14634,1,1800,0),
 (2480,18256,0,0,0),
 (2481,858,0,0,0),
 (2481,929,3,7200,0),
@@ -10177,12 +10153,12 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id
 (10856,13724,0,0,0),
 (10856,13810,0,0,0),
 (10856,13813,0,0,0),
-(10856,18169,0,0,0),
-(10856,18170,0,0,0),
-(10856,18171,0,0,0),
-(10856,18172,0,0,0),
-(10856,18173,0,0,0),
-(10856,18182,0,0,0),
+(10856,18169,0,0,156),
+(10856,18170,0,0,156),
+(10856,18171,0,0,156),
+(10856,18172,0,0,156),
+(10856,18173,0,0,156),
+(10856,18182,0,0,161),
 (10856,19203,0,0,0),
 (10856,19205,0,0,0),
 (10856,19216,0,0,0),
@@ -10197,12 +10173,12 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id
 (10857,13724,0,0,0),
 (10857,13810,0,0,0),
 (10857,13813,0,0,0),
-(10857,18169,0,0,0),
-(10857,18170,0,0,0),
-(10857,18171,0,0,0),
-(10857,18172,0,0,0),
-(10857,18173,0,0,0),
-(10857,18182,0,0,0),
+(10857,18169,0,0,156),
+(10857,18170,0,0,156),
+(10857,18171,0,0,156),
+(10857,18172,0,0,156),
+(10857,18173,0,0,156),
+(10857,18182,0,0,161),
 (10857,19203,0,0,0),
 (10857,19205,0,0,0),
 (10857,19216,0,0,0),
@@ -10456,12 +10432,12 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id
 (11536,13724,0,0,0),
 (11536,13810,0,0,0),
 (11536,13813,0,0,0),
-(11536,18169,0,0,0),
-(11536,18170,0,0,0),
-(11536,18171,0,0,0),
-(11536,18172,0,0,0),
-(11536,18173,0,0,0),
-(11536,18182,0,0,0),
+(11536,18169,0,0,156),
+(11536,18170,0,0,156),
+(11536,18171,0,0,156),
+(11536,18172,0,0,156),
+(11536,18173,0,0,156),
+(11536,18182,0,0,161),
 (11536,19203,0,0,0),
 (11536,19205,0,0,0),
 (11536,19216,0,0,0),
@@ -12618,4 +12594,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:37

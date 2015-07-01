@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `creature_ai_scripts`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,41 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `creature_ai_scripts`
---
-
-DROP TABLE IF EXISTS `creature_ai_scripts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `creature_ai_scripts` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identifier',
-  `creature_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature Template Identifier',
-  `event_type` tinyint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Event Type',
-  `event_inverse_phase_mask` int(11) NOT NULL DEFAULT '0' COMMENT 'Mask which phases this event will not trigger in',
-  `event_chance` int(3) unsigned NOT NULL DEFAULT '100',
-  `event_flags` int(3) unsigned NOT NULL DEFAULT '0',
-  `event_param1` int(11) NOT NULL DEFAULT '0',
-  `event_param2` int(11) NOT NULL DEFAULT '0',
-  `event_param3` int(11) NOT NULL DEFAULT '0',
-  `event_param4` int(11) NOT NULL DEFAULT '0',
-  `action1_type` tinyint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Action Type',
-  `action1_param1` int(11) NOT NULL DEFAULT '0',
-  `action1_param2` int(11) NOT NULL DEFAULT '0',
-  `action1_param3` int(11) NOT NULL DEFAULT '0',
-  `action2_type` tinyint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Action Type',
-  `action2_param1` int(11) NOT NULL DEFAULT '0',
-  `action2_param2` int(11) NOT NULL DEFAULT '0',
-  `action2_param3` int(11) NOT NULL DEFAULT '0',
-  `action3_type` tinyint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Action Type',
-  `action3_param1` int(11) NOT NULL DEFAULT '0',
-  `action3_param2` int(11) NOT NULL DEFAULT '0',
-  `action3_param3` int(11) NOT NULL DEFAULT '0',
-  `comment` varchar(255) NOT NULL DEFAULT '' COMMENT 'Event Comment',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4334033 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='EventAI Scripts';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `creature_ai_scripts`
@@ -1819,10 +1777,10 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (176902,1769,27,0,100,1,12544,1,15000,30000,11,12544,0,1,0,0,0,0,0,0,0,0,'Moonrage Whitescalp - Cast Frost Armor on Missing Buff'),
 (177201,1772,4,0,15,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - Random Say on Aggro'),
 (177202,1772,0,0,100,1,21400,34700,10100,45300,11,3237,4,0,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - Cast Curse of Thule'),
-(177303,1773,6,0,10,0,0,0,0,0,32,1983,1,17,0,0,0,0,0,0,0,0,'Rot Hide Mystic - On Death Spawn Nightlash'),
+(177303,1773,6,0,10,0,0,0,0,0,49,1983,1,17,0,0,0,0,0,0,0,0,'Rot Hide Mystic - On Death Spawn Nightlash'),
 (177301,1773,0,0,100,1,7200,20900,35700,44500,11,3237,4,0,0,0,0,0,0,0,0,0,'Rot Hide Mystic - Cast Curse of Thule'),
 (177302,1773,14,0,100,1,150,40,24400,32900,11,332,6,1,0,0,0,0,0,0,0,0,'Rot Hide Mystic - Cast Healing Wave on Friendlies'),
-(177203,1772,6,0,10,0,0,0,0,0,32,1983,1,17,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - On Death Spawn Nightlash'),
+(177203,1772,6,0,10,0,0,0,0,0,49,1983,1,17,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - On Death Spawn Nightlash'),
 (177901,1779,0,0,100,1,5700,10100,13100,21800,11,6958,4,0,0,0,0,0,0,0,0,0,'Moonrage Glutton - Cast Blood Leech'),
 (178001,1780,11,0,100,0,0,0,0,0,11,7276,0,0,0,0,0,0,0,0,0,0,'Moss Stalker - Cast Poison Proc on Spawn'),
 (178101,1781,11,0,100,0,0,0,0,0,11,7276,0,0,0,0,0,0,0,0,0,0,'Mist Creeper - Cast Poison Proc on Spawn'),
@@ -3949,9 +3907,9 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (327310,3273,2,7,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Kolkar Stormer - Start Combat Movement and Flee at 15% HP (Phase 3)'),
 (327311,3273,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Kolkar Stormer - Set Phase to 0 on Evade'),
 (327401,3274,4,0,100,0,0,0,0,0,11,9128,0,0,0,0,0,0,0,0,0,0,'Kolkar Pack Runner - Cast Battle Shout on Aggro'),
-(327402,3274,6,0,3,0,0,0,0,0,1,-769,0,0,32,3395,1,8,0,0,0,0,'Kolkar Pack Runner - Chance Say and Summon Verog the Dervish on Death'),
-(327501,3275,4,0,100,0,0,0,0,0,11,6268,6,1,0,0,0,0,0,0,0,0,'Kolkar Marauder - Cast Charge on Aggro'),
-(327502,3275,0,0,100,1,5000,11000,7000,12000,11,11976,1,0,0,0,0,0,0,0,0,0,'Kolkar Marauder - Cast Strike'),
+(327402,3274,6,0,5,0,0,0,0,0,1,-769,0,0,49,3395,1,8,0,0,0,0,'Kolkar Pack Runner - Chance Say and Summon Verog the Dervish on Death'),
+(327504,3275,6,0,5,0,0,0,0,0,1,-769,0,0,49,3395,1,8,0,0,0,0,'Kolkar Marauder - Chance Say and Summon Verog the Dervish on Death'),
+(327503,3275,0,0,100,1,7000,15000,9000,14000,11,8014,4,33,0,0,0,0,0,0,0,0,'Kolkar Marauder - Cast Tetanus'),
 (327701,3277,4,0,75,0,0,0,0,0,1,-494,0,0,0,0,0,0,0,0,0,0,'Witchwing Roguefeather - Say on Aggro'),
 (327702,3277,0,0,100,1,4000,8000,12000,16000,11,7992,1,0,0,0,0,0,0,0,0,0,'Witchwing Roguefeather - Cast Slowing Poison'),
 (327703,3277,0,0,100,1,7000,11000,9000,12000,11,6595,1,1,0,0,0,0,0,0,0,0,'Witchwing Roguefeather - Cast Exploit Weakness'),
@@ -4002,7 +3960,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (339601,3396,2,0,70,1,60,0,7500,7500,11,6958,1,0,0,0,0,0,0,0,0,0,'Hezrul Bloodmark - Cast Blood Leech When Below 60% HP'),
 (339701,3397,0,0,100,1,35000,35000,10000,10000,11,6742,0,0,0,0,0,0,0,0,0,0,'Kolkar Bloodcharger - Cast Bloodlust'),
 (339702,3397,0,0,70,1,20000,20000,5000,5000,11,172,1,0,0,0,0,0,0,0,0,0,'Kolkar Bloodcharger - Cast Corruption'),
-(339703,3397,6,0,3,0,0,0,0,0,1,-769,0,0,32,3395,1,8,0,0,0,0,'Kolkar Bloodcharger - Chance Say and Summon Verog the Dervish on Death'),
+(339703,3397,6,0,5,0,0,0,0,0,1,-769,0,0,49,3395,1,8,0,0,0,0,'Kolkar Bloodcharger - Chance Say and Summon Verog the Dervish on Death'),
 (341101,3411,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Denni\'ka - Flee at 15% HP'),
 (341601,3416,0,0,60,0,0,0,14000,14000,11,6598,1,0,0,0,0,0,0,0,0,0,'Savannah Matriarch - Cast Savannah Cub'),
 (341701,3417,0,0,100,1,200,1400,2700,8900,11,5113,1,0,0,0,0,0,0,0,0,0,'Living Flame - Cast Living Flames'),
@@ -6806,24 +6764,24 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (569901,5699,4,0,100,0,0,0,0,0,12,7980,1,300000,0,0,0,0,0,0,0,0,'Leona Tharpe - Summon Deathguard Elite on Aggro'),
 (570001,5700,4,0,100,0,0,0,0,0,12,7980,1,300000,0,0,0,0,0,0,0,0,'Samantha Shackleton - Summon Deathguard Elite on Aggro'),
 (570101,5701,4,0,100,0,0,0,0,0,12,7980,1,300000,0,0,0,0,0,0,0,0,'Selina Pickman - Summon Deathguard Elite on Aggro'),
-(570201,5702,4,0,100,0,0,0,0,0,12,7980,1,300000,0,0,0,0,0,0,0,0,'Jezelle Pruitt - Summon Deathguard Elite on Aggro'),
-(570218,5702,1,0,100,1,210000,210000,300000,300000,1,-1322,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Event end Say Line'),
-(570217,5702,1,0,100,1,180000,180000,300000,300000,1,-1321,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Felsteed Say Line 2'),
+(570218,5702,1,0,100,1,210000,210000,300000,300000,1,-1422,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Event end Say Line'),
+(570217,5702,1,0,100,1,180000,180000,300000,300000,1,-1421,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Felsteed Say Line 2'),
 (570216,5702,1,0,100,1,178000,178000,300000,300000,32,5727,0,22,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Summon Jezelle\'s Felsteed'),
-(570215,5702,1,0,100,1,170000,170000,300000,300000,1,-1320,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Felsteed Say Line 1'),
-(570214,5702,1,0,100,1,140000,140000,300000,300000,1,-1319,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Felhunter Say Line 2'),
+(570215,5702,1,0,100,1,170000,170000,300000,300000,1,-1420,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Felsteed Say Line 1'),
+(570214,5702,1,0,100,1,140000,140000,300000,300000,1,-1419,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Felhunter Say Line 2'),
 (570213,5702,1,0,100,1,138000,138000,300000,300000,32,5726,0,22,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Summon Jezelle\'s Felhunter'),
-(570212,5702,1,0,100,1,130000,130000,300000,300000,1,-1318,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Felhunter Say Line 1'),
-(570211,5702,1,0,100,1,100000,100000,300000,300000,1,-1317,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Succubus Say Line 2'),
+(570212,5702,1,0,100,1,130000,130000,300000,300000,1,-1418,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Felhunter Say Line 1'),
+(570211,5702,1,0,100,1,100000,100000,300000,300000,1,-1417,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Succubus Say Line 2'),
 (570210,5702,1,0,100,1,98000,98000,300000,300000,32,5728,0,22,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Summon Jezelle\'s Succubus'),
-(570209,5702,1,0,100,1,90000,90000,300000,300000,1,-1316,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Succubus Say Line 1'),
-(570208,5702,1,0,100,1,60000,60000,300000,300000,1,-1315,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Voidwalker Say Line 2'),
+(570209,5702,1,0,100,1,90000,90000,300000,300000,1,-1416,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Succubus Say Line 1'),
+(570208,5702,1,0,100,1,60000,60000,300000,300000,1,-1415,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Voidwalker Say Line 2'),
 (570207,5702,1,0,100,1,58000,58000,300000,300000,32,5729,0,22,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Summon Jezelle\'s Voidwalker'),
-(570206,5702,1,0,100,1,50000,50000,300000,300000,1,-1314,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Voidwalker Say Line 1'),
-(570205,5702,1,0,100,1,20000,20000,300000,300000,1,-1313,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Imp Say Line 2'),
+(570206,5702,1,0,100,1,50000,50000,300000,300000,1,-1414,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Voidwalker Say Line 1'),
+(570205,5702,1,0,100,1,20000,20000,300000,300000,1,-1413,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Imp Say Line 2'),
 (570204,5702,1,0,100,1,18000,18000,300000,300000,32,5730,0,22,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Summon Jezelle\'s Imp'),
-(570203,5702,1,0,100,1,10000,10000,300000,300000,1,-1312,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Imp Say Line 1'),
-(570202,5702,1,0,100,1,0,0,300000,300000,1,-1311,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Event start Say Line'),
+(570203,5702,1,0,100,1,10000,10000,300000,300000,1,-1412,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Imp Say Line 1'),
+(570202,5702,1,0,100,1,0,0,300000,300000,1,-1411,0,0,0,0,0,0,0,0,0,0,'Jezelle Pruitt - OOC - Event start Say Line'),
+(570201,5702,4,0,100,0,0,0,0,0,12,7980,1,300000,0,0,0,0,0,0,0,0,'Jezelle Pruitt - Summon Deathguard Elite on Aggro'),
 (570301,5703,4,0,100,0,0,0,0,0,12,7980,1,300000,0,0,0,0,0,0,0,0,'Winifred Kerwin - Summon Deathguard Elite on Aggro'),
 (570401,5704,4,0,100,0,0,0,0,0,12,7980,1,300000,0,0,0,0,0,0,0,0,'Adrian Bartlett - Summon Deathguard Elite on Aggro'),
 (570501,5705,4,0,100,0,0,0,0,0,12,7980,1,300000,0,0,0,0,0,0,0,0,'Victor Bartholomew - Summon Deathguard Elite on Aggro'),
@@ -13446,7 +13404,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (891001,8910,0,0,100,3,5000,5000,12000,12000,11,13341,1,0,0,0,0,0,0,0,0,0,'Blazing Fireguard - Cast Fire Blast'),
 (891002,8910,0,0,100,3,2000,5000,14000,16000,11,12742,1,0,0,0,0,0,0,0,0,0,'Blazing Fireguard - Cast Immolate'),
 (891003,8910,0,0,100,3,1500,5000,18000,18000,11,15241,1,0,0,0,0,0,0,0,0,0,'Blazing Fireguard - Cast Scorch'),
-(891101,8911,0,0,100,3,5500,5500,12000,14000,11,15285,0,0,0,0,0,0,0,0,0,0,'Fireguard Destroyer - Cast Fireball Volley'),
+(891101,8911,11,0,100,0,0,0,0,0,11,3417,0,2,0,0,0,0,0,0,0,0,'Fireguard Destroyer - Thrash'),
 (891201,8912,0,0,80,3,5500,5500,10000,11000,11,14032,1,0,0,0,0,0,0,0,0,0,'Twilight\'s Hammer Torturer - Cast Shadow Word: Pain'),
 (891301,8913,0,0,70,3,1000,5500,14000,14000,11,13748,1,0,0,0,0,0,0,0,0,0,'Twilight Emissary - Cast Arcane Bolt'),
 (891302,8913,0,0,100,3,1500,5500,18000,18000,11,13745,0,0,0,0,0,0,0,0,0,0,'Twilight Emissary - Cast Arcane Explosion'),
@@ -13843,8 +13801,8 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (323402,3234,0,0,100,1,7000,16000,9000,17000,11,6266,1,0,0,0,0,0,0,0,0,0,'Lost Barrens Kodo - Cast Kodo Stomp'),
 (323802,3238,9,0,100,1,0,5,9000,15000,11,6730,1,1,0,0,0,0,0,0,0,0,'Stormhide - Cast Head Butt'),
 (325301,3253,0,0,100,1,12000,18000,25000,35000,11,7278,0,0,0,0,0,0,0,0,0,0,'Silithid Harvester - Summon Harvester Swarm'),
-(327503,3275,0,0,100,1,7000,15000,9000,14000,11,8014,4,33,0,0,0,0,0,0,0,0,'Kolkar Marauder - Cast Tetanus'),
-(327504,3275,6,0,3,0,0,0,0,0,1,-769,0,0,32,3395,1,8,0,0,0,0,'Kolkar Marauder - Chance Say and Summon Verog the Dervish on Death'),
+(327502,3275,0,0,100,1,5000,11000,7000,12000,11,11976,1,0,0,0,0,0,0,0,0,0,'Kolkar Marauder - Cast Strike'),
+(327501,3275,4,0,100,0,0,0,0,0,11,6268,6,1,0,0,0,0,0,0,0,0,'Kolkar Marauder - Cast Charge on Aggro'),
 (328201,3282,1,0,100,0,0,0,0,0,21,0,0,0,20,0,0,0,22,1,0,0,'Venture Co Mercenary - Prevent Combat Movement and Prevent Melee and Set Phase 1 on Spawn'),
 (328202,3282,9,1,100,1,5,30,2300,3900,11,6660,1,0,40,2,0,0,0,0,0,0,'Venture Co Mercenary - Cast Shoot and Set Ranged Weapon Model (Phase 1)'),
 (328203,3282,9,1,100,1,30,80,0,0,21,1,1,0,20,1,0,0,0,0,0,0,'Venture Co Mercenary - Start Combat Movement and Start Melee at 30 Yards (Phase 1)'),
@@ -13922,7 +13880,8 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (760706,7607,0,0,100,1,7000,11000,30000,35000,11,21688,0,0,0,0,0,0,0,0,0,0,'Weegli Blastfuse - Cast Goblin Land Mine'),
 (1217804,12178,6,0,75,2,0,0,0,0,1,-1147,0,0,12,13136,1,300000,0,0,0,0,'Tortured Druid - Shout and summon drone'),
 (1081711,10817,1,0,100,1,120000,120000,120000,120000,1,-1161,0,0,0,0,0,0,0,0,0,0,'Duggan Wildhammer - Random Say OOC'),
-(734901,7349,0,0,100,1,3000,10000,120000,125000,11,744,1,0,0,0,0,0,0,0,0,0,'Tome Fiend - Cast Poison');
+(734901,7349,0,0,100,1,3000,10000,120000,125000,11,744,1,0,0,0,0,0,0,0,0,0,'Tome Fiend - Cast Poison'),
+(891102,8911,0,0,100,1,8000,12000,8000,12000,11,15243,1,0,0,0,0,0,0,0,0,0,'Fireguard Destroyer - Fireball Volley');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13935,4 +13894,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-07-10  0:28:44
+-- Dump completed on 2015-05-31 23:46:30

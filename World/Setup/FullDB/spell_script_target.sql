@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `spell_script_target`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,22 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `spell_script_target`
---
-
-DROP TABLE IF EXISTS `spell_script_target`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `spell_script_target` (
-  `entry` mediumint(8) unsigned NOT NULL,
-  `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `targetEntry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `inverseEffectMask` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  UNIQUE KEY `entry_type_target` (`entry`,`type`,`targetEntry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Spell System';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `spell_script_target`
@@ -283,7 +260,7 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffec
 (18431,0,176922,0),
 (18666,1,10937,0),
 (19032,1,12202,0),
-(19250,0,177668,0),
+(19250,0,177668,1),
 (19721,2,12352,0),
 (19749,1,12352,0),
 (19773,1,12018,0),
@@ -531,7 +508,10 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffec
 (5628,1,2012,0),
 (5628,1,2013,0),
 (5628,1,2014,0),
-(18655,0,176557,0);
+(18655,0,176557,0),
+(21950,0,178560,0),
+(19250,1,12247,4),
+(5249,1,14323,0);
 /*!40000 ALTER TABLE `spell_script_target` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -544,4 +524,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:40

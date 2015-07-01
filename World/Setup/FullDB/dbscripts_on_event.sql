@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `dbscripts_on_event`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,34 +21,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dbscripts_on_event`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_event`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_event` (
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `delay` int(10) unsigned NOT NULL DEFAULT '0',
-  `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
-  `buddy_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `search_radius` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `data_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `dataint` int(11) NOT NULL DEFAULT '0',
-  `dataint2` int(11) NOT NULL DEFAULT '0',
-  `dataint3` int(11) NOT NULL DEFAULT '0',
-  `dataint4` int(11) NOT NULL DEFAULT '0',
-  `x` float NOT NULL DEFAULT '0',
-  `y` float NOT NULL DEFAULT '0',
-  `z` float NOT NULL DEFAULT '0',
-  `o` float NOT NULL DEFAULT '0',
-  `comments` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `dbscripts_on_event`
 --
 
@@ -63,7 +28,7 @@ LOCK TABLES `dbscripts_on_event` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_event` DISABLE KEYS */;
 INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (259,2,10,1770,300000,0,0,0,0,0,0,0,881.63,1230.37,47.83,3.1,''),
 (264,3,10,2044,300000,0,0,0,0,0,0,0,-9548.42,-1440.2,62.29,2.19,'Summon Forlorn Spirit'),
-(364,5,10,2624,900000,0,0,0,0,0,0,0,-12179.4,644.22,-67.1,5.18,''),
+(364,0,10,2624,90000,0,0,0,0,0,0,0,-12179.4,644.22,-67.1,5.18,'spawn Gazban'),
 (415,3,10,2569,300000,0,0,0,0,0,0,0,-1777.64,-1513.58,75.51,5.28,''),
 (415,3,10,2570,300000,0,0,0,0,0,0,0,-1778.46,-1510.57,75.17,5.22,''),
 (416,3,10,2569,300000,0,0,0,0,0,0,0,-1797.32,-1504.7,99.39,5.14,''),
@@ -439,7 +404,13 @@ INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalon
 (664,10,1,1,0,3946,10,0,0,0,0,0,0,0,0,0,''),
 (664,15,1,18,0,3946,10,0,0,0,0,0,0,0,0,0,'cries'),
 (452,0,3,0,0,2937,100,0,0,0,0,0,-2360.55,-4102.38,6.93,2.25,''),
-(452,0,20,0,0,2937,100,0,0,0,0,0,0,0,0,0,'');
+(452,0,20,0,0,2937,100,0,0,0,0,0,0,0,0,0,''),
+(420,3,0,0,0,2755,50,3,2000000234,0,0,0,0,0,0,0,''),
+(420,6,0,0,0,2755,50,3,2000000235,0,0,0,0,0,0,0,''),
+(420,11,0,0,0,2755,50,3,2000000236,0,0,0,0,0,0,0,''),
+(420,12,26,0,0,2755,50,3,0,0,0,0,0,0,0,0,''),
+(364,1,22,14,0,2624,400,0,0,0,0,0,0,0,0,0,'change faction to hostile'),
+(364,2,26,0,0,2624,400,3,0,0,0,0,0,0,0,0,'attacks player');
 /*!40000 ALTER TABLE `dbscripts_on_event` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -452,4 +423,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:33

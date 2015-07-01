@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `creature_equip_template_raw`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,28 +21,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `creature_equip_template_raw`
---
-
-DROP TABLE IF EXISTS `creature_equip_template_raw`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `creature_equip_template_raw` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Unique entry',
-  `equipmodel1` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `equipmodel2` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `equipmodel3` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `equipinfo1` int(10) unsigned NOT NULL DEFAULT '0',
-  `equipinfo2` int(10) unsigned NOT NULL DEFAULT '0',
-  `equipinfo3` int(10) unsigned NOT NULL DEFAULT '0',
-  `equipslot1` int(11) NOT NULL DEFAULT '0',
-  `equipslot2` int(11) NOT NULL DEFAULT '0',
-  `equipslot3` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Creature System (Equipment)';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `creature_equip_template_raw`
 --
 
@@ -61,10 +32,6 @@ INSERT INTO `creature_equip_template_raw` (`entry`, `equipmodel1`, `equipmodel2`
 (11,0,0,6593,0,0,436273922,0,0,0),
 (20,0,0,20726,0,0,436273922,0,0,0),
 (30,0,0,25260,0,0,436273922,0,0,0),
-(32,0,0,31210,0,0,33489666,0,0,26),
-(33,0,0,35450,0,0,50266626,0,0,15),
-(34,0,0,35456,0,0,33493506,0,0,26),
-(35,0,0,36600,0,0,50266626,0,0,15),
 (36,0,0,38576,0,0,33492994,0,0,25),
 (37,0,0,43383,0,0,50266626,0,0,15),
 (38,0,0,43386,0,0,50266626,0,0,15),
@@ -425,7 +392,6 @@ INSERT INTO `creature_equip_template_raw` (`entry`, `equipmodel1`, `equipmodel2`
 (917,19549,22635,0,218169346,234948100,0,3,4,0),
 (919,19549,24293,0,218169346,386007044,0,3,0,0),
 (921,19550,0,0,218169346,0,0,3,0,0),
-(923,19550,6235,0,218169346,251789826,0,3,0,0),
 (927,19550,19550,0,218169346,218169346,0,3,3,0),
 (928,19550,21553,0,33488898,234948100,0,781,4,0),
 (930,19550,22637,0,218169346,234948100,0,3,4,0),
@@ -1009,7 +975,6 @@ INSERT INTO `creature_equip_template_raw` (`entry`, `equipmodel1`, `equipmodel2`
 (2161,45393,0,0,251789826,0,0,1,0,0),
 (2162,40060,40060,0,218169346,218169346,0,781,781,0),
 (2163,43539,45653,0,33488898,234948100,0,781,4,0),
-(2164,28349,0,0,33490178,0,0,781,0,0),
 (2165,39958,0,0,33490178,0,0,781,0,0),
 (2166,47198,0,23723,4278190082,0,33492994,781,0,25),
 (2167,0,5122,0,0,33488898,0,0,13,0),
@@ -1067,8 +1032,7 @@ INSERT INTO `creature_equip_template_raw` (`entry`, `equipmodel1`, `equipmodel2`
 (17921,20732,0,20732,33489666,0,33489666,26,0,26),
 (23682,50495,0,0,33490690,0,0,781,0,0),
 (1003,23539,0,0,285346306,0,0,2,0,0),
-(1238,8499,0,0,285280258,0,0,1,0,0),
-(2413,7480,0,8927,33490434,0,419500034,529,0,25);
+(1238,8499,0,0,285280258,0,0,1,0,0);
 /*!40000 ALTER TABLE `creature_equip_template_raw` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1081,4 +1045,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:30

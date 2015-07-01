@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `script_texts`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,33 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `script_texts`
---
-
-DROP TABLE IF EXISTS `script_texts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `script_texts` (
-  `entry` mediumint(8) NOT NULL,
-  `content_default` text NOT NULL,
-  `content_loc1` text,
-  `content_loc2` text,
-  `content_loc3` text,
-  `content_loc4` text,
-  `content_loc5` text,
-  `content_loc6` text,
-  `content_loc7` text,
-  `content_loc8` text,
-  `sound` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `language` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `emote` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `comment` text,
-  PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Texts';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `script_texts`
@@ -1375,7 +1341,18 @@ INSERT INTO `script_texts` (`entry`, `content_default`, `content_loc1`, `content
 (-1209003,'Come to me, my children!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,8,0,'zumrah SAY_SUMMON'),
 (-1000956,'We made it! Quae, we made it!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'kinelory SAY_FINISH'),
 (-1000957,'%s hands her pack to Quae.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,'kinelory EMOTE_HAND_PACK'),
-(-1000962,'Thanks you for help.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'stinky ignatz SAY_STINKY_END');
+(-1000962,'Thanks you for help.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'stinky ignatz SAY_STINKY_END'),
+(-1001148,'I am ready, $N. Let\'s find my equipment and get out of here. I think I know where it is.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,'captured arko\'narin SAY_ESCORT_START'),
+(-1001149,'Oh my! Look at this... all these candles. I\'m sure they\'re used for some terrible ritual or dark summoning. We best make haste.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,18,'captured arko\'narin SAY_FIRST_STOP'),
+(-1001150,'There! Over there!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,25,'captured arko\'narin SAY_SECOND_STOP'),
+(-1001151,'You will not stop me from escaping here, $N!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'captured arko\'narin SAY_AGGRO'),
+(-1001152,'All I need now is a golden lasso.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'captured arko\'narin SAY_EQUIPMENT'),
+(-1001153,'DIE DEMON DOGS!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'captured arko\'narin SAY_ESCAPE'),
+(-1001154,'Ah! Fresh air at last! I never thought I\'d see the day.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,4,'captured arko\'narin SAY_FRESH_AIR'),
+(-1001155,'BETRAYER!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'spirit of trey lightforge SAY_BETRAYER'),
+(-1001156,'What was that?! Trey? TREY?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,22,'captured arko\'narin SAY_TREY'),
+(-1001157,'You kept me in the cell for too long, monster!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'captured arko\'narin SAY_ATTACK_TREY'),
+(-1001158,'No! My friend... what\'s happened? This is all my fault...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,18,'captured arko\'narin SAY_ESCORT_COMPLETE');
 /*!40000 ALTER TABLE `script_texts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1388,4 +1365,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:39

@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `pool_creature`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,23 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `pool_creature`
---
-
-DROP TABLE IF EXISTS `pool_creature`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pool_creature` (
-  `guid` int(10) unsigned NOT NULL DEFAULT '0',
-  `pool_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `chance` float unsigned NOT NULL DEFAULT '0',
-  `description` varchar(255) NOT NULL,
-  PRIMARY KEY (`guid`),
-  KEY `pool_idx` (`pool_entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `pool_creature`
@@ -292,7 +268,20 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 (154618,1198,0.75,'Whip Lasher, The Shrine of Eldretharr, Group 3'),
 (154619,1198,0.75,'Whip Lasher, The Shrine of Eldretharr, Group 3'),
 (47642,25467,20,'BRD - Molten War Golem / Panzor the Invincible'),
-(47777,25467,80,'BRD - Molten War Golem / Panzor the Invincible');
+(47777,25467,80,'BRD - Molten War Golem / Panzor the Invincible'),
+(2349,25468,25,'Stratholme - Hearthsinger Forresten'),
+(2350,25468,25,'Stratholme - Hearthsinger Forresten'),
+(2351,25468,25,'Stratholme - Hearthsinger Forresten'),
+(2352,25468,25,'Stratholme - Hearthsinger Forresten'),
+(155621,1208,10,'Sandarr Dunereaver (Zul\'Farrak)'),
+(155622,1208,0,'Sandarr Dunereaver placeholder (Zul\'Farrak)'),
+(155623,1209,10,'Dustwraith (Zul\'Farrak)'),
+(155624,1209,0,'Dustwraith placeholder (Zul\'Farrak)'),
+(155625,1210,30,'Zerillis (Zul\'Farrak)'),
+(44170,1210,0,'Zerillis placeholder (Zul\'Farrak)'),
+(160600,1211,30,'Meshlok the Harvester (Maraudon)'),
+(160603,1211,0,'Meshlok the Harvester placeholder (Maraudon)'),
+(54652,1211,0,'Meshlok the Harvester placeholder (Maraudon)');
 /*!40000 ALTER TABLE `pool_creature` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -305,4 +294,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:38

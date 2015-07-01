@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `db_script_string`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,33 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `db_script_string`
---
-
-DROP TABLE IF EXISTS `db_script_string`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `db_script_string` (
-  `entry` int(11) unsigned NOT NULL DEFAULT '0',
-  `content_default` text NOT NULL,
-  `content_loc1` text,
-  `content_loc2` text,
-  `content_loc3` text,
-  `content_loc4` text,
-  `content_loc5` text,
-  `content_loc6` text,
-  `content_loc7` text,
-  `content_loc8` text,
-  `sound` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `language` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `emote` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `comment` text,
-  PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `db_script_string`
@@ -85,7 +51,7 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000032,'Gird yourself $N, for the demon in this orb is a fel beast.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000041,'Wait, $N!!! It looks like we\'re going to need some help here...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000042,'Until we meet again, brave one.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000043,'begins a spell of summoning...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000000043,'%s begins a spell of summoning...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000000044,'It is done...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000045,'There\'s nothing like some scalding mornbrew on a chilly Dun Morogh day to get things started right!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000046,'Oooooo hot hot hot! If that won\'t put spring IN your step,I don\'t know what will!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -161,8 +127,8 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000158,'Time to get back to the shop...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000159,'I\'m back!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000160,'Ma reth bromo zoln kilagrin dra ma zoern tu ko fraht ka tadrom Ma krin drinor zaln dirnor Ma krin kan aasrugel korsul',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000161,'ROARRRRR!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,NULL),
-(2000000162,'DARKSHIRE... I HUNGER!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,NULL),
+(2000000161,'ROARRRRR!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,0,0,NULL),
+(2000000162,'DARKSHIRE... I HUNGER!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,0,0,NULL),
 (2000000176,'Ah, thank you kindly. I will leave you to the library while I tend to this small matter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
 (2000000174,'Thank you. The Light be with you both.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
 (2000000172,'Good day to you both. I would speak to Lord Lescovar.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
@@ -190,7 +156,7 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000241,'Feegly the Exiled begins to rub the Tear of the Moons.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000000318,'Here\'s a beacon, $N. Keep it to yourself, if you\'re gonna find mutilated things that we need.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000808,'I thank you. $n. And my brother thanks you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005000,'Poor Dorius. If I ever get my hands on those Dark Irons, so help me...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005348,'%s dusts the base of the artifact.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,16,'Curator Thorius - Say 1'),
 (2000005001,'Opus wants some Cuergo\'s Gold... with worm.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005002,'Bijou lost! SQUAWK! *cough',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005003,'Kibler is being investigated by G.E.T.A.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -350,7 +316,7 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000005310,'It\'s a mystery of the past indeed! But a key to our future!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005311,'My, that Black Claw stout packs quite a punch!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005312,'I feel... dizzy. It\'s so hot... in... here...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005313,'Into the box me pretties! Thas it. One by one ye go.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005646,'You wish to learn of the stone? Follow me.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005314,'What does allergic mean anyway? And what does it have to do with either of my kitties?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005315,'I can\'t believe dad won\'t let me keep your sister.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005316,'Don\'t worry, I\'ll find a good home for ya.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -470,9 +436,8 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000034,'Let me help you with those.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000035,'Drink this, it will help.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000036,'You\'re going to be just fine.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000186,'Hmmm... Where is my fishing hook? Oh, there it is.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000187,'Let\'s see if the fish are biting.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000188,'Hmmm... I think I need better bait. I\'ll check my father\'s wagon.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000187,'The abomination has overrun the Night Watch camp! Quickly, we must intercept it before it reaches town!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,7,0,NULL),
+(2000000186,'An abomination of the undead is approaching!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,7,0,NULL),
 (2000000189,'Quillboar scraps! These should do the trick. Fish love Quillboar.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000190,'Caught one! I\'ll see if any of the guards are hungry. Come on Fang!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000191,'I caught a fish if you are hungry...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -490,7 +455,53 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000005164,'At least we wouldn\'t be around to have to clean it up.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
 (2000005165,'Wow, all of this for a love potion. Hope he\'s worth it.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
 (2000005166,'Only if we didn\'t follow the proper initialization procedures.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
-(2000005173,'If we use the appropriate sequence we should be ok. Will just take some serious studying before we start.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL);
+(2000005173,'If we use the appropriate sequence we should be ok. Will just take some serious studying before we start.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000005349,'%s meticulously examines the large vase.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,'Curator Thorius - Say 2'),
+(2000005350,'Poor Dorius. If I ever get my hands on those Dark Irons, so help me...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2929,0,0,36,'Curator Thorius - Say 3'),
+(2000000349,'Give to the charities who seek to help the victims of these hard times! Please.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'John Turner - Say 1'),
+(2000000350,'Don\'t forget the orphans of Stormwind!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'John Turner - Say 2'),
+(2000000351,'Give of your hearts and your purses! Give to the children of Stormwind who have lost their parents.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'John Turner - Say 3'),
+(2000000352,'Help the children of Stormwind... victims of the war and plague!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'John Turner - Say 4'),
+(2000000375,'Come,  $N. The lake is around the bend.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000376,'Stand near me,  $N. I will protect you should anything go wrong.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000377,'Malfurion!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000378,'Remulos,  old friend. It is good to see you once more. I knew the message would find its way to you - one way or another.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000379,'It was shrouded in nightmares,  Malfurion. What is happening in the Dream? What could cause such atrocities?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000380,'I fear for the worst,  old friend. Within the Dream we fight a new foe,  born of an ancient evil. Ysera\'s noble brood has fallen victim to the old whisperings. It seems as if the Nightmare has broken through the realm to find a new host on Azeroth.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000381,'I sensed as much,  Malfurion. Dark days loom ahead.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000382,'Aye Remulos,  prepare the mortal races.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000383,'You have been gone too long,  Malfurion. Peace between the Children of Azeroth has become tenuous at best. What of my father? Of your brother? Have you any news?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000384,'Cenarius fights at my side. Illidan sits atop his throne in Outland - brooding. I\'m afraid that the loss to Arthas proved to be his breaking point. Madness has embraced him,  Remulos. He replays the events in his mind a thousand times per day,  but in his mind,  he is the victor and Arthas is utterly defeated. He is too far gone,  old friend. I fear that the time may soon come that our bond is tested and it will not be as it was at the Well in Zin-Azshari. ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000385,'Remulos,  I am being drawn back... Tyrande... send her my love... Tell her I am safe... Tell her... Tell her I will return... Farewell...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000386,'Farewell,  old friend... Farewell...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000387,'Let us return to the grove,  mortal.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000260,'Terenthis, Raene sent me to find you. The Sentinels are in need of help in Ashenvale.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000395,'Hello, Selarin. I\'m afraid I cannot help you at the moment, but perhaps some of the adventurers here in Auberdine can...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000396,'Thank you, Terenthis. I shall remain here for as long as I can.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000397,'Hopefully I can send a worthy few to help Ashenvale and the Sentinels.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000196,'I very much doubt that he will have anything to say, stranger...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000197,'I personally didn\'t mind him. It was the Prince who took exception to a high elf in his domain. Alas, I am not one to question the Prince. In his defense, he did not incinerate Master Winthalus immediately.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000198,'We most definitely do not need any more attention drawn to us, stranger. Return to those that sent you in search of the lost master and tell them that nothing could be found. When this is done - and I will know when it is so - return and I shall reveal the secrets of the deceased.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000074,'Into the box me pretties! Thas it. One by one, ye go.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000188,'The beast is slain! All is well in Darkshire.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,7,0,NULL),
+(2000000234,'What? $N, you served me well, but...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000235,'Why have you summoned me so soon? I haven\'t yet reached my full power!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000236,'No matter. You were a fool to help me, and now you will pay!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005647,'For so long I have drifted in my cursed form. You have freed me... Your hard work shall be repaid.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005648,'Please do as I instruct you, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005649,'Read this tome I have placed before you, and speak the words aloud.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005650,'%s begins to channel his energy, focusing on the stone.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000005651,'Together, the two parts shall become one, once again.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005652,'Shal myrinan ishnu daldorah...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005653,'My scepter will once again become whole!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000466,'Stand Prepared! The naga won\'t wait long to press their advantage once they know we\'re alive.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,5,''),
+(2000000166,'OH NOES! Da king is dead! Uh... hail to da new king! Yeah!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'mizzle the crafty - new king 1'),
+(2000000167,'Yar, he\'s dead all right. That makes you da new king... well, all of you! Gordok is yours now, boss! You should talk to me so you can learn everything there is about being da king! I was... is his assistant! Yeah, that\'s why I\'m called da crafty one!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'mizzle the crafty - new king 2'),
+(2000005776,'$N, I\'ll make sure all my friends in the Cartel know that you\'ve saved my life today. Here - I\'m going to need to be able to travel light, so please help yourself to my cache of tailoring and leatherworking supplies! Thanks again - see ya!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,4,NULL),
+(2000005800,'%s enters a trance...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,1,NULL),
+(2000005801,'%s I have created the totem. You, %n, must cleanse the well.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,1,NULL),
+(2000005802,'Zarlman Two-Moons begins chanting as he mixes the well stones and ambercom before the Tribal Fire.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000005803,'The Water of the Seers is ready for your consumption, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,0,NULL);
 /*!40000 ALTER TABLE `db_script_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -503,4 +514,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:32

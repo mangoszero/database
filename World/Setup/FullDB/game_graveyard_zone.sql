@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `game_graveyard_zone`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,21 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `game_graveyard_zone`
---
-
-DROP TABLE IF EXISTS `game_graveyard_zone`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `game_graveyard_zone` (
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `ghost_zone` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `faction` smallint(5) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`,`ghost_zone`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Trigger System';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `game_graveyard_zone`
@@ -70,7 +48,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES (3,10,4
 (39,491,0),
 (39,722,0),
 (70,1377,0),
-(89,215,67),
+(89,215,0),
 (90,141,469),
 (90,1657,469),
 (91,141,469),
@@ -111,15 +89,14 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES (3,10,4
 (209,1176,0),
 (209,1941,0),
 (229,17,0),
-(249,17,67),
-(249,215,469),
-(229,1638,469),
+(249,17,0),
+(89,1638,469),
 (289,85,67),
 (309,357,469),
 (309,1477,0),
 (310,357,67),
 (329,400,0),
-(349,47,469),
+(349,47,0),
 (369,16,0),
 (370,4,0),
 (370,8,469),
@@ -132,14 +109,13 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES (3,10,4
 (449,361,0),
 (450,490,0),
 (469,141,67),
-(469,148,469),
+(469,148,0),
 (469,1657,67),
 (489,11,0),
 (509,28,469),
 (510,139,0),
 (511,618,0),
 (512,17,469),
-(512,148,67),
 (512,331,0),
 (512,719,0),
 (32,1637,469),
@@ -178,7 +154,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES (3,10,4
 (770,3277,67),
 (771,3277,469),
 (772,3277,67),
-(789,47,67),
+(789,47,0),
 (809,3277,0),
 (810,3277,0),
 (829,28,0),
@@ -217,10 +193,10 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES (3,10,4
 (913,3428,0),
 (927,139,0),
 (913,3429,0),
-(852,1537,469),
-(853,1497,67),
 (101,1537,67),
-(429,1497,469);
+(853,1497,469),
+(102,1537,469),
+(96,1497,67);
 /*!40000 ALTER TABLE `game_graveyard_zone` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -233,4 +209,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:34

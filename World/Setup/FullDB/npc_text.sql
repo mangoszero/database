@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `npc_text`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,99 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `npc_text`
---
-
-DROP TABLE IF EXISTS `npc_text`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `npc_text` (
-  `ID` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `text0_0` longtext,
-  `text0_1` longtext,
-  `lang0` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `prob0` float NOT NULL DEFAULT '0',
-  `em0_0_delay` smallint(5) DEFAULT NULL,
-  `em0_0` smallint(5) DEFAULT NULL,
-  `em0_1_delay` smallint(5) DEFAULT NULL,
-  `em0_1` smallint(5) DEFAULT NULL,
-  `em0_2_delay` smallint(5) DEFAULT NULL,
-  `em0_2` smallint(5) DEFAULT NULL,
-  `text1_0` longtext,
-  `text1_1` longtext,
-  `lang1` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `prob1` float NOT NULL DEFAULT '0',
-  `em1_0_delay` smallint(5) DEFAULT NULL,
-  `em1_0` smallint(5) DEFAULT NULL,
-  `em1_1_delay` smallint(5) DEFAULT NULL,
-  `em1_1` smallint(5) DEFAULT NULL,
-  `em1_2_delay` smallint(5) DEFAULT NULL,
-  `em1_2` smallint(5) DEFAULT NULL,
-  `text2_0` longtext,
-  `text2_1` longtext,
-  `lang2` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `prob2` float NOT NULL DEFAULT '0',
-  `em2_0_delay` smallint(5) DEFAULT NULL,
-  `em2_0` smallint(5) DEFAULT NULL,
-  `em2_1_delay` smallint(5) DEFAULT NULL,
-  `em2_1` smallint(5) DEFAULT NULL,
-  `em2_2_delay` smallint(5) DEFAULT NULL,
-  `em2_2` smallint(5) DEFAULT NULL,
-  `text3_0` longtext,
-  `text3_1` longtext,
-  `lang3` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `prob3` float NOT NULL DEFAULT '0',
-  `em3_0_delay` smallint(5) DEFAULT NULL,
-  `em3_0` smallint(5) DEFAULT NULL,
-  `em3_1_delay` smallint(5) DEFAULT NULL,
-  `em3_1` smallint(5) DEFAULT NULL,
-  `em3_2_delay` smallint(5) DEFAULT NULL,
-  `em3_2` smallint(5) DEFAULT NULL,
-  `text4_0` longtext,
-  `text4_1` longtext,
-  `lang4` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `prob4` float NOT NULL DEFAULT '0',
-  `em4_0_delay` smallint(5) DEFAULT NULL,
-  `em4_0` smallint(5) DEFAULT NULL,
-  `em4_1_delay` smallint(5) DEFAULT NULL,
-  `em4_1` smallint(5) DEFAULT NULL,
-  `em4_2_delay` smallint(5) DEFAULT NULL,
-  `em4_2` smallint(5) DEFAULT NULL,
-  `text5_0` longtext,
-  `text5_1` longtext,
-  `lang5` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `prob5` float NOT NULL DEFAULT '0',
-  `em5_0_delay` smallint(5) DEFAULT NULL,
-  `em5_0` smallint(5) DEFAULT NULL,
-  `em5_1_delay` smallint(5) DEFAULT NULL,
-  `em5_1` smallint(5) DEFAULT NULL,
-  `em5_2_delay` smallint(5) DEFAULT NULL,
-  `em5_2` smallint(5) DEFAULT NULL,
-  `text6_0` longtext,
-  `text6_1` longtext,
-  `lang6` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `prob6` float NOT NULL DEFAULT '0',
-  `em6_0_delay` smallint(5) DEFAULT NULL,
-  `em6_0` smallint(5) DEFAULT NULL,
-  `em6_1_delay` smallint(5) DEFAULT NULL,
-  `em6_1` smallint(5) DEFAULT NULL,
-  `em6_2_delay` smallint(5) DEFAULT NULL,
-  `em6_2` smallint(5) DEFAULT NULL,
-  `text7_0` longtext,
-  `text7_1` longtext,
-  `lang7` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `prob7` float NOT NULL DEFAULT '0',
-  `em7_0_delay` smallint(5) DEFAULT NULL,
-  `em7_0` smallint(5) DEFAULT NULL,
-  `em7_1_delay` smallint(5) DEFAULT NULL,
-  `em7_1` smallint(5) DEFAULT NULL,
-  `em7_2_delay` smallint(5) DEFAULT NULL,
-  `em7_2` smallint(5) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `npc_text`
@@ -1937,7 +1837,7 @@ INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0_del
 (6223,'I cannot store any more supplies.  I have all I can handle!',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (6233,'Here to learn how to wield a new weapon, or just to waste my time?',NULL,1,100,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (6235,'Tell me what weapon you want to learn or go away.',NULL,1,100,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
-(6250,'A wondrous Winter Veil to you... uh... little $G boy : girl;.  Good children get special, um, discounts at any local Smokywood Pastures vendor.  Yum.',NULL,0,7,0,0,0,0,0,0,'I have a pretty good idea what ol\' Greatfather Winter\'s gonna be doing when this shift is over.  I got a bottle of Winter Veil cheer right here in my bag, and I intend to get to the bottom of it.',NULL,0,1,0,0,0,0,0,0,'No... you can\'t sit on my lap.',NULL,0,1,0,0,0,0,0,0,'Yeah, sure, go ahead and tell ol\' Greatfather Winter what you\'d like for this Winter\'s Veil.$B$BHo ho hurry up.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
+(6250,'A wondrous Winter Veil to you... uh... little $G boy : girl;.  Good children get special, um, discounts at any local Smokywood Pastures vendor.  Yum.',NULL,0,7,0,0,0,0,0,0,'I have a pretty good idea what ol\' Greatfather Winter\'s gonna be doing when this shift is over.  I got a bottle of Winter Veil cheer right here in my bag, and I intend to get to the bottom of it.',NULL,0,1,0,0,0,0,0,0,'No... you can\'t sit on my lap.',NULL,0,1,0,0,0,0,0,0,'Yeah, sure, go ahead and tell ol\' Great-father Winter what you\'d like for this Winter Veil.$B$BHo ho hurry up.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (6255,'They say an army travels on its stomach, and that\'s the truth.  For any offensive to succeed, your troops have to be well-fed and well supplied.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (6257,'Some say that strength and bravery are most needed for an army\'s success.  And it\'s true!  But an army also needs supplies to keep itself in good shape, and it\'s my job to make sure they have what they need.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (6273,'Greetings, soldier. Are you here to help the cause?',NULL,0,1,0,6,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
@@ -3802,7 +3702,7 @@ INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0_del
 (16901,'','You won\'t find a finer firearm anywhere else in Orgrimmar.',0,1,0,1,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
 (16644,'','Hey there, cutie! Mind rubbing some lotion on my exposed areas?',0,1,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
 (16661,'','We must take what is ours. Our survival depends on it.',0,1,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
-(16528,'This is MY WAGON!$B$BMINE!','',0,100,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
+(16528,'This is MY WAGON!$B$BMINE!','',0,1,0,0,0,0,0,0,'','On my way down here from Dun Algaz I saw a gnoll hunting Threshadons in the middle of a lake. If you\'ve never seen a dog try to use a spear, you\'re in for a treat!',0,1,0,0,0,0,0,0,'','I was up at Whelgar\'s a few days ago attempting to...er...liberate...some titan relics from the bones of the dead raptors, and I saw him! Sarltooth lives! Well, he\'s undead, so I guess he doesn\'t live, but he exists. Sarltooth exists!',0,1,0,0,0,0,0,0,'They say that the raptor matriarch lives deep within Raptor Ridge, protecting her clutch of eggs.','',0,1,0,0,0,0,0,0,'The Dragonmaw are attempting to push out of the Angerfang Encampment and are already raiding the caravan to the east. They\'ve called in two powerful warriors who are leading the charge. If you\'re up for a challenge, you might find them at the Encampment, planning and strategizing and doing other evil Orcish things.','',0,1,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
 (16535,'Keep your eyes open, $c. Even Durotar is not safe from our enemies.','',0,1,0,1,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
 (16583,'I must have lived a charmed life, $N. To return to the world as a member of the Forsaken and the Apothecary Society... I couldn\'t have asked for a more suitable fate.','',0,1,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
 (16510,'','Welcome to Dolanaar, $c. Let me know if you need any recipes or basic cooking ingredients.',0,1,0,1,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
@@ -3832,7 +3732,7 @@ INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0_del
 (15145,'How do you do, $c?','',0,1,0,6,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
 (15246,'Kneel beside me, friend. I caught a bullet during that last raid.$B$B<Gann grunts in pain as he tries to shift position. His left hand clutches a wound, blood welling between his quivering fingers.>$B$BWhen the dwarves first invaded the Barrens, I contented myself with harassing their diggers and sabotaging their equipment. I should\'ve struck a killing blow when I had the chance.','',0,1,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
 (10401,'Who dares interrupt the Grand Commander?',NULL,0,1,0,5,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
-(15132,'The trolls are acting strangely, $n. I don\'t like it. I don\'t like it one bit.','',0,1,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
+(15132,'Greetings, $glad:lass;. I\'m Grelin Whitebeard. I\'m here to examine the threat posed by the growing numbers of trolls in Coldridge Valley. What have I found? It\'s a bit troubling...','',0,1,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0),
 (10403,'You will find mailboxes within or just outside the Aldor and Scryers banks and inns.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (10404,'There are stable masters just outside both the draenei and blood elf inns on Aldor Rise and Scryer\'s Tier.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (10405,'I\'m listening.',NULL,0,1,0,1,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
@@ -5404,10 +5304,10 @@ INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0_del
 (15859,'What?!  What did ye say?!  How dare ye!  Me beer can stand up to any of that rot they serve at Brewfest!$B$BYou\'ll pay for this insult, $c!',NULL,0,1,0,5,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (15863,'Welcome to Tinker Town!',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (15864,'This shard of ice echoes the deep, cracking rumble of invading glaciers.  Its cold turns your thoughts to a lifeless, endless winter.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
-(15865,'Zalazane\'s time be runnin\' out. De Echo Isles will belong to de Darkspear Tribe again!',NULL,0,1,0,25,0,1,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
-(15866,'De Darkspears have a home again! An\' we couldn\'t have done it wit\'out ya helpin\', $N. Now, we celebrate!',NULL,0,1,0,1,0,1,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
-(15868,'It\'s my job to ensure that this whole assault runs like clockwork.$B$BHigh Tinker Mekkatorque is out in the field now, but he\'s scheduled to come back to get some more troops any time now.  $B$BHe\'s never late, so just stick around and he\'ll be here.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0);
-INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0_delay`, `em0_0`, `em0_1_delay`, `em0_1`, `em0_2_delay`, `em0_2`, `text1_0`, `text1_1`, `lang1`, `prob1`, `em1_0_delay`, `em1_0`, `em1_1_delay`, `em1_1`, `em1_2_delay`, `em1_2`, `text2_0`, `text2_1`, `lang2`, `prob2`, `em2_0_delay`, `em2_0`, `em2_1_delay`, `em2_1`, `em2_2_delay`, `em2_2`, `text3_0`, `text3_1`, `lang3`, `prob3`, `em3_0_delay`, `em3_0`, `em3_1_delay`, `em3_1`, `em3_2_delay`, `em3_2`, `text4_0`, `text4_1`, `lang4`, `prob4`, `em4_0_delay`, `em4_0`, `em4_1_delay`, `em4_1`, `em4_2_delay`, `em4_2`, `text5_0`, `text5_1`, `lang5`, `prob5`, `em5_0_delay`, `em5_0`, `em5_1_delay`, `em5_1`, `em5_2_delay`, `em5_2`, `text6_0`, `text6_1`, `lang6`, `prob6`, `em6_0_delay`, `em6_0`, `em6_1_delay`, `em6_1`, `em6_2_delay`, `em6_2`, `text7_0`, `text7_1`, `lang7`, `prob7`, `em7_0_delay`, `em7_0`, `em7_1_delay`, `em7_1`, `em7_2_delay`, `em7_2`) VALUES (15870,'Hurry! You should talk to Mekkatorque! If we don\'t start the assault soon, we\'re going to be late.$B$BAnd my boss HATES it when we\'re late!',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
+(15865,'Zalazane\'s time be runnin\' out. De Echo Isles will belong to de Darkspear Tribe again!',NULL,0,1,0,25,0,1,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0);
+INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0_delay`, `em0_0`, `em0_1_delay`, `em0_1`, `em0_2_delay`, `em0_2`, `text1_0`, `text1_1`, `lang1`, `prob1`, `em1_0_delay`, `em1_0`, `em1_1_delay`, `em1_1`, `em1_2_delay`, `em1_2`, `text2_0`, `text2_1`, `lang2`, `prob2`, `em2_0_delay`, `em2_0`, `em2_1_delay`, `em2_1`, `em2_2_delay`, `em2_2`, `text3_0`, `text3_1`, `lang3`, `prob3`, `em3_0_delay`, `em3_0`, `em3_1_delay`, `em3_1`, `em3_2_delay`, `em3_2`, `text4_0`, `text4_1`, `lang4`, `prob4`, `em4_0_delay`, `em4_0`, `em4_1_delay`, `em4_1`, `em4_2_delay`, `em4_2`, `text5_0`, `text5_1`, `lang5`, `prob5`, `em5_0_delay`, `em5_0`, `em5_1_delay`, `em5_1`, `em5_2_delay`, `em5_2`, `text6_0`, `text6_1`, `lang6`, `prob6`, `em6_0_delay`, `em6_0`, `em6_1_delay`, `em6_1`, `em6_2_delay`, `em6_2`, `text7_0`, `text7_1`, `lang7`, `prob7`, `em7_0_delay`, `em7_0`, `em7_1_delay`, `em7_1`, `em7_2_delay`, `em7_2`) VALUES (15866,'De Darkspears have a home again! An\' we couldn\'t have done it wit\'out ya helpin\', $N. Now, we celebrate!',NULL,0,1,0,1,0,1,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
+(15868,'It\'s my job to ensure that this whole assault runs like clockwork.$B$BHigh Tinker Mekkatorque is out in the field now, but he\'s scheduled to come back to get some more troops any time now.  $B$BHe\'s never late, so just stick around and he\'ll be here.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
+(15870,'Hurry! You should talk to Mekkatorque! If we don\'t start the assault soon, we\'re going to be late.$B$BAnd my boss HATES it when we\'re late!',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (15873,'Vol\'jin told me ta keep hittin\' da drum till he gets back.  If ya be waitin\' for him, he\'d be back soon to take back da Isles.$B$BJust wait here and enjoy da music!',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (15876,'We\'d be gettin\' ready to take back da Echo Isles. Zalazane has been workin\' his voodoo magic for some time, convincing folks dat he be dead and performing ancient dark rituals.$B$BHe knows we\'d be coming, so we have ta make sure we be prepared.',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
 (15877,'We require da help of allies on da islands.$B$BZen\'tabra has been watching over da animals of de Islands for some time now.  We\'d need her help and da help of da animal creatures.$B$BBwonsamdi is a powerful loa dat controls de spirits of de dead on da islands.  His blessing is crucial for our attack.$B$BOnce our allies have joined us, Zalazane and his army of mind-controlled trolls will have no chance!  Then, da Echo Isles will be de Darkspears!',NULL,0,1,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0),
@@ -5424,4 +5324,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-07-10  0:28:51
+-- Dump completed on 2015-05-31 23:46:37

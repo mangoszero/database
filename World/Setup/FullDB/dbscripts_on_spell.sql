@@ -1,20 +1,13 @@
+-- ---------------------------------------- 
+-- --        CLEAR DOWN THE TABLE        -- 
+-- ---------------------------------------- 
+TRUNCATE TABLE `dbscripts_on_spell`; 
+-- ---------------------------------------- 
+-- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Copyright (C) 2005-2015 MaNGOS <http://getmangos.eu/>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+-- Host: localhost    Database: 
+-- ------------------------------------------------------
+-- Server version	5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,34 +19,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `dbscripts_on_spell`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_spell`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_spell` (
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `delay` int(10) unsigned NOT NULL DEFAULT '0',
-  `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
-  `buddy_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `search_radius` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `data_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `dataint` int(11) NOT NULL DEFAULT '0',
-  `dataint2` int(11) NOT NULL DEFAULT '0',
-  `dataint3` int(11) NOT NULL DEFAULT '0',
-  `dataint4` int(11) NOT NULL DEFAULT '0',
-  `x` float NOT NULL DEFAULT '0',
-  `y` float NOT NULL DEFAULT '0',
-  `z` float NOT NULL DEFAULT '0',
-  `o` float NOT NULL DEFAULT '0',
-  `comments` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbscripts_on_spell`
@@ -71,7 +36,10 @@ INSERT INTO `dbscripts_on_spell` (`id`, `delay`, `command`, `datalong`, `datalon
 (11889,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn mountain giant corpse'),
 (12189,3,26,0,0,3475,50,0,0,0,0,0,0,0,0,0,'Start Attack'),
 (21052,0,15,8329,0,0,0,6,0,0,0,0,0,0,0,0,'Enthralled Deeprun Rat - Cast Suicide'),
-(26608,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Glob of Viscidus - Despawn');
+(26608,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Glob of Viscidus - Despawn'),
+(19250,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,'kill credit'),
+(19250,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'despawn target'),
+(23359,0,26,0,0,0,0,2,0,0,0,0,0,0,0,0,'Giant/Strider attacks player on Transmogrify Spell Hit');
 /*!40000 ALTER TABLE `dbscripts_on_spell` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -84,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2015-05-31 23:46:33
