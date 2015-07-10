@@ -19,4 +19,4 @@ cat <<EOF > full_db.sql
 --
 EOF
 
-for i in World/Setup/mangodLoadDB.sql World/Setup/FullDB/*.sql; do tail -n +18 $i >> full_db.sql; done
+for i in World/Setup/mangosdLoadDB.sql World/Setup/FullDB/*.sql; do tail -n +18 $i >> full_db.sql; done
