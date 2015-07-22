@@ -49,8 +49,8 @@ BEGIN
 
     -- -- -- -- Normal Update / Insert / Delete statements will go here  -- -- -- -- --
 
-delete from `dbdocssubtables` where `subtableId`= 51 and languageId=0;
-insert  into `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtablecontent`,`subtableTemplate`) values (51,0,'Creature Linking Flags','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>
+DELETE FROM `dbdocssubtables` WHERE `subtableId`= 51 AND languageId=0;
+INSERT  INTO `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtablecontent`,`subtableTemplate`) VALUES (51,0,'Creature Linking Flags','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>
 <tr bgcolor=\'#f0f0ff\'>
 <th><b>Value</b></th>
 <th><b>Hex</b></th>
@@ -87,8 +87,8 @@ insert  into `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtabl
 4096|0x1000|FLAG_DESPAWN_ON_EVADE|the slave despawn after the master evade
 8192|0x2000|FLAG_DESPAWN_ON_DESPAWN|the slave despawn after the master despawns');
 
-update `dbdocsfields` set `FieldComment` = 'This flag determines how a linked creature will act.', `fieldNotes` = 'This flag determines how a linked creature will act, when the master is changing it\'s combat state. Flags provide support for combat state, non combat state and life state.<br /><br />The following flags determine the behaviour if the master is in combat state.<br /><br />¬subtable:51¬<br /><br />' where `fieldId`= '137' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'This flag determines how a linked creature will act.', `fieldNotes` = 'This flag determines how a linked creature will act, when the master is changing it\'s combat state. <br />Flags provide support for combat state, non combat state and life state.<br /><br />The following flags determine the behaviour if the master is in combat state.<br /><br />¬subtable:51¬' where `fieldId`= '133' and `languageId`= 0;
+UPDATE `dbdocsfields` SET `FieldComment` = 'This flag determines how a linked creature will act.', `fieldNotes` = 'This flag determines how a linked creature will act, when the master is changing it\'s combat state. Flags provide support for combat state, non combat state and life state.<br /><br />The following flags determine the behaviour if the master is in combat state.<br /><br />Â¬Subtable:51Ì¼Â¬<br /><br />' WHERE `fieldId`= '137' AND `languageId`= 0;
+UPDATE `dbdocsfields` SET `FieldComment` = 'This flag determines how a linked creature will act.', `fieldNotes` = 'This flag determines how a linked creature will act, when the master is changing it\'s combat state. <br />Flags provide support for combat state, non combat state and life state.<br /><br />The following flags determine the behaviour if the master is in combat state.<br /><br />Â¬Subtable:51Â¬<br /><br />' WHERE `fieldId`= '133' AND `languageId`= 0;
 
     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     
