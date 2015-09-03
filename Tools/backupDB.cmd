@@ -44,7 +44,17 @@ echo.
 echo             Website / Forum / Wiki: https://getmangos.eu         
 echo _____________________________________________________________
 echo.
-SET SERVER=localhost
+echo.
+set /p svr=What is your MySQL host name?           [%svr%] : 
+if %svr%. == . set svr=localhost
+set /p user=What is your MySQL user name?                [%user%] : 
+if %user%. == . set user=root
+set /p pass=What is your MySQL password?               [%pass%] : 
+if %pass%. == . set pass=mangos
+set /p port=What is your MySQL port?                     [%port%] : 
+if %port%. == . set port=3306
+
+
 md _full_db
 SET TABLENAME=areatrigger_involvedrelation
 echo Dumping.... %TABLENAME%
@@ -1135,6 +1145,15 @@ echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_db\%TABLENAME%.sql
 echo -- ---------------------------------------- >>  _full_db\%TABLENAME%.sql
 mysqldump -Q -c -e -q --add-drop-table=false --no-create-info -u%user% -p%pass% -h %svr% %wdb% %TABLENAME% >>  _full_db\%TABLENAME%.sql
 
+SET TABLENAME=script_binding
+echo             %TABLENAME%
+echo -- ---------------------------------------- >  _full_db\%TABLENAME%.sql
+echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_db\%TABLENAME%.sql
+echo -- ---------------------------------------- >>  _full_db\%TABLENAME%.sql
+echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_db\%TABLENAME%.sql
+echo -- ---------------------------------------- >>  _full_db\%TABLENAME%.sql
+mysqldump -Q -c -e -q --add-drop-table=false --no-create-info -u%user% -p%pass% -h %svr% %wdb% %TABLENAME% >>  _full_db\%TABLENAME%.sql
+
 SET TABLENAME=script_texts
 echo             %TABLENAME%
 echo -- ---------------------------------------- >  _full_db\%TABLENAME%.sql
@@ -1170,15 +1189,6 @@ REM echo -- ---------------------------------------- >>  _full_db\%TABLENAME%.sq
 REM echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_db\%TABLENAME%.sql
 REM echo -- ---------------------------------------- >>  _full_db\%TABLENAME%.sql
 REM mysqldump -Q -c -e -q --add-drop-table=false --no-create-info -u%user% -p%pass% -h %svr% %wdb% %TABLENAME% >>  _full_db\%TABLENAME%.sql
-
-SET TABLENAME=sd2_db_version
-echo             %TABLENAME%
-echo -- ---------------------------------------- >  _full_db\%TABLENAME%.sql
-echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_db\%TABLENAME%.sql
-echo -- ---------------------------------------- >>  _full_db\%TABLENAME%.sql
-echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_db\%TABLENAME%.sql
-echo -- ---------------------------------------- >>  _full_db\%TABLENAME%.sql
-mysqldump -Q -c -e -q --add-drop-table=false --no-create-info -u%user% -p%pass% -h %svr% %wdb% %TABLENAME% >>  _full_db\%TABLENAME%.sql
 
 REM SET TABLENAME=skill_discovery_template
 REM echo             %TABLENAME%
