@@ -26,7 +26,7 @@ TRUNCATE TABLE `db_version`;
 
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
-INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_21000_17_dbdocslanguage`) VALUES ('ZeroDatabase 2.0.18 for MaNGOSZero / ScriptDev 20004+','MaNGOSZero Artificial Creature Intelligence Database',NULL),('MaNGOSZero Database 2.0.11 Rev 20007_18','EventAI and Scripts available',NULL),('MaNGOSZero Database 2.0.11 Rev 20007_19',NULL,NULL),('MaNGOSZero Database 2.0.11 Rev 20007_20',NULL,NULL),('MaNGOSZero Database Rev 21000_02',NULL,NULL),('MaNGOSZero Database Rev 21000_03',NULL,NULL),('MaNGOSZero Database Rev 21000_04',NULL,NULL),('MaNGOSZero Database Rev 21000_05',NULL,NULL),('MaNGOSZero Database Rev 21000_06',NULL,NULL),('MaNGOSZero Database Rev 21000_07',NULL,NULL),('MaNGOSZero Database Rev 21000_08',NULL,NULL),('MaNGOSZero Database 2.0.09 Rev 21000_09',NULL,NULL),('MaNGOSZero Database Rev 21000_10',NULL,NULL),('MaNGOSZero Database Rev 21000_11',NULL,NULL),('MaNGOSZero Database Rev 21000_12',NULL,NULL),('MaNGOSZero Database Rev 21000_13',NULL,NULL),('MaNGOSZero Database Rev 21000_14',NULL,NULL),('MaNGOSZero Database Rev 21000_17',NULL,NULL),('MaNGOSZero Database Rev 21000_17',NULL,NULL),('MaNGOSZero Database Rev 21000_17',NULL,NULL);
+INSERT INTO `db_version` (`version`, `structure`, `content`, `description`, `comment`) VALUES (21,1,0,'revision_refactor','');
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
