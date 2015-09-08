@@ -18,8 +18,8 @@ set locDE=NO
 rem -- Change the values below to match your server --
 set mysql=Tools\
 set svr=localhost
-set user=mangos
-set pass=
+set user=root
+set pass=mangos
 set port=3306
 set wdb=mangos0
 set wdborig=mangos0
@@ -188,20 +188,20 @@ color 08
 CLS
 echo.
 echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
+echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|    Database Setup                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/   World Loader v0.03
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  and World Loader
 echo.
 echo _____________________________________________________________
 echo.
 echo.
 set /p svr=What is your MySQL host name?           [%svr%] : 
 if %svr%. == . set svr=localhost
-set /p user=What is your MySQL user name?             [%user%] : 
-if %user%. == . set user=mangos
-set /p pass=What is your MySQL password?                   [ ] : 
-if %pass%. == . set pass=
-set /p port=What is your MySQL port?                    [%port%] : 
+set /p user=What is your MySQL user name?                [%user%] : 
+if %user%. == . set user=root
+set /p pass=What is your MySQL password?               [%pass%] : 
+if %pass%. == . set pass=mangos
+set /p port=What is your MySQL port?                     [%port%] : 
 if %port%. == . set port=3306
 
 set showChar=0
@@ -386,9 +386,9 @@ goto finish:
 color 08
 echo.
 echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
+echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|    Database Setup                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/   World Loader v0.03
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  and World Loader
 echo.
 echo _____________________________________________________________
 echo.
