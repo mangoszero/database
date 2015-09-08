@@ -7,6 +7,9 @@ set createrealmDB=YES
 set loadcharDB=YES
 set loadworldDB=YES
 set loadrealmDB=YES
+
+set addrealmentry=YES
+
 set DBType=POPULATED
 set activity=N
 
@@ -37,7 +40,7 @@ echo.
 echo     __  __      _  _  ___  ___  ___      
 echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.05
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.06
 echo.
 echo _____________________________________________________________
 echo.
@@ -54,6 +57,7 @@ if %loadworldDB% == YES echo                         D - Toggle World Type (%DBT
 echo.
 echo        Realm Database : T - Toggle Create DB (%createrealmDB%)     
 echo                         R - Toggle Create Structure (%loadrealmDB%)
+echo                         L - Toggle Add RealmList Entry (%addrealmentry%)
 echo.
 set LOCList=NO
 if %locFR% == YES set LOCList=YES
@@ -79,6 +83,8 @@ if %activity% == W goto LoadWorldDB:
 if %activity% == w goto LoadWorldDB:
 if %activity% == R goto LoadRealmDB:
 if %activity% == r goto LoadRealmDB:
+if %activity% == L goto AddRealmDB:
+if %activity% == l goto AddRealmDB:
 
 if %activity% == N goto Step1:
 if %activity% == n goto Step1:
@@ -182,6 +188,19 @@ goto main:
 set loadrealmDB=NO
 goto main:
 
+:AddRealmDB
+if %addrealmentry% == NO goto AddRealmDBNo:
+if %addrealmentry% == YES goto AddRealmDBYes:
+goto main:
+
+:AddRealmDBNo
+set addrealmentry=YES
+goto main:
+
+:AddRealmDBYes
+set addrealmentry=NO
+goto main:
+
 :Step1
 if not exist %mysql%\mysql.exe then goto patherror
 color 08
@@ -220,6 +239,7 @@ if %wdb%. == . set wdb=%wdborig%
 set showRealm=0
 if %createrealmDB% == YES set showRealm=1
 if %loadrealmDB% == YES set showRealm=1
+if %addrealmentry% == YES set showRealm=1
 
 if %showRealm% == 1 set /p rdb=What is your Realm database name?          [%rdb%] : 
 if %rdb%. == . set rdb=%rdborig%
@@ -249,6 +269,9 @@ if %createrealmDB% == YES goto RealmDB1:
 :RealmDB2
 REM ##### IF loadrealmdb = YES then load the DB
 if %loadrealmDB% == YES goto RealmDB3:
+
+:RealmDB4
+if %addrealmentry% == YES goto RealmDB5:
 
 goto done:
 
@@ -288,9 +311,15 @@ goto RealmDB2:
 :RealmDB3
 echo  Loading Realm Database %rdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Realm\Setup\realmdLoadDB.sql
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Tools\updateRealm.sql
-goto done:
+goto RealmDB4:
 
+:RealmDB5
+echo.
+echo  Adding RealmList entry in Realm Database %rdb%
+echo --------------------------------------------------
+if %addrealmentry% == YES %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Tools\updateRealm.sql
+echo --------------------------------------------------
+goto done:
 
 
 :patherror
@@ -303,9 +332,9 @@ color 0e
 cls
 echo.
 echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
+echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|    Database Setup                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/   World Loader v0.03
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  and World Loader
 echo.
 echo _____________________________________________________________
 echo.
