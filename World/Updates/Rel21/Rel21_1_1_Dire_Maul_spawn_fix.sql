@@ -25,8 +25,11 @@ BEGIN
     SET @cNewVersion = '21';
     SET @cNewStructure = '1';
     SET @cNewContent = '1';
-    SET @cNewDescription = 'Fix rare creatures spawn in Dire Maul arena';
-    SET @cNewComment = '';
+                            -- DESCRIPTION IS 30 Characters MAX    
+    SET @cNewDescription = 'Fix Dire Maul creature spawn'; 
+
+                        -- COMMENT is 150 Characters MAX
+    SET @cNewComment = 'Fix rare creatures spawn in Dire Maul arena';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT description FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
@@ -53,21 +56,32 @@ BEGIN
     UPDATE `creature_template` SET `InhabitType`=4, `SpeedWalk`=1, `UnitClass`=2, `Rank`=2, `HealthMultiplier`=30, `PowerMultiplier`=10, `MinLevelHealth`=73260, `MaxLevelHealth`=73260, `MinLevelMana`=24340, `MaxLevelMana`=24340, `LootId`=11497 WHERE `Entry`=11497;
     UPDATE `creature_template` SET `InhabitType`=1, `SpeedWalk`=1, `Rank`=2, `HealthMultiplier`=20, `MinLevelHealth`=57420, `MaxLevelHealth`=57420, `LootId`=11498, `EquipmentTemplateId`=11498 WHERE `Entry`=11498;
     
+    DELETE FROM `creature_equip_template_raw` WHERE `entry`=11498;
     INSERT INTO `creature_equip_template_raw` (`entry`, `equipmodel1`, `equipmodel2`, `equipmodel3`, `equipinfo1`, `equipinfo2`, `equipinfo3`, `equipslot1`, `equipslot2`, `equipslot3`) VALUES (11498, 782, 0, 0, 33489666, 0, 0, 781, 0, 0);
 
+    DELETE FROM `creature` WHERE `guid`=@G AND `id`=11447;
+    DELETE FROM `creature` WHERE `guid`=@G+1 AND `id`=11497;
+    DELETE FROM `creature` WHERE `guid`=@G+2 AND `id`=11498;
     INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
     (@G, 11447, 1, 0, 0, -3755.33, 1094.43, 131.969, 3.11817, 21600, 10, 0, 61040, 0, 0, 1),
     (@G+1, 11497, 1, 0, 0, -3755.33, 1094.43, 131.969, 3.11817, 21600, 20, 0, 73260, 24340, 0, 1),
     (@G+2, 11498, 1, 0, 0, -3755.33, 1094.43, 131.969, 3.11817, 21600, 10, 0, 57420, 0, 0, 1);
 
+    DELETE FROM `pool_template` WHERE `entry`=1701;
     INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (1701, 1, 'Dire Maul Arena - Rare Elites');
 
+    DELETE FROM `pool_creature` WHERE `guid`=@G AND `pool_entry`=1701;
+    DELETE FROM `pool_creature` WHERE `guid`=@G+1 AND `pool_entry`=1701;
+    DELETE FROM `pool_creature` WHERE `guid`=@G+2 AND `pool_entry`=1701;
     INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES
     (@G, 1701, 0, 'Dire Maul Arena - Mushgog'),
     (@G+1, 1701, 0, 'Dire Maul Arena - The Razza'),
     (@G+2, 1701, 0, 'Dire Maul Arena - Skarr the Unbreakable');  
 
     -- Loot tables
+    DELETE FROM `creature_loot_template` WHERE `entry`=11447;
+    DELETE FROM `creature_loot_template` WHERE `entry`=11497;
+    DELETE FROM `creature_loot_template` WHERE `entry`=11498;
     INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
 
     -- Mushgog loot table
