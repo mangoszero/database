@@ -28,31 +28,18 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `db_version`
---
-
+-- ----------------------------
+-- Table structure for `db_version`
+-- ----------------------------
 DROP TABLE IF EXISTS `db_version`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `db_version` (
-  `version` varchar(120) NOT NULL DEFAULT '',
-  `creature_ai_version` varchar(120) DEFAULT NULL,
-  `required_21000_17_dbdocslanguage` bit(1) DEFAULT NULL,
-  PRIMARY KEY (`version`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Used DB version notes';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `db_version`
---
-
-LOCK TABLES `db_version` WRITE;
-/*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
-INSERT INTO `db_version` VALUES
-('MaNGOSZero Database Rev 21000_17','No EventAI or Scripts available',NULL);
-/*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
-UNLOCK TABLES;
+  `version` int(3) NOT NULL,
+  `structure` int(3) NOT NULL,
+  `content` int(3) NOT NULL,
+  `description` varchar(30) NOT NULL DEFAULT '',
+  `comment` varchar(150) DEFAULT '',
+  PRIMARY KEY (`version`,`structure`,`content`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Used DB version notes';
 
 --
 -- Table structure for table `areatrigger_involvedrelation`
