@@ -23,8 +23,8 @@ BEGIN
 
     -- New Values
     SET @cNewVersion = '21';
-    SET @cNewStructure = '1';
-    SET @cNewContent = '1';
+    SET @cNewStructure = '2';
+    SET @cNewContent = '0';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Honor Counting'; 
 
