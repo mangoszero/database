@@ -19,12 +19,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '1'; 
-    SET @cOldContent = '4'; 
+    SET @cOldContent = '5'; 
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '1';
-    SET @cNewContent = '5';
+    SET @cNewContent = '6';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'list_aura_command';
 

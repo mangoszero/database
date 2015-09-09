@@ -19,12 +19,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '1'; 
-    SET @cOldContent = '3'; 
+    SET @cOldContent = '4'; 
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '1';
-    SET @cNewContent = '4';
+    SET @cNewContent = '5';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'remove doubled lothos gossip';
 
