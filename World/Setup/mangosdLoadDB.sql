@@ -1,6 +1,5 @@
 --
 -- Copyright (C) 2005-2015 MaNGOS <https://getmangos.eu/>
--- Copyright (C) 2009-2012 MaNGOSZero <https://github.com/mangoszero>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -32,6 +31,8 @@
 -- Table structure for `db_version`
 -- ----------------------------
 DROP TABLE IF EXISTS `db_version`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `db_version` (
   `version` int(3) NOT NULL,
   `structure` int(3) NOT NULL,
@@ -40,6 +41,7 @@ CREATE TABLE `db_version` (
   `comment` varchar(150) DEFAULT '',
   PRIMARY KEY (`version`,`structure`,`content`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Used DB version notes';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `areatrigger_involvedrelation`
@@ -638,7 +640,6 @@ CREATE TABLE `creature_template` (
   PRIMARY KEY (`Entry`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
 
 
 --
@@ -1517,6 +1518,7 @@ CREATE TABLE `gossip_texts` (
   `comment` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gossip Texts';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `instance_template`
@@ -2705,7 +2707,6 @@ CREATE TABLE `pvpstats_players` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-
 --
 -- Table structure for table `quest_template`
 --
@@ -2973,16 +2974,6 @@ CREATE TABLE `script_waypoint` (
   PRIMARY KEY (`entry`,`pointid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Creature waypoints';
 
-
---
--- Table structure for table `sd2_db_version`
---
-
-DROP TABLE IF EXISTS `sd2_db_version`;
-
-CREATE TABLE `sd2_db_version` (
-  `version` varchar(255) NOT NULL DEFAULT '' COMMENT 'Database version string'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Table structure for table `skill_fishing_base_level`

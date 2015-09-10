@@ -126,7 +126,6 @@ script_texts \
 script_waypoint \
 scripted_areatrigger \
 scripted_event \
-sd2_db_version \
 skill_fishing_base_level \
 skinning_loot_template \
 spell_affect \
