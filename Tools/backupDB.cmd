@@ -1332,24 +1332,6 @@ REM if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\
 REM if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
 REM mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
 
-SET TABLENAME=pvpstats_battlegrounds
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
-SET TABLENAME=pvpstats_players
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
 SET TABLENAME=quest_template
 echo             %TABLENAME%
 if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
