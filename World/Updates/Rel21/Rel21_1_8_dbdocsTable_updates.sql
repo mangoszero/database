@@ -48,34 +48,34 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
-insert  into `dbdocstable`(`languageId`,`tableName`,`tableNotes`) values (0, 'dbdocsfields_localised','This table is part of the implementation of the 'Mangos Database Documentation' (MDD) Project.<br /><br />An entry in this table provides a link to the table and field to allow additional notes to describe the field in the Wiki for languages other than English.');
-insert  into `dbdocstable`(`languageId`,`tableName`,`tableNotes`) values (0, 'dbdocssubtables_localised','This table is part of the implementation of the 'Mangos Database Documentation' (MDD) Project.<br /><br />An entry in this table provides a table which dirctly replaces the link in the fieldnotes for languages other than English.');
-insert  into `dbdocstable`(`languageId`,`tableName`,`tableNotes`) values (0, 'dbdocstable_localised','This table is part of the implementation of the 'Mangos Database Documentation' (MDD) Project.<br /><br />An entry in this table provides a additional notes field to describe the database in the Wiki for languages other than English.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'db_version','description','','The Description of the latest database revision.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'db_version','comment','','A comment about the latest database revision.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'db_version','structure','','The current core structure level.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'db_version','content','','The current core content level, The server will start if there is a mismatch, but will issue a warning message');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocsfields','languageId','','The ID of the language of the localised entry.<br /><br /><br />¬subtable:101¬<br />');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocsfields','fieldId','','The unique Id for this field.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocsfields_localised','fieldId','','The unique Id for this field.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocsfields_localised','languageId','','The ID of the language of the localised entry.<br /><br /><br />¬subtable:101¬');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocsfields_localised','fieldNotes','','The localised Field Note text');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocsfields_localised','fieldComment','','A short localised Description of the Field.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocslanguage','LanguageId','','The ID of the language of the localised entry.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocslanguage','LanguageName','','The Name of the language of the localised entry.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocssubtables','languageId','','The ID of the language of the localised entry.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocssubtables_localised','subTableId','','This is the Lookup Id of the subTable');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocssubtables_localised','languageId','','The ID of the language of the localised entry.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocssubtables_localised','subTableContent','','The Content of the subTable.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocssubtables_localised','subTableTemplate','','The SubTable Template, Used to create the SubTableContent field content');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocstable','languageId','','The ID of the language of the localised entry.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocstable','tableId','','The unique Id of the table.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocstable_localised','tableId','','The unique Id of the table.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocstable_localised','languageId','','The ID of the language of the localised entry.');
-insert  into `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`tableComments`,`tableNotes`) values (0,'dbdocstable_localised','tableNotes','','The table note text.');
+INSERT  INTO `dbdocstable`(`languageId`,`tableName`,`tableNotes`) VALUES (0, 'dbdocsfields_localised','This table is part of the implementation of the ''Mangos Database Documentation'' (MDD) Project.<br /><br />An entry in this table provides a link to the table and field to allow additional notes to describe the field in the Wiki for languages other than English.');
+INSERT  INTO `dbdocstable`(`languageId`,`tableName`,`tableNotes`) VALUES (0, 'dbdocssubtables_localised','This table is part of the implementation of the ''Mangos Database Documentation'' (MDD) Project.<br /><br />An entry in this table provides a table which dirctly replaces the link in the fieldnotes for languages other than English.');
+INSERT  INTO `dbdocstable`(`languageId`,`tableName`,`tableNotes`) VALUES (0, 'dbdocstable_localised','This table is part of the implementation of the ''Mangos Database Documentation'' (MDD) Project.<br /><br />An entry in this table provides a additional notes field to describe the database in the Wiki for languages other than English.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'db_version','description','','The Description of the latest database revision.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'db_version','comment','','A comment about the latest database revision.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'db_version','structure','','The current core structure level.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'db_version','content','','The current core content level, The server will start if there is a mismatch, but will issue a warning message');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocsfields','languageId','','The ID of the language of the localised entry.<br /><br /><br />¬subtable:101¬<br />');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocsfields','fieldId','','The unique Id for this field.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocsfields_localised','fieldId','','The unique Id for this field.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocsfields_localised','languageId','','The ID of the language of the localised entry.<br /><br /><br />¬subtable:101¬');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocsfields_localised','fieldNotes','','The localised Field Note text');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocsfields_localised','fieldComment','','A short localised Description of the Field.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocslanguage','LanguageId','','The ID of the language of the localised entry.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocslanguage','LanguageName','','The Name of the language of the localised entry.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocssubtables','languageId','','The ID of the language of the localised entry.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocssubtables_localised','subTableId','','This is the Lookup Id of the subTable');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocssubtables_localised','languageId','','The ID of the language of the localised entry.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocssubtables_localised','subTableContent','','The Content of the subTable.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocssubtables_localised','subTableTemplate','','The SubTable Template, Used to create the SubTableContent field content');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocstable','languageId','','The ID of the language of the localised entry.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocstable','tableId','','The unique Id of the table.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocstable_localised','tableId','','The unique Id of the table.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocstable_localised','languageId','','The ID of the language of the localised entry.');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'dbdocstable_localised','tableNotes','','The table note text.');
 
-delete from `dbdocssubtables` where `subtableId`= 101 and languageId=0;
-insert  into `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtablecontent`,`subtableTemplate`) values (101,0,'DbDocsLangs','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>
+DELETE FROM `dbdocssubtables` WHERE `subtableId`= 101 AND languageId=0;
+INSERT  INTO `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtablecontent`,`subtableTemplate`) VALUES (101,0,'DbDocsLangs','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>
 <tr bgcolor=\'#f0f0ff\'>
 <th><b>LanguageId</b></th>
 <th align=\'left\'><b>LanguageName</b></th>
