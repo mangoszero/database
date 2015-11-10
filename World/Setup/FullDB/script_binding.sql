@@ -1,7 +1,7 @@
 -- ---------------------------------------- 
 -- --        CLEAR DOWN THE TABLE        -- 
 -- ---------------------------------------- 
-TRUNCATE TABLE `script_binding`;
+TRUNCATE TABLE `script_binding`; 
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
@@ -525,7 +525,7 @@ INSERT INTO `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES (0,'g
 (4,'spell_npc_kitten',16510,0),
 (4,'spell_npc_shay_leafrunner',11402,0),
 (4,'spell_conjure_rift',25813,0),
-(4,'spell_symbol_of_life',8593,0),
+(4,'spell_npc_redemption_target',8593,0),
 (5,'aura_spirit_particles',10848,0),
 (5,'aura_spirit_particles',17327,0),
 (4,'spell_apply_salve',19512,0),
@@ -543,4 +543,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-03 20:08:30
+-- Dump completed on 2015-11-10 11:07:19

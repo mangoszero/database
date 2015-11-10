@@ -194,14 +194,15 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (14487,1117,0,'Gluggle (14487)'),
 (14488,1118,0,'Roloch (14488)'),
 (14490,1119,0,'Rippa (14490)'),
-(14491,1120,0,'Kurmokk (14491)'),
 (14492,1121,0,'Verifonix (14492)'),
 (16184,1068,0,'Nerubian Overseer (16184)'),
 (10647,1180,0,'Prince Raze (10647)'),
 (5400,1205,0,'Zekkis (5400)'),
 (14237,1206,0,'Oozeworm (14237)'),
 (10559,1199,0,'Lady Vespia (10559)'),
-(13602,1700,0,'Abominable Greench (13602)');
+(13602,1700,0,'Abominable Greench (13602)'),
+(14339,1214,0,'Death Howl (14339)'),
+(10196,1215,0,'General Cobaltann (10196)');
 /*!40000 ALTER TABLE `pool_creature_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -214,4 +215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:38
+-- Dump completed on 2015-11-10 11:07:17

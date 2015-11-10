@@ -604,12 +604,12 @@ INSERT INTO `page_text` (`entry`, `text`, `next_page`) VALUES (15,'Hello Morgan,
 (1391,'<HTML> <BODY> <IMG src=\"InterfacePicturesLinken_sepia_256px\"/> </BODY> </HTML> ',0),
 (1392,'Brother Neals,\n\r\n\rMy grapes are saved!  $N, the bearer of this manifest, braved my thug-infested vineyard and gathered the grapes that I could not.  Although the Defias still roam across the river, nearly my entire crop has been salvaged.\n\r\n\rYou may add a full load of grape bushels to your stores.\n\r\n\rMay the Light protect us,\n\r-Milly Osworth',0),
 (1430,'Brother Neals, My grapes are saved!  $N, the bearer of this manifest, braved my thug-infested vineyard and gathered the grapes that I could not.  Although the Defias still roam across the river, nearly my entire crop has been salvaged. You may add a full load of grape bushels to your stores. May the Light protect us, -Milly Osworth ',0),
-(1431,'Vorfalk Irongourd Vorfalk works the store room of the Grim Guzzler, and his sacrifice to the Dark Keepers runs deep. May his spirit hold strong. ',0),
-(1432,'Bethek Stormbrow\r\n\r\nBethek\'s wanderings take him deep within Blackrock.  The secrets of the mountain beckon him.\r\n\r\nMay his spirit never falter.',0),
-(1433,'Uggel Hammerhand\n\r\n\rUggel is a skilled and solemn chiseler, and when not burdened with the dark key, his hands shape great works in the Hall of Crafting.',0),
-(1434,'Uggel Hammerhand Uggel is a skilled and solemn chiseler, and when not burdened with the dark key, his hands shape great works in the Hall of Crafting. ',0),
-(1435,'Ofgut Stonefist Those fallen before Dark Keeper Ofgut\'s hammer cannot be counted. The soldiers of the West Garrison bow in awe as he passes.  For who among them can look into the eyes of Ofgut and see the secrets the dark key whispers? ',0),
-(1436,'Pelver Deepstomp\n\r\n\rDark Keeper Pelver is our most honored disciple.  He has borne the key for longer than any, and it has cost him dearly.  When he is called for his burden, he is guarded in the Domicile.\n\r\n\rHis sacrifice is cherished, and he will remain in our hearts for many years... after the darkness takes him.',0),
+(1431,'Vorfalk Irongourd$B$BVorfalk works the store room of the Grim Guzzler, and his sacrifice to the Dark Keepers runs deep.$B$BMay his spirit hold strong.',0),
+(1432,'Bethek Stormbrow$B$BBethek\'s wanderings take him deep within Blackrock. The secrets of the mountain beckon him.$B$BMay his spirit never falter.',0),
+(1433,'Uggel Hammerhand$B$BUggel is a skilled and solemn chiseler, and when not burdened with the dark key, his hands shape great works in the Hall of Crafting.',0),
+(1434,'Zimrel Darktooth$B$BWhen the madness of the dark key takes hold of Zimrel, only the screams of the dying can soothe him.$B$BFor his sacrifice, he will always have a bench above the arena.  May our blood sports temper the rage in his heart.',0),
+(1435,'Ofgut Stonefist$B$BThose fallen before Dark Keeper Ofgut\'s hammer cannot be counted.$B$BThe soldiers of the West Garrison bow in awe as he passes.  For who among them can look into the eyes of Ofgut and see the secrets the dark key whispers?.',0),
+(1436,'Pelver Deepstomp$B$BDark Keeper Pelver is our most honored disciple.  He has borne the key for longer than any, and it has cost him dearly.  When he is called for his burden, he is guarded in the Domicile.$B$BHis sacrifice is cherished, and he will remain in our hearts for many years... after the darkness takes him.',0),
 (1470,'Pelver Deepstomp Dark Keeper Pelver is our most honored disciple.  He has borne the key for longer than any, and it has cost him dearly.  When he is called for his burden, he is guarded in the Domicile. His sacrifice is cherished, and he will remain in our hearts for many years... after the darkness takes him. ',0),
 (1471,'Solomon,$B$BThe carrier of this decree has been granted official status as an acting deputy of Stormwind. You may use $g him:her\n\r',0),
 (1490,'Solomon,$B$BThe carrier of this decree has been granted official status as an acting deputy of Stormwind. You may use $g him:her ',0),
@@ -1469,4 +1469,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:37
+-- Dump completed on 2015-11-10 11:07:16

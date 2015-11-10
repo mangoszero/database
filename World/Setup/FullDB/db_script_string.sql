@@ -71,9 +71,6 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000064,'Well, that should do it. Come now, back to the shop to finish our business!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000065,'We will suffer no demon\'s servant in our lands!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000066,'Peace and patience be with you, $N. Remain strong always.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000069,'Where I come from, you get shanked for opening another inmate\'s cell door!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000068,'Perhaps Ograbisi will use your head as a tiny little hat when I\'m through with you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000067,'Get him out of there!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000076,'Hear ye, denizens of Tanaris! Let it be known $n is an exalted member of the Mithril Order. A blacksmith of honor, dedication, and infinite patience. Three cheers for $n!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
 (2000000083,'My mind. . .my flesh. . .I\'m. . .rotting. . . .!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000082,'I. . .I. . .don\'t. . .feel. . .right. . .',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -371,7 +368,6 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000122,'%s writhes in pain.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000000123,'AAAAAAAAAAAAAAAARGH!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005026,'And I am determined to find out more... So if you need my help again, you know where I\'ll be.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000070,'Ograbisi needs new hat.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005553,'Let\'s move forward!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Sergeant Bly - move downstairs'),
 (2000000168,'%s stares to the northwest and lets out a long, drawn out howl.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000000169,'%s lets forth a mighty howl.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
@@ -501,7 +497,23 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000005800,'%s enters a trance...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,1,NULL),
 (2000005801,'%s I have created the totem. You, %n, must cleanse the well.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,1,NULL),
 (2000005802,'Zarlman Two-Moons begins chanting as he mixes the well stones and ambercom before the Tribal Fire.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
-(2000005803,'The Water of the Seers is ready for your consumption, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,0,NULL);
+(2000005803,'The Water of the Seers is ready for your consumption, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,0,NULL),
+(2000005780,'We must hurry.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000005781,'Spirits of the forest come forth and heed nature\'s call!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000005782,'Spirits of the forest, you are needed! Make haste to the Charred Vale!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,25,NULL),
+(2000000353,'You will perish here. <Your mind fills with visions of chaos and destruction.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000354,'Leave this place. <The relic emits a white hot arc of flame. A memory has been gained: A lone Dark Iron dwarf is surrounded by seven corpses, kneeling before a monolith of flame.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000355,'Defiler... you will be punished for this incursion. <A symbol of flame radiates from the relic before it crumbles to the earth.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000356,'Help us, outsider. <The relic crumbles to dust. A vision of eight Dark Iron dwarves performing some sort of ritual fills your head.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000357,'Your existence is acknowledged. <The relic turns to dust. Your head throbs with newfound wisdom. Something evil lurks in the heart of the mountain.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000358,'Leave this place. <The relic emits a white hot arc of flame. A memory has been gained: A lone Dark Iron dwarf is surrounded by seven corpses, kneeling before a monolith of flame.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000359,'He cannot be defeated. <The relic burns to nothing. The memories it held are now your own. This city was destroyed by a being not of this world.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000360,'Do not taint these ruins, mortal. <You are engulfed in a blinding flash of light. A creature composed entirely of flame is the only thing you can remember seeing.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000005099,'Get him out of there!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005100,'Perhaps Ograbisi will use your head as a tiny little hat when I\'m through with you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005101,'Where I come from, you get shanked for opening another inmate\'s cell door!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005102,'Ograbisi needs new hat.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005626,'No! Get away from me! Help!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
 /*!40000 ALTER TABLE `db_script_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -514,4 +526,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:32
+-- Dump completed on 2015-11-10 11:07:10

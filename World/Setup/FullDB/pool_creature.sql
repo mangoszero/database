@@ -281,7 +281,50 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 (44170,1210,0,'Zerillis placeholder (Zul\'Farrak)'),
 (160600,1211,30,'Meshlok the Harvester (Maraudon)'),
 (160603,1211,0,'Meshlok the Harvester placeholder (Maraudon)'),
-(54652,1211,0,'Meshlok the Harvester placeholder (Maraudon)');
+(54652,1211,0,'Meshlok the Harvester placeholder (Maraudon)'),
+(590013,1701,0,'Dire Maul Arena - Mushgog'),
+(590014,1701,0,'Dire Maul Arena - The Razza'),
+(590015,1701,0,'Dire Maul Arena - Skarr the Unbreakable'),
+(3527,25469,10,'LBRS - Crystal Fang / Spire Spider'),
+(3528,25469,90,'LBRS - Crystal Fang / Spire Spider'),
+(154622,25471,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154623,25471,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154624,25472,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154625,25472,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154626,25473,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154627,25473,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154628,25474,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154629,25474,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154630,25475,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154631,25475,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154632,25476,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154633,25476,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154634,25477,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154635,25477,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154636,25478,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154637,25478,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154650,25479,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154651,25479,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154652,25480,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154653,25480,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154654,25481,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154655,25481,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154656,25482,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154657,25482,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154658,25483,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154659,25483,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154660,25484,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154661,25484,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154662,25485,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154663,25485,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154664,25488,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154665,25488,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154667,25489,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154668,25489,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154669,25490,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154670,25490,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154672,25491,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154673,25491,0,'BRD - Doomforge Arcanasmith/Weapon Technician');
 /*!40000 ALTER TABLE `pool_creature` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -294,4 +337,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:38
+-- Dump completed on 2015-11-10 11:07:17

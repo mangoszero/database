@@ -31,7 +31,8 @@ INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `descripti
 (180654,1801,0,'Hardpacked Snowdrift (180654)'),
 (161557,1669,0,'Milly\'s Harvest (161557)'),
 (175966,15005,0,'Enchanted Scarlet Thread (175966)'),
-(175928,15006,0,'Incendia Agave (175928)');
+(175928,15006,0,'Incendia Agave (175928)'),
+(175785,25470,0,'LBRS - Inconspicuous Documents');
 /*!40000 ALTER TABLE `pool_gameobject_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -44,4 +45,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:38
+-- Dump completed on 2015-11-10 11:07:18

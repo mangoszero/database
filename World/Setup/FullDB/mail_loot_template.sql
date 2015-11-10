@@ -85,7 +85,8 @@ INSERT INTO `mail_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `group
 (158,21746,100,0,1,1,0),
 (159,21746,100,0,1,1,0),
 (160,21746,100,0,1,1,0),
-(168,21746,100,0,1,1,0);
+(168,21746,100,0,1,1,0),
+(110,20645,100,0,1,1,0);
 /*!40000 ALTER TABLE `mail_loot_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -98,4 +99,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:36
+-- Dump completed on 2015-11-10 11:07:15

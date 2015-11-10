@@ -11592,7 +11592,19 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 (93952,15003,0,'Arathi Basin: Lumber Mill: Berserker buff'),
 (93953,15004,0,'Arathi Basin: Gold Mine: Speed buff'),
 (93954,15004,0,'Arathi Basin: Gold Mine: Regen buff'),
-(93955,15004,0,'Arathi Basin: Gold Mine: Berserker buff');
+(93955,15004,0,'Arathi Basin: Gold Mine: Berserker buff'),
+(43130,15007,100,'Dark Keeper Nameplate'),
+(43131,15007,100,'Dark Keeper Nameplate'),
+(160006,15008,100,'Dark Keeper Nameplate'),
+(160012,15008,100,'Dark Keeper Nameplate'),
+(160007,15009,100,'Dark Keeper Nameplate'),
+(160013,15009,100,'Dark Keeper Nameplate'),
+(160008,15010,100,'Dark Keeper Nameplate'),
+(160014,15010,100,'Dark Keeper Nameplate'),
+(160009,15011,100,'Dark Keeper Nameplate'),
+(160015,15011,100,'Dark Keeper Nameplate'),
+(160010,15012,100,'Dark Keeper Nameplate'),
+(160011,15012,100,'Dark Keeper Nameplate');
 /*!40000 ALTER TABLE `pool_gameobject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -11605,4 +11617,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:38
+-- Dump completed on 2015-11-10 11:07:18

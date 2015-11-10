@@ -261,7 +261,14 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (506501,0,15,21357,1,0,0,0,0,0,0,0,0,0,0,0,'create aqual quintessence'),
 (506502,0,15,28439,1,0,0,0,0,0,0,0,0,0,0,0,'create eternal quintessence'),
 (570801,0,15,22799,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - cast King of the Gordok'),
-(574001,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - resume WP Movement');
+(574001,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - resume WP Movement'),
+(166601,0,7,3801,0,0,0,0,0,0,0,0,0,0,0,0,'complete quest'),
+(197001,0,22,21,0,0,0,0,0,0,0,0,0,0,0,0,'Ribbly - update faction'),
+(197001,0,22,21,0,10043,46616,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
+(197001,0,22,21,0,10043,46617,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
+(197001,0,22,21,0,10043,46618,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
+(197001,3,0,0,0,0,0,0,2000005626,0,0,0,0,0,0,0,''),
+(197001,5,26,0,0,0,25,0,0,0,0,0,0,0,0,0,'Ribbly  - attack player');
 /*!40000 ALTER TABLE `dbscripts_on_gossip` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -274,4 +281,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:33
+-- Dump completed on 2015-11-10 11:07:12

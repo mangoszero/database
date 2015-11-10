@@ -637,9 +637,9 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (4689,5740,0,0),
 (4691,4437,0,0),
 (4697,5725,0,28),
-(4743,5795,0,0),
+(4743,5795,0,3),
 (4743,5816,0,0),
-(4743,5817,0,0),
+(4743,5817,0,805),
 (4748,7016,0,402),
 (657,1220,0,396),
 (4763,5820,0,12),
@@ -1041,7 +1041,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (1641,2293,0,0),
 (1664,2316,0,0),
 (1665,2317,0,0),
-(1666,2318,0,0),
+(1666,2318,166601,0),
 (1701,2353,0,0),
 (1761,2394,0,0),
 (1945,2598,0,0),
@@ -1093,7 +1093,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (2912,3591,0,0),
 (2913,3592,0,0),
 (2916,3590,0,0),
-(2921,3635,0,0),
+(2921,3635,0,803),
 (2941,3653,0,0),
 (2943,3657,0,0),
 (2952,3666,0,0),
@@ -3257,7 +3257,11 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (1641,3073,0,966),
 (5668,6875,0,0),
 (2944,3656,0,0),
-(3129,4114,0,341);
+(3129,4114,0,341),
+(6159,6157,0,0),
+(694,1244,0,0),
+(50100,5796,0,0),
+(50101,5797,0,0);
 /*!40000 ALTER TABLE `gossip_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -3270,4 +3274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:35
+-- Dump completed on 2015-11-10 11:07:14

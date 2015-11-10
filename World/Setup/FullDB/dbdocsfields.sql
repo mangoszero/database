@@ -158,7 +158,8 @@ INSERT INTO `dbdocsfields` (`fieldId`, `languageId`, `tableName`, `fieldName`, `
 (130,0,'creature_item_template','material','The material that the item is made of.','The material that the item is made of. The value here affects the sound the item uses when moved in bags. Use -1 for consumable items like food, reagents, etc. This references a material identifier (See Material.dbc).<br />\r\n<br />\r\nThe following table contains valid material identifiers.<br />\r\n¬subtable:19¬'),
 (131,0,'creature_item_template','sheath_type','The value of this field controls how characters will show or hide items worn.','The value of this field controls how characters will show or hide items worn, e.g. for weapons. The following table shows a list of supported sheath types.<br />\r\n<br />\r\n¬subtable:20¬\r\n'),
 (132,0,'creature_item_template','subclass','The subclass of the item template.','The subclass of the item template.<br /><br/>\r\n¬subtable:17¬'),
-(133,0,'creature_linking','flag','This flag determines how a linked creature will act.','This flag determines how a linked creature will act, when the master is changing it\'s combat state. <br />Flags provide support for combat state, non combat state and life state.<br /><br />The following flags determine the behaviour if the master is in combat state.<br /><br />¬Subtable:51¬<br /><br />'),(134,0,'creature_linking','guid','This references the “creature” table tables unique ID.','This references the “creature” table tables unique ID for which the entry is valid (See creature.entry). \r\n<br />This is a creature spawn bound to the master creature.'),
+(133,0,'creature_linking','flag','This flag determines how a linked creature will act.','This flag determines how a linked creature will act, when the master is changing it\'s combat state. <br />Flags provide support for combat state, non combat state and life state.<br /><br />The following flags determine the behaviour if the master is in combat state.<br /><br />¬Subtable:51¬<br /><br />'),
+(134,0,'creature_linking','guid','This references the “creature” table tables unique ID.','This references the “creature” table tables unique ID for which the entry is valid (See creature.entry). \r\n<br />This is a creature spawn bound to the master creature.'),
 (135,0,'creature_linking','master_guid','This references the “creature” table tables unique ID.','This references the “creature” table tables unique ID for which the entry is valid (See creature.entry).\r\n<br />This is the master creature which defines behaviour for the linked creature.'),
 (136,0,'creature_linking_template','entry','creature_template.entry of the slave mob that is linked.','creature_template.entry of the slave mob that is linked (See creature_template.entry).'),
 (137,0,'creature_linking_template','flag','This flag determines how a linked creature will act.','This flag determines how a linked creature will act, when the master is changing it\'s combat state. Flags provide support for combat state, non combat state and life state.<br /><br />The following flags determine the behaviour if the master is in combat state.<br /><br />¬Subtable:51̼¬<br /><br />'),
@@ -1593,7 +1594,29 @@ INSERT INTO `dbdocsfields` (`fieldId`, `languageId`, `tableName`, `fieldName`, `
 (1566,0,'transports','name','A name describing the transport.','A name describing the transport. This is not used in-game, but only here to ease locking up data.'),
 (1567,0,'transports','period','This is the amount of time that it take for the transport to make one full pass.','This is the amount of time that it take for the transport to make one full pass through all the frames in the TaxiNodes (See TaxiNodes.dbc). When a client change occurs, usually this field must be updated. This values is set in milliseconds.'),
 (1568,0,'world_template','map','The map ID (See Map.dbc)','The map ID (See Map.dbc)'),
-(1569,0,'world_template','ScriptName','To assign a script from the script library to the world continent.','To assign a script from the script library to the world continent, set this string to the script’s exported name.');
+(1569,0,'world_template','ScriptName','To assign a script from the script library to the world continent.','To assign a script from the script library to the world continent, set this string to the script’s exported name.'),
+(1570,0,'db_version','description','','The Description of the latest database revision.'),
+(1571,0,'db_version','comment','','A comment about the latest database revision.'),
+(1572,0,'db_version','structure','','The current core structure level.'),
+(1573,0,'db_version','content','','The current core content level, The server will start if there is a mismatch, but will issue a warning message'),
+(1574,0,'dbdocsfields','languageId','','The ID of the language of the localised entry.<br /><br /><br />¬subtable:101¬<br />'),
+(1575,0,'dbdocsfields','fieldId','','The unique Id for this field.'),
+(1576,0,'dbdocsfields_localised','fieldId','','The unique Id for this field.'),
+(1577,0,'dbdocsfields_localised','languageId','','The ID of the language of the localised entry.<br /><br /><br />¬subtable:101¬'),
+(1578,0,'dbdocsfields_localised','fieldNotes','','The localised Field Note text'),
+(1579,0,'dbdocsfields_localised','fieldComment','','A short localised Description of the Field.'),
+(1580,0,'dbdocslanguage','LanguageId','','The ID of the language of the localised entry.'),
+(1581,0,'dbdocslanguage','LanguageName','','The Name of the language of the localised entry.'),
+(1582,0,'dbdocssubtables','languageId','','The ID of the language of the localised entry.'),
+(1583,0,'dbdocssubtables_localised','subTableId','','This is the Lookup Id of the subTable'),
+(1584,0,'dbdocssubtables_localised','languageId','','The ID of the language of the localised entry.'),
+(1585,0,'dbdocssubtables_localised','subTableContent','','The Content of the subTable.'),
+(1586,0,'dbdocssubtables_localised','subTableTemplate','','The SubTable Template, Used to create the SubTableContent field content'),
+(1587,0,'dbdocstable','languageId','','The ID of the language of the localised entry.'),
+(1588,0,'dbdocstable','tableId','','The unique Id of the table.'),
+(1589,0,'dbdocstable_localised','tableId','','The unique Id of the table.'),
+(1590,0,'dbdocstable_localised','languageId','','The ID of the language of the localised entry.'),
+(1591,0,'dbdocstable_localised','tableNotes','','The table note text.');
 /*!40000 ALTER TABLE `dbdocsfields` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1606,4 +1629,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:32
+-- Dump completed on 2015-11-10 11:07:11

@@ -488,7 +488,17 @@ INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALU
 (25369,25005,0,'Noblegarden egg, 25369'),
 (25370,25005,0,'Noblegarden egg, 25370'),
 (25371,25005,0,'Noblegarden egg, 25371'),
-(25372,25005,0,'Noblegarden egg, 25372');
+(25372,25005,0,'Noblegarden egg, 25372'),
+(15007,15013,0,'Dark Keeper Nameplate'),
+(15008,15013,0,'Dark Keeper Nameplate'),
+(15009,15013,0,'Dark Keeper Nameplate'),
+(15010,15013,0,'Dark Keeper Nameplate'),
+(15011,15013,0,'Dark Keeper Nameplate'),
+(15012,15013,0,'Dark Keeper Nameplate'),
+(25482,25486,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(25483,25486,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(25484,25487,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(25485,25487,0,'BRD - Ragereaver Golem/Wrath Hammer Construct');
 /*!40000 ALTER TABLE `pool_pool` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -501,4 +511,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:38
+-- Dump completed on 2015-11-10 11:07:18

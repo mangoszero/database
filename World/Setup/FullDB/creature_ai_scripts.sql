@@ -8849,7 +8849,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (844411,8444,2,0,100,0,15,0,0,0,22,3,0,0,0,0,0,0,0,0,0,0,'Trade Master Kovic - Set Phase 3 at 15% HP'),
 (844412,8444,2,7,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Trade Master Kovic - Start Combat Movement and Flee at 15% HP (Phase 3)'),
 (844413,8444,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Trade Master Kovic - Set Phase to 0 on Evade'),
-(847701,8477,1,0,100,0,5000,5000,0,0,41,0,0,0,0,0,0,0,0,0,0,0,'Skeletal Servant - Despawn on Evade'),
+(184902,1849,0,0,100,1,15000,30000,30000,30000,11,17228,0,0,0,0,0,0,0,0,0,0,'Dreadwhisper - Shadow Bolt Volley '),
 (849701,8497,11,0,100,0,0,0,0,0,11,7741,0,0,1,-579,0,0,0,0,0,0,'Nightmare Suppressor - Summoned Demon on Spawn'),
 (849702,8497,1,0,100,1,10000,10000,10000,10000,11,12623,0,0,0,0,0,0,0,0,0,0,'Nightmare Suppressor - Cast Suppression OOC'),
 (850301,8503,1,0,100,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,'Gibblewilt - Prevent Combat Movement on Spawn'),
@@ -9867,7 +9867,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1018204,10182,0,0,100,1,5000,8000,12000,15000,11,18813,4,0,0,0,0,0,0,0,0,0,'Rokaro - Cast Knock Away'),
 (1018205,10182,0,0,100,1,3000,5000,6000,9000,11,15976,1,0,0,0,0,0,0,0,0,0,'Rokaro - Cast Puncture'),
 (1237701,12377,0,0,100,1,4000,7000,11000,14000,11,7713,0,1,0,0,0,0,0,0,0,0,'Wailing Spectre - Cast Wailing Dead'),
-(1020202,10202,0,0,100,1,10000,10000,60000,63000,11,16099,1,0,0,0,0,0,0,0,0,0,'Azurous - Cast Frost Breath'),
+(1020202,10202,0,0,100,1,10000,20000,20000,30000,11,16099,1,0,0,0,0,0,0,0,0,0,'Azurous - Frost Breath'),
 (1021601,10216,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Gubber Blump - Flee at 15% HP'),
 (1021901,10219,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Gwennyth Bly\'Leggonde - Flee at 15% HP'),
 (1022001,10220,0,0,100,1,8000,10000,12000,14000,11,13738,1,0,0,0,0,0,0,0,0,0,'Halycon - Cast Rend'),
@@ -13450,9 +13450,9 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (892012,8920,7,0,100,2,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Weapon Technician - On Evade set Phase to 0'),
 (892201,8922,0,0,100,3,2000,2000,12000,12000,11,7140,1,0,0,0,0,0,0,0,0,0,'Bloodhound Mastiff - Cast Expose Weakness'),
 (892202,8922,0,0,100,3,2000,2000,16000,16000,11,15608,1,1,0,0,0,0,0,0,0,0,'Bloodhound Mastiff - Cast Ravenous Claw'),
-(902901,9029,0,0,80,3,5500,5500,10000,11000,11,14331,1,0,0,0,0,0,0,0,0,0,'Eviscerator - Cast Vicious Rend'),
-(902902,9029,0,0,100,3,3000,5500,13000,15000,11,15245,0,0,0,0,0,0,0,0,0,0,'Eviscerator - Cast Shadow Bolt Volley'),
-(902903,9029,0,0,100,3,2000,5500,18000,18000,11,7121,0,1,0,0,0,0,0,0,0,0,'Eviscerator - Cast Anti-Magic Shield'),
+(902903,9029,0,0,100,1,6000,12000,12000,24000,11,7121,0,0,0,0,0,0,0,0,0,0,'Eviscerator - Anti-Magic Shield'),
+(902902,9029,0,0,100,1,6000,12000,12000,24000,11,15245,1,0,0,0,0,0,0,0,0,0,'Eviscerator - Shadow Bolt Volley'),
+(902901,9029,0,0,100,1,4000,8000,6000,12000,11,14331,1,32,0,0,0,0,0,0,0,0,'Eviscerator - Vicious Rend'),
 (903001,9030,0,0,100,3,1000,2000,3000,3000,11,15254,1,0,0,0,0,0,0,0,0,0,'Ok\'thor the Breaker - Cast Arcane Bolt'),
 (903002,9030,0,0,80,3,1500,5500,15000,15000,11,15453,0,0,0,0,0,0,0,0,0,0,'Ok\'thor the Breaker - Cast Arcane Explosion'),
 (903003,9030,0,0,100,3,1500,5500,16000,16000,11,13323,1,0,0,0,0,0,0,0,0,0,'Ok\'thor the Breaker - Cast Polymorph'),
@@ -13844,11 +13844,11 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (933607,9336,2,0,100,0,15,0,0,0,22,2,0,0,0,0,0,0,0,0,0,0,'Boss Copperplug - Set Phase 2 at 15% HP'),
 (933608,9336,2,3,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Boss Copperplug - Start Combat Movement and Flee at 15% HP (Phase 2)'),
 (933609,9336,7,0,100,0,0,0,0,0,22,1,0,0,40,1,0,0,21,0,0,0,'Boss Copperplug - Set Phase to 1 and Set Melee Weapon Model and Prevent Combat Movement on Evade'),
-(1020201,10202,0,0,100,1,10000,10000,60000,63000,11,16099,1,0,0,0,0,0,0,0,0,0,'Azurous - Cast Frost Breath'),
+(1020201,10202,11,0,100,0,0,0,0,0,11,8876,0,2,0,0,0,0,0,0,0,0,'Azurous - Thrash'),
 (1066201,10662,0,0,100,1,10000,10000,60000,63000,11,16099,1,0,0,0,0,0,0,0,0,0,'Spellmaw - Cast Frost Breath'),
 (1066301,10663,0,0,100,1,10000,10000,60000,63000,11,16099,1,0,0,0,0,0,0,0,0,0,'Manaclaw - Cast Frost Breath'),
 (1066401,10664,0,0,100,1,10000,10000,60000,63000,11,16099,1,0,0,0,0,0,0,0,0,0,'Scryer - Cast Frost Breath'),
-(1037501,10375,1,0,100,1,10000,10000,0,0,37,0,0,0,0,0,0,0,0,0,0,0,'Spire Spiderling -  Die on Evade'),
+(184901,1849,11,0,100,0,0,0,0,0,11,12552,0,2,0,0,0,0,0,0,0,0,'Dreadwhisper - Criple'),
 (454207,4542,4,0,100,2,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'High Inquisitor Fairbanks - Set Stand State to Stand on Aggro'),
 (1047204,10472,2,0,100,2,40,0,0,0,3,11284,0,0,22,2,0,0,0,0,0,0,'Scholomance Occultist - Transform into Dark Shade and Set Phase 2 at 40% HP (Phase 1)'),
 (1047205,10472,0,3,100,3,500,1000,6500,15600,11,17228,1,0,0,0,0,0,0,0,0,0,'Scholomance Occultist - Cast Shadow Bolt Volley (Phase 2)'),
@@ -13881,7 +13881,15 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1217804,12178,6,0,75,2,0,0,0,0,1,-1147,0,0,12,13136,1,300000,0,0,0,0,'Tortured Druid - Shout and summon drone'),
 (1081711,10817,1,0,100,1,120000,120000,120000,120000,1,-1161,0,0,0,0,0,0,0,0,0,0,'Duggan Wildhammer - Random Say OOC'),
 (734901,7349,0,0,100,1,3000,10000,120000,125000,11,744,1,0,0,0,0,0,0,0,0,0,'Tome Fiend - Cast Poison'),
-(891102,8911,0,0,100,1,8000,12000,8000,12000,11,15243,1,0,0,0,0,0,0,0,0,0,'Fireguard Destroyer - Fireball Volley');
+(891102,8911,0,0,100,1,8000,12000,8000,12000,11,15243,1,0,0,0,0,0,0,0,0,0,'Fireguard Destroyer - Fireball Volley'),
+(405901,4059,1,0,100,0,7500,10500,0,0,48,2,0,0,0,0,0,0,0,0,0,0,'Forest Wisp - Start WP movement after 7 sec'),
+(184903,1849,0,0,100,1,5000,15000,15000,15000,11,7068,1,0,0,0,0,0,0,0,0,0,'Dreadwhisper - Veil of Shadow'),
+(1426601,14266,11,0,100,0,0,0,0,0,11,11919,0,2,0,0,0,0,0,0,0,0,'Shanda the Spinner - Poison Proc'),
+(1019801,10198,11,0,100,0,0,0,0,0,11,8876,0,2,0,0,0,0,0,0,0,0,'Kashoch the Reaver - Thrash'),
+(1019802,10198,0,0,100,1,4000,8000,6000,12000,11,11427,1,0,0,0,0,0,0,0,0,0,'Kashoch the Reaver - Cleave'),
+(1449101,14491,2,0,100,1,20,0,180000,180000,11,8599,0,0,0,0,0,0,0,0,0,0,'Kurmokk - Enrage'),
+(1612901,16129,1,0,100,0,5000,5000,0,0,11,27812,0,0,0,0,0,0,0,0,0,0,'Shadow Fissure - Void Blast'),
+(1642701,16427,11,0,100,0,0,0,0,0,11,28458,0,2,0,0,0,0,0,0,0,0,'Soldier of the Frozen Wastes - Dark Blast');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13894,4 +13902,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:30
+-- Dump completed on 2015-11-10 11:07:08

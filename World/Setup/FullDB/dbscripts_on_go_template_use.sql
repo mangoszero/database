@@ -26,15 +26,15 @@ TRUNCATE TABLE `dbscripts_on_go_template_use`;
 
 LOCK TABLES `dbscripts_on_go_template_use` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_go_template_use` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (170569,1,22,54,5,9678,20,3,0,0,0,0,0,0,0,0,'Shill - change faction to hostile'),
-(170569,1,0,0,0,9678,20,3,2000000068,0,0,0,0,0,0,0,'Shill - say on Shill door open'),
-(170568,2,22,54,5,9677,20,3,0,0,0,0,0,0,0,0,'Ograbisi - change faction to hostile'),
-(170568,2,22,54,5,9681,20,3,0,0,0,0,0,0,0,0,'Jaz - change faction to hostile'),
-(170568,1,0,0,0,9677,20,3,2000000070,0,0,0,0,0,0,0,'Ograbisi - say on Jaz door open'),
-(170562,1,0,0,0,9023,20,3,2000000067,0,0,0,0,0,0,0,'Windsor - say on Dughal door open'),
+INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (170569,1,22,54,5,9678,20,3,2000005100,0,0,0,0,0,0,0,'Shill - change faction to hostile'),
+(170569,1,0,0,0,9678,20,3,2000005100,0,0,0,0,0,0,0,'Shill - say on Shill door open'),
+(170568,2,22,54,5,9677,20,3,2000005102,0,0,0,0,0,0,0,'Ograbisi - change faction to hostile'),
+(170568,2,22,54,5,9681,20,3,2000005102,0,0,0,0,0,0,0,'Jaz - change faction to hostile'),
+(170568,1,0,0,0,9677,20,3,2000005102,0,0,0,0,0,0,0,'Ograbisi - say on Jaz door open'),
+(170562,1,0,0,0,9023,20,3,2000005099,0,0,0,0,0,0,0,'Windsor - say on Dughal door open'),
 (179804,1,10,14605,60000,0,0,2,0,0,0,0,0,0,0,0,'Drakonid Bones - Summon Bone Construct'),
-(170567,1,0,0,0,9680,20,3,2000000069,0,0,0,0,0,0,0,'Crest - say on Crest door open'),
-(170567,1,22,54,5,9680,20,3,0,0,0,0,0,0,0,0,'Crest - change faction to hostile'),
+(170567,1,0,0,0,9680,20,3,2000005101,0,0,0,0,0,0,0,'Crest - say on Crest door open'),
+(170567,1,22,54,5,9680,20,3,2000005101,0,0,0,0,0,0,0,'Crest - change faction to hostile'),
 (178145,0,10,11920,30000,0,0,0,0,0,0,0,0,0,0,0,''),
 (176581,0,10,11876,30000,0,0,0,0,0,0,0,0,0,0,0,''),
 (175944,0,10,10882,30000,0,0,0,0,0,0,0,-5008.34,-2118.89,83.657,0.874,''),
@@ -82,7 +82,28 @@ INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`
 (177397,0,10,11937,60000,0,0,0,0,0,0,0,0,0,0,0,'Demon Portal - Summon Demon Portal Guardian'),
 (177398,0,10,11937,60000,0,0,0,0,0,0,0,0,0,0,0,'Demon Portal - Summon Demon Portal Guardian'),
 (177399,0,10,11937,60000,0,0,0,0,0,0,0,0,0,0,0,'Demon Portal - Summon Demon Portal Guardian'),
-(177400,0,10,11937,60000,0,0,0,0,0,0,0,0,0,0,0,'Demon Portal - Summon Demon Portal Guardian');
+(177400,0,10,11937,60000,0,0,0,0,0,0,0,0,0,0,0,'Demon Portal - Summon Demon Portal Guardian'),
+(161456,0,10,9437,10800000,0,0,0,0,0,0,0,815.276,-168.652,-49.6699,6.23083,'Spawn Dark Keeper Vorfalk and his guards'),
+(161456,0,10,9445,10800000,0,0,0,0,0,0,0,816.276,-167.652,-49.6699,5.58505,'Spawn Dark Keeper Vorfalk and his guards'),
+(161456,0,10,9445,10800000,0,0,0,0,0,0,0,817.276,-166.652,-49.6699,4.88692,'Spawn Dark Keeper Vorfalk and his guards'),
+(161458,0,10,9439,10800000,0,0,0,0,0,0,0,901.537,-359.291,-49.908,3.31613,'Spawn Dark Keeper Uggel and his guards'),
+(161458,0,10,9445,10800000,0,0,0,0,0,0,0,903.295,-356.783,-49.8522,3.68264,'Spawn Dark Keeper Uggel and his guards'),
+(161458,0,10,9445,10800000,0,0,0,0,0,0,0,902.896,-361.966,-50.0812,2.74017,'Spawn Dark Keeper Uggel and his guards'),
+(161459,0,10,9441,10800000,0,0,0,0,0,0,0,549.701,-214.474,-36.8893,0.331613,'Spawn Dark Keeper Zimrel and his guards'),
+(161459,0,10,9445,10800000,0,0,0,0,0,0,0,549.796,-217.958,-36.8654,0.890118,'Spawn Dark Keeper Zimrel and his guards'),
+(161459,0,10,9445,10800000,0,0,0,0,0,0,0,548.083,-212.932,-36.8628,6.26573,'Spawn Dark Keeper Zimrel and his guards'),
+(164818,0,10,9442,10800000,0,0,0,0,0,0,0,679.491,-7.79026,-59.9754,1.8326,'Spawn Dark Keeper Ofgut and his guards'),
+(164818,0,10,9445,10800000,0,0,0,0,0,0,0,680.491,-6.79026,-59.9754,2.18166,'Spawn Dark Keeper Ofgut and his guards'),
+(164818,0,10,9445,10800000,0,0,0,0,0,0,0,681.491,-5.79026,-59.9754,2.58309,'Spawn Dark Keeper Ofgut and his guards'),
+(164819,0,10,9443,10800000,0,0,0,0,0,0,0,802.755,-245.25,-43.2198,2.93215,'Spawn Dark Keeper Pelver and his guards'),
+(164819,0,10,9445,10800000,0,0,0,0,0,0,0,805.289,-243.172,-43.2198,3.42085,'Spawn Dark Keeper Pelver and his guards'),
+(164819,0,10,9445,10800000,0,0,0,0,0,0,0,801.935,-248.841,-43.2198,1.95477,'Spawn Dark Keeper Pelver and his guards'),
+(161457,0,10,9438,10800000,0,0,0,0,0,0,0,862.461,-309.724,-49.8757,3.85883,'Spawn Dark Keeper Bethek and his guards'),
+(161457,0,10,9445,10800000,0,0,0,0,0,0,0,863.219,-305.041,-49.8751,3.68264,'Spawn Dark Keeper Bethek and his guards'),
+(161457,0,10,9445,10800000,0,0,0,0,0,0,0,860.947,-302.54,-49.8787,4.04916,'Spawn Dark Keeper Bethek and his guards'),
+(161457,0,10,9445,10800000,0,0,0,0,0,0,0,864.232,-303.735,-49.8527,3.735,'Spawn Dark Keeper Bethek and his guards'),
+(161457,0,10,9445,10800000,0,0,0,0,0,0,0,862.676,-301.922,-49.8527,3.9619,'Spawn Dark Keeper Bethek and his guards'),
+(174565,0,27,8,0,160845,7,0,0,0,0,0,0,0,0,0,'');
 /*!40000 ALTER TABLE `dbscripts_on_go_template_use` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -95,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:33
+-- Dump completed on 2015-11-10 11:07:11

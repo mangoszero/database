@@ -160,7 +160,10 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (132,0,'spell_target_position','This table holds coordinate information on where the player should be teleported to when a spell with effect SPELL_EFFECT_TELEPORT_UNITS.'),
 (133,0,'spell_threat','This table holds threat values on all spells that should either give or take away threat.'),
 (134,0,'transports','This table contains all type 15 transports (Boats and Zeppelins). \r\n<br />\r\nAll other transport types have their frame time read from TransportAnimation.dbc.'),
-(135,0,'world_template','This table holds informations for connection world continents to scripts from the script library.');
+(135,0,'world_template','This table holds informations for connection world continents to scripts from the script library.'),
+(136,0,'dbdocsfields_localised','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />An entry in this table provides a link to the table and field to allow additional notes to describe the field in the Wiki for languages other than English.'),
+(137,0,'dbdocssubtables_localised','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />An entry in this table provides a table which dirctly replaces the link in the fieldnotes for languages other than English.'),
+(138,0,'dbdocstable_localised','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />An entry in this table provides a additional notes field to describe the database in the Wiki for languages other than English.');
 /*!40000 ALTER TABLE `dbdocstable` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -173,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-31 23:46:33
+-- Dump completed on 2015-11-10 11:07:11
