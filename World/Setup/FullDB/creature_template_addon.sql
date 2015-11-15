@@ -4743,7 +4743,6 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (8903,0,0,1,16,0,0,NULL),
 (8904,0,0,1,16,0,0,NULL),
 (8905,0,0,1,16,0,0,NULL),
-(8907,0,0,1,16,0,0,NULL),
 (8906,0,0,1,16,0,0,NULL),
 (8908,0,0,1,16,0,0,NULL),
 (8909,0,0,1,16,0,0,NULL),
@@ -6526,7 +6525,8 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (1892,0,0,0,0,0,0,'7671'),
 (3694,0,0,1,1,0,0,NULL),
 (10580,0,0,1,16,0,0,NULL),
-(8982,0,0,1,16,0,0,'10255');
+(8982,0,0,1,16,0,0,'10255'),
+(8907,0,0,1,16,0,0,NULL);
 /*!40000 ALTER TABLE `creature_template_addon` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

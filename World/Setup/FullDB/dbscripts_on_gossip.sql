@@ -263,11 +263,11 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (570801,0,15,22799,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - cast King of the Gordok'),
 (574001,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'Mizzle - resume WP Movement'),
 (166601,0,7,3801,0,0,0,0,0,0,0,0,0,0,0,0,'complete quest'),
-(197001,0,22,21,0,0,0,0,0,0,0,0,0,0,0,0,'Ribbly - update faction'),
-(197001,0,22,21,0,10043,46616,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
-(197001,0,22,21,0,10043,46617,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
-(197001,0,22,21,0,10043,46618,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
 (197001,3,0,0,0,0,0,0,2000005626,0,0,0,0,0,0,0,''),
+(197001,0,22,21,0,10043,46618,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
+(197001,0,22,21,0,10043,46617,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
+(197001,0,22,21,0,10043,46616,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
+(197001,0,22,21,0,0,0,0,0,0,0,0,0,0,0,0,'Ribbly - update faction'),
 (197001,5,26,0,0,0,25,0,0,0,0,0,0,0,0,0,'Ribbly  - attack player');
 /*!40000 ALTER TABLE `dbscripts_on_gossip` ENABLE KEYS */;
 UNLOCK TABLES;

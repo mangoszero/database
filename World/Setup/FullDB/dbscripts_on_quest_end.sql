@@ -629,9 +629,9 @@ INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `dat
 (7811,0,21,1,0,10805,272,16,0,0,0,0,0,0,0,0,'Klemmy - active'),
 (7811,0,21,1,0,10611,267,16,0,0,0,0,0,0,0,0,'Shorty - active'),
 (502,120,39,2274,0,0,0,0,0,0,0,0,0,0,0,0,'Enraged Stanley Change Entry'),
-(1059,0,29,2,2,0,0,0,2000005780,0,0,0,0,0,0,0,''),
+(1059,2,32,0,0,0,0,4,0,0,0,0,0,0,0,0,'Unpause WP movement'),
 (1059,1,0,0,0,0,0,0,2000005780,0,0,0,0,0,0,0,''),
-(1059,2,32,0,0,0,0,4,0,0,0,0,0,0,0,0,'Unpause WP movement');
+(1059,0,29,2,2,0,0,0,2000005780,0,0,0,0,0,0,0,'');
 /*!40000 ALTER TABLE `dbscripts_on_quest_end` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

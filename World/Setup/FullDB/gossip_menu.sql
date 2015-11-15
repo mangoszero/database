@@ -3260,8 +3260,8 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (3129,4114,0,341),
 (6159,6157,0,0),
 (694,1244,0,0),
-(50100,5796,0,0),
-(50101,5797,0,0);
+(50101,5797,0,0),
+(50100,5796,0,0);
 /*!40000 ALTER TABLE `gossip_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

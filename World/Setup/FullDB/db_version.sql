@@ -34,7 +34,7 @@ INSERT INTO `db_version` (`version`, `structure`, `content`, `description`, `com
 (21,1,5,'remove doubled lothos gossip','delete doubled gossip_menu_option for the teleport to molten core'),
 (21,1,6,'list_aura_command','core adds another parameter to be printed out: aura stack number'),
 (21,1,7,'remove_unused_tables','remove_unused_tables - pvpstats_battlegrounds.and players'),
-(21,1,8,'update_dbdocs_entries','update_dbdocs_entries - for recently changed tables');
+(21,1,11,'Fix last startup errors','server - fix last startup errors');
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
