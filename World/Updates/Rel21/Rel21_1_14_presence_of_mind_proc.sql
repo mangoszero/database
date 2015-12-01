@@ -18,12 +18,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '1'; 
-    SET @cOldContent = '12'; 
+    SET @cOldContent = '13'; 
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '1';
-    SET @cNewContent = '13';
+    SET @cNewContent = '14';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Presence_of_Mind';
 
