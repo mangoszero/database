@@ -25,7 +25,7 @@ BEGIN
     SET @cNewStructure = '1';
     SET @cNewContent = '13';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'dbdocs update for item_template';
+    SET @cNewDescription = 'item_template_dbdocs_update';
 
                         -- COMMENT is 150 Characters MAX
     SET @cNewComment = 'New subtables added, and Notes and field comments added to the item_template table';
