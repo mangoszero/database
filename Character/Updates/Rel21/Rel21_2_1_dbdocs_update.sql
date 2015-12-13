@@ -375,7 +375,8 @@ update `dbdocsfields` set `FieldComment` = 'The StationeryID (See Stationery.dbc
 update `dbdocsfields` set `FieldComment` = 'message_type.', `fieldNotes` = 'The type of the Message:<br />¬subtable:23¬' where `fieldId`= '336' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'checked_flag.', `fieldNotes` = 'checked_flag<br />¬subtable:25¬<br />Flag Mask:<br />¬subtable:26¬<br /><br />' where `fieldId`= '328' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'The flags controlling character cleanup.', `fieldNotes` = 'The flags controlling character cleanup:<br />¬subtable:27¬<br /><br />' where `fieldId`= '374' and `languageId`= 0;
-   
+update `dbdocsfields` set `FieldComment` = 'The ID of the button on the action bar where the action icon will be placed.', `fieldNotes` = 'The ID of the button on the action bar where the action icon will be placed.<br /><br />Special bars are used for stances, auras, pets, stealth, and other similar special modes.<br />¬subtable:13¬<br /><br />' where `fieldId`= '20' and `languageId`= 0;
+
         
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
