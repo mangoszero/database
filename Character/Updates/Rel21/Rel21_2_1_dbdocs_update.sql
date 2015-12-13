@@ -236,7 +236,28 @@ ITEM_QUALITY_RARE|3|BLUE
 ITEM_QUALITY_EPIC|4|PURPLE
 ITEM_QUALITY_LEGENDAR|5|ORANGE
 ITEM_QUALITY_ARTIFACT|6|LIGHT YELLOW');
-
+delete from `dbdocssubtables` where `subtableId`= 36 and languageId=0;
+insert  into `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtablecontent`,`subtableTemplate`) values (36,0,'Extra Flags','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>
+<tr bgcolor=\'#f0f0ff\'>
+<th><b>Bit</b></th>
+<th><b>Name</b></th>
+<th align=\'left\'><b>Description</b></th>
+<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>1</td><td align=\'center\' valign=\'middle\'>PLAYER_EXTRA_GM_ON</td><td align=\'left\' valign=\'middle\'>Defines GM state</td></tr>
+<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>2</td><td align=\'center\' valign=\'middle\'>PLAYER_EXTRA_GM_ACCEPT_TICKETS</td><td align=\'left\' valign=\'middle\'>Defines if tickets are accepted</td></tr>
+<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>4</td><td align=\'center\' valign=\'middle\'>PLAYER_EXTRA_ACCEPT_WHISPERS</td><td align=\'left\' valign=\'middle\'>Defines if whispers are accepted</td></tr>
+<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>8</td><td align=\'center\' valign=\'middle\'>PLAYER_EXTRA_TAXICHEAT</td><td align=\'left\' valign=\'middle\'>Sets taxicheat></td></tr>
+<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>16</td><td align=\'center\' valign=\'middle\'>PLAYER_EXTRA_GM_INVISIBLE</td><td align=\'left\' valign=\'middle\'>Control\'s GM\'s invisibly</td></tr>
+<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>32</td><td align=\'center\' valign=\'middle\'>PLAYER_EXTRA_GM_CHAT</td><td align=\'left\' valign=\'middle\'>Show GM badge in chat messages</td></tr>
+<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>64</td><td align=\'center\' valign=\'middle\'>PLAYER_EXTRA_PVP_DEATH</td><td align=\'left\' valign=\'middle\'>Store PvP death status until corpse creating</td></tr>
+</table>
+','Bit|Name|<Description
+1|PLAYER_EXTRA_GM_ON|Defines GM state
+2|PLAYER_EXTRA_GM_ACCEPT_TICKETS|Defines if tickets are accepted
+4|PLAYER_EXTRA_ACCEPT_WHISPERS|Defines if whispers are accepted
+8|PLAYER_EXTRA_TAXICHEAT|Sets taxicheat>
+16|PLAYER_EXTRA_GM_INVISIBLE|Control\'s GM\'s invisibly
+32|PLAYER_EXTRA_GM_CHAT|Show GM badge in chat messages
+64|PLAYER_EXTRA_PVP_DEATH|Store PvP death status until corpse creating');
 
 -- dbocsfields
 -- -- -- -- --
@@ -337,7 +358,24 @@ update `dbdocsfields` set `FieldComment` = 'Secondary effect (appears to be only
 update `dbdocsfields` set `FieldComment` = 'Primary effect over time.', `fieldNotes` = 'Primary effect over time.' where `fieldId`= '354' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Secondary effect (healing) over time', `fieldNotes` = 'Secondary effect (healing) over time' where `fieldId`= '355' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Secondary effect (damage) over time.', `fieldNotes` = 'Secondary effect (damage) over time.' where `fieldId`= '356' and `languageId`= 0;
-       
+update `dbdocsfields` set `FieldComment` = 'The type of action.', `fieldNotes` = 'The type of action:<br />¬subtable:14¬<br />' where `fieldId`= '22' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The slot is the slot in the bag where the item is.', `fieldNotes` = 'If the bag field is non-zero, then the slot is the slot in the bag where the item is kept. The range can differ depending on the number of slots the bag has.<br /><br />If the bag field is zero, then the slot has a range of 0 to 84 and the value stands for the following:<br />¬subtable:15¬<br /><br />' where `fieldId`= '71' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The current quest status.', `fieldNotes` = 'The current quest status.<br />¬subtable:16¬<br /><br /><br />' where `fieldId`= '107' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'This field is a bitmask containing flags that apply to the faction.', `fieldNotes` = 'This field is a bitmask containing flags that apply to the faction and how it\'s displayed to the character. Just like any flag field, you can combine flags by adding them together. <br />If this field is 0, then it is not shown in the reputation list in-game.<br />¬subtable:17¬<br /><br />' where `fieldId`= '110' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Whether the character is a friend or ignored.', `fieldNotes` = 'The flag indicating whether the entry is either a friend or ignored.<br />¬subtable:18¬<br /><br />' where `fieldId`= '117' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The race of the character.', `fieldNotes` = 'The race of the character.<br />¬subtable:12¬<br /><br />' where `fieldId`= '216' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The Sex/Gender of the character.', `fieldNotes` = 'The Sex/Gender of the character.<br />¬subtable:10¬<br /><br />' where `fieldId`= '191' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'These flags control certain player specific attributes, mostly GM features.', `fieldNotes` = 'These flags control certain player specific attributes, mostly GM features<br />¬subtable:36¬' where `fieldId`= '190' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The status of the character.', `fieldNotes` = 'The status of the character.<br />¬subtable:11¬<br /><br />' where `fieldId`= '180' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The Display Type of the corpse.', `fieldNotes` = 'The Display Type of the corpse:<br />¬subtable:19¬<br /><br /><br />' where `fieldId`= '235' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The Guild Event Type.', `fieldNotes` = 'The Guild Event Type:<br />¬subtable:20¬<br /><br />' where `fieldId`= '296' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The rights a player with this rank has in the guild.', `fieldNotes` = 'The rights a player with this rank has in the guild. <br />The calculation of multiple rights is a bit different in this case as the rights do not all have 2^n values. <br />To combine ranks, you must do the OR operation (&#124;) on the two flags.<br />¬subtable:21¬<br /><br /><br />' where `fieldId`= '310' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Much like the playerbytes fields in the characters table.', `fieldNotes` = 'Much like the playerbytes fields in the characters table, this field has many number fields all separated by a space which contain specific individual item information like any enchantments applied to the item, etc.<br />¬subtable:22¬<br />' where `fieldId`= '318' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The StationeryID (See Stationery.dbc).', `fieldNotes` = 'The StationeryID (See Stationery.dbc).<br />¬subtable:24¬' where `fieldId`= '340' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'message_type.', `fieldNotes` = 'The type of the Message:<br />¬subtable:23¬' where `fieldId`= '336' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'checked_flag.', `fieldNotes` = 'checked_flag<br />¬subtable:25¬<br />Flag Mask:<br />¬subtable:26¬<br /><br />' where `fieldId`= '328' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The flags controlling character cleanup.', `fieldNotes` = 'The flags controlling character cleanup:<br />¬subtable:27¬<br /><br />' where `fieldId`= '374' and `languageId`= 0;
+   
         
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
