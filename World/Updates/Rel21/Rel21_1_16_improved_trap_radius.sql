@@ -50,7 +50,7 @@ BEGIN
 
 -- Changed the radius where hunter traps get activated 
 
-UPDATE `gameobject_template` SET `data2`=3 WHERE `type`=6 AND `data9`>0 AND `data2`=1;
+UPDATE `gameobject_template` SET `data2`=3 WHERE `type`=6 AND `data9`>0 AND `data2`=1,AND `entry`>0;
 
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
