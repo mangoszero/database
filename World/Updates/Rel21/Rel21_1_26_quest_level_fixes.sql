@@ -18,17 +18,17 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '1'; 
-    SET @cOldContent = '15'; 
+    SET @cOldContent = '25'; 
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '1';
-    SET @cNewContent = '16';
+    SET @cNewContent = '26';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'improved_trap_radius';
+    SET @cNewDescription = 'quest_level_fixes';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'improved_trap_radius';
+    SET @cNewComment = 'Corrected the minimum and maximum level values for multiple quests.';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT description FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
@@ -48,10 +48,9 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
--- Changed the radius where hunter traps get activated 
-
-UPDATE `gameobject_template` SET `data2`=3 WHERE `type`=6 AND `data9`>0 AND `data2`=1,AND `entry`>0;
-
+-- Correct the levels
+UPDATE `quest_template` SET `MinLevel`=42,`QuestLevel`=47 WHERE `entry`=3022;
+UPDATE `quest_template` SET `MinLevel`=26 WHERE `entry`=1106;
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
