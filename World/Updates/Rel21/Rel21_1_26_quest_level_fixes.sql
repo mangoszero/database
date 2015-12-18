@@ -25,10 +25,10 @@ BEGIN
     SET @cNewStructure = '1';
     SET @cNewContent = '26';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'quest_3022_level_fix';
+    SET @cNewDescription = 'quest_level_fixes';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Corrected the minimum and maximum level values for quest 3022.';
+    SET @cNewComment = 'Corrected the minimum and maximum level values for multiple quests.';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT description FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
@@ -50,6 +50,7 @@ BEGIN
 
 -- Correct the levels
 UPDATE `quest_template` SET `MinLevel`=42,`QuestLevel`=47 WHERE `entry`=3022;
+UPDATE `quest_template` SET `MinLevel`=26 WHERE `entry`=1106;
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
