@@ -65,7 +65,7 @@ echo           {wdbStruct}   - Backup the Structure as part of the backup (YES/N
 echo           {chardbname}  - Name of the Character Database
 echo           {cdbStruct}   - Backup the Structure as part of the backup (YES/NO)
 echo           {realmdbname} - Name of the Realm Database
-echo           {rdbStructe}  - Backup the Structure as part of the backup (YES/NO)
+echo           {rdbStruct}   - Backup the Structure as part of the backup (YES/NO)
 
 echo  e.g.
 echo.
@@ -757,6 +757,15 @@ if %loadworldDB% == NO echo -- ---------------------------------------- >>  _ful
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
 
 SET TABLENAME=dbscripts_on_spell
+echo             %TABLENAME%
+if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
+if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
+if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
+if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
+if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
+mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
+
+SET TABLENAME=disables
 echo             %TABLENAME%
 if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
 if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql

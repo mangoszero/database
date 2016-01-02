@@ -57,6 +57,7 @@ dbscripts_on_gossip \
 dbscripts_on_quest_end \
 dbscripts_on_quest_start \
 dbscripts_on_spell \
+disables \
 disenchant_loot_template \
 exploration_basexp \
 fishing_loot_template \
