@@ -1,4 +1,4 @@
-ï»¿-- Add the Revision update into the revision column
+-- Add the Revision update into the revision column
 INSERT IGNORE INTO `db_version` SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 20006_21';
 
 delete from `dbdocssubtables` where `subtableId`= 30 and languageId=0;
@@ -50,7 +50,7 @@ insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fiel
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (529,0,'game_event_mail','event','Event ID (See game_events.entry).','Event ID (See game_events.entry).');
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (530,0,'game_event_mail','mailTemplateId','Mail template ID (See MailTemplate.dbc).','Mail template ID (See MailTemplate.dbc) of the mail which will be sent to the player when all conditions are satisfied.');
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (531,0,'game_event_mail','quest','Quest (See quest_template.entry) which should be rewarded.','The quest (See quest_template.entry) which the player should have REWARDED (handed off) for receiving the mail.');
-insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (532,0,'game_event_mail','raceMask','Races of affected players.','Races of affected players based on enum Races (See ChrRaces.dbc) in the bitmask form. Values from the table may be combined by simple adding.<br />Â¬subtable:30Â¬');
+insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (532,0,'game_event_mail','raceMask','Races of affected players.','Races of affected players based on enum Races (See ChrRaces.dbc) in the bitmask form. Values from the table may be combined by simple adding.<br />¬subtable:30¬');
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (533,0,'game_event_mail','senderEntry','NPC entry (See creature_template.entry).','Entry (See creature_template.entry) of the NPC which will sign the mail.');
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (534,0,'game_event_quest','event','Event ID (see game_event.entry).','Event ID (see game_event.entry).');
 insert  into `dbdocsfields`(`fieldId`,`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) values (535,0,'game_event_quest','quest','Quest ID (See quest_template.entry).','ID of the quest (See quest_template.entry) which will be accessible only during the event.');

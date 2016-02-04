@@ -1,4 +1,4 @@
-ï»¿-- --------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------
 -- This is an attempt to create a full transactional update
 -- --------------------------------------------------------------------------------
 DROP PROCEDURE IF EXISTS `update_mangos`; 
@@ -339,24 +339,24 @@ insert  into `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtabl
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>32</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_RESTING</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>64</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_UNK_6</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>128</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_NOT_ATTACKABLE_1</td><td align=\'left\' valign=\'middle\'>(??) ((UNIT_FLAG_PVP_ATTACKABLE + UNIT_FLAG_NOT_ATTACKABLE_1) is NON_PVP_ATTACKABLE)</td></tr>
-<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>256</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_OOC_NOT_ATTACKABLE</td><td align=\'left\' valign=\'middle\'>(2.0.8 â€“ Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)</td></tr>
+<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>256</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_OOC_NOT_ATTACKABLE</td><td align=\'left\' valign=\'middle\'>(2.0.8 – Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>512</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_PASSIVE</td><td align=\'left\' valign=\'middle\'>(makes unable to attack everything. Almost identical to "civilian". Will not engage in combat unless "called upon" or engaged by another unit.)</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>1024</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_LOOTING</td><td align=\'left\' valign=\'middle\'>(loot animation)</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>2048</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_PET_IN_COMBAT</td><td align=\'left\' valign=\'middle\'>(in combat?, 2.0.8)</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>4096</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_PVP</td><td align=\'left\' valign=\'middle\'>Allows item spells to be casted upon (?)</td></tr>
-<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>8192</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_SILENCED</td><td align=\'left\' valign=\'middle\'>Canâ€™t cast spells</td></tr>
+<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>8192</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_SILENCED</td><td align=\'left\' valign=\'middle\'>Can’t cast spells</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>16384</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_UNK_14</td><td align=\'left\' valign=\'middle\'>(2.0.8)</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>32768</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_UNK_15</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>65536</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_UNK_16</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>131072</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_PACIFIED</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>262144</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_DISABLE_ROTATE</td><td align=\'left\' valign=\'middle\'>(stunned, 2.1.1)</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>524288</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_IN_COMBAT</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
-<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>1048576</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_TAXI_FLIGHT</td><td align=\'left\' valign=\'middle\'>(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0Ã—4 flag)</td></tr>
-<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>2097152</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_DISARMED</td><td align=\'left\' valign=\'middle\'>(disable melee spells castingâ€¦, "Required melee weapon" added to melee spells tooltip.)</td></tr>
+<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>1048576</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_TAXI_FLIGHT</td><td align=\'left\' valign=\'middle\'>(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0×4 flag)</td></tr>
+<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>2097152</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_DISARMED</td><td align=\'left\' valign=\'middle\'>(disable melee spells casting…, "Required melee weapon" added to melee spells tooltip.)</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>4194304</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_CONFUSED</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>8388608</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_FLEEING</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
-<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>16777216</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_PLAYER_CONTROLLED</td><td align=\'left\' valign=\'middle\'>(used in spell Eyes of the Beast for petâ€¦)</td></tr>
-<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>33554432</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_NOT_SELECTABLE</td><td align=\'left\' valign=\'middle\'>Canâ€™t be selected by mouse</td></tr>
+<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>16777216</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_PLAYER_CONTROLLED</td><td align=\'left\' valign=\'middle\'>(used in spell Eyes of the Beast for pet…)</td></tr>
+<tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>33554432</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_NOT_SELECTABLE</td><td align=\'left\' valign=\'middle\'>Can’t be selected by mouse</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>67108864</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_SKINNABLE</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>134217728</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_MOUNT</td><td align=\'left\' valign=\'middle\'>(the client seems to handle it perfectly)</td></tr>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>268435456</td><td align=\'left\' valign=\'middle\'>UNIT_FLAG_UNK_28</td><td align=\'left\' valign=\'middle\'>&nbsp;</td></tr>
@@ -373,24 +373,24 @@ insert  into `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtabl
 32|UNIT_FLAG_RESTING|&nbsp;
 64|UNIT_FLAG_UNK_6|&nbsp;
 128|UNIT_FLAG_NOT_ATTACKABLE_1|(??) ((UNIT_FLAG_PVP_ATTACKABLE + UNIT_FLAG_NOT_ATTACKABLE_1) is NON_PVP_ATTACKABLE)
-256|UNIT_FLAG_OOC_NOT_ATTACKABLE|(2.0.8 â€“ Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)
+256|UNIT_FLAG_OOC_NOT_ATTACKABLE|(2.0.8 – Can not be attacked when not in combat. Removed if unit for some reason enter combat.) (2.4.3, Seems to make the unit unattackable)
 512|UNIT_FLAG_PASSIVE|(makes unable to attack everything. Almost identical to "civilian". Will not engage in combat unless "called upon" or engaged by another unit.)
 1024|UNIT_FLAG_LOOTING|(loot animation)
 2048|UNIT_FLAG_PET_IN_COMBAT|(in combat?, 2.0.8)
 4096|UNIT_FLAG_PVP|Allows item spells to be casted upon (?)
-8192|UNIT_FLAG_SILENCED|Canâ€™t cast spells
+8192|UNIT_FLAG_SILENCED|Can’t cast spells
 16384|UNIT_FLAG_UNK_14|(2.0.8)
 32768|UNIT_FLAG_UNK_15|&nbsp;
 65536|UNIT_FLAG_UNK_16|&nbsp;
 131072|UNIT_FLAG_PACIFIED|&nbsp;
 262144|UNIT_FLAG_DISABLE_ROTATE|(stunned, 2.1.1)
 524288|UNIT_FLAG_IN_COMBAT|&nbsp;
-1048576|UNIT_FLAG_TAXI_FLIGHT|(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0Ã—4 flag)
-2097152|UNIT_FLAG_DISARMED|(disable melee spells castingâ€¦, "Required melee weapon" added to melee spells tooltip.)
+1048576|UNIT_FLAG_TAXI_FLIGHT|(disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0×4 flag)
+2097152|UNIT_FLAG_DISARMED|(disable melee spells casting…, "Required melee weapon" added to melee spells tooltip.)
 4194304|UNIT_FLAG_CONFUSED|&nbsp;
 8388608|UNIT_FLAG_FLEEING|&nbsp;
-16777216|UNIT_FLAG_PLAYER_CONTROLLED|(used in spell Eyes of the Beast for petâ€¦)
-33554432|UNIT_FLAG_NOT_SELECTABLE|Canâ€™t be selected by mouse
+16777216|UNIT_FLAG_PLAYER_CONTROLLED|(used in spell Eyes of the Beast for pet…)
+33554432|UNIT_FLAG_NOT_SELECTABLE|Can’t be selected by mouse
 67108864|UNIT_FLAG_SKINNABLE|&nbsp;
 134217728|UNIT_FLAG_MOUNT|(the client seems to handle it perfectly)
 268435456|UNIT_FLAG_UNK_28|&nbsp;
@@ -424,16 +424,16 @@ insert  into `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtabl
 
 update `dbdocstable` set `languageId`=0, `tableName`='areatrigger_involvedrelation', `tableNotes`='The areatrigger_involvedrelation table holds connections between triggers and quests.<br /><br />If there is a record in the table for a quest, the quest will not be completed until the player activates the areatriger. The quest is not necessarily finished after that, but that one condition of the quest is satisfied. If the only condition of the quest is to explore an area, then the quest will be complete.' where tableId=1;
 update `dbdocsfields` set `FieldComment` = 'The destination map id. (See map.dbc)', `fieldNotes` = 'The destination map id. The value has to match with a map identifier defined (see Map.dbc).' where `fieldId`= '11' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'The movement type associated with this creature.', `fieldNotes` = 'The movement type associated with this creature. Usually the same as creature_template.MovementType but can be different (See creature_template.MovementType) for possible values.<br /><br />Â¬subtable:109Â¬ <br />' where `fieldId`= '47' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Value that represents a loot condition that must be filled.', `fieldNotes` = 'Value that represents a loot condition that must be filled in order for the item to drop. This field combined with condition_value1-2 fields can provide conditions on when an item can be dropped. <br /><br />Â¬subtable:12Â¬<br /><br />NOTE: For reference entries this field has no meaning, not used by the core in any way and should have the default value of 0. <br /><br />' where `fieldId`= '142' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'The movement type associated with this creature.', `fieldNotes` = 'The movement type associated with this creature. Usually the same as creature_template.MovementType but can be different (See creature_template.MovementType) for possible values.<br /><br />¬subtable:109¬ <br />' where `fieldId`= '47' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Value that represents a loot condition that must be filled.', `fieldNotes` = 'Value that represents a loot condition that must be filled in order for the item to drop. This field combined with condition_value1-2 fields can provide conditions on when an item can be dropped. <br /><br />¬subtable:12¬<br /><br />NOTE: For reference entries this field has no meaning, not used by the core in any way and should have the default value of 0. <br /><br />' where `fieldId`= '142' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'ID that displays what spells the pet has in the client.', `fieldNotes` = 'ID that displays what spells the pet has in the client.' where `fieldId`= '246' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Marks a creature template as a civilian.', `fieldNotes` = 'Marking a creature template as civilian will prevent it from aggroing and may influence the honor points gained negatively.<br /><br />Â¬subtable:9Â¬<br /><br /><br />' where `fieldId`= '205' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'This Field Controls Where The Creature Can Move Into, Chase And Attack.', `fieldNotes` = 'This Field Controls Where The Creature Can Move Into, Chase And Attack. The NPC Is Limited To ONLY This:<br /><br />Â¬subtable:8Â¬' where `fieldId`= '221' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Determines if a creature template is a racial leader.', `fieldNotes` = 'Determines if a creature template is a racial leader. Racial leaders will grant increased honor points upon death.<br /><br />Â¬subtable:7Â¬' where `fieldId`= '249' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Marks a creature template as a civilian.', `fieldNotes` = 'Marking a creature template as civilian will prevent it from aggroing and may influence the honor points gained negatively.<br /><br />¬subtable:9¬<br /><br /><br />' where `fieldId`= '205' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'This Field Controls Where The Creature Can Move Into, Chase And Attack.', `fieldNotes` = 'This Field Controls Where The Creature Can Move Into, Chase And Attack. The NPC Is Limited To ONLY This:<br /><br />¬subtable:8¬' where `fieldId`= '221' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Determines if a creature template is a racial leader.', `fieldNotes` = 'Determines if a creature template is a racial leader. Racial leaders will grant increased honor points upon death.<br /><br />¬subtable:7¬' where `fieldId`= '249' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'The flags of the creature.
-', `fieldNotes` = 'The flags of the creature.<br />Note that most of these also require the "Gossip" [1] flag to work.<br />So if you want a NPC that is a quest giver, a vendor and can repair you just add the specific flags together: 1 + 2 + 128 + 4096 = 4227. <br /><br />Â¬subtable:6Â¬<br /><br />Â¬subtable:5Â¬' where `fieldId`= '245' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Allows the manual application of unit flags to creatures.', `fieldNotes` = 'Allows the manual application of unit flags to creatures. Again this is a bitmask field and to apply more than one flag, just add the different numbers. Some possible flags are:<br /><br />Â¬subtable:4Â¬' where `fieldId`= '273' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Dynamic flags are used to control the visual appearance of a creature template.', `fieldNotes` = 'Dynamic flags are used to control the visual appearance of a creature template. The following table provides a list of valid values. Multiple flags may be combined.<br /><br />Â¬subtable:3Â¬' where `fieldId`= '211' and `languageId`= 0;
+', `fieldNotes` = 'The flags of the creature.<br />Note that most of these also require the "Gossip" [1] flag to work.<br />So if you want a NPC that is a quest giver, a vendor and can repair you just add the specific flags together: 1 + 2 + 128 + 4096 = 4227. <br /><br />¬subtable:6¬<br /><br />¬subtable:5¬' where `fieldId`= '245' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Allows the manual application of unit flags to creatures.', `fieldNotes` = 'Allows the manual application of unit flags to creatures. Again this is a bitmask field and to apply more than one flag, just add the different numbers. Some possible flags are:<br /><br />¬subtable:4¬' where `fieldId`= '273' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Dynamic flags are used to control the visual appearance of a creature template.', `fieldNotes` = 'Dynamic flags are used to control the visual appearance of a creature template. The following table provides a list of valid values. Multiple flags may be combined.<br /><br />¬subtable:3¬' where `fieldId`= '211' and `languageId`= 0;
 
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -

@@ -1,4 +1,4 @@
-ï»¿-- subtables added
+-- subtables added
 delete from `dbdocssubtables` where `subtableId`= 38 and languageId=0;
 insert  into `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtablecontent`,`subtableTemplate`) values (38,0,'Item Quality','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>
 <tr bgcolor=\'#f0f0ff\'>
@@ -382,28 +382,28 @@ update `dbdocsfields` set `FieldComment` = 'GameObject ID (See gameobject_templa
 update `dbdocsfields` set `FieldComment` = 'GameObject ID (See gameobject_template.entry).', `fieldNotes` = 'ID of the GameObject (See gameobject_template_entry) that starts the quest.' where `fieldId`= '585' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Item ID.', `fieldNotes` = 'Item ID. Note: do not mix it with the item GUID, which numbers concrete item instances.' where `fieldId`= '705' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Item prototype ID.', `fieldNotes` = 'Item prototype ID. Note: do not mix it with the item GUID, which numbers concrete item instances.' where `fieldId`= '705' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Class of the item.', `fieldNotes` = 'Class of the item is it very general description.<br />Â¬subtable:16Â¬' where `fieldId`= '683' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Class of the item.', `fieldNotes` = 'Class of the item is it very general description.<br />¬subtable:16¬' where `fieldId`= '683' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Item name.', `fieldNotes` = 'Name of item displayed to the players. See locales_item table for localized versions of this.' where `fieldId`= '723' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Quality of item.', `fieldNotes` = 'The quality of the item.<br />Â¬subtable:38Â¬' where `fieldId`= '727' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Item prototype flags.', `fieldNotes` = 'Item prototype flags, see enum ItemPrototypeFlags in ItemPrototype.h.<br />Â¬subtable:39Â¬' where `fieldId`= '708' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Quality of item.', `fieldNotes` = 'The quality of the item.<br />¬subtable:38¬' where `fieldId`= '727' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Item prototype flags.', `fieldNotes` = 'Item prototype flags, see enum ItemPrototypeFlags in ItemPrototype.h.<br />¬subtable:39¬' where `fieldId`= '708' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Stack size by vendors.', `fieldNotes` = 'Stack size by vendors.' where `fieldId`= '681' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Item price (coppers).', `fieldNotes` = 'Price in coppers for players to sell the item.' where `fieldId`= '682' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Item buying price (coppers).', `fieldNotes` = 'Price in coppers for players to buy the item.' where `fieldId`= '682' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Item selling price (coppers).', `fieldNotes` = 'Price in coppers for players to sell the item.' where `fieldId`= '739' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Inventory type.', `fieldNotes` = 'Type of inventory defining the way of wearing the item.<br />Â¬subtable:18Â¬' where `fieldId`= '712' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Mask of allowed classes.', `fieldNotes` = 'Mask of the classes which may use the item. Numbers from the table may be added.<br />Â¬subtable:40Â¬' where `fieldId`= '672' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Inventory type.', `fieldNotes` = 'Type of inventory defining the way of wearing the item.<br />¬subtable:18¬' where `fieldId`= '712' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Mask of allowed classes.', `fieldNotes` = 'Mask of the classes which may use the item. Numbers from the table may be added.<br />¬subtable:40¬' where `fieldId`= '672' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Mask of allowed races.', `fieldNotes` = 'Mask of races which may use the item. Values from the table may be added.<br />' where `fieldId`= '673' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Mask of allowed races.', `fieldNotes` = 'Mask of races which may use the item. Values from the table may be added.<br />Â¬subtable:30Â¬' where `fieldId`= '673' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Mask of allowed races.', `fieldNotes` = 'Mask of races which may use the item. Values from the table may be added.<br />¬subtable:30¬' where `fieldId`= '673' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Level of item.', `fieldNotes` = 'Level of item. Used by addons in calculating Gear Level.' where `fieldId`= '713' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Required level.', `fieldNotes` = 'Minimum level required to use the item.' where `fieldId`= '732' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Required skill type.', `fieldNotes` = 'Skill type required to use the item, see SpellLine.dbc and enum SkillType in SharedDefines.h.<br />Â¬subtable:41Â¬' where `fieldId`= '735' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Required skill type.', `fieldNotes` = 'Skill type required to use the item, see SpellLine.dbc and enum SkillType in SharedDefines.h.<br />¬subtable:41¬' where `fieldId`= '735' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Required skill value.', `fieldNotes` = 'Value of the skill required to use the item.' where `fieldId`= '736' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Required spell (See Spell.dbc).', `fieldNotes` = 'The spell ID the character is required to know before using the item.' where `fieldId`= '737' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Required honor rank.', `fieldNotes` = 'Required honor rank.' where `fieldId`= '731' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Required faction for reputation check (See Faction.dbc).', `fieldNotes` = 'The faction (see Faction,dbc), reputation to which will be checked before using the item.' where `fieldId`= '733' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Required minimal reputation rank.', `fieldNotes` = 'The minimal reputation rank required to use the item.<br />Â¬subtable:42Â¬' where `fieldId`= '734' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Required minimal reputation rank.', `fieldNotes` = 'The minimal reputation rank required to use the item.<br />¬subtable:42¬' where `fieldId`= '734' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Quest ID (See quest_template.entry).', `fieldNotes` = 'ID of the quest (see quest_template.entry) the item can start.' where `fieldId`= '778' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Lock ID (See Lock.dbc).', `fieldNotes` = 'ID of the lock (see Lock.dbc) for locked items.' where `fieldId`= '716' and `languageId`= 0;
-update `dbdocsfields` set `FieldComment` = 'Material type.', `fieldNotes` = 'Material type. Used for sound selection when moving item.<br />Â¬subtable:19Â¬' where `fieldId`= '718' and `languageId`= 0;
+update `dbdocsfields` set `FieldComment` = 'Material type.', `fieldNotes` = 'Material type. Used for sound selection when moving item.<br />¬subtable:19¬' where `fieldId`= '718' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Disenchant template (See disenchant_loot_template.entry).', `fieldNotes` = 'Disenchant template (see disenchant_loot_template.entry) if any.' where `fieldId`= '687' and `languageId`= 0;
 update `dbdocsfields` set `FieldComment` = 'Maximum stack size.', `fieldNotes` = 'Maximum number of items in the single stack.' where `fieldId`= '777' and `languageId`= 0;
