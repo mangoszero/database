@@ -153,7 +153,7 @@ INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position
 	(2221, 'Stratholme - Eastern Plaguelands Instance (Inside)', 0, 3235.46, -4050.6, 108.45, 1.93522, 0),
 	(2226, 'Ragefire Chasm - Ogrimmar Instance (Inside)', 1, 1813.49, -4418.58, -18.57, 1.78, 0),
 	(2230, 'Ragefire Chasm - Ogrimmar Instance', 389, 3.81, -14.82, -17.84, 4.39, 2000),
-	(2527, 'Hall of Legends - Ogrimmar', 450, 221.322, 74.4933, 25.7195, 0.484836, 2032),
+	(2527, 'Hall of Legends - Ogrimmar', 450, 221.322, 74.4933, 25.7195, 0.484836, 2031),
 	(2530, 'Hall of Legends - Ogrimmar (Inside)', 1, 1637.32, -4242.7, 56.1827, 4.1927, 0),
 	(2532, 'Stormwind - Champions Hall', 449, -0.299116, 4.39156, -0.255884, 1.54805, 2032),
 	(2534, 'Stormwind (Inside) - Champions Hall', 0, -8762.45, 403.062, 103.902, 5.34463, 0),
