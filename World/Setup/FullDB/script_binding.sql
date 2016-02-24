@@ -532,7 +532,10 @@ INSERT INTO `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES (0,'g
 (4,'spell_sacred_cleansing',8913,1),
 (4,'spell_melodious_rapture',21050,0),
 (0,'npc_tyrion_spybot',8856,0),
-(0,'npc_tyrion',7766,0);
+(0,'npc_tyrion',7766,0),
+(0,'npc_warlord_kromzar',9456,0),
+(0,'npc_kolkar_invader',9524,0),
+(0,'npc_kolkar_invader',9523,0);
 /*!40000 ALTER TABLE `script_binding` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

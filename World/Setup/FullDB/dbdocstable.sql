@@ -26,7 +26,7 @@ TRUNCATE TABLE `dbdocstable`;
 
 LOCK TABLES `dbdocstable` WRITE;
 /*!40000 ALTER TABLE `dbdocstable` DISABLE KEYS */;
-INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) VALUES (1,0,'areatrigger_involvedrelation','The areatrigger_involvedrelation table holds connections between triggers and quests.\r\n\r\nIf there is a record in the table for a quest, the quest will not be completed until the player activates the areatriger. The quest is not necessarily finished after that, but that one condition of the quest is satisfied. If the only condition of the quest is to explore an area, then the quest will be complete.'),
+INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) VALUES (1,0,'areatrigger_involvedrelation','The areatrigger_involvedrelation table holds connections between triggers and quests.<br /><br />If there is a record in the table for a quest, the quest will not be completed until the player activates the areatriger. The quest is not necessarily finished after that, but that one condition of the quest is satisfied. If the only condition of the quest is to explore an area, then the quest will be complete.'),
 (2,0,'areatrigger_tavern','Enable a trigger when player enters a city or tavern. This causes the player to enter a resting state.'),
 (3,0,'areatrigger_teleport','Contains all the teleport triggers definition. This table is used to complete .dbc file information.'),
 (4,0,'battleground_events','This table contains the description of battleground events.'),
@@ -40,7 +40,7 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (12,0,'creature_ai_summons','This table is used to provide NPC support for an event using action 32 = ACTION_T_SUMMON as one of its Actions'),
 (13,0,'creature_ai_texts','This table holds all the texts used within the eventai (ACID) scripts. This table handles the actual text, display type (say/yell/emote) and corresponding sounds or emote (if any).'),
 (14,0,'creature_battleground','This table contains the description of creatures spawned on battlegrounds.'),
-(15,0,'creature_equip_template','This table contains all equipment mobs can wear.'),
+(15,0,'creature_equip_template','This table contains all equipment creatures should wear.'),
 (16,0,'creature_equip_template_raw','The creature_equip_template_raw table holds information on items that creatures should wear.<br/ >\r\n<br/ >\r\n<b>Note:</b> This table is deprecated. Do not use it, as it will be removed in a future update and is just here to ease transition to the new creature_equip_template table.'),
 (17,0,'creature_involvedrelation','Holds NPC quest ender relations on which NPCs finishes which quests.'),
 (18,0,'creature_item_template','xxxx'),
@@ -56,7 +56,7 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (28,0,'creature_template_addon','The creature_addon and creature_template_addon tables define different things that are applied on creatures when they are loaded. These \"different things\" can be for example to have the creature be mounted, to have it emote something, to have it display an aura effect, etc. Through the use of the fields in this table, many things can be changed about the outward visual appearance of the creature. The creature_template_addon table affects all creatures with that creature template ID while the creature_addon table affects individually spawned creatures (so that two creatures using the same template can look different).\r\n\r\nNOTES: \r\nA creature_addon record will override a creature_template_addon record should they overlap on the same creature.<br />\r\n<br />\r\nThe data for this table is largely incomplete and is mostly just a regurgitation of what the client receives from the server. This article is a WIP as to what all the possible values are.'),
 (29,0,'creature_template_classlevelstats','This table contains the base values for creatures\' health, mana and armor.'),
 (30,0,'creature_template_spells','This table holds information on the spells to which a Creature (See creature_template) has access.'),
-(31,0,'custom_texts','xxxx'),
+(31,0,'custom_texts','The custom_texts table holds custom text strings, sounds, and emotes used in scripted events.'),
 (32,0,'db_script_string','This table holds texts for the DB-based scripts.'),
 (33,0,'db_version','This table holds the current version of the MaNGOS world database'),
 (34,0,'dbdocsfields','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.\r\n\r\nAn entry in this table provides a link to the table and field to allow additional notes to describe the field in the Wiki.'),

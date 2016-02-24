@@ -74,8 +74,8 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (46,'<error>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (47,'<non-existing character>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (48,'UNKNOWN',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(49,'You must be at least level %u to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(50,'You must be at least level %u and have item %s to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(67,'You must be member of the Horde to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(50,'You must have item %s to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (51,'Hello! Ready for some training?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (52,'Invaid item count (%u) for item %u',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (53,'Mail can\'t have more %u item stacks',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -304,9 +304,7 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (364,' [Tavern]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (365,' [Quest]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (366,'Explore quest:',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(367,'Required level %u',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(368,'Required Items:',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(369,'Required quest:',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(49,'You must be at least level %u to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (373,'Response:\n%s ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (374,'Tickets count: %i\n',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (375,'Player %s not have tickets.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -829,7 +827,13 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (251,'UNUSED',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (252,'AIScriptName: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (573,'The lootstate of GO lowGuid %u is %u.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(574,'The GO state of GO lowGuid %u is %u.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(574,'The GO state of GO lowGuid %u is %u.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(714,'This Battleground is disabled by the server administration.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(747,'This Instance is disabled by the server administration.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(68,'You must be member of the Alliance to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(69,'You must be at most level %u to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(70,'You must have level %u to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(367,'Condition %u',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `mangos_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

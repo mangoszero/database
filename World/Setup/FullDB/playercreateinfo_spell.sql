@@ -99,7 +99,6 @@ INSERT INTO `playercreateinfo_spell` (`race`, `class`, `Spell`, `Note`) VALUES (
 (1,2,20599,'Diplomacy'),
 (1,2,20600,'Perception'),
 (1,2,20864,'Mace Specialization'),
-(1,2,21084,'Seal of Righteousness'),
 (1,2,21651,'Opening'),
 (1,2,21652,'Closing'),
 (1,2,22027,'Remove Insignia'),
@@ -504,7 +503,7 @@ INSERT INTO `playercreateinfo_spell` (`race`, `class`, `Spell`, `Note`) VALUES (
 (3,2,20594,'Stoneform'),
 (3,2,20595,'Gun Specialization'),
 (3,2,20596,'Frost Resistance'),
-(3,2,21084,'Seal of Righteousness'),
+(1,2,20154,'Seal of Righteousness - Non Judgement'),
 (3,2,21651,'Opening'),
 (3,2,21652,'Closing'),
 (3,2,22027,'Remove Insignia'),
@@ -1522,7 +1521,8 @@ INSERT INTO `playercreateinfo_spell` (`race`, `class`, `Spell`, `Note`) VALUES (
 (8,8,21652,'Closing'),
 (8,8,22027,'Remove Insignia'),
 (8,8,22810,'Opening - No Text'),
-(8,8,26290,'Bow Specialization');
+(8,8,26290,'Bow Specialization'),
+(3,2,20154,'Seal of Righteousness - Non Judgement');
 /*!40000 ALTER TABLE `playercreateinfo_spell` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -1,7 +1,7 @@
 -- ---------------------------------------- 
 -- --        CLEAR DOWN THE TABLE        -- 
 -- ---------------------------------------- 
-TRUNCATE TABLE `db_version`; 
+TRUNCATE TABLE `disables`; 
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
@@ -21,13 +21,12 @@ TRUNCATE TABLE `db_version`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `db_version`
+-- Dumping data for table `disables`
 --
 
-LOCK TABLES `db_version` WRITE;
-/*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
-INSERT INTO `db_version` (`version`, `structure`, `content`, `description`, `comment`) VALUES (21,4,1,'Refactor areatrigger_teleport','Base Db Install from 21000_01 to 21.4.1');
-/*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
+LOCK TABLES `disables` WRITE;
+/*!40000 ALTER TABLE `disables` DISABLE KEYS */;
+/*!40000 ALTER TABLE `disables` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -39,4 +38,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:11
+-- Dump completed on 2016-02-23 23:34:15

@@ -268,7 +268,9 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (197001,0,22,21,0,10043,46617,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
 (197001,0,22,21,0,10043,46616,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
 (197001,0,22,21,0,0,0,0,0,0,0,0,0,0,0,0,'Ribbly - update faction'),
-(197001,5,26,0,0,0,25,0,0,0,0,0,0,0,0,0,'Ribbly  - attack player');
+(197001,5,26,0,0,0,25,0,0,0,0,0,0,0,0,0,'Ribbly  - attack player'),
+(306201,0,16,6482,0,0,0,0,0,0,0,0,0,0,0,0,'Bombay - play sound 6482'),
+(306201,0,15,17009,0,0,0,0,0,0,0,0,0,0,0,0,'Bombay - cast Voodoo spell');
 /*!40000 ALTER TABLE `dbscripts_on_gossip` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

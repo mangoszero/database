@@ -1515,7 +1515,11 @@ INSERT INTO `script_waypoint` (`entry`, `pointid`, `location_x`, `location_y`, `
 (11016,108,4873.97,-394.919,349.844,5000,'SAY_ESCORT_COMPLETE'),
 (11016,109,4873.97,-394.919,349.844,1000,''),
 (11016,110,4863.02,-394.521,350.65,0,''),
-(11016,111,4848.7,-397.612,351.215,0,'');
+(11016,111,4848.7,-397.612,351.215,0,''),
+(9456,3,-263.99,-1961.64,94.94,0,'Infront of Deathgate\'s Binker'),
+(9456,2,-261.82,-1923.24,91.77,0,'Nearing Deathgate\'s Binker'),
+(9456,1,-286.5,-1890.81,92.34,0,'Between First Bunker and Destroyed Structure'),
+(9456,0,-283.66,-1858.45,92.47,0,'Start');
 /*!40000 ALTER TABLE `script_waypoint` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

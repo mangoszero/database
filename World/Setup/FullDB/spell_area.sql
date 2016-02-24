@@ -26,6 +26,7 @@ TRUNCATE TABLE `spell_area`;
 
 LOCK TABLES `spell_area` WRITE;
 /*!40000 ALTER TABLE `spell_area` DISABLE KEYS */;
+INSERT INTO `spell_area` (`spell`, `area`, `quest_start`, `quest_start_active`, `quest_end`, `condition_id`, `aura_spell`, `racemask`, `gender`, `autocast`) VALUES (6298,148,0,0,0,0,0,0,2,0);
 /*!40000 ALTER TABLE `spell_area` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
