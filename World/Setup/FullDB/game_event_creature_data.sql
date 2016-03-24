@@ -5,9 +5,9 @@ TRUNCATE TABLE `game_event_creature_data`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `game_event_creature_data`;
 
 LOCK TABLES `game_event_creature_data` WRITE;
 /*!40000 ALTER TABLE `game_event_creature_data` DISABLE KEYS */;
-INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES (79792,0,0,504,0,0,27),
+INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES 
+(79792,0,0,504,0,0,27),
 (79690,0,0,504,0,0,27),
 (79675,0,0,504,0,0,27),
 (79670,0,0,504,0,0,27),
@@ -44,13 +45,22 @@ INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipmen
 (47613,0,15735,0,0,0,2),
 (40458,0,15760,0,0,0,2),
 (137881,0,15734,0,0,0,2),
-(54908,0,0,0,26000,0,2),
-(54907,0,0,0,26000,0,2),
-(54906,0,0,0,26000,0,2),
-(54905,0,0,0,26000,0,2),
-(54904,0,0,0,26000,0,2),
+(54900,0,0,0,26000,0,2),
 (54902,0,0,0,26000,0,2),
-(54900,0,0,0,26000,0,2);
+(54904,0,0,0,26000,0,2),
+(54905,0,0,0,26000,0,2),
+(54906,0,0,0,26000,0,2),
+(54907,0,0,0,26000,0,2),
+(54908,0,0,0,26000,0,2),
+(95001,16788,0,0,29246,29246,1),
+(95002,16788,0,0,29245,29245,1),
+(95003,16788,0,0,29246,29246,1),
+(95006,16788,0,0,29243,29243,1),
+(95009,16788,0,0,29244,29244,1),
+(95010,16788,0,0,29243,29243,1),
+(95011,0,16442,0,0,0,1),
+(95012,0,16431,0,0,0,1),
+(95013,0,16431,0,0,0,1);
 /*!40000 ALTER TABLE `game_event_creature_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -63,4 +73,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:12
+-- Dump completed on 2016-03-24 22:25:11

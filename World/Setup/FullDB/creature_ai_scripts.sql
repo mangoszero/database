@@ -5,9 +5,9 @@ TRUNCATE TABLE `creature_ai_scripts`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `creature_ai_scripts`;
 
 LOCK TABLES `creature_ai_scripts` WRITE;
 /*!40000 ALTER TABLE `creature_ai_scripts` DISABLE KEYS */;
-INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES (601,6,4,0,30,0,0,0,0,0,1,-7,-8,0,0,0,0,0,0,0,0,0,'Kobold Vermin - Random Say on Aggro'),
+INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES 
+(601,6,4,0,30,0,0,0,0,0,1,-7,-8,0,0,0,0,0,0,0,0,0,'Kobold Vermin - Random Say on Aggro'),
 (3001,30,11,0,100,0,0,0,0,0,11,11959,0,1,0,0,0,0,0,0,0,0,'Forest Spider - Cast Poison Proc on Spawn'),
 (3801,38,4,0,30,0,0,0,0,0,1,-2,-3,-4,0,0,0,0,0,0,0,0,'Defias Thug - Random Say on Aggro'),
 (4001,40,4,0,30,0,0,0,0,0,1,-7,0,0,0,0,0,0,0,0,0,0,'Kobold Miner - Random Say on Aggro'),
@@ -98,7 +99,6 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (20201,202,0,0,100,1,5000,8000,9000,13000,11,7399,5,0,0,0,0,0,0,0,0,0,'Skeletal Warrior - Cast Terrify'),
 (20301,203,1,0,100,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,'Skeletal Mage - Prevent Combat Movement on Spawn'),
 (20302,203,1,0,100,1,1000,1000,1800000,1800000,11,12544,0,1,0,0,0,0,0,0,0,0,'Skeletal Mage - Cast Frost Armor on Spawn'),
-(1165903,11659,0,0,100,1,9000,12000,8000,11000,11,19129,0,1,0,0,0,0,0,0,0,0,'Molten Destroyer - Cast Massive Tremor'),
 (20304,203,9,5,100,1,0,40,3300,6100,11,20792,1,0,0,0,0,0,0,0,0,0,'Skeletal Mage - Cast Frostbolt (Phase 1)'),
 (20305,203,3,5,100,1,15,0,1000,1000,21,1,0,0,23,1,0,0,0,0,0,0,'Skeletal Mage - Start Combat Movement and Set Phase 2 when Mana is at 15% (Phase 1)'),
 (20306,203,9,5,100,1,25,80,1000,1000,21,1,0,0,0,0,0,0,0,0,0,0,'Skeletal Mage - Start Combat Movement at 35 Yards (Phase 1)'),
@@ -1625,7 +1625,6 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (156401,1564,1,0,100,0,0,0,0,0,21,0,0,0,31,1,2,0,0,0,0,0,'Bloodsail Warlock - Prevent Combat Movement and Random Select Phase on Spawn'),
 (156402,1564,1,61,100,0,0,1000,0,0,11,8722,0,3,22,0,0,0,0,0,0,0,'Bloodsail Warlock - Summon Succubus OOC on Spawn then set Phase 0 (Phase 1)'),
 (156403,1564,1,59,100,0,0,1000,0,0,11,11939,0,3,22,0,0,0,0,0,0,0,'Bloodsail Warlock - Summon Imp OOC on Spawn then set Phase 0 (Phase 2)'),
-(1165803,11658,0,0,100,1,6000,10000,7000,10000,11,18944,0,0,0,0,0,0,0,0,0,0,'Molten Giant - Cast Smash'),
 (156405,1564,9,55,100,1,0,40,2400,3800,11,20825,1,0,0,0,0,0,0,0,0,0,'Bloodsail Warlock - Cast Shadow Bolt (Phase 3)'),
 (156406,1564,3,55,100,1,15,0,1000,1000,21,1,0,0,23,1,0,0,0,0,0,0,'Bloodsail Warlock - Start Combat Movement and Set Phase 4 when Mana is at 15% (Phase 3)'),
 (156407,1564,9,55,100,1,25,80,1000,1000,21,1,0,0,0,0,0,0,0,0,0,0,'Bloodsail Warlock - Start Combat Movement at 35 Yards (Phase 3)'),
@@ -8727,9 +8726,10 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (828209,8282,3,11,100,1,100,15,1000,1000,22,1,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase 1 when Mana is above 15% (Phase 2)'),
 (828210,8282,9,0,100,1,0,30,15000,18000,11,13323,5,1,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Cast Polymorph'),
 (828211,8282,2,0,100,1,50,0,50000,70000,11,11974,0,1,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Cast Power Word: Shield at 50% HP'),
-(828212,8282,2,0,100,0,15,0,0,0,22,3,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase 3 at 15% HP');
-INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES (828213,8282,2,7,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Highlord Mastrogonde - Start Combat Movement and Flee at 15% HP (Phase 3)'),
-(828214,8282,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase to 0 on Evade'),
+(828212,8282,2,0,100,0,15,0,0,0,22,3,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase 3 at 15% HP'),
+(828213,8282,2,7,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Highlord Mastrogonde - Start Combat Movement and Flee at 15% HP (Phase 3)'),
+(828214,8282,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase to 0 on Evade');
+INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES 
 (828301,8283,1,0,100,0,0,0,0,0,21,0,0,0,20,0,0,0,22,1,0,0,'Slave Master Blackheart - Prevent Combat Movement and Prevent Melee and Set Phase 1 on Spawn'),
 (828302,8283,9,5,100,1,5,30,2300,3900,11,6660,1,0,40,2,0,0,0,0,0,0,'Slave Master Blackheart - Cast Shoot and Set Ranged Weapon Model (Phase 1)'),
 (828303,8283,9,5,100,1,30,80,1000,1000,21,1,1,0,20,1,0,0,0,0,0,0,'Slave Master Blackheart - Start Combat Movement and Start Melee at 30 Yards (Phase 1)'),
@@ -11151,39 +11151,14 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1165710,11657,0,0,100,3,6000,9000,120000,130000,11,12741,1,1,0,0,0,0,0,0,0,0,'Morloch - Cast Curse of Weakness'),
 (1165711,11657,0,0,100,3,11000,14000,9000,15000,11,17228,1,0,0,0,0,0,0,0,0,0,'Morloch - Cast Shadow Bolt Volley'),
 (1165712,11657,7,0,100,2,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Morloch - Set Phase to 0 on Evade'),
-(1165801,11658,11,0,100,0,0,0,0,0,11,18943,0,2,0,0,0,0,0,0,0,0,'Molten Giant - Double Attack'),
-(1165802,11658,9,0,100,1,0,10,6000,9000,11,18945,4,1,0,0,0,0,0,0,0,0,'Molten Giant - Cast Knock Away'),
-(1165901,11659,11,0,100,0,0,0,0,0,11,18943,0,2,0,0,0,0,0,0,0,0,'Molten Destroyer - Double Attack'),
-(1165902,11659,9,0,100,1,0,10,7000,10000,11,20276,4,0,0,0,0,0,0,0,0,0,'Molten Destroyer - Cast Knockdown'),
-(1166101,11661,4,0,100,0,0,0,0,0,22,1,0,0,0,0,0,0,0,0,0,0,'Flamewaker - Set Phase 1 on Aggro'),
-(1166102,11661,9,5,100,1,0,5,5000,9000,11,15502,1,0,0,0,0,0,0,0,0,0,'Flamewaker - Cast Sunder Armor (Phase 1)'),
-(1166103,11661,24,5,100,1,15502,5,5000,5000,22,2,0,0,0,0,0,0,0,0,0,0,'Flamewaker - Set Phase 2 on Target Max Sunder Armor Aura Stack (Phase 1)'),
-(1166104,11661,28,3,100,1,15502,1,5000,5000,22,1,0,0,0,0,0,0,0,0,0,0,'Flamewaker - Set Phase 1 on Target Missing Sunder Armor Aura Stack (Phase 2)'),
-(1166105,11661,0,0,100,1,5000,8000,7000,9000,11,19730,4,0,0,0,0,0,0,0,0,0,'Flamewaker - Cast Strike'),
-(1166106,11661,9,0,100,1,0,8,9000,12000,11,20277,0,1,0,0,0,0,0,0,0,0,'Flamewaker - Cast Fist of Ragnaros'),
-(1166107,11661,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Flamewaker - Set Phase to 0 on Evade'),
-(1166301,11663,1,0,100,0,0,0,0,0,21,0,0,0,22,0,0,0,0,0,0,0,'Flamewaker Healer - Prevent Combat Movement and Set Phase to 0 on Spawn'),
-(1166302,11663,4,0,100,0,0,0,0,0,11,22677,1,0,22,1,0,0,0,0,0,0,'Flamewaker Healer - Cast Shadow Bolt and Set Phase 1 on Aggro'),
-(1166303,11663,9,5,100,1,0,40,3200,4600,11,22677,1,0,0,0,0,0,0,0,0,0,'Flamewaker Healer - Cast Shadow Bolt (Phase 1)'),
-(1166304,11663,3,5,100,0,7,0,0,0,21,1,0,0,23,1,0,0,0,0,0,0,'Flamewaker Healer - Start Combat Movement and Set Phase 2 when Mana is at 7% (Phase 1)'),
-(1166305,11663,9,5,100,1,25,80,1000,1000,21,1,0,0,0,0,0,0,0,0,0,0,'Flamewaker Healer - Start Combat Movement at 35 Yards (Phase 1)'),
-(1166306,11663,9,5,100,1,5,15,1000,1000,21,0,0,0,0,0,0,0,0,0,0,0,'Flamewaker Healer - Prevent Combat Movement at 15 Yards (Phase 1)'),
-(1166307,11663,9,5,100,1,0,5,1000,1000,21,1,0,0,0,0,0,0,0,0,0,0,'Flamewaker Healer - Start Combat Movement Below 5 Yards (Phase 1)'),
-(1166308,11663,3,3,100,1,100,15,1000,1000,22,1,0,0,0,0,0,0,0,0,0,0,'Flamewaker Healer - Set Phase 1 when Mana is above 15% (Phase 2)'),
-(1166309,11663,0,0,100,1,9000,14000,8000,12000,11,20603,4,1,0,0,0,0,0,0,0,0,'Flamewaker Healer - Cast Shadow Shock'),
-(1166310,11663,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Flamewaker Healer - Set Phase to 0 on Evade'),
-(1166401,11664,1,0,100,0,0,0,0,0,21,0,0,0,22,0,0,0,0,0,0,0,'Flamewaker Elite - Prevent Combat Movement and Set Phase to 0 on Spawn'),
-(1166402,11664,4,0,100,0,0,0,0,0,11,20420,1,0,22,1,0,0,0,0,0,0,'Flamewaker Elite - Cast Fireball and Set Phase 1 on Aggro'),
-(1166403,11664,9,5,100,1,0,40,4000,5000,11,20420,4,0,0,0,0,0,0,0,0,0,'Flamewaker Elite - Cast Fireball (Phase 1)'),
-(1166404,11664,3,5,100,0,7,0,0,0,21,1,0,0,23,1,0,0,0,0,0,0,'Flamewaker Elite - Start Combat Movement and Set Phase 2 when Mana is at 7% (Phase 1)'),
-(1166405,11664,9,5,100,1,25,80,1000,1000,21,1,0,0,0,0,0,0,0,0,0,0,'Flamewaker Elite - Start Combat Movement at 35 Yards (Phase 1)'),
-(1166406,11664,9,5,100,1,5,15,1000,1000,21,0,0,0,0,0,0,0,0,0,0,0,'Flamewaker Elite - Prevent Combat Movement at 15 Yards (Phase 1)'),
-(1166407,11664,9,5,100,1,0,5,1000,1000,21,1,0,0,0,0,0,0,0,0,0,0,'Flamewaker Elite - Start Combat Movement Below 5 Yards (Phase 1)'),
-(1166408,11664,3,3,100,1,100,15,1000,1000,22,1,0,0,0,0,0,0,0,0,0,0,'Flamewaker Elite - Set Phase 1 when Mana is above 15% (Phase 2)'),
-(1166409,11664,9,0,100,1,0,8,11000,14000,11,20229,0,1,0,0,0,0,0,0,0,0,'Flamewaker Elite - Cast Blast Wave'),
-(1166410,11664,0,0,100,1,9000,11000,9000,12000,11,20623,4,0,0,0,0,0,0,0,0,0,'Flamewaker Elite - Cast Fire Blast'),
-(1166411,11664,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Flamewaker Elite - Set Phase to 0 on Evade'),
-(1166501,11665,11,0,100,0,0,0,0,0,11,19194,0,2,11,19195,0,2,0,0,0,0,'Annihilator - Double Attack + Hate to 90%'),
+(1165802,11658,0,0,100,1,6000,10000,7000,10000,11,18944,0,0,0,0,0,0,0,0,0,0,' giant nugget - cast hit '),
+(1165801,11658,9,0,100,1,0,10,6000,9000,11,18945,4,1,0,0,0,0,0,0,0,0,' giant nugget - cast repel '),
+(1165902,11659,0,0,100,1,9000,12000,8000,11000,11,19129,0,1,0,0,0,0,0,0,0,0,' nugget Destroyer - cast severe tremor '),
+(1165901,11659,9,0,100,1,0,10,7000,10000,11,20276,4,0,0,0,0,0,0,0,0,0,' nugget Destroyer - cast down '),
+(1166103,11661,9,0,100,1,0,8,9000,12000,11,20277,0,1,0,0,0,0,0,0,0,0,' Flamewaker - Cast Fist of Ragnaros'),
+(1166102,11661,0,0,100,1,5000,8000,7000,9000,11,19730,4,0,0,0,0,0,0,0,0,0,' Flamewaker - Cast Strike '),
+(1166101,11661,9,0,100,1,0,5,5000,9000,11,15502,1,0,0,0,0,0,0,0,0,0,' Flamewaker - Cast Sunder Armor '),
+(1166501,11665,0,0,100,1,5000,5000,5000,5000,13,-100,1,0,0,0,0,0,0,0,0,0,'lava Annihilator - handover target'),
 (1166601,11666,0,0,100,1,7000,11000,8000,15000,11,19635,0,0,0,0,0,0,0,0,0,0,'Firewalker - Cast Incite Flames'),
 (1166602,11666,0,0,100,1,5000,8000,12000,17000,11,19636,0,1,0,0,0,0,0,0,0,0,'Firewalker - Cast Fire Blossom'),
 (1166701,11667,11,0,100,0,0,0,0,0,11,19626,0,2,0,0,0,0,0,0,0,0,'Flameguard - Fire Shield'),
@@ -11192,11 +11167,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1226502,12265,0,0,100,0,30000,30000,0,0,1,-1320,0,0,11,19569,0,2,0,0,0,0,'Lava Spawn - Emote + Split1'),
 (1226501,12265,0,0,100,1,0,1000,3000,3000,11,19391,1,0,0,0,0,0,0,0,0,0,'Lava Spawn - Fireball'),
 (1166901,11669,9,0,100,1,0,10,4000,7000,11,20602,0,0,0,0,0,0,0,0,0,0,'Flame Imp - Cast Fire Nova'),
-(1167101,11671,4,0,100,0,0,0,0,0,22,1,0,0,0,0,0,0,0,0,0,0,'Core Hound - Set Phase 1 on Aggro'),
-(1167102,11671,9,5,100,1,0,10,5000,9000,11,19771,1,0,0,0,0,0,0,0,0,0,'Core Hound - Cast Serrated Bite (Phase 1)'),
-(1167103,11671,24,5,100,1,19771,10,5000,5000,22,2,0,0,0,0,0,0,0,0,0,0,'Core Hound - Set Phase 2 on Target Max Serrated Bite Aura Stack (Phase 1)'),
-(1167104,11671,28,3,100,1,19771,1,5000,5000,22,1,0,0,0,0,0,0,0,0,0,0,'Core Hound - Set Phase 1 on Target Missing Serrated Bite Aura Stack (Phase 2)'),
-(1167105,11671,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Core Hound - Set Phase to 0 on Evade'),
+(1448801,14488,0,0,100,1,7000,14000,7000,14000,11,15496,1,0,0,0,0,0,0,0,0,0,'Roloch - Cleave'),
 (1167301,11673,11,0,100,0,0,0,0,0,11,18950,0,2,0,0,0,0,0,0,0,0,'Ancient Core Hound - Invisibility and Stealth Detection'),
 (1167302,11673,4,0,100,32,0,0,0,0,31,0,5,0,0,0,0,0,0,0,0,0,'Ancient Core Hound - Set random phase on Aggro'),
 (1167303,11673,0,0,100,1,1000,1000,1000,1000,11,19319,1,0,0,0,0,0,0,0,0,0,'Ancient Core Hound - Vicious Bite'),
@@ -11511,7 +11482,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1207601,12076,11,0,100,0,0,0,0,0,11,19640,0,2,0,0,0,0,0,0,0,0,'Lava Elemental - Pummel'),
 (1210001,12100,11,0,100,0,0,0,0,0,11,12787,0,2,0,0,0,0,0,0,0,0,'Lava Reaver - Thrash'),
 (1210002,12100,9,0,100,1,0,5,5000,7000,11,19644,1,0,0,0,0,0,0,0,0,0,'Lava Reaver - Cast Strike'),
-(1210101,12101,0,0,100,1,0,1000,12000,15000,11,19196,4,0,0,0,0,0,0,0,0,0,'Lava Surger - Surge'),
+(1210101,12101,0,0,100,1,0,1000,12000,15000,11,25787,4,0,0,0,0,0,0,0,0,0,'Lava person - cast surging'),
 (1210102,12101,0,0,100,3,9000,12000,12000,15000,11,19196,4,0,0,0,0,0,0,0,0,0,'Lava Surger - Cast Surge'),
 (1211901,12119,9,0,100,1,0,5,6000,9000,11,20605,1,0,0,0,0,0,0,0,0,0,'Flamewaker Protector - Cast Cleave'),
 (1211902,12119,0,0,100,1,9000,12000,20000,26000,11,20604,5,1,0,0,0,0,0,0,0,0,'Flamewaker Protector - Cast Dominate Mind'),
@@ -13906,4 +13877,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:08
+-- Dump completed on 2016-03-24 22:25:06

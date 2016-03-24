@@ -5,9 +5,9 @@ TRUNCATE TABLE `pool_gameobject`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `pool_gameobject`;
 
 LOCK TABLES `pool_gameobject` WRITE;
 /*!40000 ALTER TABLE `pool_gameobject` DISABLE KEYS */;
-INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES (96,1,0,''),
+INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VALUES 
+(96,1,0,''),
 (527558,1,20,''),
 (47392,1,0,''),
 (21269,2,20,''),
@@ -11593,14 +11594,14 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 (93953,15004,0,'Arathi Basin: Gold Mine: Speed buff'),
 (93954,15004,0,'Arathi Basin: Gold Mine: Regen buff'),
 (93955,15004,0,'Arathi Basin: Gold Mine: Berserker buff'),
-(160014,15010,100,'Dark Keeper Nameplate'),
-(160008,15010,100,'Dark Keeper Nameplate'),
-(160013,15009,100,'Dark Keeper Nameplate'),
-(160012,15008,100,'Dark Keeper Nameplate'),
-(160006,15008,100,'Dark Keeper Nameplate'),
 (43131,15007,100,'Dark Keeper Nameplate'),
-(43130,15007,100,'Dark Keeper Nameplate'),
+(160006,15008,100,'Dark Keeper Nameplate'),
+(160012,15008,100,'Dark Keeper Nameplate'),
 (160007,15009,100,'Dark Keeper Nameplate'),
+(160013,15009,100,'Dark Keeper Nameplate'),
+(160008,15010,100,'Dark Keeper Nameplate'),
+(43130,15007,100,'Dark Keeper Nameplate'),
+(160014,15010,100,'Dark Keeper Nameplate'),
 (160009,15011,100,'Dark Keeper Nameplate'),
 (160015,15011,100,'Dark Keeper Nameplate'),
 (160010,15012,100,'Dark Keeper Nameplate'),
@@ -11617,4 +11618,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:18
+-- Dump completed on 2016-03-24 22:25:17

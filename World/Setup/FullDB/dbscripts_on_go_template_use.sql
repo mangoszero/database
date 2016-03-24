@@ -5,9 +5,9 @@ TRUNCATE TABLE `dbscripts_on_go_template_use`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `dbscripts_on_go_template_use`;
 
 LOCK TABLES `dbscripts_on_go_template_use` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_go_template_use` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (170569,1,22,54,5,9678,20,3,2000005100,0,0,0,0,0,0,0,'Shill - change faction to hostile'),
+INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES 
+(170569,1,22,54,5,9678,20,3,2000005100,0,0,0,0,0,0,0,'Shill - change faction to hostile'),
 (170569,1,0,0,0,9678,20,3,2000005100,0,0,0,0,0,0,0,'Shill - say on Shill door open'),
 (170568,2,22,54,5,9677,20,3,2000005102,0,0,0,0,0,0,0,'Ograbisi - change faction to hostile'),
 (170568,2,22,54,5,9681,20,3,2000005102,0,0,0,0,0,0,0,'Jaz - change faction to hostile'),
@@ -103,7 +104,19 @@ INSERT INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`
 (161456,0,10,9445,10800000,0,0,0,0,0,0,0,817.276,-166.652,-49.6699,4.88692,'Spawn Dark Keeper Vorfalk and his guards'),
 (161456,0,10,9445,10800000,0,0,0,0,0,0,0,816.276,-167.652,-49.6699,5.58505,'Spawn Dark Keeper Vorfalk and his guards'),
 (161456,0,10,9437,10800000,0,0,0,0,0,0,0,815.276,-168.652,-49.6699,6.23083,'Spawn Dark Keeper Vorfalk and his guards'),
-(174565,0,27,8,0,160845,7,0,0,0,0,0,0,0,0,0,'');
+(174565,0,27,8,0,160845,7,0,0,0,0,0,0,0,0,0,''),
+(181332,0,34,4,0,0,0,0,0,0,0,0,0,0,0,0,'Stop if player is Alliance'),
+(181332,1,15,29101,0,0,0,4,0,0,0,0,0,0,0,0,'Cast Create Flame Stormwind'),
+(181333,0,34,4,0,0,0,0,0,0,0,0,0,0,0,0,'Stop if player is Alliance'),
+(181333,1,15,29102,0,0,0,4,0,0,0,0,0,0,0,0,'Cast Create Flame Ironforge'),
+(181334,0,34,4,0,0,0,0,0,0,0,0,0,0,0,0,'Stop if player is Alliance'),
+(181334,1,15,29099,0,0,0,4,0,0,0,0,0,0,0,0,'Cast Create Flame Darnassus'),
+(181336,0,34,3,0,0,0,0,0,0,0,0,0,0,0,0,'Stop if player is Horde'),
+(181336,1,15,29130,0,0,0,4,0,0,0,0,0,0,0,0,'Cast Create Flame Orgrimmar'),
+(181337,0,34,3,0,0,0,0,0,0,0,0,0,0,0,0,'Stop if player is Horde'),
+(181337,1,15,29132,0,0,0,4,0,0,0,0,0,0,0,0,'Cast Create Flame Thunder Bluff'),
+(181335,0,34,3,0,0,0,0,0,0,0,0,0,0,0,0,'Stop if player is Horde'),
+(181335,1,15,29133,0,0,0,4,0,0,0,0,0,0,0,0,'Cast Create Flame Undercity');
 /*!40000 ALTER TABLE `dbscripts_on_go_template_use` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -116,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:11
+-- Dump completed on 2016-03-24 22:25:11

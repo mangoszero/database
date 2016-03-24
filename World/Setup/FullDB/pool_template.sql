@@ -5,9 +5,9 @@ TRUNCATE TABLE `pool_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `pool_template`;
 
 LOCK TABLES `pool_template` WRITE;
 /*!40000 ALTER TABLE `pool_template` DISABLE KEYS */;
-INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (1,1,''),
+INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES 
+(1,1,''),
 (2,1,''),
 (3,1,''),
 (4,1,''),
@@ -1084,38 +1085,50 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (1,1,''
 (25467,1,'BRD - Molten War Golem / Panzor the Invincible'),
 (1199,1,'Lady Vespia (10559)'),
 (1701,1,'Dire Maul Arena - Rare Elites'),
-(1214,1,'Death Howl (14339)'),
+(1214,1,'Flagglemurk the Cruel'),
 (1215,1,'General Cobaltann (10196)'),
-(15013,1,'MASTER - Dark Keeper Nameplate'),
-(15012,2,'Dark Keeper Nameplate'),
-(15011,2,'Dark Keeper Nameplate'),
-(15010,2,'Dark Keeper Nameplate'),
-(15009,2,'Dark Keeper Nameplate'),
-(15008,2,'Dark Keeper Nameplate'),
 (15007,2,'Dark Keeper Nameplate'),
+(15008,2,'Dark Keeper Nameplate'),
+(15009,2,'Dark Keeper Nameplate'),
+(15010,2,'Dark Keeper Nameplate'),
+(15011,2,'Dark Keeper Nameplate'),
 (25469,1,'LBRS - Crystal Fang / Spire Spider'),
 (25470,1,'LBRS - Inconspicuous Documents'),
-(25478,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25477,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25476,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25475,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25474,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25473,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25472,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
 (25471,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25481,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(25480,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(25472,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25473,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25474,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25475,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25476,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25477,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
 (25479,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(25486,1,'BRD - Master Ragereaver Golem/Wrath Hammer Construct'),
-(25485,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(25484,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(25480,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(25481,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
 (25483,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(25482,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(25491,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25490,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25489,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25484,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(25485,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(25486,1,'BRD - Master Ragereaver Golem/Wrath Hammer Construct'),
 (25488,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(25487,1,'BRD - Master Ragereaver Golem/Wrath Hammer Construct');
+(25489,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25490,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25482,1,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(15012,2,'Dark Keeper Nameplate'),
+(15013,1,'MASTER - Dark Keeper Nameplate'),
+(25478,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25487,1,'BRD - Master Ragereaver Golem/Wrath Hammer Construct'),
+(25491,1,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(25492,1,'Silithus - Twilight Lord Everun'),
+(1216,1,'Duggan Wildhammer (10817)'),
+(25493,1,'WC - Deviate Faerie Dragon / Druid of the Fang'),
+(25494,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(25495,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(25496,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(25497,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(25498,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(25499,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(25500,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(25501,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(25452,1,'Caer Darrow ghosts');
 /*!40000 ALTER TABLE `pool_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1128,4 +1141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:18
+-- Dump completed on 2016-03-24 22:25:17

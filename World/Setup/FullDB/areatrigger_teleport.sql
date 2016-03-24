@@ -5,9 +5,9 @@ TRUNCATE TABLE `areatrigger_teleport`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `areatrigger_teleport`;
 
 LOCK TABLES `areatrigger_teleport` WRITE;
 /*!40000 ALTER TABLE `areatrigger_teleport` DISABLE KEYS */;
-INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`, `condition_id`) VALUES (45,'Scarlet Monastery - Graveyard (Entrance)',189,1687,1050,18.6775,1.57,2004),
+INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`, `condition_id`) VALUES 
+(45,'Scarlet Monastery - Graveyard (Entrance)',189,1687,1050,18.6775,1.57,2004),
 (78,'DeadMines Entrance',36,-16.4,-383.07,61.78,1.86,107),
 (101,'Stormwind Stockades Entrance',34,54.23,0.28,-18.34,6.26,2003),
 (107,'Stormwind Vault Entrance',35,-0.91,40.57,-24.23,0,0),
@@ -138,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:06
+-- Dump completed on 2016-03-24 22:25:05

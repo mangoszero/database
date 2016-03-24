@@ -5,9 +5,9 @@ TRUNCATE TABLE `gossip_menu_option`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `gossip_menu_option`;
 
 LOCK TABLES `gossip_menu_option` WRITE;
 /*!40000 ALTER TABLE `gossip_menu_option` DISABLE KEYS */;
-INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES (0,0,0,'GOSSIP_OPTION_QUESTGIVER',2,2,0,0,0,0,0,NULL,0),
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES 
+(0,0,0,'GOSSIP_OPTION_QUESTGIVER',2,2,0,0,0,0,0,NULL,0),
 (0,1,1,'I want to browse your goods.',3,4,0,0,0,0,0,NULL,0),
 (0,2,2,'I need a ride.',4,8,0,0,0,0,0,NULL,0),
 (0,3,3,'Train me.',5,16,0,0,0,0,0,NULL,0),
@@ -234,7 +235,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (2177,0,0,'I want to examine this pylon.',1,1,2181,0,2177,0,0,'',53),
 (2178,0,0,'I want to examine this pylon.',1,1,2180,0,2178,0,0,'',54),
 (2179,0,0,'I want to examine this pylon.',1,1,2182,0,2179,0,0,'',55),
-(2208,1,0,'What plants are in Felwood that might be corrupted?',1,1,0,0,0,0,0,'',0),
+(2208,1,0,'What plants are in Felwood that might be corrupted?',1,1,0,0,0,0,0,'',5),
 (2208,0,0,'I need a Cenarion beacon.',1,1,-1,0,2208,0,0,'',131),
 (2343,0,0,'Druid',1,1,2328,98,0,0,0,'',0),
 (2343,1,0,'Hunter',1,1,2327,99,0,0,0,'',0),
@@ -733,13 +734,13 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (566,0,0,'Anything else I should know about the Earthen?',1,1,567,0,0,0,0,'',0),
 (567,0,0,'I think I understand the Creators\' design intent for the Earthen now.  What are the Earthen\'s anomalies that you spoke of earlier?',1,1,568,0,0,0,0,'',0),
 (568,0,0,'What high-stress environments would cause the Earthen to destabilize?',1,1,569,0,0,0,0,'',0),
-(569,0,0,'What happens when the Earthen destabilize?',1,1,570,0,0,0,0,'',0),
+(569,0,0,'What happens when the Earthen destabilize?',1,1,570,0,569,0,0,'',0),
 (570,0,0,'Troggs?!  Are the troggs you mention the same as the ones in the world today?',1,1,571,0,0,0,0,'',0),
-(571,0,0,'You mentioned two results when the Earthen destabilize.  What is the second?',1,1,572,0,0,0,0,'',0),
+(571,0,0,'You mentioned two results when the Earthen destabilize.  What is the second?',1,1,572,0,571,0,0,'',0),
 (572,0,0,'Dwarves!!!  Now you\'re telling me that dwarves originally came from the Earthen?!',1,1,573,0,0,0,0,'',0),
 (573,0,0,'These dwarves are the same ones today, yes?  Do dwarves maintain any other links to the Earthen?',1,1,574,0,0,0,0,'',0),
 (574,0,0,'Who are the Creators?',1,1,575,0,0,0,0,'',0),
-(575,0,0,'This is a lot to think about.',1,1,576,0,0,0,0,'',0),
+(575,0,0,'This is a lot to think about.',1,1,576,0,575,0,0,'',0),
 (576,0,0,'I will access the discs now.',1,1,-1,0,576,0,0,'',0),
 (590,0,0,'Can you give me directions?',1,1,0,0,0,0,0,'',0),
 (593,1,0,'Tell me more about Forging Armor.',1,1,0,0,0,0,0,'',0),
@@ -823,7 +824,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (2184,1,0,'Tell me more about the Northern Crystal Pylon.',1,1,0,0,0,0,0,'',0),
 (2184,2,0,'Tell me more about the Western Crystal Pylon.',1,1,0,0,0,0,0,'',0),
 (2187,0,0,'Transcript the Tablet',1,1,-1,0,2187,0,0,NULL,255),
-(2188,0,0,'Who is this Lar\'korwi you spoke of?',1,1,2201,0,0,0,0,'',0),
+(2188,0,0,'Who is this Lar\'korwi you spoke of?',1,1,2201,0,0,0,0,'',1146),
 (2242,0,1,'I would like to buy from you.',3,4,0,0,0,0,0,'',0),
 (2304,0,3,'I would like to train further in the ways of the Light.',5,16,0,0,0,0,0,'',0),
 (2304,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',134),
@@ -1106,7 +1107,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (4690,0,3,'I seek training.',5,16,0,0,0,0,0,'',0),
 (4690,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',136),
 (4690,4,0,'<Take the letter>',1,1,-1,0,5,0,0,'',196),
-(4691,0,3,'Train me',5,16,0,0,0,0,0,'',0),
+(4691,0,3,'I would like to train further in the ways of the Light.',5,16,0,0,0,0,0,'',0),
 (4691,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',163),
 (4695,0,3,'I\'d like to train.',5,16,0,0,0,0,0,'',0),
 (4695,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',135),
@@ -2091,7 +2092,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (6928,6,0,'I have lost my Ring of Unspoken Names. Are you able to replace it for me?',1,1,-1,0,49,0,0,NULL,1117),
 (6928,7,0,'I have lost my Signet of the Unseen Path. Are you able to replace it for me?',1,1,-1,0,50,0,0,NULL,1120),
 (6928,8,0,'I have lost my Signet of Unyielding Strength. Are you able to replace it for me?',1,1,-1,0,51,0,0,NULL,1123),
-(6691,0,0,'May I have your report?',1,1,-1,0,6691,0,0,NULL,1123),
+(6691,0,0,'May I have your report?',1,1,-1,0,6691,0,0,NULL,1111),
 (2950,0,0,'I\'m all ears.',1,1,2949,0,0,0,0,NULL,0),
 (5347,0,0,'Please tell me more about Zaetar.',1,1,5346,0,0,0,0,NULL,0),
 (6101,0,0,'Vaelastrasz , no!',1,1,0,0,0,0,0,NULL,0),
@@ -2144,7 +2145,39 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (5065,0,0,'[PH] I desire an aqual quintessence, Duke Hydraxis.',1,1,-1,0,506501,0,0,'',73),
 (5065,1,0,'I desire this eternal quintessence, Duke Hydraxis.',1,1,-1,0,506502,0,0,'',76),
 (5667,0,0,'So, I found this shackle key...',1,1,5668,0,0,0,0,'',114),
-(5668,0,0,'I guess so!',1,1,-1,0,0,0,0,'',0);
+(5668,0,0,'I guess so!',1,1,-1,0,0,0,0,'',0),
+(2076,0,0,'Why don\'t you and Rocknot go find somewhere private...',1,1,-1,0,0,0,0,'',125),
+(6799,0,0,' Decipher the pattern and learn its content.',1,1,-1,0,6799,0,0,NULL,80),
+(4509,0,3,'I require warrior training.',5,16,0,0,0,0,0,'',0),
+(4509,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',133),
+(4511,0,3,'I require warrior training.',5,16,0,0,0,0,0,'',0),
+(4511,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',133),
+(4548,0,3,'I require warrior training.',5,16,0,0,0,0,0,'',0),
+(4548,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',133),
+(4546,0,3,'I require warrior training.',5,16,0,0,0,0,0,'',0),
+(4546,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',133),
+(4547,0,3,'I require warrior training.',5,16,0,0,0,0,0,'',0),
+(4547,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',133),
+(50199,0,3,'Can you train me how to use rogue skills?',5,16,0,0,0,0,0,NULL,16),
+(50199,4,0,'<Take the letter>',1,1,-1,0,5,0,0,NULL,196),
+(50199,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,NULL,136),
+(4542,0,3,'an you train me how to use rogue skills?',5,16,0,0,0,0,0,NULL,16),
+(4542,4,0,'<Take the letter>',1,1,-1,0,5,0,0,NULL,196),
+(4542,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,NULL,136),
+(4540,0,3,'an you train me how to use rogue skills?',5,16,0,0,0,0,0,NULL,16),
+(4540,4,0,'<Take the letter>',1,1,-1,0,5,0,0,NULL,196),
+(4540,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,NULL,136),
+(4541,0,3,'an you train me how to use rogue skills?',5,16,0,0,0,0,0,NULL,16),
+(4541,4,0,'<Take the letter>',1,1,-1,0,5,0,0,NULL,196),
+(4541,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,NULL,136),
+(3645,0,3,'Train me.',5,16,0,0,0,0,0,'',0),
+(3645,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',163),
+(4545,1,3,'Train me.',5,16,0,0,0,0,0,'',0),
+(4545,2,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',163),
+(4543,1,3,'Train me.',5,16,0,0,0,0,0,'',0),
+(4543,2,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',163),
+(4515,0,3,'Teach me the ways of the spirits.',5,16,0,0,0,0,0,'',0),
+(4515,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',137);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2157,4 +2190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:14
+-- Dump completed on 2016-03-24 22:25:13

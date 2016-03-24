@@ -5,9 +5,9 @@ TRUNCATE TABLE `creature_ai_summons`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `creature_ai_summons`;
 
 LOCK TABLES `creature_ai_summons` WRITE;
 /*!40000 ALTER TABLE `creature_ai_summons` DISABLE KEYS */;
-INSERT INTO `creature_ai_summons` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `comment`) VALUES (1,8074.84,-3840,690.061,4.6,180000,'10727'),
+INSERT INTO `creature_ai_summons` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `comment`) VALUES 
+(1,8074.84,-3840,690.061,4.6,180000,'10727'),
 (2,-472.02,105.823,-94.6299,0.0301925,300000,'5721'),
 (3,-467.099,85.2944,-94.7318,3.95326,300000,'5720'),
 (4,-9967.55,-135.956,24.5909,0.170326,180000,'6846'),
@@ -58,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:08
+-- Dump completed on 2016-03-24 22:25:07

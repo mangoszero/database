@@ -5,9 +5,9 @@ TRUNCATE TABLE `creature_involvedrelation`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `creature_involvedrelation`;
 
 LOCK TABLES `creature_involvedrelation` WRITE;
 /*!40000 ALTER TABLE `creature_involvedrelation` DISABLE KEYS */;
-INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (196,33),
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES 
+(196,33),
 (196,5261),
 (197,7),
 (197,15),
@@ -4018,4 +4019,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:08
+-- Dump completed on 2016-03-24 22:25:07

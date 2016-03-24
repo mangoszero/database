@@ -5,9 +5,9 @@ TRUNCATE TABLE `spell_bonus_data`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,9 +26,9 @@ TRUNCATE TABLE `spell_bonus_data`;
 
 LOCK TABLES `spell_bonus_data` WRITE;
 /*!40000 ALTER TABLE `spell_bonus_data` DISABLE KEYS */;
-INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`, `two_hand_direct_bonus`, `direct_bonus_done`, `one_hand_direct_bonus_done`, `two_hand_direct_bonus_done`, `direct_bonus_taken`, `one_hand_direct_bonus_taken`, `two_hand_direct_bonus_taken`, `dot_bonus`, `ap_bonus`, `ap_dot_bonus`, `comments`) VALUES (116,0.8143,0,0,0,0,0,0,0,0,0,0,0,'Mage - Frost Bolt'),
+INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`, `two_hand_direct_bonus`, `direct_bonus_done`, `one_hand_direct_bonus_done`, `two_hand_direct_bonus_done`, `direct_bonus_taken`, `one_hand_direct_bonus_taken`, `two_hand_direct_bonus_taken`, `dot_bonus`, `ap_bonus`, `ap_dot_bonus`, `comments`) VALUES 
+(116,0.8143,0,0,0,0,0,0,0,0,0,0,0,'Mage - Frost Bolt'),
 (120,0.1357,0,0,0,0,0,0,0,0,0,0,0,'Mage - Cone of Cold'),
-(133,1,0,0,0,0,0,0,0,0,0,0,0,'Mage - Fire Ball'),
 (172,0,0,0,0,0,0,0,0,0,0.156,0,0,'Warlock - Corruption'),
 (331,0.8571,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Healing Wave'),
 (339,0,0,0,0,0,0,0,0,0,0.1,0,0,'Druid - Entangling Roots'),
@@ -143,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:19
+-- Dump completed on 2016-03-24 22:25:19

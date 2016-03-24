@@ -5,9 +5,9 @@ TRUNCATE TABLE `dbscripts_on_quest_end`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `dbscripts_on_quest_end`;
 
 LOCK TABLES `dbscripts_on_quest_end` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_quest_end` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (21,2,0,0,0,0,0,0,2000000059,0,0,0,0,0,0,0,''),
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES 
+(21,2,0,0,0,0,0,0,2000000059,0,0,0,0,0,0,0,''),
 (21,2,1,113,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (63,0,9,15175,30,0,0,0,0,0,0,0,0,0,0,0,''),
 (63,15,10,5895,180000,0,0,0,0,0,0,0,417.05,1822.39,13.007,0.035,''),
@@ -631,7 +632,39 @@ INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `dat
 (502,120,39,2274,0,0,0,0,0,0,0,0,0,0,0,0,'Enraged Stanley Change Entry'),
 (1059,2,32,0,0,0,0,4,0,0,0,0,0,0,0,0,'Unpause WP movement'),
 (1059,1,0,0,0,0,0,0,2000005780,0,0,0,0,0,0,0,''),
-(1059,0,29,2,2,0,0,0,2000005780,0,0,0,0,0,0,0,'');
+(1059,0,29,2,2,0,0,0,2000005780,0,0,0,0,0,0,0,''),
+(4129,0,29,131,2,0,0,0,0,0,0,0,0,0,0,0,'npcFlags removed'),
+(4129,2,0,0,0,0,0,0,2000000521,0,0,0,0,0,0,0,''),
+(4129,3,15,15050,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(4129,10,0,0,0,0,0,0,2000000522,0,0,0,0,0,0,0,''),
+(4129,12,29,131,1,0,0,0,0,0,0,0,0,0,0,0,'npcFlags added'),
+(2943,0,29,3,2,0,0,0,0,0,0,0,0,0,0,0,'npcFlags removed'),
+(2943,1,0,0,0,0,0,0,2000000523,0,0,0,0,0,0,0,''),
+(2943,2,3,0,0,0,0,0,0,0,0,0,-4476.23,3230.55,13.7301,4.20931,''),
+(2943,4,3,0,0,0,0,0,0,0,0,0,0,0,0,4.99471,''),
+(2943,5,0,0,0,0,0,2,2000000524,0,0,0,0,0,0,0,''),
+(2943,10,0,0,0,0,0,0,2000000525,0,0,0,0,0,0,0,''),
+(2943,12,3,0,0,0,0,0,0,0,0,0,-4474.9,3232.88,13.7295,0.951991,''),
+(2943,14,29,3,1,0,0,0,0,0,0,0,0,0,0,0,'npcFlags added'),
+(3463,1,31,8479,100,0,0,0,0,0,0,0,0,0,0,0,'search for Kalaran Windblade'),
+(3463,2,18,0,0,8479,5921,23,0,0,0,0,0,0,0,0,'desp'),
+(3463,3,10,8480,54000,0,0,0,0,0,0,0,-6679.93,-1194.36,240.297,2.96706,'summon Kalaran the Deceiver'),
+(4321,1,21,1,0,0,0,4,0,0,0,0,0,0,0,0,'J.D. Collie - active'),
+(4321,2,9,63180,30,0,0,0,0,0,0,0,-6034.46,-1014.57,-216.735,6.07572,''),
+(4321,3,0,0,0,0,0,0,2000000540,0,0,0,0,0,0,0,''),
+(4321,3,3,0,0,0,0,0,0,0,0,0,0,0,0,2.36912,''),
+(4321,8,0,0,0,0,0,0,2000000541,0,0,0,0,0,0,0,''),
+(4321,12,3,0,0,0,0,0,0,0,0,0,0,0,0,0.872665,''),
+(4321,12,0,0,0,0,0,0,2000000542,0,0,0,0,0,0,0,''),
+(4321,13,21,0,0,0,0,4,0,0,0,0,0,0,0,0,'J.D. Collie - unactive'),
+(4129,9,1,64,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(4129,11,28,0,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(9324,0,15,29235,0,0,0,0,0,0,0,0,0,0,0,0,'Loremaster cast Fire Festival Fortitude'),
+(9325,0,15,29235,0,0,0,0,0,0,0,0,0,0,0,0,'Loremaster cast Fire Festival Fortitude'),
+(9326,0,15,29235,0,0,0,0,0,0,0,0,0,0,0,0,'Loremaster cast Fire Festival Fortitude'),
+(9330,0,15,29235,0,0,0,0,0,0,0,0,0,0,0,0,'Talespinner cast Fire Festival Fortitude'),
+(9331,0,15,29235,0,0,0,0,0,0,0,0,0,0,0,0,'Talespinner cast Fire Festival Fortitude'),
+(9332,0,15,29235,0,0,0,0,0,0,0,0,0,0,0,0,'Talespinner cast Fire Festival Fortitude');
 /*!40000 ALTER TABLE `dbscripts_on_quest_end` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -644,4 +677,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:12
+-- Dump completed on 2016-03-24 22:25:11

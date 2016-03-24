@@ -5,9 +5,9 @@ TRUNCATE TABLE `spell_target_position`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `spell_target_position`;
 
 LOCK TABLES `spell_target_position` WRITE;
 /*!40000 ALTER TABLE `spell_target_position` DISABLE KEYS */;
-INSERT INTO `spell_target_position` (`id`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`) VALUES (31,0,-9464,62,56,0),
+INSERT INTO `spell_target_position` (`id`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`) VALUES 
+(31,0,-9464,62,56,0),
 (33,0,-10643,1052,34,0),
 (34,0,-10368,-422,66,0),
 (35,0,-9104,-70,83,0),
@@ -66,7 +67,7 @@ INSERT INTO `spell_target_position` (`id`, `target_map`, `target_position_x`, `t
 (8136,43,116.35,239.8,-95.08,3.1),
 (8195,531,-8341.55,2118.5,133.058,0),
 (8606,0,325.8,-1481.47,42.68,0.47),
-(8735,48,-151.89,106.96,-39.87,4.53),
+(8735,1,4139.14,883.43,-0.87,4.53),
 (8995,0,-2646.62,-2455.57,80.87,0),
 (8996,0,-2645.25,-2449.5,82.65,0),
 (8997,0,-2648.88,-2442.54,80.71,0),
@@ -74,7 +75,7 @@ INSERT INTO `spell_target_position` (`id`, `target_map`, `target_position_x`, `t
 (9003,0,-2607,-2434,80,0),
 (9004,0,-2634,-2411,81,0),
 (9055,0,-1350.83,-2740.16,62.74,2.95),
-(9268,1,8786.36,967.445,30.197,3.39632),
+(9268,1,9664.01,2526.15,1332.16,0),
 (11012,1,161,299.05,-51.36,0.37),
 (11362,0,-5095,757,261,4.42),
 (11409,0,-14462,460,16,3.49),
@@ -352,4 +353,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:20
+-- Dump completed on 2016-03-24 22:25:20

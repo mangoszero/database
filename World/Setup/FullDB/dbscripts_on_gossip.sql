@@ -5,9 +5,9 @@ TRUNCATE TABLE `dbscripts_on_gossip`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `dbscripts_on_gossip`;
 
 LOCK TABLES `dbscripts_on_gossip` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_gossip` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (21,0,7,6981,0,0,0,0,0,0,0,0,0,0,0,0,'quest complete 6981'),
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES 
+(21,0,7,6981,0,0,0,0,0,0,0,0,0,0,0,0,'quest complete 6981'),
 (125,1,22,21,5,0,0,0,0,0,0,0,0,0,0,0,'astor change faction'),
 (125,2,26,0,0,0,0,0,0,0,0,0,0,0,0,0,'astor attack start'),
 (321,0,15,9268,0,0,0,0,0,0,0,0,0,0,0,0,'Teleport to Darnassus'),
@@ -268,9 +269,18 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (197001,0,22,21,0,10043,46617,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
 (197001,0,22,21,0,10043,46616,16,0,0,0,0,0,0,0,0,'Ribbly Crony - update faction'),
 (197001,0,22,21,0,0,0,0,0,0,0,0,0,0,0,0,'Ribbly - update faction'),
-(197001,5,26,0,0,0,25,0,0,0,0,0,0,0,0,0,'Ribbly  - attack player'),
 (306201,0,16,6482,0,0,0,0,0,0,0,0,0,0,0,0,'Bombay - play sound 6482'),
-(306201,0,15,17009,0,0,0,0,0,0,0,0,0,0,0,0,'Bombay - cast Voodoo spell');
+(306201,0,15,17009,0,0,0,0,0,0,0,0,0,0,0,0,'Bombay - cast Voodoo spell'),
+(197001,5,26,0,0,0,25,0,0,0,0,0,0,0,0,0,'Ribbly  - attack player'),
+(6799,0,15,26095,0,0,0,2,0,0,0,0,0,0,0,0,'Learn Felcloth Bag'),
+(569,0,43,0,0,170353,20,1,0,0,0,0,0,0,0,0,'reset dwarf'),
+(569,1,13,0,0,142488,20,1,0,0,0,0,0,0,0,0,'activate trogg'),
+(571,0,43,0,0,142488,20,1,0,0,0,0,0,0,0,0,'reset trogg'),
+(571,1,13,0,0,170353,20,1,0,0,0,0,0,0,0,0,'activate dwarf'),
+(575,0,0,0,0,0,0,0,2000000818,0,0,0,0,0,0,0,'7172 yell'),
+(2211,1,10,9136,60000,0,0,0,0,0,0,0,-7917.38,-2610.53,221.123,5.04026,''),
+(2211,0,27,4,0,160445,5,0,0,0,0,0,0,0,0,0,''),
+(2211,61,27,8,0,160445,5,0,0,0,0,0,0,0,0,0,'');
 /*!40000 ALTER TABLE `dbscripts_on_gossip` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -283,4 +293,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:12
+-- Dump completed on 2016-03-24 22:25:11

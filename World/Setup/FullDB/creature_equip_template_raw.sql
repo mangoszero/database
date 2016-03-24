@@ -5,9 +5,9 @@ TRUNCATE TABLE `creature_equip_template_raw`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `creature_equip_template_raw`;
 
 LOCK TABLES `creature_equip_template_raw` WRITE;
 /*!40000 ALTER TABLE `creature_equip_template_raw` DISABLE KEYS */;
-INSERT INTO `creature_equip_template_raw` (`entry`, `equipmodel1`, `equipmodel2`, `equipmodel3`, `equipinfo1`, `equipinfo2`, `equipinfo3`, `equipslot1`, `equipslot2`, `equipslot3`) VALUES (5,0,0,6233,0,0,251789826,0,0,0),
+INSERT INTO `creature_equip_template_raw` (`entry`, `equipmodel1`, `equipmodel2`, `equipmodel3`, `equipinfo1`, `equipinfo2`, `equipinfo3`, `equipslot1`, `equipslot2`, `equipslot3`) VALUES 
+(5,0,0,6233,0,0,251789826,0,0,0),
 (7,0,0,6234,0,0,251789826,0,0,0),
 (9,0,0,6235,0,0,251789826,0,0,0),
 (11,0,0,6593,0,0,436273922,0,0,0),
@@ -1034,15 +1035,22 @@ INSERT INTO `creature_equip_template_raw` (`entry`, `equipmodel1`, `equipmodel2`
 (1003,23539,0,0,285346306,0,0,2,0,0),
 (1238,8499,0,0,285280258,0,0,1,0,0),
 (11498,782,0,0,33489666,0,0,781,0,0),
-(2426,6529,6530,0,50266116,50266116,0,1815,1815,0),
-(2425,8376,0,0,33488898,0,0,1037,0,0),
-(2424,19673,0,0,50267138,0,0,781,0,0),
-(2423,20300,0,0,50268674,0,0,529,0,0),
 (2422,18388,0,0,33490434,0,0,529,0,0),
-(2428,5136,0,0,50267138,0,0,781,0,0),
+(2423,20300,0,0,50268674,0,0,529,0,0),
+(2424,19673,0,0,50267138,0,0,781,0,0),
+(2425,8376,0,0,33488898,0,0,1037,0,0),
+(2426,6529,6530,0,50266116,50266116,0,1815,1815,0),
 (2427,19126,19126,0,50267138,50267138,0,781,781,0),
+(2428,5136,0,0,50267138,0,0,781,0,0),
 (2429,5290,0,0,33489666,0,0,781,0,0),
-(2430,782,0,0,33489666,0,0,781,0,0);
+(2430,782,0,0,33489666,0,0,781,0,0),
+(2431,1595,0,0,50267394,0,0,273,0,0),
+(2434,20256,0,0,50268674,0,0,529,0,0),
+(2435,1550,18812,0,33490690,234948100,0,781,4,0),
+(2436,6581,0,0,33492482,0,0,1805,0,0),
+(2437,6584,0,0,33490690,0,0,781,0,0),
+(2438,6520,0,0,33488900,0,0,1815,0,0),
+(2439,1661,24282,0,33490690,33492482,0,781,1815,0);
 /*!40000 ALTER TABLE `creature_equip_template_raw` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1055,4 +1063,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:08
+-- Dump completed on 2016-03-24 22:25:07

@@ -5,9 +5,9 @@ TRUNCATE TABLE `battlemaster_entry`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `battlemaster_entry`;
 
 LOCK TABLES `battlemaster_entry` WRITE;
 /*!40000 ALTER TABLE `battlemaster_entry` DISABLE KEYS */;
-INSERT INTO `battlemaster_entry` (`entry`, `bg_template`) VALUES (347,1),
+INSERT INTO `battlemaster_entry` (`entry`, `bg_template`) VALUES 
+(347,1),
 (857,3),
 (907,3),
 (2302,2),
@@ -62,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:06
+-- Dump completed on 2016-03-24 22:25:05

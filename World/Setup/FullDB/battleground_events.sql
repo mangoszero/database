@@ -5,9 +5,9 @@ TRUNCATE TABLE `battleground_events`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `battleground_events`;
 
 LOCK TABLES `battleground_events` WRITE;
 /*!40000 ALTER TABLE `battleground_events` DISABLE KEYS */;
-INSERT INTO `battleground_events` (`map`, `event1`, `event2`, `description`) VALUES (30,0,0,'Firstaid Station - Alliance Assaulted'),
+INSERT INTO `battleground_events` (`map`, `event1`, `event2`, `description`) VALUES 
+(30,0,0,'Firstaid Station - Alliance Assaulted'),
 (30,0,1,'Firstaid Station - Alliance Control'),
 (30,0,2,'Firstaid Station - Horde Assaulted'),
 (30,0,3,'Firstaid Station - Horde Control'),
@@ -205,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:06
+-- Dump completed on 2016-03-24 22:25:05

@@ -5,9 +5,9 @@ TRUNCATE TABLE `conditions`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `conditions`;
 
 LOCK TABLES `conditions` WRITE;
 /*!40000 ALTER TABLE `conditions` DISABLE KEYS */;
-INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES (1,2,9279,1),
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES 
+(1,2,9279,1),
 (2,2,9281,1),
 (3,6,67,0),
 (4,6,469,0),
@@ -645,8 +646,8 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES 
 (844,9,4136,0),
 (1336,8,5058,0),
 (803,8,4985,0),
-(805,8,5245,0),
 (804,9,5247,0),
+(805,8,5245,0),
 (1200,8,826,0),
 (2000,15,13,1),
 (2001,15,15,1),
@@ -671,7 +672,15 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES 
 (2020,-1,2014,2019),
 (2030,39,10,1),
 (2031,-1,3,2030),
-(2032,-1,4,2030);
+(2032,-1,4,2030),
+(1145,8,4289,0),
+(1146,8,4290,0),
+(125,8,4201,0),
+(77,7,197,280),
+(78,17,26086,1),
+(79,17,26086,0),
+(80,-1,77,78),
+(81,-1,77,79);
 /*!40000 ALTER TABLE `conditions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -684,4 +693,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:07
+-- Dump completed on 2016-03-24 22:25:05

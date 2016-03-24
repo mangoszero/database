@@ -5,9 +5,9 @@ TRUNCATE TABLE `dbscripts_on_go_use`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `dbscripts_on_go_use`;
 
 LOCK TABLES `dbscripts_on_go_use` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_go_use` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (4523,2,10,9136,300000,0,0,0,0,0,0,0,-7916.54,-2613.33,221.13,1.89747,''),
+INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES 
+(4523,2,10,9136,300000,0,0,0,0,0,0,0,-7916.54,-2613.33,221.13,1.89747,''),
 (11881,0,11,11875,20,0,0,0,0,0,0,0,0,0,0,0,''),
 (11894,0,11,11876,300,0,0,0,0,0,0,0,0,0,0,0,''),
 (12609,2,10,12369,300000,0,0,0,0,0,0,0,251.381,2962.47,2.76527,0.860446,''),
@@ -141,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:11
+-- Dump completed on 2016-03-24 22:25:10

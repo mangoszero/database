@@ -5,9 +5,9 @@ TRUNCATE TABLE `dbscripts_on_event`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `dbscripts_on_event`;
 
 LOCK TABLES `dbscripts_on_event` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_event` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (259,2,10,1770,300000,0,0,0,0,0,0,0,881.63,1230.37,47.83,3.1,''),
+INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES 
+(259,2,10,1770,300000,0,0,0,0,0,0,0,881.63,1230.37,47.83,3.1,''),
 (264,3,10,2044,300000,0,0,0,0,0,0,0,-9548.42,-1440.2,62.29,2.19,'Summon Forlorn Spirit'),
 (364,0,10,2624,90000,0,0,0,0,0,0,0,-12179.4,644.22,-67.1,5.18,'spawn Gazban'),
 (415,3,10,2569,300000,0,0,0,0,0,0,0,-1777.64,-1513.58,75.51,5.28,''),
@@ -410,7 +411,9 @@ INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalon
 (420,11,0,0,0,2755,50,3,2000000236,0,0,0,0,0,0,0,''),
 (420,12,26,0,0,2755,50,3,0,0,0,0,0,0,0,0,''),
 (364,1,22,14,0,2624,400,0,0,0,0,0,0,0,0,0,'change faction to hostile'),
-(364,2,26,0,0,2624,400,3,0,0,0,0,0,0,0,0,'attacks player');
+(364,2,26,0,0,2624,400,3,0,0,0,0,0,0,0,0,'attacks player'),
+(5439,1,9,10229,30,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
+(5438,1,9,10230,30,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject');
 /*!40000 ALTER TABLE `dbscripts_on_event` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -423,4 +426,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:11
+-- Dump completed on 2016-03-24 22:25:10

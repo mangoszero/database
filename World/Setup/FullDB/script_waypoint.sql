@@ -5,9 +5,9 @@ TRUNCATE TABLE `script_waypoint`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `script_waypoint`;
 
 LOCK TABLES `script_waypoint` WRITE;
 /*!40000 ALTER TABLE `script_waypoint` DISABLE KEYS */;
-INSERT INTO `script_waypoint` (`entry`, `pointid`, `location_x`, `location_y`, `location_z`, `waittime`, `point_comment`) VALUES (467,0,-10508.4,1068,55.21,0,''),
+INSERT INTO `script_waypoint` (`entry`, `pointid`, `location_x`, `location_y`, `location_z`, `waittime`, `point_comment`) VALUES 
+(467,0,-10508.4,1068,55.21,0,''),
 (467,1,-10518.3,1074.84,53.96,0,''),
 (467,2,-10534.8,1081.92,49.88,0,''),
 (467,3,-10546.5,1084.88,50.13,0,''),
@@ -1532,4 +1533,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:19
+-- Dump completed on 2016-03-24 22:25:18

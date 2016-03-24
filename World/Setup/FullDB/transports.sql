@@ -5,9 +5,9 @@ TRUNCATE TABLE `transports`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `transports`;
 
 LOCK TABLES `transports` WRITE;
 /*!40000 ALTER TABLE `transports` DISABLE KEYS */;
-INSERT INTO `transports` (`entry`, `name`, `period`) VALUES (20808,'Ratchet and Booty Bay',350818),
+INSERT INTO `transports` (`entry`, `name`, `period`) VALUES 
+(20808,'Ratchet and Booty Bay',350818),
 (164871,'Orgrimmar and Undercity',356284),
 (175080,'Grom\'Gol Base Camp and Orgrimmar',303463),
 (176231,'Menethil Harbor and Theramore Isle',329313),
@@ -46,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:20
+-- Dump completed on 2016-03-24 22:25:20

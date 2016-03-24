@@ -5,9 +5,9 @@ TRUNCATE TABLE `pool_creature_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `pool_creature_template`;
 
 LOCK TABLES `pool_creature_template` WRITE;
 /*!40000 ALTER TABLE `pool_creature_template` DISABLE KEYS */;
-INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES (61,1069,0,'Thuros Lightfingers (61)'),
+INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES 
+(61,1069,0,'Thuros Lightfingers (61)'),
 (79,1070,0,'Narg the Taskmaster (79)'),
 (99,1071,0,'Morgaine the Sly (99)'),
 (100,1072,0,'Gruff Swiftbite (100)'),
@@ -152,7 +153,7 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (10357,1145,0,'Ressan the Needler (10357)'),
 (10358,1146,0,'Fellicent\'s Shade (10358)'),
 (10359,1147,0,'Sri\'skulk (10359)'),
-(10817,1059,0,'Duggan Wildhammer (10817)'),
+(10817,1216,0,'Duggan Wildhammer (10817)'),
 (10821,1060,0,'Hed\'mush the Rotting (10821)'),
 (10822,1061,0,'Warlord Thresh\'jin (10822)'),
 (10823,1062,0,'Zul\'Brin Warpbranch (10823)'),
@@ -201,8 +202,9 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (14237,1206,0,'Oozeworm (14237)'),
 (10559,1199,0,'Lady Vespia (10559)'),
 (13602,1700,0,'Abominable Greench (13602)'),
-(14339,1214,0,'Death Howl (14339)'),
-(10196,1215,0,'General Cobaltann (10196)');
+(7015,1214,0,'RARE Flagglemurk the Cruel - 7015'),
+(10196,1215,0,'General Cobaltann (10196)'),
+(14479,25492,0,'Twilight Lord Everun (14479)');
 /*!40000 ALTER TABLE `pool_creature_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -215,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:17
+-- Dump completed on 2016-03-24 22:25:17

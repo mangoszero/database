@@ -5,9 +5,9 @@ TRUNCATE TABLE `gameobject_loot_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `gameobject_loot_template`;
 
 LOCK TABLES `gameobject_loot_template` WRITE;
 /*!40000 ALTER TABLE `gameobject_loot_template` DISABLE KEYS */;
-INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (167,1349,-100,0,1,1,0),
+INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES 
+(167,1349,-100,0,1,1,0),
 (404,1179,0,4,1,1,0),
 (404,1205,0,4,1,1,0),
 (404,1811,0,3,1,1,0),
@@ -15063,7 +15064,7 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (16718,18710,5.8,0,1,1,0),
 (16718,18711,6.6,0,1,1,0),
 (16718,18712,7.1,0,1,1,0),
-(16719,12000,100,1,-12000,2,0),
+(16719,12000,100,0,-12000,2,0),
 (16719,18646,50,1,1,1,0),
 (16719,18703,50,1,1,1,0),
 (16799,18922,-100,0,1,1,0),
@@ -15585,4 +15586,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:13
+-- Dump completed on 2016-03-24 22:25:13

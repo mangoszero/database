@@ -5,9 +5,9 @@ TRUNCATE TABLE `creature_template_classlevelstats`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `creature_template_classlevelstats`;
 
 LOCK TABLES `creature_template_classlevelstats` WRITE;
 /*!40000 ALTER TABLE `creature_template_classlevelstats` DISABLE KEYS */;
-INSERT INTO `creature_template_classlevelstats` (`Level`, `Class`, `BaseHealthExp0`, `BaseMana`, `BaseDamageExp0`, `BaseMeleeAttackPower`, `BaseRangedAttackPower`, `BaseArmor`) VALUES (1,1,42,0,0.0607,10,1,8),
+INSERT INTO `creature_template_classlevelstats` (`Level`, `Class`, `BaseHealthExp0`, `BaseMana`, `BaseDamageExp0`, `BaseMeleeAttackPower`, `BaseRangedAttackPower`, `BaseArmor`) VALUES 
+(1,1,42,0,0.0607,10,1,8),
 (2,1,55,0,0.3603,10,1,20),
 (3,1,71,0,0.6976,11,1,33),
 (4,1,86,0,1.0863,13,1,68),
@@ -227,4 +228,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:10
+-- Dump completed on 2016-03-24 22:25:09

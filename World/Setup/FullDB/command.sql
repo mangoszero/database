@@ -5,9 +5,9 @@ TRUNCATE TABLE `command`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `command`;
 
 LOCK TABLES `command` WRITE;
 /*!40000 ALTER TABLE `command` DISABLE KEYS */;
-INSERT INTO `command` (`name`, `security`, `help`) VALUES ('account',0,'Syntax: .accountDisplay the access level of your account.'),
+INSERT INTO `command` (`name`, `security`, `help`) VALUES 
+('account',0,'Syntax: .accountDisplay the access level of your account.'),
 ('account characters',3,'Syntax: .account characters [#accountId|$accountName]\r\n\r\nShow list all characters for account selected by provided #accountId or $accountName, or for selected player in game.'),
 ('account create',4,'Syntax: .account create $account $passwordCreate account and set password to it.'),
 ('account delete',4,'Syntax: .account delete $accountDelete account with all characters.'),
@@ -100,7 +101,8 @@ INSERT INTO `command` (`name`, `security`, `help`) VALUES ('account',0,'Syntax: 
 ('debug setvalue',3,'Syntax: .debug setvalue #field [int|hex|bit|float] #value\r\n\r\nSet the field #field of the selected target to value #value. If no target is selected, set the content of your field.\r\n\r\nUse type arg for set input format: int (decimal number), hex (hex value), bit (bitstring), float. By default expect integer input format.'),
 ('debug spellcoefs',3,'Syntax: .debug spellcoefs #spellid\r\n\r\nShow default calculated and DB stored coefficients for direct/dot heal/damage.'),
 ('debug spellmods',3,'Syntax: .debug spellmods (flat|pct) #spellMaskBitIndex #spellModOp #value\r\n\r\nSet at client side spellmod affect for spell that have bit set with index #spellMaskBitIndex in spell family mask for values dependent from spellmod #spellModOp to #value.'),
-('delticket',2,'Syntax: .delticket all        .delticket #num        .delticket $character_nameall to dalete all tickets at server, $character_name to delete ticket of this character, #num to delete ticket #num.'),
+('ticket respond',2,'Syntax: .ticket respond (#ID|$name) $responce_text\nSend your responce to the ticket as whisper chat.'),
+('ticket show',2,'Syntax: .ticket show (#ID|$name)\nShow details about the ticket.'),
 ('demorph',2,'Syntax: .demorphDemorph the selected player.'),
 ('die',3,'Syntax: .dieKill the selected player. If no player is selected, it will kill you.'),
 ('dismount',0,'Syntax: .dismountDismount you, if you are mounted.'),
@@ -306,7 +308,13 @@ INSERT INTO `command` (`name`, `security`, `help`) VALUES ('account',0,'Syntax: 
 ('tele del',3,'Syntax: .tele del $nameRemove location with name $name for .tele command locations list.'),
 ('tele group',1,'Syntax: .tele group#locationTeleport a selected player and his group members to a given location.'),
 ('tele name',1,'Syntax: .tele name [#playername] #locationTeleport the given character to a given location. Character can be offline.'),
-('ticket',2,'Syntax: .ticket on\r\n        .ticket off\r\n        .ticket system_on\r\n        .ticket system_off\r\n        .ticket #num\r\n        .ticket $character_name\r\n        .ticket respond/response/whisper #num $response\r\n        .ticket respond/response/whisper $character_name $response\r\n        .ticket close $character_name\r\n        .ticket close #num\r\n        .ticket close_survey #num\r\n        .ticket close_survey $character_name\r\n\r\non/off for GMs to show or not a new ticket directly, $character_name to show ticket of this character, #num to show ticket #num, close to close the given ticket, close_survey to close the given ticket and have the player answer a survey about the gm, system_on/off to globally turn off accepting tickets, will show a message to the client if off that you cant file a ticket if off'),
+('ticket accept',3,'Syntax: .ticket accept (on|off)\nTurning on/off the whole ticket accepting system.'),
+('ticket close',2,'Syntax: .ticket close (#ID|$name)\nClosing the ticket.'),
+('ticket delete',3,'Syntax: .ticket delete (#ID|$name)\nDelete ticket from the list. It will reappear after server restart.'),
+('ticket info',1,'Syntax: .ticket info\nInformation on the tickets and your relation to them.'),
+('ticket list',2,'Syntax: .ticket list\nGet list of ticket IDs with player GUIDs and last change date.'),
+('ticket meaccept',2,'Syntax: .ticket meaccept [(on|off)]\nSet you informing about incoming tickets, or show its status.'),
+('ticket onlinelist',2,'Syntax: .ticket onlinelist\nGet list of the tickets for online players only.'),
 ('trigger',2,'Syntax: .trigger [#trigger_id|$trigger_shift-link|$trigger_target_shift-link]\r\n\r\nShow detail infor about areatrigger with id #trigger_id or trigger id associated with shift-link. If areatrigger id or shift-link not provided then selected nearest areatrigger at current map.'),
 ('trigger active',2,'Syntax: .trigger active\r\n\r\nShow list of areatriggers wiht activation zone including current character position.'),
 ('trigger near',2,'Syntax: .trigger near [#distance]\r\n\r\nOutput areatriggers at distance #distance from player. If #distance not provided use 10 as default value.'),
@@ -322,7 +330,8 @@ INSERT INTO `command` (`name`, `security`, `help`) VALUES ('account',0,'Syntax: 
 ('wp show',2,'Syntax: .wp show command [dbGuid] [pathId [wpOrigin] ]\r\nwhere command can have one of the following values\r\non (to show all related wp)\r\nfirst (to see only first one)\r\nlast (to see only last one)\r\noff (to hide all related wp)\r\ninfo (to get more info about theses wp)\r\n\r\nFor using info you have to do first show on and than select a Visual-Waypoint and do the show info!\r\nwith pathId and wpOrigin you can specify which path to show (optional)'),
 ('wp export',3,'Syntax: .wp export [#creature_guid or Select a Creature] $filename'),
 ('wp add',2,'Syntax: .wp add [Selected Creature or dbGuid] [pathId [wpOrigin] ]'),
-('wp modify',2,'Syntax: .wp modify command [dbGuid, id] [value]\r\nwhere command must be one of: waittime  | scriptid | orientation | del | move\r\nIf no waypoint was selected, one can be chosen with dbGuid and id.\r\nThe commands have the following meaning:\r\n waittime (Set the time the npc will wait at a point (in ms))\r\n scriptid (Set the DB-Script that will be executed when the wp is reached)\r\n orientation (Set the orientation of this point) \r\n del (Remove the waypoint from the path)\r\n move (Move the wayoint to the current position of the player)');
+('wp modify',2,'Syntax: .wp modify command [dbGuid, id] [value]\r\nwhere command must be one of: waittime  | scriptid | orientation | del | move\r\nIf no waypoint was selected, one can be chosen with dbGuid and id.\r\nThe commands have the following meaning:\r\n waittime (Set the time the npc will wait at a point (in ms))\r\n scriptid (Set the DB-Script that will be executed when the wp is reached)\r\n orientation (Set the orientation of this point) \r\n del (Remove the waypoint from the path)\r\n move (Move the wayoint to the current position of the player)'),
+('ticket surveyclose',2,'Syntax: .ticket surveyclose (#ID|$name)\nClosing the ticket with the user survey.');
 /*!40000 ALTER TABLE `command` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -335,4 +344,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:06
+-- Dump completed on 2016-03-24 22:25:05

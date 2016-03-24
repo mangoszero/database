@@ -5,9 +5,9 @@ TRUNCATE TABLE `skinning_loot_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `skinning_loot_template`;
 
 LOCK TABLES `skinning_loot_template` WRITE;
 /*!40000 ALTER TABLE `skinning_loot_template` DISABLE KEYS */;
-INSERT INTO `skinning_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (113,2318,39.2962,1,1,1,0),
+INSERT INTO `skinning_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES 
+(113,2318,39.2962,1,1,1,0),
 (113,2934,60.7038,1,1,1,0),
 (118,2318,39.9457,1,1,1,0),
 (118,2934,60.0374,1,1,1,0),
@@ -2828,10 +2829,10 @@ INSERT INTO `skinning_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `g
 (100008,2934,100,1,1,1,0),
 (14887,15412,0,1,1,5,0),
 (14887,20381,100,0,3,5,0),
-(10077,4304,45,1,1,2,0),
 (10077,8169,2,1,1,1,0),
-(10077,8170,50,1,1,2,0),
-(10077,8171,3,1,1,1,0);
+(10077,8171,3,1,1,1,0),
+(10077,4304,45,1,1,2,0),
+(10077,8170,50,1,1,2,0);
 /*!40000 ALTER TABLE `skinning_loot_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2844,4 +2845,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:19
+-- Dump completed on 2016-03-24 22:25:19

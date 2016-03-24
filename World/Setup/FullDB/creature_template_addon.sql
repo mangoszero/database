@@ -5,9 +5,9 @@ TRUNCATE TABLE `creature_template_addon`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `creature_template_addon`;
 
 LOCK TABLES `creature_template_addon` WRITE;
 /*!40000 ALTER TABLE `creature_template_addon` DISABLE KEYS */;
-INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES (3,0,0,1,16,0,0,NULL),
+INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
+(3,0,0,1,16,0,0,NULL),
 (6,0,0,1,16,0,0,NULL),
 (30,0,0,1,16,0,0,NULL),
 (36,0,0,1,16,0,0,NULL),
@@ -2455,7 +2456,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (3637,0,0,1,16,0,0,NULL),
 (3638,0,0,1,16,0,0,NULL),
 (3639,0,8,1,16,0,0,NULL),
-(3640,0,0,1,16,0,0,NULL),
+(3640,0,0,1,16,0,0,'7940'),
 (3641,0,0,1,16,0,0,NULL),
 (3644,0,8,1,1,0,0,NULL),
 (3649,0,0,1,1,0,0,NULL),
@@ -4743,7 +4744,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (8903,0,0,1,16,0,0,NULL),
 (8904,0,0,1,16,0,0,NULL),
 (8905,0,0,1,16,0,0,NULL),
-(8906,0,0,1,16,0,0,NULL),
+(8907,0,0,1,16,0,0,NULL),
 (8908,0,0,1,16,0,0,NULL),
 (8909,0,0,1,16,0,0,NULL),
 (8911,0,0,1,16,0,0,NULL),
@@ -5296,27 +5297,27 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (11198,0,0,1,16,0,0,NULL),
 (11216,0,0,1,0,0,0,NULL),
 (11217,0,0,1,0,0,0,NULL),
-(11218,0,3,1,1,0,0,'18309'),
+(11218,0,3,1,1,0,0,NULL),
 (11219,0,0,1,1,0,0,NULL),
 (11257,0,0,1,16,0,0,NULL),
 (11259,0,0,1,1,0,0,NULL),
 (11260,0,0,1,16,234,0,NULL),
 (11261,0,0,1,16,69,0,NULL),
 (11276,0,0,1,16,0,0,NULL),
-(11277,0,0,0,0,0,0,'17622'),
+(11277,0,0,1,0,0,0,'17622'),
 (11278,0,0,0,0,0,0,'17622'),
-(11279,0,0,0,0,0,0,'17622'),
-(11280,0,0,0,0,0,0,'17622'),
-(11281,0,0,0,0,0,0,'17622'),
+(11279,0,0,1,0,0,0,'17622'),
+(11280,0,0,1,0,0,0,'17622'),
+(11281,5228,0,0,0,0,0,'17622'),
 (11282,0,0,0,0,0,0,'17622'),
 (11283,0,0,0,0,0,0,'17622'),
 (11286,0,0,0,0,0,0,'17622'),
-(11287,0,0,0,0,0,0,'17622'),
+(11287,0,0,1,0,0,0,'17622'),
 (11288,0,0,1,16,0,0,NULL),
 (11289,0,0,1,16,0,0,'17327'),
 (11290,0,0,1,16,0,0,NULL),
 (11291,0,0,1,16,0,0,NULL),
-(11316,0,0,0,0,0,0,'17622'),
+(11316,0,0,1,0,0,0,'17622'),
 (11317,0,0,1,16,0,0,NULL),
 (11318,0,0,1,16,0,0,NULL),
 (11319,0,0,1,16,0,0,NULL),
@@ -6471,16 +6472,13 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (16506,0,0,1,0,0,0,NULL),
 (16509,0,0,1,0,0,0,NULL),
 (16543,0,0,1,0,0,0,NULL),
-(16592,0,0,1,16,0,0,NULL),
-(16781,0,0,1,1,0,0,NULL),
+(16781,0,0,1,16,0,0,NULL),
 (16788,0,0,1,16,0,0,NULL),
 (16803,0,0,1,0,36,0,NULL),
 (16817,0,0,1,16,0,0,NULL),
 (16818,0,0,1,16,0,0,NULL),
 (16980,0,0,1,0,0,1024,NULL),
 (16998,0,0,1,0,0,0,NULL),
-(17048,0,0,1,16,0,0,'29402'),
-(17049,0,0,1,16,0,0,'29402'),
 (17066,0,0,1,16,0,0,NULL),
 (17068,0,0,1,16,0,0,NULL),
 (17069,0,0,1,0,0,0,NULL),
@@ -6526,7 +6524,11 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (3694,0,0,1,1,0,0,NULL),
 (10580,0,0,1,16,0,0,NULL),
 (8982,0,0,1,16,0,0,'10255'),
-(8907,0,0,1,16,0,0,NULL);
+(8906,0,0,1,16,0,0,NULL),
+(17038,0,0,1,16,0,0,NULL),
+(17041,0,0,1,16,0,0,NULL),
+(17050,0,0,1,16,0,0,NULL),
+(17051,0,0,1,16,0,0,NULL);
 /*!40000 ALTER TABLE `creature_template_addon` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -6539,4 +6541,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:10
+-- Dump completed on 2016-03-24 22:25:09

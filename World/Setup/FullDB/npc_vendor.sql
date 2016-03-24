@@ -5,9 +5,9 @@ TRUNCATE TABLE `npc_vendor`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `npc_vendor`;
 
 LOCK TABLES `npc_vendor` WRITE;
 /*!40000 ALTER TABLE `npc_vendor` DISABLE KEYS */;
-INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id`) VALUES (54,2488,0,0,0),
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id`) VALUES 
+(54,2488,0,0,0),
 (54,2489,0,0,0),
 (54,2490,0,0,0),
 (54,2491,0,0,0),
@@ -10808,15 +10809,12 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id
 (12246,4609,1,9000,0),
 (12246,6401,0,0,0),
 (12246,7087,0,0,0),
-(12246,7561,1,3600,0),
 (12246,11284,0,0,0),
 (12246,11285,0,0,0),
 (12246,12227,1,9000,0),
 (12246,12229,1,9000,0),
 (12246,12233,1,9000,0),
 (12246,12239,1,9000,0),
-(12246,13308,0,0,0),
-(12246,13310,0,0,0),
 (12246,14630,0,0,0),
 (12384,4604,0,0,0),
 (12384,4605,0,0,0),
@@ -12581,7 +12579,12 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id
 (5848,2595,0,0,0),
 (5848,2596,0,0,0),
 (5848,2723,0,0,0),
-(12941,15756,0,0,0);
+(12941,15756,0,0,0),
+(4592,2946,0,0,0),
+(4592,3111,0,0,0),
+(4592,3137,0,0,0),
+(4592,15326,0,0,0),
+(4592,3107,0,0,0);
 /*!40000 ALTER TABLE `npc_vendor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -12594,4 +12597,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:16
+-- Dump completed on 2016-03-24 22:25:16

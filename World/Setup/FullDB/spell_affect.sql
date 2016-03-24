@@ -5,9 +5,9 @@ TRUNCATE TABLE `spell_affect`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `spell_affect`;
 
 LOCK TABLES `spell_affect` WRITE;
 /*!40000 ALTER TABLE `spell_affect` DISABLE KEYS */;
-INSERT INTO `spell_affect` (`entry`, `effectId`, `SpellFamilyMask`) VALUES (11083,0,12714007),
+INSERT INTO `spell_affect` (`entry`, `effectId`, `SpellFamilyMask`) VALUES 
+(11083,0,12714007),
 (11115,0,146931735),
 (11124,0,146931735),
 (11170,0,1090394871),
@@ -288,4 +289,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:19
+-- Dump completed on 2016-03-24 22:25:19

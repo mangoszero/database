@@ -5,9 +5,9 @@ TRUNCATE TABLE `mangos_string`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `mangos_string`;
 
 LOCK TABLES `mangos_string` WRITE;
 /*!40000 ALTER TABLE `mangos_string` DISABLE KEYS */;
-INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES (1,'You should select a character or a creature.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES 
+(1,'You should select a character or a creature.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (2,'You should select a creature.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (3,'|cffff0000[System Message]: %s|r',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (4,'|cffff0000[Event Message]: %s|r',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -83,7 +84,7 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (55,'Your password can\'t be longer than 16 characters (client limit), password not changed!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (56,'Current Message of the day: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (57,'Using World DB: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(58,'Using script library: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(58,'Using script library',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (59,'Using creature EventAI: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (61,'Username: ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (62,'Password: ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -238,7 +239,6 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (287,'Creature (GUID: %u) not found',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (288,'Tickets count: %i show new tickets: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (289,'New ticket from %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(290,'Ticket of %s (Last updated: %s):%s ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (291,'New ticket show: ON',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (292,'New ticket show: OFF',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (293,'Ticket %i doesn\'t exist',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -305,7 +305,7 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (365,' [Quest]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (366,'Explore quest:',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (49,'You must be at least level %u to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(373,'Response:\n%s ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(290,'Ticket of %s (Last updated: %s): %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (374,'Tickets count: %i\n',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (375,'Player %s not have tickets.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (376,'%u - |cffffffff|Hpool:%u|h[%s]|h|r AutoSpawn: %u MaxLimit: %u Creatures: %u GameObjecs: %u Pools %u',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -833,7 +833,13 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (68,'You must be member of the Alliance to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (69,'You must be at most level %u to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (70,'You must have level %u to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(367,'Condition %u',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(367,'Condition %u',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(373,'Response: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1514,'ID %u from %s (%s), changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1515,'= Shown %u tickets out of total %u from online players.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1516,'ID %u from GUID %u (%s), changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1517,'= Shown %u tickets of total %u.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1518,'Informing you about arriving tickets is %s.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `mangos_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -846,4 +852,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:16
+-- Dump completed on 2016-03-24 22:25:15

@@ -5,9 +5,9 @@ TRUNCATE TABLE `reputation_spillover_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `reputation_spillover_template`;
 
 LOCK TABLES `reputation_spillover_template` WRITE;
 /*!40000 ALTER TABLE `reputation_spillover_template` DISABLE KEYS */;
-INSERT INTO `reputation_spillover_template` (`faction`, `faction1`, `rate_1`, `rank_1`, `faction2`, `rate_2`, `rank_2`, `faction3`, `rate_3`, `rank_3`, `faction4`, `rate_4`, `rank_4`) VALUES (21,369,0.5,7,470,0.5,7,577,0.5,7,0,0,0),
+INSERT INTO `reputation_spillover_template` (`faction`, `faction1`, `rate_1`, `rank_1`, `faction2`, `rate_2`, `rank_2`, `faction3`, `rate_3`, `rank_3`, `faction4`, `rate_4`, `rank_4`) VALUES 
+(21,369,0.5,7,470,0.5,7,577,0.5,7,0,0,0),
 (47,72,0.25,7,54,0.25,7,69,0.25,7,0,0,0),
 (54,47,0.25,7,72,0.25,7,69,0.25,7,0,0,0),
 (68,76,0.25,7,81,0.25,7,530,0.25,7,0,0,0),
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:18
+-- Dump completed on 2016-03-24 22:25:18

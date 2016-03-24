@@ -5,9 +5,9 @@ TRUNCATE TABLE `pool_creature`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `pool_creature`;
 
 LOCK TABLES `pool_creature` WRITE;
 /*!40000 ALTER TABLE `pool_creature` DISABLE KEYS */;
-INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES (99291,1601,70,'Tormented Officer'),
+INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALUES 
+(99291,1601,70,'Tormented Officer'),
 (134517,1601,30,'Deathsworn Captain'),
 (12596,1175,0,'Q002518_lady_sathrah'),
 (73001,1175,0,'Q002518_lady_sathrah'),
@@ -36,8 +37,8 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 (590010,1177,70,'Alternate creature to Blind Hunter (4425) Razorfen Kraul'),
 (45831,1178,30,'Jed Runewatcher (10509) Blackrock Spire'),
 (160129,1178,70,'Alternate creature to Jed Runewatcher (10509) Blackrock Spire'),
-(590004,1179,30,'Dark Iron Ambassador (6228) Gnomeregan'),
-(33458,1179,70,'Alternate creature to Dark Iron Ambassador (6228) Gnomeregan'),
+(30018,1179,30,'Dark Iron Ambassador (6228) Gnomeregan'),
+(30132,1179,70,'Alternate creature to Dark Iron Ambassador (6228) Gnomeregan'),
 (31774,1181,30,'Ragglesnout (7354) Razorfen Downs'),
 (87199,1181,70,'Alternate creature to Ragglesnout (7354) Razorfen Downs'),
 (84079,1182,20,'Miner Johnson (3586) Deadmines'),
@@ -285,46 +286,66 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 (590013,1701,0,'Dire Maul Arena - Mushgog'),
 (590014,1701,0,'Dire Maul Arena - The Razza'),
 (590015,1701,0,'Dire Maul Arena - Skarr the Unbreakable'),
-(3527,25469,10,'LBRS - Crystal Fang / Spire Spider'),
 (3528,25469,90,'LBRS - Crystal Fang / Spire Spider'),
-(154637,25478,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154636,25478,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154635,25477,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154634,25477,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154633,25476,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154632,25476,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154631,25475,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154630,25475,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154629,25474,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154628,25474,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154627,25473,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154626,25473,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154625,25472,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154624,25472,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154623,25471,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(3527,25469,10,'LBRS - Crystal Fang / Spire Spider'),
 (154622,25471,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154655,25481,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154654,25481,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154653,25480,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154652,25480,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154651,25479,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154623,25471,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154624,25472,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154625,25472,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154626,25473,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154627,25473,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154628,25474,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154629,25474,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154630,25475,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154631,25475,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154632,25476,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154633,25476,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154634,25477,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
 (154650,25479,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154663,25485,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154662,25485,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154661,25484,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154660,25484,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154659,25483,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154658,25483,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154657,25482,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154651,25479,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154652,25480,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154653,25480,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154654,25481,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
 (154656,25482,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(154673,25491,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154672,25491,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154670,25490,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154669,25490,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154668,25489,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154667,25489,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154657,25482,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154658,25483,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154659,25483,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154660,25484,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154661,25484,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154662,25485,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154664,25488,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
 (154665,25488,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
-(154664,25488,0,'BRD - Doomforge Arcanasmith/Weapon Technician');
+(154667,25489,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154668,25489,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154669,25490,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154670,25490,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154672,25491,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154635,25477,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154636,25478,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154637,25478,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(154655,25481,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154663,25485,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(154673,25491,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
+(517,25493,35,'WC - Deviate Faerie Dragon'),
+(85959,25493,65,'WC - Druid of the Fang'),
+(154678,25494,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154679,25494,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154683,25495,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154684,25495,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154688,25496,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154689,25496,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154693,25497,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154694,25497,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154698,25498,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154699,25498,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154703,25499,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154704,25499,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154708,25500,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154709,25500,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154713,25501,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(154714,25501,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
+(98633,25452,0,'Caer Darrow ghosts'),
+(98638,25452,0,'Caer Darrow ghosts');
 /*!40000 ALTER TABLE `pool_creature` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -337,4 +358,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:17
+-- Dump completed on 2016-03-24 22:25:17

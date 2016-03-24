@@ -5,9 +5,9 @@ TRUNCATE TABLE `game_tele`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `game_tele`;
 
 LOCK TABLES `game_tele` WRITE;
 /*!40000 ALTER TABLE `game_tele` DISABLE KEYS */;
-INSERT INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (1,1400.61,-1493.87,54.7844,4.08661,0,'RuinsOfAndorhal'),
+INSERT INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES 
+(1,1400.61,-1493.87,54.7844,4.08661,0,'RuinsOfAndorhal'),
 (2,1728.65,-1602.25,63.429,1.6558,0,'WesternPlaguelands'),
 (3,659.762,-959.316,164.404,0.433716,0,'Strahnbrad'),
 (4,1269.64,-2556.21,93.6088,0.620623,0,'Scholomance'),
@@ -245,7 +246,8 @@ INSERT INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orient
 (415,128.205,135.136,236.11,4.59132,37,'AzsharaCrater'),
 (416,-11052.9,-1568.93,27.233,4.64509,0,'Crypt'),
 (417,-956.664,-3754.71,5.33239,0.996637,1,'Ratchet'),
-(418,-8787.39,828.377,97.6489,0.626312,0,'TheStockades');
+(418,-8787.39,828.377,97.6489,0.626312,0,'TheStockades'),
+(419,952.3,-1426.74,64.64,0.074,0,'Chillwind Camp');
 /*!40000 ALTER TABLE `game_tele` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -258,4 +260,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:13
+-- Dump completed on 2016-03-24 22:25:12

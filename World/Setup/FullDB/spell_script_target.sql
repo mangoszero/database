@@ -5,9 +5,9 @@ TRUNCATE TABLE `spell_script_target`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `spell_script_target`;
 
 LOCK TABLES `spell_script_target` WRITE;
 /*!40000 ALTER TABLE `spell_script_target` DISABLE KEYS */;
-INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffectMask`) VALUES (802,1,15316,0),
+INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffectMask`) VALUES 
+(802,1,15316,0),
 (802,1,15317,0),
 (804,1,15316,0),
 (804,1,15317,0),
@@ -433,7 +434,6 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffec
 (28697,1,3976,0),
 (28732,1,15953,0),
 (28806,0,181288,0),
-(28861,1,16592,0),
 (29534,0,181618,0),
 (31770,1,14323,0),
 (24734,0,180456,0),
@@ -512,7 +512,9 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffec
 (21950,0,178560,0),
 (19250,1,12247,4),
 (5249,1,14323,0),
-(16613,0,175795,0);
+(16613,0,175795,0),
+(17652,1,11263,0),
+(29437,0,181288,0);
 /*!40000 ALTER TABLE `spell_script_target` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -525,4 +527,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:20
+-- Dump completed on 2016-03-24 22:25:19

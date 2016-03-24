@@ -5,9 +5,9 @@ TRUNCATE TABLE `pool_pool`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `pool_pool`;
 
 LOCK TABLES `pool_pool` WRITE;
 /*!40000 ALTER TABLE `pool_pool` DISABLE KEYS */;
-INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES (3583,2030,0,'Mineral Spawn Point 169 - Westfall'),
+INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES 
+(3583,2030,0,'Mineral Spawn Point 169 - Westfall'),
 (3585,2004,0,'Mineral Spawn Point 165 - Badlands'),
 (3586,2004,0,'Mineral Spawn Point 166 - Badlands'),
 (3604,2004,0,'Mineral Spawn Point 5 - Badlands'),
@@ -489,16 +490,16 @@ INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALU
 (25370,25005,0,'Noblegarden egg, 25370'),
 (25371,25005,0,'Noblegarden egg, 25371'),
 (25372,25005,0,'Noblegarden egg, 25372'),
-(15012,15013,0,'Dark Keeper Nameplate'),
-(15011,15013,0,'Dark Keeper Nameplate'),
-(15010,15013,0,'Dark Keeper Nameplate'),
-(15009,15013,0,'Dark Keeper Nameplate'),
-(15008,15013,0,'Dark Keeper Nameplate'),
 (15007,15013,0,'Dark Keeper Nameplate'),
-(25485,25487,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(25484,25487,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(15008,15013,0,'Dark Keeper Nameplate'),
+(15009,15013,0,'Dark Keeper Nameplate'),
+(15010,15013,0,'Dark Keeper Nameplate'),
+(25482,25486,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
 (25483,25486,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(25482,25486,0,'BRD - Ragereaver Golem/Wrath Hammer Construct');
+(25484,25487,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
+(15011,15013,0,'Dark Keeper Nameplate'),
+(15012,15013,0,'Dark Keeper Nameplate'),
+(25485,25487,0,'BRD - Ragereaver Golem/Wrath Hammer Construct');
 /*!40000 ALTER TABLE `pool_pool` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -511,4 +512,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:18
+-- Dump completed on 2016-03-24 22:25:17

@@ -5,9 +5,9 @@ TRUNCATE TABLE `reference_loot_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `reference_loot_template`;
 
 LOCK TABLES `reference_loot_template` WRITE;
 /*!40000 ALTER TABLE `reference_loot_template` DISABLE KEYS */;
-INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES (5759,1973,0.2,0,1,1,0),
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES 
+(5759,1973,0.2,0,1,1,0),
 (5759,4500,5.9,0,1,1,0),
 (5759,7527,0.1,0,1,1,0),
 (5759,7909,2.7,0,1,1,0),
@@ -3857,8 +3858,8 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (34012,16800,0,1,1,1,0),
 (34012,16805,0,1,1,1,0),
 (34012,16829,0,1,1,1,0),
-(34012,16837,0,1,1,1,3),
-(34012,16859,0,1,1,1,4),
+(34012,16837,0,1,1,1,0),
+(34012,16859,0,1,1,1,0),
 (34012,16863,0,1,1,1,0),
 (34012,17077,0,1,1,1,0),
 (34012,18861,0,1,1,1,0),
@@ -3875,15 +3876,15 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (34013,16814,0,1,1,1,0),
 (34013,16822,0,1,1,1,0),
 (34013,16835,0,1,1,1,0),
-(34013,16843,0,1,1,1,3),
+(34013,16843,0,1,1,1,0),
 (34013,16847,0,1,1,1,0),
-(34013,16855,0,1,1,1,4),
+(34013,16855,0,1,1,1,0),
 (34013,16867,0,1,1,1,0),
 (34014,16812,0,1,1,1,0),
 (34014,16826,0,1,1,1,0),
-(34014,16839,0,1,1,1,3),
+(34014,16839,0,1,1,1,0),
 (34014,16849,0,1,1,1,0),
-(34014,16860,0,1,1,1,4),
+(34014,16860,0,1,1,1,0),
 (34014,16862,0,1,1,1,0),
 (34014,17077,0,1,1,1,0),
 (34014,18861,0,1,1,1,0),
@@ -3900,9 +3901,9 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (34015,16813,0,1,1,1,0),
 (34015,16821,0,1,1,1,0),
 (34015,16834,0,1,1,1,0),
-(34015,16842,0,1,1,1,3),
+(34015,16842,0,1,1,1,0),
 (34015,16846,0,1,1,1,0),
-(34015,16854,0,1,1,1,4),
+(34015,16854,0,1,1,1,0),
 (34015,16866,0,1,1,1,0),
 (34018,18816,0,1,1,1,0),
 (34018,17104,0,1,1,1,0),
@@ -3992,8 +3993,8 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (34027,16797,0,1,1,1,0),
 (34027,16807,0,1,1,1,0),
 (34027,16836,0,1,1,1,0),
-(34027,16844,0,1,1,1,3),
-(34027,16856,0,1,1,1,4),
+(34027,16844,0,1,1,1,0),
+(34027,16856,0,1,1,1,0),
 (34027,18820,0,1,1,1,0),
 (34027,18821,0,1,1,1,0),
 (34027,18822,0,1,1,1,0),
@@ -4010,9 +4011,9 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (34028,16815,0,1,1,1,0),
 (34028,16820,0,1,1,1,0),
 (34028,16833,0,1,1,1,0),
-(34028,16841,0,1,1,1,3),
+(34028,16841,0,1,1,1,0),
 (34028,16845,0,1,1,1,0),
-(34028,16853,0,1,1,1,4),
+(34028,16853,0,1,1,1,0),
 (34028,16865,0,1,1,1,0),
 (34029,16816,0,1,1,1,0),
 (34029,16823,0,1,1,1,0),
@@ -4617,4 +4618,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:18
+-- Dump completed on 2016-03-24 22:25:18

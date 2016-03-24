@@ -5,9 +5,9 @@ TRUNCATE TABLE `db_script_string`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: 
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version	5.5.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ TRUNCATE TABLE `db_script_string`;
 
 LOCK TABLES `db_script_string` WRITE;
 /*!40000 ALTER TABLE `db_script_string` DISABLE KEYS */;
-INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`, `sound`, `type`, `language`, `emote`, `comment`) VALUES (2000000001,'The deeds are mine, brother! Soon you shall be out of my way for good!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`, `sound`, `type`, `language`, `emote`, `comment`) VALUES 
+(2000000001,'The deeds are mine, brother! Soon you shall be out of my way for good!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000003,'Be bathed in my power! Drink in my might! Battle for the glory of the Horde!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000002,'Honor your heroes! On this day, they have dealt a great blow against one of our most hated enemies! The false Warchief, Rend Blackhand, has fallen! ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000004,'Hello Grimclaw',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -71,7 +72,7 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000064,'Well, that should do it. Come now, back to the shop to finish our business!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000065,'We will suffer no demon\'s servant in our lands!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000066,'Peace and patience be with you, $N. Remain strong always.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000076,'Hear ye, denizens of Tanaris! Let it be known $n is an exalted member of the Mithril Order. A blacksmith of honor, dedication, and infinite patience. Three cheers for $n!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000076,'Hear ye, denizens of Tanaris! Let it be known $n is an exalted member of the Mithril Order. A blacksmith of honor, dedication, and infinite patience. Three cheers for $n!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,22,NULL),
 (2000000083,'My mind. . .my flesh. . .I\'m. . .rotting. . . .!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000082,'I. . .I. . .don\'t. . .feel. . .right. . .',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000091,'Onu is struck by unleashed magic!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -433,7 +434,7 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000035,'Drink this, it will help.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000036,'You\'re going to be just fine.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000187,'The abomination has overrun the Night Watch camp! Quickly, we must intercept it before it reaches town!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,7,0,NULL),
-(2000000186,'An abomination of the undead is approaching!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,7,0,NULL),
+(2000000186,'Defend yourself, fool!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000189,'Quillboar scraps! These should do the trick. Fish love Quillboar.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000190,'Caught one! I\'ll see if any of the guards are hungry. Come on Fang!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000191,'I caught a fish if you are hungry...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -498,22 +499,73 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000005801,'%s I have created the totem. You, %n, must cleanse the well.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,1,NULL),
 (2000005802,'Zarlman Two-Moons begins chanting as he mixes the well stones and ambercom before the Tribal Fire.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000005803,'The Water of the Seers is ready for your consumption, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,0,NULL),
-(2000005782,'Spirits of the forest, you are needed! Make haste to the Charred Vale!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,25,NULL),
 (2000005780,'We must hurry.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
 (2000005781,'Spirits of the forest come forth and heed nature\'s call!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
-(2000000359,'He cannot be defeated. <The relic burns to nothing. The memories it held are now your own. This city was destroyed by a being not of this world.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
-(2000000358,'Leave this place. <The relic emits a white hot arc of flame. A memory has been gained: A lone Dark Iron dwarf is surrounded by seven corpses, kneeling before a monolith of flame.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
-(2000000357,'Your existence is acknowledged. <The relic turns to dust. Your head throbs with newfound wisdom. Something evil lurks in the heart of the mountain.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000005782,'Spirits of the forest, you are needed! Make haste to the Charred Vale!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,25,NULL),
 (2000000355,'Defiler... you will be punished for this incursion. <A symbol of flame radiates from the relic before it crumbles to the earth.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
 (2000000356,'Help us, outsider. <The relic crumbles to dust. A vision of eight Dark Iron dwarves performing some sort of ritual fills your head.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000357,'Your existence is acknowledged. <The relic turns to dust. Your head throbs with newfound wisdom. Something evil lurks in the heart of the mountain.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000358,'Leave this place. <The relic emits a white hot arc of flame. A memory has been gained: A lone Dark Iron dwarf is surrounded by seven corpses, kneeling before a monolith of flame.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000359,'He cannot be defeated. <The relic burns to nothing. The memories it held are now your own. This city was destroyed by a being not of this world.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000000360,'Do not taint these ruins, mortal. <You are engulfed in a blinding flash of light. A creature composed entirely of flame is the only thing you can remember seeing.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
+(2000005100,'Perhaps Ograbisi will use your head as a tiny little hat when I\'m through with you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005101,'Where I come from, you get shanked for opening another inmate\'s cell door!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005626,'No! Get away from me! Help!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000353,'You will perish here. <Your mind fills with visions of chaos and destruction.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
 (2000000354,'Leave this place. <The relic emits a white hot arc of flame. A memory has been gained: A lone Dark Iron dwarf is surrounded by seven corpses, kneeling before a monolith of flame.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
-(2000005101,'Where I come from, you get shanked for opening another inmate\'s cell door!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005100,'Perhaps Ograbisi will use your head as a tiny little hat when I\'m through with you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005099,'Get him out of there!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005626,'No! Get away from me! Help!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000360,'Do not taint these ruins, mortal. <You are engulfed in a blinding flash of light. A creature composed entirely of flame is the only thing you can remember seeing.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
-(2000005102,'Ograbisi needs new hat.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+(2000005102,'Ograbisi needs new hat.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000521,'I will need to focus my energies onto this knife. By doing so, I should catch some of the stronger psychic impressions associated with it.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000522,'I... I\'ve seen enough I think... so very draining...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000523,'A History... Hmmmm... Let me examine this for a moment.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000524,'%s skims the pages of the book.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000000525,'Amazing! I think I have found it, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000526,'Glorious, indeed, Maltrake. It looks as if my plan worked perfectly. Wouldn\'t you say so, mortal?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000527,'%s lets loose a reptilian laugh... at least you think it\'s a laugh.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000000528,'You would not have helped the legion of Blackrock had we just asked for your assistance, now would you?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000529,'What will we do with them, master? They are of no use to us anymore.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000530,'SILENCE FOOL!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000531,'They will live of only to see the fruits of their labor: the destruction and chaos that will surely ensue as the legion of Blackrock invade the gorge.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000532,'I leave you now, mortals. Alive and with these trinkets. Maltrake! Present them with the trinkets!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000533,'Right away, master!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000534,'%s begins to flap his massive wings faster. He is preparing for flight.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000000535,'Oh yes, the molt - do not lose it. There are those of my kin in the Burning Steppes that would craft items that only the molt of the black dragonflight could fortify.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000536,'The legion of Blackrock comes, dwarflings! We shall scorch the earth and set fire to the heavens. None shall survive...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,NULL),
+(2000000540,'Now, let\'s see... If I am correct, then... Hmmm...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,4,NULL),
+(2000000541,'Blue plus red... I predict...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000542,'$N, that\'s it! I have finally figured it out!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000602,'Whoa! This is way more than what I bargained for, you\'re on your own, Slim!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000261,'Hey Nagmara! How about a mug of Dark Iron Ale?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000262,'Nagmara! Have any mutton left?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000263,'Mistress, you tell Plugger that I want more of his ale. I can\'t get enough!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000264,'Hey Nag, how about you slice me off a piece of that...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000265,'You got it!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000266,'Coming right up!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000267,'I\'ll bring it right over, baby...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,NULL),
+(2000000612,'%s loosens her grasp on the journal she had been clutching.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000000786,'%s wildly flips through the pages of a large tome.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000000787,'The sweet irony -- Stormwind forces cut down in defense of their city, only to rise and fight alongside the Brotherhood as instruments of destruction. ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,11,NULL),
+(2000000788,'And should one die, two shall rise!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,5,NULL),
+(2000000789,'%s shuffles through the books.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000000790,'Now where did I put the Venture Company formulations?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000791,'Hey, Raven...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000792,'Yea?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000793,'Can we take a break? My feet are killing me and those ... those things down there are creeping me out.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000794,'I dunno, Jill. If Klaven comes down while we\'re slacking, we may end up as one of those things!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000795,'Klaven doesn\'t pay me enough to deal with those zombies, drones or whatever he calls \'em. I don\'t know, Jill. If Klaven comes down while we\'re slacking, we might end up as those things!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000796,'*Sigh* You\'re probably right, Raven. I\'m going back on patrol....',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000613,'Ready. Set. GO!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000614,'HEY! No fair!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000615,'I win!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000616,'You cheated!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000617,'Wanna race again? Best two out of three!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000400,'So sorry to leave a customer but we have places to go and people to swindle. We will be back sometime later today. Good-bye!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,'Cork Gizelton Leaving Kormek\'s Hut'),
+(2000000401,'I am looking for some bodyguards that would like to protect the Gizelton Caravan. We are stopped on the road east of Kormek\'s Hut, north of Kolkar Centaur Village.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,0,22,'Cork Quest 5821 Yell'),
+(2000000402,'Time for the Gizelton Caravan to head on out! We\'ll be back soon but if you cannot wait, head north to Kormek\'s Hut. We open shop in about an hour.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,1,'Rigger Gizelton leaving South End '),
+(2000000403,'This is Rigger Gizelton asking for assistance escorting my caravan past Mannoroc Coven. I\'m on the road east of Shadowprey village.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,0,22,'Rigger Quest 5843 Yell'),
+(2000000813,'Speak with me to hear my tale.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,''),
+(2000000817,'Greetings, mortals! I have been activated by the Discs of Norgannon to assist you!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,NULL),
+(2000000818,'The discs are now ready! Engage the Discs of Norgannon once again to retrieve them!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,NULL);
 /*!40000 ALTER TABLE `db_script_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -526,4 +578,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-10 11:07:10
+-- Dump completed on 2016-03-24 22:25:09
