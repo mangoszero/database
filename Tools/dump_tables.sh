@@ -47,16 +47,16 @@ creature_template_classlevelstats \
 creature_template_spells \
 custom_texts \
 db_script_string \
+db_scripts \
 db_version \
-dbscripts_on_creature_death \
-dbscripts_on_creature_movement \
-dbscripts_on_event \
-dbscripts_on_go_use \
-dbscripts_on_go_template_use \
-dbscripts_on_gossip \
-dbscripts_on_quest_end \
-dbscripts_on_quest_start \
-dbscripts_on_spell \
+dbdocsfields \
+dbdocsfields_localised \
+dbdocslanguage \
+dbdocsquestprogress \
+dbdocssubtables \
+dbdocssubtables_localised \
+dbdocstable \
+dbdocstable_localised \
 disables \
 disenchant_loot_template \
 exploration_basexp \
@@ -78,6 +78,7 @@ gameobject_questrelation \
 gameobject_template \
 gossip_menu \
 gossip_menu_option \
+gossip_texts \
 instance_template \
 item_enchantment_template \
 item_loot_template \
@@ -123,10 +124,9 @@ reference_loot_template \
 reputation_reward_rate \
 reputation_spillover_template \
 reserved_name \
+script_binding \
 script_texts \
 script_waypoint \
-scripted_areatrigger \
-scripted_event \
 skill_fishing_base_level \
 skinning_loot_template \
 spell_affect \
@@ -136,6 +136,7 @@ spell_chain \
 spell_elixir \
 spell_facing \
 spell_learn_spell \
+spell_linked \
 spell_pet_auras \
 spell_proc_event \
 spell_proc_item_enchant \
@@ -143,7 +144,7 @@ spell_script_target \
 spell_target_position \
 spell_threat \
 transports \
-world_template \
+warden \
 ; do
 
 echo "Dumping ${i}/123 ${TABLE}..."
