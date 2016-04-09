@@ -27,7 +27,7 @@ TRUNCATE TABLE `db_version`;
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
 INSERT INTO `db_version` (`version`, `structure`, `content`, `description`, `comment`) VALUES 
-(21,6,1,'ticket_commands_update','Base Db Install from 21000_01 to 21.6.1');
+(21,10,1,'warden_table_redone','Base Db Install from 21000_01 to 21.10.1');
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

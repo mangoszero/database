@@ -680,7 +680,8 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (78,17,26086,1),
 (79,17,26086,0),
 (80,-1,77,78),
-(81,-1,77,79);
+(81,-1,77,79),
+(2033,9,658,0);
 /*!40000 ALTER TABLE `conditions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -693,4 +694,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 22:25:05
+-- Dump completed on 2016-04-09 18:11:55
