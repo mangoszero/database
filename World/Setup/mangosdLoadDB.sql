@@ -750,6 +750,37 @@ CREATE TABLE `db_script_string` (
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `db_scripts`
+--
+
+DROP TABLE IF EXISTS `db_scripts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `db_scripts` (
+  `script_guid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `script_type` smallint(2) unsigned NOT NULL DEFAULT '0',
+  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `delay` int(10) unsigned NOT NULL DEFAULT '0',
+  `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
+  `buddy_entry` int(10) unsigned NOT NULL DEFAULT '0',
+  `search_radius` int(10) unsigned NOT NULL DEFAULT '0',
+  `data_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `dataint` int(11) NOT NULL DEFAULT '0',
+  `dataint2` int(11) NOT NULL DEFAULT '0',
+  `dataint3` int(11) NOT NULL DEFAULT '0',
+  `dataint4` int(11) NOT NULL DEFAULT '0',
+  `x` float NOT NULL DEFAULT '0',
+  `y` float NOT NULL DEFAULT '0',
+  `z` float NOT NULL DEFAULT '0',
+  `o` float NOT NULL DEFAULT '0',
+  `comments` varchar(255) NOT NULL,
+  PRIMARY KEY (`script_guid`)
+) ENGINE=MyISAM AUTO_INCREMENT=2619 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 /*Table structure for table `dbdocsfields` */
 
 DROP TABLE IF EXISTS `dbdocsfields`;
@@ -859,258 +890,6 @@ CREATE TABLE `dbdocstable_localised` (
   `tableNotes` TEXT COLLATE utf8_unicode_ci NOT NULL COMMENT 'The additional note to be added to the table',
   PRIMARY KEY (`tableId`,`languageId`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Table structure for table `dbscripts_on_creature_death`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_creature_death`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_creature_death` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbscripts_on_creature_movement`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_creature_movement`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_creature_movement` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbscripts_on_event`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_event`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_event` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbscripts_on_go_template_use`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_go_template_use`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_go_template_use` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbscripts_on_go_use`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_go_use`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_go_use` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbscripts_on_gossip`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_gossip`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_gossip` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbscripts_on_quest_end`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_quest_end`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_quest_end` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbscripts_on_quest_start`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_quest_start`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_quest_start` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbscripts_on_spell`
---
-
-DROP TABLE IF EXISTS `dbscripts_on_spell`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbscripts_on_spell` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `delay` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `command` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `datalong2` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `buddy_entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `search_radius` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `data_flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `dataint` INT(11) NOT NULL DEFAULT '0',
-  `dataint2` INT(11) NOT NULL DEFAULT '0',
-  `dataint3` INT(11) NOT NULL DEFAULT '0',
-  `dataint4` INT(11) NOT NULL DEFAULT '0',
-  `x` FLOAT NOT NULL DEFAULT '0',
-  `y` FLOAT NOT NULL DEFAULT '0',
-  `z` FLOAT NOT NULL DEFAULT '0',
-  `o` FLOAT NOT NULL DEFAULT '0',
-  `comments` VARCHAR(255) NOT NULL
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `disables`
@@ -3242,42 +3021,25 @@ CREATE TABLE `transports` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `warden_build_specific`
+-- Table structure for table `warden`
 --
 
-DROP TABLE IF EXISTS `warden_build_specific`;
+DROP TABLE IF EXISTS `warden`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `warden_build_specific` (
-  `id` SMALLINT(5) UNSIGNED NOT NULL COMMENT 'Check ID from warden_checks',
-  `build` SMALLINT(5) UNSIGNED NOT NULL COMMENT 'Client build',
-  `data` VARCHAR(48) NOT NULL DEFAULT '',
-  `str` VARCHAR(20) NOT NULL DEFAULT '',
-  `address` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `length` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `result` VARCHAR(24) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`,`build`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `warden_checks`
---
-
-DROP TABLE IF EXISTS `warden_checks`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `warden_checks` (
-  `id` SMALLINT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `type` TINYINT(3) UNSIGNED DEFAULT NULL,
-  `data` VARCHAR(48) DEFAULT '',
-  `str` VARCHAR(20) DEFAULT '',
-  `address` INT(10) UNSIGNED DEFAULT NULL,
-  `length` TINYINT(3) UNSIGNED DEFAULT NULL,
-  `result` VARCHAR(24) DEFAULT '',
-  `comment` VARCHAR(50) DEFAULT '',
+CREATE TABLE `warden` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Check ID from warden_checks',
+  `groupid` smallint(5) unsigned NOT NULL COMMENT 'The Grouping ID of the warden_checks',
+  `build` smallint(5) unsigned NOT NULL COMMENT 'Client build',
+  `type` tinyint(3) unsigned DEFAULT NULL COMMENT 'Check Type',
+  `data` varchar(48) NOT NULL DEFAULT '',
+  `str` varchar(20) NOT NULL DEFAULT '',
+  `address` int(10) unsigned NOT NULL DEFAULT '0',
+  `length` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `result` varchar(24) NOT NULL DEFAULT '',
+  `comment` varchar(50) DEFAULT '' COMMENT 'Description of what the check is',
   PRIMARY KEY (`id`)
-) ENGINE=MYISAM AUTO_INCREMENT=790 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1565 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
