@@ -67,7 +67,7 @@ INSERT  INTO `dbdocstable`(`languageId`,`tableName`,`tableNotes`) VALUES (0, 'qu
 INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'quest_relations','actor','The Entity involved in the quest','Entity involved in quest: <br /><br />¬subtable:139¬<br />');
 INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'quest_relations','entry','Creature or GO entr','Creature or GO entry from *_template, AreaTrigger ID');
 INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'quest_relations','quest','Quest ID','Quest ID from quest_template');
-INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'quest_relations','role','Role of the actor','Role of the actor: <br /><br />¬subtable:140¬<br />');
+INSERT  INTO `dbdocsfields` (`languageId`,`tableName`,`fieldName`,`fieldComment`,`fieldNotes`) VALUES (0,'quest_relations','role','Role of the actor','Role of the actor: <br />Role is unused when the actor is an area trigger<br /><br />¬subtable:140¬<br />');
 
 DELETE FROM `dbdocssubtables` WHERE `subtableId`= 139 AND languageId=0;
 INSERT  INTO `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtablecontent`,`subtableTemplate`) VALUES (139,0,'Quest_Relation_Entity','<table border=\'1\' cellspacing=\'1\' cellpadding=\'3\' bgcolor=\'#f0f0f0\'>
@@ -89,12 +89,10 @@ INSERT  INTO `dbdocssubtables`(`subtableId`,`languageId`,`subtableName`,`subtabl
 <th align=\'left\'><b>Role Type</b></th>
 <tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>0</td><td align=\'left\' valign=\'middle\'>Starts the quest,</td></tr>
 <tr bgcolor=\'#FEFEFF\'><td align=\'center\' valign=\'middle\'>1</td><td align=\'left\' valign=\'middle\'>Ends the quest</td></tr>
-<tr bgcolor=\'#FFFFEE\'><td align=\'center\' valign=\'middle\'>2</td><td align=\'left\' valign=\'middle\'>Unused for actor</td></tr>
 </table>
 ','Role ID|<Role Type
 0|Starts the quest, 
-1|Ends the quest 
-2|Unused for actor');
+1|Ends the quest');
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
