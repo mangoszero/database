@@ -1,3 +1,12 @@
+﻿-- -----------------------------------
+-- Added to prevent timeout's while loading
+-- -----------------------------------
+SET GLOBAL net_read_timeout=30;
+SET GLOBAL net_write_timeout=60;
+SET GLOBAL net_buffer_length=1000000; 
+SET GLOBAL max_allowed_packet=1000000000;
+SET GLOBAL connect_timeout=10000000;
+
 -- --------------------------------------------------------------------------------
 -- This is an attempt to create a full transactional MaNGOS update (v1.3)
 -- --------------------------------------------------------------------------------
