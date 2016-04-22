@@ -58,7 +58,7 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 delete from gameobject_template where entry in (179899, 179906, 179907);
-update gameobject_template setfaction= 35,data14= 1 where entry in (179871, 179904, 179905);
+update gameobject_template set faction= 35,data14= 1 where entry in (179871, 179904, 179905);
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
