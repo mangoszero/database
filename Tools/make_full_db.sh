@@ -1,4 +1,4 @@
-cat <<EOF > full_db.sql
+cat <<EOF > ../full_db.sql
 --
 -- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
 -- Copyright (C) 2009-2012 MaNGOSTwo <https://github.com/mangostwo>
@@ -19,4 +19,4 @@ cat <<EOF > full_db.sql
 --
 EOF
 
-for i in ../World/Setup/fullDB/*.sql; do tail -n +18 $i >> ../full_db.sql; done
+for i in ../World/Setup/FullDB/*.sql; do tail -n +18 $i >> ../full_db.sql; done
