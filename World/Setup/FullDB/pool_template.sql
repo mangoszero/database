@@ -1128,7 +1128,10 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (25499,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
 (25500,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
 (25501,1,'Scholomance - Diseased Ghould / Reanimated Corpse'),
-(25452,1,'Caer Darrow ghosts');
+(25452,1,'Caer Darrow ghosts'),
+(25502,1,'Spirestone Battle Lord/Placeholder'),
+(25503,1,'Spirestone Lord Magus/Placeholder'),
+(25504,1,'Spirestone Butcher/Placeholder');
 /*!40000 ALTER TABLE `pool_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1141,4 +1144,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 22:25:17
+-- Dump completed on 2016-05-05 22:00:33

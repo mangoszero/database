@@ -306,15 +306,6 @@ echo   Dumping World Database
 echo _____________________________________________________________
 echo.
 
-SET TABLENAME=areatrigger_involvedrelation
-echo Dumping.... %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
 SET TABLENAME=areatrigger_tavern
 echo             %TABLENAME%
 if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
@@ -450,15 +441,6 @@ if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TAB
 if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
 
-SET TABLENAME=creature_involvedrelation
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
 SET TABLENAME=creature_item_template
 echo             %TABLENAME%
 if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
@@ -532,15 +514,6 @@ if %loadworldDB% == NO echo -- ---------------------------------------- >>  _ful
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
 
 SET TABLENAME=creature_onkill_reputation
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
-SET TABLENAME=creature_questrelation
 echo             %TABLENAME%
 if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
 if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
@@ -828,25 +801,7 @@ if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TAB
 if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
 
-SET TABLENAME=gameobject_involvedrelation
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
 SET TABLENAME=gameobject_loot_template
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
-SET TABLENAME=gameobject_questrelation
 echo             %TABLENAME%
 if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
 if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
@@ -1268,6 +1223,15 @@ REM if %loadworldDB% == NO echo -- ---------------------------------------- >>  
 REM if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
 REM if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
 REM mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
+
+SET TABLENAME=quest_relations
+echo             %TABLENAME%
+if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
+if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
+if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
+if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
+if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
+mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
 
 SET TABLENAME=quest_template
 echo             %TABLENAME%

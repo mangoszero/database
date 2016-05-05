@@ -44,20 +44,6 @@ CREATE TABLE `db_version` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `areatrigger_involvedrelation`
---
-
-DROP TABLE IF EXISTS `areatrigger_involvedrelation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `areatrigger_involvedrelation` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Identifier',
-  `quest` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
-  PRIMARY KEY (`id`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Trigger System';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `areatrigger_tavern`
 --
 
@@ -362,20 +348,6 @@ CREATE TABLE `creature_equip_template_raw` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `creature_involvedrelation`
---
-
-DROP TABLE IF EXISTS `creature_involvedrelation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `creature_involvedrelation` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Identifier',
-  `quest` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
-  PRIMARY KEY (`id`,`quest`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `creature_item_template`
 --
 
@@ -541,20 +513,6 @@ CREATE TABLE `creature_onkill_reputation` (
   `TeamDependent` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`creature_id`)
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature OnKill Reputation gain';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `creature_questrelation`
---
-
-DROP TABLE IF EXISTS `creature_questrelation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `creature_questrelation` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Identifier',
-  `quest` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
-  PRIMARY KEY (`id`,`quest`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1161,20 +1119,6 @@ CREATE TABLE `gameobject_battleground` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `gameobject_involvedrelation`
---
-
-DROP TABLE IF EXISTS `gameobject_involvedrelation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gameobject_involvedrelation` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `quest` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
-  PRIMARY KEY (`id`,`quest`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `gameobject_loot_template`
 --
 
@@ -1191,20 +1135,6 @@ CREATE TABLE `gameobject_loot_template` (
   `condition_id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `gameobject_questrelation`
---
-
-DROP TABLE IF EXISTS `gameobject_questrelation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gameobject_questrelation` (
-  `id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `quest` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
-  PRIMARY KEY (`id`,`quest`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2460,6 +2390,20 @@ CREATE TABLE `pool_template` (
   PRIMARY KEY (`entry`)
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `quest_relations`
+--
+
+DROP TABLE IF EXISTS `quest_relations`;
+
+CREATE TABLE `quest_relations` (
+  `actor` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Entity involved in quest: 0 - Creature, 1 - GameObject, 2 - Area trigger',
+  `entry` INT(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Creature or GO entry from *_template, AreaTrigger ID',
+  `quest` INT(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Quest ID from quest_template',
+  `role` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Role of the actor: 0 - starts the quest, 1 - ends the quest (unused for actor = 2)',
+  PRIMARY KEY (`entry`, `quest`, `role`)
+)ENGINE=InnoDB;
 
 --
 -- Table structure for table `quest_template`

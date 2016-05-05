@@ -734,9 +734,9 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (566,0,0,'Anything else I should know about the Earthen?',1,1,567,0,0,0,0,'',0),
 (567,0,0,'I think I understand the Creators\' design intent for the Earthen now.  What are the Earthen\'s anomalies that you spoke of earlier?',1,1,568,0,0,0,0,'',0),
 (568,0,0,'What high-stress environments would cause the Earthen to destabilize?',1,1,569,0,0,0,0,'',0),
-(569,0,0,'What happens when the Earthen destabilize?',1,1,570,0,569,0,0,'',0),
+(569,0,0,'What happens when the Earthen destabilize?',1,1,570,0,0,0,0,'',0),
 (570,0,0,'Troggs?!  Are the troggs you mention the same as the ones in the world today?',1,1,571,0,0,0,0,'',0),
-(571,0,0,'You mentioned two results when the Earthen destabilize.  What is the second?',1,1,572,0,571,0,0,'',0),
+(571,0,0,'You mentioned two results when the Earthen destabilize.  What is the second?',1,1,572,0,0,0,0,'',0),
 (572,0,0,'Dwarves!!!  Now you\'re telling me that dwarves originally came from the Earthen?!',1,1,573,0,0,0,0,'',0),
 (573,0,0,'These dwarves are the same ones today, yes?  Do dwarves maintain any other links to the Earthen?',1,1,574,0,0,0,0,'',0),
 (574,0,0,'Who are the Creators?',1,1,575,0,0,0,0,'',0),
@@ -2177,7 +2177,8 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (4543,1,3,'Train me.',5,16,0,0,0,0,0,'',0),
 (4543,2,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',163),
 (4515,0,3,'Teach me the ways of the spirits.',5,16,0,0,0,0,0,'',0),
-(4515,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',137);
+(4515,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',137),
+(1053,0,0,'Continue.',1,1,1054,0,0,0,0,'',832);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2190,4 +2191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 22:25:13
+-- Dump completed on 2016-05-05 22:00:24

@@ -27,7 +27,6 @@ TRUNCATE TABLE `dbdocstable`;
 LOCK TABLES `dbdocstable` WRITE;
 /*!40000 ALTER TABLE `dbdocstable` DISABLE KEYS */;
 INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) VALUES 
-(1,0,'areatrigger_involvedrelation','The areatrigger_involvedrelation table holds connections between triggers and quests.<br /><br />If there is a record in the table for a quest, the quest will not be completed until the player activates the areatriger. The quest is not necessarily finished after that, but that one condition of the quest is satisfied. If the only condition of the quest is to explore an area, then the quest will be complete.'),
 (2,0,'areatrigger_tavern','Enable a trigger when player enters a city or tavern. This causes the player to enter a resting state.'),
 (3,0,'areatrigger_teleport','Contains all the teleport triggers definition. This table is used to complete .dbc file information.'),
 (4,0,'battleground_events','This table contains the description of battleground events.'),
@@ -43,7 +42,6 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (14,0,'creature_battleground','This table contains the description of creatures spawned on battlegrounds.'),
 (15,0,'creature_equip_template','This table contains all equipment creatures should wear.'),
 (16,0,'creature_equip_template_raw','The creature_equip_template_raw table holds information on items that creatures should wear.<br/ >\r\n<br/ >\r\n<b>Note:</b> This table is deprecated. Do not use it, as it will be removed in a future update and is just here to ease transition to the new creature_equip_template table.'),
-(17,0,'creature_involvedrelation','Holds NPC quest ender relations on which NPCs finishes which quests.'),
 (18,0,'creature_item_template','xxxx'),
 (19,0,'creature_linking','This table holds details of how creatures linked to a master creature should act in combat and non-combat situations.'),
 (20,0,'creature_linking_template','This table holds details on how creature templates linked to a master creature template should act in combat and non-combat situations.'),
@@ -52,7 +50,6 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (23,0,'creature_movement','This table holds all the information on each creature\'s waypoints. In essence, a set of waypoints just defines a path that the creature will follow by going from point to point. More specifically, once the creature arrives at a point, it can do different things like cast a spell, do an emote, etc. Usually this table is filled through the .wp command (and its various subcommands) in the world. <br /><br />Please note that for a creature to use waypoints, its MovementType must be 2.'),
 (24,0,'creature_movement_template','This table holds informations on paths for creature_template entries and allows the behaviour to be defined along the movement path (set of waypoints).<br /><br />Template movement is usually applied to creature templates spawned by scripts, or for templates which are unique and have only one spawn.<br /><br /><b>Note:</b> Movement attached to a creature template will be applied to all spawns of this template, unless there is a unique movement defined for the creature guids in the creature_movement table.'),
 (25,0,'creature_onkill_reputation','This table controls the reputation given by creatures when killed by other players.'),
-(26,0,'creature_questrelation','This table holds NPC quest giver relations on which NPCs start which quests.'),
 (27,0,'creature_template','This table contains the description of creatures. Each spawned creature is an instance of a template present in this table, this means every creature MUST be defined in this table.'),
 (28,0,'creature_template_addon','The creature_addon and creature_template_addon tables define different things that are applied on creatures when they are loaded. These \"different things\" can be for example to have the creature be mounted, to have it emote something, to have it display an aura effect, etc. Through the use of the fields in this table, many things can be changed about the outward visual appearance of the creature. The creature_template_addon table affects all creatures with that creature template ID while the creature_addon table affects individually spawned creatures (so that two creatures using the same template can look different).\r\n\r\nNOTES: \r\nA creature_addon record will override a creature_template_addon record should they overlap on the same creature.<br />\r\n<br />\r\nThe data for this table is largely incomplete and is mostly just a regurgitation of what the client receives from the server. This article is a WIP as to what all the possible values are.'),
 (29,0,'creature_template_classlevelstats','This table contains the base values for creatures\' health, mana and armor.'),
@@ -64,15 +61,6 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (35,0,'dbdocsprogressquests','This table is part of the dbdocs project and is not used by the mangos server. \r\nIt holds details on the completion status of each quest in MaNGOS, as well as any notes about the quest.<br />\r\n<br />\r\n<b>Note:</b> By default the progress value is set to 0% by dbdocs.'),
 (36,0,'dbdocssubtables','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.\r\n\r\nAn entry in this table provides a table which dirctly replaces the link in the fieldnotes.'),
 (37,0,'dbdocstable','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.\r\n\r\nAn entry in this table provides a additional notes field to describe the database in the Wiki.'),
-(38,0,'dbscripts_on_creature_death','This table holds scripts activated when a creature dies. (Source: creature; at the script execution time, it is considered alive, so can cast instant spells.)'),
-(39,0,'dbscripts_on_creature_movement','This table holds scripts activated when a creature moving by waypoints reaches a WP. (Source: creature)'),
-(40,0,'dbscripts_on_event','This table holds scripts activated when an event is sent either via spell (SPELL_EFFECT_SEND_EVENT=61) or by a gameobject.'),
-(41,0,'dbscripts_on_go_template_use','This table holds scripts activated when a character uses a gameobject (like door, chest, button so on).'),
-(42,0,'dbscripts_on_go_use','This table holds scripts activated when a character uses either door or button. This script, bound to the GameObject GUID, does not override the script bound to the GameObject entry, if any. If both scripts are defined, they are executed sequentially, the script from this table activates after the script from dbscripts_on_go_template_use.'),
-(43,0,'dbscripts_on_gossip','This table holds scripts mentioned in the gossip_menu and gossip_menu_item tables. In the latter case, the parameters depend on object type (GameObject or Unit) of the object having such gossip: for GO, source = Player and target = GameObject; for Unit, source = Unit and target = Player. In the former case, source = Player and target = Unit. This all is rather funny, isn\'t this?<br />The scripts &quot;on talking to gameobject&quot; are implemented instead with dbscripts_on_go_template_use.'),
-(44,0,'dbscripts_on_quest_end','This table holds scripts mentioned in the quest_template table. Here source = questrewarder, target = Player.'),
-(45,0,'dbscripts_on_quest_start','This table holds scripts mentioned in the quest_template table. Here source = questgiver, target = Player.'),
-(46,0,'dbscripts_on_spell','This table holds scripts triggered by spells with EFFECT_DUMMY (3) or EFFECT_SCRIPT_EFFECT (77). Here source = caster, target = unitTarget.<br />Note that if the spell contains more than 1 effect of such type, this script will be set up for the single effect only, namely for one with the least effect number.'),
 (47,0,'disenchant_loot_template','This table format is used to generate different loot items. Loot templates define only items in the loot.\r\nSee comments about money drop in corpse, pickpocketing and luggage loot in creature_template and item_template.'),
 (48,0,'exploration_basexp','This table controls the XP gained by characters when they explore new zones.<br />Many areas have an \"area level\" defined in AreaTable.dbc. It is the suggested level of the character exploring the area. This table defines exploration XP reward and in conjunction with a core mechanic limits the reward for the characters of substantial different level. The basic formula for the XP reward is:<br />basexp[area_level] * Rate.XP.Explore<br />where the last parameter is defined in the config file. If the area level exceeds the player level by 5 or more, the formula turns into:<br />basexp[player_level+5] * Rate.XP.Explore'),
 (49,0,'fishing_loot_template','This table format is used to generate different loot items. Loot templates define only items in the loot.\r\nSee comments about money drop in corpse, pickpocketing and luggage loot in creature_template and item_template.'),
@@ -87,9 +75,7 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (58,0,'game_weather','This table holds the percentages for weather changes in various zones. Not all zones can have their weather changed. For any given zone the percentage of all weather types for each season should total, and not exceed 100%.'),
 (59,0,'gameobject','This table holds the individual object data on each spawned game object in the world. This data along with the object’s template data is read and used to instantiate the objects in the world.'),
 (60,0,'gameobject_battleground','This table contains the events of gameobjects which are spawned on battlegrounds.'),
-(61,0,'gameobject_involvedrelation','This table holds game object quest taker relations. The game objects in this table should all be of type QUESTGIVER (2).'),
 (62,0,'gameobject_loot_template','This table format is used to generate different loot items. Loot templates define only items in the loot.\r\nSee comments about money drop in corpse, pickpocketing and luggage loot in creature_template and item_template.'),
-(63,0,'gameobject_questrelation','This table holds game object quest giver relations. The game objects in this table should all be of type QUESTGIVER (2).'),
 (64,0,'gameobject_template','This table contains templates of all the world’s objects'),
 (65,0,'gossip_menu','This table is used for displaying gossip when a player talks to an NPC.'),
 (66,0,'gossip_menu_option','This table holds infos about menu options a gossip NPC can have. \r\nExamples of options: \"Train me!\" or \"I want to unlearn my talents\".'),
@@ -141,9 +127,6 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (112,0,'reserved_name','This table serves as a simple list of names that players (gmlevel == 0) cannot use when naming their characters.'),
 (113,0,'script_texts','This table contains the texts (and localized ones) for C++ SD2 script engine, used in the function DoScriptText().'),
 (114,0,'script_waypoint','The table contains creature waypoints used in the C++ SD2 script library. The data is used by npc_escortAI::FillPointMovementListForCreature().'),
-(115,0,'scripted_areatrigger','This table links areatriggers to C++ scripts.'),
-(116,0,'scripted_event','This table links events to C++ scripts.'),
-(117,0,'sd2_db_version','This table holds the current version of the Scripts database'),
 (118,0,'skill_fishing_base_level','This table controls the minimum skill level required in fishing to fish in a certain area.'),
 (119,0,'skinning_loot_template','This table format is used to generate different loot items. Loot templates define only items in the loot.\r\nSee comments about money drop in corpse, pickpocketing and luggage loot in creature_template and item_template.'),
 (120,0,'spell_affect','This table holds information on what spells are affected by what spell mods. All spells in this table need to apply an aura that either adds a flat modifier to other spells or adds a percent modifier to other spells. Also, a single row in this table only holds information on a single spell effect that applies the aura. Therefore since a spell may have up to three effects, a maximum of 3 rows per spell is allowed. However, only the spell effects that apply the flat or percent auras will be used.'),
@@ -161,10 +144,12 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (132,0,'spell_target_position','This table holds coordinate information on where the player should be teleported to when a spell with effect SPELL_EFFECT_TELEPORT_UNITS.'),
 (133,0,'spell_threat','This table holds threat values on all spells that should either give or take away threat.'),
 (134,0,'transports','This table contains all type 15 transports (Boats and Zeppelins). \r\n<br />\r\nAll other transport types have their frame time read from TransportAnimation.dbc.'),
-(135,0,'world_template','This table holds informations for connection world continents to scripts from the script library.'),
 (136,0,'dbdocsfields_localised','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />An entry in this table provides a link to the table and field to allow additional notes to describe the field in the Wiki for languages other than English.'),
 (137,0,'dbdocssubtables_localised','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />An entry in this table provides a table which dirctly replaces the link in the fieldnotes for languages other than English.'),
-(138,0,'dbdocstable_localised','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />An entry in this table provides a additional notes field to describe the database in the Wiki for languages other than English.');
+(138,0,'dbdocstable_localised','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />An entry in this table provides a additional notes field to describe the database in the Wiki for languages other than English.'),
+(142,0,'db_scripts','This table holds scripts activated under certain criteria.<br /><br />The type controls what criteria are in effect'),
+(145,0,'warden','This table contains the Warden Anti-cheat system checks.<br />'),
+(149,0,'quest_relations','This table holds the relations of various objects and quests');
 /*!40000 ALTER TABLE `dbdocstable` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -177,4 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 22:25:10
+-- Dump completed on 2016-05-05 22:00:22

@@ -801,7 +801,13 @@ INSERT INTO `warden` (`id`, `groupid`, `build`, `type`, `data`, `str`, `address`
 (1561,134,6005,243,'','',8151721,4,'488C11C1','Gravity water hack'),
 (1562,158,6005,243,'','',8151710,2,'3075','Infinite jump hack'),
 (1563,262,6005,243,'','',8145301,3,'8B4908','tp2plane hack'),
-(1564,634,6005,243,'','',8152090,3,'8B4F78','Zero fall time');
+(1564,634,6005,243,'','',8152090,3,'8B4F78','Zero fall time'),
+(1565,770,5875,243,'','',4730579,2,'85C9','RemoveAFK'),
+(1566,772,5875,243,'','',4803159,2,'568B','RemoveLuaProtection'),
+(1567,773,5875,243,'','',8146241,3,'D9818C','Movement Related - Run Speed'),
+(1568,774,5875,243,'','',6356849,4,'74688B87','ImbaWoWHack Injection 2'),
+(1569,775,5875,243,'','',4847069,4,'741868EF','WireFrameHack'),
+(1570,775,5875,243,'','',5053463,2,'7415','OfficerNoteBypass');
 /*!40000 ALTER TABLE `warden` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -814,4 +820,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-09 18:12:08
+-- Dump completed on 2016-05-05 22:00:35

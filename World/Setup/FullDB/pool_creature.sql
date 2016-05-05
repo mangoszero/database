@@ -345,7 +345,13 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 (154713,25501,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
 (154714,25501,0,'Scholomance - Diseased Ghould / Reanimated Corpse'),
 (98633,25452,0,'Caer Darrow ghosts'),
-(98638,25452,0,'Caer Darrow ghosts');
+(98638,25452,0,'Caer Darrow ghosts'),
+(43519,25502,15,'Spirestone Battle Lord/Placeholder'),
+(43521,25503,30,'Spirestone Lord Magus/Placeholder'),
+(43523,25504,30,'Spirestone Butcher/Placeholder'),
+(43507,25504,0,'Spirestone Butcher/Placeholder'),
+(43516,25503,0,'Spirestone Lord Magus/Placeholder'),
+(43517,25502,0,'Spirestone Battle Lord/Placeholder');
 /*!40000 ALTER TABLE `pool_creature` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -358,4 +364,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 22:25:17
+-- Dump completed on 2016-05-05 22:00:33

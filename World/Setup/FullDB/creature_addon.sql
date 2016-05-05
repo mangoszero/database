@@ -24745,9 +24745,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (29114,0,0,1,16,0,0,NULL),
 (29115,0,0,1,16,0,0,NULL),
 (29116,0,0,1,16,0,0,NULL),
-(29117,0,0,1,16,0,0,NULL),
 (29118,0,0,1,16,0,0,NULL),
-(29119,0,0,1,16,0,0,NULL),
 (29120,0,0,1,16,0,0,NULL),
 (29121,0,0,1,16,0,0,NULL),
 (29122,0,0,1,16,0,0,NULL),
@@ -36887,7 +36885,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (43123,0,0,1,16,0,0,NULL),
 (43124,0,0,1,16,0,0,NULL),
 (43125,0,0,1,16,0,0,NULL),
-(43126,0,0,1,16,0,0,NULL),
 (43127,0,0,1,16,0,0,NULL),
 (43128,0,0,1,16,0,0,NULL),
 (43129,0,0,1,16,0,0,NULL),
@@ -38790,11 +38787,11 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (45380,0,0,1,16,0,0,NULL),
 (45381,0,0,1,16,0,0,NULL),
 (45382,0,0,1,16,0,0,NULL),
-(45383,0,0,1,16,0,0,NULL);
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
+(45383,0,0,1,16,0,0,NULL),
 (45384,0,0,1,16,0,0,NULL),
 (45385,0,0,1,16,0,0,NULL),
-(45386,0,0,1,16,0,0,NULL),
+(45386,0,0,1,16,0,0,NULL);
+INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
 (45387,0,0,1,16,0,0,NULL),
 (45388,0,0,1,16,0,0,NULL),
 (45389,0,0,1,16,0,0,NULL),
@@ -41797,7 +41794,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (48959,0,0,1,16,0,0,NULL),
 (48960,0,0,1,16,0,0,NULL),
 (48961,0,0,1,16,0,0,NULL),
-(48962,0,0,1,16,0,0,NULL),
 (48963,0,0,1,16,0,0,NULL),
 (48964,0,0,1,16,0,0,NULL),
 (48965,0,0,1,16,0,0,NULL),
@@ -50446,4 +50442,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 22:25:06
+-- Dump completed on 2016-05-05 22:00:18
