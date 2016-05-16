@@ -59,7 +59,6 @@ BEGIN
 
 -- Overlord Wyrmthalak loot fix
 UPDATE `creature_loot_template` SET ChanceOrQuestChance = '100' WHERE 'entry' = '9568' AND 'item' = '12780'; 
-UPDATE `creature_loot_template` SET ChanceOrQuestChance = '-100' WHERE 'entry' = '9568' AND 'item' = '12337'; 
 UPDATE `creature_loot_template` SET ChanceOrQuestChance = '20' WHERE 'entry' = '9568' AND 'item' = '13163'; 
 UPDATE `creature_loot_template` SET ChanceOrQuestChance = '20' WHERE 'entry' = '9568' AND 'item' = '22321'; 
 UPDATE `creature_loot_template` SET ChanceOrQuestChance = '20' WHERE 'entry' = '9568' AND 'item' = '13161'; 
@@ -68,7 +67,6 @@ UPDATE `creature_loot_template` SET ChanceOrQuestChance = '20' WHERE 'entry' = '
 UPDATE `creature_loot_template` SET ChanceOrQuestChance = '-100' WHERE 'entry' = '9568' AND 'item' = '12337';
 
 -- Highlord Omokk loot fixed
-UPDATE `creature_loot_template` SET ChanceOrQuestChance = '13' WHERE 'entry' = '9196' AND 'item' = '12534'; 
 UPDATE `creature_loot_template` SET ChanceOrQuestChance = '100' WHERE 'entry' = '9196' AND 'item' = '12534'; 
 UPDATE `creature_loot_template` SET ChanceOrQuestChance = '16.67' WHERE 'entry' = '9196' AND 'item' = '13166'; 
 UPDATE `creature_loot_template` SET ChanceOrQuestChance = '16.67' WHERE 'entry' = '9196' AND 'item' = '13167'; 
