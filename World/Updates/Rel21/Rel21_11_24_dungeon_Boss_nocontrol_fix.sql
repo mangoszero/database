@@ -34,10 +34,10 @@ BEGIN
     SET @cNewStructure = '11';
     SET @cNewContent = '24';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'dungeon_boss_dmg_fix';
+    SET @cNewDescription = 'fix_dungeon_boss_control';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Fix damage of instance bosses';
+    SET @cNewComment = 'Fix control of instance bosses';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT description FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
