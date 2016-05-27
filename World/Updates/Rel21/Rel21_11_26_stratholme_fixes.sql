@@ -62,6 +62,9 @@ BEGIN
 -- Updates of creature_loot_template
 -- ----------------------------
 
+-- Remove the old texts
+DELETE FROM `script_texts` WHERE `entry` IN (-1329019,-1329020);
+
 -- Insert new say texts
 INSERT INTO `script_texts` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
 (-1329019, 'Don\\''t worry about me!  Slay this dreadful beast and cleanse this world of his foul taint!', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 6, 0, 0, 'ysida YSIDA_SAY_RUN_5_MIN'),
