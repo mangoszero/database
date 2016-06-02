@@ -8,6 +8,10 @@ set loadcharDB=YES
 set loadworldDB=YES
 set loadrealmDB=YES
 
+set CDBUpdate=YES
+set WDBUpdate=YES
+set RDBUpdate=YES
+
 set addrealmentry=YES
 
 set DBType=POPULATED
@@ -40,43 +44,52 @@ echo.
 echo     __  __      _  _  ___  ___  ___      
 echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.06
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.07
 echo.
 echo _____________________________________________________________
 echo.
-echo             Website / Forum / Wiki: https://getmangos.eu         
+echo          Website / Forum / Wiki: https://getmangos.eu         
 echo _____________________________________________________________
 echo.
 ECHO.
-echo    Character Database : V - Toggle Create DB (%createcharDB%)
-echo                         C - Toggle Create Structure (%loadcharDB%)
+echo    Character Database :   V   - Toggle Actually Create Character DB (%createcharDB%)
+echo                           C   - Toggle Create Character DB Structure (%loadcharDB%)
+echo                           B   - Apply Character DB updates (%CDBUpdate%)
 echo.
-echo        World Database : E - Toggle Create DB (%createworldDB%)    
-echo                         W - Toggle Create Structure (%loadworldDB%)     
-if %loadworldDB% == YES echo                         D - Toggle World Type (%DBType%)
+echo        World Database :   E   - Toggle Actually Create World DB (%createworldDB%)    
+echo                           W   - Toggle Create World DB Structure (%loadworldDB%)     
+if %loadworldDB% == YES echo                           D   - Toggle World Type (%DBType%)
+echo                           U   - Apply World DB updates (%WDBUpdate%)
 echo.
-echo        Realm Database : T - Toggle Create DB (%createrealmDB%)     
-echo                         R - Toggle Create Structure (%loadrealmDB%)
-echo                         L - Toggle Add RealmList Entry (%addrealmentry%)
+echo        Realm Database :   T   - Toggle Actually Create Realm DB (%createrealmDB%)     
+echo                           R   - Toggle Create Realm Db Structure (%loadrealmDB%)
+echo                           Y   - Apply Realm DB updates (%RDBUpdate%)
+echo                           L   - Toggle Add RealmList Entry (%addrealmentry%)
 echo.
 set LOCList=NO
 if %locFR% == YES set LOCList=YES
 if %locDE% == YES set LOCList=YES 
 if %locES% == YES set LOCList=YES
 
-REM echo                         A - Add Localised Content (%LOCList%)
-echo                         N - Next Step
-echo                         X - Exit
+REM echo                           A   - Add Localised Content (%LOCList%)
+echo                           N   - Next Step
+echo                           X   - Exit
 echo.
 set /p activity=. Please select an activity ? : 
 if %activity% == V goto ToggleCharDB:
 if %activity% == v goto ToggleCharDB:
+if %activity% == B goto ToggleCharDBUpdate:
+if %activity% == b goto ToggleCharDBUpdate:
 if %activity% == E goto ToggleWorldDB:
 if %activity% == e goto ToggleWorldDB:
+if %activity% == U goto ToggleWorldDBUpdate:
+if %activity% == u goto ToggleWorldDBUpdate:
 if %activity% == D goto ToggleWorldDBType:
 if %activity% == d goto ToggleWorldDBType:
 if %activity% == T goto ToggleRealmDB:
 if %activity% == t goto ToggleRealmDB:
+if %activity% == Y goto ToggleRealmDBUpdate:
+if %activity% == y goto ToggleRealmDBUpdate:
 if %activity% == C goto LoadCharDB:
 if %activity% == c goto LoadCharDB:
 if %activity% == W goto LoadWorldDB:
@@ -92,8 +105,8 @@ if %activity% == n goto Step1:
 REM if %activity% == A goto StepLoc1:
 REM if %activity% == a goto StepLoc1:
 
-if %activity% == X goto done:
-if %activity% == x goto done:
+if %activity% == X goto done3:
+if %activity% == x goto done3:
 if %activity%. == . goto main:
 goto main
 
@@ -123,6 +136,19 @@ goto main:
 set createcharDB=NO
 goto main:
 
+:ToggleCharDBUpdate
+if %CDBUpdate% == NO goto ToggleCharDBUpdateNo:
+if %CDBUpdate% == YES goto ToggleCharDBUpdateYes:
+goto main:
+
+:ToggleCharDBUpdateNo
+set CDBUpdate=YES
+goto main:
+
+:ToggleCharDBUpdateYes
+set CDBUpdate=NO
+goto main:
+
 :ToggleWorldDB
 if %createworldDB% == NO goto ToggleWorldDBNo:
 if %createworldDB% == YES goto ToggleWorldDBYes:
@@ -134,6 +160,19 @@ goto main:
 
 :ToggleWorldDBYes
 set createworldDB=NO
+goto main:
+
+:ToggleWorldDBUpdate
+if %WDBUpdate% == NO goto ToggleWorldDBUpdateNo:
+if %WDBUpdate% == YES goto ToggleWorldDBUpdateYes:
+goto main:
+
+:ToggleWorldDBUpdateNo
+set WDBUpdate=YES
+goto main:
+
+:ToggleWorldDBUpdateYes
+set WDBUpdate=NO
 goto main:
 
 :ToggleRealmDB
@@ -149,6 +188,19 @@ goto main:
 set createrealmDB=NO
 goto main:
 
+:ToggleRealmDBUpdate
+if %RDBUpdate% == NO goto ToggleRealmDBUpdateNo:
+if %RDBUpdate% == YES goto ToggleRealmDBUpdateYes:
+goto main:
+
+:ToggleRealmDBUpdateNo
+set RDBUpdate=YES
+goto main:
+
+:ToggleRealmDBUpdateYes
+set RDBUpdate=NO
+goto main:
+
 :LoadCharDB
 if %loadcharDB% == NO goto LoadCharDBNo:
 if %loadcharDB% == YES goto LoadCharDBYes:
@@ -161,6 +213,7 @@ goto main:
 :LoadCharDBYes
 set loadcharDB=NO
 goto main:
+
 
 :LoadWorldDB
 if %loadworldDB% == NO goto LoadWorldDBNo:
@@ -411,7 +464,43 @@ echo _____________________________________________________________
 echo.
 goto finish:
 
+:PatchWorld
+echo.
+echo _____________________________________________________________
+echo.
+echo  Applying world DB updates
+echo _____________________________________________________________
+echo.
+for %%i in (World\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
+goto done2
+
+:PatchRealm
+echo.
+echo _____________________________________________________________
+echo.
+echo  Applying Realm DB updates
+echo _____________________________________________________________
+echo.
+for %%i in (Realm\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < %%i
+goto done3
+
+:patchCharacter
+echo.
+echo _____________________________________________________________
+echo.
+echo  Applying Character DB updates
+echo _____________________________________________________________
+echo.
+for %%i in (Realm\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < %%i
+goto done1
+
 :done
+if %CDBUpdate% == YES goto patchCharacter:
+:done1
+if %WDBUpdate% == YES goto patchWorld:
+:done2
+if %RDBUpdate% == YES goto PatchRealm:
+:done3
 color 08
 echo.
 echo     __  __      _  _  ___  ___  ___      
