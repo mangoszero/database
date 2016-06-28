@@ -93,10 +93,10 @@ INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id
 (1824, 0, 0, 'Indeed.', 1, 1, 1823, 0, 0, 0, 0, '', 0),
 (1823, 0, 0, 'The door is open, Kharan. You are a free man.', 1, 1, -1, 0, 0, 0, 0, '', 0);
 
-DELETE FROM dbscripts_on_gossip WHERE id IN (182301, 182302);
-INSERT INTO dbscripts_on_gossip VALUES
-(182301, 0, 7, 4001, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(182302, 0, 7, 4342, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
+DELETE FROM db_scripts WHERE id IN (182301,182302) AND script_type=2;
+INSERT INTO `db_scripts` (script_type,id,delay,command,datalong,datalong2,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,X,Y,z,o,comments) VALUES
+(2, 182301, 0, 7, 4001, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(2, 182302, 0, 7, 4342, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
 
 DELETE FROM script_binding WHERE scriptname = 'npc_kharan_mighthammer';
     

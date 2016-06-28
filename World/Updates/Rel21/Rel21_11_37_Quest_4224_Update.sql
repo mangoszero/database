@@ -94,9 +94,9 @@ INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id
 (2051, 0, 0, 'Ahh... Ironfoe.', 1, 1, 2050, 0, 0, 0, 0, '', 0),
 (2050, 0, 0, 'Thanks, Ragged John. Your story was very uplifting and informative.', 1, 1, -1, 0, 0, 0, 0, '', 0);
 
-DELETE FROM dbscripts_on_gossip WHERE id=205001;
-INSERT INTO `dbscripts_on_gossip` VALUES
-(205001, 0, 7, 4224, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
+DELETE FROM db_scripts WHERE id=205001 AND script_type=2;
+INSERT INTO `db_scripts` (script_type,id,delay,command,datalong,datalong2,buddy_entry,search_radius,data_flags,dataint,dataint2,dataint3,dataint4,X,Y,z,o,comments) VALUES
+(2, 205001, 0, 7, 4224, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
 
 DELETE FROM script_binding WHERE scriptname = 'npc_kharan_mighthammer';    
 
