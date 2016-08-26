@@ -58,7 +58,7 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
     -- Update all the commands of type 39 and set them to command 44
-    UPDATE `db_scripts` SET `command`=44, `datalong2`=1 WHERE `command`=39;
+    UPDATE `db_scripts` SET `command`=44 WHERE `command`=39;
     
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
