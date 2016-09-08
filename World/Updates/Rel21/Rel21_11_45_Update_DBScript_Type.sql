@@ -27,12 +27,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '11'; 
-    SET @cOldContent = '43';
+    SET @cOldContent = '44';
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '11';
-    SET @cNewContent = '44';
+    SET @cNewContent = '45';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Update_DBScript_Type';
 
