@@ -12,7 +12,7 @@ CREATE TABLE `script_binding` (
   `data` TINYINT(2) UNSIGNED DEFAULT '0' COMMENT 'Misc data; Effect number for spellscripts',
   PRIMARY KEY (`ScriptName`,`bind`),
   KEY `type` (`type`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='SD2 Script Names and Binding';
+) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='SD2 Script Names and Binding';
 
 INSERT  INTO `script_binding`(`type`,`ScriptName`,`bind`,`data`) VALUES (0,'guard_stormwind',68,0);
 INSERT  INTO `script_binding`(`type`,`ScriptName`,`bind`,`data`) VALUES (0,'npc_corporal_keeshan',349,0);

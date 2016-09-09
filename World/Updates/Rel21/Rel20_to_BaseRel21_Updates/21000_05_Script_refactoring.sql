@@ -50,7 +50,7 @@ CREATE TABLE `script_binding` (
  `data` TINYINT(2) UNSIGNED DEFAULT 0 COMMENT 'Misc data; Effect number for spellscripts',
  PRIMARY KEY(`ScriptName`,`bind`),
  KEY(`type`)
-) Engine=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='SD2 Script Names and Binding';
+) Engine=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='SD2 Script Names and Binding';
 
 -- grab the script binding info into the new table
 INSERT INTO `script_binding` (`type`,`ScriptName`,`bind`) SELECT 0,`ScriptName`,`entry` FROM `creature_template` WHERE (`ScriptName` IS NOT NULL AND `ScriptName` != "");

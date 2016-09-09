@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `areatrigger_teleport` (
   `target_orientation` float NOT NULL DEFAULT '0',
   `condition_id` mediumint(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Trigger System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Trigger System';
 
 -- Dumping data for table areatrigger_teleport: 100 rows
 /*!40000 ALTER TABLE `areatrigger_teleport` DISABLE KEYS */;

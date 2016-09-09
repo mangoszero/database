@@ -74,7 +74,7 @@ CREATE TABLE `creature_template` (
   `AIName` char(64) DEFAULT '',
   `ScriptName` char(64) DEFAULT '',
   PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
 
 INSERT INTO `creature_template` (`Entry`, `KillCredit1`, `KillCredit2`, `ModelId1`, `ModelId2`, `Name`, `SubName`, `GossipMenuId`, `MinLevel`, `MaxLevel`, `MinLevelHealth`, `MaxLevelHealth`,
   `MinLevelMana`, `MaxLevelMana`, `Armor`, `FactionAlliance`, `FactionHorde`, `NpcFlags`, `SpeedWalk`, `SpeedRun`, `Scale`, `Rank`, `MinMeleeDmg`, `MaxMeleeDmg`, `DamageSchool`, `MeleeAttackPower`, `DamageMultiplier`,

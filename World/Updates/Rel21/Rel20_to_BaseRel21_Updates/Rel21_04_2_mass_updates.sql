@@ -7089,7 +7089,7 @@ CREATE TABLE `custom_texts` (
   `emote` smallint(5) unsigned NOT NULL DEFAULT '0',
   `comment` text,
   PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Custom Texts';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Custom Texts';
 
 DROP TABLE IF EXISTS `gossip_texts`;
 CREATE TABLE `gossip_texts` (
@@ -7105,7 +7105,7 @@ CREATE TABLE `gossip_texts` (
   `content_loc8` text,
   `comment` text,
   PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gossip Texts';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Gossip Texts';
 
 DROP TABLE IF EXISTS `script_texts`;
 CREATE TABLE `script_texts` (
@@ -7125,7 +7125,7 @@ CREATE TABLE `script_texts` (
   `emote` smallint(5) unsigned NOT NULL DEFAULT '0',
   `comment` text,
   PRIMARY KEY  (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Texts';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Script Texts';
 
 DROP TABLE IF EXISTS `script_waypoint`;
 CREATE TABLE script_waypoint (
@@ -7137,7 +7137,7 @@ CREATE TABLE script_waypoint (
   waittime int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'waittime in millisecs',
   point_comment text,
   PRIMARY KEY (entry, pointid)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Creature waypoints';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Script Creature waypoints';
 -- Moved creature_addons of NPC 5431 (Surf Glider) to creature_template_addon since they are all using the same addon
 DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` WHERE `id` = 5431);
 DELETE FROM `creature_template_addon` WHERE `entry` = 5431;
