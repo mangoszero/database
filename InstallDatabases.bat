@@ -481,7 +481,7 @@ echo.
 echo  Applying Realm DB updates
 echo _____________________________________________________________
 echo.
-for %%i in (Realm\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < %%i
+for %%i in (Realm\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < %%i
 goto done3
 
 :patchCharacter
@@ -491,7 +491,7 @@ echo.
 echo  Applying Character DB updates
 echo _____________________________________________________________
 echo.
-for %%i in (Realm\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < %%i
+for %%i in (Character\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < %%i
 goto done1
 
 :done
