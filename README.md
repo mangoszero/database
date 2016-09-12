@@ -16,11 +16,7 @@ A content database for [**Vanilla**][10] MaNGOS Servers, and [**World of Warcraf
 ---------------
 ##### Linux
 
-1. Enter **Tools** directory
-
-2. Run: **/bin/sh make_full_db.sh**
-
-3. Apply created file to mangos database, eg.: **mysql -u root -p mangos < full_db.sql**
+1. Run: **InstallDatabases.sh** and follow the onscreen prompts.
 
 ##### Windows
 
