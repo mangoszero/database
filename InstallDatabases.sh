@@ -31,6 +31,14 @@ wdb_def="mangos0"
 cdb_def="character0"
 rdb_def="realmd"
 
+printHelp()
+{
+	printf "Usage: $0 [-s] [-u] [-h]\n"
+	printf "\t-s: Run this script in silent mode, only prompt for the database information\n"
+	printf "\t-u: Run only the updates of the database\n"
+	printf "\t-h: Display this help\n"
+}
+
 printBanner()
 {
 	clear
@@ -63,7 +71,7 @@ printActivities()
 	printf "\n"
 	printf "\t    Realm Database : \tT - Toggle Create DB (${createrealmDB})\n"
 	printf "\t\t\t\tR - Toggle Create Structure (${loadrealmDB})\n"
-	printf "\t\t\t\tY- Apply Realm DB updates (${updaterealmDB})\n"
+	printf "\t\t\t\tY - Apply Realm DB updates (${updaterealmDB})\n"
 	printf "\t\t\t\tL - Toggle Add RealmList Entry (${addRealmList})\n"	
 	printf "\n"
 	printf "\t\t\t\tN - Next Step\n"
@@ -171,6 +179,30 @@ addRealmList()
 }
 
 activity=""
+
+while getopts "suh" o; do
+	case "${o}" in
+		s)
+			activity="N"
+			printf "You selected silent mode\n"
+			;;
+		u)
+			createcharDB="NO"
+			createworldDB="NO"
+			createrealmDB="NO"
+
+			loadcharDB="NO"
+			loadworldDB="NO"
+			loadrealmDB="NO"
+			dbType="EMPTY"
+			printf "You selected update only\n"
+			;;
+		h)
+			printHelp
+			exit 0
+			;;
+	esac
+done
 
 while [ -z "${activity}" ] || [ "${activity}" != "N" ]
 do
