@@ -5,9 +5,9 @@ TRUNCATE TABLE `dbdocstable`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -79,7 +79,7 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (64,0,'gameobject_template','This table contains templates of all the world’s objects'),
 (65,0,'gossip_menu','This table is used for displaying gossip when a player talks to an NPC.'),
 (66,0,'gossip_menu_option','This table holds infos about menu options a gossip NPC can have. \r\nExamples of options: \"Train me!\" or \"I want to unlearn my talents\".'),
-(67,0,'gossip_texts','This table defines textes for gossip menu items, used by C++ native (SD2) scripts.'),
+(67,0,'gossip_texts','This table defines textes for gossip menu items, used by native ScriptDev3 C++ scripts.'),
 (68,0,'instance_template','This table has all the templates for every instance. When a group enters an instance, a new copy of that instance is made from the values in these fields.'),
 (69,0,'item_enchantment_template','This table holds enchantment chance information for items that should have either a random property or a random suffix attached to them.'),
 (70,0,'item_loot_template','This table format is used to generate different loot items. Loot templates define only items in the loot.\r\nSee comments about money drop in corpse, pickpocketing and luggage loot in creature_template and item_template.'),
@@ -97,7 +97,7 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (82,0,'mangos_string','This table holds all of the strings used internally by the server. This table is provided with the main purpose of translation in mind.\r\n\r\nNOTE: The % arguments need to stay in the exact same order as they are provided by default in the English translation.'),
 (83,0,'npc_gossip','THIS TABLE IS OUTDATED. DO NOT USE\r\n<br/> \r\nIt should have been removed around 2009, but for some bad reasons it wasn’t..\r\n\r\nUse table gossip_menu instead.'),
 (84,0,'npc_text','This table contains the texts that are used for gossip. \r\n<br />\r\nMore research needs to be done on this table !\r\n<br />\r\nText is shown in the start of the talk window.'),
-(85,0,'npc_trainer','This table holds all the information on training NPCs. All spells listed in the table are learning spells. This means that the main effect of the spells listed here is to teach spells to the target (which is the player in this case). Any other spell that is not a learning spell will be ignored and an error message will be shown in the console window. Learning spells usually have the same name as their actual spell counterparts and are listed as Uncategorized in Wowhead.'),
+(85,0,'npc_trainer','This table holds all the information on training NPCs. <br />All spells listed in the table are learning spells. <br /><br />This means that the main effect of the spells listed here is to teach spells to the target (which is the player in this case). <br /><br />Any other spell that is not a learning spell will be ignored and an error message will be shown in the console window. <br /><br />Learning spells usually have the same name as their actual spell counterparts and are listed as Uncategorized in Wowhead.'),
 (86,0,'npc_trainer_template','DEPRECATED. Use npc_trainer table instead.'),
 (87,0,'npc_vendor','This table holds the vendor data for all NPCs that sell items. The gold price for each item is in its item template as BuyPrice.'),
 (88,0,'npc_vendor_template','DEPRECATED. Use npc_vendor table instead.'),
@@ -115,24 +115,24 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (100,0,'playercreateinfo_spell','This table holds information on what spells newly created characters should start out with. A character in this table is defined by his/her race and class combination.'),
 (101,0,'points_of_interest','This table holds definitions for points of interests in various locations.'),
 (102,0,'pool_creature','Contains all pool instances that participate, in particular, to any game event.'),
-(103,0,'pool_creature_template','Contains all pool instances that participate, in partuclar, to any game event.'),
-(104,0,'pool_gameobject','Contains all pool instances that participate, in particualr, to any game event.'),
+(103,0,'pool_creature_template','Contains all pool instances that participate, in particular, to any game event.'),
+(104,0,'pool_gameobject','Contains all pool instances that participate, in particular, to any game event.'),
 (105,0,'pool_gameobject_template','Contains all pool instances that participate, in particular, to any game event.'),
 (106,0,'pool_pool','This is the pool of pools table. Like creatures and gameobjects, pools are the objects that may be gathered into other pools. You can create a pool with a chance of a range of pools in that pool being activated.'),
 (107,0,'pool_template','Defines all pool instances that participate, in particular, to any game event.'),
 (108,0,'quest_template','Contains all basic definitions of quests available.'),
 (109,0,'reference_loot_template','This table format is used to generate different loot items. Loot templates define only items in the loot.\r\nSee comments about money drop in corpse, pickpocketing and luggage loot in creature_template and item_template.'),
-(110,0,'reputation_reward_rate','Holds reputation multipliers for specific factions.<br />Setting a rate to 0 disables reputation gain to the faction by the defined way completely.<br />NOTE: For the low level kills/quests, the rate values are combined with the config file settings Rate.Reputation.LowLevel.Kill/Quest by multiplying.'),
+(110,0,'reputation_reward_rate','Holds reputation multipliers for specific factions.<br />Setting a rate to 0 disables reputation gain to the faction by the defined way completely.<br /><br />NOTE: For the low level kills/quests, the rate values are combined with the config file settings Rate.Reputation.LowLevel.Kill/Quest by multiplying.'),
 (111,0,'reputation_spillover_template','This table holds information for additional factions which will be awarded reputation simultaneously with the original one. Note that the rates may be fractional and/or negative.'),
 (112,0,'reserved_name','This table serves as a simple list of names that players (gmlevel == 0) cannot use when naming their characters.'),
-(113,0,'script_texts','This table contains the texts (and localized ones) for C++ SD2 script engine, used in the function DoScriptText().'),
-(114,0,'script_waypoint','The table contains creature waypoints used in the C++ SD2 script library. The data is used by npc_escortAI::FillPointMovementListForCreature().'),
+(113,0,'script_texts','This table contains the texts (and localized ones) for ScriptDev3 C++ script engine, used in the function DoScriptText().'),
+(114,0,'script_waypoint','The table contains creature waypoints used in the ScriptDev3 C++ script library. The data is used by npc_escortAI::FillPointMovementListForCreature().'),
 (118,0,'skill_fishing_base_level','This table controls the minimum skill level required in fishing to fish in a certain area.'),
 (119,0,'skinning_loot_template','This table format is used to generate different loot items. Loot templates define only items in the loot.\r\nSee comments about money drop in corpse, pickpocketing and luggage loot in creature_template and item_template.'),
-(120,0,'spell_affect','This table holds information on what spells are affected by what spell mods. All spells in this table need to apply an aura that either adds a flat modifier to other spells or adds a percent modifier to other spells. Also, a single row in this table only holds information on a single spell effect that applies the aura. Therefore since a spell may have up to three effects, a maximum of 3 rows per spell is allowed. However, only the spell effects that apply the flat or percent auras will be used.'),
+(120,0,'spell_affect','This table holds information on what spells are affected by what spell mods. <br /><br />All spells in this table need to apply an aura that either adds a flat modifier to other spells or adds a percent modifier to other spells. <br /><br />Also, a single row in this table only holds information on a single spell effect that applies the aura. <br /><br />Therefore since a spell may have up to three effects, a maximum of 3 rows per spell is allowed. However, only the spell effects that apply the flat or percent auras will be used.'),
 (121,0,'spell_area','This table holds information on what spells are applied to npcs/players in some areas.'),
 (122,0,'spell_bonus_data','Table used for storing custom damage/healing bonus coefficients.'),
-(123,0,'spell_chain','This table defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing; however, each has a different rank and as the rank increases, so does the spell damage/heal/etc values. This table also controls what spells are replaced by their more powerful later ranks; however, that is also decided by other factors as well (if mana costs for both spells are the same, etc). All fields in this table except rank are spell IDs from Spell.dbc.'),
+(123,0,'spell_chain','This table defines spell chains. A spell chain is a series of spells which all share the same name and all do the same thing; however, each has a different rank and as the rank increases, so does the spell damage/heal/etc values. <br /><br />This table also controls what spells are replaced by their more powerful later ranks; however, that is also decided by other factors as well (if mana costs for both spells are the same, etc). <br /><br />All fields in this table except rank are spell IDs from Spell.dbc.'),
 (124,0,'spell_elixir','This table holds elixir information to be used to properly stack the elixirs.'),
 (125,0,'spell_facing','This table holds information indicating whether a caster needs to face the target when casting a spell.'),
 (126,0,'spell_learn_spell','This table holds information on spells that should be learned at the same time a player learns another spell. For example the few spells that are automatically learned when a player first learns a new profession. All fields in this table use spell IDs from Spell.dbc\r\n\r\nNOTE: Spells with spell effects SPELL_EFFECT_LEARN_SPELL should NOT be included in this table.'),
@@ -149,7 +149,8 @@ INSERT INTO `dbdocstable` (`tableId`, `languageId`, `tableName`, `tableNotes`) V
 (138,0,'dbdocstable_localised','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />An entry in this table provides a additional notes field to describe the database in the Wiki for languages other than English.'),
 (142,0,'db_scripts','This table holds scripts activated under certain criteria.<br /><br />The type controls what criteria are in effect'),
 (145,0,'warden','This table contains the Warden Anti-cheat system checks.<br />'),
-(149,0,'quest_relations','This table holds the relations of various objects and quests');
+(149,0,'quest_relations','This table holds the relations of various objects and quests'),
+(150,0,'dbdocslanguage','This table is part of the implementation of the \'Mangos Database Documentation\' (MDD) Project.<br /><br />This table lists the supported dbdocs languages.');
 /*!40000 ALTER TABLE `dbdocstable` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -162,4 +163,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:22
+-- Dump completed on 2016-09-12  1:30:24

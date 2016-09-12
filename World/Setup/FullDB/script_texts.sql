@@ -5,9 +5,9 @@ TRUNCATE TABLE `script_texts`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1353,7 +1353,43 @@ INSERT INTO `script_texts` (`entry`, `content_default`, `content_loc1`, `content
 (-1001155,'BETRAYER!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'spirit of trey lightforge SAY_BETRAYER'),
 (-1001156,'What was that?! Trey? TREY?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,22,'captured arko\'narin SAY_TREY'),
 (-1001157,'You kept me in the cell for too long, monster!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'captured arko\'narin SAY_ATTACK_TREY'),
-(-1001158,'No! My friend... what\'s happened? This is all my fault...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,18,'captured arko\'narin SAY_ESCORT_COMPLETE');
+(-1001158,'No! My friend... what\'s happened? This is all my fault...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,18,'captured arko\'narin SAY_ESCORT_COMPLETE'),
+(-1329019,'Don\\\'t worry about me!  Slay this dreadful beast and cleanse this world of his foul taint!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,0,0,'ysida YSIDA_SAY_RUN_5_MIN'),
+(-1329020,'My death means nothing.... light... will... prevail!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,0,0,'ysida YSIDA_SAY_RUN_FAIL'),
+(-1230036,'I want more ale! Give me more ale!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'rocknot SAY_MORE_BEER'),
+(-1230037,'You\'ll pay for that!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Grim Patron SAY_PISSED_PATRON_1'),
+(-1230038,'No!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Grim Patron SAY_PISSED_PATRON_2'),
+(-1230039,'Oh! Now I\'m pissed!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Grim Patron SAY_PISSED_PATRON_3'),
+(-1230040,'Violence! Property damage! None shall pass!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Phalanx YELL_PHALANX_AGGRO'),
+(-1230041,'Get away from those kegs!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Hurley Blackbreath YELL_HURLEY_SPAWN'),
+(-1230042,'You\'ll pay for that!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Hurley Blackbreath SAY_HURLEY_AGGRO'),
+(-1230043,'You can\'t hide from us. Prepare to burn!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'anvilrage guardsman SAY_GUARD_AGGRO'),
+(-1230044,'That one\'s empty!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,60,'rocknot SAY_BARREL_1'),
+(-1230045,'Ah, empty again!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,35,'rocknot SAY_BARREL_2'),
+(-1230046,'ALE!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,60,'rocknot SAY_BARREL_3'),
+(-1230047,'Im out of here!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,60,'rocknot SAY_ROCKNOT_DESPAWN'),
+(-1230048,'HALT! There were...reports...of a...disturbance.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Fireguard Destroyer YELL_PATROL_1'),
+(-1230049,'We...are...investigating.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Fireguard Destroyer YELL_PATROL_2'),
+(-1230050,'Try the boar! It\'s my new recipe!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Plugger Spazzring SAY_OOC_1'),
+(-1230051,'Enjoy! You won\'t find better ale anywhere!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Plugger Spazzring SAY_OOC_2'),
+(-1230052,'Drink up! There\'s more where that came from!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Plugger Spazzring SAY_OOC_3'),
+(-1230053,'Have you tried the Dark Iron Ale? It\'s the best!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Plugger Spazzring SAY_OOC_4'),
+(-1230054,'What are you doing over there?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Plugger Spazzring YELL_STOLEN_1'),
+(-1230055,'Hey! Get away from that!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Plugger Spazzring YELL_STOLEN_2'),
+(-1230056,'No stealing the goods!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Plugger Spazzring YELL_STOLEN_3'),
+(-1230057,'That\'s it! You\'re going down!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Plugger Spazzring YELL_AGRRO_1'),
+(-1230058,'That\'s it! No more beer until this mess is sorted out!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Plugger Spazzring YELL_AGRRO_2'),
+(-1230059,'Hey, my pockets were picked!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Plugger Spazzring YELL_PICKPOCKETED'),
+(-1230060,'Ha! You can\'t even begin to imagine the futility of your efforts.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Emperor Thaurissan YELL_SENATOR_1'),
+(-1230061,'Is that the best you can do? Do you really expect that you could defeat someone as awe inspiring as me?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Emperor Thaurissan YELL_SENATOR_2'),
+(-1230062,'They were just getting in the way anyways.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Emperor Thaurissan YELL_SENATOR_3'),
+(-1230063,'Your efforts are utterly pointless, fools! You will never be able to defeat me!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Emperor Thaurissan YELL_SENATOR_4'),
+(-1230064,'I will crush you into little tiny pieces!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Emperor Thaurissan YELL_AGGRO_2'),
+(-1230065,'Prepare to meet your doom at the hands of Ragnaros\' most powerful servant!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Emperor Thaurissan YELL_AGGRO_3'),
+(-1230066,'Hey, Rocknot!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Nagmara SAY_NAGMARA_1'),
+(-1230067,'Let\'s go, honey.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Nagmara SAY_NAGMARA_2'),
+(-1230068,'%s kisses her lover.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,'Nagmara TEXTEMOTE_NAGMARA'),
+(-1230069,'%s kisses Mistress Nagmara',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,17,'Rocknot TEXTEMOTE_ROCKNOT');
 /*!40000 ALTER TABLE `script_texts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1366,4 +1402,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:34
+-- Dump completed on 2016-09-12  1:30:36

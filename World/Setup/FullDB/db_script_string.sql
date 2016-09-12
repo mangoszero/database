@@ -5,9 +5,9 @@ TRUNCATE TABLE `db_script_string`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -331,16 +331,16 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000005337,'The ages have been cruel to you and I, my love, but be assured, it is, and at long last we are reunited.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005347,'Cliffspring Falls lies along the mountains to the east and north.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005346,'Thank you, $N. And luck to you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005393,'Grimclaw roars in acknowledgement at Terenthis.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005393,'Grimclaw roars in acknowledgement at Terenthis.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000005392,'I understand, my friend. I shall find someone to help your master. Go back to him now, or at least stay close.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005391,'Grimclaw roars at Terenthis more, but this time the druid seems to understand the bear.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005391,'Grimclaw roars at Terenthis more, but this time the druid seems to understand the bear.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000005390,'There... that should help. Now, tell me what\'s happened, Grimclaw.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005389,'Terenthis begins to cast a spell on Grimclaw.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005389,'Terenthis begins to cast a spell on Grimclaw.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000005388,'Whoa, whoa there, my friend. One moment...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005387,'Grimclaw begins to moan and roar at Terenthis while stomping his paws on the ground.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005387,'Grimclaw begins to moan and roar at Terenthis while stomping his paws on the ground.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000005386,'Grimclaw?! Easy there, my friend... where is your master Volcor?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005384,'What was that noise? It sounded like a roar.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005385,'Grimclaw roars at Terenthis to get his attention.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005385,'Grimclaw roars at Terenthis to get his attention.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000005395,'Oh man, I thought I was dead for sure. Ugh... still dizzy...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005396,'I can get back to the Stronghold on my own, I think. Now that you bought me some time, I should be able to stealth out of here. Who ever you are... thank you. May Elune bless you always!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005460,'If you want the key, you\'ll have to catch me!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -578,4 +578,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:21
+-- Dump completed on 2016-09-12  1:30:24

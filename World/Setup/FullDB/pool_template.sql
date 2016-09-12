@@ -5,9 +5,9 @@ TRUNCATE TABLE `pool_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1131,7 +1131,8 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (25452,1,'Caer Darrow ghosts'),
 (25502,1,'Spirestone Battle Lord/Placeholder'),
 (25503,1,'Spirestone Lord Magus/Placeholder'),
-(25504,1,'Spirestone Butcher/Placeholder');
+(25504,1,'Spirestone Butcher/Placeholder'),
+(25505,1,'Scourge Data');
 /*!40000 ALTER TABLE `pool_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1144,4 +1145,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:33
+-- Dump completed on 2016-09-12  1:30:34

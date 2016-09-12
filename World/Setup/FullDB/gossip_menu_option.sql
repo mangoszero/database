@@ -5,9 +5,9 @@ TRUNCATE TABLE `gossip_menu_option`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -817,7 +817,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (1965,0,1,'I would like to buy from you.',3,4,0,0,0,0,0,'',0),
 (1970,1,0,'You\'re good for nothing, Ribbly.  It\'s time to pay for your wickedness!',1,1,-1,0,197001,0,0,'',844),
 (2021,0,3,'I\'d like to train in cooking.',5,16,0,0,0,0,0,'',0),
-(2061,2,0,'Milk me, John.',1,1,2802,0,0,0,0,'',0),
+(2061,0,0,'Official business, John. I need some information about Marshal Windsor. Tell me about the last time you saw him',1,1,2060,0,0,0,0,'',871),
 (2121,11,0,'Profession Trainer',1,1,2168,0,0,0,0,'',0),
 (2168,11,0,'Tailoring',1,1,2175,75,0,0,0,'',0),
 (2184,0,0,'Tell me more about the Eastern Crystal Pylon.',1,1,0,0,0,0,0,'',0),
@@ -1269,8 +1269,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (6527,0,1,'Let me browse your goods.',3,4,0,0,0,0,0,'',0),
 (6563,0,2,'I need a ride.',4,8,0,0,0,0,0,'',0),
 (6565,0,0,'I would like to enter the secret code to receive my Murloc pet.',1,1,0,0,0,1,0,'',0),
-(6565,1,0,'I would like to enter the secret code to receive my Murloc costume.',1,1,0,0,0,1,0,'',0),
-(6565,2,0,'I would like to enter the secret code to receive my Big Blizzard Bear.',1,1,0,0,0,1,0,'',0),
+(2060,0,0,'So what did you do?',1,1,2059,0,0,0,0,'',0),
 (6575,0,0,'Tell me how to use the Blastenheimer 5000 Ultra Cannon.',1,1,6574,0,0,0,0,'',0),
 (6579,0,0,'<more>',1,1,8848,0,0,0,0,'',0),
 (6581,0,0,'What are these Tonk Control Consoles?',1,1,7093,0,0,0,0,'',0),
@@ -2036,8 +2035,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (4533,0,3,'I seek more training in the priestly ways.',5,16,0,0,0,0,0,NULL,112),
 (10482,0,0,'Tharnariun, the trap is lost. Do you have another?',1,1,-1,0,50232,0,0,NULL,1094),
 (6021,0,0,'I can not Vaelastrasz ! Surely there must be some way to heal you!',1,1,6101,0,0,0,0,NULL,0),
-(1822,0,0,'I need to know where the princess are, Kharan!',1,1,0,0,0,0,0,NULL,1098),
-(1822,1,0,'All is not lost, Kharan!',1,1,0,0,0,0,0,NULL,1099),
+(1822,0,0,'I need to know where the princess are, Kharan!',1,1,1830,0,0,0,0,'',1098),
 (1882,0,0,'Where is Warlord Krom\'zar?',1,1,1883,0,1882,0,0,NULL,1097),
 (6768,0,1,'Let me browse your seasonal fare.',3,4,0,0,0,0,0,NULL,0),
 (705,0,1,'I want to browse your goods.',3,4,0,0,0,0,0,NULL,0),
@@ -2178,7 +2176,26 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (4543,2,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',163),
 (4515,0,3,'Teach me the ways of the spirits.',5,16,0,0,0,0,0,'',0),
 (4515,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',137),
-(1053,0,0,'Continue.',1,1,1054,0,0,0,0,'',832);
+(1053,0,0,'Continue.',1,1,1054,0,0,0,0,'',832),
+(2059,0,0,'Start making sense, dwarf. I don\'t want to have anything to do with your cracker, your pappy, or any sort of \'discreditin\'.',1,1,2058,0,0,0,0,'',0),
+(2058,0,0,'Ironfoe?',1,1,2057,0,0,0,0,'',0),
+(2057,0,0,'Interesting... continue, John.',1,1,2056,0,0,0,0,'',0),
+(2056,0,0,'So that\'s how Windsor died...',1,1,2055,0,0,0,0,'',0),
+(2055,0,0,'So how did he die?',1,1,2054,0,0,0,0,'',0),
+(2054,0,0,'Ok, so where the hell is he? Wait a minute! Are you drunk?',1,1,2053,0,0,0,0,'',0),
+(2053,0,0,'WHY is he in Blackrock Depths?',1,1,2052,0,0,0,0,'',0),
+(2052,0,0,'300? So the Dark Irons killed him and dragged him into the Depths?',1,1,2051,0,0,0,0,'',0),
+(2051,0,0,'Ahh... Ironfoe.',1,1,2050,0,0,0,0,'',0),
+(2050,0,0,'Thanks, Ragged John. Your story was very uplifting and informative.',1,1,-1,0,0,0,0,'',0),
+(1822,1,0,'All is not lost, Kharan!',1,1,1828,0,0,0,0,'',1099),
+(1830,0,0,'Gor\'shak is my friend, you can trust me.',1,1,1829,0,0,0,0,'',0),
+(1829,0,0,'Not enough, you need to tell me more.',1,1,1828,0,0,0,0,'',0),
+(1828,0,0,'So what happened?',1,1,1827,0,0,0,0,'',0),
+(1827,0,0,'Continue...',1,1,1826,0,0,0,0,'',0),
+(1826,0,0,'So you suspect that someone on the inside was involved? That they were tipped off?',1,1,1825,0,0,0,0,'',0),
+(1825,0,0,'Continue with your story please.',1,1,1824,0,0,0,0,'',0),
+(1824,0,0,'Indeed.',1,1,1823,0,0,0,0,'',0),
+(1823,0,0,'The door is open, Kharan. You are a free man.',1,1,-1,0,0,0,0,'',0);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2191,4 +2208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:24
+-- Dump completed on 2016-09-12  1:30:28

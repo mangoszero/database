@@ -5,9 +5,9 @@ TRUNCATE TABLE `gossip_menu`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -3355,7 +3355,27 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (4516,5006,0,0),
 (4515,5008,0,0),
 (5123,5006,0,0),
-(1054,1654,105401,0);
+(1054,1654,105401,0),
+(2050,2725,205001,0),
+(2051,2723,0,0),
+(2052,2722,0,0),
+(2053,2721,0,0),
+(2054,2720,0,0),
+(2055,2719,0,0),
+(2056,2718,0,0),
+(2057,2717,0,0),
+(2058,2716,0,0),
+(2059,2715,0,0),
+(2060,2714,0,0),
+(1823,2482,182301,3),
+(1823,2482,182302,4),
+(1824,2481,0,0),
+(1825,2480,0,0),
+(1826,2479,0,0),
+(1827,2478,0,0),
+(1828,2477,0,0),
+(1829,2476,0,0),
+(1830,2475,0,0);
 /*!40000 ALTER TABLE `gossip_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -3368,4 +3388,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:24
+-- Dump completed on 2016-09-12  1:30:28

@@ -5,9 +5,9 @@ TRUNCATE TABLE `creature_template_addon`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -2463,7 +2463,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (3650,0,8,1,16,0,0,NULL),
 (3653,0,0,1,16,0,0,NULL),
 (3657,0,0,1,16,0,0,NULL),
-(3658,0,0,1,0,0,0,NULL),
+(3658,0,0,1,0,0,2,NULL),
 (3659,0,0,1,0,0,0,NULL),
 (3660,0,0,1,16,0,0,NULL),
 (3661,0,0,1,16,0,0,NULL),
@@ -6541,4 +6541,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:21
+-- Dump completed on 2016-09-12  1:30:23

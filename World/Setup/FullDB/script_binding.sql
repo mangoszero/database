@@ -5,9 +5,9 @@ TRUNCATE TABLE `script_binding`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -154,7 +154,7 @@ INSERT INTO `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES
 (0,'boss_moira_bronzebeard',8929,0),
 (0,'boss_high_interrogator_gerstahn',9018,0),
 (0,'boss_emperor_dagran_thaurissan',9019,0),
-(0,'npc_kharan_mighthammer',9021,0),
+(0,'npc_phalanx',9502,0),
 (0,'npc_dughal_stormwing',9022,0),
 (0,'npc_marshal_windsor',9023,0),
 (0,'boss_general_angerforge',9033,0),
@@ -536,7 +536,14 @@ INSERT INTO `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES
 (0,'npc_tyrion',7766,0),
 (0,'npc_warlord_kromzar',9456,0),
 (0,'npc_kolkar_invader',9524,0),
-(0,'npc_kolkar_invader',9523,0);
+(0,'npc_kolkar_invader',9523,0),
+(0,'npc_hurley_blackbreath',9537,0),
+(0,'go_bar_beer_keg',164911,0),
+(0,'boss_plugger_spazzring',9499,0),
+(0,'go_bar_ale_mug',165738,0),
+(0,'go_bar_ale_mug',165739,0),
+(0,'npc_ironhand_guardian',8982,0),
+(0,'npc_mistress_nagmara',9500,0);
 /*!40000 ALTER TABLE `script_binding` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -549,4 +556,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:34
+-- Dump completed on 2016-09-12  1:30:35

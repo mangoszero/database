@@ -189,7 +189,7 @@ CREATE TABLE `creature` (
   PRIMARY KEY (`guid`),
   KEY `idx_map` (`map`),
   KEY `index_id` (`id`)
-) ENGINE=MYISAM AUTO_INCREMENT=590013 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
+) ENGINE=MyISAM AUTO_INCREMENT=590016 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -736,8 +736,9 @@ CREATE TABLE `db_scripts` (
   `o` float NOT NULL DEFAULT '0',
   `comments` varchar(255) NOT NULL,
   PRIMARY KEY (`script_guid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2619 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2628 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
 
 /*Table structure for table `dbdocsfields` */
 
@@ -803,7 +804,6 @@ CREATE TABLE `dbdocssubtables` (
   `subTableId` INT(11) NOT NULL COMMENT 'Unique Lookup Id',
   `languageId` INT(11) NOT NULL DEFAULT '0' COMMENT 'dbdocsLanguageId to link to. (Normally 0 = English)',
   `subTableName` VARCHAR(80) DEFAULT NULL COMMENT 'Description of Content',
-  `subTableContent` TEXT NOT NULL COMMENT 'The Sub Table Content',
   `subTableTemplate` TEXT NOT NULL COMMENT 'The Sub Table Template',
   PRIMARY KEY (`subTableId`,`languageId`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
@@ -816,7 +816,6 @@ DROP TABLE IF EXISTS `dbdocssubtables_localised`;
 CREATE TABLE `dbdocssubtables_localised` (
   `subTableId` INT(11) NOT NULL COMMENT 'dbdocsSubtableId to link to',
   `languageId` INT(11) NOT NULL DEFAULT '0' COMMENT 'dbdocsLanguageId to link to. (Normally 0 = English)',
-  `subTableContent` TEXT NOT NULL COMMENT 'The Sub Table Content',
   `subTableTemplate` TEXT NOT NULL COMMENT 'The Sub Table Template',
   PRIMARY KEY (`subTableId`,`languageId`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
@@ -863,7 +862,7 @@ CREATE TABLE `disables` (
  `data` INT(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Additional data, type-specific',
  `comment` VARCHAR(255) DEFAULT NULL COMMENT 'Description of disable cause',
  PRIMARY KEY(`sourceType`,`entry`,`data`)
-) ENGINE=MYISAM COMMENT='Mangos disables system';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Mangos disables system';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1047,7 +1046,7 @@ CREATE TABLE `game_tele` (
   `map` SMALLINT(5) UNSIGNED NOT NULL DEFAULT '0',
   `name` VARCHAR(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MYISAM AUTO_INCREMENT=419 DEFAULT CHARSET=utf8 COMMENT='Tele Command';
+) ENGINE=MyISAM AUTO_INCREMENT=420 DEFAULT CHARSET=utf8 COMMENT='Tele Command';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2403,7 +2402,7 @@ CREATE TABLE `quest_relations` (
   `quest` INT(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Quest ID from quest_template',
   `role` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Role of the actor: 0 - starts the quest, 1 - ends the quest (unused for actor = 2)',
   PRIMARY KEY (`entry`, `quest`, `role`)
-)ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Table structure for table `quest_template`
@@ -2983,7 +2982,7 @@ CREATE TABLE `warden` (
   `result` varchar(24) NOT NULL DEFAULT '',
   `comment` varchar(50) DEFAULT '' COMMENT 'Description of what the check is',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1565 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1571 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

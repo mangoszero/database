@@ -5,9 +5,9 @@ TRUNCATE TABLE `conditions`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -504,8 +504,8 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (1095,9,4021,0),
 (1096,24,11227,1),
 (1097,-1,1095,1096),
-(1098,9,4001,0),
 (1099,9,4342,0),
+(1098,9,4001,0),
 (1101,9,8534,0),
 (1102,24,21158,1),
 (1103,-1,1101,1102),
@@ -682,7 +682,8 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (80,-1,77,78),
 (81,-1,77,79),
 (2033,9,658,0),
-(832,9,2936,0);
+(832,9,2936,0),
+(871,9,4224,0);
 /*!40000 ALTER TABLE `conditions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -695,4 +696,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:17
+-- Dump completed on 2016-09-12  1:30:18

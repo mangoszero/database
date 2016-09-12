@@ -5,9 +5,9 @@ TRUNCATE TABLE `creature_equip_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host: localhost    Database: mangos0
+-- Host:                Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.34
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -982,7 +982,8 @@ INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `e
 (2164,15273,0,0),
 (923,10612,5262,0),
 (2421,10825,11586,12523),
-(2415,12243,0,0);
+(2415,12243,0,0),
+(9456,13055,0,0);
 /*!40000 ALTER TABLE `creature_equip_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -995,4 +996,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-05 22:00:18
+-- Dump completed on 2016-09-12  1:30:20
