@@ -27,12 +27,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '11'; 
-    SET @cOldContent = '47';
+    SET @cOldContent = '48';
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '11';
-    SET @cNewContent = '48';
+    SET @cNewContent = '49';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Add_Missing_script_binding';
 
