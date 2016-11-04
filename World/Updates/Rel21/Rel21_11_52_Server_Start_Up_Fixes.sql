@@ -24,7 +24,7 @@ BEGIN
     SET @cCurStructure := (SELECT structure FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
     SET @cCurContent := (SELECT content FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
 
-    -- Expected Values
+     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '11'; 
     SET @cOldContent = '51';
@@ -61,11 +61,11 @@ BEGIN
 UPDATE creature_template SET ModelId1=1955, ModelId2=0 WHERE Entry=8927;
 
 -- entries do not exist
-DELETE FROM mangosZero.creature_template where LootId IN (5776, 5777, 5778);
-DELETE FROM mangosZero.creature_template where PickpocketLootId IN (5776, 5777, 5778);
+DELETE FROM creature_template where LootId IN (5776, 5777, 5778);
+DELETE FROM creature_template where PickpocketLootId IN (5776, 5777, 5778);
 
 -- script does not exist
-UPDATE mangosZero.creature_movement SET script_id = 0 where id = 45525 AND script_id = 2700;
+UPDATE creature_movement SET script_id = 0 where id = 45525 AND script_id = 2700;
 
 -- missing script assignment
 INSERT INTO script_binding (type, ScriptName, bind, data) VALUES (0, 'npc_spectral_tutor', 10498, 0);
@@ -75,7 +75,7 @@ DELETE FROM db_scripts WHERE script_guid=2700;
 DELETE FROM db_scripts WHERE script_guid=2701;
 
 -- non-existent creature template entry
-DELETE FROM quest_relations WHERE entry=56899 andquest=27469 androle=0;
+DELETE FROM quest_relations WHERE entry=56899 and quest=27469 and role=0;
 	
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
