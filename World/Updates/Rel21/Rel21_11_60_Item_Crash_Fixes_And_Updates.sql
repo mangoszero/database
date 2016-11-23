@@ -64,21 +64,21 @@ UPDATE item_template SET spelltrigger_1 = 2 WHERE entry = 2825;
 UPDATE item_template SET spelltrigger_1 = 2 WHERE entry = 2099;
 
 -- Heartseeking Crossbow damage update
-UPDATE item_template SET damage_max0 = 71 WHERE entry = 13040;
-UPDATE item_template SET damage_max1 = 108 WHERE entry = 13040;
+UPDATE item_template SET dmg_min1 = 71 WHERE entry = 13040;
+UPDATE item_template SET dmg_max1 = 108 WHERE entry = 13040;
 
 -- Elemental Invasion (pre-update)
-UPDATE creature SET spawntimesecs = 259200 WHERE entry = 50000;
-UPDATE creature SET spawntimesecs = 259200 WHERE entry = 50001;
-UPDATE creature SET spawntimesecs = 259200 WHERE entry = 50002;
-UPDATE creature SET spawntimesecs = 259200 WHERE entry = 50003;
+UPDATE creature SET spawntimesecs = 259200 WHERE guid = 590000;
+UPDATE creature SET spawntimesecs = 259200 WHERE guid = 590001;
+UPDATE creature SET spawntimesecs = 259200 WHERE guid = 590002;
+UPDATE creature SET spawntimesecs = 259200 WHERE guid = 590003;
 
 -- some dungeon-chests respawntimer set to 24h
-UPDATE gameobject SET spawntimesecs = 86400 WHERE entry = 27888;
-UPDATE gameobject SET spawntimesecs = 86400 WHERE entry = 87907;
-UPDATE gameobject SET spawntimesecs = 86400 WHERE entry = 87908;
-UPDATE gameobject SET spawntimesecs = 86400 WHERE entry = 87909;
-UPDATE gameobject SET spawntimesecs = 86400 WHERE entry = 14830;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 27888;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 87907;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 87908;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 87909;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 14830;
 
 	
 
