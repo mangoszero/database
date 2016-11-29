@@ -215,6 +215,7 @@ do
 	printActivities
 	printf "Please select an activity : "
 	read activity
+	activity=$(echo ${activity} | tr '[:lower:]' '[:upper:]' )
 	case ${activity} in
 		"V")
 			if [ "${createcharDB}" = "YES" ]; then
