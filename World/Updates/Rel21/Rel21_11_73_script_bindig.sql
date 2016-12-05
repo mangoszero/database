@@ -34,10 +34,10 @@ BEGIN
     SET @cNewStructure = '11';
     SET @cNewContent = '73';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'Start Up Fixes';
+    SET @cNewDescription = 'Script Binding';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Start Up Fixes';
+    SET @cNewComment = 'Script Binding';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT description FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
