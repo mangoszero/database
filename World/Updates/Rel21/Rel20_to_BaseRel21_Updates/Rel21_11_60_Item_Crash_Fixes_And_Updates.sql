@@ -1,5 +1,14 @@
+-- ----------------------------------------
+-- Added to prevent timeout's while loading
+-- ----------------------------------------
+SET GLOBAL net_read_timeout=30;
+SET GLOBAL net_write_timeout=60;
+SET GLOBAL net_buffer_length=1000000; 
+SET GLOBAL max_allowed_packet=1000000000;
+SET GLOBAL connect_timeout=10000000;
+
 -- --------------------------------------------------------------------------------
--- This is an attempt to create a full transactional update
+-- This is an attempt to create a full transactional MaNGOS update (v1.3)
 -- --------------------------------------------------------------------------------
 DROP PROCEDURE IF EXISTS `update_mangos`; 
 
@@ -15,20 +24,20 @@ BEGIN
     SET @cCurStructure := (SELECT structure FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
     SET @cCurContent := (SELECT content FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
 
-    -- Expected Values
+     -- Expected Values
     SET @cOldVersion = '21'; 
-    SET @cOldStructure = '2'; 
-    SET @cOldContent = '3'; 
+    SET @cOldStructure = '11'; 
+    SET @cOldContent = '59';
 
     -- New Values
     SET @cNewVersion = '21';
-    SET @cNewStructure = '3';
-    SET @cNewContent = '1';
+    SET @cNewStructure = '11';
+    SET @cNewContent = '60';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'Fix paladin SoR';
+    SET @cNewDescription = 'item_crash_fixes_and_updates';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Update the wrong version of SoR at char creation';
+    SET @cNewComment = 'item_crash_fixes_and_updates';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT description FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
@@ -47,14 +56,31 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
-       
-        DELETE FROM `playercreateinfo_spell` WHERE `Spell` = 21084; 
-        INSERT INTO `playercreateinfo_spell` (`race`, `class`, `Spell`, `Note`) VALUES (1, 2, 20154, 'Seal of Righteousness - Non Judgement');
-        INSERT INTO `playercreateinfo_spell` (`race`, `class`, `Spell`, `Note`) VALUES (3, 2, 20154, 'Seal of Righteousness - Non Judgement');
 
-        DELETE FROM `playercreateinfo_action` WHERE `action` = 21084; 
-        INSERT INTO `playercreateinfo_action` (`race`, `class`, `button`, `action`, `type`) VALUES (1, 2, 1, 20154, 0);
-        INSERT INTO `playercreateinfo_action` (`race`, `class`, `button`, `action`, `type`) VALUES (3, 2, 1, 20154, 0);
+-- Bow of Searing Arrows crash fix
+UPDATE item_template SET spelltrigger_1 = 2 WHERE entry = 2825;
+
+-- Dwarven Hand Cannon crash fix
+UPDATE item_template SET spelltrigger_1 = 2 WHERE entry = 2099;
+
+-- Heartseeking Crossbow damage update
+UPDATE item_template SET dmg_min1 = 71 WHERE entry = 13040;
+UPDATE item_template SET dmg_max1 = 108 WHERE entry = 13040;
+
+-- Elemental Invasion (pre-update)
+UPDATE creature SET spawntimesecs = 259200 WHERE guid = 590000;
+UPDATE creature SET spawntimesecs = 259200 WHERE guid = 590001;
+UPDATE creature SET spawntimesecs = 259200 WHERE guid = 590002;
+UPDATE creature SET spawntimesecs = 259200 WHERE guid = 590003;
+
+-- some dungeon-chests respawntimer set to 24h
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 27888;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 87907;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 87908;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 87909;
+UPDATE gameobject SET spawntimesecs = 86400 WHERE guid = 14830;
+
+	
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -65,6 +91,9 @@ BEGIN
             ROLLBACK;
             SHOW ERRORS;
             SELECT '* UPDATE FAILED *' AS `===== Status =====`,@cCurResult AS `===== DB is on Version: =====`;
+
+
+
         ELSE
             COMMIT;
             SELECT '* UPDATE COMPLETE *' AS `===== Status =====`,@cNewResult AS `===== DB is now on Version =====`;
@@ -76,7 +105,20 @@ BEGIN
             IF(@cCurResult IS NULL) THEN    -- Something has gone wrong
                 SELECT '* UPDATE FAILED *' AS `===== Status =====`,'Unable to locate DB Version Information' AS `============= Error Message =============`;
             ELSE
-                SELECT '* UPDATE SKIPPED *' AS `===== Status =====`,@cOldResult AS `=== Expected ===`,@cCurResult AS `===== Found Version =====`;
+		IF(@cOldResult IS NULL) THEN    -- Something has gone wrong
+		    SET @cCurVersion := (SELECT `version` FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
+		    SET @cCurStructure := (SELECT `STRUCTURE` FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
+		    SET @cCurContent := (SELECT `Content` FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
+                    SET @cCurOutput = CONCAT(@cCurVersion, '_', @cCurStructure, '_', @cCurContent, ' - ',@cCurResult);
+                    SET @cOldResult = CONCAT('Rel',@cOldVersion, '_', @cOldStructure, '_', @cOldContent, ' - ','IS NOT APPLIED');
+                    SELECT '* UPDATE SKIPPED *' AS `===== Status =====`,@cOldResult AS `=== Expected ===`,@cCurOutput AS `===== Found Version =====`;
+		ELSE
+		    SET @cCurVersion := (SELECT `version` FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
+		    SET @cCurStructure := (SELECT `STRUCTURE` FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
+		    SET @cCurContent := (SELECT `Content` FROM db_version ORDER BY `version` DESC, STRUCTURE DESC, CONTENT DESC LIMIT 0,1);
+                    SET @cCurOutput = CONCAT(@cCurVersion, '_', @cCurStructure, '_', @cCurContent, ' - ',@cCurResult);
+                    SELECT '* UPDATE SKIPPED *' AS `===== Status =====`,@cOldResult AS `=== Expected ===`,@cCurOutput AS `===== Found Version =====`;
+                END IF;
             END IF;
         END IF;
     END IF;

@@ -5,7 +5,7 @@ TRUNCATE TABLE `db_script_string`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -166,7 +166,7 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000005009,'Well done, soldiers! At ease!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005010,'Zug zug! Happy to help!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005011,'Yes right away momma!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000005015,'Terenthis begins to cast a spell as you take the cloak from him.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000005015,'Terenthis begins to cast a spell as you take the cloak from him.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000005016,'Go now, $N. Find Volcor... and remember, the magics protecting you will fail if you interact with anyone, save for talking.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005017,'Go swiftly $N. My fate is in your hands.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000005018,'Ah, this must be him now... no?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -565,7 +565,17 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000403,'This is Rigger Gizelton asking for assistance escorting my caravan past Mannoroc Coven. I\'m on the road east of Shadowprey village.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,0,22,'Rigger Quest 5843 Yell'),
 (2000000813,'Speak with me to hear my tale.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,''),
 (2000000817,'Greetings, mortals! I have been activated by the Discs of Norgannon to assist you!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,NULL),
-(2000000818,'The discs are now ready! Engage the Discs of Norgannon once again to retrieve them!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,NULL);
+(2000000818,'The discs are now ready! Engage the Discs of Norgannon once again to retrieve them!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,NULL),
+(2000000500,'Children of the Night, heed your Queen\'s call!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,22,'Hallow\'s End: Banshee Queen Speech Part 1'),
+(2000000501,'I join you in celebration of this most revered of nights - the night we Forsaken broke the Scourge\'s yoke of oppression!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Banshee Queen Speech Part 2'),
+(2000000502,'It is this night that our enemies fear us the most. It is THIS night that we show our enemies what it means to stand against the Forsaken!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Banshee Queen Speech Part 3'),
+(2000000503,'We burn the effigy of the Wickerman as a symbol of our struggle against those who would oppose us. We wear the ashes of the burnt Wickerman as a symbol of our neverending fight against those who would enslave us.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Banshee Queen Speech Part 4'),
+(2000000504,'Now is the time to shake the world to its foundations! NOW is the time to remind those who would enslave us that we shall never yield!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,5,'Hallow\'s End: Banshee Queen Speech Part 5'),
+(2000000505,'NOW is the time of the Forsaken! Power to the Forsaken - NOW AND FOREVER!!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,15,'Hallow\'s End: Banshee Queen Speech Part 6'),
+(2000000508,'The burning of the Wickerman will begin in thirty minutes! Come to the festival - located just west of the Undercity - and celebrate Hallow\'s End and our liberation from the Scourge!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka 30 Mins to Festival Start'),
+(2000000509,'The burning of the Wickerman will begin in fifteen minutes! Come to the festival - located just west of the Undercity - and celebrate Hallow\'s End and our liberation from the Scourge!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka 15 Mins to Festival Start'),
+(2000000510,'The burning of the Wickerman will begin in five minutes! Come to the festival - located just west of the Undercity - and celebrate Hallow\'s End and our liberation from the Scourge!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka 5 Mins to Festival Start'),
+(2000000511,'The Wickerman Festival now begins! Power to the Forsaken!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka Festival Start');
 /*!40000 ALTER TABLE `db_script_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -578,4 +588,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:24
+-- Dump completed on 2016-12-10 20:21:27

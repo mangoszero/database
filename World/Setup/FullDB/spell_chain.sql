@@ -5,7 +5,7 @@ TRUNCATE TABLE `spell_chain`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -1077,7 +1077,11 @@ INSERT INTO `spell_chain` (`spell_id`, `prev_spell`, `first_spell`, `rank`, `req
 (12969,12968,12966,4,0),
 (12968,12967,12966,3,0),
 (12967,12966,12966,2,0),
-(12966,0,12966,1,0);
+(12966,0,12966,1,0),
+(759,0,759,1,0),
+(3552,759,759,2,0),
+(10053,3552,759,3,0),
+(10054,10053,759,4,0);
 /*!40000 ALTER TABLE `spell_chain` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1090,4 +1094,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:36
+-- Dump completed on 2016-12-10 20:21:47

@@ -5,7 +5,7 @@ TRUNCATE TABLE `mangos_string`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -771,7 +771,7 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (1418,'First Sergeant ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1419,'Stone Guard ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1420,'Blood Guard ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(1421,'Legionnare ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1421,'Legionnaire ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1422,'Centurion ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1423,'Champion ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1424,'Lieutenant General ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -852,4 +852,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:31
+-- Dump completed on 2016-12-10 20:21:38

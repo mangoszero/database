@@ -5,7 +5,7 @@ TRUNCATE TABLE `creature_addon`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -31816,11 +31816,9 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (36935,0,0,1,16,0,0,NULL),
 (36936,0,0,1,16,0,0,NULL),
 (36937,0,0,1,16,0,0,NULL),
-(36938,0,0,1,16,0,0,NULL),
 (36939,0,0,1,16,0,0,NULL),
 (36940,0,0,1,16,0,0,NULL),
 (36941,0,0,1,16,0,0,NULL),
-(36942,0,0,1,16,0,0,NULL),
 (36943,0,0,1,16,0,0,NULL),
 (36944,0,0,1,16,0,0,NULL),
 (36945,0,0,1,16,0,0,NULL),
@@ -38790,10 +38788,10 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (45383,0,0,1,16,0,0,NULL),
 (45384,0,0,1,16,0,0,NULL),
 (45385,0,0,1,16,0,0,NULL),
-(45386,0,0,1,16,0,0,NULL);
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
+(45386,0,0,1,16,0,0,NULL),
 (45387,0,0,1,16,0,0,NULL),
-(45388,0,0,1,16,0,0,NULL),
+(45388,0,0,1,16,0,0,NULL);
+INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES 
 (45389,0,0,1,16,0,0,NULL),
 (45390,0,0,1,16,0,0,NULL),
 (45391,0,0,1,16,0,0,'8279'),
@@ -50442,4 +50440,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:19
+-- Dump completed on 2016-12-10 20:21:19

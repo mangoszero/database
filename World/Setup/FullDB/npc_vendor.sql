@@ -5,7 +5,7 @@ TRUNCATE TABLE `npc_vendor`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -2189,7 +2189,7 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id
 (2366,4600,0,0,0),
 (2366,8766,0,0,0),
 (2366,19222,0,0,0),
-(2366,21151,0,0,0),
+(15353,20557,0,0,1368),
 (2380,858,0,0,0),
 (2380,1710,2,9000,0),
 (2380,3371,0,0,0),
@@ -12486,7 +12486,7 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`, `condition_id
 (15354,18632,0,0,0),
 (15354,18633,0,0,0),
 (15354,18635,0,0,0),
-(15354,20557,0,0,0),
+(15354,20557,0,0,1369),
 (15419,4470,0,0,0),
 (15419,6217,0,0,0),
 (15419,6342,1,7200,0),
@@ -12597,4 +12597,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:32
+-- Dump completed on 2016-12-10 20:21:40

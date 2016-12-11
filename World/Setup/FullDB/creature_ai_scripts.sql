@@ -5,7 +5,7 @@ TRUNCATE TABLE `creature_ai_scripts`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -11324,7 +11324,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1179406,11794,9,1,100,1,11,25,0,0,21,0,1,0,20,0,0,0,0,0,0,0,'Sister of Celebras - Prevent Combat Movement and Prevent Melee at 25 Yards (Phase 1)'),
 (1179407,11794,7,0,100,0,0,0,0,0,22,1,0,0,40,1,0,0,0,0,0,0,'Sister of Celebras - Set Phase 1 and Set Melee Weapon Model on Evade'),
 (1180601,11806,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Sentinel Onaeya - Flee at 15% HP'),
-(1181401,11814,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Kali Remik - Flee at 15% HP'),
+(1181401,11814,22,0,100,1,264,0,0,0,15,8358,6,0,0,0,0,0,0,0,0,0,'Kali Remik - Complete quest 8358 on /train emote'),
 (1181801,11818,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Orik\'ando - Flee at 15% HP'),
 (1182001,11820,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Locke Okarr - Flee at 15% HP'),
 (1182101,11821,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Darn Talongrip - Flee at 15% HP'),
@@ -13864,7 +13864,15 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1521301,15213,0,0,100,1,1000,1000,5000,5000,11,9672,1,0,0,0,0,0,0,0,0,0,'暮光霸主 - 施放-寒冰箭'),
 (1521302,15213,9,0,100,1,0,8,25000,25000,11,11831,1,0,0,0,0,0,0,0,0,0,'暮光霸主 - 施放-冰霜新星'),
 (1521303,15213,0,0,100,1,6000,6000,6000,6000,11,12058,1,0,0,0,0,0,0,0,0,0,'暮光霸主 - 施放-闪电链'),
-(1521304,15213,0,0,100,1,8000,8000,8000,8000,11,13339,1,0,0,0,0,0,0,0,0,0,'暮光霸主 - 施放-火焰冲击');
+(1521304,15213,0,0,100,1,8000,8000,8000,8000,11,13339,1,0,0,0,0,0,0,0,0,0,'暮光霸主 - 施放-火焰冲击'),
+(1032104,10321,2,0,100,1,20,0,120000,120000,11,16054,0,1,1,0,0,0,0,0,0,0,'Emberstrife - Cast Flames of the Black Flight at 20%'),
+(692901,6929,22,0,100,1,41,0,0,0,15,8359,6,0,0,0,0,0,0,0,0,0,'Innkeeper Gryshka - Complete quest 8359 on /flex emote'),
+(674101,6741,22,0,100,1,22,0,0,0,15,8354,6,0,0,0,0,0,0,0,0,0,'Innkeeper Norman - Complete quest 8354 on /chicken emote'),
+(674601,6746,22,0,100,1,34,0,0,0,15,8360,6,0,0,0,0,0,0,0,0,0,'Innkeeper Pala - Complete quest 8360 on /dance emote'),
+(674001,6740,22,0,100,1,41,0,0,0,15,8356,6,0,0,0,0,0,0,0,0,0,'Innkeeper Allison - Complete quest 8356 on /flex emote'),
+(511101,5111,22,0,100,1,22,0,0,0,15,8353,6,0,0,0,0,0,0,0,0,0,'Innkeeper Firebrew - Complete quest 8353 on /chicken emote'),
+(673501,6735,22,0,100,1,34,0,0,0,15,8357,6,0,0,0,0,0,0,0,0,0,'Innkeeper Saelienne - Complete quest 8357 on /dance emote'),
+(682601,6826,22,0,100,1,264,0,0,0,15,8355,6,0,0,0,0,0,0,0,0,0,'Talvash del Kissel - Complete quest 8355 on /train emote');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13877,4 +13885,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:20
+-- Dump completed on 2016-12-10 20:21:20

@@ -5,7 +5,7 @@ TRUNCATE TABLE `spell_bonus_data`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -134,7 +134,11 @@ INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`
 (25739,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
 (25740,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
 (25742,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
-(25713,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc');
+(25713,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(133,1,0,0,0,0,0,0,0,0,0,0,0,'Mage - Fire Ball'),
+(879,0.15,0,0,0,0,0,0,0,0,0,0.15,0,'Paladin - Exorcism'),
+(24275,0.15,0,0,0,0,0,0,0,0,0,0.15,0,'Paladin - Hammer of Wrath'),
+(26573,0,0,0,0,0,0,0,0,0,0.04,0,0.04,'Paladin - Consecration');
 /*!40000 ALTER TABLE `spell_bonus_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -147,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:36
+-- Dump completed on 2016-12-10 20:21:47

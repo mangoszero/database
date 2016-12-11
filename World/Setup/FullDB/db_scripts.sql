@@ -5,7 +5,7 @@ TRUNCATE TABLE `db_scripts`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -2649,7 +2649,25 @@ INSERT INTO `db_scripts` (`script_guid`, `script_type`, `id`, `delay`, `command`
 (2624,2,105401,0,7,2936,5,0,0,0,0,0,0,0,0,0,0,0,''),
 (2625,2,205001,0,7,4224,5,0,0,0,0,0,0,0,0,0,0,0,''),
 (2626,2,182301,0,7,4001,5,0,0,0,0,0,0,0,0,0,0,0,''),
-(2627,2,182302,0,7,4342,5,0,0,0,0,0,0,0,0,0,0,0,'');
+(2627,2,182302,0,7,4342,5,0,0,0,0,0,0,0,0,0,0,0,''),
+(2628,3,16000501,1,0,0,0,15197,20,0,2000000508,0,0,0,0,0,0,0,'Hallow\'s End: Yanka 30 Mins to Festival Start, triggered by creature_movement 160005'),
+(2629,3,16000501,900,0,0,0,15197,20,0,2000000509,0,0,0,0,0,0,0,'Hallow\'s End: Yanka 15 Mins to Festival Start'),
+(2630,3,16000501,1500,0,0,0,15197,20,0,2000000510,0,0,0,0,0,0,0,'Hallow\'s End: Yanka 5 Mins to Festival Start'),
+(2631,3,16000501,1800,0,0,0,15197,20,0,2000000511,0,0,0,0,0,0,0,'Hallow\'s End: Yanka Festival Start'),
+(2632,3,16000501,1801,10,15193,72000,0,0,0,0,0,0,0,1734.6,508.803,41.2847,1.6173,'Hallow\'s End: Summon Banshee Queen'),
+(2633,3,16000501,36000,43,0,0,180433,25,1,0,0,0,0,0,0,0,0,'Hallow\'s End: Reset Wickerman'),
+(2634,3,16000501,36000,1,26,0,15197,50,0,0,0,0,0,0,0,0,0,'Hallow\'s End: Yanka Stops Dancing'),
+(2635,3,1519301,1,0,0,0,0,0,0,2000000500,0,0,0,0,0,0,0,'Hallow\'s End: Banshee Queen Speech Part 1, triggered by summon in db_scripts 16000501'),
+(2636,3,1519301,9,0,0,0,0,0,0,2000000501,0,0,0,0,0,0,0,'Hallow\'s End: Banshee Queen Speech Part 2'),
+(2637,3,1519301,18,0,0,0,0,0,0,2000000502,0,0,0,0,0,0,0,'Hallow\'s End: Banshee Queen Speech Part 3'),
+(2638,3,1519301,27,0,0,0,0,0,0,2000000503,0,0,0,0,0,0,0,'Hallow\'s End: Banshee Queen Speech Part 4'),
+(2639,3,1519301,49,0,0,0,0,0,0,2000000504,0,0,0,0,0,0,0,'Hallow\'s End: Banshee Queen Speech Part 5'),
+(2640,3,1519301,58,0,0,0,0,0,0,2000000505,0,0,0,0,0,0,0,'Hallow\'s End: Banshee Queen Speech Part 6'),
+(2641,3,1519301,68,15,14292,0,0,0,0,0,0,0,0,0,0,0,0,'Hallow\'s End: Banshee Queen Throw Torch'),
+(2642,3,1519301,70,13,0,0,180433,25,1,0,0,0,0,0,0,0,0,'Hallow\'s End: Activate Wickerman'),
+(2643,3,1519301,71,1,10,0,15197,50,0,0,0,0,0,0,0,0,0,'Hallow\'s End: Yanka Dance'),
+(2644,2,653501,0,15,24705,0,0,0,4,0,0,0,0,0,0,0,0,'Cast Invocation of the Wickerman'),
+(2645,8,9417,0,8,15415,1,0,0,0,0,0,0,0,0,0,0,0,'Quest 1657: credit for objective');
 /*!40000 ALTER TABLE `db_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2662,4 +2680,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:25
+-- Dump completed on 2016-12-10 20:21:29

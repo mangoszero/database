@@ -5,7 +5,7 @@ TRUNCATE TABLE `game_event_creature`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -725,7 +725,13 @@ INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 (54905,2),
 (54906,2),
 (54907,2),
-(54908,2);
+(54908,2),
+(86235,12),
+(99966,12),
+(160005,25),
+(85632,12),
+(85633,12),
+(85634,12);
 /*!40000 ALTER TABLE `game_event_creature` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -738,4 +744,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:25
+-- Dump completed on 2016-12-10 20:21:30

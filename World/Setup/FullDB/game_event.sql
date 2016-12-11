@@ -5,7 +5,7 @@ TRUNCATE TABLE `game_event`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -58,7 +58,9 @@ INSERT INTO `game_event` (`entry`, `start_time`, `end_time`, `occurence`, `lengt
 (36,'2010-03-21 01:00:00','2020-12-30 23:00:00',525600,269280,0,'Summer Season Fishing'),
 (61,'2010-12-31 23:58:00','2020-12-30 23:00:00',30,10,0,'Stormwind City - Stockades Jail Break'),
 (3,'2006-02-08 21:00:00','2020-12-31 04:59:59',1440,480,0,'Pyrewood Village - Worgen Curse'),
-(21,'2006-12-25 16:00:00','2020-12-31 16:00:00',525600,11700,0,'Winter Veil: Gifts');
+(21,'2006-12-25 16:00:00','2020-12-31 16:00:00',525600,11700,0,'Winter Veil: Gifts'),
+(24,'2016-10-18 19:01:07','2020-12-31 22:59:59',1440,600,0,'Hallow\'s End - Wickerman Ember\'s'),
+(25,'2016-10-18 18:30:00','2020-12-31 22:59:59',1440,45,0,'Hallow\'s End - Banshee Queen');
 /*!40000 ALTER TABLE `game_event` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -71,4 +73,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:25
+-- Dump completed on 2016-12-10 20:21:30

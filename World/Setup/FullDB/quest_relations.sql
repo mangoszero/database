@@ -5,7 +5,7 @@ TRUNCATE TABLE `quest_relations`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -4758,7 +4758,6 @@ INSERT INTO `quest_relations` (`actor`, `entry`, `quest`, `role`) VALUES
 (0,9562,4701,1),
 (0,9563,4866,0),
 (0,9563,4866,1),
-(0,9563,27469,0),
 (0,9565,4764,0),
 (0,9565,4764,1),
 (0,9565,4765,0),
@@ -8015,7 +8014,6 @@ INSERT INTO `quest_relations` (`actor`, `entry`, `quest`, `role`) VALUES
 (1,50961,1465,0),
 (1,51708,254,0),
 (1,51708,254,1),
-(0,56899,27469,0),
 (1,61934,1526,1),
 (1,61934,1527,0),
 (1,89931,1714,0),
@@ -8327,4 +8325,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:34
+-- Dump completed on 2016-12-10 20:21:44

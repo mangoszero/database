@@ -5,7 +5,7 @@ TRUNCATE TABLE `reference_loot_template`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -4605,7 +4605,8 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (34030,18815,0,1,1,1,0),
 (34030,18817,0,1,1,1,0),
 (34030,19137,0,1,1,1,0),
-(34030,19138,0,1,1,1,0);
+(34030,19138,0,1,1,1,0),
+(5759,20400,5.9,0,1,1,162);
 /*!40000 ALTER TABLE `reference_loot_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -4618,4 +4619,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:35
+-- Dump completed on 2016-12-10 20:21:45

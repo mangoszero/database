@@ -5,7 +5,7 @@ TRUNCATE TABLE `spell_script_target`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -514,7 +514,8 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffec
 (5249,1,14323,0),
 (16613,0,175795,0),
 (17652,1,11263,0),
-(29437,0,181288,0);
+(29437,0,181288,0),
+(14292,0,180433,0);
 /*!40000 ALTER TABLE `spell_script_target` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -527,4 +528,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:37
+-- Dump completed on 2016-12-10 20:21:48

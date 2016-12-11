@@ -5,7 +5,7 @@ TRUNCATE TABLE `game_event_gameobject`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -4422,19 +4422,19 @@ INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 (42094,2),
 (43045,12),
 (43046,12),
-(43049,12),
+(37879,12),
 (43053,12),
 (43054,12),
-(43056,12),
-(43057,12),
-(43061,12),
-(43062,12),
+(37870,12),
+(37887,24),
+(37886,24),
+(37878,24),
 (43063,12),
-(43073,12),
+(37877,24),
 (43078,12),
 (43079,12),
-(43080,12),
-(43081,12),
+(37876,24),
+(37875,24),
 (43232,7),
 (43233,7),
 (43234,7),
@@ -9659,7 +9659,17 @@ INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 (41970,2),
 (41971,2),
 (41972,2),
-(41973,2);
+(41973,2),
+(37880,12),
+(37881,12),
+(37867,12),
+(37868,12),
+(37869,12),
+(37871,12),
+(37872,12),
+(37873,12),
+(37874,12),
+(37885,12);
 /*!40000 ALTER TABLE `game_event_gameobject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -9672,4 +9682,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:26
+-- Dump completed on 2016-12-10 20:21:30

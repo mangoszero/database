@@ -5,7 +5,7 @@ TRUNCATE TABLE `creature_linking`;
 -- ---------------------------------------- 
 -- MySQL dump 10.13  Distrib 5.5.37, for Win32 (x86)
 --
--- Host:                Database: mangos0
+-- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
 -- Server version	5.6.25-log
 
@@ -655,7 +655,17 @@ INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`) VALUES
 (66990,66989,515),
 (66993,66992,515),
 (66994,66995,515),
-(14057,14056,643);
+(14057,14056,643),
+(36692,37385,643),
+(60816,37385,643),
+(26185,26213,515),
+(26186,26213,515),
+(26187,26213,515),
+(26207,26213,515),
+(26192,26233,515),
+(26193,26233,515),
+(26194,26233,515),
+(26195,26233,515);
 /*!40000 ALTER TABLE `creature_linking` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -668,4 +678,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-12  1:30:20
+-- Dump completed on 2016-12-10 20:21:21
