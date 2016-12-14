@@ -59,6 +59,13 @@ BEGIN
 
 
 -- Add items to mail loot
+DELETE
+FROM
+	`mail_loot_template`
+WHERE
+	`entry` IN (
+		102, 118, 122, 161, 108, 117
+	);
 INSERT INTO
 	`mail_loot_template`(`entry`, `item`, `ChanceOrQuestChance`, `mincountOrRef`, `maxcount`)
 VALUES
