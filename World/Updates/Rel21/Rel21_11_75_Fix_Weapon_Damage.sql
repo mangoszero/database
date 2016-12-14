@@ -72,23 +72,23 @@ UPDATE item_template SET dmg_min1 = '47' , dmg_max1 = '88' WHERE entry = '2825';
 UPDATE item_template SET dmg_min1 = '71' , dmg_max1 = '108' WHERE entry = '13040'; 
 UPDATE item_template SET dmg_min1 = '48' , dmg_max1 = '89' WHERE entry = '13146';
 -- Quillshooter
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_type2'= 3 WHERE 'entry'=10567;
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_type2`= 3 WHERE `entry`=10567;
 -- Dark Iron Rifle
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_type2'= 5 WHERE 'entry'=16004;
--- Verdant keeper's Aim
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_max2'= 4,'dmg_type2'= 3 WHERE 'entry'=17753;
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_type2`= 5 WHERE `entry`=16004;
+-- Verdant keeper`s Aim
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_max2`= 4,`dmg_type2`= 3 WHERE `entry`=17753;
 -- Shell Launcher Shotgun
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_type2'= 2 WHERE 'entry'=13146;
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_type2`= 2 WHERE `entry`=13146;
 -- Heartseeking Crossbow
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_type2'= 5 WHERE 'entry'=13040;
--- Galgann's Blaster
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_type2'= 2 WHERE 'entry'=9412;
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_type2`= 5 WHERE `entry`=13040;
+-- Galgann`s Blaster
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_type2`= 2 WHERE `entry`=9412;
 -- VenomStrike
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_type2'= 3 WHERE 'entry'=6469;
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_type2`= 3 WHERE `entry`=6469;
 -- Bow of Searing Arrows
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_type2'= 2 WHERE 'entry'=2825;
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_type2`= 2 WHERE `entry`=2825;
 -- Dwarven handcannon 
-UPDATE 'item_template' SET 'spellid_1'=0, 'spelltrigger_1'=0,'dmg_type2'= 2 WHERE 'entry'=2099;
+UPDATE `item_template` SET `spellid_1`=0, `spelltrigger_1`=0,`dmg_type2`= 2 WHERE `entry`=2099;
 
 
     
@@ -142,4 +142,3 @@ CALL update_mangos();
 
 -- Drop the procedure
 DROP PROCEDURE IF EXISTS `update_mangos`;
-
