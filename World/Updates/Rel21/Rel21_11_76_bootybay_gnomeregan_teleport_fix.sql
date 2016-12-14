@@ -27,12 +27,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '11'; 
-    SET @cOldContent = '74';
+    SET @cOldContent = '75';
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '11';
-    SET @cNewContent = '75';
+    SET @cNewContent = '76';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'bootybay_gnomeregan_teleport';
 
