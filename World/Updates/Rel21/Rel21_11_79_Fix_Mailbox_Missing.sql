@@ -4,7 +4,7 @@
 SET GLOBAL net_read_timeout=30;
 SET GLOBAL net_write_timeout=60;
 SET GLOBAL net_buffer_length=1000000; 
-hSET GLOBAL max_allowed_packet=1000000000;
+SET GLOBAL max_allowed_packet=1000000000;
 SET GLOBAL connect_timeout=10000000;
 
 -- --------------------------------------------------------------------------------
@@ -14,7 +14,7 @@ DROP PROCEDURE IF EXISTS `update_mangos`;
 
 DELIMITER $$
 
-hCREATE DEFINER=`root`@`localhost` PROCEDURE `update_mangos`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_mangos`()
 BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
@@ -33,7 +33,8 @@ BEGIN
     SET @cNewVersion = '21';
     SET @cNewStructure = '11';
     SET @cNewContent = '79';
-                            -- DESCRIPTION IS 30 Characters MAX    
+	
+                        -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Fix Mailbox Missing';
 
                         -- COMMENT is 150 Characters MAX
