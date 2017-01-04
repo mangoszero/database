@@ -1,8 +1,8 @@
 #!/bin/sh
 ##############################################################################
-# This utility assist you in setting up your mangos database.				 #
-# This is a port of InstallDatabases.bat written by Antz for Windows		 #
-#																			 #
+# This utility assist you in setting up your mangos database.                #
+# This is a port of InstallDatabases.bat written by Antz for Windows         #
+#                                                                            #
 ##############################################################################
 
 RELEASE="Rel21"
