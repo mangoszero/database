@@ -56,12 +56,6 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
-        INSERT INTO `db_version` VALUES (@cNewVersion, @cNewStructure, @cNewContent, @cNewDescription, @cNewComment);
-        SET @cNewResult := (SELECT description FROM db_version WHERE `version`=@cNewVersion AND `structure`=@cNewStructure AND `content`=@cNewContent);
-
-        -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
-        -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-        -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         DROP TABLE IF EXISTS `autobroadcast`;
 
         CREATE TABLE `autobroadcast` (
@@ -70,12 +64,13 @@ BEGIN
             `ratio` SMALLINT(6) UNSIGNED NOT NULL DEFAULT '0',
             PRIMARY KEY (`id`)
         )
-        ENGINE=InnoDB;
+        ENGINE=INNODB;
 
         INSERT INTO `autobroadcast` (`id`, `content`, `ratio`) VALUES (1, '|cff00ff00This is a sample of an automatic server message. You can use |cffffffffcolor tags |cff00ff00also|r', 1);
         INSERT INTO `autobroadcast` (`id`, `content`, `ratio`) VALUES (2, '|cff00ffffThis is a sample of an automatic server message. You can use |cffffffffcolor tags also|r', 1);
         INSERT INTO `autobroadcast` (`id`, `content`, `ratio`) VALUES (3, 'This is a sample of an automatic server message.', 3);
 
+        DELETE FROM `mangos_string` WHERE `entry` = 1700;
         INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`)
         VALUES (1700, '|cffff0000[Server Announce]:|r%s', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
