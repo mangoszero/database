@@ -37,6 +37,9 @@ set rdborig=realmd
 
 rem -- Don't change past this point --
 
+rem -- first check that the repo has been cloned correctly
+if not exist Realm goto missingRecursive:
+
 :main
 color 0e
 CLS
@@ -44,7 +47,7 @@ echo.
 echo     __  __      _  _  ___  ___  ___      
 echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.07
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.08
 echo.
 echo _____________________________________________________________
 echo.
@@ -493,6 +496,33 @@ echo _____________________________________________________________
 echo.
 for %%i in (Character\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < %%i
 goto done1
+
+:missingRecursive
+color 00
+CLS
+echo.
+echo     __  __      _  _  ___  ___  ___      
+echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
+echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader
+echo.
+echo _____________________________________________________________
+echo.
+echo          Website / Forum / Wiki: https://getmangos.eu         
+echo _____________________________________________________________
+echo.
+echo =============================================================
+ECHO === ERROR = ERROR = ERROR = ERROR = ERROR = ERROR = ERROR ===
+echo =============================================================
+echo.
+
+echo    The repository was cloned without the --recursive flag
+echo.
+echo =============================================================
+ECHO === ERROR = ERROR = ERROR = ERROR = ERROR = ERROR = ERROR ===
+echo =============================================================
+echo.
+goto finish
 
 :done
 if %CDBUpdate% == YES goto patchCharacter:
