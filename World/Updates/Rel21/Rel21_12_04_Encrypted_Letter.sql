@@ -27,12 +27,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '12'; 
-    SET @cOldContent = '1';
+    SET @cOldContent = '3';
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '12';
-    SET @cNewContent = '2';
+    SET @cNewContent = '4';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Encrypted_Letter';
 
