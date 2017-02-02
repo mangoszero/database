@@ -28,12 +28,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '14'; 
-    SET @cOldContent = '002';
+    SET @cOldContent = '003';
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '14';
-    SET @cNewContent = '003';
+    SET @cNewContent = '004';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Add Tribut-Run-Buffs';
 
