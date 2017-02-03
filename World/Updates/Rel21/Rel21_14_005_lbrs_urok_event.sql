@@ -75,15 +75,14 @@ UPDATE gameobject SET position_y = -395.729 WHERE guid = 99791;
 UPDATE creature_template SET FactionAlliance = 40, FactionHorde = 40, MovementType = 2, ExtraFlags = 0 WHERE entry IN (10584,10601,10602);
 DELETE FROM creature_movement_template WHERE entry IN (10584,10601,10602);
 INSERT INTO creature_movement_template (entry, point, position_x, position_y, position_z, waittime, script_id, orientation, model1, model2) VALUES
-(10584,1,-18.9341,-389.926,48.6219,1000,1058401,255,0,0),
-(10601,1,-18.9341,-389.926,48.6219,1000,1060101,255,0,0),
-(10602,1,-18.9341,-389.926,48.6219,1000,1060201,255,0,0);
-DELETE FROM dbscripts_on_creature_movement WHERE id IN (1058401,1060101,1060201);
-INSERT INTO dbscripts_on_creature_movement (id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
-(1058401,0,20,1,10,0,0,8,0,0,0,0,0,0,0,0,'movement chenged to 1:random'),
-(1060101,0,20,1,10,0,0,8,0,0,0,0,0,0,0,0,'movement chenged to 1:random'),
-(1060201,0,20,1,10,0,0,8,0,0,0,0,0,0,0,0,'movement chenged to 1:random');
-DELETE FROM db_scripts WHERE id = 4845;
+(10584,1,-18.9341,-389.926,48.6219,1000,10584,255,0,0),
+(10601,1,-18.9341,-389.926,48.6219,1000,10601,255,0,0),
+(10602,1,-18.9341,-389.926,48.6219,1000,10602,255,0,0);
+DELETE FROM db_scripts WHERE id IN (10584,10601,10602);
+INSERT INTO db_scripts (script_guid, script_type, id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, X, Y, z, o, comments) VALUES
+(10584,3,10584,0,20,1,10,0,0,8,0,0,0,0,0,0,0,0,'movement chenged to 1:random'),
+(10601,3,10601,0,20,1,10,0,0,8,0,0,0,0,0,0,0,0,'movement chenged to 1:random'),
+(10602,3,10602,0,20,1,10,0,0,8,0,0,0,0,0,0,0,0,'movement chenged to 1:random');
 INSERT INTO db_scripts (script_type, id, delay, command, datalong, datalong2, buddy_entry, search_radius, data_flags, dataint, dataint2, dataint3, dataint4, x, y, z, o, comments) VALUES
 (8,4845,0,9,66210,7200,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
 (8,4845,0,9,66197,65,0,0,0,0,0,0,0,0,0,0,0,'respawn gobject'),
