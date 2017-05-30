@@ -6609,7 +6609,7 @@ INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, 
 (2601,5504,0.116455,0,1,1,0),
 (2602,1708,100,0,2,5,0),
 (3743,5066,100,0,1,1,0),
-(2620,5058,-100,0,2,2,0),
+(2620,5058,-100,0,1,3,0),
 (2626,774,1,1,1,1,0),
 (2626,818,1,1,1,1,0),
 (2626,1210,1,1,1,1,0),
@@ -15570,4 +15570,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:33
+-- Dump completed on 2017-05-30 21:12:57

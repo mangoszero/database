@@ -321,7 +321,7 @@ CREATE TABLE `creature_equip_template` (
   `equipentry2` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
   `equipentry3` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`),
-  UNIQUE KEY `unique_template` (`equipentry1`,`equipentry2`,`equipentry3`)
+  UNIQUE KEY `unique_template` (`equipentry1`,`equipentry2`,`equipentry3`,`entry`)
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8 COMMENT='Creature System (Equipment)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -577,6 +577,7 @@ CREATE TABLE `creature_template` (
   `KillCredit1` INT(11) UNSIGNED NOT NULL DEFAULT '0',
   `KillCredit2` INT(11) UNSIGNED NOT NULL DEFAULT '0',
   `MechanicImmuneMask` INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `SchoolImmuneMask` INT(10) UNSIGNED NOT NULL DEFAULT '0',
   `ResistanceHoly` SMALLINT(5) NOT NULL DEFAULT '0',
   `ResistanceFire` SMALLINT(5) NOT NULL DEFAULT '0',
   `ResistanceNature` SMALLINT(5) NOT NULL DEFAULT '0',

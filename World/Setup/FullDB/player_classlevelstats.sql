@@ -507,7 +507,7 @@ INSERT INTO `player_classlevelstats` (`class`, `level`, `basehp`, `basemana`) VA
 (9,58,1319,1331),
 (9,59,1366,1352),
 (9,60,1414,1373),
-(11,1,33,17),
+(11,1,33,50),
 (11,2,41,57),
 (11,3,58,65),
 (11,4,65,74),
@@ -579,4 +579,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:41
+-- Dump completed on 2017-05-30 21:13:02

@@ -202,9 +202,10 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (14237,1206,0,'Oozeworm (14237)'),
 (10559,1199,0,'Lady Vespia (10559)'),
 (13602,1700,0,'Abominable Greench (13602)'),
-(7015,1214,0,'RARE Flagglemurk the Cruel - 7015'),
+(2186,1214,0,'Carnivous the Breaker - 2186'),
 (10196,1215,0,'General Cobaltann (10196)'),
-(14479,25492,0,'Twilight Lord Everun (14479)');
+(14479,25492,0,'Twilight Lord Everun (14479)'),
+(7017,1215,0,'Lord Sinslayer - 7017');
 /*!40000 ALTER TABLE `pool_creature_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -217,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:42
+-- Dump completed on 2017-05-30 21:13:03

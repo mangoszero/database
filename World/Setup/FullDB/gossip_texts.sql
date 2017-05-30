@@ -50,7 +50,8 @@ INSERT INTO `gossip_texts` (`entry`, `content_default`, `content_loc1`, `content
 (-3469004,'Vaelastrasz, no!!!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'vaelastrasz GOSSIP_ITEM_VAEL_2'),
 (-3509000,'Let\'s find out.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'andorov GOSSIP_ITEM_START'),
 (-3509001,'Let\'s see what you have.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'andorov GOSSIP_ITEM_TRADE'),
-(-3230003,'Why don\'t you and Rocknot go find somewhere private...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'nagmara GOSSIP_ITEM_NAGMARA');
+(-3230003,'Why don\'t you and Rocknot go find somewhere private...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'nagmara GOSSIP_ITEM_NAGMARA'),
+(-3000111,'Turn the key to start the machine.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'threshwackonator  GOSSIP_ITEM_TURN_KEY');
 /*!40000 ALTER TABLE `gossip_texts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -63,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:34
+-- Dump completed on 2017-05-30 21:12:58

@@ -60,8 +60,8 @@ INSERT INTO `game_event_quest` (`quest`, `event`) VALUES
 (8795,22),
 (8799,2),
 (8803,2),
-(8827,21),
-(8828,21),
+(8827,2),
+(8828,2),
 (8860,6),
 (8861,6),
 (8980,8),
@@ -93,4 +93,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:31
+-- Dump completed on 2017-05-30 21:12:56

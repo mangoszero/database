@@ -2196,7 +2196,11 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (1825,0,0,'Continue with your story please.',1,1,1824,0,0,0,0,'',0),
 (1824,0,0,'Indeed.',1,1,1823,0,0,0,0,'',0),
 (1823,0,0,'The door is open, Kharan. You are a free man.',1,1,-1,0,0,0,0,'',0),
-(6535,0,0,'Smear the ash on my face like war paint!',1,0,-1,0,653501,0,0,NULL,1370);
+(6535,0,0,'Smear the ash on my face like war paint!',1,0,-1,0,653501,0,0,NULL,1370),
+(1628,0,0,'I lost my Goblin Transponder, could I have another one?',1,1,-1,0,2646,0,0,'',2035),
+(51002,0,0,'Yeah, you\'re a real brainiac. Just how smart do you think you are, Slip\'kik?',1,1,14323,0,0,0,0,'',0),
+(51003,0,0,'So, now that I\'m the king... what have you got for me?!',1,1,14321,0,0,0,0,'',0),
+(51004,0,0,'Call me \"Boss\".  What have you got for me!',1,1,14326,0,0,0,0,'',0);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2209,4 +2213,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:34
+-- Dump completed on 2017-05-30 21:12:58

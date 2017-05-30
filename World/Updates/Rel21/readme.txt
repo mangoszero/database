@@ -1,6 +1,6 @@
 If your database is a version prior to:
 
-Rel21_11_73 - script_binding
+Rel21_14_014 - script_binding
 
 You need to run the appriopriate updates in folder:
 

@@ -55,7 +55,7 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000043,'%s begins a spell of summoning...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
 (2000000044,'It is done...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000045,'There\'s nothing like some scalding mornbrew on a chilly Dun Morogh day to get things started right!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
-(2000000046,'Oooooo hot hot hot! If that won\'t put spring IN your step, I don\'t know what will!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
+(2000000046,'Oooooo hot hot hot! If that won\'t put spring in your step, I don\'t know what will!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000047,'Ribbit! No!! This cannot... ribbit... be! You have duped me with... ribbit... your foul trickery! Ribbit!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000048,'Now let us place this rare earth in my planter...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
 (2000000049,'Thank you again, $N. This rare earth will be very helpful in my experiments.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL),
@@ -588,4 +588,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:27
+-- Dump completed on 2017-05-30 21:12:54

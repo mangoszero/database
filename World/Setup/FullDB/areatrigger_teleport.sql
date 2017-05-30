@@ -126,7 +126,9 @@ INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position
 (4010,'Ahn\'Qiraj Temple - Entering',531,-8221.35,2014.34,129.071,0.872665,2014),
 (4012,'Ahn\'Qiraj Temple - Exiting',1,-8239.01,1993.25,129.071,4.01426,0),
 (4055,'Naxxramas (Exit)',533,3005.87,-3435.01,293.882,0,0),
-(4156,'Naxxramas (Entrance)',533,3498.28,-5349.9,144.968,1.31324,0);
+(4156,'Naxxramas (Entrance)',533,3498.28,-5349.9,144.968,1.31324,0),
+(1103,'Booty Bay to Gnomeregan',0,-5100.92,754.567,260.55,0,2034),
+(1104,'Gnomeregan to Booty Bay',0,-14461.9,458.295,15.1639,0,2034);
 /*!40000 ALTER TABLE `areatrigger_teleport` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -139,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:15
+-- Dump completed on 2017-05-30 21:12:48
