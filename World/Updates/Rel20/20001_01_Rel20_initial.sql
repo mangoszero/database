@@ -1,1 +1,0 @@
-ALTER TABLE db_version CHANGE COLUMN required_19003_02_mangos_command required_20001_Rel20_initial BIT;

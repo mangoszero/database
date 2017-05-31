@@ -1,1 +1,0 @@
-UPDATE creature_template SET ScriptName="npc_onyxian_warder" WHERE Entry="12129";
