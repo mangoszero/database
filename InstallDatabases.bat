@@ -21,10 +21,11 @@ set createcharDB=YES
 set createworldDB=YES
 set createrealmDB=YES
 set createMangosUser=YES
-
+set updatesOnly=NO
 set loadcharDB=YES
 set loadworldDB=YES
 set loadrealmDB=YES
+set defaultsused=NO 
 
 set CDBUpdate=YES
 set WDBUpdate=YES
@@ -49,7 +50,7 @@ echo.
 echo     __  __      _  _  ___  ___  ___      
 echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
 echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.08
+echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.09
 echo.
 echo _____________________________________________________________
 echo.
@@ -68,7 +69,9 @@ echo.
 echo        Realm Database :   T   - Toggle Actually Create Realm DB (%createrealmDB%)     
 echo                           R   - Toggle Create Realm Db Structure (%loadrealmDB%)
 echo                           Y   - Apply Realm DB updates (%RDBUpdate%)
-echo                           L   - Toggle Add RealmList Entry (%addrealmentry%)
+echo                           L   - Toggle Add Default RealmList Entry for Core (%addrealmentry%)
+echo.
+echo                           O   - Toggle Only Updates On (%updatesOnly%)
 echo.
 echo                           P   - Toggle Create Mangos User (%createMangosUser%)
 echo.
@@ -106,6 +109,8 @@ if %activity% == L goto AddRealmDB:
 if %activity% == l goto AddRealmDB:
 if %activity% == P goto ToggleCreateMangosUser:
 if %activity% == p goto ToggleCreateMangosUser:
+if %activity% == O goto ToggleUpdatesOnly:
+if %activity% == o goto ToggleUpdatesOnly:
 
 if %activity% == N goto Step1:
 if %activity% == n goto Step1:
@@ -275,6 +280,45 @@ goto main:
 set createMangosUser=NO
 goto main:
 
+:ToggleUpdatesOnly
+if %updatesOnly% == YES goto ToggleUpdatesOnlyNo
+if %updatesOnly% == NO goto ToggleUpdatesOnlyYes
+goto main
+
+:ToggleUpdatesOnlyNo
+set updatesOnly=NO
+set createcharDB=YES
+set createworldDB=YES
+set createrealmDB=YES
+set createMangosUser=YES
+set loadcharDB=YES
+set loadworldDB=YES
+set loadrealmDB=YES
+
+set CDBUpdate=YES
+set WDBUpdate=YES
+set RDBUpdate=YES
+
+set addrealmentry=YES
+goto main:
+
+:ToggleUpdatesOnlyYes
+set updatesOnly=YES
+set createcharDB=NO
+set createworldDB=NO
+set createrealmDB=NO
+set createMangosUser=NO
+set loadcharDB=NO
+set loadworldDB=NO
+set loadrealmDB=NO
+
+set CDBUpdate=YES
+set WDBUpdate=YES
+set RDBUpdate=YES
+
+set addrealmentry=NO
+goto main:
+
 :Step1
 if not exist %mysql%\mysql.exe then goto patherror
 color 08
@@ -309,6 +353,7 @@ if %port%. == . set port=3306
 set showChar=0
 if %createcharDB% == YES set showChar=1
 if %loadcharDB% == YES set showChar=1
+if %CDBUpdate% == YES set showChar=1
 
 if %showChar% == 1 set /p cdb=What is your Character database name?  [%cdb%] : 
 if %cdb%. == . set cdb=%cdborig%
@@ -316,6 +361,7 @@ if %cdb%. == . set cdb=%cdborig%
 set showWorld=0
 if %createworldDB% == YES set showWorld=1
 if %loadworldDB% == YES set showWorld=1
+if %WDBUpdate% == YES set showWorld=1
 if %showWorld% == 1 set /p wdb=What is your World database name?         [%wdb%] : 
 if %wdb%. == . set wdb=%wdborig%
 
@@ -323,6 +369,7 @@ set showRealm=0
 if %createrealmDB% == YES set showRealm=1
 if %loadrealmDB% == YES set showRealm=1
 if %addrealmentry% == YES set showRealm=1
+if %CDBUpdate% == YES set showRealm=1
 
 if %showRealm% == 1 set /p rdb=What is your Realm database name?          [%rdb%] : 
 if %rdb%. == . set rdb=%rdborig%
@@ -414,7 +461,6 @@ set /p newuser=New MySQL user name?                       [%newuser%] :
 if %newuser%. == . set newuser=mangos
 set /p newpass=New MySQL user password?                   [%newpass%] : 
 
-set defaultsused=NO 
 if %newpass% == mangos set defaultsused=YES
 if %newuser% == mangos set defaultsused=YES
 if %defaultsused% == YES goto done:
@@ -571,7 +617,7 @@ echo =============================================================
 ECHO === ERROR = ERROR = ERROR = ERROR = ERROR = ERROR = ERROR ===
 echo =============================================================
 echo.
-goto finish
+goto finish:
 
 :defaultpasswordused
 echo.
@@ -586,7 +632,7 @@ echo =============================================================
 ECHO === ERROR = ERROR = ERROR = ERROR = ERROR = ERROR = ERROR ===
 echo =============================================================
 echo.
-goto finish
+goto finish:
 
 :done
 if %CDBUpdate% == YES goto patchCharacter:
@@ -607,11 +653,10 @@ echo.
 echo  Database Creation and Load complete
 echo _____________________________________________________________
 echo.
-
 REM Warn about not setting up the user
 if %defaultsused% == YES goto defaultpasswordused:
 
 :finish
-echo Done :)
+echo Script is complete, Please review the messages above to ensure no errors occurred
 echo.
 pause
