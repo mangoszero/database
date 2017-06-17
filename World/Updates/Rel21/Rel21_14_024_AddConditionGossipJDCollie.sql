@@ -68,6 +68,7 @@ UPDATE
 SET
 	`condition_id` = 463
 WHERE
+	`entry` = 2184 AND
 	`text_id` = 2833;
 UPDATE
 	`gossip_menu_option`
