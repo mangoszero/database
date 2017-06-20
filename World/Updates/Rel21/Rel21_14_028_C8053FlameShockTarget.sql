@@ -27,12 +27,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '14'; 
-    SET @cOldContent = '028';
+    SET @cOldContent = '027';
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '14';
-    SET @cNewContent = '029';
+    SET @cNewContent = '028';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'C8053FlameShockTarget';
 
