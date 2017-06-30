@@ -58,7 +58,6 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 -- Insert the correct spell chain for Seal of Righteousness
-DELETE FROM `spell_chain` WHERE `spell_id` IN (21084);
 INSERT INTO
 	`spell_chain` (`spell_id`, `prev_spell`, `first_spell`, `rank`, `req_spell`)
 VALUES
