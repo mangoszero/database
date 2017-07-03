@@ -58,11 +58,11 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 -- update M0 Creature_template from M1
-UPDATE mangos0.creature_template SET subname='Crocilisk Trainer' WHERE entry=2876;
+UPDATE creature_template SET subname='Crocilisk Trainer' WHERE entry=2876;
 
 -- update M0 from M2
-UPDATE mangos0.creature_template SET subname='Outland Armor Quartermaster' WHERE entry=12778;
-UPDATE mangos0.creature_template SET subname='Outland Armor Quartermaster' WHERE entry=12788;
+UPDATE creature_template SET subname='Outland Armor Quartermaster' WHERE entry=12778;
+UPDATE creature_template SET subname='Outland Armor Quartermaster' WHERE entry=12788;
 
 -- update m0 from M3
 UPDATE creature_template SET subname='The Den Mother' WHERE entry=534;
