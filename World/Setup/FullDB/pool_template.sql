@@ -1083,7 +1083,7 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (1198,4,'Whip Lasher 2x-4x, The Shrine of Eldretharr, Group 3'),
 (25467,1,'BRD - Molten War Golem / Panzor the Invincible'),
 (1199,1,'Lady Vespia (10559)'),
-(1701,1,'Dire Maul Arena - Rare Elites'),
+(30001,1,'Dire Maul Arena - Rare Elites'),
 (1214,1,'Carnivous the Breaker - 2186'),
 (1215,1,'Lord Sinslayer - 7017'),
 (15007,2,'Dark Keeper Nameplate'),
@@ -1966,7 +1966,22 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (8184,2,'Golden Sansam - Azshara - subzone 5'),
 (8177,3,'Golden Sansam - Azshara - subzone 4'),
 (8170,1,'Golden Sansam - Azshara - subzone 3'),
-(8164,1,'Golden Sansam - Azshara - subzone 1');
+(8164,1,'Golden Sansam - Azshara - subzone 1'),
+(1701,1,'Orgrimmar Harvest Festival Food 1'),
+(1702,1,'Orgrimmar Harvest Festival Food 2'),
+(1703,1,'Orgrimmar Harvest Festival Food 3'),
+(1704,1,'Orgrimmar Harvest Festival Food 4'),
+(1705,1,'Orgrimmar Harvest Festival Food 5'),
+(1706,1,'Orgrimmar Harvest Festival Food 6'),
+(1707,1,'Orgrimmar Harvest Festival Food 7'),
+(1708,1,'Orgrimmar Harvest Festival Food 8'),
+(1709,1,'Ironforge Harvest Festival Food 1'),
+(1710,1,'Ironforge Harvest Festival Food 2'),
+(1711,1,'Ironforge Harvest Festival Food 3'),
+(1712,1,'Ironforge Harvest Festival Food 4'),
+(1713,1,'Ironforge Harvest Festival Food 5'),
+(1714,1,'Ironforge Harvest Festival Food 6'),
+(1715,1,'Ironforge Harvest Festival Food 7');
 /*!40000 ALTER TABLE `pool_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1979,4 +1994,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30 21:13:04
+-- Dump completed on 2017-09-06 20:16:12

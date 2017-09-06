@@ -13178,7 +13178,52 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 (19242,8835,0,'Golden Sansam - UnGoro Crater - subzone 4'),
 (19244,8835,0,'Golden Sansam - UnGoro Crater - subzone 4'),
 (86385,8835,0,'Golden Sansam - UnGoro Crater - subzone 4'),
-(87488,8835,0,'Golden Sansam - UnGoro Crater - subzone 4');
+(87488,8835,0,'Golden Sansam - UnGoro Crater - subzone 4'),
+(31388,1709,33.33,'Ironforge Harvest Festival Boar 1'),
+(31967,1709,33.33,'Ironforge Harvest Festival Fish 1'),
+(29870,1709,33.34,'Ironforge Harvest Festival Fruit 1'),
+(31968,1710,33.33,'Ironforge Harvest Festival Boar 2'),
+(31965,1710,33.33,'Ironforge Harvest Festival Fish 2'),
+(31389,1710,33.34,'Ironforge Harvest Festival Fruit 2'),
+(31392,1711,33.33,'Ironforge Harvest Festival Boar 3'),
+(31418,1711,33.33,'Ironforge Harvest Festival Fish 3'),
+(31393,1711,33.34,'Ironforge Harvest Festival Fruit 3'),
+(31391,1712,33.33,'Ironforge Harvest Festival Boar 4'),
+(31395,1712,33.33,'Ironforge Harvest Festival Fish 4'),
+(30875,1712,33.34,'Ironforge Harvest Festival Fruit 4'),
+(31415,1713,33.33,'Ironforge Harvest Festival Boar 5'),
+(29868,1713,33.33,'Ironforge Harvest Festival Fish 5'),
+(31396,1713,33.34,'Ironforge Harvest Festival Fruit 5'),
+(31416,1714,33.33,'Ironforge Harvest Festival Boar 6'),
+(30362,1714,33.33,'Ironforge Harvest Festival Fish 6'),
+(31969,1714,33.34,'Ironforge Harvest Festival Fruit 6'),
+(31417,1715,33.33,'Ironforge Harvest Festival Boar 7'),
+(31419,1715,33.33,'Ironforge Harvest Festival Fish 7'),
+(30364,1715,33.34,'Ironforge Harvest Festival Fruit 7'),
+(35784,1701,33.33,'Orgrimmar Harvest Festival Boar 1'),
+(34189,1701,33.33,'Orgrimmar Harvest Festival Fish 1'),
+(35777,1701,33.34,'Orgrimmar Harvest Festival Fruit 1'),
+(35780,1702,33.33,'Orgrimmar Harvest Festival Boar 2'),
+(34190,1702,33.33,'Orgrimmar Harvest Festival Fish 2'),
+(35774,1702,33.34,'Orgrimmar Harvest Festival Fruit 2'),
+(35778,1703,33.33,'Orgrimmar Harvest Festival Boar 3'),
+(34191,1703,33.33,'Orgrimmar Harvest Festival Fish 3'),
+(35786,1703,33.34,'Orgrimmar Harvest Festival Fruit 3'),
+(35776,1704,33.33,'Orgrimmar Harvest Festival Boar 4'),
+(34192,1704,33.33,'Orgrimmar Harvest Festival Fish 4'),
+(35785,1704,33.34,'Orgrimmar Harvest Festival Fruit 4'),
+(35775,1705,33.33,'Orgrimmar Harvest Festival Boar 5'),
+(35779,1705,33.33,'Orgrimmar Harvest Festival Fish 5'),
+(35781,1705,33.34,'Orgrimmar Harvest Festival Fruit 5'),
+(34047,1706,33.33,'Orgrimmar Harvest Festival Boar 6'),
+(35783,1706,33.33,'Orgrimmar Harvest Festival Fish 6'),
+(34193,1706,33.34,'Orgrimmar Harvest Festival Fruit 6'),
+(35787,1707,33.33,'Orgrimmar Harvest Festival Boar 7'),
+(34046,1707,33.33,'Orgrimmar Harvest Festival Fish 7'),
+(34194,1707,33.34,'Orgrimmar Harvest Festival Fruit 7'),
+(34188,1708,33.33,'Orgrimmar Harvest Festival Boar 8'),
+(34048,1708,33.33,'Orgrimmar Harvest Festival Fish 8'),
+(35788,1708,33.34,'Orgrimmar Harvest Festival Fruit 8');
 /*!40000 ALTER TABLE `pool_gameobject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13191,4 +13236,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30 21:13:03
+-- Dump completed on 2017-09-06 20:16:12

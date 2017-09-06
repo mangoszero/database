@@ -74,10 +74,10 @@ INSERT INTO `spell_elixir` (`entry`, `mask`) VALUES
 (17538,0),
 (17539,0),
 (17624,0),
-(17626,0),
-(17627,0),
-(17628,0),
-(17629,0),
+(17626,3),
+(17627,3),
+(17628,3),
+(17629,3),
 (21920,0),
 (24361,0),
 (24363,0),
@@ -99,4 +99,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:47
+-- Dump completed on 2017-09-06 20:16:14

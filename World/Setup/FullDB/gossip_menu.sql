@@ -1056,7 +1056,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (2061,2713,0,0),
 (2063,2726,0,0),
 (2063,2809,0,0),
-(2184,2833,0,0),
+(2184,2833,0,7),
 (2187,2820,0,0),
 (2189,2822,0,0),
 (2201,2835,0,0),
@@ -3380,7 +3380,17 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (6537,7740,0,0),
 (51004,60000,0,0),
 (51003,60001,0,0),
-(51002,60002,0,0);
+(51002,60002,0,0),
+(51005,3380,0,0),
+(51006,2834,0,0),
+(51007,2836,0,0),
+(51008,2837,0,0),
+(51009,3093,0,0),
+(50001,3334,0,0),
+(50002,3214,0,0),
+(6088,7242,0,0),
+(2704,3382,0,0),
+(2705,3383,0,0);
 /*!40000 ALTER TABLE `gossip_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -3393,4 +3403,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30 21:12:58
+-- Dump completed on 2017-09-06 20:16:06

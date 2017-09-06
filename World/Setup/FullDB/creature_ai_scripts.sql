@@ -4438,7 +4438,6 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (278403,2784,0,0,100,1,12000,15000,15000,20000,11,20685,1,0,0,0,0,0,0,0,0,0,'King Magni Bronzebeard - Cast Storm Bolt'),
 (278402,2784,0,0,100,1,8000,10000,20000,30000,11,20686,0,0,0,0,0,0,0,0,0,0,'King Magni Bronzebeard - Cast Knock Away'),
 (278401,2784,0,0,100,1,5000,7000,25000,30000,11,19135,0,0,0,0,0,0,0,0,0,0,'King Magni Bronzebeard - Cast Avatar'),
-(384401,3844,11,0,100,0,0,0,0,0,11,6276,0,1,0,0,0,0,0,0,0,0,'Healing Ward IV - Cast Healing Ward IV Passive on Spawn'),
 (384601,3846,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Talen - Flee at 15% HP'),
 (384701,3847,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Orendil Broadleaf - Flee at 15% HP'),
 (384801,3848,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Kayneth Stillwind - Flee at 15% HP'),
@@ -4509,7 +4508,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (391701,3917,0,0,100,1,8100,10400,15500,18500,11,9672,1,0,0,0,0,0,0,0,0,0,'Befouled Water Elemental - Cast Frostbolt'),
 (391702,3917,0,0,100,1,34200,36100,17100,38600,11,6873,1,1,0,0,0,0,0,0,0,0,'Befouled Water Elemental - Cast Foul Chill'),
 (391901,3919,9,0,100,1,0,5,33700,77100,11,6909,1,32,0,0,0,0,0,0,0,0,'Withered Ancient - Cast Curse of Thorns'),
-(392001,3920,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Anilia - Flee at 15% HP'),
+(639101,6391,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Holdout Warrior: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
 (392101,3921,11,0,100,0,0,0,0,0,11,6813,0,0,0,0,0,0,0,0,0,0,'Thistlefur Ursa - Cast Coat of Thistlefur on Spawn'),
 (392102,3921,1,0,100,0,3000,3000,0,0,11,7165,0,0,0,0,0,0,0,0,0,0,'Thistlefur Ursa - Cast Battle Stance on Spawn'),
 (392103,3921,9,0,100,1,0,5,23900,38400,11,25712,1,1,0,0,0,0,0,0,0,0,'Thistlefur Ursa - Cast Heroic Strike'),
@@ -5580,7 +5579,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (454309,4543,3,3,100,1,100,15,1000,1000,22,1,0,0,0,0,0,0,0,0,0,0,'Bloodmage Thalnos - Set Phase 1 when Mana is above 15% (Phase 2)'),
 (454310,4543,0,0,100,1,10600,16800,11300,23200,11,12470,0,1,0,0,0,0,0,0,0,0,'Bloodmage Thalnos - Cast Fire Nova'),
 (454311,4543,0,0,100,1,13100,21400,38200,57700,11,8814,1,0,0,0,0,0,0,0,0,0,'Bloodmage Thalnos - Cast Flame Spike'),
-(454312,4543,0,0,100,1,9700,24100,8400,15700,11,8053,0,1,0,0,0,0,0,0,0,0,'Bloodmage Thalnos - Cast Flame Shock'),
+(454312,4543,0,0,100,1,9700,24100,8400,15700,11,8053,1,1,0,0,0,0,0,0,0,0,'Bloodmage Thalnos - Cast Flame Shock'),
 (454313,4543,5,0,100,1,0,0,0,0,1,-1204,0,0,0,0,0,0,0,0,0,0,'Bloodmage Thalnos - Yell on Player Kill'),
 (454314,4543,2,0,100,0,50,0,0,0,1,-1203,0,0,0,0,0,0,0,0,0,0,'Bloodmage Thalnos - Yell at 50% HP'),
 (454315,4543,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Bloodmage Thalnos - Set Phase to 0 on Evade'),
@@ -7538,10 +7537,8 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (638001,6380,9,0,100,1,0,20,8000,12000,11,12553,1,0,0,0,0,0,0,0,0,0,'Thunderhead Consort - Cast Shock'),
 (638002,6380,0,0,100,1,3000,9000,9000,13000,11,17157,4,1,0,0,0,0,0,0,0,0,'Thunderhead Consort - Cast Lightning Breath'),
 (638901,6389,10,0,100,0,0,15,0,0,12,15138,0,600000,0,0,0,0,0,0,0,0,'Deathguard Podrig - Summon Silverpine Elite on Hostile LOS'),
-(639101,6391,9,0,100,1,0,5,7000,10000,11,11976,1,0,0,0,0,0,0,0,0,0,'Holdout Warrior - Cast Strike'),
-(639102,6391,13,0,100,1,11000,15000,0,0,11,12555,1,1,0,0,0,0,0,0,0,0,'Holdout Warrior - Cast Pummel on Target Spell Casting'),
-(639103,6391,8,0,100,0,9798,-1,0,0,1,-31,0,0,0,0,0,0,0,0,0,0,'Holdout Warrior - Emote on Radiation Spellhit'),
-(639104,6391,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Holdout Warrior - Flee at 15% HP'),
+(590801,5908,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Grunt Dogran: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
+(451001,4510,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Heralath Fallowbrook: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
 (639201,6392,1,0,100,1,20000,35000,30000,50000,11,22167,0,0,0,0,0,0,0,0,0,0,'Holdout Medic - Cast Heal OOC'),
 (639202,6392,1,0,100,1,1000,1000,1800000,1800000,11,13864,0,1,0,0,0,0,0,0,0,0,'Holdout Medic - Cast Power Word: Fortitude on Spawn'),
 (639203,6392,14,0,100,1,1000,40,12000,16000,11,22168,6,1,0,0,0,0,0,0,0,0,'Holdout Medic - Cast Renew on Friendlies'),
@@ -7590,7 +7587,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (651201,6512,11,0,100,0,0,0,0,0,11,14111,0,0,0,0,0,0,0,0,0,0,'Bloodpetal Trapper - Cast Bloodpetal Poison'),
 (651202,6512,0,0,100,1,6000,6000,18000,23000,11,11922,1,0,0,0,0,0,0,0,0,0,'Bloodpetal Trapper - Cast Entangling Roots'),
 (651301,6513,2,0,100,0,20,0,0,0,11,8599,0,0,1,-46,0,0,0,0,0,0,'Un\'Goro Stomper - Cast Enrage at 20% HP'),
-(651601,6516,0,0,100,1,5000,5000,9000,15000,11,12553,1,0,0,0,0,0,0,0,0,0,'Un\'Goro Thunderer - Cast Shock'),
+(392001,3920,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Anilia: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
 (651701,6517,11,0,100,0,0,0,0,0,11,14178,0,1,0,0,0,0,0,0,0,0,'Tar Beast - Cast Sticky Tar on Spawn'),
 (651801,6518,11,0,100,0,0,0,0,0,11,14178,0,1,0,0,0,0,0,0,0,0,'Tar Lurker - Cast Sticky Tar on Spawn'),
 (651802,6518,0,0,100,1,10000,10000,18000,23000,11,7279,0,0,0,0,0,0,0,0,0,0,'Tar Lurker - Cast Black Sludge'),
@@ -8728,10 +8725,10 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (828211,8282,2,0,100,1,50,0,50000,70000,11,11974,0,1,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Cast Power Word: Shield at 50% HP'),
 (828212,8282,2,0,100,0,15,0,0,0,22,3,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase 3 at 15% HP'),
 (828213,8282,2,7,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Highlord Mastrogonde - Start Combat Movement and Flee at 15% HP (Phase 3)'),
-(828214,8282,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase to 0 on Evade');
-INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES 
+(828214,8282,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase to 0 on Evade'),
 (828301,8283,1,0,100,0,0,0,0,0,21,0,0,0,20,0,0,0,22,1,0,0,'Slave Master Blackheart - Prevent Combat Movement and Prevent Melee and Set Phase 1 on Spawn'),
-(828302,8283,9,5,100,1,5,30,2300,3900,11,6660,1,0,40,2,0,0,0,0,0,0,'Slave Master Blackheart - Cast Shoot and Set Ranged Weapon Model (Phase 1)'),
+(828302,8283,9,5,100,1,5,30,2300,3900,11,6660,1,0,40,2,0,0,0,0,0,0,'Slave Master Blackheart - Cast Shoot and Set Ranged Weapon Model (Phase 1)');
+INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES 
 (828303,8283,9,5,100,1,30,80,1000,1000,21,1,1,0,20,1,0,0,0,0,0,0,'Slave Master Blackheart - Start Combat Movement and Start Melee at 30 Yards (Phase 1)'),
 (828304,8283,9,5,100,1,0,10,1000,1000,21,1,0,0,40,1,0,0,20,1,0,0,'Slave Master Blackheart - Start Combat Movement and Set Melee Weapon Model and Start Melee at 10 Yards (Phase 1)'),
 (828305,8283,9,5,100,1,11,25,1000,1000,21,0,1,0,20,0,0,0,0,0,0,0,'Slave Master Blackheart - Prevent Combat Movement and Prevent Melee at 25 Yards (Phase 1)'),
@@ -11686,7 +11683,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1241601,12416,9,0,100,1,0,5,5000,7000,11,15580,1,0,0,0,0,0,0,0,0,0,'Blackwing Legionnaire - Cast Strike'),
 (1241602,12416,0,0,100,1,9000,13000,11000,14000,11,15284,4,1,0,0,0,0,0,0,0,0,'Blackwing Legionnaire - Cast Cleave'),
 (1241603,12416,0,0,100,1,11000,15000,12000,16000,11,23967,4,1,0,0,0,0,0,0,0,0,'Blackwing Legionnaire - Cast Dragonbane'),
-(1241801,12418,9,0,100,1,0,5,17000,21000,11,13445,1,0,0,0,0,0,0,0,0,0,'Gordok Hyena - Cast Rend'),
+(209701,2097,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Harlo Barnaby: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
 (1242001,12420,1,0,100,0,0,0,0,0,21,0,0,0,0,0,0,1,0,0,0,0,'Blackwing Mage - Prevent Combat Movement on Spawn'),
 (1242002,12420,4,0,100,0,0,0,0,0,11,17290,4,0,22,1,0,0,0,0,0,0,'Blackwing Mage - Cast Fireball and Set Phase 1 on Aggro'),
 (1242003,12420,9,5,100,1,0,40,3400,4800,11,17290,1,0,0,0,0,0,0,0,0,0,'Blackwing Mage - Cast Fireball (Phase 1)'),
@@ -13872,7 +13869,18 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (674001,6740,22,0,100,1,41,0,0,0,15,8356,6,0,0,0,0,0,0,0,0,0,'Innkeeper Allison - Complete quest 8356 on /flex emote'),
 (511101,5111,22,0,100,1,22,0,0,0,15,8353,6,0,0,0,0,0,0,0,0,0,'Innkeeper Firebrew - Complete quest 8353 on /chicken emote'),
 (673501,6735,22,0,100,1,34,0,0,0,15,8357,6,0,0,0,0,0,0,0,0,0,'Innkeeper Saelienne - Complete quest 8357 on /dance emote'),
-(682601,6826,22,0,100,1,264,0,0,0,15,8355,6,0,0,0,0,0,0,0,0,0,'Talvash del Kissel - Complete quest 8355 on /train emote');
+(682601,6826,22,0,100,1,264,0,0,0,15,8355,6,0,0,0,0,0,0,0,0,0,'Talvash del Kissel - Complete quest 8355 on /train emote'),
+(651601,6516,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Un\'Goro Thunderer: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
+(764301,7643,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Bengor: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
+(1241801,12418,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Gordok Hyena: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
+(1475701,14757,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Elder Torntusk: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
+(392002,3920,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Anilia: flee at 15% HP'),
+(639102,6391,9,0,100,1,0,5,7000,10000,11,11976,1,0,0,0,0,0,0,0,0,0,'Holdout Warrior: cast Strike'),
+(639103,6391,13,0,100,1,11000,15000,0,0,11,12555,1,1,0,0,0,0,0,0,0,0,'Holdout Warrior: cast Pummel on Target Spell Casting'),
+(639104,6391,8,0,100,0,9798,-1,0,0,1,-31,0,0,0,0,0,0,0,0,0,0,'Holdout Warrior: emote on Radiation Spellhit'),
+(639105,6391,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Holdout Warrior: flee at 15% HP'),
+(651602,6516,0,0,100,1,5000,5000,9000,15000,11,12553,1,0,0,0,0,0,0,0,0,0,'Un\'Goro Thunderer: cast Shock'),
+(1241802,12418,9,0,100,1,0,5,17000,21000,11,13445,1,0,0,0,0,0,0,0,0,0,'Gordok Hyena: cast Rend');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13885,4 +13893,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30 21:12:50
+-- Dump completed on 2017-09-06 20:15:59

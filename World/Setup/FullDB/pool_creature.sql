@@ -283,9 +283,9 @@ INSERT INTO `pool_creature` (`guid`, `pool_entry`, `chance`, `description`) VALU
 (160600,1211,30,'Meshlok the Harvester (Maraudon)'),
 (160603,1211,0,'Meshlok the Harvester placeholder (Maraudon)'),
 (54652,1211,0,'Meshlok the Harvester placeholder (Maraudon)'),
-(590013,1701,0,'Dire Maul Arena - Mushgog'),
-(590014,1701,0,'Dire Maul Arena - The Razza'),
-(590015,1701,0,'Dire Maul Arena - Skarr the Unbreakable'),
+(590013,30001,0,'Dire Maul Arena - Mushgog'),
+(590014,30001,0,'Dire Maul Arena - The Razza'),
+(590015,30001,0,'Dire Maul Arena - Skarr the Unbreakable'),
 (3528,25469,90,'LBRS - Crystal Fang / Spire Spider'),
 (3527,25469,10,'LBRS - Crystal Fang / Spire Spider'),
 (154622,25471,0,'BRD - Doomforge Arcanasmith/Weapon Technician'),
@@ -364,4 +364,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:42
+-- Dump completed on 2017-09-06 20:16:12

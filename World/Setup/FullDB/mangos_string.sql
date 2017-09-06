@@ -840,7 +840,8 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (1516,'ID %u from GUID %u (%s), changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1517,'= Shown %u tickets of total %u.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1518,'Informing you about arriving tickets is %s.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(1700,'|cffff0000[Server Announce]:|r%s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(1700,'|cffff0000[Server Announce]:|r%s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(555,'Opcode %u with target %s was received from you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `mangos_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -853,4 +854,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30 21:13:00
+-- Dump completed on 2017-09-06 20:16:09

@@ -260,7 +260,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (5272,0,0,'Axe',1,1,8577,0,0,0,0,'',0),
 (2441,0,0,'Where is the zeppelin now?',1,1,0,0,0,0,0,'',0),
 (2465,0,0,'Lady Jaina, this may sound like an odd request... but I have a young ward who is quite shy. You are a hero to him, and he asked me to get your autograph.',1,1,5850,0,246500,0,0,'',147),
-(2703,0,0,'How do I use the Cache of Mau\'ari?',1,1,-1,0,2703,0,0,'',258),
+(2703,0,0,'How do I use the Cache of Mau\'ari?',1,1,2704,0,2703,0,0,'',258),
 (2744,0,3,'Train me.',5,16,0,0,0,0,0,'',0),
 (2744,1,0,'GOSSIP_OPTION_QUESTGIVER',2,2,0,0,0,0,0,NULL,0),
 (2847,0,0,'Alchemy',1,1,2834,266,0,0,0,'',0),
@@ -684,7 +684,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (6549,0,0,'Natalia?',1,1,6548,0,0,0,0,NULL,0),
 (6550,0,0,'What happened to her after that?',1,1,6549,0,0,0,0,NULL,0),
 (6551,0,0,'That sounds dangerous.',1,1,6550,0,0,0,0,NULL,0),
-(2703,1,0,'What is E\'ko?',1,1,0,0,0,0,0,'',0),
+(2703,1,0,'What is E\'ko?',1,1,2705,0,0,0,0,'',0),
 (1287,0,0,'Please continue, Zamael.',1,1,1286,0,0,0,0,'',0),
 (3228,5,1,'What\'s needed for the cauldron at Gahrron\'s Withering?',1,1,3227,0,0,0,0,NULL,278),
 (2907,0,0,'Perhaps there exists a way?',1,1,2908,0,0,0,0,NULL,0),
@@ -820,9 +820,9 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (2061,0,0,'Official business, John. I need some information about Marshal Windsor. Tell me about the last time you saw him',1,1,2060,0,0,0,0,'',871),
 (2121,11,0,'Profession Trainer',1,1,2168,0,0,0,0,'',0),
 (2168,11,0,'Tailoring',1,1,2175,75,0,0,0,'',0),
-(2184,0,0,'Tell me more about the Eastern Crystal Pylon.',1,1,0,0,0,0,0,'',0),
-(2184,1,0,'Tell me more about the Northern Crystal Pylon.',1,1,0,0,0,0,0,'',0),
-(2184,2,0,'Tell me more about the Western Crystal Pylon.',1,1,0,0,0,0,0,'',0),
+(2184,0,0,'Tell me more about the Eastern Crystal Pylon.',1,1,51006,0,0,0,0,'',7),
+(2184,1,0,'Tell me more about the Northern Crystal Pylon.',1,1,51007,0,0,0,0,'',7),
+(2184,2,0,'Tell me more about the Western Crystal Pylon.',1,1,51008,0,0,0,0,'',7),
 (2187,0,0,'Transcript the Tablet',1,1,-1,0,2187,0,0,NULL,255),
 (2188,0,0,'Who is this Lar\'korwi you spoke of?',1,1,2201,0,0,0,0,'',1146),
 (2242,0,1,'I would like to buy from you.',3,4,0,0,0,0,0,'',0),
@@ -841,7 +841,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (2405,0,0,'Is there a difference between ooze and slime?',1,1,0,0,0,0,0,'',0),
 (2405,1,0,'What do you mean by \"pure?\"',1,1,0,0,0,0,0,'',0),
 (2405,2,0,'Are there any areas you can think of that would be so untouched?',1,1,0,0,0,0,0,'',0),
-(2422,0,0,'What do you think of Dadanga?',1,1,0,0,0,0,0,'',0),
+(2422,0,0,'What do you think of Dadanga?',1,1,51005,0,0,0,0,'',0),
 (2464,0,1,'Let me browse your goods.',3,4,0,0,0,0,0,'',0),
 (2685,1,1,'I want to browse your goods.',3,4,0,0,0,0,0,'',0),
 (2741,0,3,'Train me.',5,16,0,0,0,0,0,'',0),
@@ -2200,7 +2200,8 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (1628,0,0,'I lost my Goblin Transponder, could I have another one?',1,1,-1,0,2646,0,0,'',2035),
 (51002,0,0,'Yeah, you\'re a real brainiac. Just how smart do you think you are, Slip\'kik?',1,1,14323,0,0,0,0,'',0),
 (51003,0,0,'So, now that I\'m the king... what have you got for me?!',1,1,14321,0,0,0,0,'',0),
-(51004,0,0,'Call me \"Boss\".  What have you got for me!',1,1,14326,0,0,0,0,'',0);
+(51004,0,0,'Call me \"Boss\".  What have you got for me!',1,1,14326,0,0,0,0,'',0),
+(6088,1,0,'I\'d like to stable my pet here',14,8192,0,0,0,0,0,NULL,0);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2213,4 +2214,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30 21:12:58
+-- Dump completed on 2017-09-06 20:16:07

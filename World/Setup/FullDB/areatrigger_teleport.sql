@@ -62,8 +62,8 @@ INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position
 (610,'Scarlet Monestary Cathedral - Entering',189,853.179,1319.18,18.6714,1.5708,2007),
 (612,'Scarlet Monestary Armory - Entering',189,1608.1,-318.919,18.6714,4.71239,2006),
 (614,'Scarlet Monestary Library - Entering',189,253.672,-206.624,18.6773,4.71239,2005),
-(702,'Stormwind - Wizard Sanctum Room',0,-9015.97,875.318,148.617,0,0),
-(704,'Stormwind - Wizard Sanctum Tower Portal',0,-9019.16,887.596,29.6206,0,0),
+(702,'Stormwind - Wizard Sanctum Room',0,-9015.8,874.6,148.617,5.31,0),
+(704,'Stormwind - Wizard Sanctum Tower Portal',0,-9017.4,886.3,29.6206,5.38,0),
 (882,'Uldaman Instance End',0,-6620.48,-3765.19,266.226,3.13531,0),
 (902,'Uldaman Exit',70,-214.02,383.607,-38.7687,0.5,2008),
 (922,'Zul\'Farrak - Exiting',1,-6795.56,-2890.72,8.88742,3.14159,0),
@@ -141,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30 21:12:48
+-- Dump completed on 2017-09-06 20:15:56

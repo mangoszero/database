@@ -2123,7 +2123,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (3226,0,0,1,16,0,0,NULL),
 (3228,0,0,1,16,0,0,NULL),
 (3229,0,0,1,16,0,0,NULL),
-(3230,0,0,1,16,0,0,NULL),
+(3230,0,0,0,16,0,0,NULL),
 (3231,0,0,1,16,0,0,NULL),
 (3232,0,0,1,16,0,0,NULL),
 (3233,0,0,1,1,0,0,NULL),
@@ -6378,7 +6378,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (15975,0,0,1,0,0,0,NULL),
 (15976,0,0,1,0,0,0,'18943'),
 (15979,0,0,1,0,0,0,NULL),
-(15989,0,0,1,0,0,0,NULL),
+(15989,0,0,0,0,0,0,'19818'),
 (15990,0,0,1,16,0,0,NULL),
 (16012,0,0,1,1,0,0,NULL),
 (16013,0,0,1,16,0,0,NULL),
@@ -6529,7 +6529,9 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`
 (17041,0,0,1,16,0,0,NULL),
 (17050,0,0,1,16,0,0,NULL),
 (17051,0,0,1,16,0,0,NULL),
-(15193,0,0,0,0,0,0,'22650');
+(15193,0,0,0,0,0,0,'22650'),
+(15041,0,0,0,0,0,0,'24087'),
+(17025,0,0,0,0,0,0,'29327');
 /*!40000 ALTER TABLE `creature_template_addon` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -6542,4 +6544,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:27
+-- Dump completed on 2017-09-06 20:16:02

@@ -331,7 +331,8 @@ INSERT INTO `command` (`name`, `security`, `help`) VALUES
 ('wp export',3,'Syntax: .wp export [#creature_guid or Select a Creature] $filename'),
 ('wp add',2,'Syntax: .wp add [Selected Creature or dbGuid] [pathId [wpOrigin] ]'),
 ('wp modify',2,'Syntax: .wp modify command [dbGuid, id] [value]\r\nwhere command must be one of: waittime  | scriptid | orientation | del | move\r\nIf no waypoint was selected, one can be chosen with dbGuid and id.\r\nThe commands have the following meaning:\r\n waittime (Set the time the npc will wait at a point (in ms))\r\n scriptid (Set the DB-Script that will be executed when the wp is reached)\r\n orientation (Set the orientation of this point) \r\n del (Remove the waypoint from the path)\r\n move (Move the wayoint to the current position of the player)'),
-('ticket surveyclose',2,'Syntax: .ticket surveyclose (#ID|$name)\nClosing the ticket with the user survey.');
+('ticket surveyclose',2,'Syntax: .ticket surveyclose (#ID|$name)\nClosing the ticket with the user survey.'),
+('debug recv',3,'Syntax: .debug recv\nYou send the opcode described in the server-side ropcode.txt file.');
 /*!40000 ALTER TABLE `command` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -344,4 +345,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 20:21:16
+-- Dump completed on 2017-09-06 20:15:57
