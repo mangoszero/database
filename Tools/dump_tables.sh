@@ -49,14 +49,6 @@ custom_texts \
 db_script_string \
 db_scripts \
 db_version \
-dbdocsfields \
-dbdocsfields_localised \
-dbdocslanguage \
-dbdocsquestprogress \
-dbdocssubtables \
-dbdocssubtables_localised \
-dbdocstable \
-dbdocstable_localised \
 disables \
 disenchant_loot_template \
 exploration_basexp \
