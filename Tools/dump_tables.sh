@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# if this does not run in Linux, then run the removeCR.sh file - edit its script with the name of this file
+
 USERNAME=
 PASSWORD=
 DDUMPDIR=./mangos
