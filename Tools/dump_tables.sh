@@ -86,7 +86,6 @@ locales_points_of_interest \
 locales_quest \
 mail_loot_template \
 mangos_string \
-npc_gossip \
 npc_text \
 npc_trainer \
 npc_trainer_template \
