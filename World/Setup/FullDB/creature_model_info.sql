@@ -7,7 +7,7 @@ TRUNCATE TABLE `creature_model_info`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -4433,7 +4433,7 @@ INSERT INTO `creature_model_info` (`modelid`, `bounding_radius`, `combat_reach`,
 (5443,0.369495,1.81125,0,0,0),
 (5444,0.208,1.5,1,0,0),
 (5445,0.347,1.5,0,0,0),
-(5446,0.208,1.5,2,3167,0),
+(5446,0.208,1.5,1,3167,0),
 (5447,2,2.56,0,0,0),
 (5448,0.25,0.5,2,0,0),
 (5449,0.383,1.5,0,0,0),
@@ -10573,4 +10573,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30 21:12:52
+-- Dump completed on 2018-04-16 22:52:39

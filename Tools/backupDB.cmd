@@ -39,16 +39,17 @@ goto processparams
 
 :parametersbanners
 CLS
-echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|      Database                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/   Dumper v0.01
-echo.
-echo _______________________________________________________________________________
-echo.
-echo                 Website / Forum / Wiki: https://getmangos.eu         
-echo _______________________________________________________________________________
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Backup v1.0                %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteLightBlue%^|                                                                             ^|
+echo ^|   Website / Forum / Wiki / Support: https://getmangos.eu                    ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colWhiteBold%^|                                                                             ^|
+echo %colWhiteBold%^|  
 echo.
 ECHO.
 echo  Parameters:
@@ -95,38 +96,91 @@ rem goto finish
 
 
 rem -- Don't change past this point --
-
+rem setlocal
 :main
+for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
+if "%version%" == "6.3" echo Windows 8.1
+if "%version%" == "6.2" echo Windows 8.
+if "%version%" == "6.1" echo Windows 7.
+if "%version%" == "6.0" echo Windows Vista.
+if "%version%" == "10.0" echo Windows 10.
+
+if "%version%" == "10.0" goto setColours:
+goto setOptions:
+
+:setColours
+set colReset=[0m
+set colYellow=[33m
+set colYellowBold=[93m
+set colWhiteBold=[97m
+set colWhiteDarkBlue=[97;44m
+set colWhiteLightBlue=[97;104m
+set colWhiteLightGreen=[97;42m
+set colCyanBold=[96m
+set colCyan=[36m
+set colWhite=[37m
+set colMagentaBold=[95m
+set colMagenta=[35m
+set colRedBold=[91m
+set colRed=[31m
+set colGreenBold=[92m
+set colGreen=[32m
+set colWhiteDarkRed=[97;101m
+set colBold=[101m
+set colWhiteDarkYellow=[97;43m
+
+
+:setOptions
 rem If running from the commandline, skip the asking for params
 if %viacommandline% == YES goto Step1:
-color 0e
 CLS
+
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Backup v1.0                %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteLightBlue%^|                                                                             ^|
+echo ^|   Website / Forum / Wiki / Support: https://getmangos.eu                    ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colWhiteBold%^|                                                                             ^|
+echo %colWhiteBold%^|                                                                             ^|
+
+if %createcharDB% == NO set PAD= 
+if %createcharDB% == YES set PAD=
+echo %colWhiteBold%^|    Character Database : V -%colWhite% Backup DB (%colYellowBold%%createcharDB%%colWhite%)%PAD%                                 %colWhiteBold%^|
+
+if %loadcharDB% == NO set PAD= 
+if %loadcharDB% == YES set PAD=
+echo %colWhiteBold%^|                         C -%colWhite% Include DB Structure (%colYellowBold%%loadcharDB%%colWhite%)%PAD%                      %colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
+
+if %createworldDB% == NO set PAD= 
+if %createworldDB% == YES set PAD=
+echo %colWhiteBold%^|        %colYellowBold%World Database : E -%colYellow% Backup DB (%colWhiteBold%%createworldDB%%colYellow%)%PAD%                                 %colWhiteBold%^|
+
+if %loadworldDB% == NO set PAD= 
+if %loadworldDB% == YES set PAD=
+echo %colWhiteBold%^|                         %colYellowBold%W -%colYellow% Include DB Structure (%colWhiteBold%%loadworldDB%%colYellow%)%PAD%                      %colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
+
+if %createrealmDB% == NO set PAD= 
+if %createrealmDB% == YES set PAD=
+echo %colWhiteBold%^|        %colCyanBold%Realm Database : T -%colCyan% Back DB (%colWhiteBold%%createrealmDB%%colCyan%)%PAD%                                   %colWhiteBold%^|
+
+if %loadrealmDB% == NO set PAD= 
+if %loadrealmDB% == YES set PAD=
+echo %colWhiteBold%^|                         %colCyanBold%R -%colCyan% Include DB Structure (%colWhiteBold%%loadrealmDB%%colCyan%)%PAD%                      %colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
+echo %colWhiteBold%^|                         %colGreenBold%N -%colGreen% Next Step%colWhiteBold%                                       ^|
+echo %colWhiteBold%^|                         X - %colWhite%Exit%colWhiteBold%                                            ^|
+echo %colWhiteBold%^|                                                                             ^|
+echo %colWhiteBold%^|    %colRedBold%Type backupDB HELP to display commandline options%colWhiteBold%                        ^|
+echo %colWhiteBold%^|                                                                             ^|
+echo %colWhiteBold%^|_____________________________________________________________________________^|%colReset%
 echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|      Database                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/   Dumper v0.01
-echo.
-echo _____________________________________________________________
-echo.
-echo         Website / Forum / Wiki: https://getmangos.eu         
-echo _____________________________________________________________
-echo.
-ECHO.
-echo    Character Database : V - Backup DB (%createcharDB%)
-echo                         C - Include DB Structure (%loadcharDB%)
-echo.
-echo        World Database : E - Backup DB (%createworldDB%)    
-echo                         W - Include DB Structure (%loadworldDB%)     
-echo.
-echo        Realm Database : T - Back DB (%createrealmDB%)     
-echo                         R - Include DB Structure (%loadrealmDB%)
-echo.
-echo                         N - Next Step
-echo                         X - Exit
-echo.
-echo     Type backupDB HELP to display commandline options     
-echo.
+
 
 set /p activity=. Please select an activity ? : 
 if %activity% == V goto ToggleCharDB:
@@ -149,7 +203,7 @@ if %activity% == X goto done:
 if %activity% == x goto done:
 if %activity%. == . goto main:
 if %activity% == . goto main:
-goto main
+goto main:
 
 
 :ToggleCharDB
@@ -235,44 +289,45 @@ if not exist %mysql%mysql.exe goto patherror:
 rem If running from the commandline, skip the asking for params
 if %viacommandline% == YES goto WorldDB:
 
-color 08
 CLS
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Backup                     %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteLightBlue%^|                                                                             ^|
+echo ^|   Website / Forum / Wiki / Support: https://getmangos.eu                    ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|      Database                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/      Dumper
 echo.
-echo _____________________________________________________________
-echo.
-echo.
-set /p svr=What is your MySQL host name?           [%svr%] : 
+set /p svr=. What is your MySQL host name?           [%svr%] : 
 if %svr%. == . set svr=localhost
-set /p user=What is your MySQL user name?                [%user%] : 
+set /p user=. What is your MySQL user name?                [%user%] : 
 if %user%. == . set user=root
-set /p pass=What is your MySQL password?               [%pass%] : 
+set /p pass=. What is your MySQL password?               [%pass%] : 
 if %pass%. == . set pass=mangos
-set /p port=What is your MySQL port?                     [%port%] : 
+set /p port=. What is your MySQL port?                     [%port%] : 
 if %port%. == . set port=3306
 
 set showChar=0
 if %createcharDB% == YES set showChar=1
 REM if %loadcharDB% == YES set showChar=1
 
-if %showChar% == 1 set /p cdb=What is your Character database name?  [%cdb%] : 
+if %showChar% == 1 set /p cdb=. What is your Character database name?  [%cdb%] : 
 if %cdb%. == . set cdb=%cdborig%
 
 set showWorld=0
 if %createworldDB% == YES set showWorld=1
 REM if %loadworldDB% == YES set showWorld=1
-if %showWorld% == 1 set /p wdb=What is your World database name?         [%wdb%] : 
+if %showWorld% == 1 set /p wdb=. What is your World database name?         [%wdb%] : 
 if %wdb%. == . set wdb=%wdborig%
 
 set showRealm=0
 if %createrealmDB% == YES set showRealm=1
 REM if %loadrealmDB% == YES set showRealm=1
 
-if %showRealm% == 1 set /p rdb=What is your Realm database name?          [%rdb%] : 
+if %showRealm% == 1 set /p rdb=. What is your Realm database name?          [%rdb%] : 
 if %rdb%. == . set rdb=%rdborig%
 
 color 02
@@ -300,10 +355,12 @@ goto done:
 if exist _full_worlddb goto WorldDBSkip1:
 md _full_worlddb
 :WorldDBSkip1
-echo _____________________________________________________________
-echo.
-echo   Dumping World Database
-echo _____________________________________________________________
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^| Dumping World Database                                                      ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 echo.
 
 SET TABLENAME=areatrigger_tavern
@@ -945,25 +1002,7 @@ if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TAB
 if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
 
-SET TABLENAME=npc_trainer_template
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
 SET TABLENAME=npc_vendor
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
-
-SET TABLENAME=npc_vendor_template
 echo             %TABLENAME%
 if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
 if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
@@ -1438,10 +1477,12 @@ REM ############ CHAR DB DUMP STUFF HERE ###########
 if exist _full_chardb goto CharDBSkip1:
 md _full_chardb
 :CharDBSkip1
-echo _____________________________________________________________
-echo.
-echo   Dumping Character Database
-echo _____________________________________________________________
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^| Dumping Character Database                                                  ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 echo.
 
 SET TABLENAME=ahbot_category
@@ -2044,10 +2085,12 @@ REM ############ REALM DB DUMP STUFF HERE ###########
 if exist _full_realmdb goto RealmDBSkip1:
 md _full_realmdb
 :RealmDBSkip1
-echo _____________________________________________________________
-echo.
-echo   Dumping Realm Database
-echo _____________________________________________________________
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^| Dumping Realm Database                                                      ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 echo.
 
 SET TABLENAME=account
@@ -2127,31 +2170,40 @@ goto done:
 
 
 :patherror
-echo Cannot find required files.
-pause
-goto :error
+echo.
+echo _______________________________________________________________________________
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^|                           Cannot find required files.                       ^|
+echo ^|                                                                             ^|
+echo %colWhiteBold%^|_____________________________________________________________________________^|
+echo.
+goto finish:
 
 :error
 echo.
-echo _____________________________________________________________
-echo.
-echo               Install Database Process Failed
-echo _____________________________________________________________
+echo _______________________________________________________________________________
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^|                           Install Database Process Failed                   ^|
+echo ^|                                                                             ^|
+echo %colWhiteBold%^|_____________________________________________________________________________^|
 echo.
 goto finish:
 
 :done
 color 08
-echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|      Database                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/      Dumper
-echo.
-echo _____________________________________________________________
-echo.
-echo                     Database Dump Complete         
-echo _____________________________________________________________
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Backup                     %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteLightGreen%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^|                               Database Backup Complete                      ^|
+echo ^|                                                                             ^|
+echo %colWhiteBold%^|_____________________________________________________________________________^|
 echo.
 echo Done :)
 echo.

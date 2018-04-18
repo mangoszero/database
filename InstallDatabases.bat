@@ -17,6 +17,39 @@ set rdborig=realmd
 
 rem -- Don't change past this point --
 
+rem setlocal
+for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
+if "%version%" == "6.3" echo Windows 8.1
+if "%version%" == "6.2" echo Windows 8.
+if "%version%" == "6.1" echo Windows 7.
+if "%version%" == "6.0" echo Windows Vista.
+if "%version%" == "10.0" echo Windows 10.
+
+if "%version%" == "10.0" goto setColours:
+goto setOptions:
+
+:setColours
+set colReset=[0m
+set colYellow=[33m
+set colYellowBold=[93m
+set colWhiteBold=[97m
+set colWhiteDarkBlue=[97;44m
+set colWhiteLightBlue=[97;104m
+set colWhiteLightGreen=[97;42m
+set colCyanBold=[96m
+set colCyan=[36m
+set colWhite=[37m
+set colMagentaBold=[95m
+set colMagenta=[35m
+set colRedBold=[91m
+set colRed=[31m
+set colGreenBold=[92m
+set colGreen=[32m
+set colWhiteDarkRed=[97;101m
+set colBold=[101m
+set colWhiteDarkYellow=[97;43m
+
+:setOptions
 set createcharDB=YES
 set createworldDB=YES
 set createrealmDB=YES
@@ -44,45 +77,73 @@ rem -- first check that the repo has been cloned correctly
 if not exist Realm goto missingRecursive:
 
 :main
-color 0e
 CLS
-echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader v0.09
-echo.
-echo _____________________________________________________________
-echo.
-echo          Website / Forum / Wiki: https://getmangos.eu         
-echo _____________________________________________________________
-echo.
-echo    Character Database :   V   - Toggle Actually Create Character DB (%createcharDB%)
-echo                           C   - Toggle Create Character DB Structure (%loadcharDB%)
-echo                           B   - Apply Character DB updates (%CDBUpdate%)
-echo.
-echo        World Database :   E   - Toggle Actually Create World DB (%createworldDB%)    
-echo                           W   - Toggle Create World DB Structure (%loadworldDB%)     
-if %loadworldDB% == YES echo                           D   - Toggle World Type (%DBType%)
-echo                           U   - Apply World DB updates (%WDBUpdate%)
-echo.
-echo        Realm Database :   T   - Toggle Actually Create Realm DB (%createrealmDB%)     
-echo                           R   - Toggle Create Realm Db Structure (%loadrealmDB%)
-echo                           Y   - Apply Realm DB updates (%RDBUpdate%)
-echo                           L   - Toggle Add Default RealmList Entry for Core (%addrealmentry%)
-echo.
-echo                           O   - Toggle Only Updates On (%updatesOnly%)
-echo.
-echo                           P   - Toggle Create Mangos User (%createMangosUser%)
-echo.
+
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader v1.0%colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteLightBlue%^|                                                                             ^|
+echo ^|   Website / Forum / Wiki / Support: https://getmangos.eu                    ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colWhiteBold%^|                                                                             ^|
+if %createcharDB% == NO set PAD= 
+if %createcharDB% == YES set PAD=
+echo %colWhiteBold%^|   %colWhiteBold%Character Database : V - %colReset%Toggle Actually Create Character DB (%colYellowBold%%createcharDB%%colReset%)        %PAD%%colWhiteBold%^|
+if %loadcharDB% == NO set PAD= 
+if %loadcharDB% == YES set PAD=
+echo %colWhiteBold%^|                        %colWhiteBold%C - %colReset%Toggle Create Character DB Structure (%colYellowBold%%loadcharDB%%colReset%)       %PAD%%colWhiteBold%^|
+if %CDBUpdate% == NO set PAD= 
+if %CDBUpdate% == YES set PAD=
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colWhiteBold%B - %colReset%Apply Character DB updates (%colYellowBold%%CDBUpdate%%colReset%)                 %PAD%%colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
+if %createworldDB% == NO set PAD= 
+if %createworldDB% == YES set PAD=
+echo %colWhiteBold%^|       %colYellowBold%World Database : E  - %colYellow%Toggle Actually Create World DB (%colWhiteBold%%createworldDB%%colYellow%)%colReset%           %PAD%%colWhiteBold%^|
+if %loadworldDB% == NO set PAD= 
+if %loadworldDB% == YES set PAD=
+echo %colWhiteBold%^|                        %colYellowBold%W  - %colYellow%Toggle Create World DB Structure (%colWhiteBold%%loadworldDB%%colYellow%)%colReset%          %PAD%%colWhiteBold%^|
+if %DBType% == EMPTY set PAD=    
+if %DBType% == POPULATED set P=
+
+if %loadworldDB% == YES echo %colWhiteBold%^|                        %colYellowBold%D - %colYellow%Toggle World Type (%colWhiteBold%%DBType%%colYellow%)%colReset%                    %PAD%%colWhiteBold%^|
+
+if %WDBUpdate% == NO set PAD= 
+if %WDBUpdate% == YES set PAD=
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colYellowBold%U - %colYellow%Apply World DB updates (%colWhiteBold%%WDBUpdate%%colYellow%)%colReset%                     %PAD%%colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
+if %createrealmDB% == NO set PAD= 
+if %createrealmDB% == YES set PAD=
+echo %colWhiteBold%^|       %colCyanBold%Realm Database : T - %colCyan%Toggle Actually Create Realm DB (%colWhiteBold%%createrealmDB%%colCyan%)%colReset%            %PAD%%colWhiteBold%^|
+if %loadrealmDB% == NO set PAD= 
+if %loadrealmDB% == YES set PAD=
+echo %colWhiteBold%^|                        %colCyanBold%R - %colCyan%Toggle Create Realm Db Structure (%colWhiteBold%%loadrealmDB%%colCyan%)%colReset%           %PAD%%colWhiteBold%^|
+if %RDBUpdate% == NO set PAD= 
+if %RDBUpdate% == YES set PAD=
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%Y - %colCyan%Apply Realm DB updates (%colWhiteBold%%RDBUpdate%%colCyan%)%colReset%                     %PAD%%colWhiteBold%^|
+if %addrealmentry% == NO set PAD= 
+if %addrealmentry% == YES set PAD=
+echo %colWhiteBold%^|                        %colCyanBold%L - %colCyan%Toggle Add Default RealmList Entry for Core (%colWhiteBold%%addrealmentry%%colCyan%)%colReset%%PAD%%colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
+if %updatesOnly% == NO set PAD= 
+if %updatesOnly% == YES set PAD=
+echo %colWhiteBold%^|                        %colMagentaBold%O - %colMagenta%Toggle Only Install Updates to Database's (%colWhiteBold%%updatesOnly%%colMagenta%)%colReset%  %PAD%%colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
+if %createMangosUser% == NO set PAD= 
+if %createMangosUser% == YES set PAD=
+echo %colWhiteBold%^|                        %colRedBold%P - %colRed%Toggle Create Mangos User (%colWhiteBold%%createMangosUser%%colRed%)%colReset%                  %PAD%%colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
 set LOCList=NO
 if %locFR% == YES set LOCList=YES
 if %locDE% == YES set LOCList=YES 
 if %locES% == YES set LOCList=YES
 
 REM echo                           A   - Add Localised Content (%LOCList%)
-echo                           N   - Next Step
-echo                           X   - Exit
+echo %colWhiteBold%^|                        %colGreenBold%N - %colGreen%Next Step%colReset%                                        %colWhiteBold%^|
+echo %colWhiteBold%^|                        %colWhiteBold%X - %colReset%Exit                                             %colWhiteBold%^|
+echo %colWhiteBold%^|_____________________________________________________________________________^|%colReset%
 echo.
 set /p activity=. Please select an activity ? : 
 if %activity% == V goto ToggleCharDB:
@@ -118,8 +179,8 @@ if %activity% == n goto Step1:
 REM if %activity% == A goto StepLoc1:
 REM if %activity% == a goto StepLoc1:
 
-if %activity% == X goto done3:
-if %activity% == x goto done3:
+if %activity% == X goto quitting:
+if %activity% == x goto quitting:
 if %activity%. == . goto main:
 goto main
 
@@ -321,33 +382,29 @@ goto main:
 
 :Step1
 if not exist %mysql%\mysql.exe then goto patherror
-color 08
 CLS
-echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|    Database Setup                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  and World Loader
-echo.
-echo _____________________________________________________________
-echo.
-echo _________________________________________________________________________
-echo.
-echo  Only leave the defaults for username, password and mysql port on servers
-echo  with no external internet access.
-echo.
-echo  Using these settings will leave you server open to exploits,
-echo  security breaches... or much much worse.
-echo _________________________________________________________________________
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader     %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^|%colBold% Only leave the defaults for username, password and mysql port on servers    ^|
+echo ^| with no external internet access.                                           ^|
+echo ^|                                                                             ^|
+echo ^| Using these settings will leave you server open to exploits,                ^|
+echo ^| security breaches... or much much worse.                                    ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 echo.
 echo.
-set /p svr=What is your MySQL host name?           [%svr%] : 
+set /p svr=%colYellowBold% What is your MySQL host name?           %colReset%DEFAULT: [%colWhiteBold%%svr%%colReset%] : 
 if %svr%. == . set svr=localhost
-set /p user=What is your MySQL user name?                [%user%] : 
+set /p user=%colYellowBold% What is your MySQL user name?                %colReset%DEFAULT: [%colWhiteBold%%user%%colReset%] : 
 if %user%. == . set user=root
-set /p pass=What is your MySQL password?               [%pass%] : 
+set /p pass=%colYellowBold% What is your MySQL password?               %colReset%DEFAULT: [%colWhiteBold%%pass%%colReset%] : 
 if %pass%. == . set pass=mangos
-set /p port=What is your MySQL port?                     [%port%] : 
+set /p port=%colYellowBold% What is your MySQL port?                     %colReset%DEFAULT: [%colWhiteBold%%port%%colReset%] : 
 if %port%. == . set port=3306
 
 set showChar=0
@@ -355,14 +412,14 @@ if %createcharDB% == YES set showChar=1
 if %loadcharDB% == YES set showChar=1
 if %CDBUpdate% == YES set showChar=1
 
-if %showChar% == 1 set /p cdb=What is your Character database name?  [%cdb%] : 
+if %showChar% == 1 set /p cdb=%colYellowBold% What is your Character database name?  %colReset%DEFAULT: [%colWhiteBold%%cdb%%colReset%] : 
 if %cdb%. == . set cdb=%cdborig%
 
 set showWorld=0
 if %createworldDB% == YES set showWorld=1
 if %loadworldDB% == YES set showWorld=1
 if %WDBUpdate% == YES set showWorld=1
-if %showWorld% == 1 set /p wdb=What is your World database name?         [%wdb%] : 
+if %showWorld% == 1 set /p wdb=%colYellowBold% What is your World database name?         %colReset%DEFAULT: [%colWhiteBold%%wdb%%colReset%] : 
 if %wdb%. == . set wdb=%wdborig%
 
 set showRealm=0
@@ -371,10 +428,20 @@ if %loadrealmDB% == YES set showRealm=1
 if %addrealmentry% == YES set showRealm=1
 if %CDBUpdate% == YES set showRealm=1
 
-if %showRealm% == 1 set /p rdb=What is your Realm database name?          [%rdb%] : 
+if %showRealm% == 1 set /p rdb=%colYellowBold% What is your Realm database name?          %colReset%DEFAULT: [%colWhiteBold%%rdb%%colReset%] : 
 if %rdb%. == . set rdb=%rdborig%
 
-color 02
+REM If create user is set to yes, ask for the details here
+if %createMangosUser% == NO goto WorldDB:
+
+if %createMangosUser% == YES set /p newuser=%colYellowBold% New MySQL user name?                       %colReset%DEFAULT: [%colWhiteBold%%newuser%%colReset%] : 
+if %newuser%. == . set newuser=mangos
+if %createMangosUser% == YES set /p newpass=%colYellowBold% New MySQL user password?                   %colReset%DEFAULT: [%colWhiteBold%%newpass%%colReset%] : 
+if %newpass%. == . set newpass=mangos
+
+if %newpass% == mangos set defaultsused=YES
+if %newuser% == mangos set defaultsused=YES
+if %defaultsused% == YES goto done:
 
 :WorldDB
 REM ##### IF createworlddb = YES then create the DB
@@ -406,66 +473,99 @@ if %addrealmentry% == YES goto RealmDB5:
 goto MangosUser:
 
 :WorldDB1
-echo Creating World Database %wdb%
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Creating World Database                                                     ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
+echo %colReset% Creating Database %wdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "create database %wdb%";
 goto WorldDB2:
 
 :WorldDB3
 if %DBType% == POPULATED goto WorldDB4:
-echo  Preparing world Database Structure %wdb%
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Preparing World Database Structure                                          ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
+echo %colReset% Preparing Database %wdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < World\Setup\mangosdLoadDB.sql
 goto CharDB:
 
 :WorldDB4
-echo  Preparing world Database Structure %wdb%
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Populating World Database                                                   ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < World\Setup\mangosdLoadDB.sql
-echo  Importing World database information %wdb%
-for %%i in (World\Setup\FullDB\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
+for %%i in (World\Setup\FullDB\*.sql) do echo . Loading %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
 goto CharDB:
 
 :CharDB1
-echo Creating Character Database %cdb%
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Creating Character Database                                                 ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
+echo %colReset% Creating Database %cdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "create database %cdb%";
 goto CharDB2:
 
 :CharDB3
-echo  Loading Character Database %cdb%
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Loading Character Database                                                  ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
+echo %colReset% Loading Database %Cdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < Character\Setup\characterLoadDB.sql
+
 goto RealmDB:
 
 :RealmDB1
-echo Creating Realm Database %rdb%
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Creating Realm Database                                                     ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
+echo %colReset% Creating Database %rdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "create database %rdb%";
 goto RealmDB2:
 
 :RealmDB3
-echo  Loading Realm Database %rdb%
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Loading Realm Database                                                      ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
+echo %colReset% Loading Database %rdb%
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Realm\Setup\realmdLoadDB.sql
+
 goto RealmDB4:
 
 :RealmDB5
-echo.
-echo  Adding RealmList entry in Realm Database %rdb%
-echo --------------------------------------------------
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Adding RealmList entry in Realm Database                                    ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
+echo %colReset% Adding Realmlist entry to %rdb%
+echo _______________________________________________________________________________
 if %addrealmentry% == YES %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Tools\updateRealm.sql
-echo --------------------------------------------------
-goto MangosUser:
 
-:MangosUser
 if %createMangosUser% == YES goto MangosUser1:
 goto done:
 
 :MangosUser1
-echo.
-set /p newuser=New MySQL user name?                       [%newuser%] : 
-if %newuser%. == . set newuser=mangos
-set /p newpass=New MySQL user password?                   [%newpass%] : 
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^| Creating new user and granting privileges                                   ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colReset% 
+echo %colReset% Creating '%newuser%' user and granting privileges
 
-if %newpass% == mangos set defaultsused=YES
-if %newuser% == mangos set defaultsused=YES
-if %defaultsused% == YES goto done:
-
-echo  Creating '%newuser%' user and granting privileges
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "CREATE USER '%newuser%'@'%svr%' IDENTIFIED BY '%newpass%'";
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%wdb%`.* TO '%newuser%'@'%svr%'";
 %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%cdb%`.* TO '%newuser%'@'%svr%'";
@@ -479,18 +579,16 @@ pause
 goto :error
 
 :StepLoc1
-color 0e
 cls
-echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|    Database Setup                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  and World Loader
-echo.
-echo _____________________________________________________________
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader     %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
 echo.
 echo  Database Localisation Support
-echo _____________________________________________________________
+echo _______________________________________________________________________________
 echo.
 echo    French (Francaís)  : F   - Toggle Loading Localisations (%locFR%)
 echo.
@@ -500,7 +598,7 @@ echo     Spanish (Espána)  : S/E - Toggle Loading Localisations (%locES%)
 echo.
 echo                          N   - Next Step
 echo.
-set /p activity=. Please select an activity ? : 
+set /p activity=%colYellowBold% Please select an activity ? : %colReset%
 if %activity% == F goto ToggleLocFR:
 if %activity% == f goto TogglelocFR:
 if %activity% == G goto TogglelocDE:
@@ -555,84 +653,91 @@ set locES=NO
 goto StepLoc1:
 
 :error
-echo _____________________________________________________________
-echo.
-echo  Install Database Process Failed
-echo _____________________________________________________________
-echo.
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^| ** ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR ** ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo ^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^|   %colRedBold%Install Database Process Failed                    %colReset%                       ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^| ** ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR ** ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 goto finish:
 
 :PatchWorld
-echo.
-echo _____________________________________________________________
-echo.
-echo  Applying world DB updates
-echo _____________________________________________________________
-echo.
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^| Applying World DB updates                                                   ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 for %%i in (World\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
 goto done2
 
 :PatchRealm
-echo.
-echo _____________________________________________________________
-echo.
-echo  Applying Realm DB updates
-echo _____________________________________________________________
-echo.
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^| Applying Realmd DB updates                                                  ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 for %%i in (Realm\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < %%i
 goto done3
 
 :patchCharacter
-echo.
-echo _____________________________________________________________
-echo.
-echo  Applying Character DB updates
-echo _____________________________________________________________
-echo.
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^| Applying Character DB updates                                               ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 for %%i in (Character\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < %%i
 goto done1
 
 :missingRecursive
-color 00
 CLS
-echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|   Database Setup and                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  World Loader
-echo.
-echo _____________________________________________________________
-echo.
-echo          Website / Forum / Wiki: https://getmangos.eu         
-echo _____________________________________________________________
-echo.
-echo =============================================================
-ECHO === ERROR = ERROR = ERROR = ERROR = ERROR = ERROR = ERROR ===
-echo =============================================================
-echo.
-
-echo    The repository was cloned without the --recursive flag
-echo.
-echo =============================================================
-ECHO === ERROR = ERROR = ERROR = ERROR = ERROR = ERROR = ERROR ===
-echo =============================================================
-echo.
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader     %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^| ** ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR ** ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo ^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^|   %colRedBold%The repository was cloned without the %colWhiteBold%--recursive %colRedBold%flag%colReset%                    ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^| ** ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR ** ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 goto finish:
 
 :defaultpasswordused
-echo.
-echo =============================================================
-ECHO === ERROR = ERROR = ERROR = ERROR = ERROR = ERROR = ERROR ===
-echo =============================================================
-echo.
-
-echo    We will not create a user with the default password 
-echo.
-echo =============================================================
-ECHO === ERROR = ERROR = ERROR = ERROR = ERROR = ERROR = ERROR ===
-echo =============================================================
-echo.
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader     %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^| ** ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR ** ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo ^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^|   %colRedBold%We will not create a user with the default password%colReset%                       ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo %colWhiteDarkRed%^|                                                                             ^|
+echo ^| ** ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR * ERROR ** ^|
+echo ^|_____________________________________________________________________________^|%colReset%
 goto finish:
+
+
 
 :done
 if %CDBUpdate% == YES goto patchCharacter:
@@ -641,22 +746,33 @@ if %WDBUpdate% == YES goto patchWorld:
 :done2
 if %RDBUpdate% == YES goto PatchRealm:
 :done3
-color 08
-echo.
-echo     __  __      _  _  ___  ___  ___      
-echo    ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|    Database Setup                                      
-echo    ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \
-echo    ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/  and World Loader
-echo.
-echo _____________________________________________________________
-echo.
-echo  Database Creation and Load complete
-echo _____________________________________________________________
-echo.
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
+echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
+echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader     %colWhiteBold%    ^|
+echo ^|_____________________________________________________________________________^|
+echo %colWhiteLightGreen%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^| Database Creation and Load complete                                         ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+
 REM Warn about not setting up the user
 if %defaultsused% == YES goto defaultpasswordused:
 
 :finish
-echo Script is complete, Please review the messages above to ensure no errors occurred
 echo.
+echo %colReset% Script has completed !
+echo %colReset% - Please review the messages above to ensure no errors occurred.
+echo.
+goto theend:
+
+:quitting
+echo.
+echo %colReset% Script has been aborted !
+echo.
+goto theend:
+
+:theend
 pause

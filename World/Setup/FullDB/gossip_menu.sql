@@ -7,7 +7,7 @@ TRUNCATE TABLE `gossip_menu`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1147,7 +1147,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (3382,4134,0,0),
 (3441,4193,0,0),
 (3481,4233,0,0),
-(3481,4953,0,0),
+(3481,4953,0,676),
 (3602,4354,0,0),
 (3621,4394,0,0),
 (3622,4393,0,0),
@@ -3403,4 +3403,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-06 20:16:06
+-- Dump completed on 2018-04-16 22:52:42

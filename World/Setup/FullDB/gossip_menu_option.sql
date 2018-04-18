@@ -7,7 +7,7 @@ TRUNCATE TABLE `gossip_menu_option`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -893,11 +893,11 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (3372,0,0,'Tell me about the Cult of the Damned.',1,1,3371,0,0,0,0,'',0),
 (3441,0,0,'I need another Argent Dawn Commission.',1,1,-1,0,3421,0,0,'',143),
 (3441,1,1,'I would like to buy from you.',3,4,0,0,0,0,0,'',0),
-(3481,0,0,'The land of Azshara.',1,1,4061,0,0,0,0,'',0),
-(3481,1,0,'The Ruins of Eldarath.',1,1,4062,0,0,0,0,'',0),
-(3481,2,0,'The mage tower to the north.',1,1,4063,0,0,0,0,'',0),
-(3481,3,0,'The Timbermaw furbolgs.',1,1,4064,0,0,0,0,'',0),
-(3481,4,0,'The presence of blue dragons.',1,1,4065,0,0,0,0,'',0),
+(3481,0,0,'The land of Azshara.',1,1,4061,0,0,0,0,'',676),
+(3481,1,0,'The Ruins of Eldarath.',1,1,4062,0,0,0,0,'',676),
+(3481,2,0,'The mage tower to the north.',1,1,4063,0,0,0,0,'',676),
+(3481,3,0,'The Timbermaw furbolgs.',1,1,4064,0,0,0,0,'',676),
+(3481,4,0,'The presence of blue dragons.',1,1,4065,0,0,0,0,'',676),
 (3519,8,0,'Warrior',1,1,3517,7,0,0,0,'',0),
 (3532,12,0,'Tailoring',1,1,3531,16,0,0,0,'',0),
 (3558,11,0,'Tailoring',1,1,3557,0,0,0,0,'',0),
@@ -2214,4 +2214,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-06 20:16:07
+-- Dump completed on 2018-04-16 22:52:42

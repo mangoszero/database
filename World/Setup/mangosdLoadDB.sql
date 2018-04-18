@@ -129,6 +129,7 @@ CREATE TABLE `battleground_template` (
   `HordeStartLoc` MEDIUMINT(8) UNSIGNED NOT NULL,
   `HordeStartO` FLOAT NOT NULL,
   `StartMaxDist` FLOAT NOT NULL DEFAULT '0',
+  `Comment` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MYISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -758,114 +759,6 @@ CREATE TABLE `db_scripts` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2628 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-
-/*Table structure for table `dbdocsfields` */
-
-DROP TABLE IF EXISTS `dbdocsfields`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbdocsfields` (
-  `fieldId` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique Id for this field',
-  `languageId` INT(11) NOT NULL DEFAULT '0' COMMENT 'dbdocsLanguageId to link to. (Normally 0 = English)',
-  `tableName` VARCHAR(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Name of the table to link to',
-  `fieldName` VARCHAR(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Name of the field to link the note to',
-  `fieldComment` VARCHAR(80) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Main field Note',
-  `fieldNotes` TEXT COLLATE utf8_unicode_ci NOT NULL COMMENT 'Additional Field Notes',
-  PRIMARY KEY (`fieldId`,`languageId`),
-  KEY `fieldId` (`fieldId`)
-) ENGINE=INNODB AUTO_INCREMENT=1764 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbdocsfields_localised`
---
-DROP TABLE IF EXISTS `dbdocsfields_localised`;
-
-CREATE TABLE `dbdocsfields_localised` (
-  `fieldId` INT(11) NOT NULL COMMENT 'dbdocsfields.fieldId to link to.',
-  `languageId` INT(11) NOT NULL DEFAULT '0' COMMENT 'dbdocsLanguageId to link to. (Normally 0 = English)',
-  `fieldNotes` TEXT COLLATE utf8_unicode_ci NOT NULL COMMENT 'Additional Field Notes',
-  `fieldComment` VARCHAR(80) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Main field Note',
-  PRIMARY KEY (`fieldId`,`languageId`),
-  KEY `fieldId` (`fieldId`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Table structure for table `dbdocslanguage`
---
-DROP TABLE IF EXISTS `dbdocslanguage`;
-
-CREATE TABLE `dbdocslanguage` (
-  `LanguageId` INT(11) NOT NULL COMMENT 'LanguageId for this Language',
-  `LanguageName` VARCHAR(30) NOT NULL COMMENT 'The Language Name',
-  PRIMARY KEY (`LanguageId`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8;
-
---
--- Table structure for table `dbdocsprogressquests`
---
-DROP TABLE IF EXISTS `dbdocsprogressquests`;
-
-CREATE TABLE `dbdocsprogressquests` (
-  `QuestID` INT(11) NOT NULL COMMENT 'The Quest ID to link to',
-  `Progress` INT(11) NOT NULL DEFAULT '0' COMMENT 'The percentage of how complete the quest is',
-  `QuestNotes` TEXT COMMENT 'Notes about the Quest',
-  PRIMARY KEY (`QuestID`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8;
-
-
---
--- Table structure for table `dbdocssubtables`
---
-DROP TABLE IF EXISTS `dbdocssubtables`;
-
-CREATE TABLE `dbdocssubtables` (
-  `subTableId` INT(11) NOT NULL COMMENT 'Unique Lookup Id',
-  `languageId` INT(11) NOT NULL DEFAULT '0' COMMENT 'dbdocsLanguageId to link to. (Normally 0 = English)',
-  `subTableName` VARCHAR(80) DEFAULT NULL COMMENT 'Description of Content',
-  `subTableTemplate` TEXT NOT NULL COMMENT 'The Sub Table Template',
-  PRIMARY KEY (`subTableId`,`languageId`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8;
-
---
--- Table structure for table `dbdocssubtables_localised`
---
-DROP TABLE IF EXISTS `dbdocssubtables_localised`;
-
-CREATE TABLE `dbdocssubtables_localised` (
-  `subTableId` INT(11) NOT NULL COMMENT 'dbdocsSubtableId to link to',
-  `languageId` INT(11) NOT NULL DEFAULT '0' COMMENT 'dbdocsLanguageId to link to. (Normally 0 = English)',
-  `subTableTemplate` TEXT NOT NULL COMMENT 'The Sub Table Template',
-  PRIMARY KEY (`subTableId`,`languageId`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8;
-
---
--- Table structure for table `dbdocstable`
---
-DROP TABLE IF EXISTS `dbdocstable`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbdocstable` (
-  `tableId` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique ID of this entry',
-  `languageId` INT(11) NOT NULL DEFAULT '0' COMMENT 'The Language Id for the Notes (Normally 0 for English)',
-  `tableName` VARCHAR(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Name of the table to add additional notes to',
-  `tableNotes` TEXT COLLATE utf8_unicode_ci NOT NULL COMMENT 'The additional note to be added to the table',
-  PRIMARY KEY (`tableId`,`languageId`,`tableName`),
-  KEY `tableId` (`tableId`)
-) ENGINE=INNODB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `dbdocstable_localised`
---
-DROP TABLE IF EXISTS `dbdocstable_localised`;
-
-CREATE TABLE `dbdocstable_localised` (
-  `tableId` INT(11) NOT NULL COMMENT 'The dbdocsTableId to link to',
-  `languageId` INT(11) NOT NULL DEFAULT '0' COMMENT 'The dbdocsLanguageId to link to. (Normally 0 for English)',
-  `tableNotes` TEXT COLLATE utf8_unicode_ci NOT NULL COMMENT 'The additional note to be added to the table',
-  PRIMARY KEY (`tableId`,`languageId`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Table structure for table `disables`
@@ -1902,20 +1795,6 @@ CREATE TABLE `mangos_string` (
 
 
 --
--- Table structure for table `npc_gossip`
---
-
-DROP TABLE IF EXISTS `npc_gossip`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `npc_gossip` (
-  `npc_guid` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `textid` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  PRIMARY KEY (`npc_guid`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `npc_text`
 --
 
@@ -2027,24 +1906,6 @@ CREATE TABLE `npc_trainer` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `npc_trainer_template`
---
-
-DROP TABLE IF EXISTS `npc_trainer_template`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `npc_trainer_template` (
-  `entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `spell` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `spellcost` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `reqskill` SMALLINT(5) UNSIGNED NOT NULL DEFAULT '0',
-  `reqskillvalue` SMALLINT(5) UNSIGNED NOT NULL DEFAULT '0',
-  `reqlevel` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  UNIQUE KEY `entry_spell` (`entry`,`spell`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `npc_vendor`
 --
 
@@ -2052,23 +1913,6 @@ DROP TABLE IF EXISTS `npc_vendor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `npc_vendor` (
-  `entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `item` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  `maxcount` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
-  `incrtime` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `condition_id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
-  PRIMARY KEY (`entry`,`item`)
-) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Npc System';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `npc_vendor_template`
---
-
-DROP TABLE IF EXISTS `npc_vendor_template`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `npc_vendor_template` (
   `entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
   `item` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
   `maxcount` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
