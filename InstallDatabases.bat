@@ -83,7 +83,7 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
 echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
 echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
-echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader v1.0%colWhiteBold%    ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader v1.1%colWhiteBold%    ^|
 echo ^|_____________________________________________________________________________^|
 echo %colWhiteLightBlue%^|                                                                             ^|
 echo ^|   Website / Forum / Wiki / Support: https://getmangos.eu                    ^|
@@ -91,20 +91,22 @@ echo ^|_________________________________________________________________________
 echo %colWhiteBold%^|                                                                             ^|
 if %createcharDB% == NO set PAD= 
 if %createcharDB% == YES set PAD=
-echo %colWhiteBold%^|   %colWhiteBold%Character Database : V - %colReset%Toggle Actually Create Character DB (%colYellowBold%%createcharDB%%colReset%)        %PAD%%colWhiteBold%^|
+if %updatesOnly% == NO echo %colWhiteBold%^|   %colWhiteBold%Character Database : V - %colReset%Toggle Actually Create Character DB (%colYellowBold%%createcharDB%%colReset%)        %PAD%%colWhiteBold%^|
 if %loadcharDB% == NO set PAD= 
 if %loadcharDB% == YES set PAD=
-echo %colWhiteBold%^|                        %colWhiteBold%C - %colReset%Toggle Create Character DB Structure (%colYellowBold%%loadcharDB%%colReset%)       %PAD%%colWhiteBold%^|
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colWhiteBold%C - %colReset%Toggle Create Character DB Structure (%colYellowBold%%loadcharDB%%colReset%)       %PAD%%colWhiteBold%^|
 if %CDBUpdate% == NO set PAD= 
 if %CDBUpdate% == YES set PAD=
 if %updatesOnly% == NO echo %colWhiteBold%^|                        %colWhiteBold%B - %colReset%Apply Character DB updates (%colYellowBold%%CDBUpdate%%colReset%)                 %PAD%%colWhiteBold%^|
+if %updatesOnly% == YES echo %colWhiteBold%^|   %colWhiteBold%Character Database : B - %colReset%Apply Character DB updates (%colYellowBold%%CDBUpdate%%colReset%)                 %PAD%%colWhiteBold%^|
+
 echo %colWhiteBold%^|                                                                             ^|
 if %createworldDB% == NO set PAD= 
 if %createworldDB% == YES set PAD=
-echo %colWhiteBold%^|       %colYellowBold%World Database : E  - %colYellow%Toggle Actually Create World DB (%colWhiteBold%%createworldDB%%colYellow%)%colReset%           %PAD%%colWhiteBold%^|
+if %updatesOnly% == NO echo %colWhiteBold%^|       %colYellowBold%World Database : E  - %colYellow%Toggle Actually Create World DB (%colWhiteBold%%createworldDB%%colYellow%)%colReset%           %PAD%%colWhiteBold%^|
 if %loadworldDB% == NO set PAD= 
 if %loadworldDB% == YES set PAD=
-echo %colWhiteBold%^|                        %colYellowBold%W  - %colYellow%Toggle Create World DB Structure (%colWhiteBold%%loadworldDB%%colYellow%)%colReset%          %PAD%%colWhiteBold%^|
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colYellowBold%W  - %colYellow%Toggle Create World DB Structure (%colWhiteBold%%loadworldDB%%colYellow%)%colReset%          %PAD%%colWhiteBold%^|
 if %DBType% == EMPTY set PAD=    
 if %DBType% == POPULATED set P=
 
@@ -113,19 +115,21 @@ if %loadworldDB% == YES echo %colWhiteBold%^|                        %colYellowB
 if %WDBUpdate% == NO set PAD= 
 if %WDBUpdate% == YES set PAD=
 if %updatesOnly% == NO echo %colWhiteBold%^|                        %colYellowBold%U - %colYellow%Apply World DB updates (%colWhiteBold%%WDBUpdate%%colYellow%)%colReset%                     %PAD%%colWhiteBold%^|
+if %updatesOnly% == YES echo %colWhiteBold%^|       %colYellowBold%World Database : U - %colYellow%Apply World DB updates (%colWhiteBold%%WDBUpdate%%colYellow%)%colReset%                     %PAD%%colWhiteBold%^|
 echo %colWhiteBold%^|                                                                             ^|
 if %createrealmDB% == NO set PAD= 
 if %createrealmDB% == YES set PAD=
-echo %colWhiteBold%^|       %colCyanBold%Realm Database : T - %colCyan%Toggle Actually Create Realm DB (%colWhiteBold%%createrealmDB%%colCyan%)%colReset%            %PAD%%colWhiteBold%^|
+if %updatesOnly% == NO echo %colWhiteBold%^|       %colCyanBold%Realm Database : T - %colCyan%Toggle Actually Create Realm DB (%colWhiteBold%%createrealmDB%%colCyan%)%colReset%            %PAD%%colWhiteBold%^|
 if %loadrealmDB% == NO set PAD= 
 if %loadrealmDB% == YES set PAD=
-echo %colWhiteBold%^|                        %colCyanBold%R - %colCyan%Toggle Create Realm Db Structure (%colWhiteBold%%loadrealmDB%%colCyan%)%colReset%           %PAD%%colWhiteBold%^|
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%R - %colCyan%Toggle Create Realm Db Structure (%colWhiteBold%%loadrealmDB%%colCyan%)%colReset%           %PAD%%colWhiteBold%^|
 if %RDBUpdate% == NO set PAD= 
 if %RDBUpdate% == YES set PAD=
 if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%Y - %colCyan%Apply Realm DB updates (%colWhiteBold%%RDBUpdate%%colCyan%)%colReset%                     %PAD%%colWhiteBold%^|
+if %updatesOnly% == YES echo %colWhiteBold%^|       %colCyanBold%Realm Database : Y - %colCyan%Apply Realm DB updates (%colWhiteBold%%RDBUpdate%%colCyan%)%colReset%                     %PAD%%colWhiteBold%^|
 if %addrealmentry% == NO set PAD= 
 if %addrealmentry% == YES set PAD=
-echo %colWhiteBold%^|                        %colCyanBold%L - %colCyan%Toggle Add Default RealmList Entry for Core (%colWhiteBold%%addrealmentry%%colCyan%)%colReset%%PAD%%colWhiteBold%^|
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%L - %colCyan%Toggle Add Default RealmList Entry for Core (%colWhiteBold%%addrealmentry%%colCyan%)%colReset%%PAD%%colWhiteBold%^|
 echo %colWhiteBold%^|                                                                             ^|
 if %updatesOnly% == NO set PAD= 
 if %updatesOnly% == YES set PAD=
@@ -133,8 +137,8 @@ echo %colWhiteBold%^|                        %colMagentaBold%O - %colMagenta%Tog
 echo %colWhiteBold%^|                                                                             ^|
 if %createMangosUser% == NO set PAD= 
 if %createMangosUser% == YES set PAD=
-echo %colWhiteBold%^|                        %colRedBold%P - %colRed%Toggle Create Mangos User (%colWhiteBold%%createMangosUser%%colRed%)%colReset%                  %PAD%%colWhiteBold%^|
-echo %colWhiteBold%^|                                                                             ^|
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colRedBold%P - %colRed%Toggle Create Mangos User (%colWhiteBold%%createMangosUser%%colRed%)%colReset%                  %PAD%%colWhiteBold%^|
+if %updatesOnly% == NO echo %colWhiteBold%^|                                                                             ^|
 set LOCList=NO
 if %locFR% == YES set LOCList=YES
 if %locDE% == YES set LOCList=YES 
@@ -440,7 +444,7 @@ if %createMangosUser% == YES set /p newpass=%colYellowBold% New MySQL user passw
 if %newpass%. == . set newpass=mangos
 
 if %newpass% == mangos set defaultsused=YES
-if %newuser% == mangos set defaultsused=YES
+REM if %newuser% == mangos set defaultsused=YES
 if %defaultsused% == YES goto done:
 
 :WorldDB
@@ -470,7 +474,9 @@ if %loadrealmDB% == YES goto RealmDB3:
 :RealmDB4
 if %addrealmentry% == YES goto RealmDB5:
 
-goto MangosUser:
+:NeedToCreateMangosUser
+if %createMangosUser% == YES goto MangosUser1:
+goto done:
 
 :WorldDB1
 echo %colWhiteBold%_______________________________________________________________________________
@@ -554,9 +560,7 @@ echo %colReset%
 echo %colReset% Adding Realmlist entry to %rdb%
 echo _______________________________________________________________________________
 if %addrealmentry% == YES %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Tools\updateRealm.sql
-
-if %createMangosUser% == YES goto MangosUser1:
-goto done:
+goto NeedToCreateMangosUser:
 
 :MangosUser1
 echo %colWhiteBold%_______________________________________________________________________________
