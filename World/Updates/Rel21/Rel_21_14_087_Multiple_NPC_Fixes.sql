@@ -57,13 +57,13 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 			-- Farmer Solliden update run speed and rank
-				UPDATE `creature_template` SET `Rank`='2', `SpeedRun`='1.14286' WHERE  `Entry`=1936;
+				UPDATE `creature_template` SET `Rank`='4', `SpeedRun`='1.14286' WHERE  `Entry`=1936;
 
 			-- Surf Crawler has wrong inhabit type resulting in constant Evade Bug
 				UPDATE `creature_template` SET `InhabitType`='3' WHERE  `Entry`=3107;
 
 			-- School of Fish will sometimes fly due to wrong InhabitType
-				UPDATE `creature_template` SET `InhabitType`='2' WHERE  `Entry`=3107;
+				UPDATE `creature_template` SET `InhabitType`='2' WHERE  `Entry`=6145;
 
 			-- Morin Cloudstalker move between waypoints
 				UPDATE `creature_template` SET `MovementType`='2' WHERE  `Entry`=2988;
