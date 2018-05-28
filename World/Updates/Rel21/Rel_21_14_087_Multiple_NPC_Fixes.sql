@@ -85,9 +85,9 @@ BEGIN
 
 			-- UBRS Mob First Room Cleanup and Retail Adjustments for Hall of Binding
 				DELETE FROM `creature` WHERE `guid` IN (45834,160134,160136,160138,160139,160140,160141,160143,160151,160154,160155,160159,160116);
-				INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
-					(600000, 9819, 229, 0, 0, 212.074, -335.764, 76.8696, 5.14825, 10800, 0, 0, 8807, 0, 0, 0),
-					(600001, 9819, 229, 0, 0, 125.186, -334.310, 70.9266, 4.71040, 10800, 0, 0, 8807, 0, 0, 0);
+				INSERT INTO `creature` (`id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+					(9819, 229, 0, 0, 212.074, -335.764, 76.8696, 5.14825, 10800, 0, 0, 8807, 0, 0, 0),
+					(9819, 229, 0, 0, 125.186, -334.310, 70.9266, 4.71040, 10800, 0, 0, 8807, 0, 0, 0);
 				UPDATE `creature` SET `id`=9819, `curhealth`='8807' WHERE `guid`='58055';
 				UPDATE `creature` SET `orientation`=5.34171 WHERE `guid`='45832';				
     
