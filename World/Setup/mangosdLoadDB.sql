@@ -1906,6 +1906,24 @@ CREATE TABLE `npc_trainer` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `npc_trainer_template`
+--
+
+DROP TABLE IF EXISTS `npc_trainer_template`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `npc_trainer_template` (
+  `entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
+  `spell` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
+  `spellcost` INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `reqskill` SMALLINT(5) UNSIGNED NOT NULL DEFAULT '0',
+  `reqskillvalue` SMALLINT(5) UNSIGNED NOT NULL DEFAULT '0',
+  `reqlevel` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
+  UNIQUE KEY `entry_spell` (`entry`,`spell`)
+) ENGINE=MYISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `npc_vendor`
 --
 
@@ -1913,6 +1931,23 @@ DROP TABLE IF EXISTS `npc_vendor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `npc_vendor` (
+  `entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
+  `item` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
+  `maxcount` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
+  `incrtime` INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `condition_id` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
+  PRIMARY KEY (`entry`,`item`)
+) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Npc System';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `npc_vendor_template`
+--
+
+DROP TABLE IF EXISTS `npc_vendor_template`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `npc_vendor_template` (
   `entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
   `item` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0',
   `maxcount` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
