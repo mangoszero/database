@@ -189,8 +189,7 @@ ALTER TABLE creature_loot_template MODIFY COLUMN `entry` MEDIUMINT(8) UNSIGNED N
 ALTER TABLE creature_loot_template MODIFY COLUMN `groupid` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'A group is a set of loot definitions.';
 ALTER TABLE creature_loot_template MODIFY COLUMN `item` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Template ID of the item which can be included into the loot.';
 ALTER TABLE creature_loot_template MODIFY COLUMN `maxcount` TINYINT(3) UNSIGNED NOT NULL DEFAULT '1' COMMENT 'For non-reference entries - the maximum number of copies of the item.';
-ALTER TABLE creature_loot_template MODIFY COLUMN `mincountOrRef` MEDIUMINT(9) NOT NULL DEFAULT '1' COMMENT 'This field defines 
-when positive: the minimum number of copies of the item. ';
+ALTER TABLE creature_loot_template MODIFY COLUMN `mincountOrRef` MEDIUMINT(9) NOT NULL DEFAULT '1' COMMENT 'This field defines when positive: the minimum number of copies of the item. ';
 ALTER TABLE creature_model_info MODIFY COLUMN `bounding_radius` FLOAT NOT NULL DEFAULT '0' COMMENT 'This is the distance the creature stands from the player to attack him.';
 ALTER TABLE creature_model_info MODIFY COLUMN `combat_reach` FLOAT NOT NULL DEFAULT '0' COMMENT 'This is the maximum distance the creature can reach the player in ranged attack.';
 ALTER TABLE creature_model_info MODIFY COLUMN `gender` TINYINT(3) UNSIGNED NOT NULL DEFAULT '2' COMMENT 'Gender of the creature.';
@@ -283,8 +282,7 @@ ALTER TABLE creature_template MODIFY COLUMN `ModelId1` MEDIUMINT(8) UNSIGNED NOT
 ALTER TABLE creature_template MODIFY COLUMN `ModelId2` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'An alternative display model identifier for the creature_template.';
 ALTER TABLE creature_template MODIFY COLUMN `MovementType` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The movement type defines what a creature spawn will behave like after spawning.';
 ALTER TABLE creature_template MODIFY COLUMN `Name` CHAR(100) NOT NULL DEFAULT '' COMMENT 'The creature''s name that will be displayed.';
-ALTER TABLE creature_template MODIFY COLUMN `NpcFlags` INT(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The flags of the creature.
-';
+ALTER TABLE creature_template MODIFY COLUMN `NpcFlags` INT(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The flags of the creature.';
 ALTER TABLE creature_template MODIFY COLUMN `PetSpellDataId` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'ID that displays what spells the pet has in the client.';
 ALTER TABLE creature_template MODIFY COLUMN `PickpocketLootId` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'This adds pickpocket loot to the creature.';
 ALTER TABLE creature_template MODIFY COLUMN `PowerMultiplier` FLOAT NOT NULL DEFAULT '1' COMMENT 'The affects the creature''s power.';
@@ -299,8 +297,7 @@ ALTER TABLE creature_template MODIFY COLUMN `ResistanceFrost` SMALLINT(5) NOT NU
 ALTER TABLE creature_template MODIFY COLUMN `ResistanceHoly` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT 'The Holy resistance of the creature.';
 ALTER TABLE creature_template MODIFY COLUMN `ResistanceNature` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT 'The Nature resistance of the creature.';
 ALTER TABLE creature_template MODIFY COLUMN `ResistanceShadow` SMALLINT(5) NOT NULL DEFAULT '0' COMMENT 'The Shadow resistance of the creature.';
-ALTER TABLE creature_template MODIFY COLUMN `Scale` FLOAT NOT NULL DEFAULT '1' COMMENT 'The scale/size of the creature.<br />
-Normal => 1 (100%)';
+ALTER TABLE creature_template MODIFY COLUMN `Scale` FLOAT NOT NULL DEFAULT '1' COMMENT 'The scale/size of the creature.<br />Normal => 1 (100%)';
 ALTER TABLE creature_template MODIFY COLUMN `SkinningLootId` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'This adds skinning loot to the creature.';
 ALTER TABLE creature_template MODIFY COLUMN `SpeedRun` FLOAT NOT NULL DEFAULT '1.14286' COMMENT 'Controls how fast the creature can move in running mode.';
 ALTER TABLE creature_template MODIFY COLUMN `SpeedWalk` FLOAT NOT NULL DEFAULT '1' COMMENT 'Controls how fast the creature can move in walking mode.';
@@ -320,8 +317,7 @@ ALTER TABLE creature_template_addon MODIFY COLUMN `bytes1` INT(10) UNSIGNED NOT 
 ALTER TABLE creature_template_addon MODIFY COLUMN `emote` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Emote ID that the creature should continually perform.';
 ALTER TABLE creature_template_addon MODIFY COLUMN `entry` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'This references the creature_template table''s unique ID.';
 ALTER TABLE creature_template_addon MODIFY COLUMN `mount` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'A display model identifier used as mount for the creature_template.';
-ALTER TABLE creature_template_addon MODIFY COLUMN `moveflags` INT(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '
-The flag controls how a creature_template will be animated while moving.';
+ALTER TABLE creature_template_addon MODIFY COLUMN `moveflags` INT(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The flag controls how a creature_template will be animated while moving.';
 ALTER TABLE creature_template_classlevelstats MODIFY COLUMN `BaseArmor` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Base armor value for any creature of this level and class.';
 ALTER TABLE creature_template_classlevelstats MODIFY COLUMN `BaseDamageExp0` FLOAT NOT NULL DEFAULT '0' COMMENT 'Base damage value for expansion 0 aka. vanilla WoW.';
 ALTER TABLE creature_template_classlevelstats MODIFY COLUMN `BaseHealthExp0` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '1' COMMENT 'Base health value for expansion 0 aka. vanilla WoW.';
