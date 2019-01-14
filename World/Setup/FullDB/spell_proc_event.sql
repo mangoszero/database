@@ -7,7 +7,7 @@ TRUNCATE TABLE `spell_proc_event`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -97,7 +97,7 @@ INSERT INTO `spell_proc_event` (`entry`, `SchoolMask`, `SpellFamilyName`, `Spell
 (18094,0,5,10,10,10,0,0,0,0,0),
 (18096,0,0,549755813984,549755813984,549755813984,0,0,0,0,0),
 (18119,0,5,9189,9189,9189,0,0,0,0,0),
-(18137,0,0,0,0,0,0,0,0,0,3),
+(18137,127,0,0,0,0,20088,0,0,0,3),
 (18765,0,0,0,0,0,0,116,0,0,0),
 (18800,0,0,0,0,0,8,0,0,0,0),
 (19228,0,0,64,64,64,0,0,0,0,0),
@@ -206,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 22:52:47
+-- Dump completed on 2019-01-14 11:59:59

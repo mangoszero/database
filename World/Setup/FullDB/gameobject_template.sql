@@ -7,7 +7,7 @@ TRUNCATE TABLE `gameobject_template`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -8382,7 +8382,7 @@ INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `factio
 (180656,25,6435,'Sagefish School',0,0,1,4,17494,2,6,1628,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
 (180657,25,6482,'Firefin Snapper School',0,0,1,4,17500,2,6,1628,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
 (180658,25,6291,'School of Deviate Fish',0,0,1,4,17496,2,6,1628,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
-(180660,8,0,'Drop-Off Point',0,0,1,1348,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+(180660,8,6484,'Drop-Off Point',0,0,1,1348,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
 (180661,25,6485,'Oil Spill',0,0,1,4,17500,2,6,1628,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
 (180662,25,6434,'Floating Wreckage',0,0,1,4,17498,2,4,1628,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
 (180663,25,6435,'Sagefish School',0,0,1,4,17502,4,8,1628,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
@@ -10542,4 +10542,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 22:52:42
+-- Dump completed on 2019-01-14 11:59:43

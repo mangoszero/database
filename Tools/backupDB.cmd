@@ -43,7 +43,7 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
 echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
 echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
-echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Backup v1.0                %colWhiteBold%    ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Backup v1.1                %colWhiteBold%    ^|
 echo ^|_____________________________________________________________________________^|
 echo %colWhiteLightBlue%^|                                                                             ^|
 echo ^|   Website / Forum / Wiki / Support: https://getmangos.eu                    ^|
@@ -336,11 +336,13 @@ color 02
 REM ##### IF createworlddb = YES then create the DB
 if %loadworldDB% == NO set extraparams=--add-drop-table=false --no-create-info 
 if %createworldDB% == YES goto WorldDB1:
+if %loadworldDB% == YES goto WorldDB1:
 
 :CharDB
 REM ##### IF createchardb = YES then create the DB
 set extraparams=
 if %loadcharDB% == NO set extraparams=--add-drop-table=false --no-create-info 
+if %loadcharDB% == YES goto CharDB1:
 if %createcharDB% == YES goto CharDB1:
 
 :RealmDB
@@ -348,6 +350,7 @@ REM ##### IF createrealmdb = YES then create the DB
 set extraparams=
 if %loadrealmDB% == NO set extraparams=--add-drop-table=false --no-create-info 
 if %createrealmDB% == YES goto RealmDB1:
+if %loadrealmDB% == YES goto RealmDB1:
 
 goto done:
 

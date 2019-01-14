@@ -7,7 +7,7 @@ TRUNCATE TABLE `creature_movement_template`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -6459,7 +6459,13 @@ INSERT INTO `creature_movement_template` (`entry`, `point`, `position_x`, `posit
 (10602,1,-18.9341,-389.926,48.6219,1000,10602,0,0,0,0,0,0,0,255,0,0),
 (10268,1,-166.74,-330.16,64.4008,0,0,0,0,0,0,0,0,0,0,0,0),
 (10162,1,169.33,-444.8,121.98,0,0,0,0,0,0,0,0,0,6.27848,0,0),
-(10162,2,161.91,-444.92,121.98,0,0,0,0,0,0,0,0,0,3.28768,0,0);
+(10162,2,161.91,-444.92,121.98,0,0,0,0,0,0,0,0,0,3.28768,0,0),
+(2988,1,-2368.63,-890.525,-9.42405,0,0,0,0,0,0,0,0,0,100,0,0),
+(2988,2,-2360.93,-832.411,-9.34033,0,0,0,0,0,0,0,0,0,100,0,0),
+(2988,3,-2354.42,-804.029,-9.42432,0,0,0,0,0,0,0,0,0,100,0,0),
+(2988,4,-2344.2,-749.717,-9.42432,0,0,0,0,0,0,0,0,0,100,0,0),
+(2988,5,-2335.86,-676.227,-9.41278,0,0,0,0,0,0,0,0,0,100,0,0),
+(2988,6,-2292.79,-586.661,-9.38816,0,0,0,0,0,0,0,0,0,100,0,0);
 /*!40000 ALTER TABLE `creature_movement_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -6472,4 +6478,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 22:52:39
+-- Dump completed on 2019-01-14 11:59:35

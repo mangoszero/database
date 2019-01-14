@@ -7,7 +7,7 @@ TRUNCATE TABLE `pool_template`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1981,7 +1981,14 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (1712,1,'Ironforge Harvest Festival Food 4'),
 (1713,1,'Ironforge Harvest Festival Food 5'),
 (1714,1,'Ironforge Harvest Festival Food 6'),
-(1715,1,'Ironforge Harvest Festival Food 7');
+(1715,1,'Ironforge Harvest Festival Food 7'),
+(30002,1,'Spawn pool for Lord Melenas'),
+(30003,1,'Kharanos - Food Crate / Water Barrel'),
+(30004,1,'Food Crate / Water Barrel'),
+(30005,1,'Food Crate / Water Barrel'),
+(30006,1,'Food Crate / Water Barrel'),
+(30007,1,'Food Crate / Water Barrel'),
+(30008,1,'Food Crate / Water Barrel');
 /*!40000 ALTER TABLE `pool_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1994,4 +2001,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 22:52:45
+-- Dump completed on 2019-01-14 11:59:54

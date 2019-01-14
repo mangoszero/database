@@ -7,7 +7,7 @@ TRUNCATE TABLE `creature_ai_scripts`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1683,10 +1683,10 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (166604,1666,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Kam Deepfury - Flee at 15% HP'),
 (166701,1667,4,0,100,0,0,0,0,0,1,-1030,-1031,-1032,0,0,0,0,0,0,0,0,'Meven Korgal - Random Say on Aggro'),
 (167401,1674,4,0,15,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Rot Hide Gnoll - Random Say on Aggro'),
-(167402,1674,0,0,100,1,7000,21000,30000,45000,11,3237,0,0,0,0,0,0,0,0,0,0,'Rot Hide Gnoll - Cast Curse of Thule'),
+(167402,1674,0,0,100,1,7000,21000,30000,45000,11,3237,1,0,0,0,0,0,0,0,0,0,'Rot Hide Gnoll - Cast Curse of Thule'),
 (167403,1674,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Rot Hide Gnoll - Flee at 15% HP'),
 (167501,1675,4,0,15,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Rot Hide Mongrel - Random Say on Aggro'),
-(167502,1675,0,0,100,0,7000,14000,30000,45000,11,3237,0,33,0,0,0,0,0,0,0,0,'Rot Hide Mongrel - Cast Curse of Thule'),
+(167502,1675,0,0,100,0,7000,14000,30000,45000,11,3237,1,33,0,0,0,0,0,0,0,0,'Rot Hide Mongrel - Cast Curse of Thule'),
 (167901,1679,0,0,100,1,6000,8000,11000,15000,11,5588,1,0,0,0,0,0,0,0,0,0,'Avarus Kharag - Cast Hammer of Justice'),
 (167902,1679,2,0,100,1,30,0,20000,30000,11,1026,0,1,0,0,0,0,0,0,0,0,'Avarus Kharag - Cast Holy Light at 30% HP'),
 (168801,1688,11,0,100,0,0,0,0,0,11,11959,0,1,0,0,0,0,0,0,0,0,'Night Web Matriarch - Cast Poison Proc on Spawn'),
@@ -1762,7 +1762,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (175101,1751,4,0,100,0,0,0,0,0,12,68,1,300000,0,0,0,0,0,0,0,0,'Mithras Ironhill - Summon Stormwind City Guard on Aggro'),
 (175201,1752,4,0,100,0,0,0,0,0,12,68,1,300000,0,0,0,0,0,0,0,0,'Caledra Dawnbreeze - Summon Stormwind City Guard on Aggro'),
 (175301,1753,2,0,100,1,75,0,7000,14000,11,3243,1,1,0,0,0,0,0,0,0,0,'Maggot Eye - Cast Life Harvest at 75% HP'),
-(175302,1753,0,0,100,1,4000,9000,30000,45000,11,3237,0,33,0,0,0,0,0,0,0,0,'Maggot Eye - Cast Curse of Thule'),
+(175302,1753,0,0,100,1,4000,9000,30000,45000,11,3237,1,33,0,0,0,0,0,0,0,0,'Maggot Eye - Cast Curse of Thule'),
 (176301,1763,1,0,100,1,120000,120000,120000,120000,1,-408,-409,0,0,0,0,0,0,0,0,0,'Gilnid - Random Say OOC'),
 (176302,1763,0,0,100,1,2100,4800,23300,44900,11,5213,1,0,0,0,0,0,0,0,0,0,'Gilnid - Cast Molten Metal'),
 (176501,1765,0,0,100,1,4000,14000,34000,60000,11,24604,0,0,0,0,0,0,0,0,0,0,'Worgn - Cast Furious Howl'),
@@ -1775,11 +1775,11 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (176901,1769,1,0,100,1,1000,1000,1800000,1800000,11,12544,0,1,0,0,0,0,0,0,0,0,'Moonrage Whitescalp - Cast Frost Armor on Spawn'),
 (176902,1769,27,0,100,1,12544,1,15000,30000,11,12544,0,1,0,0,0,0,0,0,0,0,'Moonrage Whitescalp - Cast Frost Armor on Missing Buff'),
 (177201,1772,4,0,15,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - Random Say on Aggro'),
-(177202,1772,0,0,100,1,21400,34700,10100,45300,11,3237,0,0,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - Cast Curse of Thule'),
-(177303,1773,6,0,10,0,0,0,0,0,49,1983,1,17,0,0,0,0,0,0,0,0,'Rot Hide Mystic - On Death Spawn Nightlash'),
-(177301,1773,0,0,100,1,7200,20900,35700,44500,11,3237,0,0,0,0,0,0,0,0,0,0,'Rot Hide Mystic - Cast Curse of Thule'),
+(177202,1772,0,0,100,1,21400,34700,10100,45300,11,3237,1,0,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - Cast Curse of Thule'),
+(177303,1773,6,0,10,0,0,0,0,0,49,1983,0,17,0,0,0,0,0,0,0,0,'Rot Hide Mystic - On Death Spawn Nightlash'),
+(177301,1773,0,0,100,1,7200,20900,35700,44500,11,3237,1,0,0,0,0,0,0,0,0,0,'Rot Hide Mystic - Cast Curse of Thule'),
 (177302,1773,14,0,100,1,150,40,24400,32900,11,332,6,1,0,0,0,0,0,0,0,0,'Rot Hide Mystic - Cast Healing Wave on Friendlies'),
-(177203,1772,6,0,10,0,0,0,0,0,49,1983,1,17,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - On Death Spawn Nightlash'),
+(177203,1772,6,0,10,0,0,0,0,0,49,1983,0,17,0,0,0,0,0,0,0,0,'Rot Hide Gladerunner - On Death Spawn Nightlash'),
 (177901,1779,0,0,100,1,5700,10100,13100,21800,11,6958,4,0,0,0,0,0,0,0,0,0,'Moonrage Glutton - Cast Blood Leech'),
 (178001,1780,11,0,100,0,0,0,0,0,11,7276,0,0,0,0,0,0,0,0,0,0,'Moss Stalker - Cast Poison Proc on Spawn'),
 (178101,1781,11,0,100,0,0,0,0,0,11,7276,0,0,0,0,0,0,0,0,0,0,'Mist Creeper - Cast Poison Proc on Spawn'),
@@ -2147,16 +2147,16 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (193903,1939,9,5,100,1,0,5,5000,9000,11,11971,1,0,0,0,0,0,0,0,0,0,'Rot Hide Brute - Cast Sunder Armor (Phase 1)'),
 (193904,1939,24,5,100,1,11971,5,5000,5000,22,2,0,0,0,0,0,0,0,0,0,0,'Rot Hide Brute - Set Phase 2 on Target Max Sunder Armor Aura Stack (Phase 1)'),
 (193905,1939,28,3,100,1,11971,1,5000,5000,22,1,0,0,0,0,0,0,0,0,0,0,'Rot Hide Brute - Set Phase 1 on Target Missing Sunder Armor Aura Stack (Phase 2)'),
-(193906,1939,0,0,100,1,7200,20700,32700,54900,11,3237,0,1,0,0,0,0,0,0,0,0,'Rot Hide Brute - Cast Curse of Thule'),
+(193906,1939,0,0,100,1,7200,20700,32700,54900,11,3237,1,1,0,0,0,0,0,0,0,0,'Rot Hide Brute - Cast Curse of Thule'),
 (193907,1939,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Rot Hide Brute - Set Phase to 0 on Evade'),
 (194001,1940,0,0,100,1,24800,34200,106600,244800,11,3256,4,1,0,0,0,0,0,0,0,0,'Rot Hide Plague Weaver - Cast Plague Cloud'),
-(194002,1940,0,0,100,1,7200,20700,32700,59200,11,3237,0,0,0,0,0,0,0,0,0,0,'Rot Hide Plague Weaver - Cast Curse of Thule'),
+(194002,1940,0,0,100,1,7200,20700,32700,59200,11,3237,1,0,0,0,0,0,0,0,0,0,'Rot Hide Plague Weaver - Cast Curse of Thule'),
 (194101,1941,4,0,15,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Rot Hide Graverobber - Random Say on Aggro'),
-(194102,1941,0,0,100,1,2000,18000,120000,161000,11,3237,0,1,0,0,0,0,0,0,0,0,'Rot Hide Graverobber - Cast Curse of Thule'),
+(194102,1941,0,0,100,1,2000,18000,120000,161000,11,3237,1,1,0,0,0,0,0,0,0,0,'Rot Hide Graverobber - Cast Curse of Thule'),
 (194201,1942,4,0,15,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Rot Hide Savage - Random Say on Aggro'),
 (194202,1942,0,0,100,1,11200,16700,31400,37300,11,3258,0,1,0,0,0,0,0,0,0,0,'Rot Hide Savage - Cast Savage Rage'),
-(194203,1942,0,0,100,1,7200,20700,32700,54900,11,3237,0,0,0,0,0,0,0,0,0,0,'Rot Hide Savage - Cast Curse of Thule'),
-(194301,1943,0,0,100,1,7200,20900,36500,43800,11,3237,0,0,0,0,0,0,0,0,0,0,'Raging Rot Hide - Cast Curse of Thule'),
+(194203,1942,0,0,100,1,7200,20700,32700,54900,11,3237,1,0,0,0,0,0,0,0,0,0,'Rot Hide Savage - Cast Curse of Thule'),
+(194301,1943,0,0,100,1,7200,20900,36500,43800,11,3237,1,0,0,0,0,0,0,0,0,0,'Raging Rot Hide - Cast Curse of Thule'),
 (194401,1944,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Rot Hide Bruiser - Flee at 15% HP'),
 (194701,1947,1,0,100,0,0,0,0,0,11,11939,0,0,0,0,0,0,0,0,0,0,'Thule Ravenclaw - Summon Imp on Spawn'),
 (194702,1947,1,0,100,1,1000,1000,1800000,1800000,11,13787,0,1,0,0,0,0,0,0,0,0,'Thule Ravenclaw - Cast Demon Armor on Spawn'),
@@ -2666,7 +2666,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (233507,2335,9,13,100,1,0,5,1000,1000,21,1,0,0,0,0,0,0,0,0,0,0,'Magistrate Burnside - Start Combat Movement Below 5 Yards (Phase 1)'),
 (233508,2335,3,11,100,1,100,15,1000,1000,22,1,0,0,0,0,0,0,0,0,0,0,'Magistrate Burnside - Set Phase 1 when Mana is above 15% (Phase 2)'),
 (233509,2335,9,0,100,1,0,8,12000,15000,11,11969,0,1,0,0,0,0,0,0,0,0,'Magistrate Burnside - Cast Fire Nova'),
-(233510,2335,0,0,100,1,5000,7000,16000,20000,11,7739,0,1,0,0,0,0,0,0,0,0,'Magistrate Burnside - Cast Inferno Shell'),
+(233510,2335,9,0,100,1,0,7000,16000,20000,11,7739,0,1,0,0,0,0,0,0,0,0,'Magistrate Burnside - Cast Inferno Shell'),
 (233511,2335,2,0,100,0,15,0,0,0,22,3,0,0,0,0,0,0,0,0,0,0,'Magistrate Burnside - Set Phase 3 at 15% HP'),
 (233512,2335,2,7,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Magistrate Burnside - Start Combat Movement and Flee at 15% HP (Phase 3)'),
 (233513,2335,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Magistrate Burnside - Set Phase to 0 on Evade'),
@@ -2800,7 +2800,6 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (238101,2381,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Micha Yance - Flee at 15% HP'),
 (238201,2382,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Darren Malvew - Flee at 15% HP'),
 (238301,2383,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Lindea Rabonne - Flee at 15% HP'),
-(238401,2384,11,0,100,0,0,0,0,0,11,24450,0,0,0,0,0,0,0,0,0,0,'Starving Mountain Lion - Cast Prowl on Spawn'),
 (238601,2386,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Southshore Guard - Flee at 15% HP'),
 (238701,2387,1,0,100,0,0,0,0,0,21,0,0,0,22,0,0,0,0,0,0,0,'Hillsbrad Councilman - Prevent Combat Movement and Set Phase to 0 on Spawn'),
 (238702,2387,1,0,100,1,1000,1000,1800000,1800000,11,12544,0,1,0,0,0,0,0,0,0,0,'Hillsbrad Councilman - Cast Frost Armor on Spawn'),
@@ -2821,7 +2820,6 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (240301,2403,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Farmer Getz - Flee at 15% HP'),
 (240401,2404,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Blacksmith Verringtan - Flee at 15% HP'),
 (240501,2405,4,0,30,0,0,0,0,0,1,-927,0,0,0,0,0,0,0,0,0,0,'Tarren Mill Deathguard - Say on Aggro'),
-(240601,2406,11,0,100,0,0,0,0,0,11,24450,0,0,0,0,0,0,0,0,0,0,'Mountain Lion - Cast Prowl on Spawn'),
 (240901,2409,4,0,100,0,0,0,0,0,12,9526,1,30000,12,9526,1,30000,1,-549,0,0,'Felicia Maline - Summon Enraged Gryphons and Yell on Aggro'),
 (241101,2411,2,0,100,0,15,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ricter - Flee at 15% HP'),
 (241201,2412,2,0,100,0,15,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Alina - Flee at 15% HP'),
@@ -8727,9 +8725,9 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (828213,8282,2,7,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Highlord Mastrogonde - Start Combat Movement and Flee at 15% HP (Phase 3)'),
 (828214,8282,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Highlord Mastrogonde - Set Phase to 0 on Evade'),
 (828301,8283,1,0,100,0,0,0,0,0,21,0,0,0,20,0,0,0,22,1,0,0,'Slave Master Blackheart - Prevent Combat Movement and Prevent Melee and Set Phase 1 on Spawn'),
-(828302,8283,9,5,100,1,5,30,2300,3900,11,6660,1,0,40,2,0,0,0,0,0,0,'Slave Master Blackheart - Cast Shoot and Set Ranged Weapon Model (Phase 1)');
+(828302,8283,9,5,100,1,5,30,2300,3900,11,6660,1,0,40,2,0,0,0,0,0,0,'Slave Master Blackheart - Cast Shoot and Set Ranged Weapon Model (Phase 1)'),
+(828303,8283,9,5,100,1,30,80,1000,1000,21,1,1,0,20,1,0,0,0,0,0,0,'Slave Master Blackheart - Start Combat Movement and Start Melee at 30 Yards (Phase 1)');
 INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES 
-(828303,8283,9,5,100,1,30,80,1000,1000,21,1,1,0,20,1,0,0,0,0,0,0,'Slave Master Blackheart - Start Combat Movement and Start Melee at 30 Yards (Phase 1)'),
 (828304,8283,9,5,100,1,0,10,1000,1000,21,1,0,0,40,1,0,0,20,1,0,0,'Slave Master Blackheart - Start Combat Movement and Set Melee Weapon Model and Start Melee at 10 Yards (Phase 1)'),
 (828305,8283,9,5,100,1,11,25,1000,1000,21,0,1,0,20,0,0,0,0,0,0,0,'Slave Master Blackheart - Prevent Combat Movement and Prevent Melee at 25 Yards (Phase 1)'),
 (828306,8283,9,0,100,1,0,20,8000,11000,11,6533,1,1,0,0,0,0,0,0,0,0,'Slave Master Blackheart - Cast Net'),
@@ -13880,7 +13878,10 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (639104,6391,8,0,100,0,9798,-1,0,0,1,-31,0,0,0,0,0,0,0,0,0,0,'Holdout Warrior: emote on Radiation Spellhit'),
 (639105,6391,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Holdout Warrior: flee at 15% HP'),
 (651602,6516,0,0,100,1,5000,5000,9000,15000,11,12553,1,0,0,0,0,0,0,0,0,0,'Un\'Goro Thunderer: cast Shock'),
-(1241802,12418,9,0,100,1,0,5,17000,21000,11,13445,1,0,0,0,0,0,0,0,0,0,'Gordok Hyena: cast Rend');
+(1241802,12418,9,0,100,1,0,5,17000,21000,11,13445,1,0,0,0,0,0,0,0,0,0,'Gordok Hyena: cast Rend'),
+(320414,3204,11,0,100,0,0,0,0,0,11,23501,0,0,0,0,0,0,0,0,0,0,'Gazz\'uz  - Summon Voidwalker on Spawn'),
+(1131802,11318,2,0,100,0,25,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ragefire Trogg - Flee at 20%'),
+(1131911,11319,2,0,100,0,15,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ragefire Shaman - Flee at 0-15% Health');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13893,4 +13894,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 22:52:38
+-- Dump completed on 2019-01-14 11:59:31

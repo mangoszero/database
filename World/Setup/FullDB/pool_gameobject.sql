@@ -7,7 +7,7 @@ TRUNCATE TABLE `pool_gameobject`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.7.18-log
+-- Server version	5.6.25-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -13223,7 +13223,19 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 (34194,1707,33.34,'Orgrimmar Harvest Festival Fruit 7'),
 (34188,1708,33.33,'Orgrimmar Harvest Festival Boar 8'),
 (34048,1708,33.33,'Orgrimmar Harvest Festival Fish 8'),
-(35788,1708,33.34,'Orgrimmar Harvest Festival Fruit 8');
+(35788,1708,33.34,'Orgrimmar Harvest Festival Fruit 8'),
+(10677,30003,50,'Food Crate'),
+(1462,30003,50,'Water Barrel'),
+(30758,30004,50,'Food Crate'),
+(29275,30004,50,'Water Barrel'),
+(32754,30005,50,'Food Crate'),
+(32313,30005,50,'Water Barrel'),
+(30839,30006,50,'Food Crate'),
+(30677,30006,50,'Water Barrel'),
+(30687,30007,50,'Food Crate'),
+(29276,30007,50,'Water Barrel'),
+(29306,30008,50,'Food Crate'),
+(29609,30008,50,'Water Barrel');
 /*!40000 ALTER TABLE `pool_gameobject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13236,4 +13248,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 22:52:45
+-- Dump completed on 2019-01-14 11:59:53
