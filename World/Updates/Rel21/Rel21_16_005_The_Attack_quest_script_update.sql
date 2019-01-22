@@ -26,12 +26,12 @@ BEGIN
 
     -- Expected Values
     SET @cOldVersion = '21'; 
-    SET @cOldStructure = '11'; 
+    SET @cOldStructure = '16'; 
     SET @cOldContent = '004';
 
     -- New Values
     SET @cNewVersion = '21';
-    SET @cNewStructure = '11';
+    SET @cNewStructure = '16';
     SET @cNewContent = '005';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'The Attack quest script updat';
