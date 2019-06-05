@@ -451,10 +451,11 @@ if %newpass%. == . set newpass=mangos
 
 if %newpass% == mangos set defaultsused=YES
 REM if %newuser% == mangos set defaultsused=YES
-if %defaultsused% == YES goto done:
+REM if %defaultsused% == YES goto done:
 
 :WorldDB
 REM ##### IF createworlddb = YES then create the DB
+
 if %createworldDB% == YES goto WorldDB1:
 
 :WorldDB2
