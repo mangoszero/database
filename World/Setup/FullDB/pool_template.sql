@@ -1988,7 +1988,9 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (30005,1,'Food Crate / Water Barrel'),
 (30006,1,'Food Crate / Water Barrel'),
 (30007,1,'Food Crate / Water Barrel'),
-(30008,1,'Food Crate / Water Barrel');
+(30008,1,'Food Crate / Water Barrel'),
+(30009,1,'Bloodsail Orders'),
+(30010,1,'Bloodsail Charts');
 /*!40000 ALTER TABLE `pool_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2001,4 +2003,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-14 11:59:54
+-- Dump completed on 2019-08-16 22:57:00

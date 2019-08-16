@@ -13235,7 +13235,13 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 (30687,30007,50,'Food Crate'),
 (29276,30007,50,'Water Barrel'),
 (29306,30008,50,'Food Crate'),
-(29609,30008,50,'Water Barrel');
+(29609,30008,50,'Water Barrel'),
+(12154,30009,0,'Bloodsail Charts Point 1'),
+(632469,30009,0,'Bloodsail Charts Point 2'),
+(632470,30009,0,'Bloodsail Charts Point 3'),
+(12156,30010,0,'Bloodsail Orders Point 1'),
+(12208,30010,0,'Bloodsail Orders Point 2'),
+(632471,30010,0,'Bloodsail Orders Point 3');
 /*!40000 ALTER TABLE `pool_gameobject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13248,4 +13254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-14 11:59:53
+-- Dump completed on 2019-08-16 22:57:00

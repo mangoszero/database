@@ -38,7 +38,7 @@ INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position
 (194,'Shadowfang Keep - Exiting',0,-233.011,1567.5,76.8921,4.27606,0),
 (226,'The Barrens - Wailing Caverns',1,-740.059,-2214.23,16.1374,5.68,0),
 (228,'The Barrens - Wailing Caverns',43,-163.49,132.9,-73.66,5.83,2001),
-(242,'Razorfen Kraul - Exiting',1,-4463.32,-1664.29,82.2436,3.92699,0),
+(242,'Razorfen Kraul - Exiting',1,-4463.32,-1664.29,81.9,3.92699,0),
 (244,'Razorfen Kraul - Entering',47,1942.27,1544.23,81.8051,1.309,168),
 (257,'Blackfathom Deeps - Entering',48,-150.234,106.594,-39.779,4.45059,1011),
 (259,'Blackfathom Deeps Instance Start',1,4247.74,745.879,-24.5299,4.5828,0),
@@ -85,9 +85,9 @@ INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position
 (2221,'Stratholme - Exiting Back Door',0,3233.06,-4048.3,108.442,2.00713,0),
 (2226,'Ragefire Chasm - Exiting',1,1814.99,-4419.23,-18.8151,1.91986,0),
 (2230,'Ragefire Chasm - Entering',389,0.797643,-8.23429,-15.5288,4.71239,2000),
-(2527,'Hall of Legends - Ogrimmar',450,221.322,74.4933,25.7195,0.484836,2031),
+(2527,'Hall of Legends - Ogrimmar',450,221.322,74.4933,25.7195,0.484836,3),
 (2530,'Hall of Legends - Ogrimmar (Inside)',1,1637.32,-4242.7,56.1827,4.1927,0),
-(2532,'Stormwind - Champions Hall',449,-0.299116,4.39156,-0.255884,1.54805,2032),
+(2532,'Stormwind - Champions Hall',449,-0.299116,4.39156,-0.255884,1.54805,4),
 (2534,'Stormwind (Inside) - Champions Hall',0,-8762.45,403.062,103.902,5.34463,0),
 (2567,'Scholomance - Entering',289,190.819,126.329,137.227,0,2013),
 (2568,'Scholomance - Exiting',0,1273.91,-2553.09,90.6322,3.57793,0),
@@ -141,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-14 11:59:28
+-- Dump completed on 2019-08-16 22:56:45

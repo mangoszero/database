@@ -13881,7 +13881,8 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1241802,12418,9,0,100,1,0,5,17000,21000,11,13445,1,0,0,0,0,0,0,0,0,0,'Gordok Hyena: cast Rend'),
 (320414,3204,11,0,100,0,0,0,0,0,11,23501,0,0,0,0,0,0,0,0,0,0,'Gazz\'uz  - Summon Voidwalker on Spawn'),
 (1131802,11318,2,0,100,0,25,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ragefire Trogg - Flee at 20%'),
-(1131911,11319,2,0,100,0,15,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ragefire Shaman - Flee at 0-15% Health');
+(1131911,11319,2,0,100,0,15,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ragefire Shaman - Flee at 0-15% Health'),
+(77102,771,8,0,100,1,3488,-1,0,0,41,1,0,0,0,0,0,0,0,0,0,0,'Commander Felstrom - Despawn Self on SpellHIT');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13894,4 +13895,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-14 11:59:31
+-- Dump completed on 2019-08-16 22:56:47
