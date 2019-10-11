@@ -44,7 +44,7 @@ BEGIN
 
 		DELETE FROM `spell_chain` WHERE `spell_id` IN (20154, 21084, 20287, 20288, 20289, 20290, 20291, 20292, 20293);
 		INSERT INTO `spell_chain` VALUES
-		/* Seal of Righteousness (serverside extension) */
+		-- Seal of Righteousness (serverside extension)
 		(20287,21084,20154,3,0),
 		(20288,20287,20154,4,0),
 		(20289,20288,20154,5,0),
