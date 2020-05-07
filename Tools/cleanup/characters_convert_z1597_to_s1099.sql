@@ -8,12 +8,12 @@
 
 -- Note: ALWAYS DO BACKUP before use it. You will CAN NOT easy restore original DB state after tool use.
 
-ALTER TABLE character_db_version CHANGE COLUMN `required_z1597_s1099_02_characters_pet_aura` `required_s1099_11299_02_characters_pet_aura` bit;
+ALTER TABLE `character_db_version` CHANGE COLUMN `required_z1597_s1099_02_characters_pet_aura` `required_s1099_11299_02_characters_pet_aura` bit;
 
 
 -- MODIFID TABLES
 
-ALTER TABLE characters
+ALTER TABLE `characters`
   ADD COLUMN `dungeon_difficulty` tinyint(1) unsigned NOT NULL DEFAULT '0' AFTER `map`,
   ADD COLUMN `arenaPoints` int(10) UNSIGNED NOT NULL default '0' AFTER `taxi_path`,
   ADD COLUMN `totalHonorPoints` int(10) UNSIGNED NOT NULL default '0' AFTER `arenaPoints`,
@@ -30,30 +30,30 @@ ALTER TABLE characters
   DROP COLUMN `stored_honorable_kills`,
   ADD COLUMN `knownTitles` longtext AFTER `ammoId`;
 
-UPDATE characters
-  SET at_login = at_login | 4; -- reset talents at login
+UPDATE `characters`
+  SET `at_login` = `at_login` | 4; -- reset talents at login
 
-UPDATE characters              --  avoid client crashes at not existed item models
-  SET equipmentCache = '0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ';
+UPDATE `characters`              --  avoid client crashes at not existed item models
+  SET `equipmentCache` = '0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ';
 
-UPDATE characters
-  SET knownTitles = '0 0 ';
+UPDATE `characters`
+  SET `knownTitles` = '0 0 ';
 
-ALTER TABLE character_social
+ALTER TABLE `character_social`
   ADD COLUMN `note` varchar(48) NOT NULL DEFAULT '' COMMENT 'Friend Note' AFTER `flags`;
 
 
-ALTER TABLE character_stats
+ALTER TABLE `character_stats`
   ADD COLUMN `spellCritPct` float UNSIGNED NOT NULL default '0' AFTER `rangedCritPct`,
   ADD COLUMN `spellPower` int(10) UNSIGNED NOT NULL default '0' AFTER `rangedAttackPower`;
 
 ALTER TABLE groups
-  ADD COLUMN `difficulty` tinyint(3) unsigned NOT NULL default '0' AFTER isRaid;
+  ADD COLUMN `difficulty` tinyint(3) unsigned NOT NULL default '0' AFTER `isRaid`;
 
-ALTER TABLE guild
+ALTER TABLE `guild`
   ADD COLUMN `BankMoney` bigint(20) NOT NULL default '0' AFTER `createdate`;
 
-ALTER TABLE guild_member
+ALTER TABLE `guild_member`
   ADD COLUMN `BankResetTimeMoney` int(11) unsigned NOT NULL default '0' AFTER `offnote`,
   ADD COLUMN `BankRemMoney` int(11) unsigned NOT NULL default '0' AFTER `BankResetTimeMoney`,
   ADD COLUMN `BankResetTimeTab0` int(11) unsigned NOT NULL default '0' AFTER `BankRemMoney`,
@@ -69,30 +69,30 @@ ALTER TABLE guild_member
   ADD COLUMN `BankResetTimeTab5` int(11) unsigned NOT NULL default '0' AFTER `BankRemSlotsTab4`,
   ADD COLUMN `BankRemSlotsTab5` int(11) unsigned NOT NULL default '0' AFTER `BankResetTimeTab5`;
 
-ALTER TABLE guild_rank
+ALTER TABLE `guild_rank`
   ADD COLUMN `BankMoneyPerDay` int(11) unsigned NOT NULL default '0' AFTER `rights`;
 
-ALTER TABLE instance
+ALTER TABLE `instance`
   ADD COLUMN `difficulty` tinyint(1) unsigned NOT NULL default '0' AFTER `resettime`;
 
-ALTER TABLE item_loot
+ALTER TABLE `item_loot`
   ADD COLUMN `suffix` int(11) unsigned NOT NULL default '0' AFTER `amount`;
 
-ALTER TABLE petition
+ALTER TABLE `petition`
   ADD COLUMN `type` int(10) unsigned NOT NULL default '0' AFTER `name`,
   DROP PRIMARY KEY,
   ADD PRIMARY KEY (`ownerguid`,`type`);
 
-UPDATE petition
+UPDATE `petition`
   SET type = 9;  -- guild petition
 
-ALTER TABLE petition_sign
+ALTER TABLE `petition_sign`
   ADD COLUMN `type` int(10) unsigned NOT NULL default '0' AFTER `player_account`;
 
-UPDATE petition_sign
+UPDATE `petition_sign`
   SET type = 9;  -- guild petition
 
-ALTER TABLE saved_variables
+ALTER TABLE `saved_variables`
   ADD COLUMN `NextArenaPointDistributionTime` bigint(40) UNSIGNED NOT NULL DEFAULT '0' AFTER `NextMaintenanceDate`,
   ADD COLUMN `NextDailyQuestResetTime` bigint(40) unsigned NOT NULL default '0' AFTER `NextArenaPointDistributionTime`;
 
@@ -116,12 +116,12 @@ DELETE FROM `character_spell` WHERE `spell` = '23301';
 -- 0.9 -> 0.10 none
 -- 0.10 -> 0.11 none
 
-UPDATE item_instance SET data= CONCAT(
+UPDATE `item_instance` SET data= CONCAT(
   SUBSTRING_INDEX(SUBSTRING_INDEX(data,' ',22),' ',-22),' 0 0 0 0 0 0 0 0 0 0 0 0 ',
   SUBSTRING_INDEX(SUBSTRING_INDEX(data,' ',48),' ',-48+22))
 WHERE SUBSTRING_INDEX(data,' ',48) = data AND SUBSTRING_INDEX(data,' ',48-1) <> data;
 
-UPDATE item_instance SET data= CONCAT(
+UPDATE `item_instance` SET data= CONCAT(
   SUBSTRING_INDEX(SUBSTRING_INDEX(data,' ',22),' ',-22),' 0 0 0 0 0 0 0 0 0 0 0 0 ',
   SUBSTRING_INDEX(SUBSTRING_INDEX(data,' ',106),' ',-106+22),' 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ')
 WHERE SUBSTRING_INDEX(data,' ',106) = data AND SUBSTRING_INDEX(data,' ',106-1) <> data;

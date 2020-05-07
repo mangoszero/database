@@ -18,23 +18,23 @@
 /* Current table fill progress state:                                        */
 /* SpellEffect.cpp from start until end of Spell::EffectInstaKill            */
 
-DROP TABLE IF EXISTS spell_check;
+DROP TABLE IF EXISTS `spell_check`;
 CREATE TABLE `spell_check` (
-  spellid           mediumint(7) unsigned NOT NULL default '0',
-  SpellFamilyName   smallint(5) NOT NULL default '-1',
-  SpellFamilyMask   bigint(30)  NOT NULL default '-1', /* 0xFFFFFFFFFFFFFFFF */
-  SpellIcon         int(10)     NOT NULL default '-1',
-  SpellVisual       int(10)     NOT NULL default '-1',
-  SpellCategory     int(10)     NOT NULL default '-1',
-  EffectType        int(10)     NOT NULL default '-1',
-  EffectAura        int(10)     NOT NULL default '-1',
-  EffectIdx         tinyint(3)  NOT NULL default '-1',
-  Name              varchar(40) NOT NULL default '',
-  Code              varchar(40) NOT NULL default '',
-  PRIMARY KEY (spellid,SpellFamilyName,SpellFamilyMask,SpellIcon,SpellVisual,SpellCategory,Code)
+  `spellid`           mediumint(7) unsigned NOT NULL default '0',
+  `SpellFamilyName`   smallint(5) NOT NULL default '-1',
+  `SpellFamilyMask`   bigint(30)  NOT NULL default '-1', /* 0xFFFFFFFFFFFFFFFF */
+  `SpellIcon`         int(10)     NOT NULL default '-1',
+  `SpellVisual`       int(10)     NOT NULL default '-1',
+  `SpellCategory`     int(10)     NOT NULL default '-1',
+  `EffectType`        int(10)     NOT NULL default '-1',
+  `EffectAura`        int(10)     NOT NULL default '-1',
+  `EffectIdx`         tinyint(3)  NOT NULL default '-1',
+  `Name`              varchar(40) NOT NULL default '',
+  `Code`              varchar(40) NOT NULL default '',
+  PRIMARY KEY (`spellid`,`SpellFamilyName`,`SpellFamilyMask`,`SpellIcon`,`SpellVisual`,`SpellCategory`,`Code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO spell_check (spellid,SpellFamilyName,SpellFamilyMask,SpellIcon,SpellVisual,SpellCategory,EffectType,EffectAura,EffectIdx,Name,Code) VALUES
+INSERT INTO `spell_check` (`spellid`,`SpellFamilyName`,`SpellFamilyMask`,`SpellIcon`,`SpellVisual`,`SpellCategory`,`EffectType`,`EffectAura`,`EffectIdx`,`Name`,`Code`) VALUES
 /* sorted by spell ids */
 /*id   fm familyMask         icon vis  cat  eff aur ef name                                  code                   */
 (18788,-1,                -1,  -1,  -1,  -1,  1, -1,-1,'Demonic Sacrifice',                  'Spell::EffectInstaKill'),
