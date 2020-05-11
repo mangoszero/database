@@ -19,12 +19,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '21'; 
     SET @cOldStructure = '16'; 
-    SET @cOldContent = '052';
+    SET @cOldContent = '053';
 
     -- New Values
     SET @cNewVersion = '21';
     SET @cNewStructure = '17';
-    SET @cNewContent = '053';
+    SET @cNewContent = '001';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'GM_tickets_handling_fixes_pt1';
 
