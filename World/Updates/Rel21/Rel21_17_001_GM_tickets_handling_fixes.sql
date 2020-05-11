@@ -45,24 +45,22 @@ BEGIN
 		
 		/* LANG_COMMAND_TICKETCLOSED_NAME */
 		UPDATE `mangos_string` SET 
-		`content_default` = 'Ticket %u from %s has been closed by <GM>%s', 
-		`content_loc0` = 'Ticket %u from %s has been closed by <GM>%s' 
+		`content_default` = 'Ticket %u from %s has been closed by <GM>%s'
 		WHERE (`entry` = '1510');
 
 		DELETE FROM `mangos_string` WHERE `entry` IN(1519, 1520, 1521);
 		
 		/* LANG_COMMAND_TICKET_RESPOND_MAIL_SUBJECT */
-		INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc0`) 
-		VALUES ('1519', 'Response to your ticket', 'Response to your ticket');
+		INSERT INTO `mangos_string` (`entry`, `content_default`) 
+		VALUES ('1519', 'Response to your ticket');
 
 		/* LANG_COMMAND_TICKET_RESPOND_MAIL_SIGNATURE */
-		INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc0`) 
-		VALUES ('1520', '$B$BBest regards, $B$B<GM>%s', '$b$bBest regards, $B$B<GM>%s');
+		INSERT INTO `mangos_string` (`entry`, `content_default`) 
+		VALUES ('1520', '$B$BBest regards, $B$B<GM>%s');
 
 		/* LANG_COMMAND_TICKETCLOSED_PLAYER_NOTIF */
-		INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc0`) 
-		VALUES ('1521', 'Your ticket has been closed.@@It has been serviced by <GM>%s, please check your ingame mailbox to see the answer.', 
-		'Your ticket has been closed.@@It has been serviced by <GM>%s, please check your ingame mailbox to see the answer.');
+		INSERT INTO `mangos_string` (`entry`, `content_default`) 
+		VALUES ('1521', 'Your ticket has been closed.@@It has been serviced by <GM>%s, please check your ingame mailbox to see the answer.');
 
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
