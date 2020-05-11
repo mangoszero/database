@@ -22,9 +22,9 @@ BEGIN
     SET @cOldContent = '002';
 
     -- New Values
-    SET @cNewVersion = '00';
-    SET @cNewStructure = '17';
-    SET @cNewContent = '003';
+    SET @cNewVersion = '21';
+    SET @cNewStructure = '18';
+    SET @cNewContent = '001';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'UBRS_equip_models_add';
 
@@ -43,7 +43,10 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
-    -- Rookery Hatcher (add equip template)--
+-- Add support for this update - Necrovoice
+ALTER TABLE `creature_equip_template` DROP INDEX `unique_template`;
+
+-- Rookery Hatcher (add equip template)--
 UPDATE `creature_template` SET `EquipmentTemplateId`='10683' WHERE `entry`='10683';
 
 DELETE FROM `creature_equip_template` WHERE `entry`='10683';
