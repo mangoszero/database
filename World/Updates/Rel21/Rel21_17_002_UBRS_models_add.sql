@@ -22,7 +22,7 @@ BEGIN
     SET @cOldContent = '001';
 
     -- New Values
-    SET @cNewVersion = '00';
+    SET @cNewVersion = '21';
     SET @cNewStructure = '17';
     SET @cNewContent = '002';
                             -- DESCRIPTION IS 30 Characters MAX    
@@ -43,94 +43,94 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
-    --Blackhand Thug--
+-- Blackhand Thug
 UPDATE `creature_template` SET `ModelId2`='10173', `ModelId3`='10174', `ModelId4`='10175' WHERE `Entry`='10762';
 
---Blackhand Thug models gender fix according to dbc--
+-- Blackhand Thug models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='10174' WHERE `modelid`='10172';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='10175' WHERE `modelid`='10173';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='10172' WHERE `modelid`='10174';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='10173' WHERE `modelid`='10175';
 
---Blackhand Dragon Handler--
+-- Blackhand Dragon Handler
 UPDATE `creature_template` SET `ModelId2`='10177', `ModelId3`='10178', `ModelId4`='10179' WHERE `Entry`='10742';
 
---Blackhand Dragon Handler models gender fix according to dbc--
+-- Blackhand Dragon Handler models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='10178' WHERE `modelid`='10176';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='10179' WHERE `modelid`='10177';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='10176' WHERE `modelid`='10178';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='10177' WHERE `modelid`='10179';
 
---Summoned Blackhand Veteran--
+-- Summoned Blackhand Veteran
 UPDATE `creature_template` SET `ModelId2`='9687', `ModelId3`='9896', `ModelId4`='9897' WHERE `Entry`='10681';
 
---Summoned Blackhand Veteran models gender fix according to dbc--
+-- Summoned Blackhand Veteran models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9896' WHERE `modelid`='9686';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9897' WHERE `modelid`='9687';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9686' WHERE `modelid`='9896';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9687' WHERE `modelid`='9897';
 
---Summoned Blackhand Dreadweaver--
+-- Summoned Blackhand Dreadweaver
 UPDATE `creature_template` SET `ModelId2`='9671', `ModelId3`='9672', `ModelId4`='9673' WHERE `Entry`='10680';
 
---Summoned Blackhand Dreadweaver models gender fix according to dbc--
+-- Summoned Blackhand Dreadweaver models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='0' WHERE `modelid`='9670';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='0' WHERE `modelid`='9671';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='0' WHERE `modelid`='9872';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='0' WHERE `modelid`='9873';
 
---Blackhand Iron Guard--
+-- Blackhand Iron Guard
 UPDATE `creature_template` SET `ModelId2`='9697', `ModelId3`='9894', `ModelId4`='9895' WHERE `Entry`='10319';
 
---Blackhand Iron Guard models gender fix according to dbc--
+-- Blackhand Iron Guard models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9894' WHERE `modelid`='9696';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9895' WHERE `modelid`='9697';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9696' WHERE `modelid`='9894';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9697' WHERE `modelid`='9895';
 
---Blackhand Assassin--
+-- Blackhand Assassin
 UPDATE `creature_template` SET `ModelId2`='9887' WHERE `Entry`='10318';
 
---Blackhand Assassin models gender fix according to dbc--
+-- Blackhand Assassin models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9887' WHERE `modelid`='9691';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9691' WHERE `modelid`='9887';
 
---Blackhand Elite--
+-- Blackhand Elite
 UPDATE `creature_template` SET `ModelId2`='9735', `ModelId3`='9890', `ModelId4`='9891' WHERE `Entry`='10317';
 
---Blackhand Elite models gender fix according to dbc--
+-- Blackhand Elite models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9890' WHERE `modelid`='9734';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9891' WHERE `modelid`='9735';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9734' WHERE `modelid`='9890';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9735' WHERE `modelid`='9891';
 
---Blackhand Incarcerator--
+-- Blackhand Incarcerator
 UPDATE `creature_template` SET `ModelId2`='9692', `ModelId3`='9892', `ModelId4`='9893' WHERE `Entry`='10316';
 
---Blackhand Incarcerator models gender fix according to dbc--
+-- Blackhand Incarcerator models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9892' WHERE `modelid`='9690';
 UPDATE `creature_model_info` SET `gender`='0', `modelid_other_gender`='9893' WHERE `modelid`='9692';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9690' WHERE `modelid`='9892';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='9692' WHERE `modelid`='9893';
 
---Blackhand Veteran--
+-- Blackhand Veteran
 UPDATE `creature_template` SET `ModelId2`='9687', `ModelId3`='9896', `ModelId4`='9897' WHERE `Entry`='9819';
 
---models were changed already--
+-- models were changed already
 
---Blackhand Summoner--
+-- Blackhand Summoner
 UPDATE `creature_template` SET `ModelId2`='9850', `ModelId3`='9851', `ModelId4`='9852' WHERE `Entry`='9818';
 
---Blackhand Summoner models gender fix according to dbc--
+-- Blackhand Summoner models gender fix according to dbc
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='0' WHERE `modelid`='9849';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='0' WHERE `modelid`='9850';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='0' WHERE `modelid`='9851';
 UPDATE `creature_model_info` SET `gender`='1', `modelid_other_gender`='0' WHERE `modelid`='9852';
 
---Blackhand Dreadweaver--
+-- Blackhand Dreadweaver
 UPDATE `creature_template` SET `ModelId2`='9671', `ModelId3`='9672', `ModelId4`='9673' WHERE `Entry`='9817';
 
---models were changed already--
+-- models were changed already
 
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
