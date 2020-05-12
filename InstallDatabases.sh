@@ -135,6 +135,14 @@ populateWorldDB()
 		mysql --login-path=local -q -s ${wdb} < ${file}
 		printf "File ${file} imported\n"
 	done
+	
+	for fileRel21 in $(ls World/Setup/FullDB/Rel21/*.sql | tr ' ' '|' | tr '\n' ' ') 
+	do
+		fileRel21=$(echo ${fileRel21} | tr '|' ' ')
+		printf "Importing file ${fileRel21}\n"
+		mysql --login-path=local -q -s ${wdb} < ${fileRel21}
+		printf "File ${fileRel21} imported\n"
+	done
 }
 
 updateWorldDB()
