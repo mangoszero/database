@@ -13869,7 +13869,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (673501,6735,22,0,100,1,34,0,0,0,15,8357,6,0,0,0,0,0,0,0,0,0,'Innkeeper Saelienne - Complete quest 8357 on /dance emote'),
 (682601,6826,22,0,100,1,264,0,0,0,15,8355,6,0,0,0,0,0,0,0,0,0,'Talvash del Kissel - Complete quest 8355 on /train emote'),
 (651601,6516,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Un\'Goro Thunderer: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
-(764301,7643,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Bengor: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
+(764301,7643,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Bengor - Set Stand State to Stand on Aggro'),
 (1241801,12418,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Gordok Hyena: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
 (1475701,14757,4,0,100,0,0,0,0,0,47,0,0,0,0,0,0,0,0,0,0,0,'Elder Torntusk: set UnitStandStateType to UNIT_STAND_STATE_STAND'),
 (392002,3920,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Anilia: flee at 15% HP'),
@@ -13882,7 +13882,9 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (320414,3204,11,0,100,0,0,0,0,0,11,23501,0,0,0,0,0,0,0,0,0,0,'Gazz\'uz  - Summon Voidwalker on Spawn'),
 (1131802,11318,2,0,100,0,25,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ragefire Trogg - Flee at 20%'),
 (1131911,11319,2,0,100,0,15,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ragefire Shaman - Flee at 0-15% Health'),
-(77102,771,8,0,100,1,3488,-1,0,0,41,1,0,0,0,0,0,0,0,0,0,0,'Commander Felstrom - Despawn Self on SpellHIT');
+(77102,771,8,0,100,1,3488,-1,0,0,41,1,0,0,0,0,0,0,0,0,0,0,'Commander Felstrom - Despawn Self on SpellHIT'),
+(1473401,14734,1,0,100,1,1200,1200,1200,1200,5,36,0,0,0,0,0,0,0,0,0,0,'Revantusk Drummer - OneShotAttack1H Emote OOC'),
+(1212501,12125,1,0,100,0,1000,1000,0,0,11,12787,0,32,0,0,0,0,0,0,0,0,'Mammoth Shark - Cast Thrash OOC');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13895,4 +13897,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-16 22:56:47
+-- Dump completed on 2020-05-13 11:58:44

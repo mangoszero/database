@@ -994,7 +994,7 @@ INSERT INTO `db_scripts` (`script_guid`, `script_type`, `id`, `delay`, `command`
 (965,2,3681,0,7,5742,0,0,0,0,0,0,0,0,0,0,0,0,'complete quest'),
 (966,2,3885,1,7,5930,5,0,0,0,0,0,0,0,0,0,0,0,'Quest complete 5930'),
 (967,2,3884,1,7,5929,5,0,0,0,0,0,0,0,0,0,0,0,'Quest complete 5929'),
-(968,2,4041,0,30,315,0,0,0,0,0,0,0,0,0,0,0,0,'fly to Rut\'theran Village'),
+(968,2,4041,0,15,27998,0,0,0,0,0,0,0,0,0,0,0,0,'fly to Rut\'theran Village'),
 (969,2,4362,0,9,0,60,177491,5,0,0,0,0,0,0,0,0,0,'Respawn Termite Barrel'),
 (970,2,4781,0,15,23059,0,0,0,0,0,0,0,0,0,0,0,0,'cast Create Thorium Brotherhood Contract'),
 (971,2,5750,0,15,25139,0,0,0,6,0,0,0,0,0,0,0,0,'cast teleport molten core'),
@@ -1046,10 +1046,10 @@ INSERT INTO `db_scripts` (`script_guid`, `script_type`, `id`, `delay`, `command`
 (1017,2,570905,3,10,13276,120000,0,0,0,0,0,0,0,22.2017,-705.459,-12.6426,3.48092,'summon - Wildspawn Imp'),
 (1018,2,570905,4,15,22735,0,0,0,0,0,0,0,0,0,0,0,0,'TRANSFORM'),
 (1019,2,570905,4,22,90,1,0,0,0,0,0,0,0,0,0,0,0,'set DemonFaction'),
-(1020,2,737901,0,30,494,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Northpass Tower taxi'),
-(1021,2,737902,0,30,495,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Eastwall Tower taxi'),
-(1022,2,737903,0,30,496,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Crown Guard Tower taxi'),
-(1023,2,4042,0,30,316,0,0,0,0,0,0,0,0,0,0,0,0,'fly to Thunder Bluff'),
+(1020,2,737901,0,15,29931,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Northpass Tower taxi'),
+(1021,2,737902,0,15,29934,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Eastwall Tower taxi'),
+(1022,2,737903,0,15,29994,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Crown Guard Tower taxi'),
+(1023,2,4042,0,15,28001,0,0,0,0,0,0,0,0,0,0,0,0,'fly to Thunder Bluff'),
 (1024,2,1405,2,29,1,2,8612,5,0,0,0,0,0,0,0,0,0,''),
 (1025,2,2208,0,0,0,0,0,0,0,2000000318,0,0,0,0,0,0,0,''),
 (1026,2,244035,0,15,28258,0,0,0,0,0,0,0,0,0,0,0,0,'icy scale gauntlets'),
@@ -2692,7 +2692,8 @@ INSERT INTO `db_scripts` (`script_guid`, `script_type`, `id`, `delay`, `command`
 (10617,8,4845,42,10,10602,432000,0,0,0,1,0,0,0,-14.58,-375.16,49.31,4.73,'summon MAGUS'),
 (10618,8,4845,42,10,10601,432000,0,0,0,1,0,0,0,-24.91,-376.41,48.95,4.67,'summon ENFORCER'),
 (10619,8,4845,58,10,10602,432000,0,0,0,1,0,0,0,-47.54,-368.11,51.67,5.7,'summon MAGUS'),
-(10620,8,4845,66,10,10584,432000,0,0,0,1,0,0,0,-23.97,-391.89,48.58,1.68,'summon Urok');
+(10620,8,4845,66,10,10584,432000,0,0,0,1,0,0,0,-23.97,-391.89,48.58,1.68,'summon Urok'),
+(10621,2,16000502,0,15,17672,0,0,0,0,0,0,0,0,0,0,0,0,'Create  Spectral Essence on gossip.');
 /*!40000 ALTER TABLE `db_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2705,4 +2706,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-16 22:56:51
+-- Dump completed on 2020-05-13 11:58:48

@@ -2201,7 +2201,8 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (51002,0,0,'Yeah, you\'re a real brainiac. Just how smart do you think you are, Slip\'kik?',1,1,14323,0,0,0,0,'',0),
 (51003,0,0,'So, now that I\'m the king... what have you got for me?!',1,1,14321,0,0,0,0,'',0),
 (51004,0,0,'Call me \"Boss\".  What have you got for me!',1,1,14326,0,0,0,0,'',0),
-(6088,1,0,'I\'d like to stable my pet here',14,8192,0,0,0,0,0,NULL,0);
+(6088,1,0,'I\'d like to stable my pet here',14,8192,0,0,0,0,0,NULL,0),
+(3310,1,0,'Eva, I have lost the Spectral Essence. I need another.',1,1,-1,0,16000502,0,0,NULL,2037);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2214,4 +2215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-16 22:56:54
+-- Dump completed on 2020-05-13 11:58:51

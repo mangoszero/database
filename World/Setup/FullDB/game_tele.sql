@@ -247,7 +247,8 @@ INSERT INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orient
 (416,-11052.9,-1568.93,27.233,4.64509,0,'Crypt'),
 (417,-956.664,-3754.71,5.33239,0.996637,1,'Ratchet'),
 (418,-8787.39,828.377,97.6489,0.626312,0,'TheStockades'),
-(419,952.3,-1426.74,64.64,0.074,0,'Chillwind Camp');
+(419,952.3,-1426.74,64.64,0.074,0,'Chillwind Camp'),
+(420,262.381,-1437.45,50.1333,4.13091,0,'ChillwindPoint');
 /*!40000 ALTER TABLE `game_tele` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -260,4 +261,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-16 22:56:52
+-- Dump completed on 2020-05-13 11:58:49

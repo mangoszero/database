@@ -81,7 +81,8 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (52,'Invaid item count (%u) for item %u',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (53,'Mail can\'t have more %u item stacks',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (54,'The new passwords do not match',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(55,'Your password can\'t be longer than 16 characters (client limit), password not changed!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(55,'Your password can\'t be longer than 16 characters (client limit),
+ password not changed!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (56,'Current Message of the day: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (57,'Using World DB: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (58,'Using script library',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -635,7 +636,8 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (1002,'Account %s NOT deleted (probably sql file format was updated)',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1003,'Account %s NOT deleted (unknown error)',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1004,'Account created: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(1005,'Account name cannot be longer than 16 characters (client limit), account not created!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1005,'Account name cannot be longer than 16 characters (client limit),
+ account not created!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1006,'Account with this name already exist!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1007,'Account %s NOT created (probably sql file format was updated)',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1008,'Account %s NOT created (unknown error)',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -810,7 +812,7 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (1607,'|cffffff00The Plaguewood Tower has been taken by the Alliance!|r',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1635,'|cffffff00The Horde has collected 200 silithyst!|r',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1636,'|cffffff00The Alliance has collected 200 silithyst!|r',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(1510,'Closed ticket for player %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1510,'Ticket %u from %s has been closed by <GM>%s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1511,'Ticket system is globally on, accepting all tickets',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1512,'Ticket system is globally off, not accepting tickets at all',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1513,'You cant close a ticket for offline players',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -835,13 +837,18 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (70,'You must have level %u to enter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (367,'Condition %u',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (373,'Response: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(1514,'ID %u from %s (%s), changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1514,'ID %u from %s (%s),
+ changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1515,'= Shown %u tickets out of total %u from online players.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(1516,'ID %u from GUID %u (%s), changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1516,'ID %u from GUID %u (%s),
+ changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1517,'= Shown %u tickets of total %u.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1518,'Informing you about arriving tickets is %s.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (1700,'|cffff0000[Server Announce]:|r%s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(555,'Opcode %u with target %s was received from you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(555,'Opcode %u with target %s was received from you.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1519,'Response to your ticket',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1520,'$B$BBest regards, $B$B<GM>%s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(1521,'Your ticket has been closed.@@It has been serviced by <GM>%s, please check your ingame mailbox to see the answer.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `mangos_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -854,4 +861,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-16 22:56:56
+-- Dump completed on 2020-05-13 11:58:53

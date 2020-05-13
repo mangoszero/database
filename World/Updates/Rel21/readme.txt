@@ -1,8 +1,8 @@
 If your database is a version prior to:
 
-Rel21_16_002_Add_Field_Comments_pt2
+Rel21_18_001_UBRS_equip_models_add
 
-You need to run the appriopriate updates in folder:
+You need to run the appriopriate updates the zip file in folder:
 
 Rel20_to_BaseRel21_Updates
 

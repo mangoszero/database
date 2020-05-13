@@ -53,7 +53,7 @@ INSERT INTO `game_event` (`entry`, `start_time`, `end_time`, `occurence`, `lengt
 (31,'2006-01-20 23:00:00','2020-12-31 22:59:59',86400,21600,0,'Edge of Madness, Renataki'),
 (32,'2006-01-04 23:00:00','2020-12-31 22:59:59',86400,21600,0,'Edge of Madness, Wushoolay'),
 (33,'2006-10-05 22:00:00','2020-10-05 22:00:00',525600,10080,321,'Harvest Festival'),
-(34,'2006-01-04 14:00:00','2020-12-30 23:00:00',10080,180,0,'Fishing Extravaganza Turn-in'),
+(34,'2006-01-01 06:00:00','2020-12-31 17:59:59',10080,180,0,'Fishing Extravaganza Turn-in'),
 (35,'2010-09-23 01:00:00','2020-12-30 23:00:00',525600,256320,0,'Winter Season Fishing'),
 (36,'2010-03-21 01:00:00','2020-12-30 23:00:00',525600,269280,0,'Summer Season Fishing'),
 (61,'2010-12-31 23:58:00','2020-12-30 23:00:00',30,10,0,'Stormwind City - Stockades Jail Break'),
@@ -73,4 +73,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-16 22:56:51
+-- Dump completed on 2020-05-13 11:58:49
