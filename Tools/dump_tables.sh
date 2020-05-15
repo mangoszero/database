@@ -144,7 +144,7 @@ echo "Dumping ${i}/123 ${TABLE}..."
 
 echo "--
 -- Copyright (C) 2005-2017 MaNGOS <http://getmangos.eu/>
--- Copyright (C) 2009-2015 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2009-2020 MaNGOSZero <https://github.com/mangoszero>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
