@@ -60,7 +60,7 @@ BEGIN
 			Fix loot template for "Cluster Rocket Recipes"
 			See : https://classic.wowhead.com/item=21741/cluster-rocket-recipes
 		*/	
-		INSERT INTO `world0`.`item_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) 
+		INSERT INTO `item_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) 
 		VALUES 	('21741', '21730', '100', '1', '1', '1', '0'),
 				('21741', '21731', '100', '2', '1', '1', '0'),
 				('21741', '21732', '100', '3', '1', '1', '0');
@@ -72,7 +72,7 @@ BEGIN
 			Added a 100% chance droprate on https://classic.wowhead.com/item=13754/raw-glossy-mightfish#fished-in
 			for more "blizzlike" behavior 
 		*/	
-		INSERT INTO `world0`.`item_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) 
+		INSERT INTO `item_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) 
 		VALUES 	('21243', '12361', '25', '1', '1', '1', '0'),
 				('21243', '7553', '12.5', '2', '1', '1', '0'),
 				('21243', '7910', '37.5', '3', '1', '1', '0'),
