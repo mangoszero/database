@@ -46,43 +46,44 @@ BEGIN
 		/*
 			Adding new ID field in commadn table and renaming columns
 		*/
+		DROP TABLE IF EXISTS `new_command`;
 		CREATE TABLE `new_command` (
-		  `id` mediumint(8) unsigned NOT null AUTO_INCREMENT COMMENT 'The unique Command ID.',
-		  `command_text` varchar(50) NOT NULL DEFAULT '' COMMENT 'The Command Name.',
-		  `security` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The minimum security level to use the command (See account.gmlevel) in the realm',
-		  `help_text` longtext COMMENT 'The help text for the command which explains it''s use and parameters.',
+		  `id` MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'The unique Command ID.',
+		  `command_text` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'The Command Name.',
+		  `security` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The minimum security level to use the command (See account.gmlevel) in the realm',
+		  `help_text` LONGTEXT COMMENT 'The help text for the command which explains it''s use and parameters.',
 		  PRIMARY KEY (`id`)
-		) ENGINE=MyISAM auto_increment=0 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Chat System';
+		) ENGINE=MYISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Chat System';
 
-		INSERT into `new_command` (`command_text`,`security`,  `help_text` )
-		select `name`, `security`, `help` from command order by name asc;
+		INSERT INTO `new_command` (`command_text`,`security`,  `help_text` )
+		SELECT `name`, `security`, `help` FROM command ORDER BY NAME ASC;
 
-		drop table `command` ;
+		DROP TABLE `command` ;
 
-		alter TABLE `new_command` rename `command`;
+		ALTER TABLE `new_command` RENAME `command`;
 
 		
 		/*
 			NEW : locales_command TABLE
 		*/
-		
+		DROP TABLE IF EXISTS `locales_command`;		
 		CREATE TABLE `locales_command` (
-			`id` mediumint(8) unsigned NOT null  COMMENT 'The unique Command ID.',
-			`help_text_loc1` longtext COMMENT 'Korean help text for the command that explian its use and parameters',
-			`help_text_loc2` longtext COMMENT 'French help text for the command that explian its use and parameters',
-			`help_text_loc3` longtext COMMENT 'German help text for the command that explian its use and parameters',
-			`help_text_loc4` longtext COMMENT 'Chinese help text for the command that explian its use and parameters',
-			`help_text_loc5` longtext COMMENT 'Taiwanese help text for the command that explian its use and parameters',
-			`help_text_loc6` longtext COMMENT 'Spanish Spain help text for the command that explian its use and parameters',
-			`help_text_loc7` longtext COMMENT 'Spanish Latin America help text for the command that explian its use and parameters',
-			`help_text_loc8` longtext COMMENT 'Russian help text for the command that explian its use and parameters',
+			`id` MEDIUMINT(8) UNSIGNED NOT NULL  COMMENT 'The unique Command ID.',
+			`help_text_loc1` LONGTEXT COMMENT 'Korean help text for the command that explian its use and parameters',
+			`help_text_loc2` LONGTEXT COMMENT 'French help text for the command that explian its use and parameters',
+			`help_text_loc3` LONGTEXT COMMENT 'German help text for the command that explian its use and parameters',
+			`help_text_loc4` LONGTEXT COMMENT 'Chinese help text for the command that explian its use and parameters',
+			`help_text_loc5` LONGTEXT COMMENT 'Taiwanese help text for the command that explian its use and parameters',
+			`help_text_loc6` LONGTEXT COMMENT 'Spanish Spain help text for the command that explian its use and parameters',
+			`help_text_loc7` LONGTEXT COMMENT 'Spanish Latin America help text for the command that explian its use and parameters',
+			`help_text_loc8` LONGTEXT COMMENT 'Russian help text for the command that explian its use and parameters',
 			PRIMARY KEY (`id`)
-		) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='GM Commands localized help';
+		) ENGINE=MYISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='GM Commands localized help';
 
 		/* Prepare locales-comamnd table */
-		delete from locales_command;
-		insert into locales_command (id)
-		select id from command;
+		DELETE FROM locales_command;
+		INSERT INTO locales_command (id)
+		SELECT id FROM command;
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
