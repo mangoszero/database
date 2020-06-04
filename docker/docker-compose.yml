@@ -1,0 +1,29 @@
+---
+version: '2.4'
+
+services:
+  # Start with `docker-compose up -d db`
+  db:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: MangosDb
+      MYSQL_HOST: localhost
+    volumes:
+      - ../../dbdata:/var/lib/mysql
+
+  # Run commands against the db server.  Example commands:
+  # - docker-compose run --rm -e "MYSQL_CMD=SHOW TABLES" -e "MYSQL_DB=realmd" db_exec`
+  # - docker-compose run --rm -e "MYSQL_CMD=SELECT User,Host FROM mysql.user" -e "MYSQL_USER=root" -e "MYSQL_PWD=MangosDb" -e "MYSQL_DB=" db_exec`
+  db_exec:
+    image: mysql:5.6
+    # command: bash -c "set -x; mysql -h$${MYSQL_HOST} -u$${MYSQL_USER} $${MYSQL_DB} -e \"$${MYSQL_CMD}\""
+    command: bash -c "mysql -h$${MYSQL_HOST} -u$${MYSQL_USER} $${MYSQL_DB} -e \"$${MYSQL_CMD}\""
+    environment:
+      MYSQL_USER: mangos
+      MYSQL_PWD: mangos
+      MYSQL_DB: "mangos0"
+      MYSQL_HOST: db
+      MYSQL_CMD: "SHOW DATABASES"
+    volumes:
+      - ..:/opt/mangos0/database
+    working_dir: /opt/mangos0/database
