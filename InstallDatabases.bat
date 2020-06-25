@@ -887,6 +887,8 @@ if %WDBUpdate% == YES goto patchWorld:
 if %RDBUpdate% == YES goto PatchRealm:
 :done3
 
+if %LOCList% == YES goto PrepLoc:
+
 :LocWorldDB
 if %locFR% == YES goto LoadFR:
 
@@ -937,6 +939,19 @@ echo %colReset% Script has completed !
 echo %colReset% - Please review the messages above to ensure no errors occurred.
 echo.
 goto theend:
+
+:PrepLoc
+echo %colWhiteBold%_______________________________________________________________________________
+echo %colWhiteDarkYellow%^|                                                                             ^|
+echo ^|                                                                             ^|
+echo ^| Preparing Localisation files                                                ^|
+echo ^|                                                                             ^|
+echo ^|_____________________________________________________________________________^|%colReset%
+echo.
+
+%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\1_LocaleTablePrepare.sql
+goto LocWorldDB:
+
 
 :LoadFR
 echo %colWhiteBold%_______________________________________________________________________________
