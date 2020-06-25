@@ -52,7 +52,7 @@ UPDATE `quest_template` SET `details`='Lord Wishock is causing quite a stir amon
 UPDATE `quest_template` SET `details`='I\'m as anxious as you are to try out my portable shredder unit, $R, but before I can make the kit, I\'m going to need materials - lots of materials!$B$BTo be exact, I\'m going to need a mountain of thorium, mithril, and iron. I will also need one steamsaw per unit. You\'ll have to get those at the lumber mill.$B$BWhen I was nosing around in here (before my capture) I noticed a pile of steamsaws at the Stormpike lumber camp.' WHERE `entry`='6861';
 UPDATE `quest_template` SET `details`='I\'m as anxious as you are to try out my portable shredder unit, $R, but before I can make the kit, I\'m going to need materials - lots of materials!$B$BTo be exact, I\'m going to need a mountain of thorium, mithril, and iron. I will also need one steamsaw per unit. You\'ll have to get those at the lumber mill.$B$BWhen I was nosing around in here (before my capture) I noticed a pile of steamsaws at the Stormpike lumber camp.' WHERE `entry`='6862';
 UPDATE `quest_template` SET `details`='Give \'em a limp, $N. They must learn that the gnomish people won\'t take to being bullied!' WHERE `entry`='7424';
-UPDATE `locales_quest` SET `details_loc0`='Give \'em a limp, $N. They must learn that the gnomish people won\'t take to being bullied!' WHERE `entry`='7424';
+UPDATE `quest_template` SET `details`='Give \'em a limp, $N. They must learn that the gnomish people won\'t take to being bullied!' WHERE `entry`='7424';
 
 		
 		-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
