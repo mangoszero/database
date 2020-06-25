@@ -47,9 +47,9 @@ BEGIN
 			Add a new column
 		*/
 		ALTER TABLE `mangos_string` 
-		ADD COLUMN `source_file` VARCHAR(100) NULL DEFAULT NULL AFTER `content_loc9`,
+		ADD COLUMN `source_file` VARCHAR(100) NULL DEFAULT NULL AFTER `content_loc8`,
 		ADD COLUMN `source_enum_wrapper` VARCHAR(100) NULL DEFAULT NULL AFTER `source_file`,
-		ADD COLUMN `source_enum_tag` VARCHAR(100) NULL DEFAULT NULL AFTER `source_enum_wrappper`;
+		ADD COLUMN `source_enum_tag` VARCHAR(100) NULL DEFAULT NULL AFTER `source_enum_wrapper`;
 
 		
 		

@@ -85,7 +85,7 @@ BEGIN
 		29705
 		);
         
-		INSERT INTO `world0`.`spell_script_target` (`entry`,`type`,`targetEntry`,`inverseEffectMask`)
+		INSERT INTO `spell_script_target` (`entry`,`type`,`targetEntry`,`inverseEffectMask`)
 		VALUES 
 		(7277, 1, 5409, 0),
 		(9439, 1, 2164, 0),
