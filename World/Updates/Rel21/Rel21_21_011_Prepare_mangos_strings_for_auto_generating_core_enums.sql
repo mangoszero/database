@@ -142,7 +142,6 @@ BEGIN
 		UPDATE `mangos_string` SET `source_file`='Language.h', `source_enum_wrapper`='MangosStrings', `source_enum_tag`='LANG_NO_CHAR_SELECTED' WHERE `entry` = 116;
 		UPDATE `mangos_string` SET `source_file`='Language.h', `source_enum_wrapper`='MangosStrings', `source_enum_tag`='LANG_NOT_IN_GROUP' WHERE `entry` = 117;
 		UPDATE `mangos_string` SET `source_file`='Language.h', `source_enum_wrapper`='MangosStrings', `source_enum_tag`='LANG_YOU_CHANGE_HP' WHERE `entry` = 118;
-		UPDATE `mangos_string` SET `source_file`='Language.h', `source_enum_wrapper`='MangosStrings', `source_enum_tag`='LANG_COMMAND_GO_STATUS_DOOR' WHERE `entry` = 119;
 		UPDATE `mangos_string` SET `source_file`='Language.h', `source_enum_wrapper`='MangosStrings', `source_enum_tag`='LANG_YOURS_HP_CHANGED' WHERE `entry` = 119;
 		UPDATE `mangos_string` SET `source_file`='Language.h', `source_enum_wrapper`='MangosStrings', `source_enum_tag`='LANG_YOU_CHANGE_MANA' WHERE `entry` = 120;
 		UPDATE `mangos_string` SET `source_file`='Language.h', `source_enum_wrapper`='MangosStrings', `source_enum_tag`='LANG_YOURS_MANA_CHANGED' WHERE `entry` = 121;
