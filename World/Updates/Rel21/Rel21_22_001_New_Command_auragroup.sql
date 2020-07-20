@@ -67,13 +67,13 @@ BEGIN
 			Needed comamnd strings for .auragroup and .unauragroup
 		*/
 
-		REPLACE INTO `mangos_string` (`entry`, `content_default`,`content_loc0`, `content_loc2`, `source_file`,`source_enum_wrapper`,`source_enum_tag`)
+		REPLACE INTO `mangos_string` (`entry`, `content_default`, `content_loc2`, `source_file`,`source_enum_wrapper`,`source_enum_tag`)
 		VALUES
-			(1701, '%s is Dead - cannot apply aura.', '%s is Dead - cannot apply aura.', '%s est mort - l''aura ne peut pas être appliquée.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_CANNOT_APPLY_AURA_PLAYER_IS_DEAD')
-		,	(1702, 'Aura from spell %u has been applied to %s.', 'Aura from spell %u has been applied to %s.', 'L''aura du spell %u a été appliquée à %s.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_AURA_APPLIED')
-		,	(1703, 'Cannot remove aura(s) from %s because the player is dead.', 'Cannot remove aura(s) from %s because the player is dead.', 'Impossible de de retirer le/les aura(s) du joueur %s car il est mort.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_CANNOT_UNAURA_DEAD_PLAYER')
-		,	(1704, 'All auras have been removed from %s.', 'All auras have been removed from %s.', 'Toutes les auras ont été retirées de %s.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_ALL_AURA_REMOVED')
-		,	(1705, 'Aura from spell %u has been removedfrom %s', 'Aura from spell %u has been removed from %s', 'L''aura du spell %u a été enlevée de %s.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_AURA_REMOVED_FOR_SPELL')
+			(1701, '%s is Dead - cannot apply aura.', '%s est mort - l''aura ne peut pas être appliquée.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_CANNOT_APPLY_AURA_PLAYER_IS_DEAD')
+		,	(1702, 'Aura from spell %u has been applied to %s.',  'L''aura du spell %u a été appliquée à %s.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_AURA_APPLIED')
+		,	(1703, 'Cannot remove aura(s) from %s because the player is dead.',  'Impossible de de retirer le/les aura(s) du joueur %s car il est mort.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_CANNOT_UNAURA_DEAD_PLAYER')
+		,	(1704, 'All auras have been removed from %s.', 'Toutes les auras ont été retirées de %s.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_ALL_AURA_REMOVED')
+		,	(1705, 'Aura from spell %u has been removedfrom %s',  'L''aura du spell %u a été enlevée de %s.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_AURAGROUP_AURA_REMOVED_FOR_SPELL')
 			;
 
 
