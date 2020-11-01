@@ -53,7 +53,7 @@ BEGIN
 		UPDATE `creature` SET `orientation` = 4.8044, `spawntimesecs`= 10800,  `MovementType` = 2 WHERE id = 14536;
 
 		DELETE FROM `gossip_texts` WHERE `entry` = -3509002;
-		INSERT INTO `gossip_texts` (`entry`, `content_default`, `content_loc0`, `content_loc2`, `comment`) 
+		INSERT INTO `gossip_texts` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `comment`) 
 		VALUES (-3509002, 'A gnome, really ? Show me your real face, daemon !', 'A gnome, really ? Show me your real face, daemon !', 'Un gnome, vraiment ? Montre moi ton vrai visage, démon !', 'nelson the nice GOSSIP_ITEM_NELSON_THE_NICE');
 		
 		/* THE CLEANER - Appears if somenone interferes in the hunter combat with solenor */
