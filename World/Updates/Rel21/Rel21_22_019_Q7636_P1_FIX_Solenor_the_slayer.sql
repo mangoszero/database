@@ -44,7 +44,7 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 		DELETE FROM`script_binding` WHERE `bind` = 14536;
-		INSERT `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES (0, 'npc_solenor_the_slayer', 14536, 0);
+		INSERT INTO `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES (0, 'npc_solenor_the_slayer', 14536, 0);
 
 		DELETE FROM `gossip_menu` WHERE  `entry` = 52004;
 		INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES (52004, 7044, 0, 0);
@@ -65,12 +65,10 @@ BEGIN
 		DELETE FROM `script_texts` WHERE `entry` IN (-1001252, -1001253);
 		INSERT INTO `script_texts` (`entry`, `content_default`, `sound`,`type`,`language`,`emote`,`comment`) VALUES
 		(-1001252,'%s is immobilized.',0,2,0,0,'npc_solenor EMOTE_IMMOBILIZED'),
-		(-1001253,'You dare interfere with this being''s testing? The battle must be fought alone! You shall all pay for this interference!',0,0,0,0,'the_cleaner SAY_THE_CLEANER_AGGRO')
-		;
+		(-1001253,'You dare interfere with this being''s testing? The battle must be fought alone! You shall all pay for this interference!',0,0,0,0,'the_cleaner SAY_THE_CLEANER_AGGRO');
 		
-		/*
-			Waypoints for Nelson The nice (friendly form of Solenor)
-		*/
+				-- Waypoints for Nelson The nice (friendly form of Solenor)
+		
 		DELETE FROM creature_movement_template WHERE entry=14536;
 		INSERT INTO creature_movement_template (entry,  point, position_x, position_y, position_z, orientation, waittime, script_id) VALUES
 		(14536, 1, -7723.94, 1672.61, 6.99932, 4.782, 0, 0),

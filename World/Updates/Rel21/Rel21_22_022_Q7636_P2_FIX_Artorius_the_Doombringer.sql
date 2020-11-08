@@ -44,7 +44,7 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 		DELETE FROM`script_binding` WHERE `bind` = 14531;
-		INSERT `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES (0, 'npc_artorius_the_doombringer', 14531, 0);
+		INSERT INTO `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES (0, 'npc_artorius_the_doombringer', 14531, 0);
 
 		DELETE FROM `gossip_menu` WHERE  `entry` = 52005;
 		INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES (52005, 7045, 0, 0);
@@ -62,9 +62,8 @@ BEGIN
 		INSERT INTO `script_texts` (`entry`, `content_default`, `sound`,`type`,`language`,`emote`,`comment`) VALUES
 		(-1001251,'%s is stricken by a virulent poison.',0,2,0,0,'npc_artorius EMOTE_POISON');
 
-		/*
-			Waypoints for Nelson The nice (friendly form of Artorius the doombringer)
-		*/
+		-- Waypoints for Nelson The nice (friendly form of Artorius the doombringer)
+
 		DELETE FROM `creature_movement_template` WHERE entry=14536;
 		INSERT INTO `creature_movement_template` (`entry`, `point`, `position_x`, `position_y`, `position_z`, `orientation`, `waittime`, `script_id`) VALUES
 		(14531,1,7913.4,-4596.38,710.531,0.555,0,0),
