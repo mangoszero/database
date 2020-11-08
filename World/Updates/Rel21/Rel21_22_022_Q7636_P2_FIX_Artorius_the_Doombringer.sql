@@ -49,8 +49,6 @@ BEGIN
 		DELETE FROM `gossip_menu` WHERE  `entry` = 52005;
 		INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES (52005, 7045, 0, 0);
 
-		UPDATE `locales_npc_text` SET `Text0_0_loc2` = 'C\'est merveilleux de voir une autre personne dans cette région éloignée de tout. Venez, marchons ensemble. Laissons nos corps se réchauffer tous deux.' WHERE entry` = 7045;
-
 		UPDATE `creature_template` SET `GossipMenuId` = 52005 WHERE `Entry` = 14531;
 		
 		UPDATE `creature` SET `orientation` = 4.8044, `spawntimesecs`= 10800,  `MovementType` = 2 WHERE id = 14531;
@@ -63,9 +61,7 @@ BEGIN
 		DELETE FROM `script_texts` WHERE `entry` IN (-1001251);
 		INSERT INTO `script_texts` (`entry`, `content_default`, `sound`,`type`,`language`,`emote`,`comment`) VALUES
 		(-1001251,'%s is stricken by a virulent poison.',0,2,0,0,'npc_artorius EMOTE_POISON');
-		UPDATE `script_texts` SET `content_loc2` = '%s est frappé opar un poison virulent.' WHERE `entry` = -1001251;
 
-		
 		/*
 			Waypoints for Nelson The nice (friendly form of Artorius the doombringer)
 		*/
@@ -228,13 +224,7 @@ BEGIN
 		(14531,155,7904.81,-4604.33,710.23,0.796,0,0),
 		(14531,156,7909.45,-4599.58,710.154,0.796,0,0);
 		
-		
-		/* Fix translation for emote of Solenor the slayer */
-		/* It was forgotten in the last commit related to this npc  */
-		UPDATE `script_texts` SET `content_loc2` = '%s est immobilisé.' WHERE `entry` = -1001252;
-		UPDATE `script_texts` SET `content_loc2` = 'Vous osez interférer dans le test de cet être ? Le combat doit être mené seul ! Vous aller payer pour cette ingérence !' WHERE `entry` = -1001253;
-
-		
+	
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
