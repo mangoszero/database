@@ -78,6 +78,7 @@ for TABLE in \
 `item_loot_template` \
 `item_required_target` \
 `item_template` \
+`locales_command` \
 `locales_creature` \
 `locales_gameobject` \
 `locales_gossip_menu_option` \
