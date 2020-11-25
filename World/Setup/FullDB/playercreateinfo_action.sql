@@ -225,7 +225,7 @@ INSERT INTO `playercreateinfo_action` (`race`, `class`, `button`, `action`, `typ
 (8,4,1,1752,0),
 (8,4,2,2098,0),
 (8,4,3,2764,0),
-(8,4,4,26972,0),
+(8,4,4,26297,0),
 (8,4,11,117,128),
 (8,5,0,6603,0),
 (8,5,1,585,0),
@@ -254,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-13 11:58:55
+-- Dump completed on 2020-11-25 21:48:51

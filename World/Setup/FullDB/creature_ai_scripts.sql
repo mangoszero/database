@@ -13884,7 +13884,19 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1131911,11319,2,0,100,0,15,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,'Ragefire Shaman - Flee at 0-15% Health'),
 (77102,771,8,0,100,1,3488,-1,0,0,41,1,0,0,0,0,0,0,0,0,0,0,'Commander Felstrom - Despawn Self on SpellHIT'),
 (1473401,14734,1,0,100,1,1200,1200,1200,1200,5,36,0,0,0,0,0,0,0,0,0,0,'Revantusk Drummer - OneShotAttack1H Emote OOC'),
-(1212501,12125,1,0,100,0,1000,1000,0,0,11,12787,0,32,0,0,0,0,0,0,0,0,'Mammoth Shark - Cast Thrash OOC');
+(1212501,12125,1,0,100,0,1000,1000,0,0,11,12787,0,32,0,0,0,0,0,0,0,0,'Mammoth Shark - Cast Thrash OOC'),
+(59601,596,27,0,100,1,12544,1,15000,30000,11,12544,0,33,0,0,0,0,0,0,0,0,'Brainwashed Noble - Cast Frost Armor on Missing Buff'),
+(59602,596,4,0,100,0,0,0,0,0,21,1,0,0,22,1,0,0,0,0,0,0,'Brainwashed Noble - Enable Dynamic Movement and Set Phase 1 on Aggro'),
+(59603,596,9,13,100,1,0,40,2100,3400,11,9053,1,0,0,0,0,0,0,0,0,0,'Brainwashed Noble - Cast Fireball (Phase 1)'),
+(59604,596,9,13,100,1,9,80,1000,1000,21,1,0,0,0,0,0,0,0,0,0,0,'Brainwashed Noble - Enable Dynamic Movement at 9-80 Yards (Phase 1)'),
+(59605,596,9,0,100,1,0,8,1000,1000,21,0,0,0,0,0,0,0,0,0,0,0,'Brainwashed Noble - Disable Dynamic Movement at 0-8 Yards'),
+(59606,596,3,13,100,0,7,0,0,0,21,0,0,0,22,2,0,0,0,0,0,0,'Brainwashed Noble - Disable Dynamic Movement and Set Phase 2 at 7% MP (Phase 1)'),
+(59607,596,3,11,100,1,100,15,1000,1000,22,1,0,0,0,0,0,0,0,0,0,0,'Brainwashed Noble - Set Phase 1 at 15% MP (Phase 2)'),
+(59608,596,0,0,80,1,18000,25000,25000,35000,11,228,1,0,0,0,0,0,0,0,0,0,'Brainwashed Noble - Cast Polymorph: Chicken'),
+(59609,596,2,0,100,1,50,0,35000,35000,11,512,1,0,0,0,0,0,0,0,0,0,'Brainwashed Noble - Cast Chains of Ice at 50% HP'),
+(59610,596,2,0,100,0,15,0,0,0,21,0,0,0,22,3,0,0,0,0,0,0,'Brainwashed Noble - Disable Dynamic Movement and Set Phase 3 at 15% HP'),
+(59611,596,2,7,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Brainwashed Noble - Flee at 15% HP (Phase 3)'),
+(59612,596,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Brainwashed Noble - Set Phase to 0 on Evade');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13897,4 +13909,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-13 11:58:44
+-- Dump completed on 2020-11-25 21:48:32

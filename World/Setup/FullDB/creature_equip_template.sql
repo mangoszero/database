@@ -28,6 +28,7 @@ LOCK TABLES `creature_equip_template` WRITE;
 /*!40000 ALTER TABLE `creature_equip_template` DISABLE KEYS */;
 INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `equipentry3`) VALUES 
 (76,0,0,0),
+(752,0,0,0),
 (13,0,0,2504),
 (15,0,0,2551),
 (10,0,0,2552),
@@ -231,7 +232,6 @@ INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `e
 (78,1910,13604,0),
 (749,1910,13610,0),
 (2064,1910,13611,0),
-(752,0,0,0),
 (754,1911,0,2552),
 (1731,1911,0,2946),
 (2050,1911,0,3024),
@@ -468,6 +468,7 @@ INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `e
 (1842,3361,1957,0),
 (1701,3361,1961,0),
 (591,3361,1984,0),
+(10509,3361,1984,0),
 (2027,3361,1985,0),
 (594,3361,2051,0),
 (212,3361,2053,0),
@@ -696,6 +697,8 @@ INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `e
 (12,10756,0,0),
 (2408,10772,10772,0),
 (982,10823,1168,0),
+(10258,10825,0,0),
+(10683,10825,0,0),
 (1931,10825,1984,0),
 (2421,10825,11586,12523),
 (2038,10825,12995,0),
@@ -970,6 +973,7 @@ INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `e
 (25003,18695,0,0),
 (1440,19053,0,0),
 (1443,19214,0,0),
+(10162,19404,0,0),
 (1451,19554,0,0),
 (1908,19623,0,0),
 (2072,19762,19763,0),
@@ -1001,11 +1005,7 @@ INSERT INTO `creature_equip_template` (`entry`, `equipentry1`, `equipentry2`, `e
 (1457,22816,0,0),
 (2405,22988,0,0),
 (1206,23124,0,0),
-(2420,27849,0,0),
-(10683,10825,0,0),
-(10258,10825,0,0),
-(10162,19404,0,0),
-(10509,3361,1984,0);
+(2420,27849,0,0);
 /*!40000 ALTER TABLE `creature_equip_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1018,4 +1018,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-13 11:58:45
+-- Dump completed on 2020-11-25 21:48:33

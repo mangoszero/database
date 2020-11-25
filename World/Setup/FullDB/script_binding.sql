@@ -548,7 +548,11 @@ INSERT INTO `script_binding` (`type`, `ScriptName`, `bind`, `data`) VALUES
 (0,'npc_spectral_tutor',10498,0),
 (0,'npc_cork_gizelton',11625,0),
 (0,'npc_rigger_gizelton',11626,0),
-(3,'at_shadowforge_bridge',1786,0);
+(3,'at_shadowforge_bridge',1786,0),
+(1,'go_fixed_trap',179512,0),
+(0,'npc_solenor_the_slayer',14536,0),
+(0,'npc_artorius_the_doombringer',14531,0),
+(0,'npc_klinfran_the_crazed',14529,0);
 /*!40000 ALTER TABLE `script_binding` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -561,4 +565,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-13 11:58:57
+-- Dump completed on 2020-11-25 21:48:55

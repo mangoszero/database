@@ -838,9 +838,8 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (2385,1,0,'I wish to unlearn my talents.',1,1,4461,0,0,0,0,'',139),
 (2387,0,0,'Um... sorry to bother you, but could I see Goodsteel\'s ledger again... if you\'re not using it.',1,1,0,0,0,0,0,'',0),
 (2404,0,6,'I would like to check my deposit box.',9,256,0,0,0,0,0,'',0),
-(2405,0,0,'Is there a difference between ooze and slime?',1,1,0,0,0,0,0,'',0),
-(2405,1,0,'What do you mean by \"pure?\"',1,1,0,0,0,0,0,'',0),
-(2405,2,0,'Are there any areas you can think of that would be so untouched?',1,1,0,0,0,0,0,'',0),
+(2406,0,0,'What do you mean by \"pure?\"',1,1,2407,0,0,0,0,'',2041),
+(2405,0,0,'Is there a difference between ooze and slime?',1,1,2406,0,0,0,0,'',2041),
 (2422,0,0,'What do you think of Dadanga?',1,1,51005,0,0,0,0,'',0),
 (2464,0,1,'Let me browse your goods.',3,4,0,0,0,0,0,'',0),
 (2685,1,1,'I want to browse your goods.',3,4,0,0,0,0,0,'',0),
@@ -1212,7 +1211,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (5727,0,0,'Continue, please.',1,1,5726,0,0,0,0,'',0),
 (5728,0,0,'I know very little of the Highborne and nothing of the Shen\'dralar.',1,1,5727,0,0,0,0,'',0),
 (5729,0,0,'What happened here, spirit?',1,1,5728,0,0,0,0,'',0),
-(5739,1,0,'So, now that I\'m the king... what have you got for me?!',1,1,5744,0,0,0,0,'',0),
+(5739,1,0,'So, now that I\'m the king... what have you got for me?!',1,1,5744,0,0,0,0,'',976),
 (5740,0,0,'Well then... show me the tribute!',1,1,5742,0,574001,0,0,'',0),
 (5744,0,0,'This sounds like a task worthy of the new king!',1,1,5746,0,0,0,0,'',0),
 (5749,0,0,'<Copy the schematic into your engineering notebook.>',1,1,-1,0,5749,0,0,NULL,248),
@@ -2198,11 +2197,12 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (1823,0,0,'The door is open, Kharan. You are a free man.',1,1,-1,0,0,0,0,'',0),
 (6535,0,0,'Smear the ash on my face like war paint!',1,0,-1,0,653501,0,0,NULL,1370),
 (1628,0,0,'I lost my Goblin Transponder, could I have another one?',1,1,-1,0,2646,0,0,'',2035),
-(51002,0,0,'Yeah, you\'re a real brainiac. Just how smart do you think you are, Slip\'kik?',1,1,14323,0,0,0,0,'',0),
-(51003,0,0,'So, now that I\'m the king... what have you got for me?!',1,1,14321,0,0,0,0,'',0),
-(51004,0,0,'Call me \"Boss\".  What have you got for me!',1,1,14326,0,0,0,0,'',0),
+(51002,0,0,'Yeah, you\'re a real brainiac. Just how smart do you think you are, Slip\'kik?',1,1,52000,0,510041,0,0,'',0),
+(51003,0,0,'I am, am I? Well what have you got for the new big dog of Gordok, Fengus?',1,1,52002,0,510031,0,0,'',0),
+(51004,0,0,'Call me \"Boss\".  What have you got for me!',1,1,52001,0,510021,0,0,'',0),
 (6088,1,0,'I\'d like to stable my pet here',14,8192,0,0,0,0,0,NULL,0),
-(3310,1,0,'Eva, I have lost the Spectral Essence. I need another.',1,1,-1,0,16000502,0,0,NULL,2037);
+(3310,1,0,'Eva, I have lost the Spectral Essence. I need another.',1,1,-1,0,16000502,0,0,NULL,2037),
+(2407,0,0,'Are there any areas you can think of that would be so untouched?',1,1,2408,0,0,0,0,'',2041);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2215,4 +2215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-13 11:58:51
+-- Dump completed on 2020-11-25 21:48:43

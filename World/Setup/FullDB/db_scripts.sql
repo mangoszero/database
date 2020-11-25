@@ -2693,7 +2693,11 @@ INSERT INTO `db_scripts` (`script_guid`, `script_type`, `id`, `delay`, `command`
 (10618,8,4845,42,10,10601,432000,0,0,0,1,0,0,0,-24.91,-376.41,48.95,4.67,'summon ENFORCER'),
 (10619,8,4845,58,10,10602,432000,0,0,0,1,0,0,0,-47.54,-368.11,51.67,5.7,'summon MAGUS'),
 (10620,8,4845,66,10,10584,432000,0,0,0,1,0,0,0,-23.97,-391.89,48.58,1.68,'summon Urok'),
-(10621,2,16000502,0,15,17672,0,0,0,0,0,0,0,0,0,0,0,0,'Create  Spectral Essence on gossip.');
+(10621,2,16000502,0,15,17672,0,0,0,0,0,0,0,0,0,0,0,0,'Create  Spectral Essence on gossip.'),
+(10622,1,1193,2,40,12657,3600,0,0,0,0,0,0,0,0,0,0,0,'Unspawn Broken trap after quest 1193 end'),
+(10623,3,9615,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,'Laris Pause WP1'),
+(10624,1,4512,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'Laris Unpause WP'),
+(10625,3,9616,0,0,0,0,0,0,0,2000005804,0,0,0,0,0,0,0,'Laris Say on WP');
 /*!40000 ALTER TABLE `db_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2706,4 +2710,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-13 11:58:48
+-- Dump completed on 2020-11-25 21:48:39

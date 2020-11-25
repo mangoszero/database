@@ -153,11 +153,12 @@ DROP TABLE IF EXISTS `command`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `command` (
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT 'The Command Name.',
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'The unique Command ID.',
+  `command_text` varchar(50) NOT NULL DEFAULT '' COMMENT 'The Command Name.',
   `security` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The minimum security level to use the command (See account.gmlevel) in the realm',
-  `help` longtext COMMENT 'The help text for the command which explains it''s use and parameters.',
-  PRIMARY KEY (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Chat System';
+  `help_text` longtext COMMENT 'The help text for the command which explains it''s use and parameters.',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=808 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Chat System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
@@ -175,7 +176,7 @@ CREATE TABLE `conditions` (
   `comments` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`condition_entry`),
   UNIQUE KEY `unique_conditions` (`type`,`value1`,`value2`)
-) ENGINE=MyISAM AUTO_INCREMENT=1791 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Condition System';
+) ENGINE=MyISAM AUTO_INCREMENT=2042 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Condition System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -205,7 +206,7 @@ CREATE TABLE `creature` (
   PRIMARY KEY (`guid`),
   KEY `idx_map` (`map`),
   KEY `index_id` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=590016 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
+) ENGINE=MyISAM AUTO_INCREMENT=590119 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -752,7 +753,7 @@ CREATE TABLE `db_scripts` (
   `o` float NOT NULL DEFAULT '0' COMMENT 'Orientation angle (0 to 2*Pi).',
   `comments` varchar(255) NOT NULL COMMENT 'Textual comment.',
   PRIMARY KEY (`script_guid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2628 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10626 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
@@ -954,7 +955,7 @@ CREATE TABLE `game_tele` (
   `map` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'The map id of the teleport location (See map.dbc).',
   `name` varchar(100) NOT NULL DEFAULT '' COMMENT 'The name of the teleport location.',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=420 DEFAULT CHARSET=utf8 COMMENT='Tele Command';
+) ENGINE=MyISAM AUTO_INCREMENT=421 DEFAULT CHARSET=utf8 COMMENT='Tele Command';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1007,7 +1008,7 @@ CREATE TABLE `gameobject` (
   PRIMARY KEY (`guid`),
   KEY `idx_map` (`map`),
   KEY `idx_id` (`id`)
-) ENGINE=MySAM AUTO_INCREMENT=632463 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Gameobject System';
+) ENGINE=InnoDB AUTO_INCREMENT=632480 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Gameobject System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1362,6 +1363,25 @@ CREATE TABLE `item_template` (
   KEY `items_index` (`class`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Item System';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `locales_command`
+--
+
+DROP TABLE IF EXISTS `locales_command`;
+
+CREATE TABLE `locales_command` (
+  `id` mediumint(8) unsigned NOT NULL COMMENT 'The unique Command ID.',
+  `help_text_loc1` longtext COMMENT 'Korean help text for the command that explian its use and parameters',
+  `help_text_loc2` longtext COMMENT 'French help text for the command that explian its use and parameters',
+  `help_text_loc3` longtext COMMENT 'German help text for the command that explian its use and parameters',
+  `help_text_loc4` longtext COMMENT 'Chinese help text for the command that explian its use and parameters',
+  `help_text_loc5` longtext COMMENT 'Taiwanese help text for the command that explian its use and parameters',
+  `help_text_loc6` longtext COMMENT 'Spanish Spain help text for the command that explian its use and parameters',
+  `help_text_loc7` longtext COMMENT 'Spanish Latin America help text for the command that explian its use and parameters',
+  `help_text_loc8` longtext COMMENT 'Russian help text for the command that explian its use and parameters',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='GM Commands localized help';
 
 --
 -- Table structure for table `locales_creature`
@@ -1785,6 +1805,9 @@ CREATE TABLE `mangos_string` (
   `content_loc6` text COMMENT 'Spanish (Spain) localization of content_default',
   `content_loc7` text COMMENT 'Spanish (Latin America) localization of content_default',
   `content_loc8` text COMMENT 'Russian localization of content_default',
+  `source_file` varchar(100) DEFAULT NULL,
+  `source_enum_wrapper` varchar(100) DEFAULT NULL,
+  `source_enum_tag` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`entry`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

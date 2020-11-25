@@ -575,7 +575,8 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000000508,'The burning of the Wickerman will begin in thirty minutes! Come to the festival - located just west of the Undercity - and celebrate Hallow\'s End and our liberation from the Scourge!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka 30 Mins to Festival Start'),
 (2000000509,'The burning of the Wickerman will begin in fifteen minutes! Come to the festival - located just west of the Undercity - and celebrate Hallow\'s End and our liberation from the Scourge!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka 15 Mins to Festival Start'),
 (2000000510,'The burning of the Wickerman will begin in five minutes! Come to the festival - located just west of the Undercity - and celebrate Hallow\'s End and our liberation from the Scourge!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka 5 Mins to Festival Start'),
-(2000000511,'The Wickerman Festival now begins! Power to the Forsaken!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka Festival Start');
+(2000000511,'The Wickerman Festival now begins! Power to the Forsaken!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,1,1,'Hallow\'s End: Yanka Festival Start'),
+(2000005804,'Incredible! Amazing! I don\'t even know what this means!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Laris Say.');
 /*!40000 ALTER TABLE `db_script_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -588,4 +589,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-13 11:58:48
+-- Dump completed on 2020-11-25 21:48:38
