@@ -55,6 +55,7 @@ CREATE TABLE `areatrigger_tavern` (
   `name` text COMMENT 'Name of town or tavern.',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Trigger System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `areatrigger_teleport`
@@ -74,6 +75,7 @@ CREATE TABLE `areatrigger_teleport` (
   `condition_id` mediumint(8) NOT NULL DEFAULT '0' COMMENT 'The ID of a condition from the conditions table',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Trigger System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 
 --
@@ -167,7 +169,8 @@ CREATE TABLE `command` (
 --
 
 DROP TABLE IF EXISTS `conditions`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `conditions` (
   `condition_entry` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identifier',
   `type` tinyint(3) NOT NULL DEFAULT '0' COMMENT 'Type of the condition.',
@@ -214,7 +217,8 @@ CREATE TABLE `creature` (
 --
 
 DROP TABLE IF EXISTS `creature_addon`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_addon` (
   `guid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Signifies a unique creature guid (See creature.guid).',
   `mount` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The model ID of the mount to be used to make the creature appear mounted.',
@@ -2218,7 +2222,7 @@ CREATE TABLE `pool_creature` (
   `guid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature GUID (See creature.guid).',
   `pool_entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Pool ID (See pool_template.entry).',
   `chance` float unsigned NOT NULL DEFAULT '0' COMMENT 'Chance in %.',
-  `description` varchar(255) NOT NULL COMMENT 'Description.',
+  `description` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT 'Description.',
   PRIMARY KEY (`guid`),
   KEY `pool_idx` (`pool_entry`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -2252,7 +2256,7 @@ CREATE TABLE `pool_gameobject` (
   `guid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Gameobject GUID (See gameobject.guid).',
   `pool_entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Pool ID (See pool_template.entry).',
   `chance` float unsigned NOT NULL DEFAULT '0' COMMENT 'Chance, %.',
-  `description` varchar(255) NOT NULL COMMENT 'Description.',
+  `description` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT 'Description.',
   PRIMARY KEY (`guid`),
   KEY `pool_idx` (`pool_entry`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -2286,7 +2290,7 @@ CREATE TABLE `pool_pool` (
   `pool_id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Pool ID (See pool_template.entry).',
   `mother_pool` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Mother pool ID.',
   `chance` float NOT NULL DEFAULT '0' COMMENT 'Chance, %.',
-  `description` varchar(255) NOT NULL COMMENT 'Description.',
+  `description` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT 'Description.',
   PRIMARY KEY (`pool_id`),
   KEY `pool_idx` (`mother_pool`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
