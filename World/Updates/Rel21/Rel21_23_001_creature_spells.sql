@@ -23,13 +23,13 @@ BEGIN
 
     -- New Values
     SET @cNewVersion = '21';
-    SET @cNewStructure = '22';
-    SET @cNewContent = '025';
+    SET @cNewStructure = '23';
+    SET @cNewContent = '001';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'Simone_the_seductress';
+    SET @cNewDescription = 'creature_spells';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Q7636_P4_FIX_Simone_the_seductress';
+    SET @cNewComment = 'creature_spells';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT `description` FROM `db_version` ORDER BY `version` DESC, `STRUCTURE` DESC, `CONTENT` DESC LIMIT 0,1);
