@@ -50,7 +50,7 @@ printBanner()
 	printf " #  #  #  ####### #  ## #   # #   #     #  \n"
 	printf " #     #  #     # #   #  ###   ###  ####   \n"
 	printf "\n"
-	printf " Database Setup and World Loader v0.01 	\n"
+	printf " Database Setup and World Loader v0.02 	\n"
 	printf " ---------------------------------------------- \n"
 	printf "  Website / Forum / Wiki : https://getmangos.eu \n"
 	printf " ---------------------------------------------- \n"
