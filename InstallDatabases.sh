@@ -325,15 +325,24 @@ if [ "${DUMP}" = "YES" ]; then
 	printf "Enter it again \t[]: "
 	read pass
 fi
-printf "What is your Character database name ?\t[${cdb_def}]: "
-read cdb
-cdb=${cdb:-${cdb_def}}
-printf "What is your World database name ?\t[${wdb_def}]: "
-read wdb
-wdb=${wdb:-${wdb_def}}
-printf "What is your Realm database name ?\t[${rdb_def}]: "
-read rdb
-rdb=${rdb:-${rdb_def}}
+
+if [ "${createcharDB}" = "YES" ] || [ "${loadcharDB}" = "YES" ] || [ "${updatecharDB}" = "YES" ]; then
+	printf "What is your Character database name ?\t[${cdb_def}]: "
+	read cdb
+	cdb=${cdb:-${cdb_def}}
+fi
+
+if [ "${createworldDB}" = "YES" ] || [ "${loadworldDB}" = "YES" ] || [ "${updateworldDB}" = "YES" ]; then
+	printf "What is your World database name ?\t[${wdb_def}]: "
+	read wdb
+	wdb=${wdb:-${wdb_def}}
+fi
+
+if [ "${createrealmDB}" = "YES" ] || [ "${loadrealmDB}" = "YES" ] || [ "${updaterealmDB}" = "YES" ] || [ "${addRealmList}" = "YES" ]; then
+	printf "What is your Realm database name ?\t[${rdb_def}]: "
+	read rdb
+	rdb=${rdb:-${rdb_def}}
+fi
 
 if [ "${createcharDB}" = "YES" ]; then
 	createCharDB
