@@ -98,7 +98,7 @@ loadCharDB()
 updateCharDB()
 {
 	printf "Updating data into the character database ${cdb}\n"
-	for file in $(ls Character/Updates/*.sql | tr ' ' '|' | tr '\n' ' ')
+	for file in $(ls Character/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
@@ -148,7 +148,7 @@ populateWorldDB()
 updateWorldDB()
 {
 	printf "Updating data into the World database ${wdb}\n"
-	for file in $(ls World/Updates/*.sql | tr ' ' '|' | tr '\n' ' ')
+	for file in $(ls World/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
@@ -174,7 +174,7 @@ loadRealmDB()
 updateRealmDB()
 {
 	printf "Updating data into the Realm database ${rdb}\n"
-	for file in $(ls Realm/Updates/*.sql | tr ' ' '|' | tr '\n' ' ')
+	for file in $(ls Realm/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
