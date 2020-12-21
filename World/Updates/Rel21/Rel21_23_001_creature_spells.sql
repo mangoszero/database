@@ -43,6 +43,12 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
+        -- PLEASE NOTE: If you get an error with this update saying something along the lines of:
+        -- Mysql server has gone away
+
+        -- Please modify your my.ini file and add the following line:
+        -- max_allowed_packet=512M
+
 		
 		-- Add creature spell list table.
 		DROP TABLE IF EXISTS `creature_spells`;
