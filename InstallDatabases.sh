@@ -50,7 +50,7 @@ printBanner()
 	printf " #  #  #  ####### #  ## #   # #   #     #  \n"
 	printf " #     #  #     # #   #  ###   ###  ####   \n"
 	printf "\n"
-	printf " Database Setup and World Loader v0.01 	\n"
+	printf " Database Setup and World Loader v0.02 	\n"
 	printf " ---------------------------------------------- \n"
 	printf "  Website / Forum / Wiki : https://getmangos.eu \n"
 	printf " ---------------------------------------------- \n"
@@ -98,7 +98,7 @@ loadCharDB()
 updateCharDB()
 {
 	printf "Updating data into the character database ${cdb}\n"
-	for file in $(ls Character/Updates/*.sql | tr ' ' '|' | tr '\n' ' ')
+	for file in $(ls Character/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
@@ -148,7 +148,7 @@ populateWorldDB()
 updateWorldDB()
 {
 	printf "Updating data into the World database ${wdb}\n"
-	for file in $(ls World/Updates/*.sql | tr ' ' '|' | tr '\n' ' ')
+	for file in $(ls World/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
@@ -174,7 +174,7 @@ loadRealmDB()
 updateRealmDB()
 {
 	printf "Updating data into the Realm database ${rdb}\n"
-	for file in $(ls Realm/Updates/*.sql | tr ' ' '|' | tr '\n' ' ')
+	for file in $(ls Realm/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
@@ -325,15 +325,24 @@ if [ "${DUMP}" = "YES" ]; then
 	printf "Enter it again \t[]: "
 	read pass
 fi
-printf "What is your Character database name ?\t[${cdb_def}]: "
-read cdb
-cdb=${cdb:-${cdb_def}}
-printf "What is your World database name ?\t[${wdb_def}]: "
-read wdb
-wdb=${wdb:-${wdb_def}}
-printf "What is your Realm database name ?\t[${rdb_def}]: "
-read rdb
-rdb=${rdb:-${rdb_def}}
+
+if [ "${createcharDB}" = "YES" ] || [ "${loadcharDB}" = "YES" ] || [ "${updatecharDB}" = "YES" ]; then
+	printf "What is your Character database name ?\t[${cdb_def}]: "
+	read cdb
+	cdb=${cdb:-${cdb_def}}
+fi
+
+if [ "${createworldDB}" = "YES" ] || [ "${loadworldDB}" = "YES" ] || [ "${updateworldDB}" = "YES" ]; then
+	printf "What is your World database name ?\t[${wdb_def}]: "
+	read wdb
+	wdb=${wdb:-${wdb_def}}
+fi
+
+if [ "${createrealmDB}" = "YES" ] || [ "${loadrealmDB}" = "YES" ] || [ "${updaterealmDB}" = "YES" ] || [ "${addRealmList}" = "YES" ]; then
+	printf "What is your Realm database name ?\t[${rdb_def}]: "
+	read rdb
+	rdb=${rdb:-${rdb_def}}
+fi
 
 if [ "${createcharDB}" = "YES" ]; then
 	createCharDB
