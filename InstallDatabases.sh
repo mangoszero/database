@@ -5,7 +5,8 @@
 #                                                                            #
 ##############################################################################
 
-RELEASE="Rel21"
+OLDRELEASE="Rel21"
+RELEASE="Rel22"
 UPDATES="Rel20_to_BaseRel21_Updates"
 DUMP="NO"
 
@@ -98,6 +99,12 @@ loadCharDB()
 updateCharDB()
 {
 	printf "Updating data into the character database ${cdb}\n"
+	for file in $(ls Character/Updates/${OLDRELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
+	do
+		file=$(echo ${file} | tr '|' ' ')
+		printf "Applying update ${file}\n"
+		mysql --login-path=local -q -s ${cdb} < ${file}
+	done
 	for file in $(ls Character/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
@@ -148,6 +155,12 @@ populateWorldDB()
 updateWorldDB()
 {
 	printf "Updating data into the World database ${wdb}\n"
+	for file in $(ls World/Updates/${OLDRELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
+	do
+		file=$(echo ${file} | tr '|' ' ')
+		printf "Applying update ${file}\n"
+		mysql --login-path=local -q -s ${wdb} < ${file}
+	done
 	for file in $(ls World/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
@@ -174,6 +187,12 @@ loadRealmDB()
 updateRealmDB()
 {
 	printf "Updating data into the Realm database ${rdb}\n"
+	for file in $(ls Realm/Updates/${OLDRELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
+	do
+		file=$(echo ${file} | tr '|' ' ')
+		printf "Applying update ${file}\n"
+		mysql --login-path=local -q -s ${wdb} < ${file}
+	done
 	for file in $(ls Realm/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')

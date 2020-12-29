@@ -1,7 +1,6 @@
 cat <<EOF > full_db.sql
 --
--- Copyright (C) 2005-2017 MaNGOS <https://getmangos.eu/>
--- Copyright (C) 2009-2012 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2021 MaNGOS <https://getmangos.eu/> <https://github.com/mangoszero>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

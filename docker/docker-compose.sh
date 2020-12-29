@@ -67,6 +67,15 @@ then
         root_command "${repo_path}" "SOURCE ${docker_path}/Realm/Updates/Rel21/${sql}" "realmd";
     done
 fi
+import=( $( find "${repo_path}/Realm/Updates/Rel22" -maxdepth 1 -iname '*.sql' -printf "%f\n" ) );
+if [ ! -z "${import}" ];
+then
+    for sql in "${import[@]}";
+    do
+        echo "Importing Realm update ${sql}";
+        root_command "${repo_path}" "SOURCE ${docker_path}/Realm/Updates/Rel22/${sql}" "realmd";
+    done
+fi
 
 ##############################
 ##### Character Database #####
@@ -81,6 +90,15 @@ then
     do
         echo "Importing Character update ${sql}";
         root_command "${repo_path}" "SOURCE ${docker_path}/Character/Updates/Rel21/${sql}" "character0";
+    done
+fi
+import=( $( find "${repo_path}/Character/Updates/Rel22" -maxdepth 1 -iname '*.sql' -printf "%f\n" ) );
+if [ ! -z "${import}" ];
+then
+    for sql in "${import[@]}";
+    do
+        echo "Importing Character update ${sql}";
+        root_command "${repo_path}" "SOURCE ${docker_path}/Character/Updates/Rel22/${sql}" "character0";
     done
 fi
 # find "${repo_path}/Character/Updates/Rel21" -maxdepth 1 -iname '*.sql' -exec bash -c 'root_command "'${repo_path}'" "SOURCE $1" "character0"' _ {} \;
@@ -109,6 +127,15 @@ then
     do
         echo "Importing World Update ${sql}";
         root_command "${repo_path}" "SOURCE ${docker_path}/World/Updates/Rel21/${sql}" "mangos0";
+    done
+fi
+import=( $( find "${repo_path}/World/Updates/Rel22" -maxdepth 1 -iname '*.sql' -printf "%f\n" ) );
+if [ ! -z "${import}" ];
+then
+    for sql in "${import[@]}";
+    do
+        echo "Importing World Update ${sql}";
+        root_command "${repo_path}" "SOURCE ${docker_path}/World/Updates/Rel22/${sql}" "mangos0";
     done
 fi
 # find "${repo_path}/World/Updates/Rel21" -maxdepth 1 -iname '*.sql' -exec bash -c 'root_command "'${repo_path}'" "SOURCE $1" "mangos0"' _ {} \;
