@@ -191,13 +191,13 @@ updateRealmDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		mysql --login-path=local -q -s ${wdb} < ${file}
+		mysql --login-path=local -q -s ${rdb} < ${file}
 	done
 	for file in $(ls Realm/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		mysql --login-path=local -q -s ${wdb} < ${file}
+		mysql --login-path=local -q -s ${rdb} < ${file}
 	done
 }
 
