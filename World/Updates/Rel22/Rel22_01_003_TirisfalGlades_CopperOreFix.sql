@@ -49,7 +49,7 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 		SET @go_guid:= (SELECT MAX(guid) FROM gameobject);
-		SET @pt_guid:= (SELECT MAX(guid) FROM gameobject);
+		SET @pt_guid:= (SELECT MAX(entry) FROM pool_template);
 		INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (@pt_guid+1,3,'Tirisfal Glades - Copper Ore - Pool 1');
 		INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (@pt_guid+2,4,'Tirisfal Glades - Copper Ore - Pool 2');
 		INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (@pt_guid+3,9,'Tirisfal Glades - Copper Ore - Pool 3');
