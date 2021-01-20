@@ -7,7 +7,6 @@
 
 OLDRELEASE="Rel21"
 RELEASE="Rel22"
-UPDATES="Rel20_to_BaseRel21_Updates"
 DUMP="NO"
 
 createcharDB="YES"
