@@ -7,9 +7,7 @@
  **MangosZero - Vanilla World of Warcraft Database**
 ===
 
-If you liked the original incarnation of [World of Warcraft][2] and still want to play it,
-this is the branch for you. We provide an authentication server where you can manage your users, 
-and a world server which serves game content just like the original did back then.
+This is the database to support the MangosZero server.
 
 It aims to be 100% compatible with the 3 final versions of Vanilla [World of Warcraft][2], 
 namely [patch 1.12.1][4], [patch 1.12.2][5] & [patch 1.12.3][6].
@@ -97,54 +95,14 @@ is today.
 <br>All we ask is that if you modify the code and make improvements, please have
 the decency to feed those changes back to us.
 
-In addition, as a special exception, permission is granted to link the code of
-*Mangos* with the OpenSSL project's [OpenSSL library][48] (or with modified
-versions of it that use the same license as the OpenSSL library), and distribute
-the linked executables. You must obey the GNU General Public License in all
-respects for all of the code used other than [OpenSSL][48].
-
 Acknowledgements
 --------
 World of Warcraft, and all related art, images, and lore are copyright [Blizzard Entertainment, Inc.][1]
 
-
 [1]: http://blizzard.com/ "Blizzard Entertainment Inc. · we love you!"
 [2]: http://blizzard.com/games/wow/ "World of Warcraft · Classic / Vanilla"
-[3]: http://wowpedia.org/Beta#World_of_Warcraft "World of Warcraft - Classic Beta"
 [4]: http://www.wowpedia.org/Patch_1.12.1 "Vanilla WoW · Patch 1.12.1 release notes"
 [5]: http://www.wowpedia.org/Patch_1.12.2 "Vanilla WoW · Patch 1.12.2 release notes"
 [6]: http://www.wowpedia.org/Patch_1.12.3 "Vanilla WoW · Patch 1.12.3 release notes"
-[7]: http://www.cppreference.com/ "C / C++ reference"
-
-[10]: https://getmangos.eu/ "mangos · project site"
-[12]: https://github.com/mangoszero "MaNGOS Zero · github organization"
-[13]: https://github.com/mangoszero/server "MaNGOS Zero · server repository"
-[15]: https://github.com/mangoszero/database "MaNGOS Zero · content database repository"
-[16]: https://travis-ci.org/mangoszero/server "Travis CI · Linux/MAC build status"
-[17]: https://ci.appveyor.com/ "AppVeyor Scan · Windows build status"
-[19]: http://www.cmake.org/ "CMake · Cross Platform Make"
-[20]: http://windows.microsoft.com/ "Microsoft Windows"
-[21]: http://www.debian.org/ "Debian · The Universal Operating System"
-[22]: http://www.ubuntu.com/ "Ubuntu · The world's most popular free OS"
-[23]: http://www.freebsd.org/ "FreeBSD · The Power To Serve"
-[24]: http://www.netbsd.org/ "NetBSD · The NetBSD Project"
-[25]: http://www.openbsd.org/ "OpenBSD · Free, functional and secure"
-[31]: https://visualstudio.microsoft.com/vs/older-downloads/ "Visual Studio Downloads"
-[33]: http://clang.llvm.org/ "clang · a C language family frontend for LLVM"
-[34]: http://git-scm.com/ "Git · Distributed version control system"
-[35]: http://windows.github.com/ "github · windows client"
-[36]: http://www.sourcetreeapp.com/ "SourceTree · Free Mercurial and Git Client for Windows/Mac"
-
 [40]: http://www.mysql.com/ "MySQL · The world's most popular open source database"
 [41]: http://www.mariadb.org/ "MariaDB · An enhanced, drop-in replacement for MySQL"
-[43]: http://www.dre.vanderbilt.edu/~schmidt/ACE.html "ACE · The ADAPTIVE Communication Environment"
-[44]: http://github.com/memononen/recastnavigation "Recast · Navigation-mesh Toolset for Games"
-[45]: http://sourceforge.net/projects/g3d/ "G3D · G3D Innovation Engine"
-[46]: http://zezula.net/en/mpq/stormlib.html "Stormlib · A library for reading data from MPQ archives"
-[48]: http://www.openssl.org/ "OpenSSL · The Open Source toolkit for SSL/TLS"
-[49]: http://www.stack.nl/~dimitri/doxygen/ "Doxygen · API documentation generator"
-[51]: http://gnuwin32.sourceforge.net/packages/zlib.htm "Zlib for Windows"
-[52]: http://gnuwin32.sourceforge.net/packages/bzip2.htm "Bzip2 for Windows"
-[53]: http://www.zlib.net/ "Zlib"
-[54]: http://www.bzip.org/ "Bzip2"
-[55]: http://slproweb.com/products/Win32OpenSSL.html "OpenSSL for Windows"
