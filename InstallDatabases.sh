@@ -9,6 +9,9 @@ OLDRELEASE="Rel21"
 RELEASE="Rel22"
 DUMP="NO"
 
+dbname=""
+dbcommand=""
+
 createcharDB="YES"
 createworldDB="YES"
 createrealmDB="YES"
@@ -26,7 +29,7 @@ addRealmList="YES"
 
 svr_def="localhost"
 user_def="mangos"
-pass_def=""
+pass_def="mangos"
 port_def="3306"
 wdb_def="mangos0"
 cdb_def="character0"
@@ -50,7 +53,7 @@ printBanner()
 	printf " #  #  #  ####### #  ## #   # #   #     #  \n"
 	printf " #     #  #     # #   #  ###   ###  ####   \n"
 	printf "\n"
-	printf " Database Setup and World Loader v0.02 	\n"
+	printf " Database Setup and World Loader v0.03 	\n"
 	printf " ---------------------------------------------- \n"
 	printf "  Website / Forum / Wiki : https://getmangos.eu \n"
 	printf " ---------------------------------------------- \n"
@@ -80,10 +83,40 @@ printActivities()
 	printf "\t\t\t\tX - Exit\n"
 }
 
+determineDBName()
+{
+	if [ $(which mariadb) ]; then
+		printf "MariaDB found.\n"
+		dbname="MariaDB"
+	elif [ $(which mysql) ]; then
+		printf "MySQL found.\n"
+		dbname="MySQL"
+	else
+		printf "Did not find mariadb or mysql.\n"
+	fi
+}
+
+mysqlconfigeditor()
+{
+	dbconfig="mysql_config_editor set --login-path=local --host=${svr} --port=${port} --user=${user} --password --skip-warn"
+}
+
+determineDBCommand()
+{
+	if [ $dbname = "MariaDB" ]; then
+		dbcommand="mariadb -u ${user} -p${pass} -q -s"
+	elif [ $dbname = "MySQL" ]; then
+		dbcommand="mysql --login-path=local -q -s"
+	else
+		printf "Did not find mariadb or mysql.\n"
+	fi
+}
+
 createCharDB()
 {
 	printf "Creating Character database ${cdb}\n"
-	mysql --login-path=local -q -s -e "Create database ${cdb}"
+	$(${dbcommand} -e "Create database ${cdb}")
+
 	if [ "${loadcharDB}" = "YES" ]; then
 		loadCharDB
 	fi
@@ -92,7 +125,11 @@ createCharDB()
 loadCharDB()
 {
 	printf "Loading data into character database ${cdb}\n"
-	mysql --login-path=local -q -s ${cdb} < Character/Setup/characterLoadDB.sql
+	$(${dbcommand} ${cdb} < Character/Setup/characterLoadDB.sql)
+
+	if [ "${updatecharDB}" = "YES" ]; then
+		updateCharDB
+	fi
 }
 
 updateCharDB()
@@ -102,20 +139,24 @@ updateCharDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		mysql --login-path=local -q -s ${cdb} < ${file}
+		$(${dbcommand} ${cdb} < ${file})
+		printf "File ${file} imported\n"
 	done
+
 	for file in $(ls Character/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		mysql --login-path=local -q -s ${cdb} < ${file}
+		$(${dbcommand} ${cdb} < ${file})
+		printf "File ${file} imported\n"
 	done
 }
 
 createWorldDB()
 {
 	printf "Creating World database ${wdb}\n"
-	mysql --login-path=local -q -s -e "Create database ${wdb}"
+	$(${dbcommand} -e "Create database ${wdb}")
+
 	if [ "${loadworldDB}" = "YES" ]; then
 		loadWorldDB
 	fi
@@ -124,8 +165,8 @@ createWorldDB()
 loadWorldDB()
 {
 	printf "Loading data into world database ${wdb}\n"
-	mysql --login-path=local -q -s ${wdb} < World/Setup/mangosdLoadDB.sql
-	
+	$(${dbcommand} ${wdb} < World/Setup/mangosdLoadDB.sql)
+
 	if [ "${dbType}" = "POPULATED" ]; then
 		populateWorldDB
 	fi
@@ -134,20 +175,20 @@ loadWorldDB()
 populateWorldDB()
 {
 	printf "Importing World database ${wdb}\n"
+	for file in $(ls World/Setup/FullDB/${OLDRELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ') 
+	do
+		file=$(echo ${file} | tr '|' ' ')
+		printf "Importing file ${file}\n"
+		$(${dbcommand} ${wdb} < ${file})
+		printf "File ${file} imported\n"
+	done
+
 	for file in $(ls World/Setup/FullDB/*.sql | tr ' ' '|' | tr '\n' ' ') 
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Importing file ${file}\n"
-		mysql --login-path=local -q -s ${wdb} < ${file}
+		$(${dbcommand} ${wdb} < ${file})
 		printf "File ${file} imported\n"
-	done
-	
-	for fileRel21 in $(ls World/Setup/FullDB/Rel21/*.sql | tr ' ' '|' | tr '\n' ' ') 
-	do
-		fileRel21=$(echo ${fileRel21} | tr '|' ' ')
-		printf "Importing file ${fileRel21}\n"
-		mysql --login-path=local -q -s ${wdb} < ${fileRel21}
-		printf "File ${fileRel21} imported\n"
 	done
 }
 
@@ -158,20 +199,24 @@ updateWorldDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		mysql --login-path=local -q -s ${wdb} < ${file}
+		$(${dbcommand} ${wdb} < ${file})
+		printf "File ${file} imported\n"
 	done
+
 	for file in $(ls World/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		mysql --login-path=local -q -s ${wdb} < ${file}
+		$(${dbcommand} ${wdb} < ${file})
+		printf "File ${file} imported\n"
 	done
 }
 
 createRealmDB()
 {
 	printf "Creating realm database ${rdb}\n"
-	mysql --login-path=local -q -s -e "Create database ${rdb}"
+	$(${dbcommand} -e "Create database ${rdb}")
+
 	if [ "${loadrealmDB}" = "YES" ]; then
 		loadRealmDB
 	fi
@@ -180,7 +225,7 @@ createRealmDB()
 loadRealmDB()
 {
 	printf "Loading data into realm database ${rdb}\n"	
-	mysql --login-path=local -q -s ${rdb} < Realm/Setup/realmdLoadDB.sql
+	$(${dbcommand} ${rdb} < Realm/Setup/realmdLoadDB.sql)
 }
 
 updateRealmDB()
@@ -190,20 +235,23 @@ updateRealmDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		mysql --login-path=local -q -s ${rdb} < ${file}
+		$(${dbcommand} ${rdb} < ${file})
+		printf "File ${file} imported\n"
 	done
+
 	for file in $(ls Realm/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		mysql --login-path=local -q -s ${rdb} < ${file}
+		$(${dbcommand} ${rdb} < ${file})
+		printf "File ${file} imported\n"
 	done
 }
 
 addRealmList()
 {
 	printf "Adding realm list entries\n"
-	mysql --login-path=local -q -s ${rdb} < Tools/updateRealm.sql
+	$(${dbcommand} ${rdb} < Tools/updateRealm.sql)
 }
 
 activity=""
@@ -328,17 +376,26 @@ do
 done
 
 printBanner
-printf "What is your MySQL host name ?\t[${svr_def}]: "
+determineDBName
+printf "What is your ${dbname} host name ?\t[${svr_def}]: "
 read svr
 svr=${svr:-${svr_def}}
-printf "What is your MySQL user name ?\t[${user_def}]: "
+printf "What is your ${dbname} user name ?\t[${user_def}]: "
 read user
 user=${user:-${user_def}}
-printf "What is your MySQL port ?\t[${port_def}]: "
+printf "What is your ${dbname} port ?\t[${port_def}]: "
 read port
 port=${port:-${port_def}}
-printf "What is your MySQL password ?\t [], "
-mysql_config_editor set --login-path=local --host=${svr} --port=${port} --user=${user} --password --skip-warn
+if [ $dbname = "MariaDB" ]; then
+	printf "What is your ${dbname} password ?\t []: "
+	read pass
+	pass=${pass:-${pass_def}}
+elif [ $dbname = "MySQL" ]; then
+	mysqlconfigeditor
+	$dbconfig
+fi
+determineDBCommand
+
 if [ "${DUMP}" = "YES" ]; then
 	printf "Enter it again \t[]: "
 	read pass
@@ -372,10 +429,6 @@ fi
 
 if [ "${createrealmDB}" = "YES" ]; then
 	createRealmDB
-fi
-
-if [ "${updatecharDB}" = "YES" ]; then
-	updateCharDB
 fi
 
 if [ "${updateworldDB}" = "YES" ]; then
