@@ -4,7 +4,7 @@
 ---
 
 [<img src="https://www.getmangos.eu/!assets_mangos/Mangos0.png" width="48" valign="middle"/>](http://getmangos.eu)
- **MangosZero - Vanilla World of Warcraft Database**
+ **MangosZero - Vanilla WoW Database**
 ===
 
 This is the database to support the MangosZero server.
@@ -26,7 +26,7 @@ their systems package management instead of source packages.**
 
 <br>We have a small, but extremely friendly and helpful community managed by MadMax and Antz.
 <br>Any trolling or unpleasantness is swiftly dealt with !!
-- Our discord/forum motto is "Be nice or Be somewhere else"
+* Our discord/forum motto is "Be nice or Be somewhere else"
 
 **Official Website**
 ----
@@ -99,10 +99,10 @@ Acknowledgements
 --------
 World of Warcraft, and all related art, images, and lore are copyright [Blizzard Entertainment, Inc.][1]
 
-[1]: http://blizzard.com/ "Blizzard Entertainment Inc. Â· we love you!"
-[2]: http://blizzard.com/games/wow/ "World of Warcraft Â· Classic / Vanilla"
-[4]: http://www.wowpedia.org/Patch_1.12.1 "Vanilla WoW Â· Patch 1.12.1 release notes"
-[5]: http://www.wowpedia.org/Patch_1.12.2 "Vanilla WoW Â· Patch 1.12.2 release notes"
-[6]: http://www.wowpedia.org/Patch_1.12.3 "Vanilla WoW Â· Patch 1.12.3 release notes"
-[40]: http://www.mysql.com/ "MySQL Â· The world's most popular open source database"
-[41]: http://www.mariadb.org/ "MariaDB Â· An enhanced, drop-in replacement for MySQL"
+[1]: http://blizzard.com/ "Blizzard Entertainment Inc. · we love you!"
+[2]: https://worldofwarcraft.com/ "World of Warcraft"
+[4]: http://www.wowpedia.org/Patch_1.12.1 "Vanilla WoW · Patch 1.12.1 release notes"
+[5]: http://www.wowpedia.org/Patch_1.12.2 "Vanilla WoW · Patch 1.12.2 release notes"
+[6]: http://www.wowpedia.org/Patch_1.12.3 "Vanilla WoW · Patch 1.12.3 release notes"
+[40]: http://www.mysql.com/ "MySQL · The world's most popular open source database"
+[41]: http://www.mariadb.org/ "MariaDB · An enhanced, drop-in replacement for MySQL"
