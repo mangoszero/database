@@ -1,5 +1,8 @@
 [<img src='https://www.getmangos.eu/!assets_mangos/currentlogo.gif' width="48" border=0>](https://www.getmangos.eu)
 [<img src='https://www.getmangos.eu/!assets_mangos/logo.png' border=0>](https://www.getmangos.eu)
+ <br><b>Repository Status:</b> 
+[<img src='https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat' border=0 valign="middle"/>](http://makeapullrequest.com)
+[<img src='https://img.shields.io/discord/286167585270005763.svg' border=0 valign="middle"/>](https://discord.gg/fPxMjHS8xs "Our community hub on Discord")
 
 ---
 
@@ -21,8 +24,7 @@ a few awesome, but less known libraries to prevent us from inventing the wheel a
 **Please note that Linux and Mac OS X users should install packages using
 their systems package management instead of source packages.**
 
-* **MySQL** / **MariaDB**: to store content, and user data, we rely on
-  [MySQL][40]/[MariaDB][41] to handle data.
+* **[MySQL][40]** / **[MariaDB][41]**: These databases are used to store content and user data.
 
 <br>We have a small, but extremely friendly and helpful community managed by MadMax and Antz.
 <br>Any trolling or unpleasantness is swiftly dealt with !!
@@ -37,7 +39,10 @@ We welcome anyone who is interested in enjoying older versions of wow or contrib
 
 **Discord Server**
 ----
-[![Widget for the Discord API guild](https://discord.com/api/guilds/286167585270005763/widget.png?style=banner2)](https://discord.gg/CzXcBXq) 
+
+We also have a Discord server where many of us hang out and discuss Mangos related stuff.
+
+* [**Discord Server**](https://discord.gg/fPxMjHS8xs) 
 
 **Main Wiki**
 ----
