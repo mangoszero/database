@@ -1,12 +1,12 @@
-[<img src='https://www.getmangos.eu/!assets_mangos/currentlogo.gif' width="48" border=0>](https://www.getmangos.eu)
-[<img src='https://www.getmangos.eu/!assets_mangos/logo.png' border=0>](https://www.getmangos.eu)
+[<img src='https://www.getmangos.eu/!assets_mangos/currentlogo.gif' width="48" border=0>][8]
+[<img src='https://www.getmangos.eu/!assets_mangos/logo2.png' border=0>][3]
  <br><b>Repository Status:</b> 
-[<img src='https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat' border=0 valign="middle"/>](http://makeapullrequest.com)
-[<img src='https://img.shields.io/discord/286167585270005763.svg' border=0 valign="middle"/>](https://discord.gg/fPxMjHS8xs "Our community hub on Discord")
+[<img src='https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat' border=0 valign="middle"/>][14]
+[<img src='https://img.shields.io/discord/286167585270005763.svg' border=0 valign="middle"/>][9]
 
 ---
 
-[<img src="https://www.getmangos.eu/!assets_mangos/Mangos0.png" width="48" valign="middle"/>](http://getmangos.eu)
+[<img src="https://www.getmangos.eu/!assets_mangos/Mangos0.png" width="48" valign="middle"/>][8]
  **MangosZero - Vanilla WoW Database**
 ===
 
@@ -27,29 +27,34 @@ their systems package management instead of source packages.**
 * **[MySQL][40]** / **[MariaDB][41]**: These databases are used to store content and user data.
 
 <br>We have a small, but extremely friendly and helpful community managed by MadMax and Antz.
-<br>Any trolling or unpleasantness is swiftly dealt with !!
-* Our discord/forum motto is "Be nice or Be somewhere else"
+
+
+Our discord/forum motto is: 
+```js
+'Be nice or Be somewhere else'
+```
+Any trolling or unpleasantness is swiftly dealt with !!
 
 **Official Website**
 ----
 
 We welcome anyone who is interested in enjoying older versions of wow or contributing and helping out !
 
-* [**Official MaNGOS Website**](https://getmangos.eu/)  
+* [**Official MaNGOS Website**][3]  
 
 **Discord Server**
 ----
 
 We also have a Discord server where many of us hang out and discuss Mangos related stuff.
 
-* [**Discord Server**](https://discord.gg/fPxMjHS8xs) 
+* [**Discord Server**][9]
 
 **Main Wiki**
 ----
 
 The repository of as much information as we can pack in. Details regarding the Database, file type definitions, packet definitons etc.
 
-* [**Wiki Table of Contents**](http://getmangos.eu/wiki)  
+* [**Wiki Table of Contents**][15]
 
 
 **Bug / Issue Tracker**
@@ -57,7 +62,7 @@ The repository of as much information as we can pack in. Details regarding the D
 
 Found an issue or something which doesn't seem right, please log it in the relevant section of the Bug Tracker.
 
-* [**Bug Tracker**](https://www.getmangos.eu/bug-tracker/mangos-zero/)
+* [**Bug Tracker**][16]
 
 **How to Install**
 ----
@@ -75,7 +80,7 @@ Run: `InstallDatabases.bat` and follow the onscreen prompts.
 
 More comprehensive Installation instructions for various operation systems can be found here.
 
-* [**Installation Guides**](https://www.getmangos.eu/wiki/documentation/installation-guides/) 
+* [**Installation Guides**][17] 
 
 
 License
@@ -104,10 +109,18 @@ Acknowledgements
 --------
 World of Warcraft, and all related art, images, and lore are copyright [Blizzard Entertainment, Inc.][1]
 
-[1]: http://blizzard.com/ "Blizzard Entertainment Inc. · we love you!"
+
+[1]: http://blizzard.com/ "Blizzard Entertainment Inc. - We love you!"
 [2]: https://worldofwarcraft.com/ "World of Warcraft"
-[4]: http://www.wowpedia.org/Patch_1.12.1 "Vanilla WoW · Patch 1.12.1 release notes"
-[5]: http://www.wowpedia.org/Patch_1.12.2 "Vanilla WoW · Patch 1.12.2 release notes"
-[6]: http://www.wowpedia.org/Patch_1.12.3 "Vanilla WoW · Patch 1.12.3 release notes"
-[40]: http://www.mysql.com/ "MySQL · The world's most popular open source database"
-[41]: http://www.mariadb.org/ "MariaDB · An enhanced, drop-in replacement for MySQL"
+[3]: https://www.getmangos.eu "Main MaNGOS Website"
+[4]: http://www.wowpedia.org/Patch_1.12.1 "Vanilla WoW - Patch 1.12.1 release notes"
+[5]: http://www.wowpedia.org/Patch_1.12.2 "Vanilla WoW - Patch 1.12.2 release notes"
+[6]: http://www.wowpedia.org/Patch_1.12.3 "Vanilla WoW - Patch 1.12.3 release notes"
+[8]: https://github.com/mangos/MaNGOS/blob/master/mangosFamily.md "The MaNGOS family of Icons"
+[9]: https://discord.gg/fPxMjHS8xs "Our community hub on Discord"
+[14]: http://makeapullrequest.com "Show PR's Welcome Icon"
+[15]: http://getmangos.eu/wiki "Mangos Wiki"
+[16]: https://www.getmangos.eu/bug-tracker/mangos-zero/ "Mangos Online tracker"
+[17]: https://www.getmangos.eu/wiki/documentation/installation-guides/ "Installation Guides"
+[40]: https://dev.mysql.com/downloads/ "MySQL - The world's most popular open source database"
+[41]: https://mariadb.org/download/ "MariaDB - An enhanced, drop-in replacement for MySQL"
