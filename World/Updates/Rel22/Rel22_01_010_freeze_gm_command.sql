@@ -19,17 +19,17 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '22'; 
     SET @cOldStructure = '01'; 
-    SET @cOldContent = '008';
+    SET @cOldContent = '009';
 
     -- New Values
     SET @cNewVersion = '22';
     SET @cNewStructure = '01';
-    SET @cNewContent = '009';
+    SET @cNewContent = '010';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'Q 7166 and 7171 details text';
+    SET @cNewDescription = 'freeze_gm_command';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Q 7166 and 7171 details text - Part 2';
+    SET @cNewComment = 'freeze_command';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT `description` FROM `db_version` ORDER BY `version` DESC, `STRUCTURE` DESC, `CONTENT` DESC LIMIT 0,1);
@@ -42,9 +42,25 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+		
+        DELETE FROM `mangos_string` WHERE `entry` IN (1707,1708,1709,1710,1711,1712,1713,1714);
+        
+		INSERT INTO `mangos_string` (`entry`, `content_default`, `source_file`, `source_enum_wrapper`, `source_enum_tag`)
+		VALUES 
+		('1707', '%s has been frozen ! Be careful : Effect will persist after logout or ban if not manually removed ! (use \".unfreezeplayer\" command to allow the player to move again)', 'Language.h', 'MangosStrings', 'LANG_COMMAND_FREEZE_PLAYER'),
+		('1708', '%s has been unfrozen.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_UNFREEZE_PLAYER'),
+		('1709', 'You cannot freeze %s since his security level is higher than yours.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_FREEZE_PLAYER_CANNOT_FREEZE_HIGHER_SECLEVEL'),
+		('1710', 'You cannot freeze yourself ! (What a strange idea by the way...)', 'Language.h', 'MangosStrings', 'LANG_COMMAND_FREEZE_PLAYER_CANNOT_FREEZE_YOURSELF'),
+		('1711', 'A GM has frozen your character. From now, you cannot move, use spells or logout.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_FREEZE_PLAYER_YOU_HAVE_BEEN_FROZEN'),
+		('1712', 'You have been unfrozen. You can now move freely, use spells or even logout.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_FREEZE_PLAYER_YOU_HAVE_BEEN_UNFROZEN'),
+		('1713', 'You can only freeze online characters.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_FREEZE_PLAYER_PLAYER_NOT_FOUND'),
+		('1714', 'You can only unfreeze online characters.', 'Language.h', 'MangosStrings', 'LANG_COMMAND_UNFREEZE_PLAYER_PLAYER_NOT_FOUND');
 
-    
-    UPDATE `quest_template` SET `Details` = 'Your radiate command and power, $C. Exalted in the eyes of Frostwolf - the enemy cowers at the mention of your name.$B$BRise, Hero of Frostwolf. Rise and be honored!$B$BPresent your insignia.' WHERE `entry` IN (7166,7171);
+		DELETE FROM `command` WHERE `id` IN (808,809);
+		INSERT INTO `command` (`id`, `command_text`, `security`, `help_text`)
+		VALUES
+		('808', 'freezeplayer', '2', 'Syntax: .freezeplayer #playerName - Freezes a player and prevent him to move, use any spell or even logout. If no #playerName is provided, will freeze current selected player.Command has no effect if #playerName is not found, or if no player is selected.'),
+		('809', 'unfreezeplayer', '2', 'Syntax: .unfreezeplayer #playerName - Unfreezes a player, allowing him to move, use spells and logout.');
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
