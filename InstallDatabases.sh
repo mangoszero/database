@@ -194,22 +194,20 @@ populateWorldDB()
 
 updateWorldDB()
 {
-	printf "Updating data into the World database ${wdb}\n"
-	for file in $(ls World/Updates/${OLDRELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
-	do
-		file=$(echo ${file} | tr '|' ' ')
-		printf "Applying update ${file}\n"
-		$(${dbcommand} ${wdb} < ${file})
-		printf "File ${file} imported\n"
-	done
+    printf "Updating data into the World database ${wdb}\n"
+    for file in World/Updates/${OLDRELEASE}/*.sql
+    do
+        printf "Applying update ${file}\n"
+        ${dbcommand} "${wdb}" < "${file}"
+        printf "File ${file} imported\n"
+    done
 
-	for file in $(ls World/Updates/${RELEASE}/*.sql | tr ' ' '|' | tr '\n' ' ')
-	do
-		file=$(echo ${file} | tr '|' ' ')
-		printf "Applying update ${file}\n"
-		$(${dbcommand} ${wdb} < ${file})
-		printf "File ${file} imported\n"
-	done
+    for file in World/Updates/${RELEASE}/*.sql
+    do
+        printf "Applying update ${file}\n"
+        ${dbcommand} "${wdb}" < "${file}"
+        printf "File ${file} imported\n"
+    done
 }
 
 createRealmDB()
