@@ -7,7 +7,7 @@ TRUNCATE TABLE `game_graveyard_zone`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -42,6 +42,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (31,405,0),
 (31,2100,0),
 (32,14,0),
+(32,1637,469),
 (34,215,67),
 (35,148,469),
 (36,41,0),
@@ -50,6 +51,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (39,722,0),
 (70,1377,0),
 (89,215,0),
+(89,1638,469),
 (90,141,469),
 (90,1657,469),
 (91,141,469),
@@ -58,6 +60,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (93,141,469),
 (94,85,67),
 (96,85,67),
+(96,1497,67),
 (97,130,67),
 (97,209,0),
 (98,36,67),
@@ -66,6 +69,8 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (100,1,469),
 (101,1,0),
 (101,721,0),
+(101,1537,67),
+(102,1537,469),
 (103,3,67),
 (104,10,67),
 (104,44,0),
@@ -91,7 +96,6 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (209,1941,0),
 (229,17,0),
 (249,17,0),
-(89,1638,469),
 (289,85,67),
 (309,357,469),
 (309,1477,0),
@@ -105,6 +109,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (389,1581,0),
 (389,1977,0),
 (409,406,0),
+(429,85,469),
 (429,796,0),
 (429,2057,0),
 (449,361,0),
@@ -119,14 +124,12 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (512,17,469),
 (512,331,0),
 (512,719,0),
-(32,1637,469),
 (529,22,0),
 (569,28,67),
 (569,85,67),
 (609,16,0),
 (610,2597,67),
 (611,2597,469),
-(429,85,469),
 (629,2057,0),
 (630,16,0),
 (631,15,67),
@@ -135,12 +138,12 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (633,493,0),
 (634,139,0),
 (635,361,0),
-(636,2677,0),
-(636,2717,0),
-(636,1583,0),
 (636,25,0),
 (636,51,0),
+(636,1583,0),
 (636,1584,0),
+(636,2677,0),
+(636,2717,0),
 (649,14,67),
 (669,22,0),
 (670,22,0),
@@ -170,6 +173,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (851,215,67),
 (851,1638,67),
 (852,1,469),
+(853,1497,469),
 (854,12,0),
 (854,1519,67),
 (869,2057,0),
@@ -190,14 +194,10 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (910,1377,0),
 (911,10,0),
 (913,1377,0),
-(913,3478,0),
 (913,3428,0),
-(927,139,0),
 (913,3429,0),
-(101,1537,67),
-(853,1497,469),
-(102,1537,469),
-(96,1497,67);
+(913,3478,0),
+(927,139,0);
 /*!40000 ALTER TABLE `game_graveyard_zone` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -210,4 +210,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:41
+-- Dump completed on 2021-03-18 10:00:53

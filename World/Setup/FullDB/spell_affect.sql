@@ -7,7 +7,7 @@ TRUNCATE TABLE `spell_affect`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,6 +40,7 @@ INSERT INTO `spell_affect` (`entry`, `effectId`, `SpellFamilyMask`) VALUES
 (12042,0,551557879),
 (12042,1,551557879),
 (12042,2,551557879),
+(12043,0,1079640117),
 (12285,0,1),
 (12288,0,8),
 (12288,1,8),
@@ -275,8 +276,7 @@ INSERT INTO `spell_affect` (`entry`, `effectId`, `SpellFamilyMask`) VALUES
 (30814,0,2954368024),
 (30872,0,256),
 (30892,0,134217728),
-(30893,0,134217728),
-(12043,0,1079640117);
+(30893,0,134217728);
 /*!40000 ALTER TABLE `spell_affect` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -289,4 +289,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:56
+-- Dump completed on 2021-03-18 10:01:12

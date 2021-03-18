@@ -7,7 +7,7 @@ TRUNCATE TABLE `areatrigger_teleport`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -70,6 +70,8 @@ INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position
 (924,'Zul\'Farrak - Entering',209,1212.67,842.04,8.93346,0,2009),
 (943,'Leap of Faith - End of fall',1,-5187.47,-2804.32,-8.375,5.76,0),
 (1064,'Onyxia\'s Lair - Exiting',1,-4750.38,-3754.44,49.0485,0.785398,0),
+(1103,'Booty Bay to Gnomeregan',0,-5100.92,754.567,260.55,0,2034),
+(1104,'Gnomeregan to Booty Bay',0,-14461.9,458.295,15.1639,0,2034),
 (1466,'Blackrock Depths - Entering',230,456.929,34.0923,-69.5617,4.71239,2011),
 (1468,'Blackrock Spire - Entering',229,78.3534,-226.841,49.7662,4.71239,2012),
 (1470,'Blackrock Spire - Exiting',0,-7524.7,-1228.41,285.733,1.74533,0),
@@ -126,9 +128,7 @@ INSERT INTO `areatrigger_teleport` (`id`, `name`, `target_map`, `target_position
 (4010,'Ahn\'Qiraj Temple - Entering',531,-8221.35,2014.34,129.071,0.872665,2014),
 (4012,'Ahn\'Qiraj Temple - Exiting',1,-8239.01,1993.25,129.071,4.01426,0),
 (4055,'Naxxramas (Exit)',533,3005.87,-3435.01,293.882,0,0),
-(4156,'Naxxramas (Entrance)',533,3498.28,-5349.9,144.968,1.31324,0),
-(1103,'Booty Bay to Gnomeregan',0,-5100.92,754.567,260.55,0,2034),
-(1104,'Gnomeregan to Booty Bay',0,-14461.9,458.295,15.1639,0,2034);
+(4156,'Naxxramas (Entrance)',533,3498.28,-5349.9,144.968,1.31324,0);
 /*!40000 ALTER TABLE `areatrigger_teleport` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -141,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:29
+-- Dump completed on 2021-03-18 10:00:38

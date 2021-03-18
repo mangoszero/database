@@ -7,7 +7,7 @@ TRUNCATE TABLE `fishing_loot_template`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -80,9 +80,13 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `gr
 (440,11009,100,1,-11009,1,0),
 (440,13755,10,0,-13755,1,0),
 (443,11103,100,1,-11103,1,0),
+(445,6718,-20,0,1,1,0),
 (445,11103,100,1,-11103,1,0),
+(448,6718,-20,0,1,1,0),
 (448,11103,100,1,-11103,1,0),
+(454,6718,-20,0,1,1,0),
 (454,11103,100,1,-11103,1,0),
+(456,6718,-20,0,1,1,0),
 (456,11103,100,1,-11103,1,0),
 (463,11101,100,1,-11101,1,0),
 (537,11106,100,1,-11106,1,0),
@@ -113,11 +117,7 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `gr
 (2979,11000,100,1,-11000,1,0),
 (3140,11105,100,1,-11105,1,0),
 (3140,13755,10,0,-13755,1,0),
-(3317,13755,10,0,-13755,1,0),
-(445,6718,-20,0,1,1,0),
-(448,6718,-20,0,1,1,0),
-(454,6718,-20,0,1,1,0),
-(456,6718,-20,0,1,1,0);
+(3317,13755,10,0,-13755,1,0);
 /*!40000 ALTER TABLE `fishing_loot_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -130,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:40
+-- Dump completed on 2021-03-18 10:00:50

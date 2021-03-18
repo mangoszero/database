@@ -7,7 +7,7 @@ TRUNCATE TABLE `pool_creature_template`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -85,6 +85,7 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (1948,1108,0,'Snarlmane (1948)'),
 (2090,1169,0,'Ma\'ruk Wyrmscale (2090)'),
 (2108,1170,0,'Garneg Charskull (2108)'),
+(2186,1214,0,'Carnivous the Breaker - 2186'),
 (2258,1000,0,'Stone Fury (2258)'),
 (2283,1109,0,'Ravenclaw Regent (2283)'),
 (2447,1001,0,'Narillasanz (2447)'),
@@ -112,6 +113,8 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (2850,1025,0,'Broken Tooth (2850)'),
 (2931,1026,0,'Zaricotl (2931)'),
 (3581,1113,0,'Sewer Beast (3581)'),
+(5400,1205,0,'Zekkis (5400)'),
+(7017,1215,0,'Lord Sinslayer - 7017'),
 (7846,1028,0,'Teremus the Devourer (7846)'),
 (8210,1129,0,'Razortalon (8210)'),
 (8211,1130,0,'Old Cliff Jumper (8211)'),
@@ -149,10 +152,13 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (10077,1044,0,'Deathmaw (10077)'),
 (10078,1045,0,'Terrorspark (10078)'),
 (10119,1046,0,'Volchan (10119)'),
+(10196,1215,0,'General Cobaltann (10196)'),
 (10356,1144,0,'Bayne (10356)'),
 (10357,1145,0,'Ressan the Needler (10357)'),
 (10358,1146,0,'Fellicent\'s Shade (10358)'),
 (10359,1147,0,'Sri\'skulk (10359)'),
+(10559,1199,0,'Lady Vespia (10559)'),
+(10647,1180,0,'Prince Raze (10647)'),
 (10817,1216,0,'Duggan Wildhammer (10817)'),
 (10821,1060,0,'Hed\'mush the Rotting (10821)'),
 (10822,1061,0,'Warlord Thresh\'jin (10822)'),
@@ -166,10 +172,12 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (12431,1110,0,'Gorefang (12431)'),
 (12432,1111,0,'Old Vicejaw (12432)'),
 (12433,1112,0,'Krethis Shadowspinner (12433)'),
+(13602,1700,0,'Abominable Greench (13602)'),
 (14221,1004,0,'Gravis Slipknot (14221)'),
 (14222,1005,0,'Araga (14222)'),
 (14223,1006,0,'Cranky Benj (14223)'),
 (14224,1027,0,'7:XT (14224)'),
+(14237,1206,0,'Oozeworm (14237)'),
 (14266,1088,0,'Shanda the Spinner (14266)'),
 (14267,1089,0,'Emogg the Crusher (14267)'),
 (14268,1090,0,'Lord Condar (14268)'),
@@ -192,20 +200,12 @@ INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description
 (14446,1126,0,'Fingat (14446)'),
 (14447,1127,0,'Gilmorian (14447)'),
 (14448,1128,0,'Molt Thorn (14448)'),
+(14479,25492,0,'Twilight Lord Everun (14479)'),
 (14487,1117,0,'Gluggle (14487)'),
 (14488,1118,0,'Roloch (14488)'),
 (14490,1119,0,'Rippa (14490)'),
 (14492,1121,0,'Verifonix (14492)'),
-(16184,1068,0,'Nerubian Overseer (16184)'),
-(10647,1180,0,'Prince Raze (10647)'),
-(5400,1205,0,'Zekkis (5400)'),
-(14237,1206,0,'Oozeworm (14237)'),
-(10559,1199,0,'Lady Vespia (10559)'),
-(13602,1700,0,'Abominable Greench (13602)'),
-(2186,1214,0,'Carnivous the Breaker - 2186'),
-(10196,1215,0,'General Cobaltann (10196)'),
-(14479,25492,0,'Twilight Lord Everun (14479)'),
-(7017,1215,0,'Lord Sinslayer - 7017');
+(16184,1068,0,'Nerubian Overseer (16184)');
 /*!40000 ALTER TABLE `pool_creature_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -218,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:52
+-- Dump completed on 2021-03-18 10:01:07

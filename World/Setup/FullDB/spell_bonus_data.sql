@@ -7,7 +7,7 @@ TRUNCATE TABLE `spell_bonus_data`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,6 +29,7 @@ LOCK TABLES `spell_bonus_data` WRITE;
 INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`, `two_hand_direct_bonus`, `direct_bonus_done`, `one_hand_direct_bonus_done`, `two_hand_direct_bonus_done`, `direct_bonus_taken`, `one_hand_direct_bonus_taken`, `two_hand_direct_bonus_taken`, `dot_bonus`, `ap_bonus`, `ap_dot_bonus`, `comments`) VALUES 
 (116,0.8143,0,0,0,0,0,0,0,0,0,0,0,'Mage - Frost Bolt'),
 (120,0.1357,0,0,0,0,0,0,0,0,0,0,0,'Mage - Cone of Cold'),
+(133,1,0,0,0,0,0,0,0,0,0,0,0,'Mage - Fire Ball'),
 (172,0,0,0,0,0,0,0,0,0,0.156,0,0,'Warlock - Corruption'),
 (331,0.8571,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Healing Wave'),
 (339,0,0,0,0,0,0,0,0,0,0.1,0,0,'Druid - Entangling Roots'),
@@ -41,10 +42,11 @@ INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`
 (686,0.8571,0,0,0,0,0,0,0,0,0,0,0,'Warlock - Shadow Bolt'),
 (703,0,0,0,0,0,0,0,0,0,0,0,0.03,'Rogue - Garrote'),
 (755,0,0,0,0,0,0,0,0,0,0.4485,0,0,'Warlock - Health Funnel'),
-(25736,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(879,0.15,0,0,0,0,0,0,0,0,0,0.15,0,'Paladin - Exorcism'),
 (974,0.2857,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Earth Shield'),
 (980,0,0,0,0,0,0,0,0,0,0.1,0,0,'Warlock - Curse of Agony'),
 (1120,0,0,0,0,0,0,0,0,0,0.4286,0,0,'Warlock - Drain Soul'),
+(1454,0,0,0,0,0,0,0,0,0,0,0,0,'Life Tap - no scaling with SP'),
 (1463,0.8053,0,0,0,0,0,0,0,0,0,0,0,'Mage - Mana Shield'),
 (1949,0,0,0,0,0,0,0,0,0,0.0946,0,0,'Warlock - Hellfire'),
 (2060,1.2353,0,0,0,0,0,0,0,0,0,0,0,'Priest - Greater Heal'),
@@ -110,13 +112,22 @@ INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`
 (18764,0,0,0,0,0,0,0,0,0,0,0,0,'Item - Fungal Regrowth'),
 (18790,0,0,0,0,0,0,0,0,0,0,0,0,'Warlock - Fel Stamina'),
 (20167,0.25,0,0,0,0,0,0,0,0,0,0.16,0,'Paladin - Seal of Light Proc'),
+(20424,0.2,0,0,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Command Proc'),
 (20925,0.09,0,0,0,0,0,0,0,0,0,0.056,0,'Paladin - Holy Shield'),
 (21179,0,0,0,0,0,0,0,0,0,0,0,0,'Item - Six Demon Bag - Chain Lightning'),
 (23455,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 1'),
 (23458,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 2'),
 (23459,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 3'),
-(25735,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(24275,0.15,0,0,0,0,0,0,0,0,0,0.15,0,'Paladin - Hammer of Wrath'),
 (25346,0.2857,0,0,0,0,0,0,0,0,0,0,0,'Mage - Arcane Missiles Triggered Spell Rank 8'),
+(25713,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(25735,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(25736,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(25737,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(25738,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(25739,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(25740,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
+(25742,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
 (26363,0.33,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Lightning Shield Proc Rank 7'),
 (26364,0.33,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Lightning Shield Proc Rank 1'),
 (26365,0.33,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Lightning Shield Proc Rank 2'),
@@ -124,21 +135,10 @@ INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`
 (26367,0.33,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Lightning Shield Proc Rank 4'),
 (26369,0.33,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Lightning Shield Proc Rank 5'),
 (26370,0.33,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Lightning Shield Proc Rank 6'),
-(20424,0.2,0,0,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Command Proc'),
+(26573,0,0,0,0,0,0,0,0,0,0.04,0,0.04,'Paladin - Consecration'),
 (27803,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 4'),
 (27804,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 5'),
-(27805,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 6'),
-(1454,0,0,0,0,0,0,0,0,0,0,0,0,'Life Tap - no scaling with SP'),
-(25737,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
-(25738,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
-(25739,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
-(25740,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
-(25742,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
-(25713,0,0.1,0.125,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Righteousness Dummy Proc'),
-(133,1,0,0,0,0,0,0,0,0,0,0,0,'Mage - Fire Ball'),
-(879,0.15,0,0,0,0,0,0,0,0,0,0.15,0,'Paladin - Exorcism'),
-(24275,0.15,0,0,0,0,0,0,0,0,0,0.15,0,'Paladin - Hammer of Wrath'),
-(26573,0,0,0,0,0,0,0,0,0,0.04,0,0.04,'Paladin - Consecration');
+(27805,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 6');
 /*!40000 ALTER TABLE `spell_bonus_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -151,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:56
+-- Dump completed on 2021-03-18 10:01:13

@@ -7,7 +7,7 @@ TRUNCATE TABLE `pool_pool`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,39 +27,6 @@ TRUNCATE TABLE `pool_pool`;
 LOCK TABLES `pool_pool` WRITE;
 /*!40000 ALTER TABLE `pool_pool` DISABLE KEYS */;
 INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALUES 
-(3583,2030,0,'Mineral Spawn Point 169 - Westfall'),
-(3585,2004,0,'Mineral Spawn Point 165 - Badlands'),
-(3586,2004,0,'Mineral Spawn Point 166 - Badlands'),
-(3604,2004,0,'Mineral Spawn Point 5 - Badlands'),
-(3635,2004,0,'Mineral Spawn Point 36 - Badlands'),
-(3649,2004,0,'Mineral Spawn Point 50 - Badlands'),
-(3727,2004,0,'Mineral Spawn Point 128 - Badlands'),
-(3742,2004,0,'Mineral Spawn Point 143 - Badlands'),
-(3757,2004,0,'Mineral Spawn Point 158 - Badlands'),
-(3758,2004,0,'Mineral Spawn Point 159 - Badlands'),
-(3760,2004,0,'Mineral Spawn Point 161 - Badlands'),
-(3761,2004,0,'Mineral Spawn Point 162 - Badlands'),
-(6703,2030,0,'Mineral Spawn Point 3 - Westfall'),
-(6705,2030,0,'Mineral Spawn Point 5 - Westfall'),
-(6706,2030,0,'Mineral Spawn Point 6 - Westfall'),
-(6707,2030,0,'Mineral Spawn Point 7 - Westfall'),
-(6708,2030,0,'Mineral Spawn Point 8 - Westfall'),
-(6712,2030,0,'Mineral Spawn Point 12 - Westfall'),
-(6715,2030,0,'Mineral Spawn Point 15 - Westfall'),
-(6716,2030,0,'Mineral Spawn Point 16 - Westfall'),
-(6719,2030,0,'Mineral Spawn Point 19 - Westfall'),
-(6720,2030,0,'Mineral Spawn Point 20 - Westfall'),
-(6721,2030,0,'Mineral Spawn Point 21 - Westfall'),
-(6734,2030,0,'Mineral Spawn Point 34 - Westfall'),
-(6747,2030,0,'Mineral Spawn Point 47 - Westfall'),
-(6776,2030,0,'Mineral Spawn Point 76 - Westfall'),
-(6790,2030,0,'Mineral Spawn Point 90 - Westfall'),
-(6793,2030,0,'Mineral Spawn Point 93 - Westfall'),
-(6797,2030,0,'Mineral Spawn Point 97 - Westfall'),
-(6806,2030,0,'Mineral Spawn Point 106 - Westfall'),
-(6838,2030,0,'Mineral Spawn Point 138 - Westfall'),
-(6849,2030,0,'Mineral Spawn Point 149 - Westfall'),
-(6859,2030,0,'Mineral Spawn Point 159 - Westfall'),
 (1603,1602,0,'Dire Maul pod, 1603'),
 (1604,1602,0,'Dire Maul pod, 1604'),
 (1605,1602,0,'Dire Maul pod, 1605'),
@@ -125,6 +92,45 @@ INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALU
 (1665,1602,0,'Dire Maul pod, 1665'),
 (1666,1602,0,'Dire Maul pod, 1666'),
 (1667,1602,0,'Dire Maul pod, 1667'),
+(3583,2030,0,'Mineral Spawn Point 169 - Westfall'),
+(3585,2004,0,'Mineral Spawn Point 165 - Badlands'),
+(3586,2004,0,'Mineral Spawn Point 166 - Badlands'),
+(3604,2004,0,'Mineral Spawn Point 5 - Badlands'),
+(3635,2004,0,'Mineral Spawn Point 36 - Badlands'),
+(3649,2004,0,'Mineral Spawn Point 50 - Badlands'),
+(3727,2004,0,'Mineral Spawn Point 128 - Badlands'),
+(3742,2004,0,'Mineral Spawn Point 143 - Badlands'),
+(3757,2004,0,'Mineral Spawn Point 158 - Badlands'),
+(3758,2004,0,'Mineral Spawn Point 159 - Badlands'),
+(3760,2004,0,'Mineral Spawn Point 161 - Badlands'),
+(3761,2004,0,'Mineral Spawn Point 162 - Badlands'),
+(6703,2030,0,'Mineral Spawn Point 3 - Westfall'),
+(6705,2030,0,'Mineral Spawn Point 5 - Westfall'),
+(6706,2030,0,'Mineral Spawn Point 6 - Westfall'),
+(6707,2030,0,'Mineral Spawn Point 7 - Westfall'),
+(6708,2030,0,'Mineral Spawn Point 8 - Westfall'),
+(6712,2030,0,'Mineral Spawn Point 12 - Westfall'),
+(6715,2030,0,'Mineral Spawn Point 15 - Westfall'),
+(6716,2030,0,'Mineral Spawn Point 16 - Westfall'),
+(6719,2030,0,'Mineral Spawn Point 19 - Westfall'),
+(6720,2030,0,'Mineral Spawn Point 20 - Westfall'),
+(6721,2030,0,'Mineral Spawn Point 21 - Westfall'),
+(6734,2030,0,'Mineral Spawn Point 34 - Westfall'),
+(6747,2030,0,'Mineral Spawn Point 47 - Westfall'),
+(6776,2030,0,'Mineral Spawn Point 76 - Westfall'),
+(6790,2030,0,'Mineral Spawn Point 90 - Westfall'),
+(6793,2030,0,'Mineral Spawn Point 93 - Westfall'),
+(6797,2030,0,'Mineral Spawn Point 97 - Westfall'),
+(6806,2030,0,'Mineral Spawn Point 106 - Westfall'),
+(6838,2030,0,'Mineral Spawn Point 138 - Westfall'),
+(6849,2030,0,'Mineral Spawn Point 149 - Westfall'),
+(6859,2030,0,'Mineral Spawn Point 159 - Westfall'),
+(15007,15013,0,'Dark Keeper Nameplate'),
+(15008,15013,0,'Dark Keeper Nameplate'),
+(15009,15013,0,'Dark Keeper Nameplate'),
+(15010,15013,0,'Dark Keeper Nameplate'),
+(15011,15013,0,'Dark Keeper Nameplate'),
+(15012,15013,0,'Dark Keeper Nameplate'),
 (25008,25000,0,'Noblegarden egg, 25008'),
 (25009,25000,0,'Noblegarden egg, 25009'),
 (25010,25000,0,'Noblegarden egg, 25010'),
@@ -490,15 +496,9 @@ INSERT INTO `pool_pool` (`pool_id`, `mother_pool`, `chance`, `description`) VALU
 (25370,25005,0,'Noblegarden egg, 25370'),
 (25371,25005,0,'Noblegarden egg, 25371'),
 (25372,25005,0,'Noblegarden egg, 25372'),
-(15007,15013,0,'Dark Keeper Nameplate'),
-(15008,15013,0,'Dark Keeper Nameplate'),
-(15009,15013,0,'Dark Keeper Nameplate'),
-(15010,15013,0,'Dark Keeper Nameplate'),
 (25482,25486,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
 (25483,25486,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
 (25484,25487,0,'BRD - Ragereaver Golem/Wrath Hammer Construct'),
-(15011,15013,0,'Dark Keeper Nameplate'),
-(15012,15013,0,'Dark Keeper Nameplate'),
 (25485,25487,0,'BRD - Ragereaver Golem/Wrath Hammer Construct');
 /*!40000 ALTER TABLE `pool_pool` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -512,4 +512,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:53
+-- Dump completed on 2021-03-18 10:01:08

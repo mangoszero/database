@@ -7,7 +7,7 @@ TRUNCATE TABLE `db_scripts`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -2697,7 +2697,10 @@ INSERT INTO `db_scripts` (`script_guid`, `script_type`, `id`, `delay`, `command`
 (10622,1,1193,2,40,12657,3600,0,0,0,0,0,0,0,0,0,0,0,'Unspawn Broken trap after quest 1193 end'),
 (10623,3,9615,0,32,1,0,0,0,0,0,0,0,0,0,0,0,0,'Laris Pause WP1'),
 (10624,1,4512,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'Laris Unpause WP'),
-(10625,3,9616,0,0,0,0,0,0,0,2000005804,0,0,0,0,0,0,0,'Laris Say on WP');
+(10625,3,9616,0,0,0,0,0,0,0,2000005804,0,0,0,0,0,0,0,'Laris Say on WP'),
+(10626,3,1006,0,1,6,0,0,0,0,0,0,0,0,0,0,0,0,'GENERIC EMOTE - ONESHOT_QUESTION'),
+(10627,3,1011,0,1,11,0,0,0,0,0,0,0,0,0,0,0,0,'GENERIC EMOTE - ONESHOT_LAUGH'),
+(10628,3,1069,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,'GENERIC EMOTE - STATE_USESTANDING');
 /*!40000 ALTER TABLE `db_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2710,4 +2713,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:39
+-- Dump completed on 2021-03-18 10:00:47

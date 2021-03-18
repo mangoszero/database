@@ -605,6 +605,7 @@ CREATE TABLE `creature_template` (
   `ResistanceFrost` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Frost resistance of the creature.',
   `ResistanceShadow` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Shadow resistance of the creature.',
   `ResistanceArcane` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Arcane resistance of the creature.',
+  `SpellListId` mediumint(8) unsigned NOT NULL DEFAULT 0 COMMENT 'ID of combat spells list that creature will use by default.',
   `PetSpellDataId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'ID that displays what spells the pet has in the client.',
   `MovementType` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The movement type defines what a creature spawn will behave like after spawning.',
   `TrainerType` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'This details what kind of trainer the creature is.',

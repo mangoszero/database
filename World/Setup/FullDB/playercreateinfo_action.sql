@@ -7,7 +7,7 @@ TRUNCATE TABLE `playercreateinfo_action`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ INSERT INTO `playercreateinfo_action` (`race`, `class`, `button`, `action`, `typ
 (1,1,73,78,0),
 (1,1,83,117,128),
 (1,2,0,6603,0),
-(3,2,1,20154,0),
+(1,2,1,20154,0),
 (1,2,2,635,0),
 (1,2,10,159,128),
 (1,2,11,2070,128),
@@ -89,7 +89,7 @@ INSERT INTO `playercreateinfo_action` (`race`, `class`, `button`, `action`, `typ
 (3,1,75,2481,0),
 (3,1,83,117,128),
 (3,2,0,6603,0),
-(1,2,1,20154,0),
+(3,2,1,20154,0),
 (3,2,2,635,0),
 (3,2,3,20594,0),
 (3,2,4,2481,0),
@@ -254,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:51
+-- Dump completed on 2021-03-18 10:01:06

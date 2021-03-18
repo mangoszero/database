@@ -7,7 +7,7 @@ TRUNCATE TABLE `pool_gameobject_template`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,12 +28,12 @@ LOCK TABLES `pool_gameobject_template` WRITE;
 /*!40000 ALTER TABLE `pool_gameobject_template` DISABLE KEYS */;
 INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES 
 (154357,1174,0,'Hilarys Necklace (154357)'),
-(175334,1668,0,'Bijous Belongings (175334)'),
-(180654,1801,0,'Hardpacked Snowdrift (180654)'),
 (161557,1669,0,'Milly\'s Harvest (161557)'),
-(175966,15005,0,'Enchanted Scarlet Thread (175966)'),
+(175334,1668,0,'Bijous Belongings (175334)'),
+(175785,25470,0,'LBRS - Inconspicuous Documents'),
 (175928,15006,0,'Incendia Agave (175928)'),
-(175785,25470,0,'LBRS - Inconspicuous Documents');
+(175966,15005,0,'Enchanted Scarlet Thread (175966)'),
+(180654,1801,0,'Hardpacked Snowdrift (180654)');
 /*!40000 ALTER TABLE `pool_gameobject_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -46,4 +46,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:53
+-- Dump completed on 2021-03-18 10:01:08

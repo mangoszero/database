@@ -7,7 +7,7 @@ TRUNCATE TABLE `spell_proc_event`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.6.25-log
+-- Server version	5.5.5-10.5.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,6 +29,7 @@ LOCK TABLES `spell_proc_event` WRITE;
 INSERT INTO `spell_proc_event` (`entry`, `SchoolMask`, `SpellFamilyName`, `SpellFamilyMask0`, `SpellFamilyMask1`, `SpellFamilyMask2`, `procFlags`, `procEx`, `ppmRate`, `CustomChance`, `Cooldown`) VALUES 
 (324,0,0,0,0,0,0,0,0,0,3),
 (2565,0,0,0,0,0,0,64,0,0,0),
+(6346,127,0,0,0,0,0,256,0,0,0),
 (6866,0,0,0,0,0,0,112,0,0,0),
 (7131,0,0,0,0,0,8,32,0,0,0),
 (9452,0,0,0,0,0,0,0,3,0,0),
@@ -94,6 +95,11 @@ INSERT INTO `spell_proc_event` (`entry`, `SchoolMask`, `SpellFamilyName`, `Spell
 (17670,0,0,0,0,0,8,0,0,0,0),
 (17687,0,0,0,0,0,0,116,0,0,0),
 (17793,0,5,1,1,1,0,2,0,0,0),
+(17794,32,0,0,0,0,0,0,0,0,0),
+(17797,32,0,0,0,0,0,0,0,0,0),
+(17798,32,0,0,0,0,0,0,0,0,0),
+(17799,32,0,0,0,0,0,0,0,0,0),
+(17800,32,0,0,0,0,0,0,0,0,0),
 (18094,0,5,10,10,10,0,0,0,0,0),
 (18096,0,0,549755813984,549755813984,549755813984,0,0,0,0,0),
 (18119,0,5,9189,9189,9189,0,0,0,0,0),
@@ -187,13 +193,7 @@ INSERT INTO `spell_proc_event` (`entry`, `SchoolMask`, `SpellFamilyName`, `Spell
 (30808,0,0,0,0,0,0,2,0,0,0),
 (30809,0,0,0,0,0,0,2,0,0,0),
 (30810,0,0,0,0,0,0,2,0,0,0),
-(30811,0,0,0,0,0,0,2,0,0,0),
-(6346,127,0,0,0,0,0,256,0,0,0),
-(17794,32,0,0,0,0,0,0,0,0,0),
-(17798,32,0,0,0,0,0,0,0,0,0),
-(17797,32,0,0,0,0,0,0,0,0,0),
-(17799,32,0,0,0,0,0,0,0,0,0),
-(17800,32,0,0,0,0,0,0,0,0,0);
+(30811,0,0,0,0,0,0,2,0,0,0);
 /*!40000 ALTER TABLE `spell_proc_event` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -206,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25 21:48:58
+-- Dump completed on 2021-03-18 10:01:15
