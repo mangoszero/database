@@ -139,7 +139,7 @@ updateCharDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		$(${dbcommand} ${cdb} < ${file})
+		${dbcommand} "${cdb}" < "${file}"
 		printf "File ${file} imported\n"
 	done
 
@@ -147,7 +147,7 @@ updateCharDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		$(${dbcommand} ${cdb} < ${file})
+		${dbcommand} "${cdb}" < "${file}"
 		printf "File ${file} imported\n"
 	done
 }
