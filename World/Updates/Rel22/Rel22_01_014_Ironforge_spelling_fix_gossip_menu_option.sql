@@ -45,7 +45,7 @@ BEGIN
 
 	-- Update Speeling fix.
 	UPDATE `gossip_menu_option` SET `option_text`='Ahh ... Ironforge.' WHERE `menu_id`=2051 AND `id`=0;
-	UPDATE `gossip_menu_option` SET `option_text`='Ahh ... Ironforge.' WHERE `menu_id`=2058 AND `id`=0;
+	UPDATE `gossip_menu_option` SET `option_text`='Ironforge?' WHERE `menu_id`=2058 AND `id`=0;
 	-- locales_ Tables are generally not updated this way, as they load empty on default.
 	-- UPDATE `locales_gossip_menu_option` SET `option_text_loc3`='Ahh ... Ironforge.' WHERE `menu_id`=2051 AND `id`=0;
 	-- UPDATE `locales_gossip_menu_option` SET `option_text_loc3`='Ironforge.' WHERE `menu_id`=2058 AND `id`=0;
