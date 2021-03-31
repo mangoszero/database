@@ -19,12 +19,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '22'; 
     SET @cOldStructure = '01'; 
-    SET @cOldContent = '013';
+    SET @cOldContent = '014';
 
     -- New Values
     SET @cNewVersion = '22';
     SET @cNewStructure = '01';
-    SET @cNewContent = '014';
+    SET @cNewContent = '015';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Ironforge spelling fix';
 
@@ -43,11 +43,12 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
-		-- Update Speeling fix.
-	UPDATE `gossip_menu_option` SET `option_text_loc3`='Ahh ... Ironforge.' WHERE `menu_id`=2051 AND `id`=0;
-	UPDATE `gossip_menu_option` SET `option_text_loc3`='Ahh ... Ironforge.' WHERE `menu_id`=2058 AND `id`=0;
-	UPDATE `locales_gossip_menu_option` SET `option_text_loc3`='Ahh ... Ironforge.' WHERE `menu_id`=2051 AND `id`=0;
-	UPDATE `locales_gossip_menu_option` SET `option_text_loc3`='Ironforge.' WHERE `menu_id`=2058 AND `id`=0;
+	-- Update Speeling fix.
+	UPDATE `gossip_menu_option` SET `option_text`='Ahh ... Ironforge.' WHERE `menu_id`=2051 AND `id`=0;
+	UPDATE `gossip_menu_option` SET `option_text`='Ahh ... Ironforge.' WHERE `menu_id`=2058 AND `id`=0;
+	-- locales_ Tables are generally not updated this way, as they load empty on default.
+	-- UPDATE `locales_gossip_menu_option` SET `option_text_loc3`='Ahh ... Ironforge.' WHERE `menu_id`=2051 AND `id`=0;
+	-- UPDATE `locales_gossip_menu_option` SET `option_text_loc3`='Ironforge.' WHERE `menu_id`=2058 AND `id`=0;
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
