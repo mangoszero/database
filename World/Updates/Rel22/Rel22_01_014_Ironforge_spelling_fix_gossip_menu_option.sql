@@ -19,12 +19,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '22'; 
     SET @cOldStructure = '01'; 
-    SET @cOldContent = '014';
+    SET @cOldContent = '013';
 
     -- New Values
     SET @cNewVersion = '22';
     SET @cNewStructure = '01';
-    SET @cNewContent = '015';
+    SET @cNewContent = '014';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Ironforge spelling fix';
 
@@ -102,5 +102,3 @@ CALL update_mangos();
 
 -- Drop the procedure
 DROP PROCEDURE IF EXISTS `update_mangos`;
-
-
