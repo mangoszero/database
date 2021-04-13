@@ -19,17 +19,17 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '22'; 
     SET @cOldStructure = '01'; 
-    SET @cOldContent = '014';
+    SET @cOldContent = '015';
 
     -- New Values
     SET @cNewVersion = '22';
     SET @cNewStructure = '01';
-    SET @cNewContent = '015';
+    SET @cNewContent = '016';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'Fix Quest CRLF';
+    SET @cNewDescription = 'Fix Quest Placeholders';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Fix Quest CRLF';
+    SET @cNewComment = 'Fix Quest Placeholders';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT `description` FROM `db_version` ORDER BY `version` DESC, `STRUCTURE` DESC, `CONTENT` DESC LIMIT 0,1);
