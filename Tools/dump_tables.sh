@@ -43,6 +43,7 @@ for TABLE in \
 `creature_movement_template` \
 `creature_onkill_reputation` \
 `creature_questrelation` \
+`creature_spells` \
 `creature_template` \
 `creature_template_addon` \
 `creature_template_classlevelstats` \
