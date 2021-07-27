@@ -57,8 +57,8 @@ BEGIN
         (2516, 5056, -40, 0, 1, 1, 0);
 
         -- RETHBAN ORE
-        -- Remove Rethban Ore from all entries in gameobject_loot_template except the ones (2054, 2055) used in Rethban Cavern
-        DELETE FROM `gameobject_loot_template` WHERE `item` = 2798 AND `entry` NOT IN (2054, 2055);
+        -- Remove Rethban Ore from all entries in gameobject_loot_template except the ones (1735, 1736) used in Rethban Cavern
+        DELETE FROM `gameobject_loot_template` WHERE `item` = 2798 AND `entry` NOT IN (1735, 1736);
 
         -- Tin Vein used in Rethban Cavern
         UPDATE `gameobject` SET `id` = 2054 WHERE `guid` IN (72064, 72065, 72066, 72082, 72083, 72085, 72086, 72087, 72123, 72124, 72125, 72126, 72127);
