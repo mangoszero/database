@@ -44,7 +44,7 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
     
-UPDATE `creature_template` SET `NpcFlags` = 2 WHERE `Entry` = 15583;
+UPDATE `creature_template` SET `NpcFlags` = 3 WHERE `Entry` = 15583;
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
