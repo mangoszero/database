@@ -50,7 +50,7 @@ BEGIN
 	INSERT INTO pool_template (entry, max_limit, DESCRIPTION) VALUES
 	(@pool+1, 1, 'Water Barrel (29275) / Food Crate (30758) - Stormwind City');
 
-	DELETE FROM `pool_gameobject 	WHERE `guid` in (32742,32287);
+	DELETE FROM `pool_gameobject` WHERE `guid` in (@WATERBARREL,@FOODCRATE);
 	INSERT INTO pool_gameobject (guid, pool_entry, chance, DESCRIPTION) VALUES
 	(@WATERBARREL, @pool+1, 0, 'Water Barrel (29275) - Stormwind City'),
 	(@FOODCRATE, @pool+1, 0, 'Food Crate (30758) - Stormwind City');
