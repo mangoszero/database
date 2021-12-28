@@ -44,8 +44,7 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 		UPDATE `mangos_string` SET 
-			`content_default` = 'Removed itemID = |cffffffff%i|r : Try to remove count = |cff00a1ff%i|r, Effective deleted count = |cffff0000%i|r from |cffffffff%s|r' ,
-			`content_loc0`    = 'Removed itemID = |cffffffff%i|r : Try to remove count = |cff00a1ff%i|r, Effective deleted count = |cffff0000%i|r from |cffffffff%s|r'
+			`content_default` = 'Removed itemID = |cffffffff%i|r : Try to remove count = |cff00a1ff%i|r, Effective deleted count = |cffff0000%i|r from |cffffffff%s|r' 
 		WHERE (`entry` = '496');
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
