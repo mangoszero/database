@@ -19,17 +19,17 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '22'; 
     SET @cOldStructure = '03'; 
-    SET @cOldContent = '001';
+    SET @cOldContent = '002';
 
     -- New Values
     SET @cNewVersion = '22';
-    SET @cNewStructure = '04';
-    SET @cNewContent = '001';
+    SET @cNewStructure = '03';
+    SET @cNewContent = '003';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'Fix_messages_for_areatrigger';
+    SET @cNewDescription = 'Implement_Mount_Spell_24576';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Fix_messages_for_areatrigger';
+    SET @cNewComment = 'Implement_Mount_Spell_24576 : Chromatik Drake & Riding Gryphon Reins';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT `description` FROM `db_version` ORDER BY `version` DESC, `STRUCTURE` DESC, `CONTENT` DESC LIMIT 0,1);
@@ -43,19 +43,13 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 		
-		/* Create a message to be displayed when entering Champions Hall if conditions requirements are not met */
-		REPLACE INTO `mangos_string` (`entry`, `content_default`, `source_file`, `source_enum_wrapper`, `source_enum_tag`)
-		VALUES (1715, 'You must be a Knight or higher rank in order to enter the Champions Hall.', 'Language.h', 'MangosStrings', 'LANG_CANNOT_ENTER_CHAMPIONS_HALL');
-		
-		/* Create a message to be displayed when entering Hall of Legends if conditions requirements are not met */
-		REPLACE INTO `mangos_string` (`entry`, `content_default`, `source_file`, `source_enum_wrapper`, `source_enum_tag`)
-		VALUES (1716, 'You must be a Stone Guard or higher rank in order to enter the Hall of Legends.', 'Language.h', 'MangosStrings', 'LANG_CANNOT_ENTER_LEGENDS_HALL');
+		/* 
+			Create a creature template to support Spell 245796 (See : https://classic.wowhead.com/spell=24576/chromatic-mount)
+			ModelID : 15293 (found in wow.tools)
+		*/
+		REPLACE INTO `creature_template` (`Entry`, `Name`, `MinLevel`, `MaxLevel`, `ModelId1`, `ModelId2`, `ModelId3`, `ModelId4`, `FactionAlliance`, `FactionHorde`, `Scale`, `Family`, `CreatureType`, `InhabitType`, `RegenerateStats`, `RacialLeader`, `NpcFlags`, `UnitFlags`, `DynamicFlags`, `ExtraFlags`, `CreatureTypeFlags`, `SpeedWalk`, `SpeedRun`, `UnitClass`, `Rank`, `HealthMultiplier`, `PowerMultiplier`, `DamageMultiplier`, `DamageVariance`, `ArmorMultiplier`, `ExperienceMultiplier`, `MinLevelHealth`, `MaxLevelHealth`, `MinLevelMana`, `MaxLevelMana`, `MinMeleeDmg`, `MaxMeleeDmg`, `MinRangedDmg`, `MaxRangedDmg`, `Armor`, `MeleeAttackPower`, `RangedAttackPower`, `MeleeBaseAttackTime`, `RangedBaseAttackTime`, `DamageSchool`, `MinLootGold`, `MaxLootGold`, `LootId`, `PickpocketLootId`, `SkinningLootId`, `KillCredit1`, `KillCredit2`, `MechanicImmuneMask`, `SchoolImmuneMask`, `ResistanceHoly`, `ResistanceFire`, `ResistanceNature`, `ResistanceFrost`, `ResistanceShadow`, `ResistanceArcane`, `SpellListId`, `PetSpellDataId`, `MovementType`, `TrainerType`, `TrainerSpell`, `TrainerClass`, `TrainerRace`, `TrainerTemplateId`, `VendorTemplateId`, `GossipMenuId`, `EquipmentTemplateId`, `Civilian`, `AIName`) 
+		VALUES ('15135', 'Chromatic Drake', '60', '60', '15293', '0', '0', '0', '15', '15', '1', '0', '2', '4', '1', '0', '0', '0', '0', '0', '0', '1', '1.14286', '1', '4', '1', '0', '1', '1', '1', '1', '50000', '50000', '0', '0', '335', '550', '150', '200', '5000', '200', '100', '1500', '1500', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '');
 
-		/* Set references for message displayed when entering Hall of Legends if conditions requirements are not met */
-		UPDATE `areatrigger_teleport` SET `status_failed_mangos_string_id` = '1716' WHERE (`id` = '2527');
-		
-		/* Set references for message displayed when entering Champions Hall if conditions requirements are not met */
-		UPDATE `areatrigger_teleport` SET `status_failed_mangos_string_id` = '1715' WHERE (`id` = '2532');
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
