@@ -18,13 +18,13 @@ BEGIN
 
     -- Expected Values
     SET @cOldVersion = '22'; 
-    SET @cOldStructure = '03'; 
-    SET @cOldContent = '003';
+    SET @cOldStructure = '04'; 
+    SET @cOldContent = '001';
 
     -- New Values
     SET @cNewVersion = '22';
-    SET @cNewStructure = '03';
-    SET @cNewContent = '004';
+    SET @cNewStructure = '04';
+    SET @cNewContent = '002';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Update_conditions_comments';
 
