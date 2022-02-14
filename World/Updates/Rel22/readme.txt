@@ -1,6 +1,6 @@
 If your database is a version prior to:
 
-Rel22_01_011_update_additem_command_syntax.sql
+Rel22_04_002_Update_conditions_comments.sql
 
 You need to run the appriopriate updates in the zip file  in folder:
 

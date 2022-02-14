@@ -80,7 +80,7 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (53,'Mail can\'t have more %u item stacks',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_MAIL_ITEMS_LIMIT'),
 (54,'The new passwords do not match',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_NEW_PASSWORDS_NOT_MATCH'),
 (55,'Your password can\'t be longer than 16 characters (client limit),
-\n\n password not changed!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_PASSWORD_TOO_LONG'),
+\n\n\n password not changed!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_PASSWORD_TOO_LONG'),
 (56,'Current Message of the day: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_MOTD_CURRENT'),
 (57,'Using World DB: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_USING_WORLD_DB'),
 (58,'Using script library',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_USING_SCRIPT_LIB'),
@@ -443,7 +443,7 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (493,'Spell %u cooldown removed for %s.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_REMOVE_COOLDOWN'),
 (494,'Command : Additem, itemId = %i, amount = %i',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ADDITEM'),
 (495,'Command : Additemset, itemsetId = %i',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ADDITEMSET'),
-(496,'Removed itemID = %i, amount = %i from %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_REMOVEITEM'),
+(496,'Removed itemID = |cffffffff%i|r : Try to remove count = |cff00a1ff%i|r, Effective deleted count = |cffff0000%i|r from |cffffffff%s|r',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_REMOVEITEM'),
 (497,'Cannot create item \'%i\' (amount: %i)',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ITEM_CANNOT_CREATE'),
 (498,'You need to provide a guild name!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_INSERT_GUILD_NAME'),
 (499,'Player not found!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_PLAYER_NOT_FOUND'),
@@ -657,7 +657,7 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (1003,'Account %s NOT deleted (unknown error)',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ACCOUNT_NOT_DELETED'),
 (1004,'Account created: %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ACCOUNT_CREATED'),
 (1005,'Account name cannot be longer than 16 characters (client limit),
-\n\n account not created!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ACCOUNT_TOO_LONG'),
+\n\n\n account not created!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ACCOUNT_TOO_LONG'),
 (1006,'Account with this name already exist!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ACCOUNT_ALREADY_EXIST'),
 (1007,'Account %s NOT created (probably sql file format was updated)',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ACCOUNT_NOT_CREATED_SQL_ERROR'),
 (1008,'Account %s NOT created (unknown error)',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_ACCOUNT_NOT_CREATED'),
@@ -828,10 +828,10 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (1512,'Ticket system is globally off, not accepting tickets at all',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKETS_SYSTEM_OFF'),
 (1513,'You cant close a ticket for offline players',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_CANT_CLOSE'),
 (1514,'ID %u from %s (%s),
-\n\n changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_BRIEF_INFO'),
+\n\n\n changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_BRIEF_INFO'),
 (1515,'= Shown %u tickets out of total %u from online players.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_COUNT_ONLINE'),
 (1516,'ID %u from GUID %u (%s),
-\n\n changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_OFFLINE_INFO'),
+\n\n\n changed %s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_OFFLINE_INFO'),
 (1517,'= Shown %u tickets of total %u.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_COUNT_ALL'),
 (1518,'Informing you about arriving tickets is %s.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_ACCEPT_STATE'),
 (1519,'Response to your ticket',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_TICKET_RESPOND_MAIL_SUBJECT'),
@@ -873,7 +873,9 @@ INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `conten
 (1711,'A GM has frozen your character. From now, you cannot move, use spells or logout.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_FREEZE_PLAYER_YOU_HAVE_BEEN_FROZEN'),
 (1712,'You have been unfrozen. You can now move freely, use spells or even logout.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_FREEZE_PLAYER_YOU_HAVE_BEEN_UNFROZEN'),
 (1713,'You can only freeze online characters.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_FREEZE_PLAYER_PLAYER_NOT_FOUND'),
-(1714,'You can only unfreeze online characters.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_UNFREEZE_PLAYER_PLAYER_NOT_FOUND');
+(1714,'You can only unfreeze online characters.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_COMMAND_UNFREEZE_PLAYER_PLAYER_NOT_FOUND'),
+(1715,'You must be a Knight or higher rank in order to enter the Champions Hall.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_CANNOT_ENTER_CHAMPIONS_HALL'),
+(1716,'You must be a Stone Guard or higher rank in order to enter the Hall of Legends.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_CANNOT_ENTER_LEGENDS_HALL');
 /*!40000 ALTER TABLE `mangos_string` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -886,4 +888,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-18 10:01:00
+-- Dump completed on 2022-02-14 21:26:22

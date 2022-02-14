@@ -452,7 +452,10 @@ INSERT INTO `creature_ai_texts` (`entry`, `content_default`, `content_loc1`, `co
 (-4,'Feel the power of the Brotherhood!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Common Defias Text'),
 (-3,'Ah, a chance to use this freshly sharpened blade.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Common Defias Text'),
 (-2,'The Brotherhood will not tolerate your actions.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Common Defias Text'),
-(-1,'I see those fools at the Abbey sent some fresh meat for us.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'103');
+(-1,'I see those fools at the Abbey sent some fresh meat for us.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'103'),
+(-1423,'They might have run all the other farmers off, but the Saldean\'s will never leave Westfall.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,7,0,'Farmer Saldean 233'),
+(-1424,'A bunch of thugs and thieves aren\'t going to get me to leave my land!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,7,0,'Farmer Saldean 233'),
+(-1425,'Now how am I supposed to get those mechanical wretches out of my fields?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,7,0,'Farmer Saldean 233');
 /*!40000 ALTER TABLE `creature_ai_texts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -465,4 +468,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-18 10:00:41
+-- Dump completed on 2022-02-14 21:26:13

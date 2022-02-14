@@ -13370,7 +13370,9 @@ INSERT INTO `pool_gameobject` (`guid`, `pool_entry`, `chance`, `description`) VA
 (632593,30023,0,'Tirisfal Glades - Copper Ore - Pool 13 - Entry #4'),
 (632594,30023,0,'Tirisfal Glades - Copper Ore - Pool 13 - Entry #5'),
 (632595,30023,0,'Tirisfal Glades - Copper Ore - Pool 13 - Entry #6'),
-(632596,30023,0,'Tirisfal Glades - Copper Ore - Pool 13 - Entry #7');
+(632596,30023,0,'Tirisfal Glades - Copper Ore - Pool 13 - Entry #7'),
+(32742,30024,0,'Water Barrel (29275) - Stormwind City'),
+(32287,30024,0,'Food Crate (30758) - Stormwind City');
 /*!40000 ALTER TABLE `pool_gameobject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -13383,4 +13385,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-18 10:01:08
+-- Dump completed on 2022-02-14 21:26:25

@@ -2316,7 +2316,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (327401,3274,4,0,100,0,0,0,0,0,11,9128,0,0,0,0,0,0,0,0,0,0,'Kolkar Pack Runner - Cast Battle Shout on Aggro'),
 (327402,3274,6,0,20,0,0,0,0,0,1,-769,0,0,49,3395,1,8,0,0,0,0,'Kolkar Pack Runner - Chance Say and Summon Verog the Dervish on Death'),
 (327501,3275,4,0,100,0,0,0,0,0,11,6268,0,1,0,0,0,0,0,0,0,0,'Kolkar Marauder - Cast Charge on Aggro'),
-(327504,3275,6,0,20,0,0,0,0,0,1,-769,0,0,49,3395,1,8,0,0,0,0,'Kolkar Marauder - Chance Say and Summon Verog the Dervish on Death'),
+(327504,3275,6,0,20,0,0,0,0,0,1,-769,0,0,32,3395,1,8,0,0,0,0,'Kolkar Marauder - Chance Say and Summon Verog the Dervish on Death'),
 (327701,3277,4,0,75,0,0,0,0,0,1,-494,0,0,0,0,0,0,0,0,0,0,'Witchwing Roguefeather - Say on Aggro'),
 (328601,3286,2,0,100,1,20,0,5000,10000,11,9080,1,33,0,0,0,0,0,0,0,0,'Venture Co Overseer - Cast Overseer\'s Poison at 20% HP'),
 (329401,3294,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Ophek - Flee at 15% HP'),
@@ -7980,7 +7980,27 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1720911,14720,0,0,100,1,4000,6000,7000,9000,11,24573,1,1,40,1,0,0,0,0,0,0,'High Overlord Saurfang - Cast Mortal Strike and set Melee Weapon Model'),
 (1720912,14720,0,0,100,1,2000,3000,3500,4500,40,1,0,0,0,0,0,0,0,0,0,0,'High Overlord Saurfang - Cast Cleave and set Melee Weapon Model'),
 (1720914,14720,0,0,100,1,10000,12000,15000,18000,11,28334,0,1,0,0,0,0,0,0,0,0,'High Overlord Saurfang - Cast Whirlwind'),
-(1780401,17804,4,0,100,0,0,0,0,0,12,68,1,300000,0,0,0,0,0,0,0,0,'Squire Rowe - Summon Stormwind City Guard on Aggro');
+(1780401,17804,4,0,100,0,0,0,0,0,12,68,1,300000,0,0,0,0,0,0,0,0,'Squire Rowe - Summon Stormwind City Guard on Aggro'),
+(651602,6516,0,0,100,1,5000,5000,9000,15000,11,12553,1,0,0,0,0,0,0,0,0,0,'Un\'Goro Thunderer - Cast Shock'),
+(655701,6557,2,0,100,0,10,0,0,0,11,14146,0,0,0,0,0,0,0,0,0,0,'Primal Ooze - Cast Clone at 10% HP'),
+(655702,6557,30,0,100,1,5,10290,0,0,11,16032,0,16,36,9621,0,0,0,0,0,0,'Primal Ooze - Cast Merging Oozes AND Transform into Gargantuan Ooze on Receive AI Event A'),
+(1029001,10290,29,0,100,0,1000,1000,0,0,45,5,40,0,41,2000,0,0,0,0,0,0,'Captured Felwood Ooze - Send AI Event \"A\" AND Despawn self(Q.4642)'),
+(1446001,14460,9,0,100,1,0,8,11000,14000,11,23113,0,1,0,0,0,0,0,0,0,0,'Blazing Invader - Cast Blast Wave'),
+(1004001,10040,0,0,100,1,8000,8000,8000,12000,11,14120,1,0,0,0,0,0,0,0,0,0,'Gorishi Hive Guard - Cast Tunneler Acid'),
+(1004002,10040,9,5,100,1,0,5,4000,6000,11,14120,1,0,0,0,0,0,0,0,0,0,'Gorishi Hive Guard - Cast Tunneler Acid (Phase 1)'),
+(1004003,10040,24,5,100,1,14120,5,5000,5000,22,2,0,0,0,0,0,0,0,0,0,0,'Gorishi Hive Guard - Set Phase 2 on Target Max Tunneler Acid Aura Stack (Phase 1)'),
+(1004004,10040,28,3,100,1,14120,1,5000,5000,22,1,0,0,0,0,0,0,0,0,0,0,'Gorishi Hive Guard - Set Phase 1 on Target Missing Tunneler Acid Aura Stack (Phase 2)'),
+(3601,36,0,0,100,1,7100,18600,22200,34500,11,8014,1,0,0,0,0,0,0,0,0,0,'HarvestGolem-CastTetanus'),
+(325301,3253,0,0,100,1,12000,18000,25000,35000,11,7278,0,0,0,0,0,0,0,0,0,0,'Silithid Harvester - Summon Harvester Swarm'),
+(23301,233,1,0,100,1,1000,15000,150000,180000,1,-1423,-1424,-1425,0,0,0,0,0,0,0,0,'Farmer Saldean - Say OOC'),
+(58801,588,2,0,100,0,30,0,0,0,11,8599,0,0,1,-46,0,0,0,0,0,0,'Bloodscalp Scout - Cast Enrage at 30% HP'),
+(66001,660,0,0,100,1057,6500,15300,13300,21700,11,5605,0,0,11,8376,0,0,0,0,0,0,'Bloodscalp Witch Doctor - Cast Healing Ward or Cast Earthgrab Totem'),
+(66002,660,2,0,100,1024,30,0,0,0,0,0,11,8599,1,-46,0,0,0,0,0,0,'Bloodscalp Witch Doctor - Cast Enrage at 30% HP'),
+(66701,667,13,0,100,1,15000,20000,0,0,11,11972,1,1,0,0,0,0,0,0,0,0,'Skullsplitter Warrior - Cast Shield Bash on Target Casting'),
+(66702,667,0,0,100,1,5000,7000,23000,26000,11,3148,1,0,0,0,0,0,0,0,0,0,'Skullsplitter Warrior - Cast Head Crack'),
+(105901,1059,0,0,100,0,3000,6000,18000,20000,11,9791,1,0,0,0,0,0,0,0,0,0,'Ana\'thek the Cruel - Cast Head Crack'),
+(105902,1059,12,0,100,0,20,0,30000,30000,11,7160,1,0,0,0,0,0,0,0,0,0,'Ana\'thek the Cruel - Cast Execute when Target HP below 20%'),
+(1607501,16075,22,0,100,1,58,0,0,0,11,27572,6,32,0,0,0,0,0,0,0,0,'Kwee Q. Peddlefeet - Cast Smitten on Receive TEXTEMOTE_KISS');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -7993,4 +8013,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-18 10:00:40
+-- Dump completed on 2022-02-14 21:26:13

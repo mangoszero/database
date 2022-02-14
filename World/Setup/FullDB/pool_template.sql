@@ -2003,7 +2003,8 @@ INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
 (30020,20,'Tirisfal Glades - Copper Ore - Pool 10'),
 (30021,6,'Tirisfal Glades - Copper Ore - Pool 11'),
 (30022,11,'Tirisfal Glades - Copper Ore - Pool 12'),
-(30023,6,'Tirisfal Glades - Copper Ore - Pool 13');
+(30023,6,'Tirisfal Glades - Copper Ore - Pool 13'),
+(30024,1,'Water Barrel (29275) / Food Crate (30758) - Stormwind City');
 /*!40000 ALTER TABLE `pool_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2016,4 +2017,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-18 10:01:09
+-- Dump completed on 2022-02-14 21:26:26
