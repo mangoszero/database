@@ -104,7 +104,7 @@ mysqlconfigeditor()
 determineDBCommand()
 {
 	if [ $dbname = "MariaDB" ]; then
-		dbcommand="mariadb -u ${user} -p${pass} -q -s"
+		dbcommand="mariadb -h ${svr} -u ${user} -p${pass} -q -s"
 	elif [ $dbname = "MySQL" ]; then
 		dbcommand="mysql --login-path=local -q -s"
 	else
