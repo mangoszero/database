@@ -697,11 +697,11 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`, `commen
 (2036,24,13544,1,'Gossip menu 3310 second check.'),
 (2037,-1,213,2036,'Replace Spectral Essence Gossip menu 3310 check'),
 (2038,8,4512,0,'Show gossip text 3099 if quest, A Little Slime Goes a Long Way (Part 1),
-\n\n is rewarded'),
+\n\n\n is rewarded'),
 (2039,8,4513,0,'Show gossip text 3098 if quest, A Little Slime Goes a Long Way (Part 2),
-\n\n is rewarded'),
+\n\n\n is rewarded'),
 (2040,-3,2039,0,'Only show if quest, A Little Slime Goes a Long Way (Part 2),
-\n\n is NOT rewarded'),
+\n\n\n is NOT rewarded'),
 (2041,-1,2038,2040,'Condition Check for A Little Slime Goes a Long Way gossip'),
 (2042,39,6,1,'CONDITON_PVP_RANK (39) - Higher or equal (1) to rank 6'),
 (2043,-1,4,2042,'Must be from alliance AND PVP_RANK 6'),
@@ -718,4 +718,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-14 21:26:12
+-- Dump completed on 2023-01-05 20:35:50

@@ -2700,7 +2700,32 @@ INSERT INTO `db_scripts` (`script_guid`, `script_type`, `id`, `delay`, `command`
 (10625,3,9616,0,0,0,0,0,0,0,2000005804,0,0,0,0,0,0,0,'Laris Say on WP'),
 (10626,3,1006,0,1,6,0,0,0,0,0,0,0,0,0,0,0,0,'GENERIC EMOTE - ONESHOT_QUESTION'),
 (10627,3,1011,0,1,11,0,0,0,0,0,0,0,0,0,0,0,0,'GENERIC EMOTE - ONESHOT_LAUGH'),
-(10628,3,1069,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,'GENERIC EMOTE - STATE_USESTANDING');
+(10628,3,1069,0,1,69,0,0,0,0,0,0,0,0,0,0,0,0,'GENERIC EMOTE - STATE_USESTANDING'),
+(10629,6,50029,23,7,2969,0,0,0,0,0,0,0,0,0,0,0,0,'Quest 2969 Complete'),
+(10630,6,50029,0,3,0,0,7997,50062,16,0,0,0,0,-4514.79,753.332,60.4589,0,'Move - Captured Sprite Darter'),
+(10631,6,50029,0,3,0,0,7997,50063,16,0,0,0,0,-4516.79,756.357,60.3792,0,'Move - Captured Sprite Darter'),
+(10632,6,50029,0,3,0,0,7997,50064,16,0,0,0,0,-4515.79,754.357,60.3792,0,'Move - Captured Sprite Darter'),
+(10633,6,50029,0,3,0,0,7997,50065,16,0,0,0,0,-4515.64,756.607,60.3453,0,'Move - Captured Sprite Darter'),
+(10634,6,50029,0,3,0,0,7997,50066,16,0,0,0,0,-4517.23,755.28,60.3972,0,'Move - Captured Sprite Darter'),
+(10635,6,50029,0,3,0,0,7997,50067,16,0,0,0,0,-4517.08,750.508,60.4589,0,'Move - Captured Sprite Darter'),
+(10636,6,50029,0,3,0,0,7997,50068,16,0,0,0,0,-4556.03,786.234,48.3795,0,'Move - Captured Sprite Darter'),
+(10637,6,50029,0,3,0,0,7997,50069,16,0,0,0,0,-4554.98,784.931,48.3029,0,'Move - Captured Sprite Darter'),
+(10638,6,50029,0,3,0,0,7997,50070,16,0,0,0,0,-4626.63,831.622,57.141,0,'Move - Captured Sprite Darter'),
+(10639,6,50029,0,3,0,0,7997,50071,16,0,0,0,0,-4523.55,831.25,57.4991,0,'Move - Captured Sprite Darter'),
+(10640,6,50029,0,3,0,0,7997,50072,16,0,0,0,0,-4521.78,829.74,57.5191,0,'Move - Captured Sprite Darter'),
+(10641,6,50029,0,3,0,0,7997,50073,16,0,0,0,0,-4523.55,832.25,57.4991,0,'Move - Captured Sprite Darter'),
+(10642,6,50029,23,18,5,0,7997,50062,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10643,6,50029,23,18,5,0,7997,50063,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10644,6,50029,23,18,5,0,7997,50064,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10645,6,50029,23,18,5,0,7997,50065,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10646,6,50029,23,18,5,0,7997,50066,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10647,6,50029,23,18,5,0,7997,50067,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10648,6,50029,23,18,5,0,7997,50068,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10649,6,50029,23,18,5,0,7997,50069,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10650,6,50029,23,18,5,0,7997,50070,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10651,6,50029,23,18,5,0,7997,50071,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10652,6,50029,23,18,5,0,7997,50072,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter'),
+(10653,6,50029,23,18,5,0,7997,50073,16,0,0,0,0,0,0,0,0,'Despawn - Captured Sprite Darter');
 /*!40000 ALTER TABLE `db_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2713,4 +2738,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-14 21:26:16
+-- Dump completed on 2023-01-05 20:35:52

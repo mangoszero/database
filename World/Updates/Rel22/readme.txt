@@ -1,6 +1,6 @@
 If your database is a version prior to:
 
-Rel22_04_002_Update_conditions_comments.sql
+Rel22_04_013_Quest_text_updates.sql
 
 You need to run the appriopriate updates in the zip file  in folder:
 
