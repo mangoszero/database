@@ -26,7 +26,7 @@ BEGIN
     SET @cNewStructure = '04';
     SET @cNewContent = '018';
                             -- DESCRIPTION IS 30 Characters MAX    
-    SET @cNewDescription = 'Add_Pathing_To_Loch_Modan_Guards';
+    SET @cNewDescription = 'Add_Pathing_Loch_Modan_Guards';
 
                         -- COMMENT is 150 Characters MAX
     SET @cNewComment = 'Add_Pathing_To_Loch_Modan_Guards';
