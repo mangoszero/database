@@ -1,30 +1,49 @@
 @ECHO OFF
 
+set scriptVersion=2.3
+set releaseVersionPrevious=21
+set releaseVersionCurrent=22
+
 rem -- Change the values below to match your server --
-set mysql=Tools\
-set svr=localhost
-set newuser=mangos
-set user=root
-set pass=mangos
-set newpass=mangos
-set port=3306
-set wdb=mangos0
-set wdborig=mangos0
-set cdb=character0
-set cdborig=character0
-set rdb=realmd
-set rdborig=realmd
+rem -- Or do so in InstallDatabasesPreset.bat instead. --
+IF NOT DEFINED dbClientHome set dbClientHome=Tools
+IF NOT DEFINED dbClientName set dbClientName=mysql.exe
+IF NOT DEFINED dbClient         set dbClient="%dbClientHome%\%dbClientName%"
+
+IF NOT DEFINED svr                   set svr=localhost
+IF NOT DEFINED newuser           set newuser=mangos
+IF NOT DEFINED user                 set user=root
+IF NOT DEFINED pass                 set pass=mangos
+IF NOT DEFINED newpass           set newpass=mangos
+IF NOT DEFINED port                 set port=3306
+
+CALL SetCoreUniqueVars.bat
+
+IF NOT DEFINED wdb         set wdb=mangos%coreNum%
+IF NOT DEFINED wdborig set wdborig=mangos%coreNum%
+IF NOT DEFINED cdb         set cdb=character%coreNum%
+IF NOT DEFINED cdborig set cdborig=character%coreNum%
+IF NOT DEFINED rdb         set rdb=realmd
+IF NOT DEFINED rdborig set rdborig=realmd
+
+IF NOT DEFINED skipPrintOS       set skipPrintOS=NO
+IF NOT DEFINED skipChoices       set skipChoices=NO
+IF NOT DEFINED skipConnection set skipConnection=NO
+IF NOT DEFINED DEBUG                   set DEBUG=NO
 
 rem -- Don't change past this point --
-set LOCList=NO
+IF NOT DEFINED LOCList     set LOCList=NO
 
 rem setlocal
 for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
+if %skipPrintOS% == YES goto afterOSPrint
 if "%version%" == "6.3" echo Windows 8.1
 if "%version%" == "6.2" echo Windows 8.
 if "%version%" == "6.1" echo Windows 7.
 if "%version%" == "6.0" echo Windows Vista.
 if "%version%" == "10.0" echo Windows 10.
+
+:afterOSPrint
 
 if "%version%" == "10.0" goto setColours:
 goto setOptions:
@@ -51,39 +70,41 @@ set colBold=[101m
 set colWhiteDarkYellow=[97;43m
 
 :setOptions
-set createcharDB=YES
-set createworldDB=YES
-set createrealmDB=YES
-set createMangosUser=YES
-set updatesOnly=NO
-set loadcharDB=YES
-set loadworldDB=YES
-set loadrealmDB=YES
-set defaultsused=NO 
+IF NOT DEFINED createcharDB         set createcharDB=YES
+IF NOT DEFINED createworldDB       set createworldDB=YES
+IF NOT DEFINED createrealmDB       set createrealmDB=YES
+IF NOT DEFINED createMangosUser set createMangosUser=YES
+IF NOT DEFINED updatesOnly           set updatesOnly=NO
+IF NOT DEFINED loadcharDB             set loadcharDB=YES
+IF NOT DEFINED loadworldDB           set loadworldDB=YES
+IF NOT DEFINED loadrealmDB           set loadrealmDB=YES
+IF NOT DEFINED defaultsused         set defaultsused=NO
 
-set CDBUpdate=YES
-set WDBUpdate=YES
-set RDBUpdate=YES
+IF NOT DEFINED CDBUpdate               set CDBUpdate=YES
+IF NOT DEFINED WDBUpdate               set WDBUpdate=YES
+IF NOT DEFINED RDBUpdate               set RDBUpdate=YES
 
-set addrealmentry=YES
+IF NOT DEFINED addrealmentry       set addrealmentry=YES
 
-set DBType=POPULATED
-set activity=N
+IF NOT DEFINED DBType                     set DBType=POPULATED
+IF NOT DEFINED activity                 set activity=N
 
-set locKO=NO
-set locFR=NO
-set locDE=NO
-set locCH=NO
-set locTW=NO
-set locES=NO
-set locMX=NO
-set locRU=NO
-set locIT=NO
-set locPT=NO
-set locBR=NO
+IF NOT DEFINED locKO                       set locKO=NO
+IF NOT DEFINED locFR                       set locFR=NO
+IF NOT DEFINED locDE                       set locDE=NO
+IF NOT DEFINED locCH                       set locCH=NO
+IF NOT DEFINED locTW                       set locTW=NO
+IF NOT DEFINED locES                       set locES=NO
+IF NOT DEFINED locMX                       set locMX=NO
+IF NOT DEFINED locRU                       set locRU=NO
+IF NOT DEFINED locIT                       set locIT=NO
+IF NOT DEFINED locPT                       set locPT=NO
+IF NOT DEFINED locBR                       set locBR=NO
 
 rem -- first check that the repo has been cloned correctly
 if not exist Realm goto missingRecursive:
+
+if %skipChoices%==YES goto WorldDB:
 
 :main
 CLS
@@ -92,72 +113,73 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|
 echo ^|   ^|  \/  ^|__ _^| \^| ^|/ __^|/ _ \/ __^|                                         ^|
 echo ^|   ^| ^|\/^| / _` ^| .` ^| (_ ^| (_) \__ \                                         ^|
-echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader v2.2%colWhiteBold%    ^|
+echo ^|   ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/ %colYellowBold%Database Setup and World Loader v%scriptVersion%%colWhiteBold%    ^|
 echo ^|_____________________________________________________________________________^|
 echo %colWhiteLightBlue%^|                                                                             ^|
 echo ^|   Website / Forum / Wiki / Support: https://getmangos.eu                    ^|
 echo ^|_____________________________________________________________________________^|%colReset%
 echo %colWhiteBold%^|                                                                             ^|
-if %createcharDB% == NO set PAD= 
-if %createcharDB% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|   %colWhiteBold%Character Database : V - %colReset%Toggle Actually Create Character DB (%colYellowBold%%createcharDB%%colReset%)        %PAD%%colWhiteBold%^|
-if %loadcharDB% == NO set PAD= 
-if %loadcharDB% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|                        %colWhiteBold%C - %colReset%Toggle Create Character DB Structure (%colYellowBold%%loadcharDB%%colReset%)       %PAD%%colWhiteBold%^|
-if %CDBUpdate% == NO set PAD= 
-if %CDBUpdate% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|                        %colWhiteBold%B - %colReset%Apply Character DB updates (%colYellowBold%%CDBUpdate%%colReset%)                 %PAD%%colWhiteBold%^|
-if %updatesOnly% == YES echo %colWhiteBold%^|   %colWhiteBold%Character Database : B - %colReset%Apply Character DB updates (%colYellowBold%%CDBUpdate%%colReset%)                 %PAD%%colWhiteBold%^|
+if %createcharDB% == NO set PAD=" "
+if %createcharDB% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|   %colWhiteBold%Character Database : V - %colReset%Toggle Actually Create Character DB (%colYellowBold%%createcharDB%%colReset%)        %PAD:"=%%colWhiteBold%^|
+if %loadcharDB% == NO set PAD=" "
+if %loadcharDB% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colWhiteBold%C - %colReset%Toggle Create Character DB Structure (%colYellowBold%%loadcharDB%%colReset%)       %PAD:"=%%colWhiteBold%^|
+if %CDBUpdate% == NO set PAD=" "
+if %CDBUpdate% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colWhiteBold%B - %colReset%Apply Character DB updates (%colYellowBold%%CDBUpdate%%colReset%)                 %PAD:"=%%colWhiteBold%^|
+if %updatesOnly% == YES echo %colWhiteBold%^|   %colWhiteBold%Character Database : B - %colReset%Apply Character DB updates (%colYellowBold%%CDBUpdate%%colReset%)                 %PAD:"=%%colWhiteBold%^|
 
 echo %colWhiteBold%^|                                                                             ^|
-if %createworldDB% == NO set PAD= 
-if %createworldDB% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|       %colYellowBold%World Database : E - %colYellow%Toggle Actually Create World DB (%colWhiteBold%%createworldDB%%colYellow%)%colReset%            %PAD%%colWhiteBold%^|
-if %loadworldDB% == NO set PAD= 
-if %loadworldDB% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|                        %colYellowBold%W - %colYellow%Toggle Create World DB Structure (%colWhiteBold%%loadworldDB%%colYellow%)%colReset%           %PAD%%colWhiteBold%^|
-if %DBType% == EMPTY set PAD=    
+if %createworldDB% == NO set PAD=" "
+if %createworldDB% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|       %colYellowBold%World Database : E - %colYellow%Toggle Actually Create World DB (%colWhiteBold%%createworldDB%%colYellow%)%colReset%            %PAD:"=%%colWhiteBold%^|
+if %loadworldDB% == NO set PAD=" "
+if %loadworldDB% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colYellowBold%W - %colYellow%Toggle Create World DB Structure (%colWhiteBold%%loadworldDB%%colYellow%)%colReset%           %PAD:"=%%colWhiteBold%^|
+if %DBType% == EMPTY set PAD="    "
 if %DBType% == POPULATED set P=
 
-if %loadworldDB% == YES echo %colWhiteBold%^|                        %colYellowBold%D - %colYellow%Toggle World Type (%colWhiteBold%%DBType%%colYellow%)%colReset%                    %PAD%%colWhiteBold%^|
+if %loadworldDB% == YES echo %colWhiteBold%^|                        %colYellowBold%D - %colYellow%Toggle World Type (%colWhiteBold%%DBType%%colYellow%)%colReset%                    %PAD:"=%%colWhiteBold%^|
 
-if %WDBUpdate% == NO set PAD= 
-if %WDBUpdate% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|                        %colYellowBold%U - %colYellow%Apply World DB updates (%colWhiteBold%%WDBUpdate%%colYellow%)%colReset%                     %PAD%%colWhiteBold%^|
-if %updatesOnly% == YES echo %colWhiteBold%^|       %colYellowBold%World Database : U - %colYellow%Apply World DB updates (%colWhiteBold%%WDBUpdate%%colYellow%)%colReset%                     %PAD%%colWhiteBold%^|
+if %WDBUpdate% == NO set PAD=" "
+if %WDBUpdate% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colYellowBold%U - %colYellow%Apply World DB updates (%colWhiteBold%%WDBUpdate%%colYellow%)%colReset%                     %PAD:"=%%colWhiteBold%^|
+if %updatesOnly% == YES echo %colWhiteBold%^|       %colYellowBold%World Database : U - %colYellow%Apply World DB updates (%colWhiteBold%%WDBUpdate%%colYellow%)%colReset%                     %PAD:"=%%colWhiteBold%^|
 echo %colWhiteBold%^|                                                                             ^|
-if %createrealmDB% == NO set PAD= 
-if %createrealmDB% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|       %colCyanBold%Realm Database : T - %colCyan%Toggle Actually Create Realm DB (%colWhiteBold%%createrealmDB%%colCyan%)%colReset%            %PAD%%colWhiteBold%^|
-if %loadrealmDB% == NO set PAD= 
-if %loadrealmDB% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%R - %colCyan%Toggle Create Realm Db Structure (%colWhiteBold%%loadrealmDB%%colCyan%)%colReset%           %PAD%%colWhiteBold%^|
-if %RDBUpdate% == NO set PAD= 
-if %RDBUpdate% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%Y - %colCyan%Apply Realm DB updates (%colWhiteBold%%RDBUpdate%%colCyan%)%colReset%                     %PAD%%colWhiteBold%^|
-if %updatesOnly% == YES echo %colWhiteBold%^|       %colCyanBold%Realm Database : Y - %colCyan%Apply Realm DB updates (%colWhiteBold%%RDBUpdate%%colCyan%)%colReset%                     %PAD%%colWhiteBold%^|
-if %addrealmentry% == NO set PAD= 
-if %addrealmentry% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%L - %colCyan%Toggle Add Default RealmList Entry for Core (%colWhiteBold%%addrealmentry%%colCyan%)%colReset%%PAD%%colWhiteBold%^|
+if %createrealmDB% == NO set PAD=" "
+if %createrealmDB% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|       %colCyanBold%Realm Database : T - %colCyan%Toggle Actually Create Realm DB (%colWhiteBold%%createrealmDB%%colCyan%)%colReset%            %PAD:"=%%colWhiteBold%^|
+if %loadrealmDB% == NO set PAD=" "
+if %loadrealmDB% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%R - %colCyan%Toggle Create Realm Db Structure (%colWhiteBold%%loadrealmDB%%colCyan%)%colReset%           %PAD:"=%%colWhiteBold%^|
+if %RDBUpdate% == NO set PAD=" "
+if %RDBUpdate% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%Y - %colCyan%Apply Realm DB updates (%colWhiteBold%%RDBUpdate%%colCyan%)%colReset%                     %PAD:"=%%colWhiteBold%^|
+if %updatesOnly% == YES echo %colWhiteBold%^|       %colCyanBold%Realm Database : Y - %colCyan%Apply Realm DB updates (%colWhiteBold%%RDBUpdate%%colCyan%)%colReset%                     %PAD:"=%%colWhiteBold%^|
+if %addrealmentry% == NO set PAD=" "
+if %addrealmentry% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colCyanBold%L - %colCyan%Toggle Add Default RealmList Entry for Core (%colWhiteBold%%addrealmentry%%colCyan%)%colReset%%PAD:"=%%colWhiteBold%^|
 echo %colWhiteBold%^|                                                                             ^|
-if %updatesOnly% == NO set PAD= 
-if %updatesOnly% == YES set PAD=
-echo %colWhiteBold%^|                        %colMagentaBold%O - %colMagenta%Toggle Only Install Updates to Database's (%colWhiteBold%%updatesOnly%%colMagenta%)%colReset%  %PAD%%colWhiteBold%^|
+if %updatesOnly% == NO set PAD=" "
+if %updatesOnly% == YES set PAD=""
+echo %colWhiteBold%^|                        %colMagentaBold%O - %colMagenta%Toggle Only Install Updates to Database's (%colWhiteBold%%updatesOnly%%colMagenta%)%colReset%  %PAD:"=%%colWhiteBold%^|
 echo %colWhiteBold%^|                                                                             ^|
-if %createMangosUser% == NO set PAD= 
-if %createMangosUser% == YES set PAD=
-if %updatesOnly% == NO echo %colWhiteBold%^|                        %colRedBold%P - %colRed%Toggle Create Mangos User (%colWhiteBold%%createMangosUser%%colRed%)%colReset%                  %PAD%%colWhiteBold%^|
+if %createMangosUser% == NO set PAD=" "
+if %createMangosUser% == YES set PAD=""
+if %updatesOnly% == NO echo %colWhiteBold%^|                        %colRedBold%P - %colRed%Toggle Create Mangos User (%colWhiteBold%%createMangosUser%%colRed%)%colReset%                  %PAD:"=%%colWhiteBold%^|
 if %updatesOnly% == NO echo %colWhiteBold%^|                                                                             ^|
-
-if %LOCList% == NO set PAD= 
-if %LOCList% == YES set PAD=
-echo %colWhiteBold%^|                        %colYellowBold%A - %colYellow%Add Localised Content (%colWhiteBold%%LOCList%%colYellow%)%colReset%                      %PAD%%colWhiteBold%^|%colReset%
+if %LOCList% == NO set PAD=" "
+if %LOCList% == YES set PAD=""
+echo %colWhiteBold%^|                        %colYellowBold%A - %colYellow%Add Localised Content (%colWhiteBold%%LOCList%%colYellow%)%colReset%                      %PAD:"=%%colWhiteBold%^|%colReset%
 echo %colWhiteBold%^|                                                                             ^|%colReset%
+echo %colWhiteBold%^|                        %colRedBold%Z - %colRed%Toggle None                                      %colWhiteBold%^|
+echo %colWhiteBold%^|                                                                             ^|
 echo %colWhiteBold%^|                        %colGreenBold%N - %colGreen%Next Step%colReset%                                        %colWhiteBold%^|%colReset%
 echo %colWhiteBold%^|                        %colWhiteBold%X - %colReset%Exit                                             %colWhiteBold%^|%colReset%
 echo %colWhiteBold%^|_____________________________________________________________________________^|%colReset%
 echo.
-set /p activity=. Please select an activity ? : 
+set /p activity=". Please select an activity ? : "
 if %activity% == V goto ToggleCharDB:
 if %activity% == v goto ToggleCharDB:
 if %activity% == B goto ToggleCharDBUpdate:
@@ -190,6 +212,9 @@ if %activity% == n goto Step1:
 
 if %activity% == A goto StepLoc1:
 if %activity% == a goto StepLoc1:
+
+if %activity% == Z goto ToggleNone:
+if %activity% == z goto ToggleNone:
 
 if %activity% == X goto quitting:
 if %activity% == x goto quitting:
@@ -392,8 +417,26 @@ set RDBUpdate=YES
 set addrealmentry=NO
 goto main:
 
+:ToggleNone
+set createcharDB=NO
+set createworldDB=NO
+set createrealmDB=NO
+set createMangosUser=NO
+set loadcharDB=NO
+set loadworldDB=NO
+set loadrealmDB=NO
+
+set CDBUpdate=NO
+set WDBUpdate=NO
+set RDBUpdate=NO
+
+set addrealmentry=NO
+
+goto main:
+
 :Step1
-if not exist %mysql%\mysql.exe then goto patherror
+if not exist %dbClient% then goto patherror
+if %skipConnection%==YES goto WorldDB:
 CLS
 echo %colWhiteBold%_______________________________________________________________________________%colReset%
 echo %colWhiteDarkBlue%^|    __  __      _  _  ___  ___  ___                                          ^|%colReset%
@@ -410,13 +453,13 @@ echo %colWhiteDarkRed%^|%colBold% security breaches... or much much worse.      
 echo %colWhiteDarkRed%^|%colBold%_____________________________________________________________________________^|%colReset%
 echo.
 echo.
-set /p svr=%colYellowBold% What is your MySQL host name?           %colReset%DEFAULT: [%colWhiteBold%%svr%%colReset%] : 
+set /p svr="%colYellowBold% What is your MySQL host name?           %colReset%DEFAULT: [%colWhiteBold%%svr%%colReset%] : "
 if %svr%. == . set svr=localhost
-set /p user=%colYellowBold% What is your MySQL user name?                %colReset%DEFAULT: [%colWhiteBold%%user%%colReset%] : 
+set /p user="%colYellowBold% What is your MySQL user name?                %colReset%DEFAULT: [%colWhiteBold%%user%%colReset%] : "
 if %user%. == . set user=root
-set /p pass=%colYellowBold% What is your MySQL password?               %colReset%DEFAULT: [%colWhiteBold%%pass%%colReset%] : 
+set /p pass="%colYellowBold% What is your MySQL password?               %colReset%DEFAULT: [%colWhiteBold%%pass%%colReset%] : "
 if %pass%. == . set pass=mangos
-set /p port=%colYellowBold% What is your MySQL port?                     %colReset%DEFAULT: [%colWhiteBold%%port%%colReset%] : 
+set /p port="%colYellowBold% What is your MySQL port?                     %colReset%DEFAULT: [%colWhiteBold%%port%%colReset%] : "
 if %port%. == . set port=3306
 
 set showChar=0
@@ -424,14 +467,14 @@ if %createcharDB% == YES set showChar=1
 if %loadcharDB% == YES set showChar=1
 if %CDBUpdate% == YES set showChar=1
 
-if %showChar% == 1 set /p cdb=%colYellowBold% What is your Character database name?  %colReset%DEFAULT: [%colWhiteBold%%cdb%%colReset%] : 
+if %showChar% == 1 set /p cdb="%colYellowBold% What is your Character database name?  %colReset%DEFAULT: [%colWhiteBold%%cdb%%colReset%] : "
 if %cdb%. == . set cdb=%cdborig%
 
 set showWorld=0
 if %createworldDB% == YES set showWorld=1
 if %loadworldDB% == YES set showWorld=1
 if %WDBUpdate% == YES set showWorld=1
-if %showWorld% == 1 set /p wdb=%colYellowBold% What is your World database name?         %colReset%DEFAULT: [%colWhiteBold%%wdb%%colReset%] : 
+if %showWorld% == 1 set /p wdb="%colYellowBold% What is your World database name?         %colReset%DEFAULT: [%colWhiteBold%%wdb%%colReset%] : "
 if %wdb%. == . set wdb=%wdborig%
 
 set showRealm=0
@@ -440,15 +483,15 @@ if %loadrealmDB% == YES set showRealm=1
 if %addrealmentry% == YES set showRealm=1
 if %CDBUpdate% == YES set showRealm=1
 
-if %showRealm% == 1 set /p rdb=%colYellowBold% What is your Realm database name?          %colReset%DEFAULT: [%colWhiteBold%%rdb%%colReset%] : 
+if %showRealm% == 1 set /p rdb="%colYellowBold% What is your Realm database name?          %colReset%DEFAULT: [%colWhiteBold%%rdb%%colReset%] : "
 if %rdb%. == . set rdb=%rdborig%
 
 REM If create user is set to yes, ask for the details here
 if %createMangosUser% == NO goto WorldDB:
 
-if %createMangosUser% == YES set /p newuser=%colYellowBold% New MySQL user name?                       %colReset%DEFAULT: [%colWhiteBold%%newuser%%colReset%] : 
+if %createMangosUser% == YES set /p newuser="%colYellowBold% New MySQL user name?                       %colReset%DEFAULT: [%colWhiteBold%%newuser%%colReset%] : "
 if %newuser%. == . set newuser=mangos
-if %createMangosUser% == YES set /p newpass=%colYellowBold% New MySQL user password?                   %colReset%DEFAULT: [%colWhiteBold%%newpass%%colReset%] : 
+if %createMangosUser% == YES set /p newpass="%colYellowBold% New MySQL user password?                   %colReset%DEFAULT: [%colWhiteBold%%newpass%%colReset%] : "
 if %newpass%. == . set newpass=mangos
 
 if %newpass% == mangos set defaultsused=YES
@@ -456,6 +499,16 @@ REM if %newuser% == mangos set defaultsused=YES
 REM if %defaultsused% == YES goto done:
 
 :WorldDB
+
+if not defined dbClientConnectionOptions set dbClientConnectionOptions=-h %svr% --user=%user% --password=%pass% --port=%port%
+if not defined dbClientOtherOptions      set dbClientOtherOptions=-q -s
+if not defined dbClientConnectionString  set dbClientConnectionString=%dbClient%  %dbClientConnectionOptions% %dbClientOtherOptions%
+
+if %DEBUG%==YES echo dbClientConnectionOptions: %dbClientConnectionOptions%
+if %DEBUG%==YES echo dbClientOtherOptions: %dbClientOtherOptions%
+if %DEBUG%==YES echo dbClientConnectionString: %dbClientConnectionString%
+if %DEBUG%==YES echo Sample Execution: %dbClientConnectionString% -e "create database %wdb%";
+
 REM ##### IF createworlddb = YES then create the DB
 
 if %createworldDB% == YES goto WorldDB1:
@@ -492,9 +545,9 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Creating World Database                                                     ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
+echo %colReset%
 echo %colReset% Creating Database %wdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "create database %wdb%";
+%dbClientConnectionString% -e "create database %wdb%";
 goto WorldDB2:
 
 :WorldDB3
@@ -503,9 +556,9 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Preparing World Database Structure                                          ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
+echo %colReset%
 echo %colReset% Preparing Database %wdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < World\Setup\mangosdLoadDB.sql
+%dbClientConnectionString% %wdb% < World\Setup\mangosdLoadDB.sql
 goto CharDB:
 
 :WorldDB4
@@ -513,9 +566,9 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Populating World Database                                                   ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < World\Setup\mangosdLoadDB.sql
-for %%i in (World\Setup\FullDB\*.sql) do echo . Loading %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
+echo %colReset%
+%dbClientConnectionString% %wdb% < World\Setup\mangosdLoadDB.sql
+for %%i in (World\Setup\FullDB\*.sql) do echo . Loading %%i & %dbClientConnectionString% %wdb% < %%i
 goto CharDB:
 
 :CharDB1
@@ -523,9 +576,9 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Creating Character Database                                                 ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
+echo %colReset%
 echo %colReset% Creating Database %cdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "create database %cdb%";
+%dbClientConnectionString% -e "create database %cdb%";
 goto CharDB2:
 
 :CharDB3
@@ -533,9 +586,9 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Loading Character Database                                                  ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
+echo %colReset%
 echo %colReset% Loading Database %Cdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < Character\Setup\characterLoadDB.sql
+%dbClientConnectionString% %cdb% < Character\Setup\characterLoadDB.sql
 
 goto RealmDB:
 
@@ -544,9 +597,9 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Creating Realm Database                                                     ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
+echo %colReset%
 echo %colReset% Creating Database %rdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "create database %rdb%";
+%dbClientConnectionString% -e "create database %rdb%";
 goto RealmDB2:
 
 :RealmDB3
@@ -554,9 +607,9 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Loading Realm Database                                                      ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
+echo %colReset%
 echo %colReset% Loading Database %rdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Realm\Setup\realmdLoadDB.sql
+%dbClientConnectionString% %rdb% < Realm\Setup\realmdLoadDB.sql
 
 goto RealmDB4:
 
@@ -565,10 +618,10 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Adding RealmList entry in Realm Database                                    ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
+echo %colReset%
 echo %colReset% Adding Realmlist entry to %rdb%
 echo _______________________________________________________________________________%colReset%
-if %addrealmentry% == YES %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Tools\updateRealm.sql
+if %addrealmentry% == YES %dbClientConnectionString% %rdb% < Tools\updateRealm.sql
 goto NeedToCreateMangosUser:
 
 :MangosUser1
@@ -576,13 +629,13 @@ echo %colWhiteBold%_____________________________________________________________
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^| Creating new user and granting privileges                                   ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-echo %colReset% 
+echo %colReset%
 echo %colReset% Creating '%newuser%' user and granting privileges
 
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "CREATE USER '%newuser%'@'%svr%' IDENTIFIED BY '%newpass%'";
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%wdb%`.* TO '%newuser%'@'%svr%'";
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%cdb%`.* TO '%newuser%'@'%svr%'";
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%rdb%`.* TO '%newuser%'@'%svr%'";
+%dbClientConnectionString% -e "CREATE USER '%newuser%'@'%svr%' IDENTIFIED BY '%newpass%'";
+%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%wdb%`.* TO '%newuser%'@'%svr%'";
+%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%cdb%`.* TO '%newuser%'@'%svr%'";
+%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%rdb%`.* TO '%newuser%'@'%svr%'";
 goto done:
 
 
@@ -603,49 +656,49 @@ echo %colWhiteDarkYellow%^|                                                     
 echo %colWhiteDarkYellow%^| Database Localisation Support                                               ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo ^|                                                                             ^|%colReset%
-set PAD=
-if %locCH% == NO set PAD= 
-echo %colWhiteBold%^|                Locales : %colYellowBold%C - %colYellow%Toggle Chinese (%colWhiteBold%%locCH%%colYellow%)%colReset%                           %PAD%%colWhiteBold%^|
+set PAD=""
+if %locCH% == NO set PAD=" "
+echo %colWhiteBold%^|                Locales : %colYellowBold%C - %colYellow%Toggle Chinese (%colWhiteBold%%locCH%%colYellow%)%colReset%                           %PAD:"=%%colWhiteBold%^|
 
-set PAD=
-if %locFR% == NO set PAD= 
-echo %colWhiteBold%^|                          %colYellowBold%F - %colYellow%Toggle French (%colWhiteBold%%locFR%%colYellow%)%colReset%                            %PAD%%colWhiteBold%^|
+set PAD=""
+if %locFR% == NO set PAD=" "
+echo %colWhiteBold%^|                          %colYellowBold%F - %colYellow%Toggle French (%colWhiteBold%%locFR%%colYellow%)%colReset%                            %PAD:"=%%colWhiteBold%^|
 
-set PAD=
-if %locDE% == NO set PAD= 
-echo %colWhiteBold%^|                          %colYellowBold%G - %colYellow%Toggle German (%colWhiteBold%%locDE%%colYellow%)%colReset%                            %PAD%%colWhiteBold%^|
+set PAD=""
+if %locDE% == NO set PAD=" "
+echo %colWhiteBold%^|                          %colYellowBold%G - %colYellow%Toggle German (%colWhiteBold%%locDE%%colYellow%)%colReset%                            %PAD:"=%%colWhiteBold%^|
 
-set PAD=
-if %locKO% == NO set PAD= 
-echo %colWhiteBold%^|                          %colYellowBold%K - %colYellow%Toggle Korean (%colWhiteBold%%locKO%%colYellow%)%colReset%                            %PAD%%colWhiteBold%^|
+set PAD=""
+if %locKO% == NO set PAD=" "
+echo %colWhiteBold%^|                          %colYellowBold%K - %colYellow%Toggle Korean (%colWhiteBold%%locKO%%colYellow%)%colReset%                            %PAD:"=%%colWhiteBold%^|
 
-set PAD=
-if %locMX% == NO set PAD= 
-echo %colWhiteBold%^|                          %colYellowBold%M - %colYellow%Toggle Spanish (Mexican) (%colWhiteBold%%locMX%%colYellow%)%colReset%                 %PAD%%colWhiteBold%^|
+set PAD=""
+if %locMX% == NO set PAD=" "
+echo %colWhiteBold%^|                          %colYellowBold%M - %colYellow%Toggle Spanish (Mexican) (%colWhiteBold%%locMX%%colYellow%)%colReset%                 %PAD:"=%%colWhiteBold%^|
 
-set PAD=
-if %locRU% == NO set PAD= 
-echo %colWhiteBold%^|                          %colYellowBold%R - %colYellow%Toggle Russian (%colWhiteBold%%locRU%%colYellow%)%colReset%                           %PAD%%colWhiteBold%^|
+set PAD=""
+if %locRU% == NO set PAD=" "
+echo %colWhiteBold%^|                          %colYellowBold%R - %colYellow%Toggle Russian (%colWhiteBold%%locRU%%colYellow%)%colReset%                           %PAD:"=%%colWhiteBold%^|
 
-set PAD=
-if %locES% == NO set PAD= 
-echo %colWhiteBold%^|                          %colYellowBold%S - %colYellow%Toggle Spanish (%colWhiteBold%%locES%%colYellow%)%colReset%                           %PAD%%colWhiteBold%^|
+set PAD=""
+if %locES% == NO set PAD=" "
+echo %colWhiteBold%^|                          %colYellowBold%S - %colYellow%Toggle Spanish (%colWhiteBold%%locES%%colYellow%)%colReset%                           %PAD:"=%%colWhiteBold%^|
 
-set PAD=
-if %locTW% == NO set PAD= 
-echo %colWhiteBold%^|                          %colYellowBold%T - %colYellow%Toggle Taiwanese (%colWhiteBold%%locTW%%colYellow%)%colReset%                         %PAD%%colWhiteBold%^|
+set PAD=""
+if %locTW% == NO set PAD=" "
+echo %colWhiteBold%^|                          %colYellowBold%T - %colYellow%Toggle Taiwanese (%colWhiteBold%%locTW%%colYellow%)%colReset%                         %PAD:"=%%colWhiteBold%^|
 
-REM set PAD=
-REM if %locIT% == NO set PAD= 
-REM echo %colWhiteBold%^|                          %colYellowBold%I - %colYellow%Toggle Italian (%colWhiteBold%%locIT%%colYellow%)%colReset%                           %PAD%%colWhiteBold%^|
+REM set PAD=""
+REM if %locIT% == NO set PAD=" "
+REM echo %colWhiteBold%^|                          %colYellowBold%I - %colYellow%Toggle Italian (%colWhiteBold%%locIT%%colYellow%)%colReset%                           %PAD:"=%%colWhiteBold%^|
 
-REM set PAD=
-REM if %locPT% == NO set PAD= 
-REM echo %colWhiteBold%^|                          %colYellowBold%P - %colYellow%Toggle Portuguese (%colWhiteBold%%locPT%%colYellow%)%colReset%                        %PAD%%colWhiteBold%^|
+REM set PAD=""
+REM if %locPT% == NO set PAD=" "
+REM echo %colWhiteBold%^|                          %colYellowBold%P - %colYellow%Toggle Portuguese (%colWhiteBold%%locPT%%colYellow%)%colReset%                        %PAD:"=%%colWhiteBold%^|
 
-REM set PAD=
-REM if %locBR% == NO set PAD= 
-REM echo %colWhiteBold%^|                          %colYellowBold%B - %colYellow%Toggle Brazilian (%colWhiteBold%%locBR%%colYellow%)%colReset%                         %PAD%%colWhiteBold%^|
+REM set PAD=""
+REM if %locBR% == NO set PAD=" "
+REM echo %colWhiteBold%^|                          %colYellowBold%B - %colYellow%Toggle Brazilian (%colWhiteBold%%locBR%%colYellow%)%colReset%                         %PAD:"=%%colWhiteBold%^|
 
 echo %colWhiteBold%^|                                                                             ^|
 echo %colWhiteBold%^|                          X - Back to main Menu                              ^|
@@ -861,8 +914,8 @@ echo %colWhiteDarkYellow%^|                                                     
 echo %colWhiteDarkYellow%^| Applying World DB updates                                                   ^|%colReset%
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-for %%i in (World\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
-for %%i in (World\Updates\Rel22\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
+for %%i in (World\Updates\Rel%releaseVersionPrevious%\*.sql) do echo %%i & %dbClientConnectionString% %wdb% < %%i
+for %%i in (World\Updates\Rel%releaseVersionCurrent%\*.sql) do echo %%i & %dbClientConnectionString% %wdb% < %%i
 goto done2
 
 :PatchRealm
@@ -872,8 +925,8 @@ echo %colWhiteDarkYellow%^|                                                     
 echo %colWhiteDarkYellow%^| Applying Realmd DB updates                                                  ^|%colReset%
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-for %%i in (Realm\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < %%i
-for %%i in (Realm\Updates\Rel22\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < %%i
+for %%i in (Realm\Updates\Rel%releaseVersionPrevious%\*.sql) do echo %%i & %dbClientConnectionString% %rdb% < %%i
+for %%i in (Realm\Updates\Rel%releaseVersionCurrent%\*.sql) do echo %%i & %dbClientConnectionString% %rdb% < %%i
 goto done3
 
 :patchCharacter
@@ -883,8 +936,8 @@ echo %colWhiteDarkYellow%^|                                                     
 echo %colWhiteDarkYellow%^| Applying Character DB updates                                               ^|%colReset%
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
-for %%i in (Character\Updates\Rel21\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < %%i
-for %%i in (Character\Updates\Rel22\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < %%i
+for %%i in (Character\Updates\Rel%releaseVersionPrevious%\*.sql) do echo %%i & %dbClientConnectionString% %cdb% < %%i
+for %%i in (Character\Updates\Rel%releaseVersionCurrent%\*.sql) do echo %%i & %dbClientConnectionString% %cdb% < %%i
 goto done1
 
 :missingRecursive
@@ -1006,7 +1059,7 @@ echo %colWhiteDarkYellow%^|                                                     
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo.
 
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\1_LocaleTablePrepare.sql
+%dbClientConnectionString% %wdb% < Translations\1_LocaleTablePrepare.sql
 goto LocWorldDB:
 
 
@@ -1018,33 +1071,33 @@ echo %colWhiteDarkYellow%^| Loading French Locale into World Database           
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Creature_AI_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Creature_AI_Texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Gossip_texts.sql
 echo  .... Gossip_Menu_option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\French\French_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\French\French_NpcText.sql
 goto LocWorldDB1:
 
 :LoadDE
@@ -1055,33 +1108,33 @@ echo %colWhiteDarkYellow%^| Loading German Locale into World Database           
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Creature_ai_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Creature_ai_texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Gossip_texts.sql
 echo  .... Gossip_Menu_option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\German\German_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\German\German_NpcText.sql
 goto LocWorldDB2:
 
 :LoadKO
@@ -1092,33 +1145,33 @@ echo %colWhiteDarkYellow%^| Loading Korean Locale into World Database           
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Creature_ai_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Creature_ai_texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Korean\Korean_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Korean\Korean_NpcText.sql
 goto LocWorldDB3:
 
 :LoadCH
@@ -1129,33 +1182,33 @@ echo %colWhiteDarkYellow%^| Loading Chinese Locale into World Database          
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Creature_ai_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Creature_ai_texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Chinese\Chinese_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Chinese\Chinese_NpcText.sql
 goto LocWorldDB4:
 
 :LoadTW
@@ -1166,33 +1219,33 @@ echo %colWhiteDarkYellow%^| Loading Taiwanese Locale into World Database        
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Creature_ai_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Creature_ai_texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Taiwanese\Taiwanese_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Taiwanese\Taiwanese_NpcText.sql
 goto LocWorldDB5:
 
 :LoadES
@@ -1203,33 +1256,33 @@ echo %colWhiteDarkYellow%^| Loading Spanish Locale into World Database          
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Creature_ai_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Creature_ai_texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Gossip_Menu_Option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Gossip_Menu_Option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish\Spanish_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish\Spanish_NpcText.sql
 goto LocWorldDB6:
 
 :LoadMX
@@ -1240,33 +1293,33 @@ echo %colWhiteDarkYellow%^| Loading Spanish (South American) Locale into World D
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Creature_ai_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Creature_ai_texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Spanish_South_American\SpanishSA_NpcText.sql
 goto LocWorldDB7:
 
 :LoadRU
@@ -1277,33 +1330,33 @@ echo %colWhiteDarkYellow%^| Loading Russian Locale into World Database          
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Creature_AI_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Creature_AI_Texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Russian\Russian_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Russian\Russian_NpcText.sql
 goto LocWorldDB8:
 
 :LoadIT
@@ -1314,33 +1367,33 @@ echo %colWhiteDarkYellow%^| Loading Italian Locale into World Database          
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Creature_AI_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Creature_AI_Texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Italian\Italian_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Italian\Italian_NpcText.sql
 goto LocWorldDB9:
 
 :LoadPT
@@ -1351,33 +1404,33 @@ echo %colWhiteDarkYellow%^| Loading Portuguese Locale into World Database       
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Creature_AI_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Creature_AI_Texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Portuguese\Portuguese_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Portuguese\Portuguese_NpcText.sql
 goto LocWorldDB10:
 
 :LoadBR
@@ -1388,33 +1441,33 @@ echo %colWhiteDarkYellow%^| Loading Brazilian Locale into World Database        
 echo %colWhiteDarkYellow%^|                                                                             ^|%colReset%
 echo %colWhiteDarkYellow%^|_____________________________________________________________________________^|%colReset%
 echo  .... Command (1/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_CommandHelp.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_CommandHelp.sql
 echo  .... Creatures (2/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Creature.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Creature.sql
 echo  .... Creature AI Texts (3/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Creature_AI_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Creature_AI_Texts.sql
 echo  .... DB Script Strings (4/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_db_script_string.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_db_script_string.sql
 echo  .... GameObjects (5/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Gameobject.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Gameobject.sql
 echo  .... Gossip Texts (6/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Gossip_texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Gossip_texts.sql
 echo  .... Gossip Menu Option (7/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Gossip_Menu_option.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Gossip_Menu_option.sql
 echo  .... Items (8/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Items.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Items.sql
 echo  .... Mangos String (9/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Mangos_String.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Mangos_String.sql
 echo  .... PageText (10/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_PageText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_PageText.sql
 echo  .... Points of Interest (11/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Points_of_interest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Points_of_interest.sql
 echo  .... Quests (12/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Quest.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Quest.sql
 echo  .... Script Texts (13/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_Script_Texts.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_Script_Texts.sql
 echo  .... NpcText (14/14)
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Translations\Translations\Brazilian\Brazilian_NpcText.sql
+%dbClientConnectionString% %wdb% < Translations\Translations\Brazilian\Brazilian_NpcText.sql
 goto done4:
 
 
