@@ -23,8 +23,8 @@ BEGIN
 
     -- New Values
     SET @cNewVersion = '22';
-    SET @cNewStructure = '03';
-    SET @cNewContent = '002';
+    SET @cNewStructure = '04';
+    SET @cNewContent = '001';
                             -- DESCRIPTION IS 30 Characters MAX    
     SET @cNewDescription = 'Add_Quest_Tracker_Table';
 
