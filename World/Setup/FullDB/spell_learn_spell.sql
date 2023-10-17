@@ -7,7 +7,7 @@ TRUNCATE TABLE `spell_learn_spell`;
 --
 -- Host: localhost    Database: mangos0
 -- ------------------------------------------------------
--- Server version	5.5.5-10.5.8-MariaDB
+-- Server version	5.5.5-10.11.1-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-05 20:35:58
+-- Dump completed on 2023-10-17  8:47:58

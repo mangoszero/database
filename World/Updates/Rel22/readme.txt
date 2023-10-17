@@ -1,8 +1,8 @@
 If your database is a version prior to:
 
-Rel22_04_013_Quest_text_updates.sql
+Rel22_04_023_Quest_level_corrections.sql
 
-You need to run the appriopriate updates in the zip file  in folder:
+You need to run the appriopriate updates in the zip file in folder:
 
 Rel21_to_BaseRel22_Updates
 
