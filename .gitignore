@@ -42,5 +42,5 @@ Thumbs.db
 
 # Cache and log files
 
-# Generated files, vendor libraries
-
+# Generated/derived/combined files, vendor libraries
+/full_db.sql
