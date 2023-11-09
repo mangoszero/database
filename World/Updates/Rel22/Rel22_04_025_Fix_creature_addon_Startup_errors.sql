@@ -6,7 +6,8 @@ DROP PROCEDURE IF EXISTS `update_mangos`;
 
 DELIMITER $$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_mangos`()
+-- CREATE DEFINER=`root`@`localhost` PROCEDURE `update_mangos`()
+CREATE PROCEDURE `update_mangos`()
 BEGIN
     DECLARE bRollback BOOL  DEFAULT FALSE ;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET `bRollback` = TRUE;
