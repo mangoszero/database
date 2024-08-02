@@ -633,9 +633,9 @@ echo %colReset%
 echo %colReset% Creating '%newuser%' user and granting privileges
 
 %dbClientConnectionString% -e "CREATE USER '%newuser%'@'%svr%' IDENTIFIED BY '%newpass%'";
-%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%wdb%`.* TO '%newuser%'@'%svr%'";
-%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%cdb%`.* TO '%newuser%'@'%svr%'";
-%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES ON `%rdb%`.* TO '%newuser%'@'%svr%'";
+%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES, CREATE ROUTINE, ALTER ROUTINE ON `%wdb%`.* TO '%newuser%'@'%svr%'";
+%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES, CREATE ROUTINE, ALTER ROUTINE ON `%cdb%`.* TO '%newuser%'@'%svr%'";
+%dbClientConnectionString% -e "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, LOCK TABLES, CREATE ROUTINE, ALTER ROUTINE ON `%rdb%`.* TO '%newuser%'@'%svr%'";
 goto done:
 
 
