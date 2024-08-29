@@ -45,7 +45,7 @@ BEGIN
 
     -- Removes two extra spawns of the "Shaman Shrine" in North Tide's Run (Silverpine Forest).
 
- Leaves guid 27558.
+-- Leaves guid 27558.
 DELETE FROM `gameobject` WHERE `guid` IN (35418,33369);
 
 
