@@ -1,6 +1,6 @@
 If your database is a version prior to:
 
-Rel22_04_023_Quest_level_corrections.sql
+Rel22_04_029_Remove_Extra_Shaman_Shrines.sql
 
 You need to run the appriopriate updates in the zip file in folder:
 
