@@ -1,6 +1,6 @@
 If your database is a version prior to:
 
-Rel22_02_001_add_character_createdDate_column.sql
+Rel22_04_001_Add_Quest_Tracker_Table.sql
 
 You need to run the appriopriate updates in the zip file  in folder:
 
