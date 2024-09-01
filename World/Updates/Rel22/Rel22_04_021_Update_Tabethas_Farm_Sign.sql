@@ -43,8 +43,8 @@ BEGIN
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
-        -- Fix Tabetha's Farm Sign
-        UPDATE gameobject SET `rotation2` = -0.88089, `rotation3` = 0.47332 WHERE `guid` = 7347 AND `id` = 186240;
+        -- Remove Tabetha's Farm Sign
+        DELETE FROM gameobject WHERE `guid` = 7347 AND `id` = 186240;
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
