@@ -111,6 +111,7 @@ INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`
 (18562,0,0,0,0,0,0,0,0,0,0,0,0,'Druid - Swiftmend'),
 (18764,0,0,0,0,0,0,0,0,0,0,0,0,'Item - Fungal Regrowth'),
 (18790,0,0,0,0,0,0,0,0,0,0,0,0,'Warlock - Fel Stamina'),
+(19968,0.7143,0,0,0,0,0,0,0,0,0,0,0,'Paladin - Holy Light'),
 (20167,0.25,0,0,0,0,0,0,0,0,0,0.16,0,'Paladin - Seal of Light Proc'),
 (20424,0.2,0,0,0,0,0,0,0,0,0,0,0,'Paladin - Seal of Command Proc'),
 (20925,0.09,0,0,0,0,0,0,0,0,0,0.056,0,'Paladin - Holy Shield'),
