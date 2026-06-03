@@ -44,14 +44,14 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`, `source_file`, `source_enum_wrapper`, `source_enum_tag`) VALUES
-(1717,'This realm will be automatically restarting in 15 Minutes as part of its weekly schedule. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_15_MIN'),
-(1718,'This realm will be automatically restarting in 10 Minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_10_MIN'),
-(1719,'This realm will be automatically restarting in 5 Minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_5_MIN'),
-(1720,'This realm will be automatically restarting in 1 Minute as part of its weekly schedule. Please ensure you are in a safe area. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_1_MIN'),
-(1721,'This realm will be automatically shutting down in 15 Minutes as part of its weekly schedule. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_SHUTDOWN_15_MIN'),
-(1722,'This realm will be automatically shutting down in 10 Minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_SHUTDOWN_10_MIN'),
-(1723,'This realm will be automatically shutting down in 5 Minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_SHUTDOWN_5_MIN'),
-(1724,'This realm will be automatically shutting down in 1 Minute as part of its weekly schedule. Please ensure you are in a safe area. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_SHUTDOWN_1_MIN');
+(1730,'This realm will be automatically restarting in 15 Minutes as part of its weekly schedule. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_15_MIN'),
+(1731,'This realm will be automatically restarting in 10 Minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_10_MIN'),
+(1732,'This realm will be automatically restarting in 5 Minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_5_MIN'),
+(1733,'This realm will be automatically restarting in 1 Minute as part of its weekly schedule. Please ensure you are in a safe area. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_1_MIN'),
+(1734,'This realm will be automatically shutting down in 15 Minutes as part of its weekly schedule. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_SHUTDOWN_15_MIN'),
+(1735,'This realm will be automatically shutting down in 10 Minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_SHUTDOWN_10_MIN'),
+(1736,'This realm will be automatically shutting down in 5 Minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_SHUTDOWN_5_MIN'),
+(1737,'This realm will be automatically shutting down in 1 Minute as part of its weekly schedule. Please ensure you are in a safe area. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_SHUTDOWN_1_MIN');
 
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL ABOVE -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
