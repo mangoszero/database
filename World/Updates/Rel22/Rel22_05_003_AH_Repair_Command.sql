@@ -29,7 +29,7 @@ BEGIN
     SET @cNewDescription = 'AH_Repair_Command';
 
                         -- COMMENT is 150 Characters MAX
-    SET @cNewComment = 'Add .ah repair console command for custody-ledger drift dry-run and explicit apply repair.';
+    SET @cNewComment = 'Add ah repair console command for custody-ledger drift dry-run and explicit apply repair.';
 
     -- Evaluate all settings
     SET @cCurResult := (SELECT `description` FROM `db_version` ORDER BY `version` DESC, `STRUCTURE` DESC, `CONTENT` DESC LIMIT 0,1);
@@ -48,8 +48,8 @@ BEGIN
     -- token. Scope is custody-ledger drift only, not legacy tear repair.
 
     INSERT INTO `command` (`command_text`, `security`, `help_text`) VALUES
-    ('ah',3,'Syntax: .ah console show|hide\r\nSyntax: .ah repair [--dry-run|apply]\r\n\r\nOut-of-process Auction House service-worker management and custody-ledger repair (server console only).'),
-    ('ah repair',3,'Syntax: .ah repair [--dry-run|apply]\r\n\r\nDry-run or repair supported Auction House custody-ledger drift. Usable only from the server console. Scope is custody-ledger drift only; legacy tears are not repaired.')
+    ('ah',3,'Syntax: ah console show|hide\r\nSyntax: ah repair [--dry-run|apply|force-forfeit <key>]\r\n\r\nOut-of-process Auction House service-worker management and custody-ledger repair (server console only).'),
+    ('ah repair',3,'Syntax: ah repair [--dry-run|apply|force-forfeit <key>]\r\n\r\nDry-run or terminalize supported Auction House custody-ledger drift. Usable only from the server console. Gold is not disbursed by repair; force-forfeit is for human-verified row cleanup. Scope is custody-ledger drift only; legacy tears are not repaired.')
     ON DUPLICATE KEY UPDATE
         `security` = VALUES(`security`),
         `help_text` = VALUES(`help_text`);
@@ -106,4 +106,3 @@ CALL update_mangos();
 
 -- Drop the procedure
 DROP PROCEDURE IF EXISTS `update_mangos`;
-
