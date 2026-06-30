@@ -19,12 +19,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '22';
     SET @cOldStructure = '05';
-    SET @cOldContent = '001';
+    SET @cOldContent = '003';
 
     -- New Values
     SET @cNewVersion = '22';
     SET @cNewStructure = '05';
-    SET @cNewContent = '002';
+    SET @cNewContent = '004';
                             -- DESCRIPTION IS 30 Characters MAX
     SET @cNewDescription = 'Scheduled_Exit_Strings';
 
