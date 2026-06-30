@@ -18,13 +18,13 @@ BEGIN
 
     -- Expected Values
     SET @cOldVersion = '22';
-    SET @cOldStructure = '04';
-    SET @cOldContent = '034';
+    SET @cOldStructure = '05';
+    SET @cOldContent = '001';
 
     -- New Values
     SET @cNewVersion = '22';
-    SET @cNewStructure = '04';
-    SET @cNewContent = '035';
+    SET @cNewStructure = '05';
+    SET @cNewContent = '002';
                             -- DESCRIPTION IS 30 Characters MAX
     SET @cNewDescription = 'Scheduled_Exit_Strings';
 
@@ -42,6 +42,8 @@ BEGIN
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
         -- -- PLACE UPDATE SQL BELOW -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+
+DELETE FROM `mangos_string` WHERE `entry` IN (1730,1731,1732,1733,1734,1735,1736,1737);
 
 INSERT INTO `mangos_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`, `source_file`, `source_enum_wrapper`, `source_enum_tag`) VALUES
 (1730,'This realm will be automatically restarting in 15 Minutes as part of its weekly schedule. Downtime is expected to be 1-2 minutes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Language.h','MangosStrings','LANG_SCHEDULED_EXIT_RESTART_15_MIN'),
