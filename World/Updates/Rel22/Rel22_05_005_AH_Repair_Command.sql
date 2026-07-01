@@ -19,12 +19,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '22';
     SET @cOldStructure = '05';
-    SET @cOldContent = '002';
+    SET @cOldContent = '004';
 
     -- New Values
     SET @cNewVersion = '22';
     SET @cNewStructure = '05';
-    SET @cNewContent = '003';
+    SET @cNewContent = '005';
                             -- DESCRIPTION IS 30 Characters MAX
     SET @cNewDescription = 'AH_Repair_Command';
 
