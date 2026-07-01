@@ -1,3 +1,35 @@
+-- =============================================================================
+-- Tools/custody_diff.sql  --  AH custody acceptance differential (DEV/QA TOOL)
+-- =============================================================================
+--
+-- WHAT THIS IS
+--   A read-only developer/QA diagnostic for the mangoszero SERVER's Auction
+--   House "custody" feature -- the in-mangosd custody / escrow-ledger that routes
+--   the player AH write seams (create / bid / buyout / win / cancel / expire)
+--   through one checked, crash-safe transaction, gated behind the default-OFF
+--   `AH.Service.Custody` config. It changes NO schema and is NOT a migration:
+--   the DB updater never applies it. It lives in Tools/ beside the other
+--   hand-run diagnostics (mangos_spell_check.sql, etc.).
+--
+-- WHY IT EXISTS
+--   Custody moves real gold / items / mail bookkeeping onto a new code path, so
+--   its acceptance bar is that it stays BYTE-IDENTICAL to the legacy path in
+--   everything a player can observe. This script is that proof: it diffs the
+--   player-visible projection -- `characters.money`, `mail`, `mail_items`,
+--   `item_instance`, `auction` -- between a custody-OFF run and a custody-ON run.
+--   Any non-empty *_DIFF section is a custody regression that must be fixed
+--   before the feature is trusted.
+--
+-- WHEN TO RUN IT
+--   During the custody PROMOTION process (server repo: the custody promotion
+--   runbook), BEFORE flipping `AH.Service.Custody` default-on -- and again after
+--   any change to the custody seams. It is run BY HAND against two DISPOSABLE,
+--   quiesced Character-DB CLONES (NEVER a live/production realm DB): replay one
+--   identical seeded AH workload on a clone with custody off and a clone with
+--   custody on, then source this script; every *_DIFF section must return zero
+--   rows.
+--
+-- -----------------------------------------------------------------------------
 -- MaNGOS Zero AH custody player-visible differential.
 --
 -- Preconditions:
