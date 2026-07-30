@@ -19,12 +19,12 @@ BEGIN
     -- Expected Values
     SET @cOldVersion = '22';
     SET @cOldStructure = '05';
-    SET @cOldContent = '005';
+    SET @cOldContent = '006';
 
     -- New Values
     SET @cNewVersion = '22';
     SET @cNewStructure = '05';
-    SET @cNewContent = '006';
+    SET @cNewContent = '007';
                             -- DESCRIPTION IS 30 Characters MAX
     SET @cNewDescription = 'Ticket_Payload_Commands';
 
