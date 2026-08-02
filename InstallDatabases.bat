@@ -497,7 +497,6 @@ echo %colWhiteBold%^                                                            
 echo %colWhiteBold%^                         %colGreenBold%N - %colGreen%Next Step%colReset%                                        %colWhiteBold%^ %colReset%
 echo %colWhiteBold%^                         %colWhiteBold%X - %colReset%Exit                                             %colWhiteBold%^ %colReset%
 echo %colWhiteBold%^                                                                              ^ %colReset%
-REM xxxx echo.
 exit /b 0
 
 :DrawLocaleMenu
@@ -547,7 +546,6 @@ exit /b 0
 
 REM  :Section <title>   rule, title box and a blank line - used before each step
 :Section
-echo %colWhiteBold%1______________________________________________________________________________%colReset%
 call :TitleBox "%colWhiteDarkYellow%" "%~1"
 echo.
 exit /b 0
