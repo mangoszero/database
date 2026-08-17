@@ -126,10 +126,6 @@ loadCharDB()
 {
 	printf "Loading data into character database ${cdb}\n"
 	$(${dbcommand} ${cdb} < Character/Setup/characterLoadDB.sql)
-
-	if [ "${updatecharDB}" = "YES" ]; then
-		updateCharDB
-	fi
 }
 
 updateCharDB()
@@ -427,6 +423,10 @@ fi
 
 if [ "${createrealmDB}" = "YES" ]; then
 	createRealmDB
+fi
+
+if [ "${updatecharDB}" = "YES" ]; then
+	updateCharDB
 fi
 
 if [ "${updateworldDB}" = "YES" ]; then
