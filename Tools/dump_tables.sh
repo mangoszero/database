@@ -16,6 +16,20 @@ do_dump_zero() {
 
 mkdir -p ${DUMPDIR}
 
+WARDEN_TABLES=
+for WARDEN_TABLE in warden warden_checks; do
+if mysqldump -Q -q -u"${USERNAME}" -p"${PASSWORD}" --no-data "${DB}" "${WARDEN_TABLE}" >/dev/null 2>&1; then
+WARDEN_TABLES="${WARDEN_TABLES} ${WARDEN_TABLE}"
+fi
+done
+
+if [ -z "${WARDEN_TABLES}" ]; then
+echo "Neither warden nor warden_checks exists in ${DB}; refusing an incomplete dump." >&2
+return 1
+fi
+
+rm -f "${DUMPDIR}/warden.sql" "${DUMPDIR}/warden_checks.sql"
+
 for TABLE in \
 `areatrigger_involvedrelation` \
 `areatrigger_tavern` \
@@ -139,7 +153,7 @@ for TABLE in \
 `spell_target_position` \
 `spell_threat` \
 `transports` \
-`warden_checks` \
+${WARDEN_TABLES} \
 ; do
 
 echo "Dumping ${i}/123 ${TABLE}..."
