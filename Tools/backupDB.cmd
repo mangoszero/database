@@ -1,4 +1,5 @@
 @ECHO OFF
+set "BACKUPRESULT=0"
 rem -- set the main parameters
 set createcharDB=YES
 set createworldDB=YES
@@ -2229,6 +2230,11 @@ if not "%OPTIONALFOUND%" == "0" if not "%OPTIONALFOUND%" == "1" (
 
 if "%OPTIONALFOUND%" == "0" (
     if exist "%OPTIONALOUTPUT%" del /Q "%OPTIONALOUTPUT%"
+    if exist "%OPTIONALOUTPUT%" (
+        echo ERROR: Could not remove stale backup for %OPTIONALDB%.%OPTIONALTABLE%.
+        endlocal
+        exit /b 1
+    )
     echo Skipping absent optional table %OPTIONALDB%.%OPTIONALTABLE%.
     endlocal
     exit /b 0
@@ -2247,15 +2253,23 @@ if errorlevel 1 (
 )
 
 if /I "%OPTIONALSTRUCTURE%" == "NO" (
-    echo -- ---------------------------------------- > "%OPTIONALREADY%"
-    echo -- --        CLEAR DOWN THE TABLE        -- >> "%OPTIONALREADY%"
-    echo -- ---------------------------------------- >> "%OPTIONALREADY%"
-    echo TRUNCATE TABLE `%OPTIONALTABLE%`; >> "%OPTIONALREADY%"
-    echo -- ---------------------------------------- >> "%OPTIONALREADY%"
-    type "%OPTIONALTEMP%" >> "%OPTIONALREADY%"
+    %ComSpec% /D /C echo -- ---------------------------------------- ^> "%OPTIONALREADY%"
+    if errorlevel 1 goto DumpOptionalTableAssemblyFailed
+    %ComSpec% /D /C echo -- --        CLEAR DOWN THE TABLE        -- ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto DumpOptionalTableAssemblyFailed
+    %ComSpec% /D /C echo -- ---------------------------------------- ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto DumpOptionalTableAssemblyFailed
+    %ComSpec% /D /C echo TRUNCATE TABLE `%OPTIONALTABLE%`; ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto DumpOptionalTableAssemblyFailed
+    %ComSpec% /D /C echo -- ---------------------------------------- ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto DumpOptionalTableAssemblyFailed
+    %ComSpec% /D /C type "%OPTIONALTEMP%" ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto DumpOptionalTableAssemblyFailed
     del /Q "%OPTIONALTEMP%"
+    if exist "%OPTIONALTEMP%" goto DumpOptionalTableAssemblyFailed
 ) else (
     move /Y "%OPTIONALTEMP%" "%OPTIONALREADY%" >nul
+    if errorlevel 1 goto DumpOptionalTableAssemblyFailed
 )
 
 move /Y "%OPTIONALREADY%" "%OPTIONALOUTPUT%" >nul
@@ -2268,9 +2282,17 @@ if errorlevel 1 (
 endlocal
 exit /b 0
 
+:DumpOptionalTableAssemblyFailed
+if exist "%OPTIONALTEMP%" del /Q "%OPTIONALTEMP%"
+if exist "%OPTIONALREADY%" del /Q "%OPTIONALREADY%"
+echo ERROR: Could not assemble backup for %OPTIONALDB%.%OPTIONALTABLE%.
+endlocal
+exit /b 1
+
 
 
 :patherror
+set "BACKUPRESULT=1"
 echo.
 echo _______________________________________________________________________________
 echo %colWhiteDarkRed%^|                                                                             ^|
@@ -2282,6 +2304,7 @@ echo.
 goto finish:
 
 :error
+set "BACKUPRESULT=1"
 echo.
 echo _______________________________________________________________________________
 echo %colWhiteDarkRed%^|                                                                             ^|
@@ -2310,3 +2333,4 @@ echo Done :)
 echo.
 :finish
 pause
+exit /b %BACKUPRESULT%
