@@ -126,10 +126,6 @@ loadCharDB()
 {
 	printf "Loading data into character database ${cdb}\n"
 	$(${dbcommand} ${cdb} < Character/Setup/characterLoadDB.sql)
-
-	if [ "${updatecharDB}" = "YES" ]; then
-		updateCharDB
-	fi
 }
 
 updateCharDB()
@@ -139,7 +135,7 @@ updateCharDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		${dbcommand} "${cdb}" < "${file}"
+		${dbcommand} "${cdb}" < "${file}" || return 1
 		printf "File ${file} imported\n"
 	done
 
@@ -147,7 +143,7 @@ updateCharDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		${dbcommand} "${cdb}" < "${file}"
+		${dbcommand} "${cdb}" < "${file}" || return 1
 		printf "File ${file} imported\n"
 	done
 }
@@ -197,15 +193,17 @@ updateWorldDB()
     printf "Updating data into the World database ${wdb}\n"
     for file in World/Updates/${OLDRELEASE}/*.sql
     do
+        [ -e "${file}" ] || continue
         printf "Applying update ${file}\n"
-        ${dbcommand} "${wdb}" < "${file}"
+        ${dbcommand} "${wdb}" < "${file}" || return 1
         printf "File ${file} imported\n"
     done
 
     for file in World/Updates/${RELEASE}/*.sql
     do
+        [ -e "${file}" ] || continue
         printf "Applying update ${file}\n"
-        ${dbcommand} "${wdb}" < "${file}"
+        ${dbcommand} "${wdb}" < "${file}" || return 1
         printf "File ${file} imported\n"
     done
 }
@@ -233,7 +231,7 @@ updateRealmDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		$(${dbcommand} ${rdb} < ${file})
+		${dbcommand} "${rdb}" < "${file}" || return 1
 		printf "File ${file} imported\n"
 	done
 
@@ -241,7 +239,7 @@ updateRealmDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		$(${dbcommand} ${rdb} < ${file})
+		${dbcommand} "${rdb}" < "${file}" || return 1
 		printf "File ${file} imported\n"
 	done
 }
@@ -429,12 +427,25 @@ if [ "${createrealmDB}" = "YES" ]; then
 	createRealmDB
 fi
 
+if [ "${updatecharDB}" = "YES" ]; then
+	if ! updateCharDB; then
+		printf "Character database update failed.\n"
+		exit 1
+	fi
+fi
+
 if [ "${updateworldDB}" = "YES" ]; then
-	updateWorldDB
+	if ! updateWorldDB; then
+		printf "World database update failed.\n"
+		exit 1
+	fi
 fi
 
 if [ "${updaterealmDB}" = "YES" ]; then
-	updateRealmDB
+	if ! updateRealmDB; then
+		printf "Realm database update failed.\n"
+		exit 1
+	fi
 fi
 
 if [ "${addRealmList}" = "YES" ]; then

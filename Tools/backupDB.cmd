@@ -1,4 +1,5 @@
 @ECHO OFF
+set "BACKUPRESULT=0"
 rem -- set the main parameters
 set createcharDB=YES
 set createworldDB=YES
@@ -1500,14 +1501,8 @@ if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TAB
 if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
 
-SET TABLENAME=warden
-echo             %TABLENAME%
-if %loadworldDB% == NO echo -- ---------------------------------------- >  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_worlddb\%TABLENAME%.sql
-if %loadworldDB% == NO echo -- ---------------------------------------- >>  _full_worlddb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %wdb% %TABLENAME% >>  _full_worlddb\%TABLENAME%.sql
+call :DumpOptionalGroup "%wdb%" "_full_worlddb" "%loadworldDB%" "YES" "warden" "warden_checks"
+if errorlevel 1 goto error
 
 goto CharDB:
 
@@ -2100,15 +2095,6 @@ if %loadcharDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_chardb\%TABLE
 if %loadcharDB% == NO echo -- ---------------------------------------- >>  _full_chardb\%TABLENAME%.sql
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %cdb% %TABLENAME% >>  _full_chardb\%TABLENAME%.sql
 
-SET TABLENAME=warden_action
-echo             %TABLENAME%
-if %loadcharDB% == NO echo -- ---------------------------------------- >  _full_chardb\%TABLENAME%.sql
-if %loadcharDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_chardb\%TABLENAME%.sql
-if %loadcharDB% == NO echo -- ---------------------------------------- >>  _full_chardb\%TABLENAME%.sql
-if %loadcharDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_chardb\%TABLENAME%.sql
-if %loadcharDB% == NO echo -- ---------------------------------------- >>  _full_chardb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %cdb% %TABLENAME% >>  _full_chardb\%TABLENAME%.sql
-
 SET TABLENAME=world
 echo             %TABLENAME%
 if %loadcharDB% == NO echo -- ---------------------------------------- >  _full_chardb\%TABLENAME%.sql
@@ -2117,6 +2103,9 @@ if %loadcharDB% == NO echo -- ---------------------------------------- >>  _full
 if %loadcharDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_chardb\%TABLENAME%.sql
 if %loadcharDB% == NO echo -- ---------------------------------------- >>  _full_chardb\%TABLENAME%.sql
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %cdb% %TABLENAME% >>  _full_chardb\%TABLENAME%.sql
+
+call :DumpOptionalGroup "%cdb%" "_full_chardb" "%loadcharDB%" "NO" "warden_action"
+if errorlevel 1 goto error
 goto RealmDB:
 
 :RealmDB1
@@ -2195,20 +2184,408 @@ if %loadrealmDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_realmdb\%TAB
 if %loadrealmDB% == NO echo -- ---------------------------------------- >>  _full_realmdb\%TABLENAME%.sql
 mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %rdb% %TABLENAME% >>  _full_realmdb\%TABLENAME%.sql
 
-SET TABLENAME=warden_log
-echo             %TABLENAME%
-if %loadrealmDB% == NO echo -- ---------------------------------------- >  _full_realmdb\%TABLENAME%.sql
-if %loadrealmDB% == NO echo -- --        CLEAR DOWN THE TABLE        -- >>  _full_realmdb\%TABLENAME%.sql
-if %loadrealmDB% == NO echo -- ---------------------------------------- >>  _full_realmdb\%TABLENAME%.sql
-if %loadrealmDB% == NO echo TRUNCATE TABLE `%TABLENAME%`; >>  _full_realmdb\%TABLENAME%.sql
-if %loadrealmDB% == NO echo -- ---------------------------------------- >>  _full_realmdb\%TABLENAME%.sql
-mysqldump -Q -c -e -q %extraparams% -u%user% -p%pass% --port=%port% -h %svr% %rdb% %TABLENAME% >>  _full_realmdb\%TABLENAME%.sql
+call :DumpOptionalGroup "%rdb%" "_full_realmdb" "%loadrealmDB%" "YES" "warden_log" "warden_incident" "warden_audit"
+if errorlevel 1 goto error
 
 goto done:
+
+:DumpOptionalGroup
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDB=%~1"
+set "OPTIONALDIR=%~2"
+set "OPTIONALSTRUCTURE=%~3"
+set "OPTIONALRETAINEMPTY=%~4"
+set "OPTIONALPRESENT=0"
+set "OPTIONALFAILED=0"
+
+call :RecoverOptionalGroupAtEntry "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupEntryRecoveryRefused
+
+for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
+    for %%S in (exists.tmp dump.tmp sql.new present.tmp absent.tmp) do (
+        if exist "!OPTIONALDIR!\%%~T.%%S" del /Q "!OPTIONALDIR!\%%~T.%%S"
+        if exist "!OPTIONALDIR!\%%~T.%%S" set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" goto DumpOptionalGroupFailed
+
+rem Phase 1: probe every member before staging any member.
+for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
+    if "!OPTIONALFAILED!" == "0" (
+        call :ProbeOptionalTable "!OPTIONALDB!" "!OPTIONALDIR!" "%%~T"
+        if errorlevel 1 set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" goto DumpOptionalGroupFailed
+
+for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
+    if exist "!OPTIONALDIR!\%%~T.present.tmp" set "OPTIONALPRESENT=1"
+)
+if "!OPTIONALPRESENT!" == "0" if /I "!OPTIONALRETAINEMPTY!" == "YES" goto DumpOptionalGroupRetainEmpty
+
+rem Phase 2: stage every member proven present.
+for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
+    if "!OPTIONALFAILED!" == "0" if exist "!OPTIONALDIR!\%%~T.present.tmp" (
+        call :StageOptionalTable "!OPTIONALDB!" "!OPTIONALDIR!" "!OPTIONALSTRUCTURE!" "%%~T"
+        if errorlevel 1 set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" goto DumpOptionalGroupFailed
+
+rem Phase 3: snapshot every destination before changing any published output.
+call :SnapshotOptionalGroup "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupFailed
+
+rem Phase 4: publish every complete staged member.
+set "OPTIONALFAILED=0"
+for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
+    set "OPTIONALREADY=!OPTIONALDIR!\%%~T.sql.new"
+    set "OPTIONALOUTPUT=!OPTIONALDIR!\%%~T.sql"
+    if "!OPTIONALFAILED!" == "0" if exist "!OPTIONALREADY!" (
+        move /Y "!OPTIONALREADY!" "!OPTIONALOUTPUT!" >nul
+        if errorlevel 1 set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" goto DumpOptionalGroupFailed
+
+rem Phase 5: only now remove outputs proven absent.
+set "OPTIONALFAILED=0"
+for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
+    if exist "!OPTIONALDIR!\%%~T.absent.tmp" (
+        set "OPTIONALOUTPUT=!OPTIONALDIR!\%%~T.sql"
+        if exist "!OPTIONALOUTPUT!" del /Q "!OPTIONALOUTPUT!"
+        if exist "!OPTIONALOUTPUT!" set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" goto DumpOptionalGroupFailed
+
+call :CleanupOptionalGroupArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupFailed
+
+rem The complete new group is published; retire recovery state last.
+call :CleanupOptionalGroupRecoveryArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupRecoveryCleanupFailed
+endlocal
+exit /b 0
+
+:ProbeOptionalTable
+setlocal EnableExtensions DisableDelayedExpansion
+set "OPTIONALDB=%~1"
+set "OPTIONALDIR=%~2"
+set "OPTIONALTABLE=%~3"
+set "OPTIONALPROBE=%OPTIONALDIR%\%OPTIONALTABLE%.exists.tmp"
+set "OPTIONALPRESENT=%OPTIONALDIR%\%OPTIONALTABLE%.present.tmp"
+set "OPTIONALABSENT=%OPTIONALDIR%\%OPTIONALTABLE%.absent.tmp"
+
+if exist "%OPTIONALPROBE%" del /Q "%OPTIONALPROBE%"
+if exist "%OPTIONALPROBE%" (
+    echo ERROR: Could not clear probe artifact for %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+if exist "%OPTIONALPRESENT%" del /Q "%OPTIONALPRESENT%"
+if exist "%OPTIONALPRESENT%" (
+    echo ERROR: Could not clear present marker for %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+if exist "%OPTIONALABSENT%" del /Q "%OPTIONALABSENT%"
+if exist "%OPTIONALABSENT%" (
+    echo ERROR: Could not clear absent marker for %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+
+"%mysql%mysql.exe" --batch --skip-column-names -u%user% -p%pass% --port=%port% -h %svr% -e "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '%OPTIONALDB%' AND table_name = '%OPTIONALTABLE%';" > "%OPTIONALPROBE%" 2>nul
+if errorlevel 1 (
+    if exist "%OPTIONALPROBE%" del /Q "%OPTIONALPROBE%"
+    echo ERROR: Could not inspect %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+
+set "OPTIONALFOUND="
+set /p OPTIONALFOUND=<"%OPTIONALPROBE%"
+del /Q "%OPTIONALPROBE%"
+if exist "%OPTIONALPROBE%" (
+    echo ERROR: Could not clear probe result for %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+
+if "%OPTIONALFOUND%" == "0" (
+    type nul > "%OPTIONALABSENT%"
+    if not exist "%OPTIONALABSENT%" (
+        echo ERROR: Could not record absent table %OPTIONALDB%.%OPTIONALTABLE%.
+        endlocal
+        exit /b 1
+    )
+    echo Skipping absent optional table %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 0
+)
+
+if "%OPTIONALFOUND%" == "1" (
+    type nul > "%OPTIONALPRESENT%"
+    if not exist "%OPTIONALPRESENT%" (
+        echo ERROR: Could not record present table %OPTIONALDB%.%OPTIONALTABLE%.
+        endlocal
+        exit /b 1
+    )
+    endlocal
+    exit /b 0
+)
+
+echo ERROR: Invalid table probe result for %OPTIONALDB%.%OPTIONALTABLE%.
+endlocal
+exit /b 1
+
+:StageOptionalTable
+setlocal EnableExtensions DisableDelayedExpansion
+set "OPTIONALDB=%~1"
+set "OPTIONALDIR=%~2"
+set "OPTIONALSTRUCTURE=%~3"
+set "OPTIONALTABLE=%~4"
+set "OPTIONALPRESENT=%OPTIONALDIR%\%OPTIONALTABLE%.present.tmp"
+set "OPTIONALTEMP=%OPTIONALDIR%\%OPTIONALTABLE%.dump.tmp"
+set "OPTIONALREADY=%OPTIONALDIR%\%OPTIONALTABLE%.sql.new"
+
+if not exist "%OPTIONALPRESENT%" (
+    echo ERROR: Missing present marker for %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+if exist "%OPTIONALTEMP%" del /Q "%OPTIONALTEMP%"
+if exist "%OPTIONALTEMP%" (
+    echo ERROR: Could not clear dump artifact for %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+if exist "%OPTIONALREADY%" del /Q "%OPTIONALREADY%"
+if exist "%OPTIONALREADY%" (
+    echo ERROR: Could not clear staged artifact for %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+
+set "OPTIONALPARAMS="
+if /I "%OPTIONALSTRUCTURE%" == "NO" set "OPTIONALPARAMS=--add-drop-table=false --no-create-info"
+
+echo             %OPTIONALTABLE%
+"%mysql%mysqldump.exe" -Q -c -e -q %OPTIONALPARAMS% -u%user% -p%pass% --port=%port% -h %svr% %OPTIONALDB% %OPTIONALTABLE% > "%OPTIONALTEMP%"
+if errorlevel 1 (
+    if exist "%OPTIONALTEMP%" del /Q "%OPTIONALTEMP%"
+    if exist "%OPTIONALREADY%" del /Q "%OPTIONALREADY%"
+    echo ERROR: Could not dump %OPTIONALDB%.%OPTIONALTABLE%.
+    endlocal
+    exit /b 1
+)
+
+if /I "%OPTIONALSTRUCTURE%" == "NO" (
+    %ComSpec% /D /C echo -- ---------------------------------------- ^> "%OPTIONALREADY%"
+    if errorlevel 1 goto StageOptionalTableAssemblyFailed
+    %ComSpec% /D /C echo -- --        CLEAR DOWN THE TABLE        -- ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto StageOptionalTableAssemblyFailed
+    %ComSpec% /D /C echo -- ---------------------------------------- ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto StageOptionalTableAssemblyFailed
+    %ComSpec% /D /C echo TRUNCATE TABLE `%OPTIONALTABLE%`; ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto StageOptionalTableAssemblyFailed
+    %ComSpec% /D /C echo -- ---------------------------------------- ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto StageOptionalTableAssemblyFailed
+    %ComSpec% /D /C type "%OPTIONALTEMP%" ^>^> "%OPTIONALREADY%"
+    if errorlevel 1 goto StageOptionalTableAssemblyFailed
+    del /Q "%OPTIONALTEMP%"
+    if exist "%OPTIONALTEMP%" goto StageOptionalTableAssemblyFailed
+) else (
+    move /Y "%OPTIONALTEMP%" "%OPTIONALREADY%" >nul
+    if errorlevel 1 goto StageOptionalTableAssemblyFailed
+)
+
+if not exist "%OPTIONALREADY%" goto StageOptionalTableAssemblyFailed
+endlocal
+exit /b 0
+
+:StageOptionalTableAssemblyFailed
+if exist "%OPTIONALTEMP%" del /Q "%OPTIONALTEMP%"
+if exist "%OPTIONALREADY%" del /Q "%OPTIONALREADY%"
+echo ERROR: Could not assemble backup for %OPTIONALDB%.%OPTIONALTABLE%.
+endlocal
+exit /b 1
+
+:CleanupOptionalGroupArtifacts
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALFAILED=0"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    for %%S in (exists.tmp dump.tmp sql.new present.tmp absent.tmp) do (
+        if exist "!OPTIONALDIR!\%%~T.%%S" del /Q "!OPTIONALDIR!\%%~T.%%S"
+        if exist "!OPTIONALDIR!\%%~T.%%S" set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
+
+:DumpOptionalGroupRetainEmpty
+echo WARNING: No optional tables exist in %OPTIONALDB%; preserving prior group backups.
+call :CleanupOptionalGroupArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupFailed
+endlocal
+exit /b 0
+
+:DumpOptionalGroupFailed
+call :RestoreOptionalGroup "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupRollbackFailed
+call :CleanupOptionalGroupArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+echo ERROR: Could not back up optional table group in %OPTIONALDB%.
+endlocal
+exit /b 1
+
+:DumpOptionalGroupRollbackFailed
+call :CleanupOptionalGroupArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+echo ERROR: Could not restore the optional table group in %OPTIONALDB%; recovery artifacts remain in !OPTIONALDIR!.
+endlocal
+exit /b 1
+
+:DumpOptionalGroupEntryRecoveryRefused
+echo ERROR: Refusing optional table backup for %OPTIONALDB%; preserving published outputs and recovery artifacts in !OPTIONALDIR!.
+endlocal
+exit /b 1
+
+:DumpOptionalGroupRecoveryCleanupFailed
+echo ERROR: Published optional table group, but could not retire all recovery artifacts in %OPTIONALDB%.
+endlocal
+exit /b 1
+
+:CleanupOptionalGroupRecoveryArtifacts
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALFAILED=0"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    for %%S in (sql.rollback.tmp sql.no-prior.tmp) do (
+        if exist "!OPTIONALDIR!\%%~T.%%S" del /Q "!OPTIONALDIR!\%%~T.%%S"
+        if exist "!OPTIONALDIR!\%%~T.%%S" set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
+
+:RecoverOptionalGroupAtEntry
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALRECOVERYANY=0"
+set "OPTIONALRECOVERYCOMPLETE=1"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    set "OPTIONALRECOVERYCOUNT=0"
+    if exist "!OPTIONALDIR!\%%~T.sql.rollback.tmp" (
+        set /A OPTIONALRECOVERYCOUNT+=1
+        set "OPTIONALRECOVERYANY=1"
+    )
+    if exist "!OPTIONALDIR!\%%~T.sql.no-prior.tmp" (
+        set /A OPTIONALRECOVERYCOUNT+=1
+        set "OPTIONALRECOVERYANY=1"
+    )
+    if !OPTIONALRECOVERYCOUNT! GTR 1 set "OPTIONALRECOVERYCOMPLETE=0"
+)
+if "!OPTIONALRECOVERYANY!" == "0" (
+    endlocal
+    exit /b 0
+)
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    set "OPTIONALRECOVERYCOUNT=0"
+    if exist "!OPTIONALDIR!\%%~T.sql.rollback.tmp" set /A OPTIONALRECOVERYCOUNT+=1
+    if exist "!OPTIONALDIR!\%%~T.sql.no-prior.tmp" set /A OPTIONALRECOVERYCOUNT+=1
+    if not "!OPTIONALRECOVERYCOUNT!" == "1" set "OPTIONALRECOVERYCOMPLETE=0"
+)
+if "!OPTIONALRECOVERYCOMPLETE!" == "0" (
+    echo ERROR: Incomplete optional-group recovery state in %OPTIONALDIR%; preserving artifacts.
+    endlocal
+    exit /b 1
+)
+call :RestoreOptionalGroup "!OPTIONALDIR!" "%~2" "%~3" "%~4"
+if errorlevel 1 (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
+
+:SnapshotOptionalGroup
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALFAILED=0"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    set "OPTIONALOUTPUT=!OPTIONALDIR!\%%~T.sql"
+    set "OPTIONALROLLBACK=!OPTIONALDIR!\%%~T.sql.rollback.tmp"
+    set "OPTIONALNOPRIOR=!OPTIONALDIR!\%%~T.sql.no-prior.tmp"
+    if "!OPTIONALFAILED!" == "0" (
+        if exist "!OPTIONALROLLBACK!" set "OPTIONALFAILED=1"
+        if exist "!OPTIONALNOPRIOR!" set "OPTIONALFAILED=1"
+    )
+    if "!OPTIONALFAILED!" == "0" if exist "!OPTIONALOUTPUT!" (
+        move /Y "!OPTIONALOUTPUT!" "!OPTIONALROLLBACK!" >nul
+        if errorlevel 1 set "OPTIONALFAILED=1"
+        if exist "!OPTIONALOUTPUT!" set "OPTIONALFAILED=1"
+        if not exist "!OPTIONALROLLBACK!" set "OPTIONALFAILED=1"
+    )
+    if "!OPTIONALFAILED!" == "0" if not exist "!OPTIONALROLLBACK!" (
+        type nul > "!OPTIONALNOPRIOR!"
+        if not exist "!OPTIONALNOPRIOR!" set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
+
+:RestoreOptionalGroup
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALFAILED=0"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    set "OPTIONALOUTPUT=!OPTIONALDIR!\%%~T.sql"
+    set "OPTIONALROLLBACK=!OPTIONALDIR!\%%~T.sql.rollback.tmp"
+    set "OPTIONALNOPRIOR=!OPTIONALDIR!\%%~T.sql.no-prior.tmp"
+    set "OPTIONALRECOVERYCOUNT=0"
+    if exist "!OPTIONALROLLBACK!" set /A OPTIONALRECOVERYCOUNT+=1
+    if exist "!OPTIONALNOPRIOR!" set /A OPTIONALRECOVERYCOUNT+=1
+    if !OPTIONALRECOVERYCOUNT! GTR 1 set "OPTIONALFAILED=1"
+    if "!OPTIONALRECOVERYCOUNT!" == "1" if exist "!OPTIONALROLLBACK!" (
+        move /Y "!OPTIONALROLLBACK!" "!OPTIONALOUTPUT!" >nul
+        if errorlevel 1 set "OPTIONALFAILED=1"
+        if exist "!OPTIONALROLLBACK!" set "OPTIONALFAILED=1"
+        if not exist "!OPTIONALOUTPUT!" set "OPTIONALFAILED=1"
+    )
+    if "!OPTIONALRECOVERYCOUNT!" == "1" if exist "!OPTIONALNOPRIOR!" (
+        if exist "!OPTIONALOUTPUT!" del /Q "!OPTIONALOUTPUT!"
+        if exist "!OPTIONALOUTPUT!" (
+            set "OPTIONALFAILED=1"
+        ) else (
+            del /Q "!OPTIONALNOPRIOR!"
+            if exist "!OPTIONALNOPRIOR!" set "OPTIONALFAILED=1"
+        )
+    )
+)
+if "!OPTIONALFAILED!" == "1" (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
 
 
 
 :patherror
+set "BACKUPRESULT=1"
 echo.
 echo _______________________________________________________________________________
 echo %colWhiteDarkRed%^|                                                                             ^|
@@ -2220,6 +2597,7 @@ echo.
 goto finish:
 
 :error
+set "BACKUPRESULT=1"
 echo.
 echo _______________________________________________________________________________
 echo %colWhiteDarkRed%^|                                                                             ^|
@@ -2248,3 +2626,4 @@ echo Done :)
 echo.
 :finish
 pause
+exit /b %BACKUPRESULT%
