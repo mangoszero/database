@@ -113,11 +113,57 @@ class CharacterUpdateRoutingTests(unittest.TestCase):
         self.assertRegex(
             execution,
             re.escape('if [ "${updatecharDB}" = "YES" ]; then')
-            + r"(?s:\s*updateCharDB\s*fi)",
+            + r"(?s:\s*if ! updateCharDB; then\s*"
+            + re.escape('printf "Character database update failed.\\n"')
+            + r"\s*exit 1\s*fi\s*fi)",
         )
 
     def test_loading_character_structure_does_not_dispatch_updates(self) -> None:
         self.assertNotIn("updateCharDB", shell_function("loadCharDB"))
+
+    def test_character_update_imports_return_failure_immediately(self) -> None:
+        updates = shell_function("updateCharDB")
+        imports = re.findall(
+            r'(?m)^\s*\$\{dbcommand\} "\$\{cdb\}" < "\$\{file\}".*$',
+            updates,
+        )
+        self.assertEqual(len(imports), 2)
+        for import_line in imports:
+            self.assertEqual(import_line.strip().endswith("|| return 1"), True)
+
+    def test_character_update_failure_stops_later_dispatch(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            temporary_path = Path(temporary)
+            command_log = temporary_path / "dbcommand.log"
+            fake_mariadb = temporary_path / "mariadb"
+            fake_mariadb.write_text(
+                "#!/bin/sh\n"
+                "database=\n"
+                "for argument do database=${argument}; done\n"
+                "printf '%s\\n' \"${database}\" >> \"${WARDEN_DB_COMMAND_LOG}\"\n"
+                "exit 73\n",
+                encoding="utf-8",
+            )
+            fake_mariadb.chmod(0o755)
+            environment = os.environ.copy()
+            environment["PATH"] = str(temporary_path) + os.pathsep + environment["PATH"]
+            environment["WARDEN_DB_COMMAND_LOG"] = str(command_log)
+            result = subprocess.run(
+                [bash_executable(), str(ROOT / "InstallDatabases.sh"), "-su"],
+                cwd=ROOT,
+                input="host\nuser\n3306\npass\ncharacter_test\nworld_test\nrealm_test\n",
+                capture_output=True,
+                check=False,
+                text=True,
+                env=environment,
+            )
+            self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertIn("Character database update failed.", result.stdout)
+            self.assertNotIn("Database creation and load complete :-)", result.stdout)
+            self.assertEqual(
+                command_log.read_text(encoding="utf-8").splitlines(),
+                ["character_test"],
+            )
 
 
 class WardenBackupRoutingTests(unittest.TestCase):

@@ -135,7 +135,7 @@ updateCharDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		${dbcommand} "${cdb}" < "${file}"
+		${dbcommand} "${cdb}" < "${file}" || return 1
 		printf "File ${file} imported\n"
 	done
 
@@ -143,7 +143,7 @@ updateCharDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		${dbcommand} "${cdb}" < "${file}"
+		${dbcommand} "${cdb}" < "${file}" || return 1
 		printf "File ${file} imported\n"
 	done
 }
@@ -426,7 +426,10 @@ if [ "${createrealmDB}" = "YES" ]; then
 fi
 
 if [ "${updatecharDB}" = "YES" ]; then
-	updateCharDB
+	if ! updateCharDB; then
+		printf "Character database update failed.\n"
+		exit 1
+	fi
 fi
 
 if [ "${updateworldDB}" = "YES" ]; then
