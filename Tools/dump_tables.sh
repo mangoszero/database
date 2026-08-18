@@ -10,7 +10,55 @@ DDUMPDIR=./mangos
 ###################################################################################
 
 i=1
+restore_warden_group() {
+
+WARDEN_RESTORE_FAILED=0
+for WARDEN_TABLE in warden warden_checks; do
+WARDEN_OUTPUT="${DUMPDIR}/${WARDEN_TABLE}.sql"
+WARDEN_ROLLBACK="${WARDEN_OUTPUT}.rollback.tmp"
+WARDEN_NO_PRIOR="${WARDEN_OUTPUT}.no-prior.tmp"
+if [ -e "${WARDEN_ROLLBACK}" ] && [ -e "${WARDEN_NO_PRIOR}" ]; then
+WARDEN_RESTORE_FAILED=1
+elif [ -e "${WARDEN_ROLLBACK}" ]; then
+if ! mv -f "${WARDEN_ROLLBACK}" "${WARDEN_OUTPUT}" || [ -e "${WARDEN_ROLLBACK}" ] || [ ! -e "${WARDEN_OUTPUT}" ]; then
+WARDEN_RESTORE_FAILED=1
+fi
+elif [ -e "${WARDEN_NO_PRIOR}" ]; then
+if ! rm -f "${WARDEN_OUTPUT}" || [ -e "${WARDEN_OUTPUT}" ]; then
+WARDEN_RESTORE_FAILED=1
+elif ! rm -f "${WARDEN_NO_PRIOR}" || [ -e "${WARDEN_NO_PRIOR}" ]; then
+WARDEN_RESTORE_FAILED=1
+fi
+fi
+done
+[ "${WARDEN_RESTORE_FAILED}" -eq 0 ]
+}
+
 dump_warden_tables() {
+
+WARDEN_RECOVERY_ANY=0
+WARDEN_RECOVERY_COMPLETE=1
+for WARDEN_TABLE in warden warden_checks; do
+WARDEN_RECOVERY_COUNT=0
+[ -e "${DUMPDIR}/${WARDEN_TABLE}.sql.rollback.tmp" ] && WARDEN_RECOVERY_COUNT=$((WARDEN_RECOVERY_COUNT + 1))
+[ -e "${DUMPDIR}/${WARDEN_TABLE}.sql.no-prior.tmp" ] && WARDEN_RECOVERY_COUNT=$((WARDEN_RECOVERY_COUNT + 1))
+if [ "${WARDEN_RECOVERY_COUNT}" -gt 0 ]; then
+WARDEN_RECOVERY_ANY=1
+fi
+if [ "${WARDEN_RECOVERY_COUNT}" -ne 1 ]; then
+WARDEN_RECOVERY_COMPLETE=0
+fi
+done
+if [ "${WARDEN_RECOVERY_ANY}" -eq 1 ]; then
+if [ "${WARDEN_RECOVERY_COMPLETE}" -ne 1 ]; then
+echo "Incomplete Warden recovery state in ${DUMPDIR}; preserving artifacts." >&2
+return 1
+fi
+if ! restore_warden_group; then
+echo "Could not restore stale Warden recovery state; preserving remaining artifacts." >&2
+return 1
+fi
+fi
 
 WARDEN_TABLES=
 for WARDEN_TABLE in warden warden_checks; do
@@ -49,10 +97,37 @@ return 1
 fi
 done
 
+for WARDEN_TABLE in warden warden_checks; do
+WARDEN_OUTPUT="${DUMPDIR}/${WARDEN_TABLE}.sql"
+WARDEN_ROLLBACK="${WARDEN_OUTPUT}.rollback.tmp"
+WARDEN_NO_PRIOR="${WARDEN_OUTPUT}.no-prior.tmp"
+if [ -e "${WARDEN_ROLLBACK}" ] || [ -e "${WARDEN_NO_PRIOR}" ]; then
+echo "Unexpected recovery artifact for ${WARDEN_TABLE}; preserving it." >&2
+restore_warden_group
+rm -f "${DUMPDIR}/warden.sql.new" "${DUMPDIR}/warden_checks.sql.new"
+return 1
+fi
+if [ -e "${WARDEN_OUTPUT}" ]; then
+if ! mv -f "${WARDEN_OUTPUT}" "${WARDEN_ROLLBACK}" || [ -e "${WARDEN_OUTPUT}" ] || [ ! -e "${WARDEN_ROLLBACK}" ]; then
+restore_warden_group
+rm -f "${DUMPDIR}/warden.sql.new" "${DUMPDIR}/warden_checks.sql.new"
+echo "Could not snapshot ${WARDEN_TABLE}; prior group was restored where possible." >&2
+return 1
+fi
+elif ! : > "${WARDEN_NO_PRIOR}" || [ ! -e "${WARDEN_NO_PRIOR}" ]; then
+restore_warden_group
+rm -f "${DUMPDIR}/warden.sql.new" "${DUMPDIR}/warden_checks.sql.new"
+echo "Could not record original absence for ${WARDEN_TABLE}." >&2
+return 1
+fi
+done
+
 for WARDEN_TABLE in ${WARDEN_TABLES}; do
 WARDEN_READY="${DUMPDIR}/${WARDEN_TABLE}.sql.new"
 if ! mv -f "${WARDEN_READY}" "${DUMPDIR}/${WARDEN_TABLE}.sql"; then
-echo "Could not publish ${DB}.${WARDEN_TABLE}; retaining remaining prior backups." >&2
+restore_warden_group
+rm -f "${DUMPDIR}/warden.sql.new" "${DUMPDIR}/warden_checks.sql.new"
+echo "Could not publish ${DB}.${WARDEN_TABLE}; prior group was restored where possible." >&2
 return 1
 fi
 done
@@ -63,12 +138,78 @@ case " ${WARDEN_TABLES} " in
 ;;
 *)
 if ! rm -f "${DUMPDIR}/${WARDEN_TABLE}.sql"; then
+restore_warden_group
+rm -f "${DUMPDIR}/warden.sql.new" "${DUMPDIR}/warden_checks.sql.new"
 echo "Could not remove stale ${WARDEN_TABLE} dump." >&2
 return 1
 fi
 ;;
 esac
 done
+
+WARDEN_RECOVERY_CLEANUP_FAILED=0
+for WARDEN_TABLE in warden warden_checks; do
+for WARDEN_RECOVERY in "${DUMPDIR}/${WARDEN_TABLE}.sql.rollback.tmp" "${DUMPDIR}/${WARDEN_TABLE}.sql.no-prior.tmp"; do
+if ! rm -f "${WARDEN_RECOVERY}" || [ -e "${WARDEN_RECOVERY}" ]; then
+WARDEN_RECOVERY_CLEANUP_FAILED=1
+fi
+done
+done
+if [ "${WARDEN_RECOVERY_CLEANUP_FAILED}" -ne 0 ]; then
+echo "Published Warden group, but could not retire all recovery artifacts." >&2
+return 1
+fi
+}
+
+dump_table() {
+
+TABLE=$1
+TABLE_READY="${DUMPDIR}/${TABLE}.sql.new"
+TABLE_OUTPUT="${DUMPDIR}/${TABLE}.sql"
+if ! rm -f "${TABLE_READY}" || [ -e "${TABLE_READY}" ]; then
+echo "Could not clear staged ${TABLE} dump." >&2
+return 1
+fi
+if ! echo "--
+-- Copyright (C) 2005-2024 MaNGOS <https://getmangos.eu/> <https://github.com/mangoszero>
+--
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 2 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, write to the Free Software
+-- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+--
+" > "${TABLE_READY}"; then
+rm -f "${TABLE_READY}"
+echo "Could not stage the header for ${TABLE}." >&2
+return 1
+fi
+if ! (
+set -o pipefail
+mysqldump -Q -c -e -q -u"${USERNAME}" -p"${PASSWORD}" "${DB}" "${TABLE}" \
+  | sed "s/VALUES /VALUES\n/g" \
+  | sed "s/),(/),\n(/g" \
+  | sed "/Dump completed/d" \
+  | sed -e "1d;2d;3d;4d;5d;6d"
+) >> "${TABLE_READY}"; then
+rm -f "${TABLE_READY}"
+echo "Could not dump ${DB}.${TABLE}; retaining prior backup." >&2
+return 1
+fi
+if ! mv -f "${TABLE_READY}" "${TABLE_OUTPUT}"; then
+rm -f "${TABLE_READY}"
+echo "Could not publish ${DB}.${TABLE}; retaining prior backup." >&2
+return 1
+fi
+return 0
 }
 
 
@@ -208,31 +349,9 @@ transports \
 
 echo "Dumping ${i}/123 ${TABLE}..."
 
-echo "--
--- Copyright (C) 2005-2024 MaNGOS <https://getmangos.eu/> <https://github.com/mangoszero>
---
--- This program is free software; you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation; either version 2 of the License, or
--- (at your option) any later version.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU General Public License for more details.
---
--- You should have received a copy of the GNU General Public License
--- along with this program; if not, write to the Free Software
--- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
-" > ${DUMPDIR}/${TABLE}.sql
-
-mysqldump -Q -c -e -q -u${USERNAME} -p${PASSWORD} $DB ${TABLE} \
-  | sed "s/VALUES /VALUES\n/g" \
-  | sed "s/),(/),\n(/g" \
-  | grep -v "Dump completed" \
-  | sed -e "1d;2d;3d;4d;5d;6d" \
->> ${DUMPDIR}/${TABLE}.sql
+if ! dump_table "${TABLE}"; then
+return 1
+fi
 
 let i=i+1
 

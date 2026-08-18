@@ -46,6 +46,17 @@ def shell_function(name: str) -> str:
     return match.group(1)
 
 
+def dump_shell_function(name: str) -> str:
+    dump_text = (ROOT / "Tools" / "dump_tables.sh").read_text(encoding="utf-8")
+    match = re.search(
+        rf"(?ms)^{re.escape(name)}\(\)\s*\{{.*?^\}}\s*$",
+        dump_text,
+    )
+    if not match:
+        raise AssertionError(f"missing dump function {name}")
+    return match.group(0)
+
+
 def batch_label(name: str, next_label: str) -> str:
     match = re.search(
         rf"(?ms)^:{re.escape(name)}\s*$\s*(.*?)^:{re.escape(next_label)}\s*$",
@@ -672,6 +683,294 @@ class WardenUnixDumpRoutingTests(unittest.TestCase):
         )
         self.assertEqual(iteration.returncode, 0, iteration.stderr)
         self.assertGreater(len(iteration.stdout.splitlines()), 100)
+
+
+class BackupPublicationRollbackTests(unittest.TestCase):
+    def test_windows_recovery_contract_is_explicit_and_non_wildcard(self) -> None:
+        helper = batch_helper_region(BACKUP)
+        self.assertIn(".sql.rollback.tmp", helper)
+        self.assertIn(".sql.no-prior.tmp", helper)
+        self.assertRegex(helper, r"(?m)^:RestoreOptionalGroup\s*$")
+        self.assertRegex(helper, r"(?m)^:RecoverOptionalGroupAtEntry\s*$")
+        self.assertNotRegex(helper, r'(?i)del /Q "[^"\r\n]*\*[^"\r\n]*"')
+
+        restore = batch_label("RestoreOptionalGroup", "patherror")
+        failure = re.search(
+            r'(?s)if "!OPTIONALFAILED!" == "1" \(\s*'
+            r'endlocal\s+exit /b 1\s*\)',
+            restore,
+        )
+        self.assertIsNotNone(
+            failure, "rollback failure must return without recovery cleanup"
+        )
+        failed = batch_label(
+            "DumpOptionalGroupFailed", "DumpOptionalGroupRecoveryCleanupFailed"
+        )
+        self.assertRegex(
+            failed,
+            r"(?s)call :RestoreOptionalGroup .*?\s+"
+            r"if errorlevel 1 goto DumpOptionalGroupRollbackFailed",
+        )
+        rollback_failed = batch_label(
+            "DumpOptionalGroupRollbackFailed",
+            "DumpOptionalGroupRecoveryCleanupFailed",
+        )
+        self.assertIn("recovery artifacts remain", rollback_failed)
+
+    @unittest.skipUnless(os.name == "nt", "cmd.exe behavior requires Windows")
+    def test_windows_incomplete_entry_recovery_refuses_without_mutation(self) -> None:
+        region = batch_helper_region(BACKUP)
+        region, probe_replacements = re.subn(
+            r'(?m)^"%mysql%mysql\.exe".* > "%OPTIONALPROBE%" 2>nul[ \t]*$',
+            'call :UnexpectedMysql',
+            region,
+        )
+        region, dump_replacements = re.subn(
+            r'(?m)^"%mysql%mysqldump\.exe".* > "%OPTIONALTEMP%"[ \t]*$',
+            'call :UnexpectedDump',
+            region,
+        )
+        self.assertEqual(probe_replacements, 1)
+        self.assertEqual(dump_replacements, 1)
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            published = {
+                "warden": b"newer published warden bytes\r\n\x00",
+                "warden_checks": b"newer published checks bytes\r\n\xff",
+            }
+            for table, content in published.items():
+                (root / f"{table}.sql").write_bytes(content)
+            rollback = root / "warden.sql.rollback.tmp"
+            rollback_bytes = b"older retained rollback bytes\r\n\x1a"
+            rollback.write_bytes(rollback_bytes)
+
+            harness = "\n".join(
+                (
+                    "@echo off",
+                    "setlocal EnableExtensions EnableDelayedExpansion",
+                    'set "mysql="',
+                    'set "user=test"',
+                    'set "pass=test"',
+                    'set "port=3306"',
+                    'set "svr=localhost"',
+                    f'call :DumpOptionalGroup "test" "{root}" "YES" "YES" '
+                    '"warden" "warden_checks"',
+                    "exit /b %errorlevel%",
+                    region,
+                    ":UnexpectedMysql",
+                    f'> "{root / "probe-called.flag"}" echo called',
+                    "exit /b 91",
+                    ":UnexpectedDump",
+                    f'> "{root / "dump-called.flag"}" echo called',
+                    "exit /b 92",
+                    "",
+                )
+            )
+            batch = root / "run-incomplete-recovery.cmd"
+            batch.write_bytes(harness.replace("\n", "\r\n").encode("utf-8"))
+            result = subprocess.run(
+                ["cmd.exe", "/d", "/c", str(batch)],
+                cwd=root,
+                capture_output=True,
+                check=False,
+                text=True,
+            )
+
+            self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+            for table, content in published.items():
+                self.assertEqual((root / f"{table}.sql").read_bytes(), content)
+            self.assertTrue(rollback.is_file())
+            self.assertEqual(rollback.read_bytes(), rollback_bytes)
+            self.assertFalse((root / "probe-called.flag").exists())
+            self.assertFalse((root / "dump-called.flag").exists())
+            for table in published:
+                for suffix in (
+                    "exists.tmp",
+                    "dump.tmp",
+                    "sql.new",
+                    "present.tmp",
+                    "absent.tmp",
+                    "sql.no-prior.tmp",
+                ):
+                    self.assertFalse((root / f"{table}.{suffix}").exists())
+
+    @unittest.skipUnless(os.name == "nt", "cmd.exe behavior requires Windows")
+    def test_windows_publish_failure_restores_group_and_original_absence(self) -> None:
+        region = batch_helper_region(BACKUP)
+        region, probe_replacements = re.subn(
+            r'(?m)^"%mysql%mysql\.exe".* > "%OPTIONALPROBE%" 2>nul[ \t]*$',
+            'call :FakeMysql "%OPTIONALTABLE%" "%OPTIONALPROBE%"',
+            region,
+        )
+        region, dump_replacements = re.subn(
+            r'(?m)^"%mysql%mysqldump\.exe".* > "%OPTIONALTEMP%"[ \t]*$',
+            'call :FakeDump "%OPTIONALTABLE%" "%OPTIONALTEMP%"',
+            region,
+        )
+        region, move_replacements = re.subn(
+            r'(?m)^(\s*)move /Y (.*)$', r'\1call :FakeMove \2', region
+        )
+        self.assertEqual(probe_replacements, 1)
+        self.assertEqual(dump_replacements, 1)
+        self.assertGreaterEqual(move_replacements, 3)
+
+        def run_case(directory: Path, absent_first: bool) -> subprocess.CompletedProcess[str]:
+            harness = "\n".join(
+                (
+                    "@echo off",
+                    "setlocal EnableExtensions EnableDelayedExpansion",
+                    'set "mysql="',
+                    'set "user=test"',
+                    'set "pass=test"',
+                    'set "port=3306"',
+                    'set "svr=localhost"',
+                    'set "PRESENT_warden=1"',
+                    'set "PRESENT_warden_checks=1"',
+                    'set "FAIL_PUBLISH_TABLE=warden_checks"',
+                    f'call :DumpOptionalGroup "test" "{directory}" "YES" "YES" '
+                    '"warden" "warden_checks"',
+                    "exit /b %errorlevel%",
+                    region,
+                    ":FakeMysql",
+                    "setlocal EnableDelayedExpansion",
+                    '> "%~2" echo(!PRESENT_%~1!',
+                    "endlocal",
+                    "exit /b 0",
+                    ":FakeDump",
+                    '> "%~2" echo(new dump for %~1',
+                    "exit /b 0",
+                    ":FakeMove",
+                    'if /I "%~nx1" == "%FAIL_PUBLISH_TABLE%.sql.new" exit /b 71',
+                    'move /Y "%~1" "%~2" >nul',
+                    "exit /b %errorlevel%",
+                    "",
+                )
+            )
+            batch = directory / "run-rollback.cmd"
+            batch.write_bytes(harness.replace("\n", "\r\n").encode("utf-8"))
+            return subprocess.run(
+                ["cmd.exe", "/d", "/c", str(batch)],
+                cwd=directory,
+                capture_output=True,
+                check=False,
+                text=True,
+            )
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            both_prior = root / "both-prior"
+            both_prior.mkdir()
+            prior = {
+                "warden": b"prior warden exact bytes\r\n\x1a",
+                "warden_checks": b"prior checks exact bytes\r\n\x00",
+            }
+            for table, content in prior.items():
+                (both_prior / f"{table}.sql").write_bytes(content)
+            result = run_case(both_prior, False)
+            self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+            for table, content in prior.items():
+                self.assertEqual((both_prior / f"{table}.sql").read_bytes(), content)
+            self.assertFalse(list(both_prior.glob("*.sql.new")))
+            self.assertFalse(list(both_prior.glob("*.sql.rollback.tmp")))
+            self.assertFalse(list(both_prior.glob("*.sql.no-prior.tmp")))
+
+            absent_first = root / "absent-first"
+            absent_first.mkdir()
+            checks_prior = b"prior checks only\r\n\xff"
+            (absent_first / "warden_checks.sql").write_bytes(checks_prior)
+            result = run_case(absent_first, True)
+            self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertFalse((absent_first / "warden.sql").exists())
+            self.assertEqual(
+                (absent_first / "warden_checks.sql").read_bytes(), checks_prior
+            )
+            self.assertFalse(list(absent_first.glob("*.sql.new")))
+            self.assertFalse(list(absent_first.glob("*.sql.rollback.tmp")))
+            self.assertFalse(list(absent_first.glob("*.sql.no-prior.tmp")))
+
+    def test_unix_warden_publish_failure_restores_group(self) -> None:
+        function = "\n".join(
+            (
+                dump_shell_function("restore_warden_group"),
+                dump_shell_function("dump_warden_tables"),
+            )
+        )
+        harness = "\n".join(
+            (
+                function,
+                "mysql() { printf '1\\n'; }",
+                "mysqldump() { printf 'new dump for %s\\n' \"${@: -1}\"; }",
+                "mv() {",
+                '  if [ "${2##*/}" = "warden_checks.sql.new" ]; then return 71; fi',
+                '  command mv "$@"',
+                "}",
+                "USERNAME=test",
+                "PASSWORD=test",
+                "DB=test_world",
+                'DUMPDIR="$1"',
+                "dump_warden_tables",
+            )
+        )
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            prior = b"prior unix warden exact bytes\n\x00"
+            (root / "warden.sql").write_bytes(prior)
+            result = subprocess.run(
+                [bash_executable(), "-c", harness, "warden-rollback", temporary],
+                capture_output=True,
+                check=False,
+                text=True,
+            )
+            self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertEqual((root / "warden.sql").read_bytes(), prior)
+            self.assertFalse((root / "warden_checks.sql").exists())
+            self.assertFalse(list(root.glob("*.sql.new")))
+            self.assertFalse(list(root.glob("*.sql.rollback.tmp")))
+            self.assertFalse(list(root.glob("*.sql.no-prior.tmp")))
+
+    def test_generic_unix_dump_stages_and_checks_pipeline(self) -> None:
+        function = dump_shell_function("dump_table")
+
+        def run_case(directory: Path, fail: bool) -> subprocess.CompletedProcess[str]:
+            dump_result = "return 42" if fail else "return 0"
+            harness = "\n".join(
+                (
+                    function,
+                    "mysqldump() {",
+                    "  printf 'h1\\nh2\\nh3\\nh4\\nh5\\nh6\\nINSERT INTO sample VALUES (1);\\n'",
+                    f"  {dump_result}",
+                    "}",
+                    "USERNAME=test",
+                    "PASSWORD=test",
+                    "DB=test_world",
+                    'DUMPDIR="$1"',
+                    "dump_table sample",
+                )
+            )
+            return subprocess.run(
+                [bash_executable(), "-c", harness, "generic-dump", str(directory)],
+                capture_output=True,
+                check=False,
+                text=True,
+            )
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            destination = root / "sample.sql"
+            prior = b"prior generic exact bytes\n\xff"
+            destination.write_bytes(prior)
+            failed = run_case(root, True)
+            self.assertNotEqual(failed.returncode, 0, failed.stdout + failed.stderr)
+            self.assertEqual(destination.read_bytes(), prior)
+            self.assertFalse((root / "sample.sql.new").exists())
+
+            succeeded = run_case(root, False)
+            self.assertEqual(succeeded.returncode, 0, succeeded.stdout + succeeded.stderr)
+            published = destination.read_text(encoding="utf-8")
+            self.assertTrue(published.startswith("--\n-- Copyright"))
+            self.assertIn("INSERT INTO sample VALUES\n(1);", published)
+            self.assertFalse((root / "sample.sql.new").exists())
 
 
 if __name__ == "__main__":

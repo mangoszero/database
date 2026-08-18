@@ -2198,6 +2198,9 @@ set "OPTIONALRETAINEMPTY=%~4"
 set "OPTIONALPRESENT=0"
 set "OPTIONALFAILED=0"
 
+call :RecoverOptionalGroupAtEntry "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupEntryRecoveryRefused
+
 for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
     for %%S in (exists.tmp dump.tmp sql.new present.tmp absent.tmp) do (
         if exist "!OPTIONALDIR!\%%~T.%%S" del /Q "!OPTIONALDIR!\%%~T.%%S"
@@ -2229,7 +2232,11 @@ for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
 )
 if "!OPTIONALFAILED!" == "1" goto DumpOptionalGroupFailed
 
-rem Phase 3: publish every complete staged member.
+rem Phase 3: snapshot every destination before changing any published output.
+call :SnapshotOptionalGroup "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupFailed
+
+rem Phase 4: publish every complete staged member.
 set "OPTIONALFAILED=0"
 for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
     set "OPTIONALREADY=!OPTIONALDIR!\%%~T.sql.new"
@@ -2241,7 +2248,7 @@ for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
 )
 if "!OPTIONALFAILED!" == "1" goto DumpOptionalGroupFailed
 
-rem Phase 4: only now remove outputs proven absent.
+rem Phase 5: only now remove outputs proven absent.
 set "OPTIONALFAILED=0"
 for %%T in ("%~5" "%~6" "%~7") do if not "%%~T" == "" (
     if exist "!OPTIONALDIR!\%%~T.absent.tmp" (
@@ -2254,6 +2261,10 @@ if "!OPTIONALFAILED!" == "1" goto DumpOptionalGroupFailed
 
 call :CleanupOptionalGroupArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
 if errorlevel 1 goto DumpOptionalGroupFailed
+
+rem The complete new group is published; retire recovery state last.
+call :CleanupOptionalGroupRecoveryArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupRecoveryCleanupFailed
 endlocal
 exit /b 0
 
@@ -2426,10 +2437,150 @@ endlocal
 exit /b 0
 
 :DumpOptionalGroupFailed
+call :RestoreOptionalGroup "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+if errorlevel 1 goto DumpOptionalGroupRollbackFailed
 call :CleanupOptionalGroupArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
 echo ERROR: Could not back up optional table group in %OPTIONALDB%.
 endlocal
 exit /b 1
+
+:DumpOptionalGroupRollbackFailed
+call :CleanupOptionalGroupArtifacts "!OPTIONALDIR!" "%~5" "%~6" "%~7"
+echo ERROR: Could not restore the optional table group in %OPTIONALDB%; recovery artifacts remain in !OPTIONALDIR!.
+endlocal
+exit /b 1
+
+:DumpOptionalGroupEntryRecoveryRefused
+echo ERROR: Refusing optional table backup for %OPTIONALDB%; preserving published outputs and recovery artifacts in !OPTIONALDIR!.
+endlocal
+exit /b 1
+
+:DumpOptionalGroupRecoveryCleanupFailed
+echo ERROR: Published optional table group, but could not retire all recovery artifacts in %OPTIONALDB%.
+endlocal
+exit /b 1
+
+:CleanupOptionalGroupRecoveryArtifacts
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALFAILED=0"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    for %%S in (sql.rollback.tmp sql.no-prior.tmp) do (
+        if exist "!OPTIONALDIR!\%%~T.%%S" del /Q "!OPTIONALDIR!\%%~T.%%S"
+        if exist "!OPTIONALDIR!\%%~T.%%S" set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
+
+:RecoverOptionalGroupAtEntry
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALRECOVERYANY=0"
+set "OPTIONALRECOVERYCOMPLETE=1"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    set "OPTIONALRECOVERYCOUNT=0"
+    if exist "!OPTIONALDIR!\%%~T.sql.rollback.tmp" (
+        set /A OPTIONALRECOVERYCOUNT+=1
+        set "OPTIONALRECOVERYANY=1"
+    )
+    if exist "!OPTIONALDIR!\%%~T.sql.no-prior.tmp" (
+        set /A OPTIONALRECOVERYCOUNT+=1
+        set "OPTIONALRECOVERYANY=1"
+    )
+    if !OPTIONALRECOVERYCOUNT! GTR 1 set "OPTIONALRECOVERYCOMPLETE=0"
+)
+if "!OPTIONALRECOVERYANY!" == "0" (
+    endlocal
+    exit /b 0
+)
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    set "OPTIONALRECOVERYCOUNT=0"
+    if exist "!OPTIONALDIR!\%%~T.sql.rollback.tmp" set /A OPTIONALRECOVERYCOUNT+=1
+    if exist "!OPTIONALDIR!\%%~T.sql.no-prior.tmp" set /A OPTIONALRECOVERYCOUNT+=1
+    if not "!OPTIONALRECOVERYCOUNT!" == "1" set "OPTIONALRECOVERYCOMPLETE=0"
+)
+if "!OPTIONALRECOVERYCOMPLETE!" == "0" (
+    echo ERROR: Incomplete optional-group recovery state in %OPTIONALDIR%; preserving artifacts.
+    endlocal
+    exit /b 1
+)
+call :RestoreOptionalGroup "!OPTIONALDIR!" "%~2" "%~3" "%~4"
+if errorlevel 1 (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
+
+:SnapshotOptionalGroup
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALFAILED=0"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    set "OPTIONALOUTPUT=!OPTIONALDIR!\%%~T.sql"
+    set "OPTIONALROLLBACK=!OPTIONALDIR!\%%~T.sql.rollback.tmp"
+    set "OPTIONALNOPRIOR=!OPTIONALDIR!\%%~T.sql.no-prior.tmp"
+    if "!OPTIONALFAILED!" == "0" (
+        if exist "!OPTIONALROLLBACK!" set "OPTIONALFAILED=1"
+        if exist "!OPTIONALNOPRIOR!" set "OPTIONALFAILED=1"
+    )
+    if "!OPTIONALFAILED!" == "0" if exist "!OPTIONALOUTPUT!" (
+        move /Y "!OPTIONALOUTPUT!" "!OPTIONALROLLBACK!" >nul
+        if errorlevel 1 set "OPTIONALFAILED=1"
+        if exist "!OPTIONALOUTPUT!" set "OPTIONALFAILED=1"
+        if not exist "!OPTIONALROLLBACK!" set "OPTIONALFAILED=1"
+    )
+    if "!OPTIONALFAILED!" == "0" if not exist "!OPTIONALROLLBACK!" (
+        type nul > "!OPTIONALNOPRIOR!"
+        if not exist "!OPTIONALNOPRIOR!" set "OPTIONALFAILED=1"
+    )
+)
+if "!OPTIONALFAILED!" == "1" (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
+
+:RestoreOptionalGroup
+setlocal EnableExtensions EnableDelayedExpansion
+set "OPTIONALDIR=%~1"
+set "OPTIONALFAILED=0"
+for %%T in ("%~2" "%~3" "%~4") do if not "%%~T" == "" (
+    set "OPTIONALOUTPUT=!OPTIONALDIR!\%%~T.sql"
+    set "OPTIONALROLLBACK=!OPTIONALDIR!\%%~T.sql.rollback.tmp"
+    set "OPTIONALNOPRIOR=!OPTIONALDIR!\%%~T.sql.no-prior.tmp"
+    set "OPTIONALRECOVERYCOUNT=0"
+    if exist "!OPTIONALROLLBACK!" set /A OPTIONALRECOVERYCOUNT+=1
+    if exist "!OPTIONALNOPRIOR!" set /A OPTIONALRECOVERYCOUNT+=1
+    if !OPTIONALRECOVERYCOUNT! GTR 1 set "OPTIONALFAILED=1"
+    if "!OPTIONALRECOVERYCOUNT!" == "1" if exist "!OPTIONALROLLBACK!" (
+        move /Y "!OPTIONALROLLBACK!" "!OPTIONALOUTPUT!" >nul
+        if errorlevel 1 set "OPTIONALFAILED=1"
+        if exist "!OPTIONALROLLBACK!" set "OPTIONALFAILED=1"
+        if not exist "!OPTIONALOUTPUT!" set "OPTIONALFAILED=1"
+    )
+    if "!OPTIONALRECOVERYCOUNT!" == "1" if exist "!OPTIONALNOPRIOR!" (
+        if exist "!OPTIONALOUTPUT!" del /Q "!OPTIONALOUTPUT!"
+        if exist "!OPTIONALOUTPUT!" (
+            set "OPTIONALFAILED=1"
+        ) else (
+            del /Q "!OPTIONALNOPRIOR!"
+            if exist "!OPTIONALNOPRIOR!" set "OPTIONALFAILED=1"
+        )
+    )
+)
+if "!OPTIONALFAILED!" == "1" (
+    endlocal
+    exit /b 1
+)
+endlocal
+exit /b 0
 
 
 
