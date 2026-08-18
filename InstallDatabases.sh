@@ -193,15 +193,17 @@ updateWorldDB()
     printf "Updating data into the World database ${wdb}\n"
     for file in World/Updates/${OLDRELEASE}/*.sql
     do
+        [ -e "${file}" ] || continue
         printf "Applying update ${file}\n"
-        ${dbcommand} "${wdb}" < "${file}"
+        ${dbcommand} "${wdb}" < "${file}" || return 1
         printf "File ${file} imported\n"
     done
 
     for file in World/Updates/${RELEASE}/*.sql
     do
+        [ -e "${file}" ] || continue
         printf "Applying update ${file}\n"
-        ${dbcommand} "${wdb}" < "${file}"
+        ${dbcommand} "${wdb}" < "${file}" || return 1
         printf "File ${file} imported\n"
     done
 }
@@ -229,7 +231,7 @@ updateRealmDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		$(${dbcommand} ${rdb} < ${file})
+		${dbcommand} "${rdb}" < "${file}" || return 1
 		printf "File ${file} imported\n"
 	done
 
@@ -237,7 +239,7 @@ updateRealmDB()
 	do
 		file=$(echo ${file} | tr '|' ' ')
 		printf "Applying update ${file}\n"
-		$(${dbcommand} ${rdb} < ${file})
+		${dbcommand} "${rdb}" < "${file}" || return 1
 		printf "File ${file} imported\n"
 	done
 }
@@ -433,11 +435,17 @@ if [ "${updatecharDB}" = "YES" ]; then
 fi
 
 if [ "${updateworldDB}" = "YES" ]; then
-	updateWorldDB
+	if ! updateWorldDB; then
+		printf "World database update failed.\n"
+		exit 1
+	fi
 fi
 
 if [ "${updaterealmDB}" = "YES" ]; then
-	updateRealmDB
+	if ! updateRealmDB; then
+		printf "Realm database update failed.\n"
+		exit 1
+	fi
 fi
 
 if [ "${addRealmList}" = "YES" ]; then

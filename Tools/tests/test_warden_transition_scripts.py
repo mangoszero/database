@@ -108,6 +108,64 @@ def bash_executable() -> str:
 
 
 class CharacterUpdateRoutingTests(unittest.TestCase):
+    def run_update_failure(
+        self, failed_database: str, populate_old_world: bool = False
+    ) -> tuple[subprocess.CompletedProcess[str], list[str]]:
+        with tempfile.TemporaryDirectory() as temporary:
+            temporary_path = Path(temporary)
+            releases = re.findall(r'(?m)^(?:OLDRELEASE|RELEASE)="([^"]+)"$', INSTALL)
+            self.assertEqual(len(releases), 2)
+            for database in ("Character", "World", "Realm"):
+                for release in releases:
+                    update_directory = temporary_path / database / "Updates" / release
+                    update_directory.mkdir(parents=True, exist_ok=True)
+                    if (
+                        database == "World"
+                        and release == releases[0]
+                        and not populate_old_world
+                    ):
+                        continue
+                    (update_directory / "fixture.sql").write_text(
+                        "-- controlled update fixture\n", encoding="utf-8"
+                    )
+            world_calls = 1 + int(populate_old_world)
+            fail_call = len(releases) + world_calls
+            if failed_database == "realm_test":
+                fail_call += 1
+            command_log = temporary_path / "dbcommand.log"
+            fake_mariadb = temporary_path / "mariadb"
+            fake_mariadb.write_text(
+                "#!/bin/sh\n"
+                "database=\n"
+                "for argument do database=${argument}; done\n"
+                "count_file=${WARDEN_DB_COMMAND_LOG}.count\n"
+                "count=0\n"
+                "if [ -f \"${count_file}\" ]; then read count < \"${count_file}\"; fi\n"
+                "count=$((count + 1))\n"
+                "printf '%s\\n' \"${database}\" >> \"${WARDEN_DB_COMMAND_LOG}\"\n"
+                "printf '%s\\n' \"${count}\" > \"${count_file}\"\n"
+                f"if [ \"${{count}}\" -eq {fail_call} ]; then\n"
+                "    exit 73\n"
+                "fi\n"
+                "exit 0\n",
+                encoding="utf-8",
+            )
+            fake_mariadb.chmod(0o755)
+            environment = os.environ.copy()
+            environment["PATH"] = str(temporary_path) + os.pathsep + environment["PATH"]
+            environment["WARDEN_DB_COMMAND_LOG"] = str(command_log)
+            result = subprocess.run(
+                [bash_executable(), str(ROOT / "InstallDatabases.sh"), "-su"],
+                cwd=temporary_path,
+                input="host\nuser\n3306\npass\ncharacter_test\nworld_test\nrealm_test\n",
+                capture_output=True,
+                check=False,
+                text=True,
+                env=environment,
+            )
+            commands = command_log.read_text(encoding="utf-8").splitlines()
+        return result, commands
+
     def test_character_updates_are_dispatched_from_the_top_level(self) -> None:
         execution = INSTALL[INSTALL.index('if [ "${createcharDB}" = "YES" ]') :]
         self.assertRegex(
@@ -164,6 +222,35 @@ class CharacterUpdateRoutingTests(unittest.TestCase):
                 command_log.read_text(encoding="utf-8").splitlines(),
                 ["character_test"],
             )
+
+    def test_world_update_failure_stops_realm_and_success_dispatch(self) -> None:
+        result, commands = self.run_update_failure(
+            "world_test", populate_old_world=True
+        )
+
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("World database update failed.", result.stdout)
+        self.assertNotIn("Database creation and load complete :-)", result.stdout)
+        self.assertEqual(commands.count("world_test"), 2)
+        self.assertNotIn("realm_test", commands)
+
+    def test_empty_old_world_release_reaches_current_update(self) -> None:
+        result, commands = self.run_update_failure("realm_test")
+        releases = re.findall(r'(?m)^(?:OLDRELEASE|RELEASE)="([^"]+)"$', INSTALL)
+
+        self.assertIn(
+            f"Applying update World/Updates/{releases[1]}/fixture.sql",
+            result.stdout,
+        )
+        self.assertEqual(commands.count("world_test"), 1)
+
+    def test_realm_update_failure_stops_success_dispatch(self) -> None:
+        result, commands = self.run_update_failure("realm_test")
+
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Realm database update failed.", result.stdout)
+        self.assertNotIn("Database creation and load complete :-)", result.stdout)
+        self.assertEqual(commands.count("realm_test"), 1)
 
 
 class WardenBackupRoutingTests(unittest.TestCase):
