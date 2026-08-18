@@ -32,8 +32,8 @@ esac
 done
 
 if [ -z "${WARDEN_TABLES}" ]; then
-echo "Neither warden nor warden_checks exists in ${DB}; refusing an incomplete dump." >&2
-return 1
+echo "Neither warden nor warden_checks exists in ${DB}; retaining prior Warden dumps and continuing." >&2
+return 0
 fi
 
 for WARDEN_TABLE in ${WARDEN_TABLES}; do
