@@ -11,6 +11,8 @@ REM set skipChoices=YES
 REM set skipConnection=YES
 REM set DEBUG=YES
 
+REM -- An installed MySQL/MariaDB client is found automatically (PATH, then the
+REM -- default install folders, then Tools); set these only to pick another one.
 REM set dbClientHome=C:\Program Files\MySQL\MySQL Server 8.0\bin
 REM set dbClientHome=C:\Program Files\MariaDB\bin
 REM set dbClientName=mysql.exe

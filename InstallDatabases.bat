@@ -27,6 +27,10 @@ REM    pauseAtEnd=YES^|NO         skip the final pause for unattended runs
 REM    testConnection=YES^|NO     check the server answers before doing work
 REM    newuserHost=<host>        host part of the MySQL account that is created
 REM
+REM  Unless dbClientHome, dbClient or dbClientConnectionString is preset, the
+REM  database client is looked for on the PATH, then in the default MySQL and
+REM  MariaDB install folders, and only then taken from Tools (see :FindClient).
+REM
 REM  The script exits with the number of statements that failed plus the number
 REM  of SQL files that were missing, so it can be driven from another script.
 REM =============================================================================
@@ -126,6 +130,7 @@ if /i "%createMangosUser%"=="YES" if /i "%newpass%"=="mangos" set "defaultsused=
 REM -- fail fast instead of reporting the same error for every SQL file ---------
 if /i not "%testConnection%"=="YES" goto :Work
 call :Section "Checking the connection to %svr%"
+echo  . Using database client %dbClientDisplay%
 %dbClientConnectionString% -e "SELECT 1;" >nul 2>&1
 if not errorlevel 1 goto :ConnectionOK
 call :ConnectionFailed
@@ -344,6 +349,7 @@ REM  than dropping the operator back at a closed window with no explanation.
 :ConnectionFailed
 set "retry=NO"
 call :ErrorBox "Could not connect to %svr% on port %port% as user '%user%'." "Check the host name, user name, password and port."
+if /i "%dbClientHome%"=="Tools" call :Box "" "  The bundled client in Tools is MySQL 5.0 and cannot log in to MySQL 8" "  with its default authentication.  Install a MySQL or MariaDB client," "  or set dbClientHome in InstallDatabasesPreset.bat." .
 set /a connectAsk+=1
 if /i "%skipConnection%"=="YES" goto :ConnectionGiveUp
 if %connectAsk% GEQ 3 goto :ConnectionGiveUp
@@ -619,6 +625,7 @@ REM ============================================================================
 :SetDefaults
 rem -- Change the values below to match your server --
 rem -- Or do so in InstallDatabasesPreset.bat instead. --
+if not defined dbClientHome if not defined dbClient if not defined dbClientConnectionString call :FindClient
 if not defined dbClientHome set "dbClientHome=Tools"
 if not defined dbClientName set "dbClientName=mysql.exe"
 if not defined dbClient     set dbClient="%dbClientHome%\%dbClientName%"
@@ -683,6 +690,43 @@ set "bannerTitle=%bannerTitle:~0,40%"
 rem -- indents for the localisation menu rows --
 set "LOCIND1=                Locales : "
 set "LOCIND=                          "
+exit /b 0
+
+REM  :FindClient   prefer a client installed on this machine over the bundled
+REM  one: Tools\mysql.exe is MySQL 5.0, which cannot log in to a MySQL 8 server
+REM  using its default caching_sha2_password authentication (ERROR 1251).
+REM  Looks on the PATH first, then in the default install folders.  Leaves
+REM  dbClientHome undefined when nothing is found, so Tools is still used.
+:FindClient
+set "findNames=mysql.exe mariadb.exe"
+if defined dbClientName set "findNames=%dbClientName%"
+for %%N in (%findNames%) do call :FindClientOnPath %%N
+for %%R in ("%ProgramW6432%" "%ProgramFiles%" "%ProgramFiles(x86)%") do for %%N in (%findNames%) do call :FindClientIn "%%~R" "MySQL\MySQL Server *" %%N
+for %%R in ("%ProgramW6432%" "%ProgramFiles%" "%ProgramFiles(x86)%") do for %%N in (%findNames%) do call :FindClientIn "%%~R" "MariaDB *" %%N
+exit /b 0
+
+REM  :FindClientOnPath <exeName>
+:FindClientOnPath
+if defined dbClientHome exit /b 0
+set "found=%~$PATH:1"
+if defined found call :UseClient
+exit /b 0
+
+REM  :FindClientIn <root> <folderPattern> <exeName>
+REM  The folders are visited in name order, so the newest version wins.
+:FindClientIn
+if defined dbClientHome exit /b 0
+if "%~1"=="" exit /b 0
+set "found="
+for /d %%D in ("%~1\%~2") do if exist "%%~D\bin\%~3" set "found=%%~D\bin\%~3"
+if defined found call :UseClient
+exit /b 0
+
+REM  :UseClient   split the full path in %found% into dbClientHome/dbClientName
+:UseClient
+for %%F in ("%found%") do set "dbClientHome=%%~dpF"
+for %%F in ("%found%") do set "dbClientName=%%~nxF"
+set "dbClientHome=%dbClientHome:~0,-1%"
 exit /b 0
 
 :SetColours
